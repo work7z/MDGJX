@@ -1,0 +1,148 @@
+name: Dispatch-CICD-core-US-CN
+
+on: workflow_dispatch
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-tag2
+      TAG_MODE: true
+      TXCOSID: ${{ secrets.TXCOSID }}
+      TXCOSKEY: ${{ secrets.TXCOSKEY }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.21
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Get dependencies
+        run: go mod download
+
+      - name: Run build script
+        id: runbuildscript
+        run: |
+          npm i -g typescript
+          cd ./modules/web2
+          cd ../../
+          cd ./pipeline
+          chmod +x ./build-all.sh
+          ./build-all.sh "${{steps.get_version.outputs.VERSION}}"
+
+      - name: US Release 1
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.US_APP_SSH_HOST }}
+          port: ${{ secrets.US_APP_SSH_PORT }}
+          username: ${{ secrets.US_APP_SSH_USERNAME }}
+          key: ${{ secrets.US_APP_SSH_KEY }}
+          script: |
+            echo 'Running some command'
+            ls -la 
+            mkdir -p /home/appuser/LafTools-dist
+
+      - name: US Release 2
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.US_APP_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: US Release 3
+        run: |
+          sftp -o StrictHostKeyChecking=no -P ${{ secrets.US_APP_SSH_PORT }} ${{ secrets.US_APP_SSH_USERNAME }}@${{ secrets.US_APP_SSH_HOST }} <<EOF
+            put /home/runner/work/LafTools/LafTools-tag2/dkout.tmp.gz /home/appuser/LafTools-dist/LafTools-${{steps.get_version.outputs.VERSION}}-dkout.tmp.gz
+          exit
+          EOF
+          sftp -o StrictHostKeyChecking=no -P ${{ secrets.US_APP_SSH_PORT }} ${{ secrets.US_APP_SSH_USERNAME }}@${{ secrets.US_APP_SSH_HOST }} <<EOF
+            put /home/runner/work/LafTools/LafTools-tag2/pipeline-server.zip /home/appuser/LafTools-dist/pipeline-server-${{steps.get_version.outputs.VERSION}}.zip
+          exit
+          EOF
+          rm ~/.ssh/id_rsa -rf
+
+      - name: US Release 4
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.US_APP_SSH_HOST }}
+          port: ${{ secrets.US_APP_SSH_PORT }}
+          username: ${{ secrets.US_APP_SSH_USERNAME }}
+          key: ${{ secrets.US_APP_SSH_KEY }}
+          script: |
+            echo 'unzip pipeline server'
+            unzip /home/appuser/LafTools-dist/pipeline-server-${{steps.get_version.outputs.VERSION}}.zip -d /home/appuser/LafTools-dist/pipeline-server-${{steps.get_version.outputs.VERSION}} &> /dev/null
+            chmod +x /home/appuser/LafTools-dist/pipeline-server-${{steps.get_version.outputs.VERSION}}/home/runner/work/LafTools/LafTools-tag2/pipeline/server/run.sh
+            /home/appuser/LafTools-dist/pipeline-server-${{steps.get_version.outputs.VERSION}}/home/runner/work/LafTools/LafTools-tag2/pipeline/server/run.sh ${{steps.get_version.outputs.VERSION}} en_US 8088 LafTools-dist laft-inst3 US
+
+      - name: CN Release 1
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.APP_SSH_HOST }}
+          port: ${{ secrets.APP_SSH_PORT }}
+          username: ${{ secrets.APP_SSH_USERNAME }}
+          key: ${{ secrets.APP_SSH_KEY }}
+          script: |
+            echo 'Running some command'
+            ls -la 
+            mkdir -p /home/appuser/LafTools-dist
+
+      - name: CN Release 2
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.APP_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: CN Release 3
+        run: |
+          sftp -o StrictHostKeyChecking=no -P ${{ secrets.APP_SSH_PORT }} ${{ secrets.APP_SSH_USERNAME }}@${{ secrets.APP_SSH_HOST }} <<EOF
+            put /home/runner/work/LafTools/LafTools-tag2/dkout.tmp.gz /home/appuser/LafTools-dist/LafTools-${{steps.get_version.outputs.VERSION}}-dkout.tmp.gz
+          exit
+          EOF
+          sftp -o StrictHostKeyChecking=no -P ${{ secrets.APP_SSH_PORT }} ${{ secrets.APP_SSH_USERNAME }}@${{ secrets.APP_SSH_HOST }} <<EOF
+            put /home/runner/work/LafTools/LafTools-tag2/pipeline-server.zip /home/appuser/LafTools-dist/pipeline-server-${{steps.get_version.outputs.VERSION}}.zip
+          exit
+          EOF
+          rm ~/.ssh/id_rsa -rf
+
+      - name: CN Release 4
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.APP_SSH_HOST }}
+          port: ${{ secrets.APP_SSH_PORT }}
+          username: ${{ secrets.APP_SSH_USERNAME }}
+          key: ${{ secrets.APP_SSH_KEY }}
+          command_timeout: 200m
+          script: |
+            echo 'unzip pipeline server'
+            unzip /home/appuser/LafTools-dist/pipeline-server-${{steps.get_version.outputs.VERSION}}.zip -d /home/appuser/LafTools-dist/pipeline-server-${{steps.get_version.outputs.VERSION}} &> /dev/null
+            chmod +x /home/appuser/LafTools-dist/pipeline-server-${{steps.get_version.outputs.VERSION}}/home/runner/work/LafTools/LafTools-tag2/pipeline/server/run.sh
+            /home/appuser/LafTools-dist/pipeline-server-${{steps.get_version.outputs.VERSION}}/home/runner/work/LafTools/LafTools-tag2/pipeline/server/run.sh ${{steps.get_version.outputs.VERSION}} zh_CN 80 LafTools-dist laft-inst3 CN
+
+      - name: flush cache CDN
+        id: flushcacheCDN
+        run: |
+          cd /home/runner/work/LafTools/LafTools/devtools/release
+          chmod +x ./refresh-cdn.sh
+          ./refresh-cdn.sh "${{secrets.TXCOSID}}" "${{secrets.TXCOSKEY}}"

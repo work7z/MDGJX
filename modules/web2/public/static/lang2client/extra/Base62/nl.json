@@ -1,0 +1,20 @@
+{
+    "c5p1b": "Er wordt geen vulling gebruikt; de lengte van de gecodeerde uitvoer hangt rechtstreeks af van de grootte van de invoergegevens.",
+    "c8me6b": "Aangepaste Base62-achtige schema's kunnen op maat worden gemaakt voor specifieke toepassingen, maar ze volgen over het algemeen hetzelfde principe van het gebruik van een grotere tekenset dan Base64 of Base32.",
+    "d2w4e": "Net als andere basisconversiesystemen werkt Base62 door invoerbytes om te zetten in een groot geheel getal en dit vervolgens uit te drukken als een combinatie van tekens uit de set van 62 tekens.",
+    "f1t2z": "Base62 is ontwikkeld om een ​​korter, URL-veilig alternatief voor Base64 te bieden, met name voor unieke identificatiegegevens en korte URL's.",
+    "g8h7s": "Hoe werkt Base62?",
+    "j4s6r": "Hoe codeer/decodeer ik met Base62 in JavaScript?",
+    "k9em5e": "Dit maakt het ideaal voor scenario's waarin een beknopte, URL-vriendelijke identificatie vereist is zonder dat dit ten koste gaat van de leesbaarheid.",
+    "p9e1n": "U kunt bibliotheken zoals 'base-x' of 'base62' gebruiken voor Base62-codering en decodering in JavaScript.",
+    "q7n3r": "Het vermijdt ook dubbelzinnige tekens zoals 'O' en '0', 'I' en 'l', die tot menselijke transcriptiefouten kunnen leiden.",
+    "r6nq2v": "Het belangrijkste voordeel van Base62 is de grotere ruimte-efficiëntie dankzij een grotere tekenset dan Base32, maar zonder niet-alfanumerieke tekens in Base64.",
+    "u3i8b": "Wat zijn de voordelen van het gebruik van Base62 ten opzichte van Base64 of Base32?",
+    "v3k5r": "De tekenset bevat alle hoofdletters en kleine letters (A-Z, a-z) en cijfers (0-9), wat een compactere weergave oplevert vergeleken met Base64 of Base32.",
+    "w2x9qk": "Hoewel Base62 zelf geen significante varianten kent, kunnen sommige implementaties enigszins verschillen in de keuze van de tekenset, zoals het uitsluiten van '+' of '/' die vaak in Base64 worden gebruikt.",
+    "x7n1m": "Base62 is een coderingsschema dat binaire gegevens weergeeft als een reeks van 62 alfanumerieke tekens.",
+    "y3m9k": "Waarom is Base62 gemaakt?",
+    "z2m7t": "Voorbeeldgebruik: `const base62 = require('base62'); const gecodeerd = base62.encode('uw-gegevens'); const gedecodeerd = base62.decode(gecodeerd);`",
+    "z4t9b": "Wat is Base62?",
+    "z7t1p": "Zijn er specifieke varianten van Base62?"
+}

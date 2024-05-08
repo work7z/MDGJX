@@ -1,0 +1,21 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本作为JSON对象中的键，每个键的值设为1。以下是提取后的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "Bit shift left": 1,
+    "Shifts the bits in each byte towards the left by the specified amount.": 1,
+    "Amount": 1
+  }
+}
+```
+
+以下是详细解释：
+
+- 类名 `BitShiftLeft` 和它的描述 `"Shifts the bits in each byte towards the left by the specified amount."` 被包含在内。
+- 构造函数中定义的 `this.name` 和 `this.description` 字段被提取。
+- `args` 数组中的对象包含一个 `name` 字段 `"Amount"`，也被包含在内。
+
+其他字段如 `module`, `infoURL`, `inputType`, `outputType`, `exampleInput`, `exampleOutput` 等均未包含，因为它们不符合要求。同样，代码中的注释和链接也被排除。
+
+这个JSON对象可以按照【示例1】的格式放入到您需要的位置。

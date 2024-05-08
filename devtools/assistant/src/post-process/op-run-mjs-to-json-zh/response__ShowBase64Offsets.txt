@@ -1,0 +1,24 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取文本。
+2. 将文本放入名为`i18n`的对象中，并给每个文本分配一个占位符`123`作为值。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换其值。
+
+下面是结果：
+
+```json
+{
+  "i18n": {
+    "Please enter a string.": "请输入一个字符串。",
+    "Characters highlighted in green could change if the input is surrounded by more data.": "如果输入被更多数据包围，绿色高亮的字符可能会改变。",
+    "Characters highlighted in red are for padding purposes only.": "红色高亮的字符仅用于填充。",
+    "Unhighlighted characters are static.": "未高亮的字符是静态的。",
+    "Hover over the static sections to see what they decode to on their own.": "悬停在静态部分上，查看它们自身解码为什么。",
+    "Offset 0:": "偏移量0：",
+    "Offset 1:": "偏移量1：",
+    "Offset 2:": "偏移量2："
+  }
+}
+```
+
+请注意，由于代码中的文本含有HTML标签和样式类，用于实现界面上的高亮和提示效果，这些在提取过程中被保留下来，但实际的翻译工作仅针对文本内容本身。如果需要去除HTML标签和样式类，请进一步说明。

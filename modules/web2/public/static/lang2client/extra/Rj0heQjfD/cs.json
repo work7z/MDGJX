@@ -1,0 +1,17 @@
+{
+    "YAML-Advantages-001": "Jaké jsou výhody YAML?",
+    "YAML-Advantages-002": "YAML je čitelný pro člověka a snadno se píše, takže je oblíbenou volbou pro konfigurační soubory.",
+    "YAML-Advantages-003": "Také se snadno čte a píše a často se používá ve spojení se všemi programovacími jazyky.",
+    "YAML-Basics-001": "Co je YAML?",
+    "YAML-Def-002": "YAML (YAML Ain't Markup Language) je lidsky čitelný standard pro serializaci dat, který lze použít ve spojení se všemi programovacími jazyky a často se používá k zápisu konfiguračních souborů.",
+    "YAML-Disadvantages-001": "Jaké jsou nevýhody YAML?",
+    "YAML-Disadvantages-002": "YAML může být obtížné analyzovat a může být náchylný k chybám.",
+    "YAML-Disadvantages-003": "Také není tak široce podporován jako jiné formáty serializace dat, jako je JSON.",
+    "YAML-Example-001": "Jak vypadá soubor YAML?",
+    "YAML-Example-002": "Jednoduchý soubor YAML se skládá z párů klíč–hodnota, přičemž každý pár je oddělen dvojtečkou.",
+    "YAML-Example-003": "Soubor YAML může vypadat například takto:",
+    "YAML-Purpose-003": "Je navržen tak, aby byl snadno čitelný pro lidi, a často se používá k vyjádření datových struktur a serializace ve formátu, který lze snadno číst a zapisovat.",
+    "YAML-Usage-001": "K čemu se YAML používá?",
+    "YAML-Usage-002": "YAML se často používá pro konfigurační soubory a v aplikacích, kde se ukládají nebo přenášejí data.",
+    "YAML-Usage-003": "Běžně se používá v aplikacích, kde se ukládají nebo přenášejí data, jako jsou konfigurační soubory, a v aplikacích, kde se ukládají nebo přenášejí data."
+}

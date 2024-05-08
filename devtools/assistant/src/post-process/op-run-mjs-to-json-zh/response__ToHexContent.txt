@@ -1,0 +1,32 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤，包括翻译成中文：
+
+1. 提取文本。
+2. 放入名为`i18n`的对象中，键为原始文本，值为`123`。
+3. 翻译文本为中文，并替换`123`。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "To Hex Content": "十六进制内容",
+    "Converts special characters in a string to hexadecimal. This format is used by SNORT for representing hex within ASCII text.": "将字符串中的特殊字符转换为十六进制。这种格式被SNORT用于在ASCII文本中表示十六进制。",
+    "e.g. foo=bar becomes foo|3d|bar": "例如：foo=bar变为foo|3d|bar",
+    "Only special chars": "仅特殊字符",
+    "Only special chars including spaces": "仅包括空格的特殊字符",
+    "All chars": "所有字符",
+    "Print spaces between bytes": "在字节之间打印空格"
+  }
+}
+```
+
+以下是每个键值对的解释：
+
+- "To Hex Content"：操作的名字，翻译为“十六进制内容”。
+- "Converts special characters..."：操作的描述，翻译为“将字符串中的特殊字符转换为十六进制...”。
+- "e.g. foo=bar becomes foo|3d|bar"：操作的例子，翻译为“例如：foo=bar变为foo|3d|bar”。
+- "Only special chars"、"Only special chars including spaces"、"All chars"：这些是参数选项，分别翻译为“仅特殊字符”、“仅包括空格的特殊字符”和“所有字符”。
+- "Print spaces between bytes"：另一个参数选项，翻译为“在字节之间打印空格”。
+
+请注意，示例中的`123`被替换为相应的中文翻译。

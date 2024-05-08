@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Setelah disepadukan, salin templat yang disediakan ke dalam program C++ anda dan gantikan pemegang tempat dengan nilai yang dikodkan sebenar sebelum menjalankan program.",
+    "c6p4n": "Selepas pemasangan, salin templat yang disediakan ke dalam skrip Python anda, gantikan pemegang tempat dalam bahagian penyahkod dengan bait yang dikodkan Base62 sebenar (diawalan 'b'), kemudian jalankan skrip.",
+    "d2w6e": "Muat turun kod sumber dan sertakan fail pengepala base62.h dalam projek anda. Susun/pautkan terhadap fail sumber mengikut arahan projek.",
+    "d8w1b": "Pasangnya melalui pip dengan menjalankan `pip install python-base62` atau `pip3 install python-base62`.",
+    "f9t2z": "Tambahkan kebergantungan pada projek Maven anda dengan menambahkan `<dependency> <groupId>com.warrenstrange</groupId> <artifactId>googleauth</artifactId> <version>...</version> </dependency>` di mana versi sepatutnya digantikan dengan keluaran terbaru.",
+    "g4h7s": "Untuk C++, anda boleh menggunakan perpustakaan 'cpp-base62' yang menyediakan fungsi Base62.",
+    "j9s5r": "Untuk C#, gunakan perpustakaan 'WarrenStranger.Base62' untuk mengendalikan pengekodan dan penyahkodan Base62.",
+    "k3m2e": "Salin templat yang disediakan ke dalam fail Go baharu, gantikan pemegang tempat dengan nilai dikodkan sebenar, kemudian jalankan fail menggunakan `go run yourfile.go`",
+    "p6e3n": "Pasang pakej melalui NuGet dengan menjalankan `Install-Package WarrenStranger.Base62` dalam Package Manager Console atau tambahkannya melalui NuGet Package Manager.",
+    "q6n1r": "Selepas memasang pustaka, salin templat yang disediakan ke dalam kelas Java dan gantikan pemegang tempat dengan nilai yang dikodkan sebenar sebelum menjalankan kod. Ambil perhatian bahawa pelaksanaan ini menggunakan tatasusunan integer sebagai langkah perantaraan.",
+    "r4n6v": "Tambahkan kebergantungan pada projek anda dengan menjalankan `go get github.com/xyproto/base62`. Ini akan memuat turun dan memasang pakej.",
+    "u7i9b": "Untuk Go, gunakan pakej 'base62' yang tersedia di GitHub.",
+    "u9g6t": "Untuk menjalankan kod ini, anda perlu memasang pakej 'base62' yang menyediakan keupayaan pengekodan dan penyahkodan Base62.",
+    "v5k3r": "Setelah dipasang, gantikan pemegang tempat dalam bahagian penyahkod dengan nilai yang dikodkan Base62 sebenar dan laksanakan skrip. Pustaka mengendalikan penukaran antara rentetan Penampan dan Base62 untuk anda.",
+    "x2c5e": "Untuk Python, gunakan perpustakaan 'base62' untuk mengendalikan pengekodan dan penyahkodan Base62.",
+    "y3m7k": "Untuk Java, gunakan kelas Base62Converter perpustakaan 'google-authenticator'.",
+    "z7n1m": "Anda boleh memasangnya menggunakan npm dengan menjalankan `npm install base62` atau `yarn add base62`.",
+    "z8qqm2t": "Selepas pemasangan, salin templat yang disediakan ke dalam aplikasi konsol C# dan gantikan pemegang tempat dengan nilai yang dikodkan sebenar sebelum menjalankan program."
+}

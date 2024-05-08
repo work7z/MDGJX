@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Når den er integreret, skal du kopiere den medfølgende skabelon ind i dit C++-program og erstatte pladsholderen med den faktiske kodede værdi, før du kører programmet.",
+    "c6p4n": "Efter installationen skal du kopiere den medfølgende skabelon ind i dit Python-script, erstatte pladsholderen i afkodningsdelen med de faktiske Base62-kodede bytes (med præfikset 'b'), og derefter køre scriptet.",
+    "d2w6e": "Download kildekoden og medtag base62.h-headerfilen i dit projekt. Kompiler/link mod kildefilerne i henhold til projektets anvisninger.",
+    "d8w1b": "Installer det via pip ved at køre `pip install python-base62` eller `pip3 install python-base62`.",
+    "f9t2z": "Tilføj afhængigheden til dit Maven-projekt ved at tilføje `<dependency> <groupId>com.warrenstrange</groupId> <artifactId>googleauth</artifactId> <version>...</version> </dependency>` hvor versionen skal være erstattet med den seneste udgivelse.",
+    "g4h7s": "Til C++ kan du bruge 'cpp-base62'-biblioteket, som giver Base62-funktionalitet.",
+    "j9s5r": "For C#, brug 'WarrenStranger.Base62'-biblioteket til at håndtere Base62-kodning og afkodning.",
+    "k3m2e": "Kopier den medfølgende skabelon til en ny Go-fil, erstat pladsholderen med den faktiske kodede værdi, og kør derefter filen ved at bruge `go run yourfile.go`",
+    "p6e3n": "Installer pakken via NuGet ved at køre `Install-Package WarrenStranger.Base62` i Package Manager Console eller tilføj den gennem NuGet Package Manager.",
+    "q6n1r": "Efter installation af biblioteket skal du kopiere den medfølgende skabelon til en Java-klasse og erstatte pladsholderen med den faktiske kodede værdi, før du kører koden. Bemærk, at denne implementering bruger heltalsarrays som et mellemtrin.",
+    "r4n6v": "Tilføj afhængigheden til dit projekt ved at køre `go get github.com/xyproto/base62`. Dette vil downloade og installere pakken.",
+    "u7i9b": "Til Go skal du bruge 'base62'-pakken, der er tilgængelig på GitHub.",
+    "u9g6t": "For at køre denne kode skal du installere 'base62'-pakken, som giver Base62-kodnings- og afkodningsmuligheder.",
+    "v5k3r": "Når den er installeret, skal du erstatte pladsholderen i afkodningssektionen med den faktiske Base62-kodede værdi og udføre scriptet. Biblioteket håndterer konvertering mellem Buffere og Base62 strenge for dig.",
+    "x2c5e": "Til Python skal du bruge 'base62'-biblioteket til at håndtere Base62-kodning og afkodning.",
+    "y3m7k": "Til Java skal du bruge 'google-authenticator'-bibliotekets Base62Converter-klasse.",
+    "z7n1m": "Du kan installere det ved at bruge npm ved at køre `npm install base62` eller `yarn add base62`.",
+    "z8qqm2t": "Efter installationen skal du kopiere den medfølgende skabelon til en C#-konsolapplikation og erstatte pladsholderen med den faktiske kodede værdi, før du kører programmet."
+}

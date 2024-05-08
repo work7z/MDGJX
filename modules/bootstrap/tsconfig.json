@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext", "esnext.asynciterable"],
+    "typeRoots": ["node_modules/@types"],
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "pretty": false,
+    "module": "CommonJS",
+    "sourceMap": true,
+    "allowUnusedLabels": true,
+    "noUnusedLocals": false,
+    "declaration": true,
+    "outDir": "dist",
+    "allowJs": true,
+    "noEmit": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "importHelpers": true,
+    "paths": {}
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json", ".env"],
+  "exclude": ["node_modules", "src/http", "src/logs"]
+}

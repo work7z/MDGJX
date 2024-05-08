@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值设置为`123`。
+3. 根据代码的实际功能，给出最合适的中文翻译，并替换`123`。
+4. 输出JSON结果。
+
+以下是JSON格式的输出：
+
+```json
+{
+  "i18n": {
+    "Pseudo-Random Number Generator": "伪随机数生成器",
+    "A cryptographically-secure pseudo-random number generator (PRNG).": "一个加密安全的伪随机数生成器（PRNG）。",
+    "This operation uses the browser's built-in crypto.getRandomValues() method if available. If this cannot be found, it falls back to a Fortuna-based PRNG algorithm.": "此操作优先使用浏览器内置的crypto.getRandomValues()方法。如果不可用，则退回到基于Fortuna的PRNG算法。",
+    "Number of bytes": "字节数",
+    "Output as": "输出格式",
+    "Hex": "十六进制",
+    "Integer": "整数",
+    "Byte array": "字节数组",
+    "Raw": "原始"
+  }
+}
+```
+
+在上述JSON对象中，键是英文原文，值是中文翻译。这个翻译是根据代码的功能和上下文进行的，以确保准确性和易于理解。

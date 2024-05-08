@@ -1,0 +1,32 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取文本。
+2. 放入名为`i18n`的对象中，键为提取的文本，值为`123`。
+3. 根据代码的实际功能，给出适当的中文翻译。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "UNIX Timestamp to Windows Filetime": "UNIX时间戳转Windows文件时间",
+    "Converts a UNIX timestamp to a Windows Filetime value.": "将UNIX时间戳转换为Windows文件时间值。",
+    "A Windows Filetime is a 64-bit value representing the number of 100-nanosecond intervals since January 1, 1601 UTC.": "Windows文件时间是一个64位值，表示自1601年1月1日UTC以来的100纳秒间隔数。",
+    "A UNIX timestamp is a 32-bit value representing the number of seconds since January 1, 1970 UTC (the UNIX epoch).": "UNIX时间戳是一个32位值，表示自1970年1月1日UTC（UNIX纪元）以来的秒数。",
+    "This operation also supports UNIX timestamps in milliseconds, microseconds and nanoseconds.": "此操作还支持毫秒、微秒和纳秒的UNIX时间戳。",
+    "Input units": "输入单位",
+    "Seconds (s)": "秒(s)",
+    "Milliseconds (ms)": "毫秒(ms)",
+    "Microseconds (μs)": "微秒(μs)",
+    "Nanoseconds (ns)": "纳秒(ns)",
+    "Output format": "输出格式",
+    "Decimal": "十进制",
+    "Hex (big endian)": "十六进制（大端）",
+    "Hex (little endian)": "十六进制（小端）",
+    "Unrecognised unit": "未识别的单位"
+  }
+}
+```
+
+请注意，以上翻译是根据代码上下文进行的，可能需要根据具体使用场景进一步调整。

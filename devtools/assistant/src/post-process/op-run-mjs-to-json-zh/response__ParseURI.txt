@@ -1,0 +1,35 @@
+根据您的要求，以下是提炼出的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "Pretty prints complicated Uniform Resource Identifier (URI) strings for ease of reading. Particularly useful for Uniform Resource Locators (URLs) with a lot of arguments.": "123",
+    "Protocol:": "123",
+    "Auth:": "123",
+    "Hostname:": "123",
+    "Port:": "123",
+    "Path name:": "123",
+    "Arguments:": "123",
+    "Hash:": "123"
+  }
+}
+```
+
+然后，我将这些文本翻译为中文，并替换它的value值：
+
+```json
+{
+  "i18n": {
+    "Pretty prints complicated Uniform Resource Identifier (URI) strings for ease of reading. Particularly useful for Uniform Resource Locators (URLs) with a lot of arguments.": "美化复杂的统一资源标识符（URI）字符串以便于阅读。特别适用于带有许多参数的统一资源定位符（URL）。",
+    "Protocol:": "协议：",
+    "Auth:": "认证：",
+    "Hostname:": "主机名：",
+    "Port:": "端口：",
+    "Path name:": "路径名：",
+    "Arguments:": "参数：",
+    "Hash:": "哈希："
+  }
+}
+```
+
+这些翻译是根据代码实际功能进行的，应该能准确反映每个自然文本的含义。

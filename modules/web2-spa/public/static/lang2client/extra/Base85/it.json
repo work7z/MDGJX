@@ -1,0 +1,19 @@
+{
+    "c1p4b": "Ogni numero decimale viene quindi convertito in una sequenza univoca di cinque caratteri Base85. Se alla fine rimangono meno di quattro byte, potrebbe essere applicata la spaziatura interna.",
+    "d7w2e": "Base85 funziona dividendo i dati di input in gruppi di quattro byte e convertendo ciascun gruppo in un numero decimale compreso tra 0 e 2^32-1.",
+    "f9t1z": "Base85 è stato inizialmente sviluppato per rappresentare in modo efficiente i dati binari nei documenti PostScript per migliori rapporti di compressione.",
+    "g3h5s": "Come funziona Base85?",
+    "j5s7r": "Come posso codificare/decodificare con Base85 in JavaScript?",
+    "k2em5e": "Ciò si traduce in stringhe di output più brevi per la stessa quantità di dati di input, il che può essere utile in scenari in cui è fondamentale ridurre al minimo le dimensioni.",
+    "p8eq9n": "Puoi utilizzare librerie come \"base85\" o \"ascii85\" per la codifica e decodifica Base85 in JavaScript.",
+    "q2n3r": "Oggi viene utilizzato in varie applicazioni in cui l'efficienza dello spazio e la leggibilità sono cruciali, come i documenti PDF e alcuni protocolli di rete.",
+    "r9qn8v": "Il vantaggio principale di Base85 è la sua migliore efficienza in termini di spazio grazie a un set di caratteri più ampio (85 contro 64 in Base64 o 32 in Base32).",
+    "u1i2b": "Quali sono i vantaggi dell'utilizzo di Base85 rispetto a Base64 o Base32?",
+    "v4k6r": "Codifica i dati in un formato più compatto rispetto a Base64 o Base32 utilizzando un set di caratteri più ampio.",
+    "w1x4k": "Sì, esistono diverse varianti, tra cui Ascii85 (utilizzato in PostScript e PDF), Z85 (ZeroMQ) e UUencode (un formato precedente). Ognuno ha un set di caratteri e regole leggermente diversi.",
+    "x9n1b": "Base85 è uno schema di codifica che rappresenta i dati binari utilizzando un set di 85 caratteri ASCII stampabili.",
+    "y6m8k": "Perché è stato creato Base85?",
+    "z2t7m": "Cos'è Base85?",
+    "z5m6t": "Esempio di utilizzo: `const base85 = require('base85'); const codificato = base85.encode('i tuoi dati'); const decodificato = base85.decode(codificato);`",
+    "z9t7p": "Esistono varianti specifiche di Base85?"
+}

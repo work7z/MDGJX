@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成 JSON 格式的 `i18n` 部分，以及根据代码内容配置的 `extra` 部分：
+
+```json
+{
+  i18n: {
+    "A1Z26 Cipher Encode": 1,
+    "Converts alphabet characters into their corresponding alphabet order number. e.g. a becomes 1 and b becomes 2. Non-alphabet characters are dropped.": 1
+  },
+  extra: {
+    exampleInput: "<>",
+    exampleOutput: "<>",
+    editor: {
+      input: "typescript", // 根据 import 语句推断
+      output: "typescript" // 根据 export 语句推断
+    }
+  }
+}
+```
+
+在这段 JSON 中：
+
+- `i18n` 部分包含了从代码中提取的自然文本，其中 key 是文本内容，value 是 1。
+- `extra` 部分中的 `exampleInput` 和 `exampleOutput` 由于没有具体的示例文本，所以使用了 `<>` 来表示。
+- `editor.input` 和 `editor.output` 根据代码中的 `import` 和 `export` 语句推断为 `typescript`。
+
+请注意，由于代码中没有提供具体的 `exampleInput` 和 `exampleOutput` 的值，所以这部分留空。如果需要具体的示例输入和输出，您可能需要根据代码的功能来手动添加。

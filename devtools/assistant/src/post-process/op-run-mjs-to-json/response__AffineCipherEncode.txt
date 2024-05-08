@@ -1,0 +1,19 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为`i18n`的JSON对象中，其中每个文本的键值对为`key: "text", value: 1`。
+
+下面是根据您的代码提取的自然文本，并按照要求配置的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Affine Cipher Encode": 1,
+    "The Affine cipher is a type of monoalphabetic substitution cipher, wherein each letter in an alphabet is mapped to its numeric equivalent, encrypted using simple mathematical function, (ax + b) % 26, and converted back to a letter.": 1
+  }
+}
+```
+
+在这个例子中，我提取了以下自然文本：
+
+- 类名 `"Affine Cipher Encode"`
+- 类描述 `"The Affine cipher is a type of monoalphabetic substitution cipher, wherein each letter in an alphabet is mapped to its numeric equivalent, encrypted using simple mathematical function, (ax + b) % 26, and converted back to a letter."`
+
+其他文本，如注释、URL、变量名、函数名等，均未包含在内，因为它们不符合您定义的“显示给用户的自然文本”的条件。

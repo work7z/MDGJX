@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "JavaScriptとは何ですか?",
+    "JS-DOM-API-007": "JavaScript は DOM とどのようにやり取りするのでしょうか?",
+    "JS-DOM-API-Explanation-008": "JavaScript は、HTML と CSS を操作するためのドキュメント オブジェクト モデル (DOM) API を提供し、開発者がコンテンツ、スタイル、イベント リスナーを動的に変更できるようにします。",
+    "JS-DOM-Example-009": "たとえば、要素を選択してそのテキスト コンテンツを変更できます: `document.getElementById('myElement').textContent = 'New Text';`",
+    "JS-Data-Types-010": "JavaScriptのデータ型とは何ですか?",
+    "JS-Data-Types-List-011": "JavaScript は、文字列、数値、ブール値、null、未定義、シンボルなどのプリミティブなデータ型から、オブジェクトや配列などの複雑な型を含むさまざまなデータ型をサポートします。",
+    "JS-Def-002": "JavaScript (JS) は、Web アプリケーションの作成、ユーザー インターフェイスの強化、Node.js を使用したサーバー側ロジックの構築に広く使用されている、高レベルのインタープリタ型プログラミング言語です。",
+    "JS-Event-Loop-013": "JavaScriptのイベントループとは何ですか?",
+    "JS-Event-Loop-Explanation-014": "イベント ループは JavaScript の同時実行モデルの中核部分であり、コールバック、Promise、および async/await による非同期実行を可能にします。",
+    "JS-Event-Loop-Process-015": "最初にメイン スクリプトを実行し、次に関連するイベント (ユーザー入力やネットワーク応答など) が発生したときにコールバック関数を実行し、キュー システムを通じてイベントを管理します。",
+    "JS-Function-Syntax-006": "関数は、「function」キーワードの後に​​関数名と括弧で囲まれたパラメーターを使用して定義されます。関数本体は中括弧で囲まれています。 `functiongreet(name) { console.log(`Hello, ${name}!`); }`",
+    "JS-Purpose-003": "1995 年に Netscape の Brendan Eich によって最初に開発され、それ以来、最も人気のある言語の 1 つに進化し、すべての主要な Web ブラウザーや Electron や React Native などのプラットフォームでサポートされています。",
+    "JS-Syntax-004": "JavaScript の基本的な構文は何ですか?",
+    "JS-Type-Checking-012": "型チェックは、コンストラクター (`typeof value === 'string'`) または組み込みコンストラクターから継承するオブジェクトの `instanceof` 演算子 (例: `value instantof Array`) を使用して行うことができます。",
+    "MDN-DOM-API": "MDN Web ドキュメント - ドキュメントの操作",
+    "MDN-Event-Loop": "MDN Web ドキュメント - イベント ループ",
+    "MDN-JS-Guide": "MDN Web ドキュメント - JavaScript ガイド",
+    "MDN-JS-Types": "MDN Web ドキュメント - データ型とデータ構造"
+}

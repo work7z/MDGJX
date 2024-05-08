@@ -1,0 +1,28 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取文本。
+2. 放入名为`i18n`的对象中，键是提取的文本，值设为`123`。
+3. 根据代码的功能，将键对应的值翻译成中文。
+4. 输出JSON结果。
+
+以下是JSON格式的输出：
+
+```json
+{
+  "i18n": {
+    "Optical Character Recognition": "光学字符识别",
+    "Optical character recognition or optical character reader (OCR) is the mechanical or electronic conversion of images of typed, handwritten or printed text into machine-encoded text.<br><br>Supported image formats: png, jpg, bmp, pbm.": "光学字符识别（OCR）是将打字、手写或印刷文本的图像机械或电子转换为机器编码文本。<br><br>支持的图像格式：png、jpg、bmp、pbm。",
+    "This operation only works in a browser": "此操作仅在浏览器中有效",
+    "Unsupported file type (supported: jpg,png,pbm,bmp) or no file provided": "不支持的文件类型（支持的类型：jpg、png、pbm、bmp）或未提供文件",
+    "Spinning up Tesseract worker...": "正在启动Tesseract工作进程...",
+    "Status:": "状态：",
+    "recognizing text": "正在识别文本",
+    "Loading English language pack...": "正在加载英语语言包...",
+    "Intialising Tesseract API...": "正在初始化Tesseract API...",
+    "Finding text...": "正在查找文本...",
+    "Confidence:": "置信度："
+  }
+}
+```
+
+请注意，由于代码中的自然文本含有HTML换行标签（`<br><br>`），我保留了这些标签，因为它们影响文本的格式。如果不需要这些标签，可以将其删除。此外，部分文本如状态消息包含了动态内容（如进度百分比），这里只提供了静态文本部分。如果需要动态内容，可能需要进一步处理以适应国际化。

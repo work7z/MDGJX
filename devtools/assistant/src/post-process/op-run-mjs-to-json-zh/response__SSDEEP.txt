@@ -1,0 +1,13 @@
+根据您的要求，以下是提炼出的自然文本，并以JSON格式展示，同时附上翻译：
+
+```json
+{
+  "i18n": {
+    "SSDEEP is a program for computing context triggered piecewise hashes (CTPH). Also called fuzzy hashes, CTPH can match inputs that have homologies. Such inputs have sequences of identical bytes in the same order, although bytes in between these sequences may be different in both content and length.": "SSDEEP是一个用于计算上下文触发的分段哈希（CTPH）的程序。也被称为模糊哈希，CTPH能够匹配具有同源性的输入。这类输入在相同顺序下具有相同字节的序列，尽管这些序列之间的字节在内容和长度上可能有所不同。",
+    "SSDEEP hashes are now widely used for simple identification purposes (e.g. the 'Basic Properties' section in VirusTotal). Although 'better' fuzzy hashes are available, SSDEEP is still one of the primary choices because of its speed and being a de facto standard.": "SSDEEP哈希现在被广泛用于简单的识别目的（例如VirusTotal中的“基本属性”部分）。尽管有更“优秀”的模糊哈希可用，但由于其速度和事实上的标准地位，SSDEEP仍然是首选之一。",
+    "This operation is fundamentally the same as the CTPH operation, however their outputs differ in format.": "这个操作在本质上与CTPH操作相同，但它们的输出格式有所不同。"
+  }
+}
+```
+
+在这个JSON对象中，我提取了代码中显示给用户的自然文本，并为每条文本提供了翻译。由于代码的主要功能是描述SSDEEP（一种用于生成模糊哈希的工具），因此翻译也围绕这一主题进行。每个key对应于原文，而value对应于翻译后的中文文本。

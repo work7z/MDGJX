@@ -1,0 +1,16 @@
+{
+    "CSSNano": "cssnano - GitHub",
+    "HTMLMinifier": "HTMLMinifier - GitHub",
+    "MDN-Minification": "MDN Web Docs - Minification",
+    "Minify-Basics-001": "Apakah maksud mengecilkan kod atau fail?",
+    "Minify-CLI-Usage-009": "Kebanyakan alat ini mempunyai kedua-dua antara muka baris perintah (CLI) dan API yang membolehkan pembangun mengautomasikan proses peminimakan semasa pembangunan dan penggunaan.",
+    "Minify-Def-002": "Minifikasi ialah proses mengurangkan saiz kod (HTML, CSS, JavaScript, dsb.) dengan mengalih keluar aksara yang tidak diperlukan seperti ruang putih, ulasan dan pemisah baris tanpa menjejaskan fungsinya.",
+    "Minify-Example-007k": "Contohnya, {0} mungkin menjadi {1} selepas pengurangan.",
+    "Minify-How-Works-004": "Bagaimanakah pemindahan kod berfungsi?",
+    "Minify-Process-005": "Minifiers menggunakan algoritma untuk menganalisis struktur kod sumber, menghapuskan unsur berlebihan dan memendekkan nama pembolehubah jika boleh. Ini menghasilkan saiz fail yang lebih kecil sambil mengekalkan tingkah laku asal kod.",
+    "Minify-Purpose-003": "Tujuan utama minifikasi adalah untuk meningkatkan prestasi laman web dan mengurangkan masa muat halaman dengan mengurangkan jumlah data yang perlu dipindahkan antara pelayan dan pelanggan.",
+    "Minify-Tools-007": "Apakah beberapa alatan popular untuk mengecilkan kod?",
+    "Minify-Tools-List-008": "Alat popular untuk mengecilkan kod termasuk UglifyJS untuk JavaScript, Terser yang merupakan evolusi UglifyJS, HTMLMinifier untuk HTML dan CSSNano untuk CSS. Alat ini selalunya boleh disepadukan ke dalam proses binaan menggunakan pelari tugas seperti Gulp atau Webpack.",
+    "Terser": "Terser - GitHub",
+    "UglifyJS": "UglifyJS - GitHub"
+}

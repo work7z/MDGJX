@@ -1,0 +1,20 @@
+{
+    "c5p1b": "Phần đệm không được sử dụng; độ dài của đầu ra được mã hóa phụ thuộc trực tiếp vào kích thước của dữ liệu đầu vào.",
+    "c8me6b": "Các lược đồ giống Base62 tùy chỉnh có thể được điều chỉnh cho các ứng dụng cụ thể nhưng nhìn chung chúng tuân thủ cùng một nguyên tắc sử dụng bộ ký tự lớn hơn Base64 hoặc Base32.",
+    "d2w4e": "Tương tự như các hệ thống chuyển đổi cơ sở khác, Base62 hoạt động bằng cách chuyển đổi byte đầu vào thành một số nguyên lớn, sau đó biểu thị nó dưới dạng kết hợp các ký tự từ bộ 62 ký tự của nó.",
+    "f1t2z": "Base62 được phát triển để cung cấp giải pháp thay thế ngắn hơn, an toàn cho URL cho Base64, đặc biệt đối với số nhận dạng duy nhất và URL ngắn.",
+    "g8h7s": "Base62 hoạt động như thế nào?",
+    "j4s6r": "Làm cách nào để mã hóa/giải mã bằng Base62 trong JavaScript?",
+    "k9em5e": "Điều này làm cho nó trở nên lý tưởng cho các tình huống yêu cầu mã định danh ngắn gọn, thân thiện với URL mà không làm mất đi khả năng đọc.",
+    "p9e1n": "Bạn có thể sử dụng các thư viện như 'base-x' hoặc 'base62' để mã hóa và giải mã Base62 trong JavaScript.",
+    "q7n3r": "Nó cũng tránh các ký tự mơ hồ như 'O' và '0', 'I' và 'l', có thể dẫn đến lỗi phiên âm của con người.",
+    "r6nq2v": "Ưu điểm chính của Base62 là tăng hiệu quả không gian do bộ ký tự lớn hơn Base32 nhưng không có ký tự không phải chữ và số trong Base64.",
+    "u3i8b": "Ưu điểm của việc sử dụng Base62 so với Base64 hoặc Base32 là gì?",
+    "v3k5r": "Bộ ký tự bao gồm tất cả các chữ cái viết hoa và viết thường (A-Z, a-z) và các chữ số (0-9), cung cấp cách trình bày nhỏ gọn hơn so với Base64 hoặc Base32.",
+    "w2x9qk": "Mặc dù bản thân Base62 không có biến thể quan trọng nhưng một số cách triển khai có thể hơi khác nhau trong cách lựa chọn bộ ký tự, chẳng hạn như loại trừ '+' hoặc '/' thường được sử dụng trong Base64.",
+    "x7n1m": "Base62 là sơ đồ mã hóa biểu diễn dữ liệu nhị phân dưới dạng một chuỗi gồm 62 ký tự chữ và số.",
+    "y3m9k": "Tại sao Base62 được tạo ra?",
+    "z2m7t": "Cách sử dụng ví dụ: `const base62 = require('base62'); const được mã hóa = base62.encode('your-data'); const được giải mã = ​​base62.decode(được mã hóa);`",
+    "z4t9b": "Base62 là gì?",
+    "z7t1p": "Có biến thể cụ thể nào của Base62 không?"
+}

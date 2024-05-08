@@ -1,0 +1,32 @@
+根据您的要求，以下是提炼出的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "VarInt Encode": "123",
+    "Encodes a Vn integer as a VarInt. VarInt is an efficient way of encoding variable length integers and is commonly used with Protobuf.": "123"
+  }
+}
+```
+
+根据我的理解，以下是对这些自然文本的中文翻译：
+
+```json
+{
+  "i18n": {
+    "VarInt Encode": "VarInt编码",
+    "Encodes a Vn integer as a VarInt. VarInt is an efficient way of encoding variable length integers and is commonly used with Protobuf.": "将Vn整数编码为VarInt。VarInt是一种高效的编码可变长度整数的方法，常与Protobuf一起使用。"
+  }
+}
+```
+
+最终输出如下：
+
+```json
+{
+  "i18n": {
+    "VarInt Encode": "VarInt编码",
+    "Encodes a Vn integer as a VarInt. VarInt is an efficient way of encoding variable length integers and is commonly used with Protobuf.": "将Vn整数编码为VarInt。VarInt是一种高效的编码可变长度整数的方法，常与Protobuf一起使用。"
+  }
+}
+```

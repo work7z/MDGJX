@@ -1,0 +1,36 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [dev]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install pnpm and dependencies
+        run: |
+          cd modules/web2
+          npm i -g pnpm
+          pnpm install --no-frozen-lockfile
+          cd ../..
+          cd modules/desktop2
+          npm i -S -D --force
+          cd ../..
+          cd modules/server2
+          npm i -S -D --force
+          cd ../..
+          cd modules/bootstrap
+          npm i -S -D --force

@@ -1,0 +1,16 @@
+{
+    "CSSNano": "cssnano - GitHub",
+    "HTMLMinifier": "HTMLMinifier - GitHub 上的",
+    "MDN-Minification": "MDN Web 文件 - 縮小",
+    "Minify-Basics-001": "縮小程式碼或檔案的含義是什麼？",
+    "Minify-CLI-Usage-009": "大多數這些工具都具有命令列介面 (CLI) 和 API，可讓開發人員在開發和部署期間自動執行縮小程序。",
+    "Minify-Def-002": "縮小是透過刪除不必要的字元（例如空格、註解和換行符）來減小程式碼（HTML、CSS、JavaScript 等）大小而不影響其功能的過程。",
+    "Minify-Example-007k": "例如，縮小後，{0} 可能會變成 {1}。",
+    "Minify-How-Works-004": "程式碼精簡是如何運作的？",
+    "Minify-Process-005": "壓縮器使用演算法來分析原始程式碼的結構，消除多餘的元素，並盡可能縮短變數名稱。這會導致檔案大小更小，同時保持程式碼的原始行為。",
+    "Minify-Purpose-003": "縮小的主要目的是透過減少伺服器和客戶端之間需要傳輸的資料量來提高網站效能並減少頁面載入時間。",
+    "Minify-Tools-007": "有哪些流行的壓縮程式碼工具？",
+    "Minify-Tools-List-008": "用於縮小程式碼的流行工具包括 JavaScript 的 UglifyJS、UglifyJS 的演變版 Terser、用於 HTML 的 HTMLMinifier 和用於 CSS 的 CSSNano。這些工具通常可以使用 Gulp 或 Webpack 等任務運行程式整合到建置過程中。",
+    "Terser": "Terser-GitHub",
+    "UglifyJS": "UglifyJS - GitHub"
+}

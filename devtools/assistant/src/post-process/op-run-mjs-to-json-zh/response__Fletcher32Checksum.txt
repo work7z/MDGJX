@@ -1,0 +1,39 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤，以及翻译成中文的例子：
+
+1. 提炼文本到JSON对象`i18n`中，并赋值为123：
+
+```json
+{
+  "i18n": {
+    "The Fletcher checksum is an algorithm for computing a position-dependent checksum...": 123,
+    "The objective of the Fletcher checksum was to provide error-detection properties...": 123,
+    "Fletcher-32 Checksum": 123
+  }
+}
+```
+
+2. 根据代码的实际功能，将上述JSON中的key翻译为中文，并替换value值123：
+
+```json
+{
+  "i18n": {
+    "The Fletcher checksum is an algorithm for computing a position-dependent checksum...": "弗莱彻校验是一种用于计算位置相关校验和的算法...",
+    "The objective of the Fletcher checksum was to provide error-detection properties...": "弗莱彻校验的目标是提供接近循环冗余校验的错误检测属性...",
+    "Fletcher-32 Checksum": "弗莱彻-32校验和"
+  }
+}
+```
+
+3. 根据示例1，输出最终的JSON结果：
+
+```json
+{
+  "i18n": {
+    "Fletcher-32 Checksum": "弗莱彻-32校验和",
+    "The Fletcher checksum is an algorithm for computing a position-dependent checksum devised by John Gould Fletcher at Lawrence Livermore Labs in the late 1970s.<br><br>The objective of the Fletcher checksum was to provide error-detection properties approaching those of a cyclic redundancy check but with the lower computational effort associated with summation techniques.": "弗莱彻校验是一种由约翰·古尔德·弗莱彻在20世纪70年代后期于劳伦斯利弗莫尔实验室设计的，用于计算位置相关校验和的算法。<br><br>弗莱彻校验的目标是提供接近循环冗余校验的错误检测属性，但计算工作量要低，与求和技巧相关。",
+    "The objective of the Fletcher checksum was to provide error-detection properties approaching those of a cyclic redundancy check but with the lower computational effort associated with summation techniques.": "弗莱彻校验的目标是提供接近循环冗余校验的错误检测属性，同时具有与求和技术相关的较低计算工作量。"
+  }
+}
+```
+
+请注意，由于JSON格式不支持HTML标签（如`<br>`），如果需要保留格式化，可能需要在实际的应用程序中处理这些标签。在这里，我保留了原始文本中的HTML换行标签，但实际使用时可能需要移除或替换它们。

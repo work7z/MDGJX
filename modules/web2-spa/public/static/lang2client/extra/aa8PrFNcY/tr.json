@@ -1,0 +1,16 @@
+{
+    "CSSNano": "cssnano - GitHub",
+    "HTMLMinifier": "HTMLMinifier - GitHub",
+    "MDN-Minification": "MDN Web Belgeleri - Küçültme",
+    "Minify-Basics-001": "Kodu veya dosyaları küçültmenin anlamı nedir?",
+    "Minify-CLI-Usage-009": "Bu araçların çoğu, geliştiricilerin geliştirme ve dağıtım sırasında küçültme sürecini otomatikleştirmesine olanak tanıyan hem komut satırı arayüzlerine (CLI) hem de API'lere sahiptir.",
+    "Minify-Def-002": "Küçültme, kodun (HTML, CSS, JavaScript vb.) boyutunun, işlevselliğini etkilemeden boşluk, yorum, satır sonu gibi gereksiz karakterleri kaldırarak küçültme işlemidir.",
+    "Minify-Example-007k": "Örneğin, {0}, küçültme sonrasında {1} haline gelebilir.",
+    "Minify-How-Works-004": "Kod küçültme nasıl çalışır?",
+    "Minify-Process-005": "Küçültücüler, kaynak kodunun yapısını analiz etmek, gereksiz öğeleri ortadan kaldırmak ve mümkün olduğunda değişken adlarını kısaltmak için algoritmalar kullanır. Bu, kodun orijinal davranışını korurken dosya boyutunun daha küçük olmasına neden olur.",
+    "Minify-Purpose-003": "Küçültme işleminin temel amacı, sunucu ile istemci arasında aktarılması gereken veri miktarını azaltarak web sitesi performansını artırmak ve sayfa yükleme sürelerini azaltmaktır.",
+    "Minify-Tools-007": "Kodu küçültmek için bazı popüler araçlar nelerdir?",
+    "Minify-Tools-List-008": "Kodu küçültmeye yönelik popüler araçlar arasında JavaScript için UglifyJS, UglifyJS'nin gelişmiş hali olan Terser, HTML için HTMLMinifier ve CSS için CSSNano yer alır. Bu araçlar genellikle Gulp veya Webpack gibi görev çalıştırıcıları kullanılarak oluşturma süreçlerine entegre edilebilir.",
+    "Terser": "Terser - GitHub",
+    "UglifyJS": "UglifyJS - GitHub"
+}

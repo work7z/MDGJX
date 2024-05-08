@@ -1,0 +1,25 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的示例：
+
+```json
+{
+  "i18n": {
+    "Advanced Encryption Standard (AES) is a U.S. Federal Information Processing Standard (FIPS). It was selected after a 5-year process where 15 competing designs were evaluated.": 1,
+    "Key: The following algorithms will be used based on the size of the key:<ul><li>16 bytes = AES-128</li><li>24 bytes = AES-192</li><li>32 bytes = AES-256</li></ul>": 1,
+    "IV: The Initialization Vector should be 16 bytes long. If not entered, it will default to 16 null bytes.": 1,
+    "Padding: In CBC and ECB mode, PKCS#7 padding will be used as a default.": 1,
+    "GCM Tag: This field is ignored unless 'GCM' mode is used.": 1,
+    "Invalid key length: ${key.length} bytes\n\nThe following algorithms will be used based on the size of the key:\n  16 bytes = AES-128\n  24 bytes = AES-192\n  32 bytes = AES-256": 1,
+    "Unable to decrypt input with these parameters.": 1
+  },
+  "extra": {
+    "exampleInput": "<>",
+    "exampleOutput": "<>",
+    "editor": {
+      "input": "typescript",
+      "output": "typescript"
+    }
+  }
+}
+```
+
+在这个JSON对象中，`i18n`字段包含了所有找到的自然文本，并且每个文本的值设置为1。`extra`字段中的`editor.input`和`editor.output`根据代码的文件扩展名设置为`typescript`。示例输入和输出因为代码中没有提供具体的示例，所以使用了`<>`来代替。

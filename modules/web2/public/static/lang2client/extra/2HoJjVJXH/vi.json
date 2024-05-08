@@ -1,0 +1,23 @@
+{
+    "c1p3b": "Sau khi được tích hợp, hãy sao chép mẫu được cung cấp vào chương trình C++ của bạn và thay thế trình giữ chỗ bằng giá trị được mã hóa thực tế trước khi chạy chương trình.",
+    "c6p4n": "Sau khi cài đặt thư viện, hãy sao chép mẫu được cung cấp vào tập lệnh Python của bạn và chạy nó. Thư viện cung cấp các hàm dựng sẵn để chuyển đổi giữa các byte và chuỗi được mã hóa Base45.",
+    "d2w6e": "Sao chép/tải xuống kho lưu trữ và đưa tệp tiêu đề được cung cấp vào dự án của bạn. Biên dịch và liên kết với các tệp nguồn theo tài liệu của dự án.",
+    "d8w1b": "Bạn có thể thực hiện việc này bằng pip bằng cách chạy `pip install base45` hoặc `python -m pip install base45`.",
+    "f7t1z": "Thêm thư viện vào dự án Xcode của bạn theo cách thủ công hoặc thông qua trình quản lý gói như Trình quản lý gói Swift (SPM).",
+    "f9t2z": "Thêm phần sau vào tệp pom.xml của bạn: `<dependency> <groupId>org.iso</groupId> <artifactId>iso-base45</artifactId> <version>...</version> </dependency>` trong đó phiên bản là phiên bản mới nhất.",
+    "g4h7s": "Đối với C++, bạn có thể sử dụng thư viện 'base45-cpp' có sẵn dưới dạng kho lưu trữ GitHub.",
+    "j8s6r": "Đối với Kotlin, bạn có thể sử dụng thư viện 'barcode-core' có chức năng Base45.",
+    "j9s5r": "Đối với C#, bạn có thể sử dụng thư viện 'Base45' có sẵn trên NuGet.",
+    "p5e9n": "Thêm thư viện làm phần phụ thuộc trong tập lệnh bản dựng Gradle của bạn. Ví dụ: trong tệp build.gradle cấp ứng dụng, hãy thêm `implementation 'com.bottlerocketstudios:barcode-core:...'` với số phiên bản mới nhất.",
+    "p6e3n": "Để cài đặt nó, hãy chạy `Install-Package Base45` trong Bảng điều khiển Trình quản lý gói hoặc thêm phần phụ thuộc thông qua Trình quản lý gói NuGet.",
+    "q2n9r": "Sau khi thêm, hãy sao chép mẫu được cung cấp vào tệp Swift. Lưu ý rằng trong ví dụ này, chúng tôi đang sử dụng một kịch bản giả định trong đó bạn có biểu diễn base64 của chuỗi Base45; thay thế nó bằng giá trị được mã hóa thực tế trước khi chạy mã.",
+    "q6n1r": "Thư viện cung cấp các lớp bộ mã hóa và bộ giải mã xử lý chuyển đổi Base45. Sau khi phần phụ thuộc được thêm vào, hãy sao chép mã mẫu vào một lớp Java và thực thi nó.",
+    "u9g6t": "Để chạy mã này, bạn cần cài đặt gói '@digitalbazaar/base45'.",
+    "v5k3r": "Thư viện này cung cấp một API đơn giản để mã hóa và giải mã Base45 trong các ứng dụng Node.js. Sau khi cài đặt, sao chép mẫu được cung cấp vào tập lệnh của bạn và thực thi nó bằng trình thông dịch Node.js.",
+    "x2c5e": "Để sử dụng Base45 trong Python, bạn cần cài đặt thư viện 'base45'.",
+    "y3m7k": "Đối với Java, hãy sử dụng thư viện 'iso-base45' có thể được đưa vào dự án của bạn dưới dạng phụ thuộc Maven.",
+    "y9m3k": "Đối với Swift, bạn có thể sử dụng thư viện “Base45” có sẵn trên GitHub.",
+    "z3m1t": "Sau khi thêm phần phụ thuộc và đồng bộ hóa dự án, hãy sao chép mẫu được cung cấp vào lớp Kotlin, thay thế phần giữ chỗ bằng giá trị được mã hóa thực tế trước khi chạy mã.",
+    "z7n1m": "Sử dụng npm hoặc sợi để cài đặt nó bằng cách chạy `npm install @digitalbazaar/base45` hoặc `yarn add @digitalbazaar/base45`.",
+    "z8qm2t": "Thư viện cung cấp các lớp mã hóa và giải mã cho các hoạt động Base45. Sao chép mã mẫu vào ứng dụng bảng điều khiển C# và thực thi nó sau khi cài đặt gói."
+}

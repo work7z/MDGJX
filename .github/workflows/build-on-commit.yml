@@ -1,0 +1,105 @@
+name: Build on Commit
+
+on:
+  push:
+    branches: [dev]
+    tags-ignore: ["*"]
+  pull_request:
+    branches: [dev]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools
+      OVERRIDED_VERSION: v1.9.9-beta
+      DOCKERUSER: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERTOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.21
+
+      - name: Run build script
+        run: |
+          npm i -g typescript
+          cd ./modules/web2
+          cd ../../
+          cd ./pipeline
+          chmod +x ./build-all.sh
+          ./build-all.sh "v1.9.9-beta"
+
+      - name: US Pre Release 1
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.US_APP_SSH_HOST }}
+          port: ${{ secrets.US_APP_SSH_PORT }}
+          username: ${{ secrets.US_APP_SSH_USERNAME }}
+          key: ${{ secrets.US_APP_SSH_KEY }}
+          script: |
+            echo 'Running some command'
+            ls -la 
+            mkdir -p /home/appuser/LafTools-pre-dist
+
+      - name: US Pre Release 2
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.US_APP_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: US Pre Release Chk 3
+        run: |
+          pkgFile=/home/runner/work/LafTools/LafTools/dkout.tmp.gz
+          if [ ! -f "$pkgFile" ]; then
+            echo "File $pkgFile does not exist."
+            exit 1
+          fi
+
+      - name: US Pre Release 3
+        run: |
+          sftp -o StrictHostKeyChecking=no -P ${{ secrets.US_APP_SSH_PORT }} ${{ secrets.US_APP_SSH_USERNAME }}@${{ secrets.US_APP_SSH_HOST }} <<EOF
+            put /home/runner/work/LafTools/LafTools/dkout.tmp.gz /home/appuser/LafTools-pre-dist/LafTools-v1.9.9-beta-dkout.tmp.gz
+          exit
+          EOF
+          sftp -o StrictHostKeyChecking=no -P ${{ secrets.US_APP_SSH_PORT }} ${{ secrets.US_APP_SSH_USERNAME }}@${{ secrets.US_APP_SSH_HOST }} <<EOF
+            put /home/runner/work/LafTools/LafTools/pipeline-server.zip /home/appuser/LafTools-pre-dist/pipeline-server-v1.9.9-beta.zip
+          exit
+          EOF
+          if [ $? -ne 0 ]; then
+            echo "Failed to upload files"
+            exit 1
+          fi
+          rm ~/.ssh/id_rsa -rf
+
+      - name: US Pre Release 4
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.US_APP_SSH_HOST }}
+          port: ${{ secrets.US_APP_SSH_PORT }}
+          username: ${{ secrets.US_APP_SSH_USERNAME }}
+          key: ${{ secrets.US_APP_SSH_KEY }}
+          script: |
+            echo 'unzip pipeline server'
+            unzip /home/appuser/LafTools-pre-dist/pipeline-server-v1.9.9-beta.zip -d /home/appuser/LafTools-pre-dist/pipeline-server-v1.9.9-beta &> /dev/null
+            chmod +x /home/appuser/LafTools-pre-dist/pipeline-server-v1.9.9-beta/home/runner/work/LafTools/LafTools/pipeline/server/run.sh
+            /home/appuser/LafTools-pre-dist/pipeline-server-v1.9.9-beta/home/runner/work/LafTools/LafTools/pipeline/server/run.sh v1.9.9-beta en_US 9000 LafTools-pre-dist laft-pre-inst US

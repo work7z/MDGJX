@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Depois de integrado, copie o modelo fornecido em seu programa C++ e substitua o espaço reservado pelo valor codificado real antes de executar o programa.",
+    "c6p4n": "Após a instalação, copie o modelo fornecido em seu script Python, substitua o espaço reservado na parte de decodificação pelos bytes reais codificados em Base62 (prefixados com 'b') e execute o script.",
+    "d2w6e": "Baixe o código-fonte e inclua o arquivo de cabeçalho base62.h em seu projeto. Compile/vincule os arquivos de origem de acordo com as instruções do projeto.",
+    "d8w1b": "Instale-o via pip executando `pip install python-base62` ou `pip3 install python-base62`.",
+    "f9t2z": "Adicione a dependência ao seu projeto Maven adicionando `<dependency> <groupId>com.warrenstrange</groupId> <artifactId>googleauth</artifactId> <version>...</version> </dependency>` onde a versão deve estar substituído pela versão mais recente.",
+    "g4h7s": "Para C++, você pode usar a biblioteca 'cpp-base62' que fornece funcionalidade Base62.",
+    "j9s5r": "Para C#, use a biblioteca 'WarrenStranger.Base62' para lidar com a codificação e decodificação Base62.",
+    "k3m2e": "Copie o modelo fornecido em um novo arquivo Go, substitua o espaço reservado pelo valor codificado real e execute o arquivo usando `go run yourfile.go`",
+    "p6e3n": "Instale o pacote via NuGet executando `Install-Package WarrenStranger.Base62` no Console do Gerenciador de Pacotes ou adicione-o por meio do Gerenciador de Pacotes NuGet.",
+    "q6n1r": "Após instalar a biblioteca, copie o modelo fornecido em uma classe Java e substitua o espaço reservado pelo valor codificado real antes de executar o código. Observe que esta implementação usa arrays inteiros como uma etapa intermediária.",
+    "r4n6v": "Adicione a dependência ao seu projeto executando `go get github.com/xyproto/base62`. Isso fará o download e instalará o pacote.",
+    "u7i9b": "Para Go, utilize o pacote ‘base62’ disponível no GitHub.",
+    "u9g6t": "Para executar este código, você precisa instalar o pacote 'base62' que fornece recursos de codificação e decodificação Base62.",
+    "v5k3r": "Depois de instalado, substitua o espaço reservado na seção de decodificação pelo valor real codificado em Base62 e execute o script. A biblioteca lida com a conversão entre buffers e strings Base62 para você.",
+    "x2c5e": "Para Python, use a biblioteca 'base62' para lidar com a codificação e decodificação Base62.",
+    "y3m7k": "Para Java, utilize a classe Base62Converter da biblioteca 'google-authenticator'.",
+    "z7n1m": "Você pode instalá-lo usando npm executando `npm install base62` ou `yarn add base62`.",
+    "z8qqm2t": "Após a instalação, copie o modelo fornecido em um aplicativo de console C# e substitua o espaço reservado pelo valor codificado real antes de executar o programa."
+}

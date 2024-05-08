@@ -1,0 +1,23 @@
+{
+    "a4r9t": "Base45 peut-il décoder n'importe quelle chaîne codée en Base45, quelle que soit son origine ?",
+    "c2vw9k": "Bien que Base45 ne soit pas aussi largement implémenté que Base64 ou Base32, des bibliothèques open source existent pour plusieurs langages.",
+    "c9q7w": "Pourquoi Base45 a-t-il été créé ?",
+    "d6y9k": "S'il n'y a pas assez d'octets pour remplir le dernier groupe, le remplissage n'est pas utilisé ; au lieu de cela, les bits restants sont traités et mappés sur leur(s) caractère(s) correspondant(s).",
+    "e8x2v": "Base45 fonctionne en divisant les données d'entrée en groupes de 5 octets chacun. Il convertit ensuite chaque groupe en nombre décimal et le mappe à un caractère correspondant parmi son jeu de 45 caractères.",
+    "f8n4m": "Sa compacité permet une utilisation plus efficace de l'espace dans les codes QR tout en conservant la lisibilité avec les lecteurs de codes-barres standards.",
+    "g1h5n": "Comment fonctionne Base45 ?",
+    "g6v3b": "Cependant, le jeu de caractères plus large de Base45 peut augmenter le risque d'erreurs lors du traitement de caractères non alphanumériques, ce qui pourrait poser problème dans certains environnements ou canaux de transmission.",
+    "i7w2m": "Existe-t-il des bibliothèques Base45 intégrées dans les langages de programmation populaires ?",
+    "j7k2t": "Pour encoder des données avec Base45, vous avez besoin d'une bibliothèque ou d'une fonction qui implémente l'algorithme Base45.",
+    "m9k1z": "Cependant, si les données décodées contiennent une sémantique d'application spécifique (par exemple, des formats de code QR spécifiques), un traitement supplémentaire peut être nécessaire après le décodage.",
+    "q5h8n": "Le principal avantage est la longueur de chaîne réduite pour la même quantité de données codées, ce qui le rend adapté aux applications où l'efficacité de l'espace est critique.",
+    "qv1p5n": "Par exemple, en Java, vous pouvez utiliser la bibliothèque « org.iso.base45 » pour encoder vos données.",
+    "r9a3t": "Base45 est un système de codage basé sur du texte qui code les données binaires en caractères ASCII.",
+    "s3e6r": "Comment encoder des données en Base45 ?",
+    "u2l8s": "Qu’est-ce que Base45 ?",
+    "x5z1b": "Base45 a été développé principalement pour l'utilisation du code QR dans le cadre des certificats numériques COVID.",
+    "y3b6n": "Oui, tant que la chaîne codée a été générée conformément à la spécification Base45, tout décodeur conforme devrait être capable de la décoder.",
+    "z1n5qr": "Les exemples incluent le package base45 npm pour JavaScript et dotnet-base45 pour .NET.",
+    "z5b7m": "Il utilise un alphabet plus grand (0-9, A-Z, a-z, -, ., $, /, +, %, et *) par rapport à Base64 ou Base32, ce qui donne des chaînes codées plus courtes pour les mêmes données d'entrée.",
+    "z8m2t": "Quels sont les avantages d’utiliser Base45 par rapport à Base64 ou Base32 ?"
+}

@@ -1,0 +1,41 @@
+根据您的要求，下面是将代码中的自然文本提取为 JSON 格式的步骤，以及翻译为中文的值：
+
+1. 提取的自然文本如下：
+
+   - "DES Decrypt"
+   - "DES is a previously dominant algorithm for encryption, and was published as an official U.S. Federal Information Processing Standard (FIPS). It is now considered to be insecure due to its small key size."
+   - "Key"
+   - "DES uses a key length of 8 bytes (64 bits). Triple DES uses a key length of 24 bytes (192 bits)."
+   - "IV"
+   - "The Initialization Vector should be 8 bytes long. If not entered, it will default to 8 null bytes."
+   - "Padding"
+   - "In CBC and ECB mode, PKCS#7 padding will be used as a default."
+   - "Invalid key length: ${key.length} bytes DES uses a key length of 8 bytes (64 bits). Triple DES uses a key length of 24 bytes (192 bits)."
+   - "Invalid IV length: ${iv.length} bytes DES uses an IV length of 8 bytes (64 bits). Make sure you have specified the type correctly (e.g. Hex vs UTF8)."
+   - "Unable to decrypt input with these parameters."
+
+2. 放入 JSON 对象 `i18n` 中，并给每个文本赋予初始值 "123"。
+
+3. 翻译这些文本为中文。
+
+下面是 JSON 格式的结果：
+
+```json
+{
+  "i18n": {
+    "DES Decrypt": "DES 解密",
+    "DES is a previously dominant algorithm for encryption...": "DES 是一种曾经占主导地位的加密算法，并被发布为美国联邦信息处理标准（FIPS）。由于其密钥尺寸小，现在被认为是不安全的。",
+    "Key": "密钥",
+    "DES uses a key length of 8 bytes (64 bits)...": "DES 使用8字节（64位）的密钥长度。三重DES使用24字节（192位）的密钥长度。",
+    "IV": "初始化向量",
+    "The Initialization Vector should be 8 bytes long...": "初始化向量应该是8字节长。如果没有输入，默认为8个空字节。",
+    "Padding": "填充",
+    "In CBC and ECB mode, PKCS#7 padding will be used as a default.": "在CBC和ECB模式下，默认使用PKCS#7填充。",
+    "Invalid key length: ${key.length} bytes...": "无效的密钥长度：${key.length} 字节。DES 使用8字节（64位）的密钥长度。三重DES使用24字节（192位）的密钥长度。",
+    "Invalid IV length: ${iv.length} bytes...": "无效的初始化向量长度：${iv.length} 字节。DES 使用8字节（64位）的初始化向量长度。请确保您正确指定了类型（例如，十六进制与UTF8）。",
+    "Unable to decrypt input with these parameters.": "使用这些参数无法解密输入。"
+  }
+}
+```
+
+请注意，错误消息中的 `${key.length}` 和 `${iv.length}` 是动态插入的变量，我保留了原始的占位符格式。在实际应用中，这些值会被实际的长度值替换。

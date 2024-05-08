@@ -1,0 +1,26 @@
+根据您的要求，我们需要从提供的代码中提取所有显示给用户的自然文本，并将这些文本作为JSON对象中的键，每个键的值设置为1。以下是提取后的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "Chi Square": 1,
+    "Calculates the Chi Square distribution of values.": 1,
+    "ChiSquare constructor": 1,
+    "ChiSquare operation": 1,
+    "run": 1,
+    "for (let i = 0; i < data.length; i++) {": 1,
+    "for (let i = 0; i < distArray.length; i++) {": 1
+  }
+}
+```
+
+以下是详细说明：
+
+1. 类名 `Chi Square` 和描述 `"Calculates the Chi Square distribution of values."` 被包含在内。
+2. 构造函数和类的注释 `ChiSquare constructor` 和 `ChiSquare operation` 被包含在内。
+3. `run` 函数的注释也被包含在内。
+4. 代码中的循环注释 `"for (let i = 0; i < data.length; i++) {"` 和 `"for (let i = 0; i < distArray.length; i++) {"` 也被包含在内，虽然通常这些不是显示给用户的文本，但根据您的要求，它们被添加到了i18n对象中。
+
+请注意，示例5中提供的语言类型列表和示例1中的注释并没有被包含在内，因为它们不符合您要求提取的自然文本的定义。
+
+如果代码中的某些注释或字符串不应该被包含，请进一步指明哪些是用户可见的文本。

@@ -1,0 +1,32 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，并给每个文本分配一个key，这里我们用数字`123`作为占位符value。
+3. 根据代码的实际功能，给出这些自然文本的中文翻译。
+4. 输出JSON结果。
+
+下面是根据以上步骤生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Bit shift left": "位左移",
+    "Shifts the bits in each byte towards the left by the specified amount.": "将每个字节的位向左移动指定的数量。",
+    "Amount": "数量"
+  }
+}
+```
+
+以下是按照您提供的【示例1】格式化后的结果：
+
+```json
+{
+  "i18n": {
+    "Bit shift left": "位左移",
+    "Shifts the bits in each byte towards the left by the specified amount.": "将每个字节的位向左移动指定的数量。",
+    "Amount": "数量"
+  }
+}
+```
+
+在这个JSON对象中，每个key对应代码中的一个自然文本字符串，并且我已经根据代码的功能，给出了恰当的中文翻译作为value值。

@@ -1,0 +1,21 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将这些文本作为JSON对象的键，每个键的值设为1。以下是按照您的指示提炼出的JSON格式数据：
+
+```json
+{
+  "BSON deserialise": 1,
+  "BSON is a computer data interchange format used mainly as a data storage and network transfer format in the MongoDB database. It is a binary form for representing simple data structures, associative arrays (called objects or documents in MongoDB), and various data types of specific interest to MongoDB. The name 'BSON' is based on the term JSON and stands for 'Binary JSON'. Input data should be in a raw bytes format.": 1
+}
+```
+
+这个JSON对象应该嵌入到您提供的`i18n`结构中，如下所示：
+
+```json
+{
+  "i18n": {
+    "BSON deserialise": 1,
+    "BSON is a computer data interchange format used mainly as a data storage and network transfer format in the MongoDB database. It is a binary form for representing simple data structures, associative arrays (called objects or documents in MongoDB), and various data types of specific interest to MongoDB. The name 'BSON' is based on the term JSON and stands for 'Binary JSON'. Input data should be in a raw bytes format.": 1
+  }
+}
+```
+
+在这个例子中，我们提取了类名和类的描述作为自然文本，并且忽略了其他非自然文本的内容，如字段名、链接、示例输入输出等。每个文本条目都映射到了数字1，这可以作为一个标记，表明这些文本需要被翻译或处理。

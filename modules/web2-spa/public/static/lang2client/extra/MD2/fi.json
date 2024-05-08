@@ -1,0 +1,23 @@
+{
+    "MD2-Advantages-011": "Mitä etuja MD2:n käytöstä on?",
+    "MD2-AlgorithmDetails-010": "MD2-algoritmin tiedot",
+    "MD2-Applications-018": "Mitkä sovellukset ovat käyttäneet tai käyttävät edelleen MD2:ta?",
+    "MD2-Breakdown-016": "MD2:sta on löydetty kryptografisia heikkouksia ajan myötä, ja vahvempia vaihtoehtoja, kuten SHA-256 ja SHA-3, suositellaan nyt kaikkiin suojattua hajautusjärjestelmää vaativiin sovelluksiin.",
+    "MD2-CollisionSecurity-015": "MD2:ta pidetään heikkona nykyaikaisia ​​salaushyökkäyksiä vastaan. Sen hash-koko (128 bittiä) on pieni nykystandardien mukaan, joten se on alttiina törmäyshyökkäyksille.",
+    "MD2-Def-002": "MD2 (Message-Digest Algorithm 2) on Ronald Rivestin vuonna 1989 suunnittelema kryptografinen hash-funktio. Se tuottaa 128-bittisen hajautusarvon mille tahansa syötetylle viestille.",
+    "MD2-DigitalSignature-Risks-021": "MD2:n käytön riskit digitaalisiin allekirjoituksiin",
+    "MD2-Disadvantages-014": "Mitkä ovat MD2:n haitat ja turvallisuusongelmat?",
+    "MD2-FAQ-001": "Mikä on MD2?",
+    "MD2-HistoricalUse-020": "Historiallisesti MD2:ta on käytetty tiedostojen eheyden tarkistuksissa ja ohjelmistopäivityksissä, vaikka nämä sovellukset ovat suurelta osin siirtyneet turvallisempiin hash-toimintoihin, kuten SHA-256 ja SHA-512.)",
+    "MD2-History-004": "Miten MD2 kehitettiin ja mikä on sen historia?",
+    "MD2-Implementation-013": "Se on otettu käyttöön ja standardoitu laajasti eri alustoilla ja kielillä, mikä tarkoittaa, että MD2:n integrointi olemassa oleviin järjestelmiin voi olla suhteellisen yksinkertaista.",
+    "MD2-InsecurityExamples-017": "Esimerkkejä MD2-tietoturvahäiriöistä",
+    "MD2-Operation-007": "Kuinka MD2-toiminto toimii?",
+    "MD2-Origin-005": "MD2 luotiin alun perin parannukseksi MD1:een verrattuna, ja se korjaa joitain aiemmassa algoritmissa havaittuja heikkouksia. Se saavutti suosion sen suhteellisen yksinkertaisuuden ja nopeuden ansiosta.",
+    "MD2-PKI-019": "MD2:ta käytettiin aikoinaan julkisen avaimen infrastruktuurissa (PKI) digitaalisiin allekirjoituksiin, mutta se on sittemmin poistettu käytöstä, koska se on alttiina hyökkäyksille. Useimmat järjestelmät eivät enää luota MD2:lla allekirjoitettuihin varmenteisiin.",
+    "MD2-Process-008": "MD2 toimii täyttämällä syöttöviestin 16 tavun kerrannaiseksi ja käsittelee sen sitten sarjan yksinomaisia ​​TAI-toimintoja, bittikiertoja ja lisäyksiä. Lopullinen tulos on 128-bittinen hash-arvo.",
+    "MD2-Purpose-003": "MD2:n tarkoituksena on varmistaa tietojen eheys luomalla ainutlaatuinen digitaalinen sormenjälki, jonka avulla voidaan varmistaa tietojen alkuperäisyys ja aitous.",
+    "MD2-Rounds-009": "Algoritmi käyttää neljän kierroksen prosessia, jossa tietyt toiminnot suoritetaan 128-bittiselle tilamuuttujalle. Jokainen kierros ottaa lohkoja täytetystä viestistä ja päivittää tilaa, kunnes koko viesti on käsitelty.",
+    "MD2-Speed-012": "MD2:ta pidettiin aikansa nopeana, ja sen suorituskyky on edelleen hyväksyttävä joissakin skenaarioissa, mikä tekee siitä sopivan ympäristöihin, joissa laskentaresurssit ovat rajalliset.",
+    "MD2-Successors-006": "Se on kuitenkin korvattu vahvemmilla algoritmeilla, kuten MD5 ja SHA-1, jotka ovat osa samaa hajautustoimintojen perhettä, mutta tarjoavat parannettuja suojausominaisuuksia."
+}

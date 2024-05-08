@@ -1,0 +1,44 @@
+{
+  "name": "bootstrap",
+  "version": "1.0.0",
+  "description": "Bootstrap is an enhancement that we provide a script to launch any version of LafTools module dynamically.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon",
+    "test": "npx vitest run",
+    "build": "swc src -d dist --copy-files"
+  },
+  "dependencies": {
+    "decompress": "^4.2.1",
+    "decompress-targz": "^4.1.1",
+    "extract-zip": "^2.0.1",
+    "lodash": "^4.17.21",
+    "sha256-file": "^1.0.0",
+    "shelljs": "^0.8.5",
+    "winston": "^3.8.1",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.0",
+    "@types/node": "20.8.3",
+    "@types/shelljs": "^0.8.15",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.220",
+    "@vitejs/plugin-react": "^4.2.1",
+    "ts-jest": "^28.0.7",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.7.0",
+    "tsconfig-paths": "^4.0.0",
+    "tslib": "^2.6.2",
+    "typescript": "^4.7.4",
+    "vite": "^5.1.6",
+    "vite-bundle-visualizer": "^1.0.0",
+    "vite-plugin-top-level-await": "^1.4.1",
+    "vite-plugin-wasm": "^3.3.0",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.2.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0-only"
+}

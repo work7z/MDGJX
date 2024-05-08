@@ -1,0 +1,28 @@
+根据您的要求，以下是自然文本的提取、JSON格式的组织和中文翻译：
+
+```json
+{
+  "i18n": {
+    "Extracts Uniform Resource Locators (URLs) from the input. The protocol (http, ftp etc.) is required otherwise there will be far too many false positives.": "从输入中提取统一资源定位符（URLs）。需要协议（如http、ftp等），否则会有太多假阳性。",
+    "Display total": "显示总数",
+    "Sort": "排序",
+    "Unique": "唯一"
+  }
+}
+```
+
+以下是步骤说明：
+
+1. **自然文本提取**：从代码中，我找到了以下自然文本，并将其作为JSON对象中的键：
+   - "Extracts Uniform Resource Locators (URLs) from the input. The protocol (http, ftp etc.) is required otherwise there will be far too many false positives."
+   - "Display total"
+   - "Sort"
+   - "Unique"
+
+2. **初始化JSON对象**：将这些文本放入名为`i18n`的对象中，键是原始文本，值设置为123。
+
+3. **翻译文本**：根据代码的实际功能，我将这些文本翻译成了中文，并替换了值123。
+
+4. **输出结果**：按照提供的示例1，输出了包含翻译的JSON对象。
+
+请注意，示例中的值“123”被替换为相应的中文翻译，以反映每个文本的含义。

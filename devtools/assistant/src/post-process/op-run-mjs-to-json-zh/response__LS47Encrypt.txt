@@ -1,0 +1,17 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式呈现，其中包含了中文字符串作为值的翻译：
+
+```json
+{
+  "i18n": {
+    "LS47 Encrypt": "LS47加密",
+    "This is a slight improvement of the ElsieFour cipher as described by Alan Kaminsky. We use 7x7 characters instead of original (barely fitting) 6x6, to be able to encrypt some structured information. We also describe a simple key-expansion algorithm, because remembering passwords is popular. Similar security considerations as with ElsieFour hold.": "这是对Alan Kaminsky描述的ElsieFour密码的轻微改进。我们使用7x7字符代替原始的（几乎不够用）6x6，以能够加密一些结构化信息。我们还描述了一个简单的密钥扩展算法，因为记住密码很常见。与ElsieFour类似的安全考虑也适用。",
+    "The LS47 alphabet consists of following characters:": "LS47字母表包括以下字符：",
+    "A LS47 key is a permutation of the alphabet that is then represented in a 7x7 grid used for the encryption or decryption.": "LS47密钥是字母表的排列，然后在一个7x7的网格中表示，用于加密或解密。",
+    "Password": "密码",
+    "Padding": "填充",
+    "Signature": "签名"
+  }
+}
+```
+
+在上述JSON对象中，每个键（key）都是原始代码中的自然文本，而每个值（value）是相应的中文翻译。请注意，我保留了代码中出现的特定术语，如“LS47”和“ElsieFour”，因为它们可能是特定算法或方法的名字，不宜翻译。如果需要将这些术语也翻译成中文，请根据上下文进一步指定。

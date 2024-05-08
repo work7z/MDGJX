@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Kopieren Sie nach der Integration die bereitgestellte Vorlage in Ihr C++-Programm und ersetzen Sie den Platzhalter durch den tatsächlich codierten Wert, bevor Sie das Programm ausführen.",
+    "c6p4n": "Kopieren Sie nach der Installation die bereitgestellte Vorlage in Ihr Python-Skript, ersetzen Sie den Platzhalter im Dekodierungsteil durch die tatsächlichen Base62-codierten Bytes (mit dem Präfix „b“) und führen Sie dann das Skript aus.",
+    "d2w6e": "Laden Sie den Quellcode herunter und fügen Sie die Header-Datei base62.h in Ihr Projekt ein. Kompilieren/verknüpfen Sie die Quelldateien gemäß den Anweisungen des Projekts.",
+    "d8w1b": "Installieren Sie es über pip, indem Sie „pip install python-base62“ oder „pip3 install python-base62“ ausführen.",
+    "f9t2z": "Fügen Sie die Abhängigkeit zu Ihrem Maven-Projekt hinzu, indem Sie „<dependency> <groupId>com.warrenstrange</groupId> <artifactId>googleauth</artifactId> <version>...</version> </dependency>“ an der Stelle hinzufügen, an der sich „version“ befinden sollte durch die neueste Version ersetzt.",
+    "g4h7s": "Für C++ können Sie die Bibliothek „cpp-base62“ verwenden, die Base62-Funktionalität bereitstellt.",
+    "j9s5r": "Verwenden Sie für C# die Bibliothek „WarrenStranger.Base62“, um die Base62-Kodierung und -Dekodierung durchzuführen.",
+    "k3m2e": "Kopieren Sie die bereitgestellte Vorlage in eine neue Go-Datei, ersetzen Sie den Platzhalter durch den tatsächlich codierten Wert und führen Sie die Datei dann mit „go run yourfile.go“ aus",
+    "p6e3n": "Installieren Sie das Paket über NuGet, indem Sie „Install-Package WarrenStranger.Base62“ in der Paket-Manager-Konsole ausführen oder es über den NuGet-Paket-Manager hinzufügen.",
+    "q6n1r": "Kopieren Sie nach der Installation der Bibliothek die bereitgestellte Vorlage in eine Java-Klasse und ersetzen Sie den Platzhalter durch den tatsächlich codierten Wert, bevor Sie den Code ausführen. Beachten Sie, dass diese Implementierung Integer-Arrays als Zwischenschritt verwendet.",
+    "r4n6v": "Fügen Sie die Abhängigkeit zu Ihrem Projekt hinzu, indem Sie „go get github.com/xyproto/base62“ ausführen. Dadurch wird das Paket heruntergeladen und installiert.",
+    "u7i9b": "Verwenden Sie für Go das auf GitHub verfügbare Paket „base62“.",
+    "u9g6t": "Um diesen Code auszuführen, müssen Sie das Paket „base62“ installieren, das Base62-Codierungs- und Decodierungsfunktionen bereitstellt.",
+    "v5k3r": "Ersetzen Sie nach der Installation den Platzhalter im Dekodierabschnitt durch den tatsächlichen Base62-kodierten Wert und führen Sie das Skript aus. Die Bibliothek übernimmt für Sie die Konvertierung zwischen Puffern und Base62-Strings.",
+    "x2c5e": "Verwenden Sie für Python die Bibliothek „base62“, um die Base62-Kodierung und -Dekodierung durchzuführen.",
+    "y3m7k": "Verwenden Sie für Java die Base62Converter-Klasse der Bibliothek „google-authenticator“.",
+    "z7n1m": "Sie können es mit npm installieren, indem Sie „npm install base62“ oder „yarn add base62“ ausführen.",
+    "z8qqm2t": "Kopieren Sie nach der Installation die bereitgestellte Vorlage in eine C#-Konsolenanwendung und ersetzen Sie den Platzhalter durch den tatsächlich codierten Wert, bevor Sie das Programm ausführen."
+}

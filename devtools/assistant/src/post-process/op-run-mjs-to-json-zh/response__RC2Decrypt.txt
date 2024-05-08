@@ -1,0 +1,37 @@
+根据您的要求，以下是提炼后的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "RC2 Decrypt": "123",
+    "RC2 (also known as ARC2) is a symmetric-key block cipher designed by Ron Rivest in 1987. 'RC' stands for 'Rivest Cipher'.": "123",
+    "<b>Key:</b> RC2 uses a variable size key.": "123",
+    "<b>IV:</b> To run the cipher in CBC mode, the Initialization Vector should be 8 bytes long. If the IV is left blank, the cipher will run in ECB mode.": "123",
+    "<b>Padding:</b> In both CBC and ECB mode, PKCS#7 padding will be used.": "123",
+    "Key": "123",
+    "IV": "123",
+    "Input": "123",
+    "Output": "123"
+  }
+}
+```
+
+以下是翻译成中文的版本：
+
+```json
+{
+  "i18n": {
+    "RC2 Decrypt": "RC2解密",
+    "RC2 (also known as ARC2) is a symmetric-key block cipher designed by Ron Rivest in 1987. 'RC' stands for 'Rivest Cipher'.": "RC2（也称为ARC2）是1987年由Ron Rivest设计的对称密钥分组密码。'RC'代表'Rivest密码'。",
+    "<b>密钥：</b> RC2使用可变长度的密钥。": "<b>密钥：</b> RC2使用可变长度的密钥。",
+    "<b>初始化向量（IV）：</b> 要在CBC模式下运行密码，初始化向量应该是8个字节长。如果IV留空，密码将在ECB模式下运行。": "<b>初始化向量（IV）：</b> 要在CBC模式下运行密码，初始化向量应该是8字节。如果IV为空，则密码将在ECB模式下运行。",
+    "<b>填充：</b> 在CBC和ECB模式下，都将使用PKCS#7填充。": "<b>填充：</b> 在CBC和ECB模式下，都将使用PKCS#7填充。",
+    "Key": "密钥",
+    "IV": "初始化向量",
+    "Input": "输入",
+    "Output": "输出"
+  }
+}
+```
+
+请注意，我保留了HTML标签（如`<b>`）来指示文本格式，因为它们可能用于界面中的格式化。如果不需要，可以将其删除。

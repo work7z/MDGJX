@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "学习编程可以为各个行业提供职业机会，让您能够开发创新的解决方案、自动化任务并理解复杂的系统。",
+    "CP-Advantages-013": "学习计算机编程有什么好处？",
+    "CP-Basics-001": "什么是计算机编程？",
+    "CP-Def-002": "计算机编程涉及用编程语言编写指令或代码来指导计算机如何执行特定任务。",
+    "CP-History-004": "计算机编程的历史是怎样的？",
+    "CP-History-Origin-005": "第一个可编程机器可以追溯到 19 世纪 Ada Lovelace 对 Charles Babbage 分析机的研究。然而，随着 20 世纪 40 年代第一台通用电子计算机 ENIAC 的发明，现代编程开始腾飞。",
+    "CP-Lang-Choice-009": "语言的选择取决于项目要求、社区支持、学习难易程度和性能需求等因素。",
+    "CP-Language-Evolution-006": "从那时起，编程语言从机器代码发展到汇编语言，然后发展到 FORTRAN、COBOL、C 等高级语言，现在发展到 Python、JavaScript 和 Rust 等现代语言。",
+    "CP-Languages-007": "有哪些流行的编程语言？",
+    "CP-Languages-List-008": "流行的编程语言包括 Java、Python、JavaScript、C++、C#、Swift、Go、PHP、Ruby 和 Kotlin。每个都有自己的优势和用例，例如用于数据科学的 Python、用于 Web 开发的 JavaScript 和用于系统编程的 C++。",
+    "CP-Process-010": "计算机编程的过程是怎样的？",
+    "CP-Process-Explanation-011": "编程通常涉及规划（定义问题和设计解决方案）、编码（用所选语言编写源代码）、测试（调试和验证功能）和维护（随着时间的推移更新和改进程序）。",
+    "CP-Purpose-003": "程序员创建算法、解决问题并构建可以自动化流程、操作数据以及与用户或其他系统交互的软件应用程序。",
+    "CP-SDLC-012": "这通常是在软件开发生命周期 (SDLC) 中构建的，其中包括需求分析、设计、部署和用户验收测试等附加阶段。",
+    "CP-Skillset-015": "它还可以提高逻辑思维、解决问题的能力以及对新技术的适应能力，使人在数字时代更加多才多艺。",
+    "HistOfProg-Wikipedia": "编程语言的历史 - 维基百科",
+    "SDLC-Wikipedia": "软件开发生命周期 - 维基百科",
+    "TIOBE-Index": "TIOBE 指数 - 软件质量公司"
+}

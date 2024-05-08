@@ -1,0 +1,11 @@
+{
+    "c6p4n": "No modelo fornecido, substitua o espaço reservado na parte de decodificação pelos bytes reais codificados em Base85 (prefixados com 'b') e execute o script.",
+    "d8w1b": "Nenhuma instalação adicional é necessária, pois faz parte da biblioteca padrão. Certifique-se de que sua versão do Python seja recente o suficiente para incluir esta funcionalidade.",
+    "f9t2z": "Adicione a dependência ao seu projeto Maven incluindo `<dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependency>` em seu arquivo pom.xml com o número da versão mais recente.",
+    "q6n1r": "Depois de instalar a biblioteca, copie o código do modelo em uma classe Java e substitua o espaço reservado pelo valor real codificado em Base85 antes de executar o código.",
+    "u9g6t": "Para JavaScript, você precisa instalar o pacote 'base85' para codificação e decodificação Base85.",
+    "v5k3r": "Depois de instalado, substitua o espaço reservado na seção de decodificação pela string real codificada em Base85 e execute o script. A biblioteca lida com a conversão entre buffers e strings Base85.",
+    "x2c5e": "Python possui um módulo 'base85' integrado que suporta codificação e decodificação Base85.",
+    "y3m7k": "Para Java, use a biblioteca 'commons-codec' que inclui suporte para codificação e decodificação Base85.",
+    "z7n1m": "Instale-o usando npm executando `npm install base85` ou `yarn add base85`."
+}

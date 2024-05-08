@@ -1,0 +1,23 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式的操作，并翻译成中文：
+
+```json
+{
+  "i18n": {
+    "Blowfish Encrypt": "Blowfish加密",
+    "Blowfish is a symmetric-key block cipher designed in 1993 by Bruce Schneier and included in a large number of cipher suites and encryption products. AES now receives more attention.": "Blowfish是一种对称密钥块密码，由Bruce Schneier于1993年设计，并被包含在大量的加密套件和加密产品中。现在AES受到了更多关注。",
+    "IV: The Initialization Vector should be 8 bytes long. If not entered, it will default to 8 null bytes.": "初始化向量（IV）应为8个字节长。如果没有输入，默认为8个空字节。",
+    "Invalid key length: ${key.length} bytes": "无效的密钥长度：${key.length}字节",
+    "Blowfish uses a key length of 8 bytes (64 bits).": "Blowfish使用的密钥长度为8字节（64位）。"
+  }
+}
+```
+
+在上述JSON对象中，我提取了所有显示给用户的自然文本，并为每条文本提供了中文翻译。以下是每个条目的解释：
+
+- "Blowfish Encrypt"：这是操作的名称，直接翻译为“Blowfish加密”。
+- 关于Blowfish的描述：这是对Blowfish密码的介绍，我将其翻译为“Blowfish是一种对称密钥块密码，由Bruce Schneier于1993年设计，并被包含在大量的加密套件和加密产品中。现在AES受到了更多关注。”
+- IV的说明：这是对初始化向量的解释，翻译为“初始化向量（IV）应为8个字节长。如果没有输入，默认为8个空字节。”
+- 错误信息：这是关于密钥长度错误的描述，保留了动态部分`${key.length}`，翻译为“无效的密钥长度：${key.length}字节”。
+- 密钥长度说明：这是关于Blowfish密钥长度的说明，翻译为“Blowfish使用的密钥长度为8字节（64位）。”
+
+请注意，错误信息中的`${key.length}`是一个动态的部分，它将在代码中替换为实际的密钥长度值，因此我在翻译中保留了它。

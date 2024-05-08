@@ -1,0 +1,716 @@
+[
+  {
+    "Label": [
+      "l3akoa",
+      "Amharic"
+    ],
+    "Value": "am"
+  },
+  {
+    "Label": [
+      "z79b1a",
+      "Arabic"
+    ],
+    "Value": "ar"
+  },
+  {
+    "Label": [
+      "t84q1z",
+      "Armenian"
+    ],
+    "Value": "hy"
+  },
+  {
+    "Label": [
+      "svqh06",
+      "Azerbaijani"
+    ],
+    "Value": "az"
+  },
+  {
+    "Label": [
+      "ssm80i",
+      "Basque"
+    ],
+    "Value": "eu"
+  },
+  {
+    "Label": [
+      "eu5mh0",
+      "Belarusian"
+    ],
+    "Value": "be"
+  },
+  {
+    "Label": [
+      "1507oa",
+      "Bengali"
+    ],
+    "Value": "bn"
+  },
+  {
+    "Label": [
+      "cjzqj9",
+      "Bosnian"
+    ],
+    "Value": "bs"
+  },
+  {
+    "Label": [
+      "ryhkqb",
+      "Bulgarian"
+    ],
+    "Value": "bg"
+  },
+  {
+    "Label": [
+      "eifoni",
+      "Catalan"
+    ],
+    "Value": "ca"
+  },
+  {
+    "Label": [
+      "zzcepr",
+      "Cebuano"
+    ],
+    "Value": "ceb"
+  },
+  {
+    "Label": [
+      "nrix6l",
+      "Chichewa"
+    ],
+    "Value": "ny"
+  },
+  {
+    "Label": [
+      "yc7diu",
+      "Chinese Simplified"
+    ],
+    "Value": "zh-cn"
+  },
+  {
+    "Label": [
+      "bhoji1",
+      "Chinese Traditional"
+    ],
+    "Value": "zh-tw"
+  },
+  {
+    "Label": [
+      "w6otqn",
+      "Corsican"
+    ],
+    "Value": "co"
+  },
+  {
+    "Label": [
+      "tn7duf",
+      "Croatian"
+    ],
+    "Value": "hr"
+  },
+  {
+    "Label": [
+      "k2ku5p",
+      "Czech"
+    ],
+    "Value": "cs"
+  },
+  {
+    "Label": [
+      "os8h6u",
+      "Danish"
+    ],
+    "Value": "da"
+  },
+  {
+    "Label": [
+      "kv4wag",
+      "Dutch"
+    ],
+    "Value": "nl"
+  },
+  {
+    "Label": [
+      "zpyd34",
+      "English"
+    ],
+    "Value": "en"
+  },
+  {
+    "Label": [
+      "htt1d2",
+      "Esperanto"
+    ],
+    "Value": "eo"
+  },
+  {
+    "Label": [
+      "euhy9v",
+      "Estonian"
+    ],
+    "Value": "et"
+  },
+  {
+    "Label": [
+      "b6sx9b",
+      "Filipino"
+    ],
+    "Value": "tl"
+  },
+  {
+    "Label": [
+      "vr93oi",
+      "Finnish"
+    ],
+    "Value": "fi"
+  },
+  {
+    "Label": [
+      "lkuulh",
+      "French"
+    ],
+    "Value": "fr"
+  },
+  {
+    "Label": [
+      "i27qmr",
+      "Frisian"
+    ],
+    "Value": "fy"
+  },
+  {
+    "Label": [
+      "7k56u3",
+      "Galician"
+    ],
+    "Value": "gl"
+  },
+  {
+    "Label": [
+      "441oja",
+      "Georgian"
+    ],
+    "Value": "ka"
+  },
+  {
+    "Label": [
+      "mnb19i",
+      "German"
+    ],
+    "Value": "de"
+  },
+  {
+    "Label": [
+      "mslw4o",
+      "Greek"
+    ],
+    "Value": "el"
+  },
+  {
+    "Label": [
+      "30eo2v",
+      "Gujarati"
+    ],
+    "Value": "gu"
+  },
+  {
+    "Label": [
+      "ppmz8e",
+      "Haitian Creole"
+    ],
+    "Value": "ht"
+  },
+  {
+    "Label": [
+      "1e3e5n",
+      "Hausa"
+    ],
+    "Value": "ha"
+  },
+  {
+    "Label": [
+      "97um9v",
+      "Hawaiian"
+    ],
+    "Value": "haw"
+  },
+  {
+    "Label": [
+      "s0vrf9",
+      "Hebrew"
+    ],
+    "Value": "iw"
+  },
+  {
+    "Label": [
+      "z0j2nf",
+      "Hindi"
+    ],
+    "Value": "hi"
+  },
+  {
+    "Label": [
+      "5v8jl7",
+      "Hmong"
+    ],
+    "Value": "hmn"
+  },
+  {
+    "Label": [
+      "4tqb4x",
+      "Hungarian"
+    ],
+    "Value": "hu"
+  },
+  {
+    "Label": [
+      "6j13s3",
+      "Icelandic"
+    ],
+    "Value": "is"
+  },
+  {
+    "Label": [
+      "2e4fb7",
+      "Igbo"
+    ],
+    "Value": "ig"
+  },
+  {
+    "Label": [
+      "it8ths",
+      "Indonesian"
+    ],
+    "Value": "id"
+  },
+  {
+    "Label": [
+      "ocxsw3",
+      "Irish"
+    ],
+    "Value": "ga"
+  },
+  {
+    "Label": [
+      "d5fmq2",
+      "Italian"
+    ],
+    "Value": "it"
+  },
+  {
+    "Label": [
+      "ulah0q",
+      "Japanese"
+    ],
+    "Value": "ja"
+  },
+  {
+    "Label": [
+      "tyhgpr",
+      "Javanese"
+    ],
+    "Value": "jw"
+  },
+  {
+    "Label": [
+      "01do0y",
+      "Kannada"
+    ],
+    "Value": "kn"
+  },
+  {
+    "Label": [
+      "dtjdt4",
+      "Kazakh"
+    ],
+    "Value": "kk"
+  },
+  {
+    "Label": [
+      "zkv375",
+      "Khmer"
+    ],
+    "Value": "km"
+  },
+  {
+    "Label": [
+      "jlxvpk",
+      "Korean"
+    ],
+    "Value": "ko"
+  },
+  {
+    "Label": [
+      "x5alzu",
+      "Kurdish (Kurmanji)"
+    ],
+    "Value": "ku"
+  },
+  {
+    "Label": [
+      "e5rycw",
+      "Kyrgyz"
+    ],
+    "Value": "ky"
+  },
+  {
+    "Label": [
+      "oqjbcj",
+      "Lao"
+    ],
+    "Value": "lo"
+  },
+  {
+    "Label": [
+      "20nmcv",
+      "Latin"
+    ],
+    "Value": "la"
+  },
+  {
+    "Label": [
+      "9gqo8x",
+      "Latvian"
+    ],
+    "Value": "lv"
+  },
+  {
+    "Label": [
+      "46bksi",
+      "Lithuanian"
+    ],
+    "Value": "lt"
+  },
+  {
+    "Label": [
+      "o8xyzu",
+      "Luxembourgish"
+    ],
+    "Value": "lb"
+  },
+  {
+    "Label": [
+      "hcnt1k",
+      "Macedonian"
+    ],
+    "Value": "mk"
+  },
+  {
+    "Label": [
+      "5rg5mt",
+      "Malagasy"
+    ],
+    "Value": "mg"
+  },
+  {
+    "Label": [
+      "ya0cwu",
+      "Malay"
+    ],
+    "Value": "ms"
+  },
+  {
+    "Label": [
+      "cmxzpg",
+      "Malayalam"
+    ],
+    "Value": "ml"
+  },
+  {
+    "Label": [
+      "wgkk6y",
+      "Maltese"
+    ],
+    "Value": "mt"
+  },
+  {
+    "Label": [
+      "f3ttw8",
+      "Maori"
+    ],
+    "Value": "mi"
+  },
+  {
+    "Label": [
+      "z2jzej",
+      "Marathi"
+    ],
+    "Value": "mr"
+  },
+  {
+    "Label": [
+      "myxedr",
+      "Mongolian"
+    ],
+    "Value": "mn"
+  },
+  {
+    "Label": [
+      "cxqhqa",
+      "Myanmar (Burmese)"
+    ],
+    "Value": "my"
+  },
+  {
+    "Label": [
+      "6ulj8i",
+      "Nepali"
+    ],
+    "Value": "ne"
+  },
+  {
+    "Label": [
+      "7g5w22",
+      "Norwegian"
+    ],
+    "Value": "no"
+  },
+  {
+    "Label": [
+      "2khdsv",
+      "Pashto"
+    ],
+    "Value": "ps"
+  },
+  {
+    "Label": [
+      "a3yqoz",
+      "Persian"
+    ],
+    "Value": "fa"
+  },
+  {
+    "Label": [
+      "q29t31",
+      "Polish"
+    ],
+    "Value": "pl"
+  },
+  {
+    "Label": [
+      "9qy1xn",
+      "Portuguese"
+    ],
+    "Value": "pt"
+  },
+  {
+    "Label": [
+      "w9qudj",
+      "Punjabi"
+    ],
+    "Value": "pa"
+  },
+  {
+    "Label": [
+      "fdxluz",
+      "Romanian"
+    ],
+    "Value": "ro"
+  },
+  {
+    "Label": [
+      "346qid",
+      "Russian"
+    ],
+    "Value": "ru"
+  },
+  {
+    "Label": [
+      "lpzg83",
+      "Samoan"
+    ],
+    "Value": "sm"
+  },
+  {
+    "Label": [
+      "3ii2tt",
+      "Scots Gaelic"
+    ],
+    "Value": "gd"
+  },
+  {
+    "Label": [
+      "yqrxl4",
+      "Serbian"
+    ],
+    "Value": "sr"
+  },
+  {
+    "Label": [
+      "9m85mf",
+      "Sesotho"
+    ],
+    "Value": "st"
+  },
+  {
+    "Label": [
+      "27j7sy",
+      "Shona"
+    ],
+    "Value": "sn"
+  },
+  {
+    "Label": [
+      "sc49my",
+      "Sindhi"
+    ],
+    "Value": "sd"
+  },
+  {
+    "Label": [
+      "1th2nw",
+      "Sinhala"
+    ],
+    "Value": "si"
+  },
+  {
+    "Label": [
+      "7u4vzu",
+      "Slovak"
+    ],
+    "Value": "sk"
+  },
+  {
+    "Label": [
+      "k4s5rx",
+      "Slovenian"
+    ],
+    "Value": "sl"
+  },
+  {
+    "Label": [
+      "t8c6xc",
+      "Somali"
+    ],
+    "Value": "so"
+  },
+  {
+    "Label": [
+      "vo1prl",
+      "Spanish"
+    ],
+    "Value": "es"
+  },
+  {
+    "Label": [
+      "c5meku",
+      "Sundanese"
+    ],
+    "Value": "su"
+  },
+  {
+    "Label": [
+      "bqqrij",
+      "Swahili"
+    ],
+    "Value": "sw"
+  },
+  {
+    "Label": [
+      "hyirc0",
+      "Swedish"
+    ],
+    "Value": "sv"
+  },
+  {
+    "Label": [
+      "piih4x",
+      "Tajik"
+    ],
+    "Value": "tg"
+  },
+  {
+    "Label": [
+      "9e4fcl",
+      "Tamil"
+    ],
+    "Value": "ta"
+  },
+  {
+    "Label": [
+      "fgj880",
+      "Telugu"
+    ],
+    "Value": "te"
+  },
+  {
+    "Label": [
+      "v7q3db",
+      "Thai"
+    ],
+    "Value": "th"
+  },
+  {
+    "Label": [
+      "bors14",
+      "Turkish"
+    ],
+    "Value": "tr"
+  },
+  {
+    "Label": [
+      "pmnp4b",
+      "Ukrainian"
+    ],
+    "Value": "uk"
+  },
+  {
+    "Label": [
+      "qzshys",
+      "Urdu"
+    ],
+    "Value": "ur"
+  },
+  {
+    "Label": [
+      "0pfdz7",
+      "Uzbek"
+    ],
+    "Value": "uz"
+  },
+  {
+    "Label": [
+      "56ibcj",
+      "Vietnamese"
+    ],
+    "Value": "vi"
+  },
+  {
+    "Label": [
+      "q9iuti",
+      "Welsh"
+    ],
+    "Value": "cy"
+  },
+  {
+    "Label": [
+      "t6wczq",
+      "Xhosa"
+    ],
+    "Value": "xh"
+  },
+  {
+    "Label": [
+      "kqv5ht",
+      "Yiddish"
+    ],
+    "Value": "yi"
+  },
+  {
+    "Label": [
+      "nmb1wx",
+      "Yoruba"
+    ],
+    "Value": "yo"
+  },
+  {
+    "Label": [
+      "mwn7iv",
+      "Zulu"
+    ],
+    "Value": "zu"
+  }
+]

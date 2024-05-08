@@ -1,0 +1,17 @@
+根据您的要求，以下是代码中显示给用户的自然文本的JSON格式提取，以及对应的中文翻译：
+
+```json
+{
+  "i18n": {
+    "This operation extracts ID3 metadata from an MP3 file.": "此操作从MP3文件中提取ID3元数据。",
+    "ID3 is a metadata container most often used in conjunction with the MP3 audio file format. It allows information such as the title, artist, album, track number, and other information about the file to be stored in the file itself.": "ID3通常与MP3音频文件格式结合使用，是一个元数据容器。它允许将标题、艺术家、专辑、曲目编号等关于文件的信息存储在文件本身中。",
+    "No valid ID3 header.": "没有有效的ID3头部。",
+    "Unknown Frame Identifier:": "未知的帧标识符：",
+    "Tag": "标签",
+    "Description": "描述",
+    "Data": "数据"
+  }
+}
+```
+
+以上JSON对象`i18n`中的key是原始代码中的英文文本，value是相应的中文翻译。这些文本是从代码注释和代码逻辑中提取的，可能会显示给用户的部分。由于代码中没有其他明显的自然文本字符串，所以这里只列出了上述几项。如果需要更多的文本或详细信息，请提供更具体的信息。

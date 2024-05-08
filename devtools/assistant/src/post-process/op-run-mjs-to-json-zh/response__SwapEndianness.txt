@@ -1,0 +1,28 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤：
+
+1. 提取文本。
+2. 放入名为`i18n`的对象中，键是提取的文本，值设为`123`。
+3. 翻译这些文本为中文，并替换`123`作为值。
+4. 输出JSON结果。
+
+以下是按照以上步骤创建的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Swap endianness": "字节序交换",
+    "Switches the data from big-endian to little-endian or vice-versa. Data can be read in as hexadecimal or raw bytes. It will be returned in the same format as it is entered.": "将数据从大端序切换到小端序，反之亦然。数据可以以十六进制或原始字节的形式读取。它将以输入的格式返回。",
+    "Endianness": "字节序",
+    "Word length must be greater than 0": "字长必须大于0"
+  }
+}
+```
+
+以下是每个键值对的解释：
+
+- `"Swap endianness"`: 操作的名称，翻译为“字节序交换”。
+- `"Switches the data from big-endian to little-endian or vice-versa. Data can be read in as hexadecimal or raw bytes. It will be returned in the same format as it is entered."`: 操作描述，翻译为“将数据从大端序切换到小端序，反之亦然。数据可以以十六进制或原始字节的形式读取。它将以输入的格式返回。”
+- `"Endianness"`: 从`infoURL`可以推断出这是关于字节序的描述，直接使用“字节序”作为翻译。
+- `"Word length must be greater than 0"`: 抛出的错误信息，翻译为“字长必须大于0”。
+
+请注意，由于代码中没有其他自然文本信息，且根据您的要求排除了URL、示例输入输出、输入输出类型、模块类型等字段，所以这里只包含了上述翻译。

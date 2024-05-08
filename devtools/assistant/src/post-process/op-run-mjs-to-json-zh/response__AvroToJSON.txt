@@ -1,0 +1,21 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本赋予一个key，value设置为123。
+3. 根据代码的实际功能，将这些key对应的value翻译成中文。
+4. 输出JSON结果。
+
+以下是JSON格式的输出：
+
+```json
+{
+  "i18n": {
+    "Avro to JSON": "Avro转JSON",
+    "Converts Avro encoded data into JSON.": "将Avro编码的数据转换为JSON。",
+    "Please provide an input.": "请提供输入。",
+    "Error parsing Avro file.": "解析Avro文件时出错。"
+  }
+}
+```
+
+在上述JSON对象中，`i18n`包含了从原始代码中提取的自然文本，并且我已经根据代码的上下文将这些文本翻译成了中文。这些翻译旨在准确反映代码的功能和用户交互的意图。

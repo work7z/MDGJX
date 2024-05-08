@@ -1,0 +1,38 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作步骤：
+
+1. 提取文本。
+2. 放入名为`i18n`的对象中，键是文本，值设置为`123`。
+3. 翻译这些文本为中文，并替换其值。
+4. 输出JSON结果。
+
+下面是结果：
+
+```json
+{
+  "i18n": {
+    "RSA Decrypt": "RSA解密",
+    "Decrypt an RSA encrypted message with a PEM encoded private key.": "使用PEM编码的私钥解密RSA加密的消息。",
+    "Please enter a private key.": "请输入一个私钥。",
+    "RSA Private Key (PEM)": "RSA私钥(PEM)",
+    "Key Password": "密钥密码",
+    "Encryption Scheme": "加密方案",
+    "RSA-OAEP": "RSA-OAEP",
+    "RSAES-PKCS1-V1_5": "RSAES-PKCS1-V1_5",
+    "RAW": "原始",
+    "Message Digest Algorithm": "消息摘要算法"
+  }
+}
+```
+
+以下是每个键的翻译和解释：
+
+- "RSA Decrypt"：直接翻译为“RSA解密”，这是操作的名称。
+- "Decrypt an RSA encrypted message with a PEM encoded private key."：翻译为“使用PEM编码的私钥解密RSA加密的消息。”，这是对操作功能的描述。
+- "Please enter a private key."：翻译为“请输入一个私钥。”，这是当用户未输入私钥时的提示信息。
+- "RSA Private Key (PEM)"：翻译为“RSA私钥(PEM)”，这是其中一个参数的名称。
+- "Key Password"：翻译为“密钥密码”，这是另一个参数的名称。
+- "Encryption Scheme"：翻译为“加密方案”，这是选择参数的名称。
+- "RSA-OAEP"、"RSAES-PKCS1-V1_5"和"RAW"：分别翻译为“RSA-OAEP”、“RSAES-PKCS1-V1_5”和“原始”，这些是加密方案的选项。
+- "Message Digest Algorithm"：翻译为“消息摘要算法”，这是另一个参数的名称。
+
+请注意，这些翻译是根据代码上下文进行的，可能需要根据实际使用情况进一步调整。

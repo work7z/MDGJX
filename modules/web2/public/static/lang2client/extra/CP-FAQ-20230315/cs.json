@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "Naučit se programovat otevírá kariérní příležitosti v různých odvětvích a umožňuje vám vyvíjet inovativní řešení, automatizovat úkoly a porozumět složitým systémům.",
+    "CP-Advantages-013": "Jaké jsou výhody výuky programování na počítači?",
+    "CP-Basics-001": "Co je počítačové programování?",
+    "CP-Def-002": "Počítačové programování zahrnuje psaní instrukcí nebo kódu v programovacím jazyce, který instruuje počítače, jak provádět konkrétní úkoly.",
+    "CP-History-004": "Jaká je historie počítačového programování?",
+    "CP-History-Origin-005": "První programovatelné stroje se datují do doby, kdy Ada Lovelaceová pracovala na analytickém stroji Charlese Babbage v 19. století. Nicméně, moderní programování vzlétlo s vynálezem prvního univerzálního elektronického počítače, ENIAC, ve čtyřicátých létech.",
+    "CP-Lang-Choice-009": "Volba jazyka závisí na faktorech, jako jsou požadavky projektu, podpora komunity, snadnost učení a potřeby výkonu.",
+    "CP-Language-Evolution-006": "Od té doby se programovací jazyky vyvinuly od strojového kódu k assembleru, poté k jazykům na vysoké úrovni jako FORTRAN, COBOL, C a nyní k moderním jazykům, jako je Python, JavaScript a Rust.",
+    "CP-Languages-007": "Jaké jsou některé oblíbené programovací jazyky?",
+    "CP-Languages-List-008": "Mezi oblíbené programovací jazyky patří Java, Python, JavaScript, C++, C#, Swift, Go, PHP, Ruby a Kotlin. Každý z nich má své silné stránky a případy použití, např. Python pro datovou vědu, JavaScript pro vývoj webu a C++ pro systémové programování.",
+    "CP-Process-010": "Jaký je proces programování počítače?",
+    "CP-Process-Explanation-011": "Programování obvykle zahrnuje plánování (definování problému a návrh řešení), kódování (zápis zdrojového kódu ve zvoleném jazyce), testování (ladění a ověřování funkčnosti) a údržbu (aktualizace a zlepšování programu v průběhu času).",
+    "CP-Purpose-003": "Programátoři vytvářejí algoritmy, řeší problémy a vytvářejí softwarové aplikace, které mohou automatizovat procesy, manipulovat s daty a komunikovat s uživateli nebo jinými systémy.",
+    "CP-SDLC-012": "To je často strukturováno v rámci životního cyklu vývoje softwaru (SDLC), který zahrnuje další fáze, jako je analýza požadavků, návrh, nasazení a testování přijetí uživatelem.",
+    "CP-Skillset-015": "Zlepšuje také logické myšlení, schopnosti řešit problémy a přizpůsobivost novým technologiím, díky čemuž je v digitálním věku ještě všestrannější.",
+    "HistOfProg-Wikipedia": "Historie programovacích jazyků - Wikipedie",
+    "SDLC-Wikipedia": "Životní cyklus vývoje softwaru - Wikipedie",
+    "TIOBE-Index": "Index TIOBE - Společnost pro kvalitu softwaru"
+}

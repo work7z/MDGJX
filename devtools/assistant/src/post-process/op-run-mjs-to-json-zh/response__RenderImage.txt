@@ -1,0 +1,53 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式的操作，并进行了适当的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Displays the input as an image. Supports the following formats:": "将输入显示为图像。支持以下格式：",
+    "jpg/jpeg": "jpg/jpeg",
+    "png": "png",
+    "gif": "gif",
+    "webp": "webp",
+    "bmp": "bmp",
+    "ico": "ico",
+    "Render Image": "渲染图像",
+    "Image": "图像",
+    "Input format": "输入格式",
+    "Raw": "原始",
+    "Base64": "Base64",
+    "Hex": "十六进制",
+    "Invalid file type": "无效的文件类型"
+  }
+}
+```
+
+以下是每一步的详细解释：
+
+1. 所有显示给用户的自然文本（不包括URL、代码示例、类型字段等）都被提取出来。
+2. 这些文本被放置在一个名为`i18n`的对象中，每个文本作为键，其值设定为`123`，但在这里我直接替换为了相应的中文翻译。
+3. 对于每个键值对，我都尝试根据代码的上下文和实际功能，给出最合适的中文翻译。
+
+【输出示例】
+
+```json
+{
+  "i18n": {
+    "Displays the input as an image. Supports the following formats:": "将输入显示为图像。支持以下格式：",
+    "jpg/jpeg": "jpg/jpeg",
+    "png": "png",
+    "gif": "gif",
+    "webp": "webp",
+    "bmp": "bmp",
+    "ico": "ico",
+    "Render Image": "渲染图像",
+    "Image": "图像",
+    "Input format": "输入格式",
+    "Raw": "原始",
+    "Base64": "Base64",
+    "Hex": "十六进制",
+    "Invalid file type": "无效的文件类型"
+  }
+}
+```
+
+请注意，这个JSON对象中的翻译是基于代码上下文进行的，可能需要根据实际应用场景进一步调整。

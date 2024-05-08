@@ -1,0 +1,20 @@
+{
+    "c5p1b": "Dolgu kullanılmaz; kodlanmış çıkışın uzunluğu doğrudan giriş verilerinin boyutuna bağlıdır.",
+    "c8me6b": "Özel Base62 benzeri şemalar belirli uygulamalara göre uyarlanabilir, ancak genellikle Base64 veya Base32'den daha büyük bir karakter seti kullanma prensibine uyarlar.",
+    "d2w4e": "Diğer temel dönüştürme sistemlerine benzer şekilde Base62, giriş baytlarını büyük bir tam sayıya dönüştürerek ve ardından bunu 62 karakterlik setteki karakterlerin bir kombinasyonu olarak ifade ederek çalışır.",
+    "f1t2z": "Base62, özellikle benzersiz tanımlayıcılar ve kısa URL'ler için Base64'e daha kısa, URL açısından güvenli bir alternatif sağlamak üzere geliştirildi.",
+    "g8h7s": "Base62 nasıl çalışır?",
+    "j4s6r": "Base62'yi JavaScript'te nasıl kodlayabilirim/kod çözebilirim?",
+    "k9em5e": "Bu, okunabilirlikten ödün vermeden kısa, URL dostu bir tanımlayıcının gerekli olduğu senaryolar için idealdir.",
+    "p9e1n": "JavaScript'te Base62 kodlama ve kod çözme için 'base-x' veya 'base62' gibi kitaplıkları kullanabilirsiniz.",
+    "q7n3r": "Aynı zamanda 'O' ve '0', 'I' ve 'l' gibi insan transkripsiyon hatalarına yol açabilecek belirsiz karakterleri de önler.",
+    "r6nq2v": "Base62'nin birincil avantajı, Base32'den daha büyük karakter seti nedeniyle artan alan verimliliğidir ancak Base64'te alfasayısal olmayan karakterler bulunmaz.",
+    "u3i8b": "Base62 kullanmanın Base64 veya Base32'ye göre avantajları nelerdir?",
+    "v3k5r": "Karakter seti tüm büyük ve küçük harfleri (A-Z, a-z) ve rakamları (0-9) içerir ve Base64 veya Base32'ye kıyasla daha kompakt bir gösterim sağlar.",
+    "w2x9qk": "Base62'nin kendisi önemli bir değişkene sahip olmasa da, Base64'te yaygın olarak kullanılan '+' veya '/' hariç olmak üzere bazı uygulamalar, karakter seti seçimlerinde biraz farklılık gösterebilir.",
+    "x7n1m": "Base62, ikili verileri 62 alfanümerik karakter dizisi olarak temsil eden bir kodlama şemasıdır.",
+    "y3m9k": "Base62 neden oluşturuldu?",
+    "z2m7t": "Örnek kullanım: `const base62 = require('base62'); const kodlanmış = base62.encode('verileriniz'); const kodu çözülmüş = base62.decode(kodlanmış);`",
+    "z4t9b": "Base62 nedir?",
+    "z7t1p": "Base62'nin belirli varyantları var mı?"
+}

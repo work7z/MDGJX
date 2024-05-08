@@ -1,0 +1,27 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将这些文本放入一个名为 `i18n` 的对象中，其键是文本内容，值设为1。
+
+下面是根据您提供的代码提取的自然文本，并按照要求放置在JSON对象中的格式：
+
+```json
+{
+  "i18n": {
+    "Argon2 is a key derivation function that was selected as the winner of the Password Hashing Competition in July 2015. It was designed by Alex Biryukov, Daniel Dinu, and Dmitry Khovratovich from the University of Luxembourg.<br><br>Enter the password in the input to generate its hash.": 1,
+    "Salt": 1,
+    "Iterations": 1,
+    "Memory (KiB)": 1,
+    "Parallelism": 1,
+    "Hash length (bytes)": 1,
+    "Type": 1,
+    "Output format": 1,
+    "Error:": 1
+  }
+}
+```
+
+以下是详细说明：
+
+- 描述字段 `description` 中的文本被提取。
+- 参数字段 `args` 中的每个参数的 `name` 字段被提取。
+- 错误处理中的 `Error:` 文本也被提取，尽管它是在一个字符串模板中，但它是显示给用户的自然文本。
+
+注意：由于JSON格式不支持HTML标签，所以原始代码中的 `<br><br>` 被保留，您可能需要根据实际需求决定是否将其移除或替换为适当的换行符。此外，由于值都是相同的，这里简单地设为1，但实际应用中可能需要根据具体的国际化需求进行调整。

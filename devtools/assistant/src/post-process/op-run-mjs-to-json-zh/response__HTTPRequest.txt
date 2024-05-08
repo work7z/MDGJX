@@ -1,0 +1,19 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的i18n对象，并翻译为中文：
+
+```json
+{
+  "i18n": {
+    "Makes an HTTP request and returns the response.": "发起一个HTTP请求并返回响应。",
+    "This operation supports different HTTP verbs like GET, POST, PUT, etc.": "此操作支持不同的HTTP动词，如GET、POST、PUT等。",
+    "You can add headers line by line in the format Key: Value": "你可以以键:值格式逐行添加头部信息。",
+    "The status code of the response, along with a limited selection of exposed headers, can be viewed by checking the 'Show response metadata' option. Only a limited set of response headers are exposed by the browser for security reasons.": "通过勾选'显示响应元数据'选项，可以查看响应的状态码以及部分暴露的头部信息。由于安全原因，浏览器只暴露了有限的一组响应头部。",
+    "Error: Null response. Try setting the connection mode to CORS.": "错误：空响应。尝试将连接模式设置为CORS。",
+    "This error could be caused by one of the following:": "此错误可能由以下原因之一引起：",
+    " - An invalid URL": " - 无效的URL",
+    " - Making a request to an insecure resource (HTTP) from a secure source (HTTPS)": " - 从安全源（HTTPS）向不安全资源（HTTP）发起请求",
+    " - Making a cross-origin request to a server which does not support CORS": " - 向不支持CORS的服务器发起跨源请求"
+  }
+}
+```
+
+参考示例1，以上JSON结果即包含了所有用户可见的自然文本，并为其提供了中文翻译。

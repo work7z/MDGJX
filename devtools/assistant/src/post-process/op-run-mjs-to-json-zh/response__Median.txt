@@ -1,0 +1,36 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值设置为`123`。
+3. 根据代码的功能，为每条自然文本提供恰当的中文翻译。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "Computes the median of a number list. If an item in the string is not a number it is excluded from the list.<br><br>e.g. <code>0x0a 8 1 .5</code> becomes <code>4.5</code>": "计算数字列表的中位数。如果字符串中的项不是数字，则将其从列表中排除。<br><br>例如：<code>0x0a 8 1 .5</code> 变成 <code>4.5</code>",
+    "Median": "中位数",
+    "Default": "默认",
+    "string": "字符串",
+    "BigNumber": "大数字",
+    "Delimiter": "分隔符"
+  }
+}
+```
+
+注意：在代码中，我保留了HTML标签`<br>`和`<code>`，因为它们用于格式化文本，并且是自然文本的一部分。如果不需要这些标签，请告知，我将移除它们。
+
+【示例1】的格式化如下：
+
+```json
+{
+  "i18n": {
+    "Computes the median of a number list...": "计算数字列表的中位数...",
+    // 其他翻译...
+  }
+}
+```
+
+以上JSON对象中的每个键值对都代表了一个自然文本及其对应的中文翻译。值`123`被替换为具体的翻译内容。

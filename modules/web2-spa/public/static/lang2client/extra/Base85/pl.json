@@ -1,0 +1,19 @@
+{
+    "c1p4b": "Każda liczba dziesiętna jest następnie konwertowana na unikalną sekwencję pięciu znaków Base85. Jeśli na końcu pozostało mniej niż cztery bajty, można zastosować dopełnienie.",
+    "d7w2e": "Base85 działa poprzez dzielenie danych wejściowych na grupy po cztery bajty i konwertowanie każdej grupy na liczbę dziesiętną z zakresu od 0 do 2^32-1.",
+    "f9t1z": "Base85 został początkowo opracowany w celu wydajnego przedstawiania danych binarnych w dokumentach PostScript w celu uzyskania lepszych współczynników kompresji.",
+    "g3h5s": "Jak działa Base85?",
+    "j5s7r": "Jak kodować/dekodować za pomocą Base85 w JavaScript?",
+    "k2em5e": "Powoduje to krótsze ciągi wyjściowe dla tej samej ilości danych wejściowych, co może być korzystne w scenariuszach, w których minimalizacja rozmiaru ma kluczowe znaczenie.",
+    "p8eq9n": "Do kodowania i dekodowania Base85 w JavaScript można używać bibliotek takich jak „base85” lub „ascii85”.",
+    "q2n3r": "Obecnie jest używany w różnych zastosowaniach, w których kluczowe znaczenie ma oszczędność miejsca i czytelność, takich jak dokumenty PDF i niektóre protokoły sieciowe.",
+    "r9qn8v": "Główną zaletą Base85 jest lepsze wykorzystanie przestrzeni dzięki większemu zestawowi znaków (85 w porównaniu z 64 w Base64 lub 32 w Base32).",
+    "u1i2b": "Jakie są zalety używania Base85 w porównaniu z Base64 lub Base32?",
+    "v4k6r": "Koduje dane w bardziej zwartej formie w porównaniu do Base64 lub Base32, używając większego zestawu znaków.",
+    "w1x4k": "Tak, istnieje kilka wariantów, w tym Ascii85 (używany w PostScript i PDF), Z85 (ZeroMQ) i UUencode (starszy format). Każdy z nich ma nieco inny zestaw znaków i zasady.",
+    "x9n1b": "Base85 to schemat kodowania reprezentujący dane binarne przy użyciu zestawu 85 drukowalnych znaków ASCII.",
+    "y6m8k": "Dlaczego powstał Base85?",
+    "z2t7m": "Co to jest Base85?",
+    "z5m6t": "Przykładowe użycie: `const base85 = require('base85'); const encoded = base85.encode('twoje-dane'); const decode = base85.decode(encoded);`",
+    "z9t7p": "Czy są jakieś konkretne warianty Base85?"
+}

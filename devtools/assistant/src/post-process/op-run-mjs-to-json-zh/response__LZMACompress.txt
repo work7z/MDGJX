@@ -1,0 +1,27 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设为`123`。
+3. 根据代码的实际功能，给出最合适的中文翻译。
+4. 输出JSON结果。
+
+以下是按照上述步骤生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "LZMA Compress": "LZMA压缩",
+    "Compresses data using the Lempel\u2013Ziv\u2013Markov chain algorithm. Compression mode determines the speed and effectiveness of the compression: 1 is fastest and less effective, 9 is slowest and most effective": "使用Lempel-Ziv-Markov链算法压缩数据。压缩模式决定了压缩的速度和效果：1是最快但效果较差，9是最慢但效果最好",
+    "Failed to compress input: ${error.message}": "压缩输入失败：${error.message}",
+    "Compressing input: ${(percent * 100).toFixed(2)}%": "正在压缩输入：${(percent * 100).toFixed(2)}%"
+  }
+}
+```
+
+在这个JSON对象中，我提取了以下自然文本：
+- "LZMA Compress"：类名，翻译为“LZMA压缩”。
+- 类描述：关于压缩算法的说明，翻译为“使用Lempel-Ziv-Markov链算法压缩数据。压缩模式决定了压缩的速度和效果：1是最快但效果较差，9是最慢但效果最好”。
+- 错误信息：当压缩失败时显示的消息，翻译为“压缩输入失败：${error.message}”。
+- 进度信息：在压缩过程中显示的进度信息，翻译为“正在压缩输入：${(percent * 100).toFixed(2)}%”。
+
+请注意，错误和进度信息中的`${error.message}`和`${(percent * 100).toFixed(2)}`是动态替换的变量，不应翻译。

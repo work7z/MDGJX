@@ -1,0 +1,38 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设为123。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换其值。
+4. 输出JSON结果。
+
+下面是结果：
+
+```json
+{
+  "i18n": {
+    "Affine Cipher Encode": "123",
+    "The Affine cipher is a type of monoalphabetic substitution cipher, wherein each letter in an alphabet is mapped to its numeric equivalent, encrypted using simple mathematical function, (ax + b) % 26, and converted back to a letter.": "123",
+    "Affine Cipher Encode operation": "123",
+    "AffineCipherEncode constructor": "123",
+    "Highlight Affine Cipher Encode": "123",
+    "Highlight Affine Cipher Encode in reverse": "123"
+  }
+}
+```
+
+下面是翻译后的JSON，其中值`123`被替换为相应的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Affine Cipher Encode": "仿射密码加密",
+    "The Affine cipher is a type of monoalphabetic substitution cipher, wherein each letter in an alphabet is mapped to its numeric equivalent, encrypted using simple mathematical function, (ax + b) % 26, and converted back to a letter.": "仿射密码是一种单字母替换密码，其中字母表中的每个字母都映射到其数字等价物，并使用简单的数学函数(ax + b) % 26进行加密，然后转换回字母。",
+    "Affine Cipher Encode operation": "仿射密码加密操作",
+    "AffineCipherEncode constructor": "仿射密码加密构造函数",
+    "Highlight Affine Cipher Encode": "突出显示仿射密码加密",
+    "Highlight Affine Cipher Encode in reverse": "反向突出显示仿射密码加密"
+  }
+}
+```
+
+请注意，代码中的注释和构造函数的名称也被包含在内，因为它们是代码中显示给用户的文本。如果这些不需要被翻译，请告知，我将进行相应的调整。

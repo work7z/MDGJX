@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Setelah terintegrasi, salin templat yang disediakan ke dalam program C++ Anda dan ganti placeholder dengan nilai yang disandikan sebenarnya sebelum menjalankan program.",
+    "c6p4n": "Setelah instalasi, salin templat yang disediakan ke skrip Python Anda, ganti placeholder di bagian decode dengan byte sebenarnya yang dikodekan Base62 (diawali dengan 'b'), lalu jalankan skrip.",
+    "d2w6e": "Unduh kode sumber dan sertakan file header base62.h di proyek Anda. Kompilasi/tautkan ke file sumber sesuai dengan instruksi proyek.",
+    "d8w1b": "Instal melalui pip dengan menjalankan `pip install python-base62` atau `pip3 install python-base62`.",
+    "f9t2z": "Tambahkan ketergantungan ke proyek Maven Anda dengan menambahkan `<dependency> <groupId>com.warrenstrange</groupId> <artifactId>googleauth</artifactId> <version>...</version> </dependency>` di mana versi seharusnya berada diganti dengan rilis terbaru.",
+    "g4h7s": "Untuk C++, Anda dapat menggunakan perpustakaan 'cpp-base62' yang menyediakan fungsionalitas Base62.",
+    "j9s5r": "Untuk C#, gunakan perpustakaan 'WarrenStranger.Base62' untuk menangani pengkodean dan decoding Base62.",
+    "k3m2e": "Salin templat yang disediakan ke file Go baru, ganti placeholder dengan nilai sebenarnya yang disandikan, lalu jalankan file menggunakan `go run yourfile.go`",
+    "p6e3n": "Instal paket melalui NuGet dengan menjalankan `Install-Package WarrenStranger.Base62` di Package Manager Console atau tambahkan melalui NuGet Package Manager.",
+    "q6n1r": "Setelah menginstal perpustakaan, salin templat yang disediakan ke kelas Java dan ganti placeholder dengan nilai yang disandikan sebenarnya sebelum menjalankan kode. Perhatikan bahwa implementasi ini menggunakan array integer sebagai langkah perantara.",
+    "r4n6v": "Tambahkan ketergantungan ke proyek Anda dengan menjalankan `go get github.com/xyproto/base62`. Ini akan mengunduh dan menginstal paket.",
+    "u7i9b": "Untuk Go, gunakan paket 'base62' yang tersedia di GitHub.",
+    "u9g6t": "Untuk menjalankan kode ini, Anda perlu menginstal paket 'base62' yang menyediakan kemampuan pengkodean dan decoding Base62.",
+    "v5k3r": "Setelah terinstal, ganti placeholder di bagian decode dengan nilai aktual yang dikodekan Base62 dan jalankan skrip. Pustaka menangani konversi antara string Buffer dan Base62 untuk Anda.",
+    "x2c5e": "Untuk Python, gunakan perpustakaan 'base62' untuk menangani pengkodean dan dekode Base62.",
+    "y3m7k": "Untuk Java, gunakan kelas Base62Converter perpustakaan 'google-authenticator'.",
+    "z7n1m": "Anda dapat menginstalnya menggunakan npm dengan menjalankan `npm install base62` atau `yarn add base62`.",
+    "z8qqm2t": "Setelah instalasi, salin templat yang disediakan ke aplikasi konsol C# dan ganti placeholder dengan nilai yang disandikan sebenarnya sebelum menjalankan program."
+}

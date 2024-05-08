@@ -1,0 +1,32 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作结果：
+
+```json
+{
+  "i18n": {
+    "The Magic operation attempts to detect various properties of the input data and suggests which operations could help to make more sense of it.": "魔法操作尝试检测输入数据的各种属性，并建议哪些操作可以帮助更好地理解数据。",
+    "Options": "选项",
+    "Depth": "深度",
+    "If an operation appears to match the data, it will be run and the result will be analysed further. This argument controls the maximum number of levels of recursion.": "如果一个操作似乎与数据匹配，它将被运行，并将进一步分析结果。此参数控制最大递归级别数。",
+    "Intensive mode": "密集模式",
+    "When this is turned on, various operations like XOR, bit rotates, and character encodings are brute-forced to attempt to detect valid data underneath. To improve performance, only the first 100 bytes of the data is brute-forced.": "开启此模式时，将强制执行各种操作，如XOR、位旋转和字符编码，以尝试检测底下的有效数据。为了提高性能，只对数据的前100个字节进行强制处理。",
+    "Extensive language support": "广泛的语言支持",
+    "At each stage, the relative byte frequencies of the data will be compared to average frequencies for a number of languages.": "在每一个阶段，数据的相对字节频率将与多种语言的平均频率进行比较。",
+    "Optionally enter a regular expression to match a string you expect to find to filter results (crib).": "可选地输入一个正则表达式，匹配您期望找到的字符串，以过滤结果（crib）。",
+    "Entropy:": "熵值：",
+    "Shannon Entropy is measured from 0 to 8. High entropy suggests encrypted or compressed data. Normal text is usually around 3.5 to 5.": "香农熵从0到8测量。高熵值表明数据可能是加密或压缩的。正常文本的熵值通常在3.5到5之间。",
+    "Valid UTF8": "有效的UTF8",
+    "The data could be a valid UTF8 string based on its encoding.": "根据其编码，数据可能是一个有效的UTF8字符串。",
+    "Possible languages:": "可能的语种：",
+    "Based on a statistical comparison of the frequency of bytes in various languages. Ordered by likelihood.": "基于对各种语言中字节频率的统计比较。按可能性排序。",
+    "File type:": "文件类型：",
+    "Based on the presence of magic bytes.": "基于魔数字节的存在。",
+    "Matching ops:": "匹配的操作：",
+    "This could be an operation that displays data in a useful way, such as rendering an image.": "这可能是一个以有用方式显示数据的操作，例如渲染图像。",
+    "Useful op detected": "检测到有用的操作",
+    "Nothing of interest could be detected about the input data.": "关于输入数据没有检测到任何有趣的信息。",
+    "Have you tried modifying the operation arguments?": "您尝试修改操作参数了吗？"
+  }
+}
+```
+
+以上JSON对象`i18n`中的key是原始文本，value是对应的中文翻译。这些翻译是根据代码的实际功能和我对其的理解进行的。如果需要进一步的调整，请告知。

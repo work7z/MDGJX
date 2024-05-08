@@ -1,0 +1,26 @@
+{
+  "Env": [
+    "LAFTOOLS_ROOT"
+  ],
+  "LockFile": true,
+  "OutputDir": "$LAFTOOLS_ROOT/var/log",
+  "Jobs": [
+    {
+      "Id": "scan_and_translation",
+      "Name": "Scan and Translation",
+      "Type": "RunCommand",
+      "Commands": [
+        "node",
+        "$LAFTOOLS_ROOT/devtools/scripts/scan/scan-entry.js"
+      ]
+    },
+    {
+      "Name": "Add License Headers",
+      "Type": "RunCommand",
+      "Commands": [
+        "bash",
+        "$LAFTOOLS_ROOT/pipeline/dev-add-license-to-each-file.sh"
+      ]
+    }
+  ]
+}

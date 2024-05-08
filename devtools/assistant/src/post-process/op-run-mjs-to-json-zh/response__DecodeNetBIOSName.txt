@@ -1,0 +1,43 @@
+根据您的要求，以下是提炼出的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "Decode NetBIOS Name": "123",
+    "NetBIOS names as seen across the client interface to NetBIOS are exactly 16 bytes long. Within the NetBIOS-over-TCP protocols, a longer representation is used.": "123",
+    "There are two levels of encoding. The first level maps a NetBIOS name into a domain system name. The second level maps the domain system name into the 'compressed' representation required for interaction with the domain name system.": "123",
+    "This operation decodes the first level of encoding. See RFC 1001 for full details.": "123",
+    "Offset": "123"
+  }
+}
+```
+
+下面是根据代码的实际功能，将这些文本翻译成中文，并替换其value值：
+
+```json
+{
+  "i18n": {
+    "Decode NetBIOS Name": "解码NetBIOS名称",
+    "NetBIOS names as seen across the client interface to NetBIOS are exactly 16 bytes long. Within the NetBIOS-over-TCP protocols, a longer representation is used.": "在客户端接口中看到的NetBIOS名称恰好是16个字节长。在NetBIOS-over-TCP协议中，使用了一种更长的表示形式。",
+    "There are two levels of encoding. The first level maps a NetBIOS name into a domain system name. The second level maps the domain system name into the 'compressed' representation required for interaction with the domain name system.": "有两个编码级别。第一级将NetBIOS名称映射到域名系统名称。第二级将域名系统名称映射到与域名系统交互所需的'压缩'表示形式。",
+    "This operation decodes the first level of encoding. See RFC 1001 for full details.": "此操作解码第一级编码。有关详细信息，请参阅RFC 1001。",
+    "Offset": "偏移量"
+  }
+}
+```
+
+参考示例1，最终输出的JSON结果如下：
+
+```json
+{
+  "i18n": {
+    "Decode NetBIOS Name": "解码NetBIOS名称",
+    "NetBIOSDescription": "在客户端接口中看到的NetBIOS名称恰好是16个字节长。在NetBIOS-over-TCP协议中，使用了一种更长的表示形式。",
+    "EncodingLevels": "有两个编码级别。第一级将NetBIOS名称映射到域名系统名称。第二级将域名系统名称映射到与域名系统交互所需的'压缩'表示形式。",
+    "OperationDetails": "此操作解码第一级编码。有关详细信息，请参阅RFC 1001。",
+    "Offset": "偏移量"
+  }
+}
+```
+
+请注意，为了使JSON的key更具可读性，我已对一些key进行了重命名。如果需要保持原英文key不变，请告知。

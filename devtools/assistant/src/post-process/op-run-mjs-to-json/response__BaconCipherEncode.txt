@@ -1,0 +1,17 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本作为JSON对象中的键，每个键的值设为1。以下是提取后的JSON配置：
+
+```json
+{
+  "i18n": {
+    "Bacon Cipher Encode": 1,
+    "Bacon's cipher or the Baconian cipher is a method of steganography devised by Francis Bacon in 1605. A message is concealed in the presentation of text, rather than its content.": 1
+  }
+}
+```
+
+在这个例子中，我们只找到了两个自然文本片段：
+
+1. 类名 `Bacon Cipher Encode`，这是用户可以看到的操作名称。
+2. 类描述 `Bacon's cipher or the Baconian cipher is a method of steganography devised by Francis Bacon in 1605. A message is concealed in the presentation of text, rather than its content.`，这是给用户的关于Bacon密码的额外信息。
+
+其他文本，如注释、字段说明、示例文本等，都没有被包含在内，因为它们不是直接显示给用户的。同样，URL和编程相关的字段也被排除在外。

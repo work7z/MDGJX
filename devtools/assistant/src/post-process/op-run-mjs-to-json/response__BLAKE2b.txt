@@ -1,0 +1,34 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将这些文本放入一个名为 `i18n` 的对象中，其中每个文本作为键，对应的值为1。
+
+以下是提取后的JSON格式的内容：
+
+```json
+{
+  "i18n": {
+    "Performs BLAKE2b hashing on the input. BLAKE2b is a flavour of the BLAKE cryptographic hash function that is optimized for 64-bit platforms and produces digests of any size between 1 and 64 bytes. Supports the use of an optional key.": 1,
+    "Key cannot be greater than 64 bytes": 1,
+    "It is currently %s bytes.": 1,
+    "Unsupported Output Type": 1
+  }
+}
+```
+
+解释：
+- 第一个条目是从 `description` 字段提取的，并删除了HTML标签和URL。
+- 第二个和第三个条目是从 `OperationError` 构造函数中提取的，其中 `%s` 是一个占位符，用于动态插入字节数。
+- 最后一个条目是从 `default` case 中提取的。
+
+以下是按照您提供的格式，将上述JSON放入一个更大的结构中的样子：
+
+```json
+{
+  "i18n": {
+    "Performs BLAKE2b hashing on the input. BLAKE2b is a flavour of the BLAKE cryptographic hash function that is optimized for 64-bit platforms and produces digests of any size between 1 and 64 bytes. Supports the use of an optional key.": 1,
+    "Key cannot be greater than 64 bytes": 1,
+    "It is currently %s bytes.": 1,
+    "Unsupported Output Type": 1
+  }
+}
+```
+
+这个结构可以直接用于国际化（i18n）的配置文件中。请注意，对于动态内容（如字节数），我使用了 `%s` 作为占位符，这是为了在替换实际值时保持文本的通用性。

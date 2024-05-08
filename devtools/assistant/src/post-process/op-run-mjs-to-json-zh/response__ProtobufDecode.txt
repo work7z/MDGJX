@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码提炼为 JSON 格式的步骤和结果：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入一个名为 `i18n` 的对象中，键是自然文本，值设为 `123`。
+3. 根据代码的实际功能，将 `i18n` 中的文本翻译为中文，并替换其值。
+4. 输出 JSON 结果。
+
+以下是 JSON 格式的输出：
+
+```json
+{
+  "i18n": {
+    "Protobuf Decode": "123",
+    "Decodes any Protobuf encoded data to a JSON representation of the data using the field number as the field key.": "将任何 Protobuf 编码的数据解码为使用字段编号作为字段键的 JSON 数据表示形式。",
+    "If a .proto schema is defined, the encoded data will be decoded with reference to the schema. Only one message instance will be decoded.": "如果定义了 .proto 架构，将根据该架构解码编码数据。只解码一个消息实例。",
+    "<u>Show Unknown Fields</u><br>When a schema is used, this option shows fields that are present in the input data but not defined in the schema.": "<u>显示未知字段</u><br>当使用架构时，此选项会显示输入数据中存在但在架构中未定义的字段。",
+    "<u>Show Types</u><br>Show the type of a field next to its name. For undefined fields, the wiretype and example types are shown instead.": "<u>显示类型</u><br>在字段名称旁边显示字段的类型。对于未定义的字段，将显示 wireType 和示例类型。",
+    "Schema (.proto text)": "架构 (.proto 文本)",
+    "Drag and drop is enabled on this ingredient": "在此处启用了拖放功能",
+    "Show Unknown Fields": "显示未知字段",
+    "Show Types": "显示类型"
+  }
+}
+```
+
+请注意，我已将 HTML 标记（如 `<u>` 和 `<br>`）保留在翻译后的文本中，因为这些标记可能用于格式化文本。如果不需要这些标记，可以将其删除。同时，由于代码示例中没有提供具体的字段翻译，所以保留了部分英文原文。如果需要进一步翻译，请提供更具体的翻译要求。

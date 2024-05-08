@@ -1,0 +1,26 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本作为JSON对象中的键，每个键的值设为1。以下是提取后的JSON配置：
+
+```json
+{
+  "i18n": {
+    "Bit shift right": 1,
+    "Shifts the bits in each byte towards the right by the specified amount.": 1,
+    "<i>Logical shifts</i> replace the leftmost bits with zeros.": 1,
+    "<i>Arithmetic shifts</i> preserve the most significant bit (MSB) of the original byte keeping the sign the same (positive or negative).": 1,
+    "Amount": 1,
+    "Type": 1,
+    "Logical shift": 1,
+    "Arithmetic shift": 1
+  }
+}
+```
+
+以下是详细说明：
+
+- “Bit shift right”是类名和操作名称。
+- “Shifts the bits in each byte towards the right by the specified amount.” 是该操作的基本描述。
+- “<i>Logical shifts</i> replace the leftmost bits with zeros.” 和 “<i>Arithmetic shifts</i> preserve the most significant bit (MSB) of the original byte keeping the sign the same (positive or negative).” 是对逻辑移位和算术移位的描述。
+- “Amount” 和 “Type” 是参数名称。
+- “Logical shift” 和 “Arithmetic shift” 是类型选项。
+
+以上文本均被视为自然文本，并且按照您的要求，将它们作为JSON对象中的键值对添加到了 "i18n" 对象中。

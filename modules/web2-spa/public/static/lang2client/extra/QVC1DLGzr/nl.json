@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Eenmaal geïntegreerd, kopieert u de meegeleverde sjabloon naar uw C++-programma en vervangt u de tijdelijke aanduiding door de daadwerkelijk gecodeerde waarde voordat u het programma uitvoert.",
+    "c6p4n": "Kopieer na de installatie de meegeleverde sjabloon naar uw Python-script, vervang de tijdelijke aanduiding in het decoderingsgedeelte door de daadwerkelijke Base62-gecodeerde bytes (voorafgegaan door 'b') en voer vervolgens het script uit.",
+    "d2w6e": "Download de broncode en neem het headerbestand base62.h op in uw project. Compileer/koppel de bronbestanden volgens de instructies van het project.",
+    "d8w1b": "Installeer het via pip door `pip install python-base62` of `pip3 install python-base62` uit te voeren.",
+    "f9t2z": "Voeg de afhankelijkheid toe aan uw Maven-project door `<dependency> <groupId>com.warrenstrange</groupId> <artifactId>googleauth</artifactId> <version>...</version> </dependency>` toe te voegen waar de versie zou moeten zijn vervangen door de nieuwste versie.",
+    "g4h7s": "Voor C++ kunt u de 'cpp-base62'-bibliotheek gebruiken die Base62-functionaliteit biedt.",
+    "j9s5r": "Voor C# gebruikt u de bibliotheek 'WarrenStranger.Base62' voor het coderen en decoderen van Base62.",
+    "k3m2e": "Kopieer de meegeleverde sjabloon naar een nieuw Go-bestand, vervang de tijdelijke aanduiding door de daadwerkelijk gecodeerde waarde en voer het bestand vervolgens uit met `go run yourfile.go`",
+    "p6e3n": "Installeer het pakket via NuGet door `Install-Package WarrenStranger.Base62` uit te voeren in de Package Manager Console of voeg het toe via NuGet Package Manager.",
+    "q6n1r": "Na het installeren van de bibliotheek kopieert u de meegeleverde sjabloon naar een Java-klasse en vervangt u de tijdelijke aanduiding door de daadwerkelijk gecodeerde waarde voordat u de code uitvoert. Merk op dat deze implementatie integer-arrays als tussenstap gebruikt.",
+    "r4n6v": "Voeg de afhankelijkheid toe aan uw project door `go get github.com/xyproto/base62` uit te voeren. Hiermee wordt het pakket gedownload en geïnstalleerd.",
+    "u7i9b": "Gebruik voor Go het 'base62'-pakket dat beschikbaar is op GitHub.",
+    "u9g6t": "Om deze code uit te voeren, moet u het 'base62'-pakket installeren dat Base62-coderings- en decoderingsmogelijkheden biedt.",
+    "v5k3r": "Eenmaal geïnstalleerd, vervangt u de tijdelijke aanduiding in de decodeersectie door de daadwerkelijke Base62-gecodeerde waarde en voert u het script uit. De bibliotheek verzorgt de conversie tussen Buffers en Base62-strings voor u.",
+    "x2c5e": "Gebruik voor Python de 'base62'-bibliotheek om Base62-codering en -decodering af te handelen.",
+    "y3m7k": "Gebruik voor Java de Base62Converter-klasse van de 'google-authenticator'-bibliotheek.",
+    "z7n1m": "Je kunt het installeren met npm door `npm install base62` of `yarn add base62` uit te voeren.",
+    "z8qqm2t": "Kopieer na de installatie de meegeleverde sjabloon naar een C#-consoletoepassing en vervang de tijdelijke aanduiding door de daadwerkelijk gecodeerde waarde voordat u het programma uitvoert."
+}

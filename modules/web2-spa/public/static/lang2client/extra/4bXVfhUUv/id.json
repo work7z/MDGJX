@@ -1,0 +1,11 @@
+{
+    "c6p4n": "Dalam templat yang disediakan, ganti placeholder di bagian dekode dengan byte aktual yang dikodekan Base85 (diawali dengan 'b'), lalu jalankan skrip.",
+    "d8w1b": "Tidak diperlukan instalasi tambahan karena ini adalah bagian dari perpustakaan standar. Pastikan versi Python Anda cukup baru untuk menyertakan fungsi ini.",
+    "f9t2z": "Tambahkan ketergantungan ke proyek Maven Anda dengan memasukkan `<dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependency>` di file pom.xml dengan nomor versi terbaru.",
+    "q6n1r": "Setelah menginstal perpustakaan, salin kode templat ke kelas Java dan ganti placeholder dengan nilai aktual yang dikodekan Base85 sebelum menjalankan kode.",
+    "u9g6t": "Untuk JavaScript, Anda perlu menginstal paket 'base85' untuk pengkodean dan decoding Base85.",
+    "v5k3r": "Setelah terinstal, ganti placeholder di bagian dekode dengan string berkode Base85 sebenarnya dan jalankan skrip. Pustaka menangani konversi antara string Buffer dan Base85.",
+    "x2c5e": "Python memiliki modul 'base85' bawaan yang mendukung pengkodean dan decoding Base85.",
+    "y3m7k": "Untuk Java, gunakan perpustakaan 'commons-codec' yang mencakup dukungan untuk pengkodean dan decoding Base85.",
+    "z7n1m": "Instal menggunakan npm dengan menjalankan `npm install base85` atau `yarn add base85`."
+}

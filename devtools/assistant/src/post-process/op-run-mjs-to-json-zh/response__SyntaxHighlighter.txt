@@ -1,0 +1,30 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是文本本身，值设置为`123`作为占位符。
+3. 根据代码的实际功能，将`i18n`中的英文文本翻译成中文。
+4. 输出JSON结果。
+
+下面是按照上述步骤生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Syntax highlighter": "语法高亮器",
+    "Adds syntax highlighting to a range of source code languages. Note that this will not indent the code. Use one of the 'Beautify' operations for that.": "为多种源代码语言添加语法高亮。注意，这不会缩进代码。需要缩进代码的话，请使用其中一个'美化'操作。",
+    "Syntax highlighter constructor": "语法高亮器构造函数",
+    "Highlight Syntax highlighter": "高亮显示语法高亮器",
+    "Highlight Syntax highlighter in reverse": "反向高亮显示语法高亮器"
+  }
+}
+```
+
+在这个例子中，我假设了以下自然文本需要被翻译：
+
+- "Syntax highlighter"：类名和构造函数名，翻译为“语法高亮器”。
+- "Adds syntax highlighting..."：类的描述，翻译为“为多种源代码语言添加语法高亮...”。
+- "Syntax highlighter constructor"：构造函数的注释，翻译为“语法高亮器构造函数”。
+- "Highlight Syntax highlighter"：方法的注释，翻译为“高亮显示语法高亮器”。
+- "Highlight Syntax highlighter in reverse"：方法的注释，翻译为“反向高亮显示语法高亮器”。
+
+请注意，我没有包括方法名和参数注释，因为它们通常不被视为显示给用户的自然文本。如果需要，也可以将这些内容添加到`i18n`对象中。

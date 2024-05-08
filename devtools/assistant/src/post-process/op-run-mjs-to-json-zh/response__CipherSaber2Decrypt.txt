@@ -1,0 +1,23 @@
+根据您的要求，以下是提炼出的自然文本，并以JSON格式展示，同时附上中文翻译：
+
+```json
+{
+  "i18n": {
+    "CipherSaber2 Decrypt": "CipherSaber2解密",
+    "CipherSaber is a simple symmetric encryption protocol based on the RC4 stream cipher. It gives reasonably strong protection of message confidentiality, yet it's designed to be simple enough that even novice programmers can memorize the algorithm and implement it from scratch.": "CipherSaber是一个基于RC4流密码的简单对称加密协议。它提供了相当强的消息保密性保护，同时设计得足够简单，以至于即使是初学者程序员也能记住算法并从头开始实现它。"
+  }
+}
+```
+
+在这段代码中，我找到了两处显示给用户的自然文本，并将它们放入了名为`i18n`的对象中。对于每个key，我使用了实际的英文文本，并将它的value设置为123的替代文本，这里是相应的中文翻译。由于代码中并没有很多描述性的文本，只有操作名称和描述字段被提取出来。
+
+【示例输出】
+
+```json
+{
+  "i18n": {
+    "CipherSaber2 Decrypt": "CipherSaber2解密",
+    "CipherSaber is a simple symmetric encryption protocol based on the RC4 stream cipher. It gives reasonably strong protection of message confidentiality, yet it's designed to be simple enough that even novice programmers can memorize the algorithm and implement it from scratch.": "CipherSaber是一个基于RC4流密码的简单对称加密协议，它提供了合理强大的消息保密性保护，同时简化到即使编程新手也能记忆算法并从零开始实现。"
+  }
+}
+```

@@ -1,0 +1,23 @@
+根据您的要求，以下是代码中显示给用户的自然文本的JSON格式提取，以及翻译为中文的版本：
+
+```json
+{
+  "i18n": {
+    "Conditional Jump": "条件跳转",
+    "Conditionally jump forwards or backwards to the specified Label based on whether the data matches the specified regular expression.": "根据数据是否与指定正则表达式匹配，条件性地向前或向后跳转到指定标签。",
+    "Match (regex)": "匹配（正则表达式）",
+    "Invert match": "反转匹配",
+    "Label name": "标签名称",
+    "Maximum jumps (if jumping backwards)": "最大跳跃次数（如果向后跳转）"
+  }
+}
+```
+
+以下是详细的步骤说明：
+
+1. 提取代码中所有显示给用户的自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是原始文本，值是`123`（这里为了示例，我直接使用了翻译后的中文）。
+3. 根据代码的实际功能，对这些自然文本进行了翻译。
+4. 输出格式按照您的示例1进行了组织。
+
+请注意，由于代码中并没有直接显示给用户的文本（比如UI界面上的提示信息），这里的翻译是基于代码注释和字段描述进行的。如果这些文本是用于程序内部文档或开发者参考，那么这里的翻译应该是合适的。如果这些文本将直接显示给用户，可能需要根据实际上下文进一步调整翻译。

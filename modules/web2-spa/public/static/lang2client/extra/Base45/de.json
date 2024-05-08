@@ -1,0 +1,23 @@
+{
+    "a4r9t": "Kann Base45 jede Base45-codierte Zeichenfolge unabhängig von ihrer Herkunft dekodieren?",
+    "c2vw9k": "Obwohl Base45 nicht so weit verbreitet ist wie Base64 oder Base32, gibt es Open-Source-Bibliotheken für mehrere Sprachen.",
+    "c9q7w": "Warum wurde Base45 erstellt?",
+    "d6y9k": "Wenn nicht genügend Bytes vorhanden sind, um die letzte Gruppe zu füllen, wird keine Auffüllung verwendet. Stattdessen werden die verbleibenden Bits verarbeitet und den entsprechenden Zeichen zugeordnet.",
+    "e8x2v": "Base45 funktioniert, indem es die Eingabedaten in Gruppen zu je 5 Bytes aufteilt. Anschließend wandelt es jede Gruppe in eine Dezimalzahl um und ordnet sie einem entsprechenden Zeichen aus seinem 45-Zeichensatz zu.",
+    "f8n4m": "Seine Kompaktheit ermöglicht eine effizientere Raumnutzung in QR-Codes und sorgt gleichzeitig für die Lesbarkeit mit Standard-Barcodescannern.",
+    "g1h5n": "Wie funktioniert Base45?",
+    "g6v3b": "Allerdings kann der größere Zeichensatz von Base45 die Wahrscheinlichkeit von Fehlern beim Umgang mit nicht-alphanumerischen Zeichen erhöhen, was in manchen Umgebungen oder Übertragungskanälen ein Problem darstellen könnte.",
+    "i7w2m": "Gibt es integrierte Base45-Bibliotheken in gängigen Programmiersprachen?",
+    "j7k2t": "Um Daten mit Base45 zu kodieren, benötigen Sie eine Bibliothek oder Funktion, die den Base45-Algorithmus implementiert.",
+    "m9k1z": "Wenn die zu dekodierenden Daten jedoch eine bestimmte Anwendungssemantik enthalten (z. B. bestimmte QR-Code-Formate), kann nach der Dekodierung eine zusätzliche Verarbeitung erforderlich sein.",
+    "q5h8n": "Der Hauptvorteil ist die reduzierte Stringlänge bei gleicher Menge codierter Daten, wodurch es sich für Anwendungen eignet, bei denen Platzeffizienz von entscheidender Bedeutung ist.",
+    "qv1p5n": "In Java können Sie beispielsweise die Bibliothek „org.iso.base45“ verwenden, um Ihre Daten zu kodieren.",
+    "r9a3t": "Base45 ist ein textbasiertes Kodierungsschema, das Binärdaten in ASCII-Zeichen kodiert.",
+    "s3e6r": "Wie kodiere ich Daten mit Base45?",
+    "u2l8s": "Was ist Base45?",
+    "x5z1b": "Base45 wurde hauptsächlich für die Verwendung von QR-Codes im Rahmen digitaler COVID-Zertifikate entwickelt.",
+    "y3b6n": "Ja, solange die codierte Zeichenfolge gemäß der Base45-Spezifikation generiert wurde, sollte jeder kompatible Decoder in der Lage sein, sie zu decodieren.",
+    "z1n5qr": "Beispiele hierfür sind das base45-npm-Paket für JavaScript und dotnet-base45 für .NET.",
+    "z5b7m": "Im Vergleich zu Base64 oder Base32 wird ein größeres Alphabet (0-9, A-Z, a-z, -, ., $, /, +, % und *) verwendet, was zu kürzeren codierten Zeichenfolgen für dieselben Eingabedaten führt.",
+    "z8m2t": "Welche Vorteile bietet die Verwendung von Base45 gegenüber Base64 oder Base32?"
+}

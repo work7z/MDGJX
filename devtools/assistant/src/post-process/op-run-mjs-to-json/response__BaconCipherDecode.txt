@@ -1,0 +1,24 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为 `i18n` 的对象中，其中每个文本作为键，值为1。
+
+下面是提取后的 JSON 格式的 `i18n` 对象：
+
+```json
+{
+  "i18n": {
+    "Bacon Cipher Decode": 1,
+    "Bacon's cipher or the Baconian cipher is a method of steganography devised by Francis Bacon in 1605. A message is concealed in the presentation of text, rather than its content.": 1,
+    "Standard (I=J and U=V)": 1,
+    "0/1": 1,
+    "A/B": 1,
+    "Complete": 1
+  }
+}
+```
+
+以下是详细说明：
+
+- `"Bacon Cipher Decode"` 是类名，显示给用户。
+- 类的 `description` 字段中的文本也被视为显示给用户的自然文本。
+- 在 `args` 数组中，选项的 `name` 字段（如 `"Standard (I=J and U=V)"`, `"0/1"`, `"A/B"`, `"Complete"`）也是显示给用户的。
+
+请注意，根据您的要求，我们排除了代码示例、链接、输入/输出类型和其他非自然文本字段。每个键值对中的数字 `1` 仅用作占位符，表示该文本已被识别和提取。实际应用中，您可能需要根据实际需求替换为相应的翻译或者其他标识符。

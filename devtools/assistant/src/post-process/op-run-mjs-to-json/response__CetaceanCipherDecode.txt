@@ -1,0 +1,21 @@
+根据您的要求，我们需要从提供的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为`i18n`的JSON对象中，其中每个文本作为键，其值设置为1。
+
+下面是根据您的要求生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Cetacean Cipher Decode": 1,
+    "Decode Cetacean Cipher input. e.g. EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe becomes hi": 1,
+    "hi": 1
+  }
+}
+```
+
+解释如下：
+
+1. 类名 `Cetacean Cipher Decode` 是显示给用户的文本，因此它被包含在内。
+2. 类描述 `Decode Cetacean Cipher input. <br/><br/>e.g. <code>EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe</code> becomes <code>hi</code>` 也被包含，但是HTML标签和代码标记被移除，仅保留自然文本部分。
+3. 示例文本 `hi` 同样被包含在内。
+
+请注意，由于示例中的自然文本比较少，且大部分是代码描述和示例，所以这里只包含了三个键值对。如果代码中有更多显示给用户的文本，它们也应该按照这种方式被添加到`i18n`对象中。

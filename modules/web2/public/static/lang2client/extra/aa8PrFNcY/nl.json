@@ -1,0 +1,16 @@
+{
+    "CSSNano": "cssnano - GitHub",
+    "HTMLMinifier": "HTMLMinifier - GitHub",
+    "MDN-Minification": "MDN-webdocumenten - verkleining",
+    "Minify-Basics-001": "Wat is de betekenis van het verkleinen van code of bestanden?",
+    "Minify-CLI-Usage-009": "De meeste van deze tools hebben zowel opdrachtregelinterfaces (CLI) als API's waarmee ontwikkelaars het minificatieproces tijdens de ontwikkeling en implementatie kunnen automatiseren.",
+    "Minify-Def-002": "Minificatie is het proces waarbij de omvang van code (HTML, CSS, JavaScript, enz.) wordt verkleind door onnodige tekens zoals spaties, opmerkingen en regeleinden te verwijderen zonder de functionaliteit ervan te beïnvloeden.",
+    "Minify-Example-007k": "{0} kan bijvoorbeeld na verkleining {1} worden.",
+    "Minify-How-Works-004": "Hoe werkt codeminificatie?",
+    "Minify-Process-005": "Minifiers gebruiken algoritmen om de structuur van de broncode te analyseren, overbodige elementen te elimineren en waar mogelijk de namen van variabelen in te korten. Dit resulteert in een kleinere bestandsgrootte terwijl het oorspronkelijke gedrag van de code behouden blijft.",
+    "Minify-Purpose-003": "Het primaire doel van minificatie is het verbeteren van de websiteprestaties en het verkorten van de laadtijden van pagina's door de hoeveelheid gegevens te verminderen die tussen server en client moet worden overgedragen.",
+    "Minify-Tools-007": "Wat zijn enkele populaire tools voor het verkleinen van code?",
+    "Minify-Tools-List-008": "Populaire tools voor het verkleinen van code zijn onder meer UglifyJS voor JavaScript, Terser, een evolutie van UglifyJS, HTMLMinifier voor HTML en CSSNano voor CSS. Deze tools kunnen vaak worden geïntegreerd in bouwprocessen met behulp van taaklopers zoals Gulp of Webpack.",
+    "Terser": "Terser - GitHub",
+    "UglifyJS": "UglifyJS - GitHub"
+}

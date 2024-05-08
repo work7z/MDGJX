@@ -1,0 +1,28 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤，包括翻译成中文：
+
+1. 提炼英文自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值设置为`123`。
+3. 翻译这些文本为中文，并替换`123`作为值。
+4. 输出JSON结果。
+
+下面是结果：
+
+```json
+{
+  "i18n": {
+    "Performs file carving to attempt to extract files from the input.": "执行文件雕刻，尝试从输入中提取文件。",
+    "This operation is currently capable of carving out the following formats:": "此操作目前能够雕刻出以下格式：",
+    "Minimum File Size can be used to prune small false positives.": "可以使用最小文件大小来剪除小的误报。",
+    "Error while attempting to extract": "尝试提取时发生错误"
+  }
+}
+```
+
+以下是每个键值的解释：
+
+- `"Performs file carving to attempt to extract files from the input."`: 这是操作的主要描述，解释了它的功能。
+- `"This operation is currently capable of carving out the following formats:"`: 描述了该操作能够处理哪些格式。
+- `"Minimum File Size can be used to prune small false positives."`: 描述了一个参数的功能，用于过滤掉小的误报。
+- `"Error while attempting to extract"`: 表示在提取文件时遇到错误的消息。
+
+请注意，示例中的`<ul>`和`<li>`标签以及连接符号`"</li><li>"`被省略了，因为它们不是自然文本，而是用于格式化的HTML标签。同样，我没有包括代码中的变量和URL，因为它们不符合您的要求。

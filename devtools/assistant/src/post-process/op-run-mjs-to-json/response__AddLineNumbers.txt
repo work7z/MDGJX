@@ -1,0 +1,26 @@
+根据您的要求，我们需要提取代码中显示给用户的自然文本，并按照指定的格式放入JSON对象中。以下是按照您的要求生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Add line numbers": 1,
+    "Adds line numbers to the output.": 1
+  },
+  "extra": {
+    "exampleInput": "<input goes here>",
+    "exampleOutput": "<output goes here>",
+    "editor": {
+      "input": "text",
+      "output": "text"
+    }
+  }
+}
+```
+
+解释如下：
+
+1. 在`i18n`字段中，我们只包含了代码中作为用户界面文本出现的自然语言字符串。在这个例子中，只有类名和描述符合条件。
+2. `extra`字段中，`exampleInput`和`exampleOutput`保留了占位符，因为代码中没有提供具体的示例输入和输出。
+3. `editor.input`和`editor.output`字段根据代码的功能和【示例5】设置为`"text"`，因为该代码段处理的是文本输入并生成文本输出。
+
+请注意，由于代码段中没有提供具体的输入输出示例，我在`exampleInput`和`exampleOutput`中使用了占位符`<input goes here>`和`<output goes here>`。如果需要具体的示例，您需要根据代码的功能来提供。

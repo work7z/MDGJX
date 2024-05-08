@@ -1,0 +1,51 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作，并进行了适当的中文翻译。
+
+```json
+{
+  "i18n": {
+    "Convert to NATO alphabet": "转换为北约字母",
+    "Converts characters to their representation in the NATO phonetic alphabet.": "将字符转换为它们在北约音标字母中的表示形式。",
+    "Alfa": "阿尔法",
+    "Bravo": "布拉沃",
+    "Charlie": "查理",
+    "Delta": "德尔塔",
+    "Echo": "回声",
+    "Foxtrot": "狐步舞",
+    "Golf": "高尔夫",
+    "Hotel": "酒店",
+    "India": "印度",
+    "Juliett": "朱丽叶",
+    "Kilo": "基洛",
+    "Lima": "利马",
+    "Mike": "麦克",
+    "November": "十一月",
+    "Oscar": "奥斯卡",
+    "Papa": "帕帕",
+    "Quebec": "魁北克",
+    "Romeo": "罗密欧",
+    "Sierra": "塞拉",
+    "Tango": "探戈",
+    "Uniform": "制服",
+    "Victor": "胜利者",
+    "Whiskey": "威士忌",
+    "X-ray": "X射线",
+    "Yankee": "扬基",
+    "Zulu": "祖鲁",
+    "Zero": "零",
+    "One": "一",
+    "Two": "二",
+    "Three": "三",
+    "Four": "四",
+    "Five": "五",
+    "Six": "六",
+    "Seven": "七",
+    "Eight": "八",
+    "Nine": "九",
+    "Comma": "逗号",
+    "Fraction bar": "分数条",
+    "Full stop": "句号"
+  }
+}
+```
+
+在这个JSON对象中，键是原始的自然文本，值是相应的中文翻译。请注意，这里包含了北约音标字母的每个字母的翻译，因为它们是显示给用户的文本的一部分。同时，数字和特殊字符的翻译也被包含在内。这些翻译可能在实际应用中需要根据上下文进一步调整。

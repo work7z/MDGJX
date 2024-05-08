@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作：
+
+1. 提炼英文自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值设为`123`。
+3. 根据代码的实际功能，对这些文本进行中文翻译，并替换其值。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "Scatter chart": "散点图",
+    "Plots two-variable data as single points on a graph.": "在图表上把双变量数据作为单独的点来绘制。",
+    "Record delimiter": "记录分隔符",
+    "Field delimiter": "字段分隔符",
+    "Use column headers as labels": "使用列标题作为标签",
+    "X label": "X轴标签",
+    "Y label": "Y轴标签",
+    "Colour": "颜色",
+    "Point radius": "点半径",
+    "Use colour from third column": "使用第三列的颜色"
+  }
+}
+```
+
+在这个JSON对象中，每个键值对代表一个英文自然文本和它的中文翻译。这些文本是从代码中提取的，用于描述操作或参数。值`123`被替换为适当的中文翻译。这个翻译是根据代码的功能和上下文进行的，以便为用户提供清晰的操作描述。

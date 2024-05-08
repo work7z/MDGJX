@@ -1,0 +1,19 @@
+{
+    "c1p4b": "Jede Dezimalzahl wird dann in eine eindeutige Folge von fünf Base85-Zeichen umgewandelt. Wenn am Ende weniger als vier Bytes übrig sind, kann Auffüllen angewendet werden.",
+    "d7w2e": "Base85 funktioniert, indem es die Eingabedaten in Gruppen von vier Bytes aufteilt und jede Gruppe in eine Dezimalzahl zwischen 0 und 2^32-1 umwandelt.",
+    "f9t1z": "Base85 wurde ursprünglich entwickelt, um Binärdaten in PostScript-Dokumenten effizient darzustellen und bessere Komprimierungsraten zu erzielen.",
+    "g3h5s": "Wie funktioniert Base85?",
+    "j5s7r": "Wie kodiere/dekodiere ich mit Base85 in JavaScript?",
+    "k2em5e": "Dies führt zu kürzeren Ausgabezeichenfolgen bei gleicher Menge an Eingabedaten, was in Szenarien von Vorteil sein kann, in denen die Minimierung der Größe von entscheidender Bedeutung ist.",
+    "p8eq9n": "Sie können Bibliotheken wie „base85“ oder „ascii85“ für die Base85-Kodierung und -Dekodierung in JavaScript verwenden.",
+    "q2n3r": "Heutzutage wird es in verschiedenen Anwendungen eingesetzt, bei denen Platzeffizienz und Lesbarkeit von entscheidender Bedeutung sind, beispielsweise bei PDF-Dokumenten und bestimmten Netzwerkprotokollen.",
+    "r9qn8v": "Der Hauptvorteil von Base85 ist die verbesserte Speicherplatzeffizienz aufgrund eines größeren Zeichensatzes (85 gegenüber 64 in Base64 oder 32 in Base32).",
+    "u1i2b": "Welche Vorteile bietet die Verwendung von Base85 gegenüber Base64 oder Base32?",
+    "v4k6r": "Es kodiert Daten im Vergleich zu Base64 oder Base32 in eine kompaktere Form, indem es einen größeren Zeichensatz verwendet.",
+    "w1x4k": "Ja, es gibt mehrere Varianten, darunter Ascii85 (verwendet in PostScript und PDF), Z85 (ZeroMQ) und UUencode (ein älteres Format). Jeder hat einen etwas anderen Zeichensatz und andere Regeln.",
+    "x9n1b": "Base85 ist ein Codierungsschema, das Binärdaten mithilfe eines Satzes von 85 druckbaren ASCII-Zeichen darstellt.",
+    "y6m8k": "Warum wurde Base85 erstellt?",
+    "z2t7m": "Was ist Base85?",
+    "z5m6t": "Beispielverwendung: `const base85 = require('base85'); const encoded = base85.encode('your-data'); const decoded = base85.decode(encoded);`",
+    "z9t7p": "Gibt es bestimmte Varianten von Base85?"
+}

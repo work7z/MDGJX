@@ -1,0 +1,17 @@
+{
+    "YAML-Advantages-001": "YAML'ın avantajları nelerdir?",
+    "YAML-Advantages-002": "YAML, insanlar tarafından okunabilir ve yazılması kolaydır; bu da onu yapılandırma dosyaları için popüler bir seçim haline getirir.",
+    "YAML-Advantages-003": "Okuması ve yazması da kolaydır ve sıklıkla tüm programlama dilleriyle birlikte kullanılır.",
+    "YAML-Basics-001": "YAML nedir?",
+    "YAML-Def-002": "YAML (YAML İşaretleme Dili Değildir), tüm programlama dilleriyle birlikte kullanılabilen ve genellikle yapılandırma dosyalarını yazmak için kullanılan, insanlar tarafından okunabilen bir veri serileştirme standardıdır.",
+    "YAML-Disadvantages-001": "YAML'ın dezavantajları nelerdir?",
+    "YAML-Disadvantages-002": "YAML'nin ayrıştırılması zor olabilir ve hatalara açık olabilir.",
+    "YAML-Disadvantages-003": "Ayrıca JSON gibi diğer veri serileştirme formatları kadar geniş çapta desteklenmez.",
+    "YAML-Example-001": "YAML dosyası neye benzer?",
+    "YAML-Example-002": "Basit bir YAML dosyası, her çiftin iki nokta üst üste işaretiyle ayrıldığı anahtar/değer çiftlerinden oluşur.",
+    "YAML-Example-003": "Örneğin bir YAML dosyası şöyle görünebilir:",
+    "YAML-Purpose-003": "İnsanlar tarafından kolayca okunabilecek şekilde tasarlanmıştır ve genellikle veri yapılarını ve serileştirmeyi okunması ve yazılması kolay bir formatta ifade etmek için kullanılır.",
+    "YAML-Usage-001": "YAML ne için kullanılır?",
+    "YAML-Usage-002": "YAML genellikle yapılandırma dosyaları için ve verilerin depolandığı veya iletildiği uygulamalarda kullanılır.",
+    "YAML-Usage-003": "Yapılandırma dosyaları gibi verilerin depolandığı veya iletildiği uygulamalarda ve verilerin depolandığı veya iletildiği uygulamalarda yaygın olarak kullanılır."
+}

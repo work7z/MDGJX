@@ -1,0 +1,14 @@
+根据您的要求，以下是代码中显示给用户的自然文本的JSON格式提取，以及对应的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Rabbit is a high-speed stream cipher introduced in 2003 and defined in RFC 4503.": "Rabbit是一种2003年推出并在RFC 4503中定义的高速流密码。",
+    "The cipher uses a 128-bit key and an optional 64-bit initialization vector (IV).": "该密码使用一个128位的密钥和一个可选的64位初始化向量（IV）。",
+    "Invalid key length: ${key.length} bytes (expected: 16)": "无效的密钥长度：${key.length}字节（预期：16字节）",
+    "Invalid IV length: ${iv.length} bytes (expected: 0 or 8)": "无效的IV长度：${iv.length}字节（预期：0或8字节）"
+  }
+}
+```
+
+请注意，这里只包含了代码中作为字符串直接显示给用户的文本。错误消息中的占位符（如`${key.length}`和`${iv.length}`）按照原文保留，实际使用时需要通过程序替换为相应的值。同时，由于代码中没有其他明显的自然文本字符串，所以这里只列出了上述几项。

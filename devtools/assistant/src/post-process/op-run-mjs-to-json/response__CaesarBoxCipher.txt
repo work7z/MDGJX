@@ -1,0 +1,21 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为`i18n`的对象中，其中每个文本作为键，对应的值为1。
+
+下面是根据您的要求生成的JSON格式：
+
+```json
+{
+  "i18n": {
+    "Caesar Box Cipher": 1,
+    "Caesar Box is a transposition cipher used in the Roman Empire, in which letters of the message are written in rows in a square (or a rectangle) and then, read by column.": 1,
+    "Box Height": 1
+  }
+}
+```
+
+以下是提取的过程：
+
+1. 类名 `Caesar Box Cipher` 作为自然文本被包含在内。
+2. 类的描述 `"Caesar Box is a transposition cipher used in the Roman Empire, in which letters of the message are written in rows in a square (or a rectangle) and then, read by column."` 也被包含在内。
+3. 参数名 `"Box Height"` 同样被视为自然文本。
+
+其他字段如 `exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`、`type` 和任何链接或代码相关的内容都没有被包含在内。按照您的要求，每个文本的值设置为1。

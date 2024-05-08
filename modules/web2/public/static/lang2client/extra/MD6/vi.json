@@ -1,0 +1,23 @@
+{
+    "MD6-AlgorithmDetails-010": "Chi tiết thuật toán MD6",
+    "MD6-ComparisonSHA3-020": "MD6 so sánh với SHA-3 (Keccak) như thế nào?",
+    "MD6-Def-002": "MD6 (Thuật toán tiêu hóa thông báo 6) là hàm băm mật mã được thiết kế bởi Ronald Rivest vào năm 2008. Đây là một sự phát triển của dòng MD, cung cấp các kích thước đầu ra thay đổi từ 128 đến 512 bit.",
+    "MD6-FAQ-001": "MD6 là gì?",
+    "MD6-FutureDevelopments-028": "Có bất kỳ sự phát triển hoặc cải tiến nào trong tương lai được lên kế hoạch cho MD6 không?",
+    "MD6-FutureUnknown-029": "Tính đến thời điểm hiện tại, không có bất kỳ thông tin công khai nào về sự phát triển đang diễn ra hoặc các kế hoạch cải tiến thuật toán MD6. Nghiên cứu về mật mã tiếp tục phát triển và các thuật toán mới có thể xuất hiện để giải quyết các mối đe dọa hoặc yêu cầu mới nổi.",
+    "MD6-History-004": "MD6 được phát triển như thế nào và điều gì dẫn đến sự ra đời của nó?",
+    "MD6-Operation-007": "Hoạt động của MD6 hoạt động như thế nào?",
+    "MD6-Origin-005": "MD6 được tạo ra để đáp lại các lỗ hổng được tìm thấy trong MD5 và SHA-1, vốn được sử dụng rộng rãi vào thời điểm đó. Nó nhằm mục đích cung cấp một giải pháp thay thế an toàn hơn với tính linh hoạt cao hơn về kích thước đầu ra.",
+    "MD6-PKI-Alternatives-027": "Đối với các ứng dụng PKI và chữ ký số, các tiêu chuẩn như RSA/SHA-256 hoặc ECDSA với các biến thể SHA-2 hoặc SHA-3 thường được sử dụng thay thế. Những điều này đã trải qua quá trình phân tích sâu rộng và đã tạo dựng được niềm tin trong cộng đồng mật mã.",
+    "MD6-PKI-Considerations-026": "Mặc dù MD6 nhằm mục đích cung cấp khả năng bảo mật mạnh mẽ hơn các hàm băm trước đó như MD5, nhưng nó vẫn chưa được áp dụng rộng rãi cho PKI hoặc các lược đồ chữ ký số do tính mới tương đối và thiếu sự chấp nhận rộng rãi của cộng đồng mật mã.",
+    "MD6-Process-008": "MD6 xử lý các thông báo đầu vào thông qua một loạt các hàm nén được áp dụng theo cấu trúc dạng cây. Thuật toán có thể hoạt động song song, góp phần nâng cao hiệu suất của nó đối với đầu vào lớn hơn.",
+    "MD6-Purpose-003": "MD6 nhằm mục đích cung cấp các tính năng bảo mật mạnh mẽ và cải thiện hiệu suất so với các phiên bản tiền nhiệm, giúp nó phù hợp với nhiều ứng dụng yêu cầu băm chống va chạm và kiểm tra tính toàn vẹn của thư.",
+    "MD6-Rounds-009": "Mỗi nút trong cây MD6 trải qua nhiều vòng hoạt động trộn liên quan đến phép cộng mô-đun, XOR theo bit và hoán vị phi tuyến tính. Giá trị nút gốc cuối cùng biểu thị bản tóm tắt băm của thông báo đầu vào.",
+    "MD6-SecurityUpgrade-006": "Thiết kế của MD6 được xây dựng dựa trên khái niệm băm dựa trên cây, cho phép nó cung cấp khả năng bảo vệ tốt hơn trước các cuộc tấn công tiền ảnh và va chạm so với các thuật toán MD trước đây, đồng thời cung cấp thông lượng cao hơn cho các tập dữ liệu lớn.",
+    "MD6-StayingCurrent-030": "Điều cần thiết là luôn cập nhật các kết quả nghiên cứu mới nhất và đề xuất từ ​​các chuyên gia mật mã khi chọn hàm băm cho bất kỳ ứng dụng nào, đặc biệt là khi bối cảnh bảo mật mật mã phát triển theo thời gian.",
+    "MD6-UseInPKI-025": "MD6 có thể được sử dụng cho Cơ sở hạ tầng khóa công khai (PKI) hoặc chữ ký số không?",
+    "MD6-vs-SHA3-Adoption-023": "SHA-3 đã được sử dụng làm tiêu chuẩn chính thức của NIST và được sử dụng rộng rãi nhờ tính bảo mật và hiệu suất mạnh mẽ của nó. MD6, mặc dù an toàn về mặt lý thuyết, nhưng vẫn chưa được áp dụng hoặc tiêu chuẩn hóa ở mức độ tương tự.",
+    "MD6-vs-SHA3-DiffDesign-021": "MD6 và SHA-3 đều được thiết kế nhằm mục đích bảo mật nhưng chúng sử dụng các kỹ thuật băm khác nhau. MD6 sử dụng thiết kế dựa trên cây để cải thiện tính song song, trong khi SHA-3 dựa trên cấu trúc xốp.",
+    "MD6-vs-SHA3-Flexibility-022": "MD6 cung cấp độ dài đầu ra thay đổi, điều này có thể thuận lợi cho các ứng dụng yêu cầu kích thước băm tùy chỉnh. SHA-3 cũng hỗ trợ độ dài đầu ra thay đổi, mặc dù biến thể phổ biến nhất của nó, SHAKE, thậm chí còn mang lại sự linh hoạt hơn với đầu ra có độ dài tùy ý.",
+    "SHA3-NISTStandard-024": "Tiêu chuẩn hóa SHA-3"
+}

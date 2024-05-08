@@ -1,0 +1,38 @@
+根据您的要求，下面是提炼代码中自然文本，并将其转换为JSON格式的i18n对象的过程。
+
+首先，我们找出所有显示给用户的自然文本：
+
+- "Parse ObjectID timestamp"
+- "Parse timestamp from MongoDB/BSON ObjectID hex string."
+- "https://docs.mongodb.com/manual/reference/method/ObjectId.getTimestamp/" (这个是链接，根据要求不包含，所以忽略)
+- "ObjectId.getTimestamp" (虽然是代码的一部分，但作为说明文本可以认为是自然文本)
+
+然后，我们创建一个i18n对象，将这些文本作为key，并赋值为"123"。
+
+最后，根据代码的实际功能，给出最合适的中文翻译，并替换掉"123"。
+
+以下是转换后的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Parse ObjectID timestamp": "解析 ObjectID 时间戳",
+    "Parse timestamp from MongoDB/BSON ObjectID hex string.": "从 MongoDB/BSON ObjectID 十六进制字符串解析时间戳。",
+    "ObjectId.getTimestamp": "ObjectId 获取时间戳"
+  }
+}
+```
+
+按照【示例1】的格式，输出如下：
+
+```json
+{
+  "i18n": {
+    "Parse ObjectID timestamp": "解析 ObjectID 时间戳",
+    "Parse timestamp from MongoDB/BSON ObjectID hex string.": "从 MongoDB/BSON ObjectID 十六进制字符串解析时间戳。",
+    "ObjectId.getTimestamp": "ObjectId 获取时间戳"
+  }
+}
+```
+
+请注意，"ObjectId.getTimestamp"虽然看起来像是代码，但在这里作为对方法功能的描述，所以按照要求进行了翻译。如果这不符合您的意图，可以将其从i18n对象中移除。

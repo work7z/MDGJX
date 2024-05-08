@@ -1,0 +1,19 @@
+{
+    "c1p4b": "Her ondalık sayı daha sonra beş Base85 karakterden oluşan benzersiz bir diziye dönüştürülür. Sonunda dört bayttan az kaldıysa dolgu uygulanabilir.",
+    "d7w2e": "Base85, giriş verilerini dört baytlık gruplara bölerek ve her grubu 0 ile 2^32-1 arasında bir ondalık sayıya dönüştürerek çalışır.",
+    "f9t1z": "Base85 başlangıçta daha iyi sıkıştırma oranları için PostScript belgelerindeki ikili verileri verimli bir şekilde temsil etmek üzere geliştirildi.",
+    "g3h5s": "Base85 nasıl çalışır?",
+    "j5s7r": "Base85'i JavaScript'te nasıl kodlayabilirim/kod çözebilirim?",
+    "k2em5e": "Bu, aynı miktarda giriş verisi için daha kısa çıkış dizeleriyle sonuçlanır; bu da boyutun en aza indirilmesinin kritik olduğu senaryolarda faydalı olabilir.",
+    "p8eq9n": "JavaScript'te Base85 kodlama ve kod çözme için 'base85' veya 'ascii85' gibi kütüphaneleri kullanabilirsiniz.",
+    "q2n3r": "Bugün, PDF belgeleri ve belirli ağ protokolleri gibi alan verimliliği ve okunabilirliğin önemli olduğu çeşitli uygulamalarda kullanılmaktadır.",
+    "r9qn8v": "Base85'in ana avantajı, daha büyük karakter seti (Base64'te 85'e karşı 64 veya Base32'de 32) nedeniyle geliştirilmiş alan verimliliğidir.",
+    "u1i2b": "Base85'i Base64 veya Base32'ye göre kullanmanın avantajları nelerdir?",
+    "v4k6r": "Daha büyük bir karakter seti kullanarak verileri Base64 veya Base32'ye göre daha kompakt bir biçimde kodlar.",
+    "w1x4k": "Evet, Ascii85 (PostScript ve PDF'de kullanılır), Z85 (ZeroMQ) ve UUencode (eski bir format) dahil olmak üzere çeşitli varyantlar mevcuttur. Her birinin biraz farklı karakter seti ve kuralları vardır.",
+    "x9n1b": "Base85, 85 yazdırılabilir ASCII karakter kümesini kullanarak ikili verileri temsil eden bir kodlama şemasıdır.",
+    "y6m8k": "Base85 neden oluşturuldu?",
+    "z2t7m": "Base85 nedir?",
+    "z5m6t": "Örnek kullanım: `const base85 = require('base85'); const kodlanmış = base85.encode('verileriniz'); const kodu çözülmüş = base85.decode(kodlanmış);`",
+    "z9t7p": "Base85'in belirli çeşitleri var mı?"
+}

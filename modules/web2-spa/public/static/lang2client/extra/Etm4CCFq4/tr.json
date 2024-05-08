@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "OpenSSL'yi sisteminize yükleyin ve C++ uygulamanızı oluştururken 'libssl' ve 'libcrypto' kitaplıklarına bağlantı verin.",
+    "md5-cpp-openssl-0001": "C++, MD5 karmalarını oluşturmak için OpenSSL kitaplığını kullanır. OpenSSL'i kurmanız ve projenizde buna karşı bağlantı kurmanız gerekir.",
+    "md5-cpp-use-openssl-0003": "Parçacık, bir giriş dizesi alan, OpenSSL'in MD5 API'sini kullanarak MD5 karma değerini hesaplayan ve karma değerini onaltılık bir dize olarak döndüren bir 'getMD5' işlevi oluşturur. Bu kodu C++ programınıza yapıştırın ve istediğiniz girişle 'getMD5' işlevini çağırın.",
+    "md5-csharp-built-in-0001": "C#'ta, MD5 karmalarını oluşturmak için 'System.Security.Cryptography.MD5' sınıfı kullanılır.",
+    "md5-csharp-no-install-0002": ".NET Framework/Core'un bir parçası olduğundan harici kitaplık kurulumuna gerek yoktur.",
+    "md5-csharp-use-0003": "Bu kod parçası bir MD5 örneği oluşturur, giriş dizesini bayta dönüştürür, karma değerini hesaplar ve son olarak karma değerini Base64 biçiminde kodlar. Bu kodu C# uygulamanızın giriş noktasına yerleştirin ve Base64 kodlu MD5 karmasını elde etmek için çalıştırın.",
+    "md5-java-built-in-0001": "Java, MD5 karmalarını oluşturmak için 'java.security.MessageDigest' sınıfını kullanır.",
+    "md5-java-imports-0002": "Sonucu karma oluşturmak ve kodlamak için 'java.security.MessageDigest' ve 'java.util.Base64' dosyalarını içe aktarmanız gerekir.",
+    "md5-java-use-0003": "Parçacık, MD5 özet algoritmasının bir örneğini alır, onu giriş dizesinin baytlarıyla günceller ve ardından elde edilen karmayı bir Base64 dizesine kodlar. Bu kodu bir Java sınıfına kopyalayın ve Base64 kodlu MD5 karmasını elde etmek için ana yöntemini çalıştırın.",
+    "md5-nodejs-built-in-0001": "Node.js'de, MD5 karmalarını oluşturmak için yerleşik 'kripto' modülü kullanılır.",
+    "md5-nodejs-no-install-0002": "'Cryto', Node.js ile önceden yüklenmiş olarak geldiğinden harici kitaplık kurulumu gerekmez.",
+    "md5-nodejs-use-0003": "Parçacık, `createHash('md5')` kullanarak bir karma nesnesi oluşturur, onu giriş dizesiyle günceller ve ardından `.digest('hex')` aracılığıyla özeti onaltılık biçime dönüştürür. Bu kodu Node.js betiğinize yapıştırın ve giriş değerinin MD5 karmasını almak için çalıştırın.",
+    "md5-php-built-in-0001": "PHP'de MD5 karmaları oluşturmak için yerleşik bir 'md5()' işlevi vardır.",
+    "md5-php-no-install-0002": "'md5()' PHP'de önceden kurulu olarak geldiğinden harici kütüphane kurulumuna gerek yoktur.",
+    "md5-php-use-0003": "Bu basit örnek, sağlanan giriş dizesinde PHP 'md5()' işlevini çağıran bir 'getMD5' işlevini tanımlar. Bu kodu bir PHP dosyasına kopyalayın, .php uzantısıyla kaydedin ve giriş değerinin MD5 karmasını görmek için bir web sunucusunda veya komut satırı aracılığıyla çalıştırın.",
+    "md5-python-built-in-0001": "Python, MD5 karmalarını oluşturmak için yerleşik 'hashlib' kitaplığını kullanır.",
+    "md5-python-no-install-0002": "'Hashlib' Python ile standart olarak geldiğinden ek kurulum gerekmez.",
+    "md5-python-use-0003": "Sağlanan şablon, bir MD5 karma nesnesi oluşturmadan önce giriş dizesini bayt olarak kodlar. Daha sonra MD5 karma değerini onaltılık biçimde almak için karma nesnesinde '.hexdigest()' yöntemi çağrılır. Bu kodu bir Python betiğine kopyalayın ve MD5 karmasını elde etmek için çalıştırın."
+}

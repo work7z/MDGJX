@@ -1,0 +1,27 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式组织，其中键是原始文本，值是“123”作为占位符：
+
+```json
+{
+  "i18n": {
+    "Bacon Cipher Decode": "123",
+    "Bacon's cipher or the Baconian cipher is a method of steganography devised by Francis Bacon in 1605. A message is concealed in the presentation of text, rather than its content.": "123",
+    "Standard (I=J and U=V)": "123",
+    "Complete": "123"
+  }
+}
+```
+
+以下是根据代码的实际功能，对这些自然文本进行中文翻译的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Bacon Cipher Decode": "培根密码解码",
+    "Bacon's cipher or the Baconian cipher is a method of steganography devised by Francis Bacon in 1605. A message is concealed in the presentation of text, rather than its content.": "培根密码或培根式密码是一种由弗朗西斯·培根于1605年发明的隐写术。信息隐藏在文本的表现形式中，而非其内容中。",
+    "Standard (I=J and U=V)": "标准（I=J且U=V）",
+    "Complete": "完整"
+  }
+}
+```
+
+请注意，这里的翻译是根据代码上下文进行的，可能需要根据实际应用场景进一步调整。

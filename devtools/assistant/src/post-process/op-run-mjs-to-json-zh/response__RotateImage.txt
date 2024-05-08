@@ -1,0 +1,25 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作，并翻译成中文：
+
+```json
+{
+  "i18n": {
+    "Rotate Image": "旋转图片",
+    "Rotates an image by the specified number of degrees.": "按指定度数旋转图片。",
+    "Invalid file type.": "无效的文件类型。",
+    "Error loading image.": "加载图片出错。",
+    "Error rotating image.": "旋转图片出错。",
+    "Rotation amount (degrees)": "旋转角度（度）"
+  }
+}
+```
+
+以下是每个key对应的中文翻译：
+
+- "Rotate Image"：操作的名字，直接翻译为“旋转图片”。
+- "Rotates an image by the specified number of degrees."：操作的描述，翻译为“按指定度数旋转图片。”。
+- "Invalid file type."：错误信息，翻译为“无效的文件类型。”。
+- "Error loading image."：错误信息，翻译为“加载图片出错。”。
+- "Error rotating image."：错误信息，翻译为“旋转图片出错。”。
+- "Rotation amount (degrees)"：参数描述，翻译为“旋转角度（度）”。
+
+以上JSON对象中的每个key都是代码中出现的自然文本，value则是相应的中文翻译。

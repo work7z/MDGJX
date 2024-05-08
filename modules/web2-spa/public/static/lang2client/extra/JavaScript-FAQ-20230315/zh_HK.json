@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "什麼是 JavaScript？",
+    "JS-DOM-API-007": "JavaScript 如何與 DOM 互動？",
+    "JS-DOM-API-Explanation-008": "JavaScript 提供文件物件模型 (DOM) API 來操作 HTML 和 CSS，使開發人員能夠動態變更內容、樣式和事件偵聽器。",
+    "JS-DOM-Example-009": "例如，您可以選擇一個元素並更改其文字內容：`document.getElementById('myElement').textContent = 'New Text';`",
+    "JS-Data-Types-010": "JavaScript 中有哪些資料型別？",
+    "JS-Data-Types-List-011": "JavaScript 支援各種資料類型，包括字串、數字、布林值、null、未定義和符號等原始資料類型，以及物件和陣列等複雜類型。",
+    "JS-Def-002": "JavaScript (JS) 是一種高階解釋性程式語言，廣泛用於建立 Web 應用程式、增強使用者介面以及使用 Node.js 建立伺服器端邏輯。",
+    "JS-Event-Loop-013": "JavaScript 中的事件循環是什麼？",
+    "JS-Event-Loop-Explanation-014": "事件循環是 JavaScript 並發模型的核心部分，它允許透過回呼、promise 和 async/await 進行非同步執行。",
+    "JS-Event-Loop-Process-015": "它首先運行主腳本，然後在相關事件（如使用者輸入或網路回應）發生時執行任何回調函數，並透過佇列系統管理它們。",
+    "JS-Function-Syntax-006": "函數是使用“function”關鍵字定義的，後面跟著函數名稱和括在括號中的參數。函數體用大括號括起來： `functiongreet(name) { console.log(`Hello, ${name}!`); }`",
+    "JS-Purpose-003": "它最初由 Netscape 的 Brendan Eich 於 1995 年開發，現已發展成為最受歡迎的語言之一，並受到所有主要 Web 瀏覽器和平台（如 Electron 和 React Native）的支援。",
+    "JS-Syntax-004": "JavaScript 的基本語法是什麼？",
+    "JS-Type-Checking-012": "類型檢查可以使用建構子（`typeof value === 'string'`）或從內建建構子繼承的物件的`instanceof`運算子（例如，`value instanceof Array`）來完成。",
+    "MDN-DOM-API": "MDN Web 文檔 - 操作文檔",
+    "MDN-Event-Loop": "MDN 網路文件 - 事件循環",
+    "MDN-JS-Guide": "MDN 網路文件 - JavaScript 指南",
+    "MDN-JS-Types": "MDN Web 文件 - 資料類型和資料結構"
+}

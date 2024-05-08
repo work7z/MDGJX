@@ -1,0 +1,23 @@
+{
+    "MD6-AlgorithmDetails-010": "Detalhes do algoritmo MD6",
+    "MD6-ComparisonSHA3-020": "Como o MD6 se compara ao SHA-3 (Keccak)?",
+    "MD6-Def-002": "MD6 (Message-Digest Algorithm 6) é uma função hash criptográfica projetada por Ronald Rivest em 2008. É uma evolução da família MD, oferecendo tamanhos de saída variáveis ​​que variam de 128 a 512 bits.",
+    "MD6-FAQ-001": "O que é MD6?",
+    "MD6-FutureDevelopments-028": "Há algum desenvolvimento ou melhoria futura planejada para o MD6?",
+    "MD6-FutureUnknown-029": "No momento, não há nenhuma informação disponível publicamente sobre o desenvolvimento contínuo ou planos para melhorar o algoritmo MD6. A pesquisa criptográfica continua a evoluir e novos algoritmos podem surgir para lidar com ameaças ou requisitos emergentes.",
+    "MD6-History-004": "Como o MD6 foi desenvolvido e o que levou à sua criação?",
+    "MD6-Operation-007": "Como funciona a operação MD6?",
+    "MD6-Origin-005": "O MD6 foi criado como resposta às vulnerabilidades encontradas no MD5 e no SHA-1, amplamente utilizados na época. O objetivo era fornecer uma alternativa mais segura com maior flexibilidade em relação ao tamanho da produção.",
+    "MD6-PKI-Alternatives-027": "Para aplicações de PKI e assinatura digital, padrões como RSA/SHA-256 ou ECDSA com variantes SHA-2 ou SHA-3 são comumente usados. Eles passaram por extensas análises e estabeleceram confiança na comunidade criptográfica.",
+    "MD6-PKI-Considerations-026": "Embora o MD6 tenha como objetivo fornecer segurança mais forte do que funções de hash anteriores, como o MD5, ele não foi amplamente adotado para PKI ou esquemas de assinatura digital devido à sua relativa novidade e à falta de ampla aceitação da comunidade criptográfica.",
+    "MD6-Process-008": "O MD6 processa mensagens de entrada por meio de uma série de funções de compactação que são aplicadas em uma estrutura semelhante a uma árvore. O algoritmo pode operar em paralelo, o que contribui para seu desempenho para entradas maiores.",
+    "MD6-Purpose-003": "O MD6 visa fornecer recursos de segurança robustos e desempenho aprimorado em comparação com seus antecessores, tornando-o adequado para uma variedade de aplicações que exigem hashing resistente a colisões e verificações de integridade de mensagens.",
+    "MD6-Rounds-009": "Cada nó na árvore MD6 passa por múltiplas rodadas de operações de mistura envolvendo adição modular, XOR bit a bit e permutações não lineares. O valor final do nó raiz representa o resumo hash da mensagem de entrada.",
+    "MD6-SecurityUpgrade-006": "O design do MD6 é baseado no conceito de hashing baseado em árvore, permitindo oferecer melhor proteção contra ataques de pré-imagem e de colisão do que os algoritmos MD anteriores, ao mesmo tempo que fornece maior rendimento para grandes conjuntos de dados.",
+    "MD6-StayingCurrent-030": "É essencial manter-se atualizado com as últimas descobertas de pesquisas e recomendações de especialistas em criptografia ao escolher uma função hash para qualquer aplicativo, especialmente à medida que o cenário da segurança criptográfica evolui ao longo do tempo.",
+    "MD6-UseInPKI-025": "O MD6 pode ser usado para infraestrutura de chave pública (PKI) ou assinaturas digitais?",
+    "MD6-vs-SHA3-Adoption-023": "SHA-3 foi adotado como padrão oficial do NIST e ganhou amplo uso devido à sua segurança e desempenho robustos. O MD6, apesar de ser teoricamente seguro, não teve o mesmo nível de adoção ou padronização.",
+    "MD6-vs-SHA3-DiffDesign-021": "MD6 e SHA-3 foram projetados pensando na segurança, mas empregam técnicas de hash diferentes. MD6 usa um design baseado em árvore para melhorar o paralelismo, enquanto SHA-3 é baseado na construção de esponja.",
+    "MD6-vs-SHA3-Flexibility-022": "MD6 oferece comprimentos de saída variáveis, o que pode ser vantajoso para aplicações que exigem tamanhos de hash personalizados. SHA-3 também suporta comprimentos de saída variáveis, embora sua variante mais comum, SHAKE, forneça ainda mais flexibilidade com saídas de comprimento arbitrário.",
+    "SHA3-NISTStandard-024": "Padronização SHA-3"
+}

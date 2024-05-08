@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Po integraci zkopírujte poskytnutou šablonu do svého programu C++ a před spuštěním programu nahraďte zástupný symbol skutečnou zakódovanou hodnotou.",
+    "c6p4n": "V poskytnuté šabloně nahraďte zástupný symbol v dekódovací části skutečnými bajty kódovanými Base58 (s předponou 'b' pro binární řetězec) a poté spusťte skript.",
+    "d2w6e": "Naklonujte/stáhněte si úložiště, zahrňte do projektu hlavičkový soubor base58.h a zkompilujte/propojte zdrojové soubory podle pokynů projektu.",
+    "d8w1b": "Není potřeba žádná další instalace, protože je dodávána se standardní knihovnou. Ujistěte se však, že vaše verze Pythonu je dostatečně aktuální, aby zahrnovala tuto funkci.",
+    "f9t2z": "Přidejte závislost do svého projektu Maven přidáním `<dependency> <groupId>org.bitcoinj</groupId> <artifactId>bitcoinj-core</artifactId> <version>...</version> </dependency>` kde verze by měla být nahrazena nejnovější verzí.",
+    "g4h7s": "Pro C++ můžete použít 'bitcoin-unlimited-libraries', které poskytují funkce Base58.",
+    "j9s5r": "Pro C# použijte ke zpracování kódování a dekódování Base58 knihovnu 'NBitcoin'.",
+    "k3m2e": "Zkopírujte poskytnutou šablonu do nového souboru Go, nahraďte zástupný symbol skutečnou zakódovanou hodnotou a poté soubor spusťte pomocí `go run yourfile.go`",
+    "p6e3n": "Nainstalujte balíček přes NuGet spuštěním `Install-Package NBitcoin` v konzole Správce balíčků nebo jej přidejte pomocí Správce balíčků NuGet.",
+    "q6n1r": "Po instalaci knihovny zkopírujte kód šablony do třídy Java a před spuštěním kódu nahraďte zástupný symbol skutečnou zakódovanou hodnotou.",
+    "r4n6v": "Přidejte závislost do svého projektu spuštěním `go get github.com/btcsuite/btcutil`. Tím se balíček stáhne a nainstaluje.",
+    "u7i9b": "Pro Go použijte balíček 'btcutil' dostupný na GitHubu, konkrétně jeho modul base58.",
+    "u9g6t": "Chcete-li spustit tento kód, musíte nainstalovat balíček 'base-x', který podporuje kódování a dekódování Base58.",
+    "v5k3r": "Tato knihovna poskytuje flexibilní API pro vytváření základních kódování, včetně Base58. Po instalaci nahraďte zástupný symbol v části dekódování skutečnou zakódovanou hodnotou a spusťte skript.",
+    "x2c5e": "Vestavěný modul 'base58' Pythonu lze použít pro kódování a dekódování Base58.",
+    "y3m7k": "Pro Javu použijte knihovnu 'bitcoinj', která zahrnuje funkci kódování a dekódování Base58.",
+    "z7n1m": "Nainstalujte jej přes npm spuštěním `npm install base-x` nebo `yarn add base-x`.",
+    "z8em2t": "Po instalaci zkopírujte poskytnutou šablonu do konzolové aplikace C# a před spuštěním programu nahraďte zástupný symbol skutečnou zakódovanou hodnotou."
+}

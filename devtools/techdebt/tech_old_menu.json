@@ -1,0 +1,1345 @@
+[
+  {
+    "label": "Dashboard",
+    "children": [
+      {
+        "icon": "area-of-interest",
+        "label": "Home",
+        "pid": "home",
+        "pathname": "/",
+        "pystr": "home,",
+        "raw_label": "Home",
+        "id": "home"
+      }
+    ]
+  },
+  {
+    "label": "Graphic Formats",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "Base64Previewer",
+        "label": "Base64 Previewer",
+        "pathname": "/exts/Base64Previewer",
+        "pystr": "base64 previewer,",
+        "raw_label": "Base64 Previewer",
+        "id": "Base64Previewer"
+      }
+    ]
+  },
+  {
+    "label": "QRCode",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "QRCodeDecoder",
+        "label": "QRCode Decoder",
+        "pathname": "/exts/QRCodeDecoder",
+        "pystr": "qrcode decoder,",
+        "raw_label": "QRCode Decoder",
+        "id": "QRCodeDecoder"
+      },
+      {
+        "icon": "application",
+        "pid": "QRCodeCreator",
+        "label": "QRCode Encoder",
+        "pathname": "/exts/QRCodeCreator",
+        "pystr": "qrcode encoder,",
+        "raw_label": "QRCode Encoder",
+        "id": "QRCodeCreator"
+      }
+    ]
+  },
+  {
+    "label": "Drawing",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "ColorPicker",
+        "label": "Color Chooser",
+        "pathname": "/exts/ColorPicker",
+        "pystr": "color chooser,",
+        "raw_label": "Color Chooser",
+        "id": "ColorPicker"
+      }
+    ]
+  },
+  {
+    "label": "Time Tools",
+    "children": [
+      {
+        "label": "Timestamp",
+        "pathname": "/time/time_timestamp",
+        "icon": "array-timestamp",
+        "pid": "timestamp",
+        "pystr": "timestamp,",
+        "raw_label": "Timestamp",
+        "id": "timestamp"
+      },
+      {
+        "label": "TimeZone",
+        "pathname": "/time/time_timezone",
+        "icon": "area-of-interest",
+        "pid": "timezone",
+        "pystr": "timezone,",
+        "raw_label": "TimeZone",
+        "id": "timezone"
+      },
+      {
+        "icon": "route",
+        "pid": "DateCalcTool100",
+        "label": "Date Interval Calculator",
+        "pathname": "/exts/DateCalcTool100",
+        "pystr": "date interval calculator,",
+        "raw_label": "Date Interval Calculator",
+        "id": "DateCalcTool100"
+      },
+      {
+        "icon": "timeline-events",
+        "pid": "TimeCrontab",
+        "label": "Cron Expression",
+        "pathname": "/exts/TimeCrontab",
+        "pystr": "cron expression,",
+        "raw_label": "Cron Expression",
+        "id": "TimeCrontab"
+      }
+    ]
+  },
+  {
+    "label": "Quick Differentiate",
+    "children": [
+      {
+        "label": "Text Compare",
+        "icon": "multi-select",
+        "pid": "textcompare",
+        "pathname": "/text/text_compare",
+        "pystr": "text compare,",
+        "raw_label": "Text Compare",
+        "id": "textcompare"
+      },
+      {
+        "icon": "application",
+        "pid": "PowerDiff200",
+        "label": "Power Diff",
+        "pathname": "/exts/PowerDiff200",
+        "pystr": "power diff,",
+        "raw_label": "Power Diff",
+        "id": "PowerDiff200"
+      }
+    ]
+  },
+  {
+    "label": "Text Case",
+    "children": [
+      {
+        "label": "ASCII Text",
+        "pid": "ascii",
+        "pathname": "/case/case_ascii",
+        "icon": "pivot",
+        "pystr": "ascii text,",
+        "raw_label": "ASCII Text",
+        "id": "ascii"
+      },
+      {
+        "label": "Numeric Text",
+        "pathname": "/case/case_number",
+        "pid": "numerictext",
+        "icon": "array-timestamp",
+        "pystr": "numeric text,",
+        "raw_label": "Numeric Text",
+        "id": "numerictext"
+      },
+      {
+        "label": "Chinese Text",
+        "pathname": "/case/case_chinese",
+        "icon": "translate",
+        "pid": "chinesetext",
+        "pystr": "chinese text,",
+        "raw_label": "Chinese Text",
+        "id": "chinesetext"
+      },
+      {
+        "icon": "font",
+        "pid": "TextASCIITools200",
+        "label": "ASCII <-> Text",
+        "pathname": "/exts/TextASCIITools200",
+        "pystr": "ascii <-> text,",
+        "raw_label": "ASCII <-> Text",
+        "id": "TextASCIITools200"
+      },
+      {
+        "icon": "citation",
+        "pid": "TextHanTools200",
+        "label": "Chinese Han Tools",
+        "pathname": "/exts/TextHanTools200",
+        "pystr": "chinese han tools,",
+        "raw_label": "Chinese Han Tools",
+        "id": "TextHanTools200"
+      },
+      {
+        "icon": "new-link",
+        "pid": "TextMultipleToOne",
+        "label": "Multi-Line <-> One-Line",
+        "pathname": "/exts/TextMultipleToOne",
+        "pystr": "multi-line <-> one-line,",
+        "raw_label": "Multi-Line <-> One-Line",
+        "id": "TextMultipleToOne"
+      },
+      {
+        "icon": "new-grid-item",
+        "pid": "MorseCode",
+        "label": "Morse Code Translator",
+        "pathname": "/exts/MorseCode",
+        "pystr": "morse code translator,",
+        "raw_label": "Morse Code Translator",
+        "id": "MorseCode"
+      },
+      {
+        "icon": "fork",
+        "pid": "TextJoinTools",
+        "label": "Join Chars Replacer",
+        "pathname": "/exts/TextJoinTools",
+        "pystr": "join chars replacer,",
+        "raw_label": "Join Chars Replacer",
+        "id": "TextJoinTools"
+      }
+    ]
+  },
+  {
+    "label": "Random Tools",
+    "children": [
+      {
+        "label": "UUID",
+        "pathname": "/random/random_uuid",
+        "icon": "social-media",
+        "pid": "uuid",
+        "pystr": "uuid,",
+        "raw_label": "UUID",
+        "id": "uuid"
+      },
+      {
+        "icon": "social-media",
+        "pid": "TextRandomMock",
+        "label": "Mock",
+        "pathname": "/exts/TextRandomMock",
+        "pystr": "mock,",
+        "raw_label": "Mock",
+        "id": "TextRandomMock"
+      },
+      {
+        "icon": "social-media",
+        "pid": "TextRandomText",
+        "label": "PlainText",
+        "pathname": "/exts/TextRandomText",
+        "pystr": "plaintext,",
+        "raw_label": "PlainText",
+        "id": "TextRandomText"
+      }
+    ]
+  },
+  {
+    "label": "Code Beautify",
+    "children": [
+      {
+        "pathname": "/text/beautify_html",
+        "label": "HTML",
+        "pid": "beautify_html",
+        "skipT": true,
+        "icon": "array",
+        "pystr": "html,",
+        "raw_label": "HTML",
+        "id": "beautify_html"
+      },
+      {
+        "pathname": "/text/beautify_xml",
+        "pid": "beautify_xml",
+        "label": "XML",
+        "skipT": true,
+        "icon": "array",
+        "pystr": "xml,",
+        "raw_label": "XML",
+        "id": "beautify_xml"
+      },
+      {
+        "pathname": "/text/beautify_yaml",
+        "pid": "beautify_yaml",
+        "label": "YAML",
+        "skipT": true,
+        "icon": "array",
+        "pystr": "yaml,",
+        "raw_label": "YAML",
+        "id": "beautify_yaml"
+      },
+      {
+        "pathname": "/text/beautify_css",
+        "pid": "beautify_css",
+        "label": "CSS",
+        "skipT": true,
+        "icon": "array",
+        "pystr": "css,",
+        "raw_label": "CSS",
+        "id": "beautify_css"
+      },
+      {
+        "pid": "beautify_less",
+        "pathname": "/text/beautify_less",
+        "label": "LESS",
+        "skipT": true,
+        "icon": "array",
+        "pystr": "less,",
+        "raw_label": "LESS",
+        "id": "beautify_less"
+      },
+      {
+        "pid": "beautify_sass",
+        "pathname": "/text/beautify_scss",
+        "label": "SASS",
+        "skipT": true,
+        "icon": "array",
+        "pystr": "sass,",
+        "raw_label": "SASS",
+        "id": "beautify_sass"
+      },
+      {
+        "pid": "beautify_json",
+        "pathname": "/text/beautify_json",
+        "label": "JSON",
+        "skipT": true,
+        "icon": "array",
+        "pystr": "json,",
+        "raw_label": "JSON",
+        "id": "beautify_json"
+      },
+      {
+        "pid": "beautify_markdown",
+        "pathname": "/text/beautify_markdown",
+        "label": "MarkDown",
+        "skipT": true,
+        "icon": "array",
+        "pystr": "markdown,",
+        "raw_label": "MarkDown",
+        "id": "beautify_markdown"
+      },
+      {
+        "pid": "beautify_javascript",
+        "pathname": "/text/beautify_javascript",
+        "label": "JavaScript",
+        "skipT": true,
+        "icon": "array",
+        "pystr": "javascript,",
+        "raw_label": "JavaScript",
+        "id": "beautify_javascript"
+      },
+      {
+        "pid": "beautify_typescript",
+        "pathname": "/text/beautify_typescript",
+        "label": "TypeScript",
+        "skipT": true,
+        "icon": "array",
+        "pystr": "typescript,",
+        "raw_label": "TypeScript",
+        "id": "beautify_typescript"
+      },
+      {
+        "pid": "beautify_sql",
+        "pathname": "/text/beautify_sql",
+        "label": "SQL",
+        "skipT": true,
+        "icon": "array",
+        "pystr": "sql,",
+        "raw_label": "SQL",
+        "id": "beautify_sql"
+      },
+      {
+        "pid": "beautify_graphql",
+        "pathname": "/text/beautify_graphql",
+        "label": "Graphql",
+        "skipT": true,
+        "icon": "array",
+        "pystr": "graphql,",
+        "raw_label": "Graphql",
+        "id": "beautify_graphql"
+      }
+    ]
+  },
+  {
+    "label": "YAML Helper",
+    "children": [
+      {
+        "pathname": "/text/beautify_yaml",
+        "pid": "beautify_yaml",
+        "icon": "key-tab",
+        "label": "YAML Formatter",
+        "pystr": "yaml formatter,",
+        "raw_label": "YAML Formatter",
+        "id": "beautify_yaml"
+      },
+      {
+        "icon": "flow-review-branch",
+        "pid": "YamlJSONTool",
+        "label": "YAML <-> JSON",
+        "pathname": "/exts/YamlJSONTool",
+        "pystr": "yaml <-> json,",
+        "raw_label": "YAML <-> JSON",
+        "id": "YamlJSONTool"
+      }
+    ]
+  },
+  {
+    "label": "SQL Helper",
+    "children": [
+      {
+        "pathname": "/text/beautify_sql",
+        "pid": "beautify_sql",
+        "icon": "key-tab",
+        "label": "SQL Formatter",
+        "pystr": "sql formatter,",
+        "raw_label": "SQL Formatter",
+        "id": "beautify_sql"
+      },
+      {
+        "icon": "flow-end",
+        "pid": "SQLToJSON200",
+        "label": "SQL to JSON",
+        "pathname": "/exts/SQLToJSON200",
+        "pystr": "sql to json,",
+        "raw_label": "SQL to JSON",
+        "id": "SQLToJSON200"
+      },
+      {
+        "icon": "flow-review",
+        "pid": "DMLToJSON200",
+        "label": "DML to JSON",
+        "pathname": "/exts/DMLToJSON200",
+        "pystr": "dml to json,",
+        "raw_label": "DML to JSON",
+        "id": "DMLToJSON200"
+      }
+    ]
+  },
+  {
+    "label": "XML Helper",
+    "children": [
+      {
+        "pid": "xml_transform",
+        "label": "XML Formatter",
+        "icon": "key-tab",
+        "pathname": "/text/xml_transform",
+        "pystr": "xml formatter,",
+        "raw_label": "XML Formatter",
+        "id": "xml_transform"
+      },
+      {
+        "icon": "oil-field",
+        "pid": "XMLXPath",
+        "label": "XML XPath",
+        "pathname": "/exts/XMLXPath",
+        "pystr": "xml xpath,",
+        "raw_label": "XML XPath",
+        "id": "XMLXPath"
+      },
+      {
+        "icon": "geosearch",
+        "pid": "XMLJSoup",
+        "label": "XML Query(JSoup)",
+        "pathname": "/exts/XMLJSoup",
+        "pystr": "xml query(jsoup),",
+        "raw_label": "XML Query(JSoup)",
+        "id": "XMLJSoup"
+      }
+    ]
+  },
+  {
+    "label": "JSON Helper",
+    "children": [
+      {
+        "label": "JSON Formatter",
+        "pid": "json_transform",
+        "icon": "key-tab",
+        "pathname": "/text/json_transform",
+        "pystr": "json formatter,",
+        "raw_label": "JSON Formatter",
+        "id": "json_transform"
+      },
+      {
+        "icon": "geosearch",
+        "pid": "JSONProbe",
+        "label": "JSON Prober",
+        "pathname": "/exts/JSONProbe",
+        "pystr": "json prober,",
+        "raw_label": "JSON Prober",
+        "id": "JSONProbe"
+      },
+      {
+        "icon": "flow-branch",
+        "pid": "JSONFlattenDeep",
+        "label": "JSON Flattener",
+        "pathname": "/exts/JSONFlattenDeep",
+        "pystr": "json flattener,",
+        "raw_label": "JSON Flattener",
+        "id": "JSONFlattenDeep"
+      },
+      {
+        "icon": "oil-field",
+        "pid": "JSONXPath",
+        "label": "JSON XPath",
+        "pathname": "/exts/JSONXPath",
+        "pystr": "json xpath,",
+        "raw_label": "JSON XPath",
+        "id": "JSONXPath"
+      },
+      {
+        "icon": "exchange",
+        "pid": "JSONQMapper",
+        "label": "JSON Mapper",
+        "pathname": "/exts/JSONQMapper",
+        "pystr": "json mapper,",
+        "raw_label": "JSON Mapper",
+        "id": "JSONQMapper"
+      },
+      {
+        "icon": "filter-list",
+        "pid": "JSONQFilter",
+        "label": "JSON Filter",
+        "pathname": "/exts/JSONQFilter",
+        "pystr": "json filter,",
+        "raw_label": "JSON Filter",
+        "id": "JSONQFilter"
+      },
+      {
+        "icon": "unresolve",
+        "pid": "JSONZipper",
+        "label": "JSON ZipTool",
+        "pathname": "/exts/JSONZipper",
+        "pystr": "json ziptool,",
+        "raw_label": "JSON ZipTool",
+        "id": "JSONZipper"
+      }
+    ]
+  },
+  {
+    "label": "PlainText Helper",
+    "children": [
+      {
+        "icon": "filter-list",
+        "pid": "TextHelperFilter",
+        "label": "Text Filter",
+        "pathname": "/exts/TextHelperFilter",
+        "pystr": "text filter,",
+        "raw_label": "Text Filter",
+        "id": "TextHelperFilter"
+      },
+      {
+        "icon": "stacked-chart",
+        "pid": "TextHelperShuffle",
+        "label": "Text Shuffler",
+        "pathname": "/exts/TextHelperShuffle",
+        "pystr": "text shuffler,",
+        "raw_label": "Text Shuffler",
+        "id": "TextHelperShuffle"
+      },
+      {
+        "icon": "sort-alphabetical",
+        "pid": "TextHelperSorter",
+        "label": "Text Sorter",
+        "pathname": "/exts/TextHelperSorter",
+        "pystr": "text sorter,",
+        "raw_label": "Text Sorter",
+        "id": "TextHelperSorter"
+      },
+      {
+        "icon": "bring-data",
+        "pid": "TextHelperUniquer",
+        "label": "Text Deduplicator",
+        "pathname": "/exts/TextHelperUniquer",
+        "pystr": "text deduplicator,",
+        "raw_label": "Text Deduplicator",
+        "id": "TextHelperUniquer"
+      }
+    ]
+  },
+  {
+    "label": "Text Matcher",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "RegexTester",
+        "label": "Regex Tester",
+        "pathname": "/exts/RegexTester",
+        "pystr": "regex tester,",
+        "raw_label": "Regex Tester",
+        "id": "RegexTester"
+      }
+    ]
+  },
+  {
+    "label": "System Formats",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "SystemFormat",
+        "label": "File Path Convertor",
+        "id": "SystemFormat",
+        "pathname": "/exts/SystemFormat",
+        "pystr": "file path convertor,",
+        "raw_label": "File Path Convertor"
+      }
+    ]
+  },
+  {
+    "label": "Digest Algorithm",
+    "children": [
+      {
+        "label": "MD5",
+        "skipT": true,
+        "pathname": "/codec/encrypt_md5",
+        "pid": "encrypt_md5",
+        "pystr": "md5,",
+        "raw_label": "MD5",
+        "id": "encrypt_md5"
+      },
+      {
+        "label": "SHA",
+        "skipT": true,
+        "pathname": "/codec/encrypt_sha",
+        "pid": "encrypt_sha",
+        "pystr": "sha,",
+        "raw_label": "SHA",
+        "id": "encrypt_sha"
+      }
+    ]
+  },
+  {
+    "label": "Encode/Decode",
+    "children": [
+      {
+        "label": "Base64",
+        "skipT": true,
+        "pathname": "/codec/encode_base64",
+        "pid": "encode_base64",
+        "pystr": "base64,",
+        "raw_label": "Base64",
+        "id": "encode_base64"
+      },
+      {
+        "pid": "encode_url",
+        "label": "URL Codec",
+        "pathname": "/codec/encode_url",
+        "pystr": "url codec,",
+        "raw_label": "URL Codec",
+        "id": "encode_url"
+      },
+      {
+        "skipT": true,
+        "pid": "Base32",
+        "label": "Base32",
+        "pathname": "/exts/Base32",
+        "pystr": "base32,",
+        "raw_label": "Base32",
+        "id": "Base32"
+      },
+      {
+        "icon": "application",
+        "pid": "TextHexConverter",
+        "label": "Hex Digits",
+        "pathname": "/exts/TextHexConverter",
+        "pystr": "hex digits,",
+        "raw_label": "Hex Digits",
+        "id": "TextHexConverter"
+      },
+      {
+        "pid": "UnicodeConversion",
+        "label": "Unicode Codec",
+        "pathname": "/exts/UnicodeConversion",
+        "pystr": "unicode codec,",
+        "raw_label": "Unicode Codec",
+        "id": "UnicodeConversion"
+      },
+      {
+        "pid": "HexBaseBiConverter",
+        "label": "Hex <-> Base64",
+        "pathname": "/exts/HexBaseBiConverter",
+        "pystr": "hex <-> base64,",
+        "raw_label": "Hex <-> Base64",
+        "id": "HexBaseBiConverter"
+      },
+      {
+        "pid": "QueryStringConversion",
+        "label": "QueryString Codec",
+        "pathname": "/exts/QueryStringConversion",
+        "pystr": "querystring codec,",
+        "raw_label": "QueryString Codec",
+        "id": "QueryStringConversion"
+      }
+    ]
+  },
+  {
+    "label": "Escape/UnEscape",
+    "children": [
+      {
+        "pid": "escape_xml",
+        "label": "XML",
+        "pathname": "/codec/escape_xml",
+        "pystr": "xml,",
+        "raw_label": "XML",
+        "id": "escape_xml"
+      },
+      {
+        "pid": "escape_html",
+        "label": "HTML",
+        "pathname": "/codec/escape_html",
+        "pystr": "html,",
+        "raw_label": "HTML",
+        "id": "escape_html"
+      },
+      {
+        "pid": "escape_csv",
+        "label": "CSV",
+        "pathname": "/codec/escape_csv",
+        "pystr": "csv,",
+        "raw_label": "CSV",
+        "id": "escape_csv"
+      },
+      {
+        "pid": "escape_java",
+        "label": "Java String",
+        "pathname": "/codec/escape_java",
+        "pystr": "java string,",
+        "raw_label": "Java String",
+        "id": "escape_java"
+      },
+      {
+        "pid": "escape_json",
+        "label": "JSON String",
+        "pathname": "/codec/escape_json",
+        "pystr": "json string,",
+        "raw_label": "JSON String",
+        "id": "escape_json"
+      },
+      {
+        "pid": "escape_javascript",
+        "label": "JavaScript String",
+        "pathname": "/codec/escape_javascript",
+        "pystr": "javascript string,",
+        "raw_label": "JavaScript String",
+        "id": "escape_javascript"
+      }
+    ]
+  },
+  {
+    "label": "Symmetric Crypto",
+    "children": [
+      {
+        "pid": "SymPBEWithSHA1AndRC240",
+        "label": "PBE Algorithm With SHA1 And RC2",
+        "pathname": "/exts/SymPBEWithSHA1AndRC240",
+        "pystr": "pbe algorithm with sha1 and rc2,",
+        "raw_label": "PBE Algorithm With SHA1 And RC2",
+        "id": "SymPBEWithSHA1AndRC240"
+      },
+      {
+        "pid": "SymPBEWithMD5AndDES",
+        "label": "PBE Algorithm With MD5 And DES",
+        "pathname": "/exts/SymPBEWithMD5AndDES",
+        "pystr": "pbe algorithm with md5 and des,",
+        "raw_label": "PBE Algorithm With MD5 And DES",
+        "id": "SymPBEWithMD5AndDES"
+      },
+      {
+        "pid": "SymRC6",
+        "label": "RC6 Algorithm",
+        "pathname": "/exts/SymRC6",
+        "pystr": "rc6 algorithm,",
+        "raw_label": "RC6 Algorithm",
+        "id": "SymRC6"
+      },
+      {
+        "pid": "SymRC4",
+        "label": "RC4 Algorithm",
+        "pathname": "/exts/SymRC4",
+        "pystr": "rc4 algorithm,",
+        "raw_label": "RC4 Algorithm",
+        "id": "SymRC4"
+      },
+      {
+        "pid": "SymRC5",
+        "label": "RC5 Algorithm",
+        "pathname": "/exts/SymRC5",
+        "pystr": "rc5 algorithm,",
+        "raw_label": "RC5 Algorithm",
+        "id": "SymRC5"
+      },
+      {
+        "pid": "SymRC2",
+        "label": "RC2 Algorithm",
+        "pathname": "/exts/SymRC2",
+        "pystr": "rc2 algorithm,",
+        "raw_label": "RC2 Algorithm",
+        "id": "SymRC2"
+      },
+      {
+        "pid": "SymDESede",
+        "label": "TripleDES Algorithm",
+        "pathname": "/exts/SymDESede",
+        "pystr": "tripledes algorithm,",
+        "raw_label": "TripleDES Algorithm",
+        "id": "SymDESede"
+      },
+      {
+        "pid": "SymBlowfish",
+        "label": "Blowfish Algorithm",
+        "pathname": "/exts/SymBlowfish",
+        "pystr": "blowfish algorithm,",
+        "raw_label": "Blowfish Algorithm",
+        "id": "SymBlowfish"
+      },
+      {
+        "pid": "SymDES",
+        "label": "DES Algorithm",
+        "pathname": "/exts/SymDES",
+        "pystr": "des algorithm,",
+        "raw_label": "DES Algorithm",
+        "id": "SymDES"
+      },
+      {
+        "pid": "SymPBEWithSHA1AndDESede",
+        "label": "PBE Algorithm With SHA1 And DES",
+        "pathname": "/exts/SymPBEWithSHA1AndDESede",
+        "pystr": "pbe algorithm with sha1 and des,",
+        "raw_label": "PBE Algorithm With SHA1 And DES",
+        "id": "SymPBEWithSHA1AndDESede"
+      },
+      {
+        "pid": "SymAES",
+        "label": "AES Algorithm",
+        "pathname": "/exts/SymAES",
+        "pystr": "aes algorithm,",
+        "raw_label": "AES Algorithm",
+        "id": "SymAES"
+      },
+      {
+        "pid": "SymARCFOUR",
+        "label": "ARC4 Algorithm",
+        "pathname": "/exts/SymARCFOUR",
+        "pystr": "arc4 algorithm,",
+        "raw_label": "ARC4 Algorithm",
+        "id": "SymARCFOUR"
+      }
+    ]
+  },
+  {
+    "label": "Web Auth",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "JWTDecoder",
+        "label": "JWT Token Decoder",
+        "pathname": "/exts/JWTDecoder",
+        "pystr": "jwt token decoder,",
+        "raw_label": "JWT Token Decoder",
+        "id": "JWTDecoder"
+      },
+      {
+        "icon": "application",
+        "pid": "JWTEncoder",
+        "label": "JWT Token Encoder",
+        "pathname": "/exts/JWTEncoder",
+        "pystr": "jwt token encoder,",
+        "raw_label": "JWT Token Encoder",
+        "id": "JWTEncoder"
+      }
+    ]
+  },
+  {
+    "label": "National Commercial Algorithm",
+    "children": [
+      {
+        "pid": "EncryptSM2",
+        "label": "Asymmetric Encryption(SM2)",
+        "pathname": "/exts/EncryptSM2",
+        "pystr": "asymmetric encryption(sm2),",
+        "raw_label": "Asymmetric Encryption(SM2)",
+        "id": "EncryptSM2"
+      },
+      {
+        "pid": "EncryptSM3",
+        "label": "Message Digest(SM3)",
+        "pathname": "/exts/EncryptSM3",
+        "pystr": "message digest(sm3),",
+        "raw_label": "Message Digest(SM3)",
+        "id": "EncryptSM3"
+      },
+      {
+        "pid": "EncryptSM4",
+        "label": "Symmetric Encryption(SM4)",
+        "pathname": "/exts/EncryptSM4",
+        "pystr": "symmetric encryption(sm4),",
+        "raw_label": "Symmetric Encryption(SM4)",
+        "id": "EncryptSM4"
+      }
+    ]
+  },
+  {
+    "label": "Asymmetric Crypto",
+    "children": [
+      {
+        "pid": "ASymRSA",
+        "label": "RSA Algorithm",
+        "pathname": "/exts/ASymRSA",
+        "pystr": "rsa algorithm,",
+        "raw_label": "RSA Algorithm",
+        "id": "ASymRSA"
+      }
+    ]
+  },
+  {
+    "label": "Compress and Decompress",
+    "children": [
+      {
+        "pid": "ZipText",
+        "label": "ZipText",
+        "pathname": "/exts/ZipText",
+        "pystr": "ziptext,",
+        "raw_label": "ZipText",
+        "id": "ZipText"
+      }
+    ]
+  },
+  {
+    "label": "Translation Tools",
+    "children": [
+      {
+        "icon": "signal-search",
+        "rank": 0,
+        "pid": "TranslateForJSON",
+        "label": "JSON Translate",
+        "pathname": "/exts/TranslateForJSON",
+        "pystr": "json translate,",
+        "raw_label": "JSON Translate",
+        "id": "TranslateForJSON"
+      },
+      {
+        "label": "Text Translate",
+        "pid": "texttranslate",
+        "icon": "search-text",
+        "pathname": "/trans/trans_text",
+        "pystr": "text translate,",
+        "raw_label": "Text Translate",
+        "id": "texttranslate"
+      },
+      {
+        "icon": "data-lineage",
+        "pid": "TranslateForProperties",
+        "label": "Properties Translate",
+        "pathname": "/exts/TranslateForProperties",
+        "pystr": "properties translate,",
+        "raw_label": "Properties Translate",
+        "id": "TranslateForProperties"
+      },
+      {
+        "icon": "new-text-box",
+        "pid": "TranslateForCustomizer",
+        "label": "PlainText Translate",
+        "pathname": "/exts/TranslateForCustomizer",
+        "pystr": "plaintext translate,",
+        "raw_label": "PlainText Translate",
+        "id": "TranslateForCustomizer"
+      }
+    ]
+  },
+  {
+    "label": "Data Transfer Layer",
+    "children": [
+      {
+        "pid": "BizJSONToCode",
+        "label": "JSON to Model",
+        "pathname": "/exts/BizJSONToCode",
+        "pystr": "json to model,",
+        "raw_label": "JSON to Model",
+        "id": "BizJSONToCode"
+      },
+      {
+        "pid": "BizXMLToCodeM",
+        "label": "XML to Model",
+        "pathname": "/exts/BizXMLToCodeM",
+        "pystr": "xml to model,",
+        "raw_label": "XML to Model",
+        "id": "BizXMLToCodeM"
+      },
+      {
+        "pid": "SQLToBean200",
+        "label": "SQL to Model",
+        "pathname": "/exts/SQLToBean200",
+        "pystr": "sql to model,",
+        "raw_label": "SQL to Model",
+        "id": "SQLToBean200"
+      }
+    ]
+  },
+  {
+    "label": "Mock Data Tools",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "LoremC",
+        "label": "Lorem Ipsum",
+        "pathname": "/exts/LoremC",
+        "pystr": "lorem ipsum,",
+        "raw_label": "Lorem Ipsum",
+        "id": "LoremC"
+      },
+      {
+        "icon": "application",
+        "pid": "NamePubC",
+        "label": "Sundry Text",
+        "pathname": "/exts/NamePubC",
+        "pystr": "sundry text,",
+        "raw_label": "Sundry Text",
+        "id": "NamePubC"
+      }
+    ]
+  },
+  {
+    "label": "Web World",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "WebWorld_html",
+        "label": "HTML Previewer",
+        "id": "WebWorld_html",
+        "pathname": "/exts/WebWorld?type=detail&id=html",
+        "pystr": "html previewer,",
+        "raw_label": "HTML Previewer"
+      },
+      {
+        "icon": "application",
+        "pid": "WebWorld_less_to_css",
+        "label": "LESS to CSS",
+        "id": "WebWorld_less_to_css",
+        "pathname": "/exts/WebWorld?type=detail&id=less_to_css",
+        "pystr": "less to css,",
+        "raw_label": "LESS to CSS"
+      }
+    ]
+  },
+  {
+    "label": "Expression Tools",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "RegexTester",
+        "label": "Regex Tester",
+        "pathname": "/exts/RegexTester",
+        "pystr": "regex tester,",
+        "raw_label": "Regex Tester",
+        "id": "RegexTester"
+      }
+    ]
+  },
+  {
+    "label": "Template Renderer",
+    "children": [
+      {
+        "skipT": true,
+        "icon": "application",
+        "pid": "RenderDoT",
+        "label": "doT.js",
+        "pathname": "/exts/RenderDoT",
+        "pystr": "dot.js,",
+        "raw_label": "doT.js",
+        "id": "RenderDoT"
+      },
+      {
+        "skipT": true,
+        "icon": "application",
+        "pid": "RenderHandleBars",
+        "label": "HandleBars.js",
+        "pathname": "/exts/RenderHandleBars",
+        "pystr": "handlebars.js,",
+        "raw_label": "HandleBars.js",
+        "id": "RenderHandleBars"
+      }
+    ]
+  },
+  {
+    "label": "Front-End Tools",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "Caniuse",
+        "label": "Front-End Compatibility Checker",
+        "pathname": "/exts/Caniuse",
+        "pystr": "front-end compatibility checker,",
+        "raw_label": "Front-End Compatibility Checker",
+        "id": "Caniuse"
+      }
+    ]
+  },
+  {
+    "label": "General Docs",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "LinuxManPage",
+        "label": "ManPage for Linux",
+        "pathname": "/exts/LinuxManPage",
+        "pystr": "manpage for linux,",
+        "raw_label": "ManPage for Linux",
+        "id": "LinuxManPage"
+      },
+      {
+        "icon": "application",
+        "pid": "CDNTool100",
+        "label": "CDN Static Resource",
+        "pathname": "/exts/CDNTool100",
+        "pystr": "cdn static resource,",
+        "raw_label": "CDN Static Resource",
+        "id": "CDNTool100"
+      }
+    ]
+  },
+  {
+    "label": "SDK Resources",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "JDKJRE100",
+        "label": "Install JDK/JRE",
+        "pathname": "/exts/JDKJRE100",
+        "pystr": "install jdk/jre,",
+        "raw_label": "Install JDK/JRE",
+        "id": "JDKJRE100"
+      },
+      {
+        "icon": "home",
+        "pid": "SoftwareCenter_index",
+        "label": "Resources Navigator",
+        "id": "SoftwareCenter_index",
+        "pathname": "/exts/SoftwareCenter?type=all&id=root",
+        "pystr": "resources navigator,",
+        "raw_label": "Resources Navigator"
+      }
+    ]
+  },
+  {
+    "label": "Java Tools",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "MavenRepo_main",
+        "label": "Maven Repository",
+        "id": "MavenRepo_main",
+        "pathname": "/exts/MavenRepo",
+        "pystr": "maven repository,",
+        "raw_label": "Maven Repository"
+      },
+      {
+        "icon": "application",
+        "pid": "MavenRepo_analyze_my_pom",
+        "label": "Analyze My POM.xml",
+        "id": "MavenRepo_analyze_my_pom",
+        "pathname": "/exts/MavenRepo?type=tools&id=analyze_my_pom",
+        "pystr": "analyze my pom.xml,",
+        "raw_label": "Analyze My POM.xml"
+      }
+    ]
+  },
+  {
+    "label": "W3C Standard",
+    "children": [
+      {
+        "pid": "KeyboardListen",
+        "label": "Keyboard Event",
+        "pathname": "/exts/KeyboardListen",
+        "pystr": "keyboard event,",
+        "raw_label": "Keyboard Event",
+        "id": "KeyboardListen"
+      }
+    ]
+  },
+  {
+    "label": "React Framework",
+    "children": [
+      {
+        "pid": "ReactReplaceStyle",
+        "label": "React Style Conversion",
+        "pathname": "/exts/ReactReplaceStyle",
+        "pystr": "react style conversion,",
+        "raw_label": "React Style Conversion",
+        "id": "ReactReplaceStyle"
+      },
+      {
+        "pid": "ReactReplaceClz",
+        "label": "React ClassName Conversion",
+        "pathname": "/exts/ReactReplaceClz",
+        "pystr": "react classname conversion,",
+        "raw_label": "React ClassName Conversion",
+        "id": "ReactReplaceClz"
+      }
+    ]
+  },
+  {
+    "label": "App Layer Helper",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "CurlParser",
+        "label": "Curl Command Parser",
+        "pathname": "/exts/CurlParser",
+        "pystr": "curl command parser,",
+        "raw_label": "Curl Command Parser",
+        "id": "CurlParser"
+      },
+      {
+        "icon": "application",
+        "pid": "CurlToAPI",
+        "label": "Curl to API Request",
+        "pathname": "/exts/CurlToAPI",
+        "pystr": "curl to api request,",
+        "raw_label": "Curl to API Request",
+        "id": "CurlToAPI"
+      }
+    ]
+  },
+  {
+    "label": "IP Tools",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "IPAddrMasker",
+        "label": "IPv4 Masker",
+        "pathname": "/exts/IPAddrMasker",
+        "pystr": "ipv4 masker,",
+        "raw_label": "IPv4 Masker",
+        "id": "IPAddrMasker"
+      },
+      {
+        "icon": "application",
+        "pid": "IPLongConverter",
+        "label": "IPv4 <-> Long",
+        "pathname": "/exts/IPLongConverter",
+        "pystr": "ipv4 <-> long,",
+        "raw_label": "IPv4 <-> Long",
+        "id": "IPLongConverter"
+      }
+    ]
+  },
+  {
+    "label": "Internet Layer Helper",
+    "children": [
+      {
+        "icon": "application",
+        "pid": "IPv4Calculator",
+        "label": "IPv4 Utilities",
+        "id": "IPv4Calculator",
+        "pathname": "/exts/IPv4Calculator",
+        "pystr": "ipv4 utilities,",
+        "raw_label": "IPv4 Utilities"
+      },
+      {
+        "icon": "application",
+        "pid": "IPv4Calculator_ipv4_detail",
+        "label": "IPv4 Network Calculator",
+        "id": "IPv4Calculator_ipv4_detail",
+        "pathname": "/exts/IPv4Calculator?type=detail&id=ipv4_detail",
+        "pystr": "ipv4 network calculator,",
+        "raw_label": "IPv4 Network Calculator"
+      },
+      {
+        "icon": "application",
+        "pid": "IPv4Calculator_ipv4_addr",
+        "label": "IPv4 Address Convertor",
+        "id": "IPv4Calculator_ipv4_addr",
+        "pathname": "/exts/IPv4Calculator?type=detail&id=ipv4_addr",
+        "pystr": "ipv4 address convertor,",
+        "raw_label": "IPv4 Address Convertor"
+      },
+      {
+        "icon": "application",
+        "pid": "IPv4Calculator_get_subnet_mask_by_bits",
+        "label": "Get Subnet Mask by Netmask Bits",
+        "id": "IPv4Calculator_get_subnet_mask_by_bits",
+        "pathname": "/exts/IPv4Calculator?type=detail&id=get_subnet_mask_by_bits",
+        "pystr": "get subnet mask by netmask bits,",
+        "raw_label": "Get Subnet Mask by Netmask Bits"
+      },
+      {
+        "icon": "application",
+        "pid": "IPv4Calculator_convert_subnet_mask",
+        "label": "Convert Subnet Mask by Netmask Bits",
+        "id": "IPv4Calculator_convert_subnet_mask",
+        "pathname": "/exts/IPv4Calculator?type=detail&id=convert_subnet_mask",
+        "pystr": "convert subnet mask by netmask bits,",
+        "raw_label": "Convert Subnet Mask by Netmask Bits"
+      },
+      {
+        "icon": "application",
+        "pid": "IPv4Calculator_get_subnet_mask_by_host",
+        "label": "Get Subnet Mask via the Number of Host",
+        "id": "IPv4Calculator_get_subnet_mask_by_host",
+        "pathname": "/exts/IPv4Calculator?type=detail&id=get_subnet_mask_by_host",
+        "pystr": "get subnet mask via the number of host,",
+        "raw_label": "Get Subnet Mask via the Number of Host"
+      },
+      {
+        "icon": "application",
+        "pid": "IPv4Calculator_host_nodes_calculator",
+        "label": "Nodes/Hosts Calculator",
+        "id": "IPv4Calculator_host_nodes_calculator",
+        "pathname": "/exts/IPv4Calculator?type=detail&id=host_nodes_calculator",
+        "pystr": "nodes/hosts calculator,",
+        "raw_label": "Nodes/Hosts Calculator"
+      },
+      {
+        "icon": "application",
+        "pid": "IPv4Calculator_subnet_format_convertor",
+        "label": "Subnet Mask Convertor",
+        "id": "IPv4Calculator_subnet_format_convertor",
+        "pathname": "/exts/IPv4Calculator?type=detail&id=subnet_format_convertor",
+        "pystr": "subnet mask convertor,",
+        "raw_label": "Subnet Mask Convertor"
+      },
+      {
+        "icon": "application",
+        "pid": "IPv4Calculator_subnet_mask_inversion",
+        "label": "Subnet Mask Inversion",
+        "id": "IPv4Calculator_subnet_mask_inversion",
+        "pathname": "/exts/IPv4Calculator?type=detail&id=subnet_mask_inversion",
+        "pystr": "subnet mask inversion,",
+        "raw_label": "Subnet Mask Inversion"
+      }
+    ]
+  },
+  {
+    "label": "Math Tools",
+    "children": [
+      {
+        "icon": "calculator",
+        "pid": "BasicCalc",
+        "label": "Basic Calculator",
+        "pathname": "/exts/BasicCalc",
+        "pystr": "basic calculator,",
+        "raw_label": "Basic Calculator",
+        "id": "BasicCalc"
+      },
+      {
+        "icon": "numerical",
+        "pid": "MathBCD",
+        "label": "Binary-Coded Decimal",
+        "pathname": "/exts/MathBCD",
+        "pystr": "binary-coded decimal,",
+        "raw_label": "Binary-Coded Decimal",
+        "id": "MathBCD"
+      },
+      {
+        "icon": "clean",
+        "pid": "NumberDigits",
+        "label": "HexBinDecOct",
+        "pathname": "/exts/NumberDigits",
+        "pystr": "hexbindecoct,",
+        "raw_label": "HexBinDecOct",
+        "id": "NumberDigits"
+      }
+    ]
+  }
+]

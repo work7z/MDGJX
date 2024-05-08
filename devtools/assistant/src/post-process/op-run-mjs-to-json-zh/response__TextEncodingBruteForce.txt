@@ -1,0 +1,23 @@
+根据您的要求，我们需要提取代码中显示给用户的自然文本，并将它们放入一个名为`i18n`的对象中，然后进行翻译。
+
+以下是提取的文本和对应的中文翻译：
+
+1. "Text Encoding Brute Force" - 文本编码暴力破解
+2. "Enumerates all supported text encodings for the input, allowing you to quickly spot the correct one." - 枚举输入支持的所有文本编码，让您快速找到正确的编码。
+3. "Supported charsets are:" - 支持的字符集包括：
+4. "Could not decode." - 无法解码。
+
+下面是根据上述提取的文本生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Text Encoding Brute Force": "文本编码暴力破解",
+    "Enumerates all supported text encodings for the input, allowing you to quickly spot the correct one.": "枚举输入支持的所有文本编码，让您快速找到正确的编码。",
+    "Supported charsets are:": "支持的字符集包括：",
+    "Could not decode.": "无法解码。"
+  }
+}
+```
+
+参考示例1，这是最终的输出格式。

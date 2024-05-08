@@ -1,0 +1,11 @@
+{
+    "c6p4n": "En la plantilla proporcionada, reemplace el marcador de posición en la parte de decodificación con los bytes reales codificados en Base85 (con el prefijo 'b') y luego ejecute el script.",
+    "d8w1b": "No se necesita instalación adicional ya que es parte de la biblioteca estándar. Asegúrese de que su versión de Python sea lo suficientemente reciente como para incluir esta funcionalidad.",
+    "f9t2z": "Agregue la dependencia a su proyecto Maven incluyendo `<dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependency>` en su pom.xml con el último número de versión.",
+    "q6n1r": "Después de instalar la biblioteca, copie el código de la plantilla en una clase Java y reemplace el marcador de posición con el valor codificado en Base85 real antes de ejecutar el código.",
+    "u9g6t": "Para JavaScript, debe instalar el paquete 'base85' para la codificación y decodificación Base85.",
+    "v5k3r": "Una vez instalado, reemplace el marcador de posición en la sección de decodificación con la cadena codificada en Base85 real y ejecute el script. La biblioteca maneja la conversión entre Buffers y cadenas Base85.",
+    "x2c5e": "Python tiene un módulo 'base85' incorporado que admite codificación y decodificación Base85.",
+    "y3m7k": "Para Java, utilice la biblioteca 'commons-codec' que incluye soporte para codificación y decodificación Base85.",
+    "z7n1m": "Instálelo usando npm ejecutando `npm install base85` o `yarn add base85`."
+}

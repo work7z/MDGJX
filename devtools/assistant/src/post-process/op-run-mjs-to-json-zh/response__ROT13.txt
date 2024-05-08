@@ -1,0 +1,28 @@
+根据您的要求，我们需要提取代码中显示给用户的自然文本，并将它们放入一个名为`i18n`的对象中，然后翻译成中文。
+
+以下是提取的文本和对应的中文翻译：
+
+1. "A simple caesar substitution cipher which rotates alphabet characters by the specified amount (default 13)." - 一个简单的凯撒替换密码，它按照指定的数量（默认为13）旋转字母字符。
+
+现在我们将这些文本放入JSON对象中：
+
+```json
+{
+  "i18n": {
+    "A simple caesar substitution cipher which rotates alphabet characters by the specified amount (default 13).": "一个简单的凯撒替换密码，它按照指定的数量（默认为13）旋转字母字符。"
+  }
+}
+```
+
+这就是根据您提供的代码和需求，生成的JSON对象和中文翻译。以下是按照您的示例格式化后的输出：
+
+```json
+{
+  "i18n": {
+    "A simple caesar substitution cipher which rotates alphabet characters by the specified amount (default 13).": "一个简单的凯撒替换密码，它按照指定的数量（默认为13）旋转字母字符。"
+    // 其他自然文本和翻译可以继续添加到这里
+  }
+}
+```
+
+请注意，代码中没有其他明显的自然文本信息显示给用户，除了上述描述信息。其他字段如`name`, `module`, `args`中的内容似乎是为了程序内部使用，并不直接显示给用户。如果需要提取更多内容，请提供进一步指示。

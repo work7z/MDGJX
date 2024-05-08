@@ -1,0 +1,21 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式呈现，同时附上中文翻译：
+
+```json
+{
+  "i18n": {
+    "HASSH Server Fingerprint": "HASSH服务器指纹",
+    "Generates a HASSH fingerprint to help identify SSH servers based on hashing together values from the Server Key Exchange Init message.": "通过将服务器密钥交换初始化消息中的值进行哈希处理，生成HASSH指纹以帮助识别SSH服务器。",
+    "Input: A hex stream of the SSH_MSG_KEXINIT packet application layer from Server to Client.": "输入：从服务器到客户端的SSH_MSG_KEXINIT数据包应用层的十六进制流。",
+    "Incorrect packet length.": "数据包长度不正确。",
+    "Not a Key Exchange Init.": "不是密钥交换初始化。",
+    "Hash digest": "哈希摘要",
+    "Full HASSH algorithms string": "完整的HASSH算法字符串",
+    "Key Exchange Algorithms": "密钥交换算法",
+    "Encryption Algorithms Server to Client": "服务器到客户端的加密算法",
+    "MAC Algorithms Server to Client": "服务器到客户端的MAC算法",
+    "Compression Algorithms Server to Client": "服务器到客户端的压缩算法"
+  }
+}
+```
+
+在这个JSON对象中，每个key都是原始代码中的自然文本，而对应的value是中文翻译。这样的结构便于国际化（i18n）处理，可以根据需要轻松替换不同语言的文本。

@@ -1,0 +1,11 @@
+{
+    "c6p4n": "在提供的範本中，將解碼部分中的佔位符替換為實際的 Base85 編碼位元組（前綴為“b”），然後執行腳本。",
+    "d8w1b": "不需要額外安裝，因為它是標準庫的一部分。確保您的 Python 版本足夠新以包含此功能。",
+    "f9t2z": "透過在您的Maven 專案中新增“<dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependency>”，將依賴項新增到您的Maven 專案中。具有最新版本號的 pom.xml 檔案。",
+    "q6n1r": "安裝程式庫後，將範本程式碼複製到 Java 類別中，並在執行程式碼之前將佔位符替換為實際的 Base85 編碼值。",
+    "u9g6t": "對於 JavaScript，您需要安裝「base85」套件來進行 Base85 編碼和解碼。",
+    "v5k3r": "安裝後，將解碼部分中的佔位符替換為實際的 Base85 編碼字串並執行腳本。此函式庫處理緩衝區和 Base85 字串之間的轉換。",
+    "x2c5e": "Python有一個內建的'base85'模組，支援Base85編碼和解碼。",
+    "y3m7k": "對於 Java，請使用「commons-codec」庫，其中包含對 Base85 編碼和解碼的支援。",
+    "z7n1m": "透過執行“npm install base85”或“yarn add base85”使用 npm 安裝它。"
+}

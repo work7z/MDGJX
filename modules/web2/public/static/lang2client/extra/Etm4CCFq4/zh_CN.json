@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "在您的系统上安装 OpenSSL，并在构建 C++ 应用程序时链接“libssl”和“libcrypto”库。",
+    "md5-cpp-openssl-0001": "C++ 使用 OpenSSL 库生成 MD5 哈希值。您需要安装 OpenSSL 并在项目中链接它。",
+    "md5-cpp-use-openssl-0003": "该代码片段创建一个函数“getMD5”，该函数接受输入字符串，使用 OpenSSL 的 MD5 API 计算其 MD5 哈希值，并将哈希值作为十六进制字符串返回。将此代码粘贴到您的 C++ 程序中，并使用所需的输入调用“getMD5”函数。",
+    "md5-csharp-built-in-0001": "在 C# 中，“System.Security.Cryptography.MD5”类用于生成 MD5 哈希值。",
+    "md5-csharp-no-install-0002": "不需要安装外部库，因为它是 .NET Framework/Core 的一部分。",
+    "md5-csharp-use-0003": "此代码片段创建一个 MD5 实例，将输入字符串转换为字节，计算哈希值，最后以 Base64 格式对哈希值进行编码。将此代码放入 C# 应用程序的入口点并运行它以获取 Base64 编码的 MD5 哈希值。",
+    "md5-java-built-in-0001": "Java 使用“java.security.MessageDigest”类来生成 MD5 哈希值。",
+    "md5-java-imports-0002": "您需要导入“java.security.MessageDigest”和“java.util.Base64”以对结果进行哈希和编码。",
+    "md5-java-use-0003": "该代码片段获取 MD5 摘要算法的实例，使用输入字符串的字节更新它，然后将生成的哈希值编码为 Base64 字符串。将此代码复制到 Java 类中并执行其 main 方法以获取 Base64 编码的 MD5 哈希值。",
+    "md5-nodejs-built-in-0001": "在 Node.js 中，内置的“crypto”模块用于生成 MD5 哈希值。",
+    "md5-nodejs-no-install-0002": "无需安装外部库，因为“crypto”已随 Node.js 预装。",
+    "md5-nodejs-use-0003": "该代码片段使用 createHash('md5') 创建一个哈希对象，使用输入字符串更新它，然后通过 .digest('hex') 将摘要转换为十六进制格式。将此代码粘贴到 Node.js 脚本中并执行它以获取输入值的 MD5 哈希值。",
+    "md5-php-built-in-0001": "PHP 有一个内置函数“md5()”用于生成 MD5 哈希值。",
+    "md5-php-no-install-0002": "无需安装外部库，因为 PHP 中已预安装“md5()”。",
+    "md5-php-use-0003": "这个简单的示例定义了一个“getMD5”函数，该函数对提供的输入字符串调用 PHP“md5()”函数。将此代码复制到 PHP 文件中，使用 .php 扩展名保存，然后在 Web 服务器中或通过命令行运行它以查看输入值的 MD5 哈希值。",
+    "md5-python-built-in-0001": "Python 使用内置的“hashlib”库来生成 MD5 哈希值。",
+    "md5-python-no-install-0002": "无需额外安装，因为“hashlib”是 Python 的标准配置。",
+    "md5-python-use-0003": "提供的模板在创建 MD5 哈希对象之前将输入字符串编码为字节。然后对哈希对象调用“.hexdigest()”方法以检索十六进制形式的 MD5 哈希值。将此代码复制到 Python 脚本中并运行它以获取 MD5 哈希值。"
+}

@@ -1,0 +1,21 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤，包括翻译成中文：
+
+1. 提炼文本。
+2. 将文本放入名为`i18n`的对象中，键（key）是原始文本，值（value）为123。
+3. 翻译这些文本为中文，并替换掉原来的值123。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "SM4 Encrypt": "SM4加密",
+    "SM4 is a 128-bit block cipher, currently established as a national standard (GB/T 32907-2016) of China. Multiple block cipher modes are supported. When using CBC or ECB mode, the PKCS#7 padding scheme is used.": "SM4是一个128位块密码，目前已成为中国的国家标准（GB/T 32907-2016）。支持多种块密码模式。当使用CBC或ECB模式时，采用PKCS#7填充方案。",
+    "Invalid key length: ${key.length} bytes\nSM4 uses a key length of 16 bytes (128 bits).": "无效的密钥长度：${key.length}字节\nSM4的密钥长度为16字节（128位）。",
+    "Invalid IV length: ${iv.length} bytes\nSM4 uses an IV length of 16 bytes (128 bits).\nMake sure you have specified the type correctly (e.g. Hex vs UTF8).": "无效的IV长度：${iv.length}字节\nSM4的IV长度为16字节（128位）。\n请确保您正确指定了类型（例如，十六进制与UTF8）。"
+  }
+}
+```
+
+在这个JSON对象中，我提取了所有用户可见的文本，并为其提供了中文翻译。注意，错误消息中的`${key.length}`和`${iv.length}`是动态替换的部分，它们在代码中用于构建错误消息，这里保留了原始格式。在实际使用时，这些占位符将被替换为实际的长度值。

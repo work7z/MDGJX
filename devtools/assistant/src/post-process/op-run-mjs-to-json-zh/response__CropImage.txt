@@ -1,0 +1,25 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式呈现，其中包含翻译后的中文：
+
+```json
+{
+  "i18n": {
+    "Crop Image": "裁剪图片",
+    "Crops an image to the specified region, or automatically crops edges.": "裁剪图片到指定区域，或者自动裁剪边缘。",
+    "Autocrop": "自动裁剪",
+    "Automatically crops same-colour borders from the image.": "自动从图片中裁剪相同颜色的边框。",
+    "Autocrop tolerance": "自动裁剪容差",
+    "A percentage value for the tolerance of colour difference between pixels.": "像素间颜色差异的容差百分比。",
+    "Only autocrop frames": "仅自动裁剪框架",
+    "Only crop real frames (all sides must have the same border)": "仅裁剪实际框架（所有边必须有相同的边框）",
+    "Symmetric autocrop": "对称自动裁剪",
+    "Force autocrop to be symmetric (top/bottom and left/right are cropped by the same amount)": "强制自动裁剪对称（上下和左右裁剪相同数量）",
+    "Autocrop keep border": "自动裁剪保留边框",
+    "The number of pixels of border to leave around the image.": "围绕图像保留的边框像素数。",
+    "Invalid file type.": "无效文件类型。",
+    "Error loading image.": "加载图片错误。",
+    "Error cropping image.": "裁剪图片错误。"
+  }
+}
+```
+
+在这个JSON对象中，每个key是原始代码中的自然文本，而value是相应的中文翻译。这些翻译是根据代码的功能和上下文进行的，以确保它们对用户来说是最清晰和贴切的。

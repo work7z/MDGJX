@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Po integraci zkopírujte poskytnutou šablonu do svého programu C++ a před spuštěním programu nahraďte zástupný symbol skutečnou zakódovanou hodnotou.",
+    "c6p4n": "Po instalaci zkopírujte poskytnutou šablonu do svého skriptu Python, nahraďte zástupný symbol v dekódovací části skutečnými bajty zakódovanými v Base62 (s předponou 'b') a poté spusťte skript.",
+    "d2w6e": "Stáhněte si zdrojový kód a zahrňte do projektu hlavičkový soubor base62.h. Zkompilujte/propojte se zdrojovými soubory podle pokynů projektu.",
+    "d8w1b": "Nainstalujte jej přes pip spuštěním `pip install python-base62` nebo `pip3 install python-base62`.",
+    "f9t2z": "Přidejte závislost do svého projektu Maven přidáním `<dependency> <groupId>com.warrenstrange</groupId> <artifactId>googleauth</artifactId> <version>...</version> </dependency>`, kde by měla být verze nahrazena nejnovější verzí.",
+    "g4h7s": "Pro C++ můžete použít knihovnu 'cpp-base62', která poskytuje funkce Base62.",
+    "j9s5r": "Pro C# použijte ke zpracování kódování a dekódování Base62 knihovnu 'WarrenStranger.Base62'.",
+    "k3m2e": "Zkopírujte poskytnutou šablonu do nového souboru Go, nahraďte zástupný symbol skutečnou zakódovanou hodnotou a poté soubor spusťte pomocí `go run yourfile.go`",
+    "p6e3n": "Nainstalujte balíček přes NuGet spuštěním `Install-Package WarrenStranger.Base62` v konzole Správce balíčků nebo jej přidejte pomocí Správce balíčků NuGet.",
+    "q6n1r": "Po instalaci knihovny zkopírujte poskytnutou šablonu do třídy Java a před spuštěním kódu nahraďte zástupný symbol skutečnou zakódovanou hodnotou. Všimněte si, že tato implementace používá celočíselná pole jako mezikrok.",
+    "r4n6v": "Přidejte závislost do svého projektu spuštěním `go get github.com/xyproto/base62`. Tím se balíček stáhne a nainstaluje.",
+    "u7i9b": "Pro Go použijte balíček 'base62' dostupný na GitHubu.",
+    "u9g6t": "Chcete-li spustit tento kód, musíte nainstalovat balíček 'base62', který poskytuje možnosti kódování a dekódování Base62.",
+    "v5k3r": "Po instalaci nahraďte zástupný symbol v části dekódování skutečnou hodnotou zakódovanou v Base62 a spusťte skript. Knihovna za vás zpracovává konverzi mezi řetězci Buffers a Base62.",
+    "x2c5e": "Pro Python použijte ke zpracování kódování a dekódování Base62 knihovnu 'base62'.",
+    "y3m7k": "Pro Javu použijte třídu Base62Converter knihovny 'google-authenticator'.",
+    "z7n1m": "Můžete jej nainstalovat pomocí npm spuštěním `npm install base62` nebo `yarn add base62`.",
+    "z8qqm2t": "Po instalaci zkopírujte poskytnutou šablonu do konzolové aplikace C# a před spuštěním programu nahraďte zástupný symbol skutečnou zakódovanou hodnotou."
+}

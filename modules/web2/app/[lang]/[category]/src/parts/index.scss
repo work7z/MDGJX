@@ -1,0 +1,23 @@
+$leftBarWidth: 240px;
+#partswrapper {
+  .left-part {
+    width: $leftBarWidth;
+  }
+  .right-part {
+    margin-left: $leftBarWidth;
+  }
+  .floatbtnview {
+    display: none;
+  }
+}
+.no-leftbar#partswrapper {
+  .left-part {
+    display: none;
+  }
+  .right-part {
+    margin-left: 0;
+  }
+  .floatbtnview {
+    display: block;
+  }
+}

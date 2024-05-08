@@ -1,0 +1,34 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设为`123`作为占位符。
+3. 根据代码的实际功能，翻译这些自然文本为中文，并替换其值。
+4. 输出JSON结果。
+
+下面是处理后的结果：
+
+```json
+{
+  "i18n": {
+    "Invert Image": "反转图像",
+    "Invert the colours of an image.": "反转图像的颜色。",
+    "Invalid input file format.": "输入文件格式无效。",
+    "Error loading image.": "加载图像时出错。",
+    "Inverting image...": "正在反转图像...",
+    "Error inverting image.": "反转图像时出错。",
+    "Invalid file type.": "文件类型无效。"
+  }
+}
+```
+
+以下是每个键值对的解释：
+
+- "Invert Image"：操作的名字，翻译为“反转图像”。
+- "Invert the colours of an image."：操作的描述，翻译为“反转图像的颜色。”。
+- "Invalid input file format."：错误信息，当输入不是图像时显示，翻译为“输入文件格式无效。”。
+- "Error loading image."：错误信息，加载图像出错时显示，翻译为“加载图像时出错。”。
+- "Inverting image..."：状态信息，显示图像正在被反转，翻译为“正在反转图像...”。
+- "Error inverting image."：错误信息，反转图像过程中出错时显示，翻译为“反转图像时出错。”。
+- "Invalid file type."：错误信息，当文件类型无效时显示，翻译为“文件类型无效。”。
+
+以上JSON对象遵循了您提供的格式，并完成了文本的提炼和翻译工作。

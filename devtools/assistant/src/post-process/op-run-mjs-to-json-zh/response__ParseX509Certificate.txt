@@ -1,0 +1,28 @@
+根据您的要求，以下是代码中显示给用户的自然文本的JSON对象，其中包含英文原文和对应的中文翻译。
+
+```json
+{
+  "i18n": {
+    "X.509 is an ITU-T standard for a public key infrastructure (PKI) and Privilege Management Infrastructure (PMI). It is commonly involved with SSL/TLS security.": "X.509是ITU-T为公钥基础设施（PKI）和权限管理基础设施（PMI）制定的标准。它通常与SSL/TLS安全相关。",
+    "This operation displays the contents of a certificate in a human readable format, similar to the openssl command line tool.": "此操作以人类可读的格式显示证书内容，类似于openssl命令行工具。",
+    "Tags: X509, server hello, handshake": "标签：X509，服务器问候，握手",
+    "No input": "没有输入",
+    "Certificate load error (non-certificate input?)": "证书加载错误（非证书输入？）",
+    "Undefined input format": "未定义的输入格式",
+    "Version:": "版本：",
+    "Serial number:": "序列号：",
+    "Algorithm ID:": "算法ID：",
+    "Validity": "有效性",
+    "Not Before:": "生效时间：",
+    "Not After:": "过期时间：",
+    "Issuer": "发行者",
+    "Subject": "主题",
+    "Public Key": "公钥",
+    "Certificate Signature": "证书签名",
+    "Algorithm:": "算法：",
+    "Extensions": "扩展"
+  }
+}
+```
+
+请注意，这里只包含了代码中用于显示给用户的文本，并且我已经尝试用最准确的中文进行翻译。由于代码中的某些文本（如标签和错误消息）可能具有特定的技术含义，因此翻译时我尽量保持了其原意。如果需要进一步的调整，请告知。

@@ -1,0 +1,19 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将这些文本作为键放入一个名为 `i18n` 的对象中，每个键对应的值设为1。下面是根据您提供的代码提取出的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "AMF Encode": 1,
+    "Action Message Format (AMF) is a binary format used to serialize object graphs such as ActionScript objects and XML, or send messages between an Adobe Flash client and a remote service, usually a Flash Media Server or third party alternatives.": 1,
+    "Format": 1
+  }
+}
+```
+
+以下是详细解释：
+
+- `"AMF Encode"`：这是类名和操作名，显示给用户。
+- `"Action Message Format (AMF) is a binary format used to serialize object graphs such as ActionScript objects and XML, or send messages between an Adobe Flash client and a remote service, usually a Flash Media Server or third party alternatives."`：这是类的描述，也是显示给用户的信息。
+- `"Format"`：这是参数名，同样是显示给用户的信息。
+
+注意：在这个代码片段中，我没有包括注释和URL，因为它们不是直接显示给用户的文本。同时，按照您的要求，我没有包括 `exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module` 和 `type` 字段。如果这些字段在用户界面中显示，则需要按照同样的规则将它们添加到 `i18n` 对象中。

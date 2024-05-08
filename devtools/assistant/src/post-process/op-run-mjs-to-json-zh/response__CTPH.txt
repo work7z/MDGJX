@@ -1,0 +1,51 @@
+根据您的要求，以下是代码中提取的自然文本，并按照指示转换为JSON格式，然后进行中文翻译。
+
+首先，找到的自然文本如下：
+
+- Context Triggered Piecewise Hashing, also called Fuzzy Hashing
+- can match inputs that have homologies
+- Such inputs have sequences of identical bytes in the same order, although bytes in between these sequences may be different in both content and length
+- CTPH was originally based on the work of Dr. Andrew Tridgell and a spam email detector called SpamSum
+- Identifying Almost Identical Files Using Context Triggered Piecewise Hashing
+
+下面是按照您的要求整理的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Context Triggered Piecewise Hashing, also called Fuzzy Hashing": "123",
+    "can match inputs that have homologies": "123",
+    "Such inputs have sequences of identical bytes in the same order, although bytes in between these sequences may be different in both content and length": "123",
+    "CTPH was originally based on the work of Dr. Andrew Tridgell and a spam email detector called SpamSum": "123",
+    "Identifying Almost Identical Files Using Context Triggered Piecewise Hashing": "123"
+  }
+}
+```
+
+然后，根据对代码功能的理解，下面是中文翻译：
+
+```json
+{
+  "i18n": {
+    "Context Triggered Piecewise Hashing, also called Fuzzy Hashing": "上下文触发的分段哈希，也称为模糊哈希",
+    "can match inputs that have homologies": "可以匹配具有同源性的输入",
+    "Such inputs have sequences of identical bytes in the same order, although bytes in between these sequences may be different in both content and length": "这些输入具有相同顺序的相同字节序列，尽管这些序列之间的字节在内容和长度上可能有所不同",
+    "CTPH was originally based on the work of Dr. Andrew Tridgell and a spam email detector called SpamSum": "CTPH最初基于Andrew Tridgell博士的工作以及一个名为SpamSum的垃圾邮件检测器",
+    "Identifying Almost Identical Files Using Context Triggered Piecewise Hashing": "使用上下文触发的分段哈希识别几乎相同的文件"
+  }
+}
+```
+
+最后，根据【示例1】，这里是最终的JSON输出：
+
+```json
+{
+  "i18n": {
+    "Context Triggered Piecewise Hashing, also called Fuzzy Hashing": "上下文触发的分段哈希，也称为模糊哈希",
+    "can match inputs that have homologies": "可以匹配具有同源性的输入",
+    "Such inputs have sequences of identical bytes in the same order, although bytes in between these sequences may be different in both content and length": "这些输入具有相同顺序的相同字节序列，尽管这些序列之间的字节在内容和长度上可能有所不同",
+    "CTPH was originally based on the work of Dr. Andrew Tridgell and a spam email detector called SpamSum": "CTPH最初基于Andrew Tridgell博士的工作以及一个名为SpamSum的垃圾邮件检测器",
+    "Identifying Almost Identical Files Using Context Triggered Piecewise Hashing": "使用上下文触发的分段哈希识别几乎相同的文件"
+  }
+}
+```

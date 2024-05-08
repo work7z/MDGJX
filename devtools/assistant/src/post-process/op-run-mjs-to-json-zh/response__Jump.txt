@@ -1,0 +1,19 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式组织，其中包含英文原文和对应的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Jump forwards or backwards to the specified Label": "跳转到指定的标签，可以是向前或向后跳转",
+    "Label name": "标签名称",
+    "Maximum jumps (if jumping backwards)": "最大跳跃次数（如果向后跳转）"
+  }
+}
+```
+
+以下是每个条目的解释：
+
+- "Jump forwards or backwards to the specified Label": 这是操作说明，解释了Jump类的基本功能，因此翻译为“跳转到指定的标签，可以是向前或向后跳转”。
+- "Label name": 这是输入参数的描述，直接翻译为“标签名称”。
+- "Maximum jumps (if jumping backwards)": 这是另一个输入参数的描述，解释了在向后跳转时可以设置的最大跳转次数，因此翻译为“最大跳跃次数（如果向后跳转）”。
+
+请注意，这些翻译是基于代码上下文的最佳理解，可能需要根据实际应用场景进一步调整。

@@ -1,0 +1,23 @@
+{
+    "MD2-Advantages-011": "Jaké jsou výhody používání MD2?",
+    "MD2-AlgorithmDetails-010": "Podrobnosti algoritmu MD2",
+    "MD2-Applications-018": "Jaké aplikace používaly nebo stále používají MD2?",
+    "MD2-Breakdown-016": "V MD2 byly postupem času objeveny kryptografické slabiny a pro všechny aplikace vyžadující bezpečné hashování jsou nyní doporučovány silnější alternativy jako SHA-256 a SHA-3.",
+    "MD2-CollisionSecurity-015": "MD2 je považováno za slabé proti moderním kryptografickým útokům. Jeho velikost hash (128 bitů) je podle dnešních standardů malá, takže je zranitelný vůči útokům kolize.",
+    "MD2-Def-002": "MD2 (Message-Digest Algorithm 2) je kryptografická hašovací funkce navržená Ronaldem Rivestem v roce 1989. Vytváří 128bitovou hašovací hodnotu pro jakoukoli danou vstupní zprávu.",
+    "MD2-DigitalSignature-Risks-021": "Rizika používání MD2 pro digitální podpisy",
+    "MD2-Disadvantages-014": "Jaké jsou nevýhody a bezpečnostní problémy s MD2?",
+    "MD2-FAQ-001": "Co je MD2?",
+    "MD2-HistoricalUse-020": "Historicky se MD2 používal při kontrolách integrity souborů a aktualizacích softwaru, ačkoli tyto aplikace do značné míry přešly na bezpečnější hašovací funkce, jako jsou SHA-256 a SHA-512.)",
+    "MD2-History-004": "Jak bylo MD2 vyvinuto a jaká je jeho historie?",
+    "MD2-Implementation-013": "Byl široce implementován a standardizován napříč různými platformami a jazyky, což znamená, že integrace MD2 do stávajících systémů může být relativně přímočará.",
+    "MD2-InsecurityExamples-017": "Příklady rozpadu zabezpečení MD2",
+    "MD2-Operation-007": "Jak funguje provoz MD2?",
+    "MD2-Origin-005": "MD2 byl původně vytvořen jako vylepšení oproti MD1, řešící některé slabiny nalezené v dřívějším algoritmu. Na svou dobu si získal oblibu díky své relativní jednoduchosti a rychlosti.",
+    "MD2-PKI-019": "MD2 byl kdysi používán v infrastruktuře veřejného klíče (PKI) pro digitální podpisy, ale od té doby byl zastaralý kvůli své zranitelnosti vůči útokům. Certifikáty podepsané pomocí MD2 již většina systémů nedůvěřuje.",
+    "MD2-Process-008": "MD2 funguje tak, že vyplní vstupní zprávu na násobek 16 bajtů a poté ji zpracuje pomocí řady operací exkluzivního NEBO, rotací bitů a sčítání. Konečným výstupem je 128bitová hodnota hash.",
+    "MD2-Purpose-003": "Účelem MD2 je zajistit integritu dat generováním jedinečného digitálního otisku prstu, který lze použít k ověření originality a pravosti dat.",
+    "MD2-Rounds-009": "Algoritmus používá čtyřkolový proces se specifickými operacemi prováděnými na 128bitové stavové proměnné. Každé kolo zabírá bloky vycpané zprávy a aktualizuje stav, dokud není zpracována celá zpráva.",
+    "MD2-Speed-012": "MD2 byl na svou dobu považován za rychlý a v některých scénářích má stále přijatelný výkon, takže je vhodný pro prostředí, kde jsou omezené výpočetní zdroje.",
+    "MD2-Successors-006": "Byl však nahrazen silnějšími algoritmy jako MD5 a SHA-1, které jsou součástí stejné rodiny hašovacích funkcí, ale nabízejí vylepšené bezpečnostní funkce."
+}

@@ -1,0 +1,23 @@
+{
+    "a4r9t": "Voiko Base45 purkaa minkä tahansa Base45-koodatun merkkijonon sen alkuperästä riippumatta?",
+    "c2vw9k": "Vaikka Base45 ei ole yhtä laajalti käytössä kuin Base64 tai Base32, avoimen lähdekoodin kirjastoja on olemassa useille kielille.",
+    "c9q7w": "Miksi Base45 luotiin?",
+    "d6y9k": "Jos tavut eivät riitä viimeisen ryhmän täyttämiseen, täyttöä ei käytetä. sen sijaan loput bitit käsitellään ja kartoitetaan niitä vastaaviin merkkeihin.",
+    "e8x2v": "Base45 toimii jakamalla syöttötiedot 5 tavun ryhmiin. Sitten se muuntaa kunkin ryhmän desimaaliluvuksi ja kartoittaa sen vastaavaan 45 merkkisarjansa merkkiin.",
+    "f8n4m": "Sen kompakti mahdollistaa tehokkaamman QR-koodien tilan käytön säilyttäen samalla luettavuuden tavallisilla viivakoodilukijailla.",
+    "g1h5n": "Miten Base45 toimii?",
+    "g6v3b": "Base45:n suurempi merkistö voi kuitenkin lisätä virheiden todennäköisyyttä käsiteltäessä muita kuin aakkosnumeerisia merkkejä, mikä voi olla ongelma joissakin ympäristöissä tai lähetyskanavissa.",
+    "i7w2m": "Onko suosituilla ohjelmointikielillä sisäänrakennettuja Base45-kirjastoja?",
+    "j7k2t": "Tietojen koodaamiseksi Base45:llä tarvitset kirjaston tai funktion, joka toteuttaa Base45-algoritmin.",
+    "m9k1z": "Jos dekoodattava data kuitenkin sisältää erityistä sovellussemantiikkaa (esim. tiettyjä QR-koodimuotoja), lisäkäsittely saattaa olla tarpeen dekoodauksen jälkeen.",
+    "q5h8n": "Suurin etu on pienempi merkkijonon pituus samalle määrälle koodattua dataa, mikä tekee siitä sopivan sovelluksiin, joissa tilan tehokkuus on kriittistä.",
+    "qv1p5n": "Esimerkiksi Javassa voit käyttää org.iso.base45-kirjastoa tietojen koodaamiseen.",
+    "r9a3t": "Base45 on tekstipohjainen koodausmenetelmä, joka koodaa binääritiedot ASCII-merkeiksi.",
+    "s3e6r": "Kuinka koodaan tiedot Base45:llä?",
+    "u2l8s": "Mikä on Base45?",
+    "x5z1b": "Base45 kehitettiin ensisijaisesti QR-koodin käyttöön digitaalisten COVID-sertifikaattien yhteydessä.",
+    "y3b6n": "Kyllä, niin kauan kuin koodattu merkkijono on luotu Base45-spesifikaation mukaisesti, minkä tahansa yhteensopivan dekooderin pitäisi pystyä purkamaan se.",
+    "z1n5qr": "Esimerkkejä ovat base45 npm -paketti JavaScriptille ja dotnet-base45 .NETille.",
+    "z5b7m": "Se käyttää suurempaa aakkostoa (0-9, A-Z, a-z, -, ., $, /, +, % ja *) verrattuna Base64:ään tai Base32:een, mikä johtaa lyhyempiin koodattuihin merkkijonoihin samalle syöttödatalle.",
+    "z8m2t": "Mitä etuja Base45:n käytöstä on Base64:een tai Base32:een verrattuna?"
+}

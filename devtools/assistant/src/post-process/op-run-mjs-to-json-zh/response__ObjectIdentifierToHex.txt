@@ -1,0 +1,33 @@
+根据您的要求，下面是提炼代码中自然文本并转换为JSON格式的步骤：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，并给每个文本赋予一个键（key）。
+3. 将这些键对应的值（value）设置为123作为占位符。
+4. 根据代码的实际功能，将占位符翻译为中文。
+
+下面是根据以上步骤生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Object Identifier to Hex": "对象标识符转十六进制",
+    "Converts an object identifier (OID) into a hexadecimal string.": "将对象标识符（OID）转换为十六进制字符串。",
+    "Object Identifier to Hex constructor": "对象标识符转十六进制构造函数"
+  }
+}
+```
+
+以下是按照您的示例格式化的结果：
+
+```json
+{
+  "i18n": {
+    "Object Identifier to Hex": "对象标识符转十六进制",
+    "Converts an object identifier (OID) into a hexadecimal string.": "将对象标识符（OID）转换为十六进制字符串。",
+    "Object Identifier to Hex constructor": "对象标识符转十六进制构造函数"
+    // 其他可能显示给用户的文本和其对应的中文翻译
+  }
+}
+```
+
+请注意，由于代码中没有其他明显的自然文本显示给用户，除了示例中已经提取的，所以只包含了这三个翻译项。如果代码中还有其他文本需要翻译，请提供详细信息，以便进行相应的更新。

@@ -1,0 +1,20 @@
+{
+    "c5p1b": "Padding tidak digunakan; panjang output yang dikodkan bergantung secara langsung pada saiz data input.",
+    "c8me6b": "Skim seperti Base62 tersuai mungkin disesuaikan untuk aplikasi tertentu, tetapi ia biasanya mematuhi prinsip yang sama menggunakan set aksara yang lebih besar daripada Base64 atau Base32.",
+    "d2w4e": "Sama seperti sistem penukaran asas yang lain, Base62 berfungsi dengan menukar bait input kepada integer besar, kemudian menyatakannya sebagai gabungan aksara daripada set 62 aksaranya.",
+    "f1t2z": "Base62 telah dibangunkan untuk menyediakan alternatif yang lebih pendek dan selamat URL kepada Base64, terutamanya untuk pengecam unik dan URL pendek.",
+    "g8h7s": "Bagaimanakah Base62 berfungsi?",
+    "j4s6r": "Bagaimanakah saya boleh mengekod/menyahkod dengan Base62 dalam JavaScript?",
+    "k9em5e": "Ini menjadikannya sesuai untuk senario di mana pengecam mesra URL yang ringkas diperlukan tanpa mengorbankan kebolehbacaan.",
+    "p9e1n": "Anda boleh menggunakan perpustakaan seperti 'base-x' atau 'base62' untuk pengekodan dan penyahkodan Base62 dalam JavaScript.",
+    "q7n3r": "Ia juga mengelakkan aksara samar-samar seperti 'O' dan '0', 'I' dan 'l', yang boleh membawa kepada ralat transkripsi manusia.",
+    "r6nq2v": "Kelebihan utama Base62 ialah peningkatan kecekapan ruang disebabkan set aksara yang lebih besar daripada Base32 tetapi tanpa aksara bukan abjad angka yang ditemui dalam Base64.",
+    "u3i8b": "Apakah kelebihan menggunakan Base62 berbanding Base64 atau Base32?",
+    "v3k5r": "Set aksara merangkumi semua huruf besar dan huruf kecil (A-Z, a-z) dan digit (0-9), memberikan perwakilan yang lebih padat berbanding Base64 atau Base32.",
+    "w2x9qk": "Walaupun Base62 sendiri tidak mempunyai variasi yang ketara, sesetengah pelaksanaan mungkin berbeza sedikit dalam pilihan set aksara mereka, seperti tidak termasuk '+' atau '/' yang biasa digunakan dalam Base64.",
+    "x7n1m": "Base62 ialah skema pengekodan yang mewakili data binari sebagai jujukan 62 aksara alfanumerik.",
+    "y3m9k": "Mengapa Base62 dicipta?",
+    "z2m7t": "Contoh penggunaan: `const base62 = require('base62'); const dikodkan = base62.encode('data-anda'); const decode = base62.decode(encoded);`",
+    "z4t9b": "Apakah itu Base62?",
+    "z7t1p": "Adakah terdapat sebarang varian khusus Base62?"
+}

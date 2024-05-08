@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Az integrálást követően másolja be a megadott sablont a C++ programba, és a program futtatása előtt cserélje ki a helyőrzőt a tényleges kódolt értékre.",
+    "c6p4n": "A megadott sablonban cserélje ki a helyőrzőt a dekódolási részben a tényleges Base58 kódolású bájtokra (a bináris karakterláncot \"b\" előtaggal látja el), majd futtassa a szkriptet.",
+    "d2w6e": "Klónozza/töltse le a tárat, foglalja bele a base58.h fejlécfájlt a projektbe, és fordítsa le/linkelje a forrásfájlokat a projekt utasításai szerint.",
+    "d8w1b": "Nincs szükség további telepítésre, mivel a szabványos könyvtárhoz tartozik. Győződjön meg azonban arról, hogy a Python verziója elég friss ahhoz, hogy tartalmazza ezt a funkciót.",
+    "f9t2z": "Adja hozzá a függőséget Maven-projektjéhez a `<dependency> <groupId>org.bitcoinj</groupId> <artifactId>bitcoinj-core</artifactId> <version>...</version> </dependency>` hozzáadásával ahol verzió le kell cserélni a legújabb kiadásra.",
+    "g4h7s": "C++ esetén használhatja a „bitcoin-unlimited-libraries”-t, amely Base58 funkciót biztosít.",
+    "j9s5r": "C# esetén használja az „NBitcoin” könyvtárat a Base58 kódolás és dekódolás kezelésére.",
+    "k3m2e": "Másolja a megadott sablont egy új Go fájlba, cserélje ki a helyőrzőt a tényleges kódolt értékre, majd futtassa a fájlt a \"go run yourfile.go\" használatával.",
+    "p6e3n": "Telepítse a csomagot a NuGet-en keresztül az \"Install-Package NBitcoin\" futtatásával a Package Manager konzolban, vagy adja hozzá a NuGet Package Manageren keresztül.",
+    "q6n1r": "A könyvtár telepítése után másolja a sablonkódot egy Java osztályba, és a kód futtatása előtt cserélje ki a helyőrzőt a tényleges kódolt értékre.",
+    "r4n6v": "Adja hozzá a függőséget a projekthez a `go get github.com/btcuite/btcutil` futtatásával. Ezzel letölti és telepíti a csomagot.",
+    "u7i9b": "A Go esetében használja a GitHubon elérhető „btcutil” csomagot, különösen annak base58 modulját.",
+    "u9g6t": "A kód futtatásához telepítenie kell a „base-x” csomagot, amely támogatja a Base58 kódolást és dekódolást.",
+    "v5k3r": "Ez a könyvtár rugalmas API-t biztosít az alapkódolások létrehozásához, beleértve a Base58-at is. A telepítés után cserélje ki a helyőrzőt a dekódolási szakaszban a tényleges kódolt értékre, és futtassa a parancsfájlt.",
+    "x2c5e": "A Python beépített „base58” modulja használható Base58 kódolására és dekódolására.",
+    "y3m7k": "Java esetén használja a „bitcoinj” könyvtárat, amely tartalmazza a Base58 kódolási és dekódolási funkciókat.",
+    "z7n1m": "Telepítse az npm-en keresztül az \"npm install base-x\" vagy a \"yarn add base-x\" futtatásával.",
+    "z8em2t": "A telepítés után másolja át a megadott sablont egy C# konzolalkalmazásba, és a program futtatása előtt cserélje ki a helyőrzőt a tényleges kódolt értékre."
+}

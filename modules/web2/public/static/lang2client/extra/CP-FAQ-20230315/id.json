@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "Mempelajari program membuka peluang karir di berbagai industri dan memungkinkan Anda mengembangkan solusi inovatif, mengotomatiskan tugas, dan memahami sistem yang kompleks.",
+    "CP-Advantages-013": "Apa keuntungan mempelajari pemrograman komputer?",
+    "CP-Basics-001": "Apa itu pemrograman komputer?",
+    "CP-Def-002": "Pemrograman komputer melibatkan penulisan instruksi, atau kode, dalam bahasa pemrograman untuk menginstruksikan komputer tentang cara melakukan tugas tertentu.",
+    "CP-History-004": "Bagaimana sejarah pemrograman komputer?",
+    "CP-History-Origin-005": "Mesin pertama yang dapat diprogram berasal dari karya Ada Lovelace pada Analytical Engine karya Charles Babbage pada abad ke-19. Namun, pemrograman modern berkembang pesat dengan ditemukannya komputer elektronik serba guna pertama, ENIAC, pada tahun 1940-an.",
+    "CP-Lang-Choice-009": "Pilihan bahasa bergantung pada faktor-faktor seperti persyaratan proyek, dukungan komunitas, kemudahan belajar, dan kebutuhan kinerja.",
+    "CP-Language-Evolution-006": "Sejak itu, bahasa pemrograman berevolusi dari kode mesin ke bahasa assembly, kemudian ke bahasa tingkat tinggi seperti FORTRAN, COBOL, C, dan sekarang ke bahasa modern seperti Python, JavaScript, dan Rust.",
+    "CP-Languages-007": "Apa sajakah bahasa pemrograman yang populer?",
+    "CP-Languages-List-008": "Bahasa pemrograman populer termasuk Java, Python, JavaScript, C++, C#, Swift, Go, PHP, Ruby, dan Kotlin. Masing-masing memiliki kekuatan dan kasus penggunaannya sendiri, misalnya Python untuk ilmu data, JavaScript untuk pengembangan web, dan C++ untuk pemrograman sistem.",
+    "CP-Process-010": "Bagaimana proses pemrograman komputer?",
+    "CP-Process-Explanation-011": "Pemrograman biasanya melibatkan perencanaan (mendefinisikan masalah dan merancang solusi), pengkodean (menulis kode sumber dalam bahasa yang dipilih), pengujian (debugging dan memverifikasi fungsionalitas), dan pemeliharaan (memperbarui dan meningkatkan program seiring waktu).",
+    "CP-Purpose-003": "Pemrogram membuat algoritma, memecahkan masalah, dan membangun aplikasi perangkat lunak yang dapat mengotomatisasi proses, memanipulasi data, dan berinteraksi dengan pengguna atau sistem lain.",
+    "CP-SDLC-012": "Hal ini sering kali disusun dalam Siklus Hidup Pengembangan Perangkat Lunak (SDLC) yang mencakup fase tambahan seperti analisis kebutuhan, desain, penerapan, dan pengujian penerimaan pengguna.",
+    "CP-Skillset-015": "Hal ini juga meningkatkan pemikiran logis, keterampilan memecahkan masalah, dan kemampuan beradaptasi terhadap teknologi baru, menjadikannya lebih serbaguna di era digital.",
+    "HistOfProg-Wikipedia": "Sejarah Bahasa Pemrograman - Wikipedia",
+    "SDLC-Wikipedia": "Siklus Hidup Pengembangan Perangkat Lunak - Wikipedia",
+    "TIOBE-Index": "Indeks TIOBE - Perusahaan Kualitas Perangkat Lunak"
+}

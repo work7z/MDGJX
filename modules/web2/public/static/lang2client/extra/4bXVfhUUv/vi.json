@@ -1,0 +1,11 @@
+{
+    "c6p4n": "Trong mẫu được cung cấp, hãy thay thế phần giữ chỗ trong phần giải mã bằng byte được mã hóa Base85 thực tế (có tiền tố là 'b'), sau đó thực thi tập lệnh.",
+    "d8w1b": "Không cần cài đặt thêm vì nó là một phần của thư viện chuẩn. Đảm bảo phiên bản Python của bạn đủ mới để bao gồm chức năng này.",
+    "f9t2z": "Thêm phần phụ thuộc vào dự án Maven của bạn bằng cách bao gồm `<dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependency>` trong pom.xml với số phiên bản mới nhất.",
+    "q6n1r": "Sau khi cài đặt thư viện, hãy sao chép mã mẫu vào một lớp Java và thay thế phần giữ chỗ bằng giá trị được mã hóa Base85 thực tế trước khi chạy mã.",
+    "u9g6t": "Đối với JavaScript, bạn cần cài đặt gói “base85” để mã hóa và giải mã Base85.",
+    "v5k3r": "Sau khi cài đặt, hãy thay thế phần giữ chỗ trong phần giải mã bằng chuỗi được mã hóa Base85 thực tế và chạy tập lệnh. Thư viện xử lý việc chuyển đổi giữa các chuỗi Bộ đệm và Base85.",
+    "x2c5e": "Python có mô-đun 'base85' tích hợp hỗ trợ mã hóa và giải mã Base85.",
+    "y3m7k": "Đối với Java, hãy sử dụng thư viện 'commons-codec' bao gồm hỗ trợ mã hóa và giải mã Base85.",
+    "z7n1m": "Cài đặt nó bằng npm bằng cách chạy `npm install base85` hoặc `yarn add base85`."
+}

@@ -1,0 +1,43 @@
+根据您的要求，下面是将代码中的自然文本提取出来，并按照要求转换为JSON格式的过程：
+
+1. 提取的自然文本如下：
+
+   - "GOST Decrypt"
+   - "The GOST block cipher (Magma), defined in the standard GOST 28147-89 (RFC 5830), is a Soviet and Russian government standard symmetric key block cipher with a block size of 64 bits. The original standard, published in 1989, did not give the cipher any name, but the most recent revision of the standard, GOST R 34.12-2015 (RFC 7801, RFC 8891), specifies that it may be referred to as Magma. The GOST hash function is based on this cipher. The new standard also specifies a new 128-bit block cipher called Kuznyechik.<br><br>Developed in the 1970s, the standard had been marked 'Top Secret' and then downgraded to 'Secret' in 1990. Shortly after the dissolution of the USSR, it was declassified and it was released to the public in 1994. GOST 28147 was a Soviet alternative to the United States standard algorithm, DES. Thus, the two are very similar in structure."
+   - "Key"
+   - "IV"
+   - "Input type"
+   - "Output type"
+   - "Algorithm"
+   - "Block length"
+   - "sBox"
+   - "Block mode"
+   - "Key meshing mode"
+   - "Padding"
+
+2. 将这些文本放入一个名为`i18n`的对象中，并给它们赋值为123。
+
+3. 翻译这些文本为中文，并替换它们的值。
+
+下面是转换后的JSON格式：
+
+```json
+{
+  "i18n": {
+    "GOST Decrypt": "GOST解密",
+    "The GOST block cipher (Magma), defined in the standard GOST 28147-89 (RFC 5830), is a Soviet and Russian government standard symmetric key block cipher with a block size of 64 bits. The original standard, published in 1989, did not give the cipher any name, but the most recent revision of the standard, GOST R 34.12-2015 (RFC 7801, RFC 8891), specifies that it may be referred to as Magma. The GOST hash function is based on this cipher. The new standard also specifies a new 128-bit block cipher called Kuznyechik.<br><br>Developed in the 1970s, the standard had been marked 'Top Secret' and then downgraded to 'Secret' in 1990. Shortly after the dissolution of the USSR, it was declassified and it was released to the public in 1994. GOST 28147 was a Soviet alternative to the United States standard algorithm, DES. Thus, the two are very similar in structure.": "GOST块加密（Magma）是在GOST 28147-89（RFC 5830）标准中定义的，是苏联和俄罗斯政府的标准对称密钥块加密，块大小为64位。最初的1989年发布的标准没有给加密算法命名，但最新修订的标准GOST R 34.12-2015（RFC 7801, RFC 8891）规定它可以被称为Magma。GOST哈希函数基于此加密算法。新标准还规定了一种新的128位块加密算法，名为Kuznyechik。<br><br>该标准于20世纪70年代开发，曾被标记为'绝密'，在1990年降级为'秘密'。苏联解体后不久，它被解密并于1994年向公众发布。GOST 28147是对美国标准算法DES的苏联替代品。因此，两者在结构上非常相似。",
+    "Key": "密钥",
+    "IV": "初始向量",
+    "Input type": "输入类型",
+    "Output type": "输出类型",
+    "Algorithm": "算法",
+    "Block length": "块长度",
+    "sBox": "S盒",
+    "Block mode": "块模式",
+    "Key meshing mode": "密钥交织模式",
+    "Padding": "填充"
+  }
+}
+```
+
+请注意，由于某些文本内容较长，可能需要根据实际应用场景进一步精简翻译。

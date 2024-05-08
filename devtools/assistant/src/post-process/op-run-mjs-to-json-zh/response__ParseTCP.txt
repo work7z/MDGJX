@@ -1,0 +1,48 @@
+根据您的要求，下面是代码中显示给用户的自然文本的JSON格式，以及对应的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Parses a TCP header and payload (if present).": "解析TCP头部和有效载荷（如果存在）。",
+    "Unrecognised input format.": "未识别的输入格式。",
+    "Need at least 20 bytes for a TCP Header": "至少需要20字节用于TCP头部",
+    "End of Option List": "选项列表结束",
+    "No-Operation": "无操作",
+    "Maximum Segment Size": "最大段大小",
+    "Window Scale": "窗口缩放",
+    "SACK Permitted": "允许SACK",
+    "SACK": "SACK",
+    "Echo (obsoleted by option 8)": "回显（由选项8替代）",
+    "Echo Reply (obsoleted by option 8)": "回显回复（由选项8替代）",
+    "Timestamps": "时间戳",
+    "Partial Order Connection Permitted (obsolete)": "允许部分顺序连接（已过时）",
+    "Partial Order Service Profile (obsolete)": "部分顺序服务配置（已过时）",
+    "CC (obsolete)": "CC（已过时）",
+    "CC.NEW (obsolete)": "CC.NEW（已过时）",
+    "CC.ECHO (obsolete)": "CC.ECHO（已过时）",
+    "TCP Alternate Checksum Request (obsolete)": "TCP备用校验和请求（已过时）",
+    "TCP Alternate Checksum Data (obsolete)": "TCP备用校验和数据（已过时）",
+    "Skeeter": "Skeeter",
+    "Bubba": "Bubba",
+    "Trailer Checksum Option": "尾部校验和选项",
+    "MD5 Signature Option (obsoleted by option 29)": "MD5签名选项（由选项29替代）",
+    "SCPS Capabilities": "SCPS能力",
+    "Selective Negative Acknowledgements": "选择性否定确认",
+    "Record Boundaries": "记录边界",
+    "Corruption experienced": "已经验证损坏",
+    "SNAP": "SNAP",
+    "Unassigned (released 2000-12-18)": "未分配（2000-12-18发布）",
+    "TCP Compression Filter": "TCP压缩过滤器",
+    "Quick-Start Response": "快速启动响应",
+    "User Timeout Option (also, other known unauthorized use)": "用户超时选项（还有其他已知未授权使用）",
+    "TCP Authentication Option (TCP-AO)": "TCP认证选项（TCP-AO）",
+    "Multipath TCP (MPTCP)": "多路径TCP（MPTCP）",
+    "Encryption Negotiation (TCP-ENO)": "加密协商（TCP-ENO）",
+    "Reserved (known unauthorized use without proper IANA assignment)": "保留（已知未授权使用，没有适当的IANA分配）",
+    "RFC3692-style Experiment 1 (also improperly used for shipping products)": "RFC3692风格的实验1（也错误地用于运输产品）",
+    "RFC3692-style Experiment 2 (also improperly used for shipping products)": "RFC3692风格的实验2（也错误地用于运输产品）"
+  }
+}
+```
+
+以上JSON对象中的key是英文原文，value是对应的中文翻译。这些翻译是根据代码的功能和上下文进行的，尽量做到准确和贴切。

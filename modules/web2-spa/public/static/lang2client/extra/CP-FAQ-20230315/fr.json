@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "Apprendre à programmer ouvre des opportunités de carrière dans divers secteurs et vous permet de développer des solutions innovantes, d'automatiser des tâches et de comprendre des systèmes complexes.",
+    "CP-Advantages-013": "Quels sont les avantages d’apprendre la programmation informatique ?",
+    "CP-Basics-001": "Qu'est-ce que la programmation informatique ?",
+    "CP-Def-002": "La programmation informatique consiste à écrire des instructions, ou du code, dans un langage de programmation pour indiquer aux ordinateurs comment effectuer des tâches spécifiques.",
+    "CP-History-004": "Quelle est l’histoire de la programmation informatique ?",
+    "CP-History-Origin-005": "Les premières machines programmables remontent aux travaux d'Ada Lovelace sur le moteur analytique de Charles Babbage au XIXe siècle. Cependant, la programmation moderne a décollé avec l’invention du premier ordinateur électronique à usage général, ENIAC, dans les années 1940.",
+    "CP-Lang-Choice-009": "Le choix de la langue dépend de facteurs tels que les exigences du projet, le soutien de la communauté, la facilité d'apprentissage et les besoins de performance.",
+    "CP-Language-Evolution-006": "Depuis lors, les langages de programmation ont évolué du code machine à l'assembleur, puis vers des langages de haut niveau comme FORTRAN, COBOL, C, et maintenant vers des langages modernes tels que Python, JavaScript et Rust.",
+    "CP-Languages-007": "Quels sont les langages de programmation populaires ?",
+    "CP-Languages-List-008": "Les langages de programmation populaires incluent Java, Python, JavaScript, C++, C#, Swift, Go, PHP, Ruby et Kotlin. Chacun a ses propres atouts et cas d'utilisation, par exemple Python pour la science des données, JavaScript pour le développement Web et C++ pour la programmation système.",
+    "CP-Process-010": "Quel est le processus de programmation informatique ?",
+    "CP-Process-Explanation-011": "La programmation implique généralement la planification (définition du problème et conception de la solution), le codage (écriture du code source dans un langage choisi), les tests (débogage et vérification des fonctionnalités) et la maintenance (mise à jour et amélioration du programme au fil du temps).",
+    "CP-Purpose-003": "Les programmeurs créent des algorithmes, résolvent des problèmes et créent des applications logicielles capables d'automatiser les processus, de manipuler des données et d'interagir avec les utilisateurs ou d'autres systèmes.",
+    "CP-SDLC-012": "Ceci est souvent structuré dans un cycle de vie de développement logiciel (SDLC) qui comprend des phases supplémentaires telles que l'analyse des exigences, la conception, le déploiement et les tests d'acceptation des utilisateurs.",
+    "CP-Skillset-015": "Il améliore également la pensée logique, les compétences en résolution de problèmes et l’adaptabilité aux nouvelles technologies, ce qui rend l’individu plus polyvalent à l’ère numérique.",
+    "HistOfProg-Wikipedia": "Histoire des langages de programmation — Wikipédia",
+    "SDLC-Wikipedia": "Cycle de vie du développement logiciel — Wikipédia",
+    "TIOBE-Index": "TIOBE Index - La société de qualité logicielle"
+}

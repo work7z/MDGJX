@@ -1,0 +1,38 @@
+根据您的要求，以下是提炼出的自然文本，并以JSON格式组织，随后提供中文翻译：
+
+```json
+{
+  "i18n": {
+    "JWT Verify": "123",
+    "Verifies that a JSON Web Token is valid and has been signed with the provided secret / private key.": "123",
+    "The key should be either the secret for HMAC algorithms or the PEM-encoded private key for RSA and ECDSA.": "123",
+    "Public/Secret Key": "123"
+  }
+}
+```
+
+以下是中文翻译：
+
+```json
+{
+  "i18n": {
+    "JWT Verify": "JWT验证",
+    "Verifies that a JSON Web Token is valid and has been signed with the provided secret / private key.": "验证JSON Web Token是否有效，并且已使用提供的密钥/私钥签名。",
+    "The key should be either the secret for HMAC algorithms or the PEM-encoded private key for RSA and ECDSA.": "密钥应为HMAC算法的密钥，或者是RSA和ECDSA的PEM编码的私钥。",
+    "Public/Secret Key": "公钥/密钥"
+  }
+}
+```
+
+最终输出的JSON结果如下：
+
+```json
+{
+  "i18n": {
+    "JWT Verify": "JWT验证",
+    "Verifies that a JSON Web Token is valid and has been signed with the provided secret / private key.": "验证JSON Web Token是否有效，并且已使用提供的密钥/私钥签名。",
+    "The key should be either the secret for HMAC algorithms or the PEM-encoded private key for RSA and ECDSA.": "密钥应为HMAC算法的密钥，或者是RSA和ECDSA的PEM编码的私钥。",
+    "Public/Secret Key": "公钥/密钥"
+  }
+}
+```

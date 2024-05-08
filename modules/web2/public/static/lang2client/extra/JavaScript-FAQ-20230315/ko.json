@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "자바스크립트란 무엇인가요?",
+    "JS-DOM-API-007": "JavaScript는 DOM과 어떻게 상호 작용합니까?",
+    "JS-DOM-API-Explanation-008": "JavaScript는 HTML과 CSS를 조작할 수 있는 DOM(문서 개체 모델) API를 제공하므로 개발자는 콘텐츠, 스타일 및 이벤트 리스너를 동적으로 변경할 수 있습니다.",
+    "JS-DOM-Example-009": "예를 들어, 요소를 선택하고 해당 텍스트 내용을 변경할 수 있습니다: `document.getElementById('myElement').textContent = 'New Text';`",
+    "JS-Data-Types-010": "JavaScript의 데이터 유형은 무엇입니까?",
+    "JS-Data-Types-List-011": "JavaScript는 문자열, 숫자, 부울, null, 정의되지 않음, 기호와 같은 기본 데이터 유형뿐만 아니라 객체 및 배열과 같은 복잡한 유형을 포함한 다양한 데이터 유형을 지원합니다.",
+    "JS-Def-002": "JavaScript(JS)는 Node.js를 사용하여 웹 애플리케이션을 만들고, 사용자 인터페이스를 향상하고, 서버 측 논리를 구축하는 데 널리 사용되는 고급 해석 프로그래밍 언어입니다.",
+    "JS-Event-Loop-013": "JavaScript의 이벤트 루프란 무엇입니까?",
+    "JS-Event-Loop-Explanation-014": "이벤트 루프는 콜백, 약속 및 비동기/대기를 통해 비동기 실행을 허용하는 JavaScript 동시성 모델의 핵심 부분입니다.",
+    "JS-Event-Loop-Process-015": "먼저 기본 스크립트를 실행한 다음 관련 이벤트(예: 사용자 입력 또는 네트워크 응답)가 발생할 때 콜백 기능을 실행하여 대기열 시스템을 통해 관리합니다.",
+    "JS-Function-Syntax-006": "함수는 'function' 키워드 뒤에 함수 이름과 괄호로 묶인 매개변수를 사용하여 정의됩니다. 함수 본문은 중괄호로 묶입니다: `function Greeting(name) { console.log(`Hello, ${name}!`); }`",
+    "JS-Purpose-003": "1995년 Netscape의 Brendan Eich에 의해 처음 개발되었으며 이후 Electron 및 React Native와 같은 모든 주요 웹 브라우저 및 플랫폼에서 지원되는 가장 인기 있는 언어 중 하나로 발전했습니다.",
+    "JS-Syntax-004": "JavaScript의 기본 구문은 무엇입니까?",
+    "JS-Type-Checking-012": "유형 검사는 생성자(`typeof value === 'string'`) 또는 내장 생성자에서 상속된 객체에 대한 `instanceof` 연산자(예: `value instanceof Array`)를 사용하여 수행할 수 있습니다.",
+    "MDN-DOM-API": "MDN 웹 문서 - 문서 조작",
+    "MDN-Event-Loop": "MDN 웹 문서 - 이벤트 루프",
+    "MDN-JS-Guide": "MDN 웹 문서 - JavaScript 가이드",
+    "MDN-JS-Types": "MDN 웹 문서 - 데이터 유형 및 데이터 구조"
+}

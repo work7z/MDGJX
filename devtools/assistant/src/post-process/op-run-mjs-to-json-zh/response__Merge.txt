@@ -1,0 +1,19 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是文本，值设置为`123`。
+3. 根据代码的实际功能，将文本翻译成中文，并替换`123`。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "Merge": "合并",
+    "Consolidate all branches back into a single trunk. The opposite of Fork. Unticking the Merge All checkbox will only consolidate all branches up to the nearest Fork/Subsection.": "将所有分支合并回单一主干。与分叉相反。取消勾选“合并所有”复选框将只合并到最近的分叉/小节。"
+  }
+}
+```
+
+在这个例子中，只有两个自然文本字段被包含在内，分别是操作的名字和描述。其他字段如`exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`、`type`都没有出现在代码中，因此没有被包含在JSON对象里。对于翻译，我尽量保持了原意，同时使语言符合中文表述习惯。

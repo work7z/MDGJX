@@ -1,0 +1,49 @@
+根据您的要求，以下是代码中显示给用户的自然文本，提炼成JSON格式的i18n对象，并翻译成中文：
+
+```json
+{
+  "i18n": {
+    "Convert area": "面积转换",
+    "Converts a unit of area to another format.": "将一个面积单位转换为另一种格式。",
+    "Input units": "输入单位",
+    "Output units": "输出单位",
+    "Square metre (sq m)": "平方米（平方米）",
+    "Square kilometre (sq km)": "平方千米（平方千米）",
+    "Centiare (ca)": "平方厘米（平方厘米）",
+    "Deciare (da)": "平方分米（平方分米）",
+    "Are (a)": "公顷（公顷）",
+    "Decare (daa)": "十公顷（十公顷）",
+    "Hectare (ha)": "公顷（公顷）",
+    "Square inch (sq in)": "平方英寸（平方英寸）",
+    "Square foot (sq ft)": "平方英尺（平方英尺）",
+    "Square yard (sq yd)": "平方码（平方码）",
+    "Square mile (sq mi)": "平方英里（平方英里）",
+    "Perch (sq per)": "围场（围场）",
+    "Rood (ro)": "英亩（英亩）",
+    "International acre (ac)": "国际亩（国际亩）",
+    "US survey acre (ac)": "美国测量亩（美国测量亩）",
+    "US survey square mile (sq mi)": "美国测量平方英里（美国测量平方英里）",
+    "US survey township": "美国测量镇区",
+    "Yoctobarn (yb)": "幺平方巴（幺平方巴）",
+    "Zeptobarn (zb)": "仄平方巴（仄平方巴）",
+    "Attobarn (ab)": "阿平方巴（阿平方巴）",
+    "Femtobarn (fb)": "飞平方巴（飞平方巴）",
+    "Picobarn (pb)": "皮平方巴（皮平方巴）",
+    "Nanobarn (nb)": "纳平方巴（纳平方巴）",
+    "Microbarn (μb)": "微平方巴（微平方巴）",
+    "Millibarn (mb)": "毫平方巴（毫平方巴）",
+    "Barn (b)": "平方巴（平方巴）",
+    "Kilobarn (kb)": "千平方巴（千平方巴）",
+    "Megabarn (Mb)": "兆平方巴（兆平方巴）",
+    "Outhouse": "室外厕所",
+    "Shed": "棚子",
+    "Planck area": "普朗克面积",
+    "Washington D.C.": "华盛顿特区",
+    "Isle of Wight": "怀特岛",
+    "Wales": "威尔士",
+    "Texas": "德克萨斯州"
+  }
+}
+```
+
+请注意，某些单位名称（如“Perch”和“Rood”）在中文中可能没有直接对应的常用翻译，因此我采用了音译或直译的方式。如果需要更准确的翻译，可能需要根据具体行业习惯来确定。

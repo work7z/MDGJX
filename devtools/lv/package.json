@@ -1,0 +1,17 @@
+{
+  "name": "lv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "p": "^0.2.0",
+    "puppeteer": "^22.6.5",
+    "selenium-webdriver": "^4.19.0"
+  }
+}

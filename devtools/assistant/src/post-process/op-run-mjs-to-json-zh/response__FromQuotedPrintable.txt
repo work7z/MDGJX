@@ -1,0 +1,27 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值设置为`123`。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换`123`作为值。
+4. 输出JSON结果。
+
+下面是结果：
+
+```json
+{
+  "i18n": {
+    "From Quoted Printable": "从引用可打印",
+    "Converts QP-encoded text back to standard text.": "将QP编码的文本转换回标准文本。",
+    "e.g. The quoted-printable encoded string hello=20world becomes hello world": "例如：引号可打印编码的字符串 hello=20world 将变为 hello world",
+    "For more information, see": "更多信息，请参见"
+  }
+}
+```
+
+解释：
+- "From Quoted Printable" 是操作的名称，翻译为 "从引用可打印"。
+- "Converts QP-encoded text back to standard text." 是对操作功能的描述，翻译为 "将QP编码的文本转换回标准文本"。
+- "e.g. The quoted-printable encoded string hello=20world becomes hello world" 是一个示例说明，翻译为 "例如：引号可打印编码的字符串 hello=20world 将变为 hello world"。
+- "For more information, see" 虽然没有直接在代码中找到，但根据上下文，假设它是类似的信息提示，翻译为 "更多信息，请参见"。
+
+注意：由于 "For more information, see" 没有直接在代码中找到，如果这段文本不是要提取的自然文本，那么可以将其从JSON对象中移除。此外，由于代码中没有提供具体的用户提示信息，如 "For more information, see"，所以这部分是基于通常的上下文假设添加的。如果实际代码中没有这样的文本，应将其从JSON中删除。

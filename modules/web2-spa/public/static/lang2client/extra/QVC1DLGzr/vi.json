@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Sau khi được tích hợp, hãy sao chép mẫu được cung cấp vào chương trình C++ của bạn và thay thế trình giữ chỗ bằng giá trị được mã hóa thực tế trước khi chạy chương trình.",
+    "c6p4n": "Sau khi cài đặt, hãy sao chép mẫu được cung cấp vào tập lệnh Python của bạn, thay thế phần giữ chỗ trong phần giải mã bằng các byte được mã hóa Base62 thực tế (có tiền tố 'b'), sau đó chạy tập lệnh.",
+    "d2w6e": "Tải xuống mã nguồn và đưa tệp tiêu đề base62.h vào dự án của bạn. Biên dịch/liên kết với các tệp nguồn theo hướng dẫn của dự án.",
+    "d8w1b": "Cài đặt nó qua pip bằng cách chạy `pip install python-base62` hoặc `pip3 install python-base62`.",
+    "f9t2z": "Thêm phần phụ thuộc vào dự án Maven của bạn bằng cách thêm `<dependency> <groupId>com.warrenstrange</groupId> <artifactId>googleauth</artifactId> <version>...</version> </dependency>` nơi cần có phiên bản được thay thế bằng bản phát hành mới nhất.",
+    "g4h7s": "Đối với C++, bạn có thể sử dụng thư viện 'cpp-base62' cung cấp chức năng Base62.",
+    "j9s5r": "Đối với C#, hãy sử dụng thư viện 'WarrenStranger.Base62' để xử lý mã hóa và giải mã Base62.",
+    "k3m2e": "Sao chép mẫu được cung cấp vào tệp Go mới, thay thế trình giữ chỗ bằng giá trị được mã hóa thực tế, sau đó chạy tệp bằng cách sử dụng `go run yourfile.go`",
+    "p6e3n": "Cài đặt gói qua NuGet bằng cách chạy `Install-Package WarrenStranger.Base62` trong Bảng điều khiển Trình quản lý gói hoặc thêm gói đó thông qua Trình quản lý gói NuGet.",
+    "q6n1r": "Sau khi cài đặt thư viện, hãy sao chép mẫu được cung cấp vào một lớp Java và thay thế phần giữ chỗ bằng giá trị được mã hóa thực tế trước khi chạy mã. Lưu ý rằng việc triển khai này sử dụng mảng số nguyên làm bước trung gian.",
+    "r4n6v": "Thêm phần phụ thuộc vào dự án của bạn bằng cách chạy `go get github.com/xyproto/base62`. Điều này sẽ tải xuống và cài đặt gói.",
+    "u7i9b": "Đối với Go, hãy sử dụng gói 'base62' có sẵn trên GitHub.",
+    "u9g6t": "Để chạy mã này, bạn cần cài đặt gói 'base62' cung cấp khả năng mã hóa và giải mã Base62.",
+    "v5k3r": "Sau khi cài đặt, hãy thay thế phần giữ chỗ trong phần giải mã bằng giá trị được mã hóa Base62 thực tế và thực thi tập lệnh. Thư viện xử lý việc chuyển đổi giữa các chuỗi Buffers và Base62 cho bạn.",
+    "x2c5e": "Đối với Python, hãy sử dụng thư viện 'base62' để xử lý mã hóa và giải mã Base62.",
+    "y3m7k": "Đối với Java, hãy sử dụng lớp Base62Converter của thư viện 'google-authenticator'.",
+    "z7n1m": "Bạn có thể cài đặt nó bằng npm bằng cách chạy `npm install base62` hoặc `yarn add base62`.",
+    "z8qqm2t": "Sau khi cài đặt, sao chép mẫu được cung cấp vào ứng dụng bảng điều khiển C# và thay thế trình giữ chỗ bằng giá trị được mã hóa thực tế trước khi chạy chương trình."
+}

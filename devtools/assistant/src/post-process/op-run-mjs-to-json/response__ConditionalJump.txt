@@ -1,0 +1,27 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为 `i18n` 的对象中，其中每个文本作为键，值设为1。
+
+下面是根据您的要求生成的 JSON 对象：
+
+```json
+{
+  "i18n": {
+    "Conditional Jump": 1,
+    "Conditionally jump forwards or backwards to the specified Label based on whether the data matches the specified regular expression.": 1,
+    "Match (regex)": 1,
+    "Invert match": 1,
+    "Label name": 1,
+    "Maximum jumps (if jumping backwards)": 1
+  }
+}
+```
+
+以下是每个键对应的文本在原始代码中的位置：
+
+- "Conditional Jump"：类名和构造函数中的 `this.name` 值。
+- "Conditionally jump forwards or backwards to the specified Label based on whether the data matches the specified regular expression."：构造函数中的 `this.description` 值。
+- "Match (regex)"：构造函数中 `args` 数组的第一个元素的 `name` 值。
+- "Invert match"：构造函数中 `args` 数组的第二个元素的 `name` 值。
+- "Label name"：构造函数中 `args` 数组的第三个元素的 `name` 值。
+- "Maximum jumps (if jumping backwards)"：构造函数中 `args` 数组的第四个元素的 `name` 值。
+
+请注意，所有键值对中的值都设置为1，这符合您的要求。

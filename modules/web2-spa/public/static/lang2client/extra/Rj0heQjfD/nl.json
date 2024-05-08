@@ -1,0 +1,17 @@
+{
+    "YAML-Advantages-001": "Wat zijn de voordelen van YAML?",
+    "YAML-Advantages-002": "YAML is voor mensen leesbaar en gemakkelijk te schrijven, waardoor het een populaire keuze is voor configuratiebestanden.",
+    "YAML-Advantages-003": "Het is ook gemakkelijk te lezen en te schrijven en wordt vaak gebruikt in combinatie met alle programmeertalen.",
+    "YAML-Basics-001": "Wat is YAML?",
+    "YAML-Def-002": "YAML (YAML Ain't Markup Language) is een door mensen leesbare gegevensserialisatiestandaard die kan worden gebruikt in combinatie met alle programmeertalen en vaak wordt gebruikt om configuratiebestanden te schrijven.",
+    "YAML-Disadvantages-001": "Wat zijn de nadelen van YAML?",
+    "YAML-Disadvantages-002": "YAML kan moeilijk te parseren zijn en kan gevoelig zijn voor fouten.",
+    "YAML-Disadvantages-003": "Het wordt ook niet zo breed ondersteund als andere formaten voor gegevensserialisatie, zoals JSON.",
+    "YAML-Example-001": "Hoe ziet een YAML-bestand eruit?",
+    "YAML-Example-002": "Een eenvoudig YAML-bestand bestaat uit sleutel-waardeparen, waarbij elk paar wordt gescheiden door een dubbele punt.",
+    "YAML-Example-003": "Een YAML-bestand kan er bijvoorbeeld als volgt uitzien:",
+    "YAML-Purpose-003": "Het is ontworpen om gemakkelijk leesbaar te zijn voor mensen en wordt vaak gebruikt om datastructuren en serialisatie uit te drukken in een formaat dat gemakkelijk te lezen en te schrijven is.",
+    "YAML-Usage-001": "Waar wordt YAML voor gebruikt?",
+    "YAML-Usage-002": "YAML wordt vaak gebruikt voor configuratiebestanden en in toepassingen waarin gegevens worden opgeslagen of verzonden.",
+    "YAML-Usage-003": "Het wordt vaak gebruikt in toepassingen waarin gegevens worden opgeslagen of verzonden, zoals in configuratiebestanden, en in toepassingen waarin gegevens worden opgeslagen of verzonden."
+}

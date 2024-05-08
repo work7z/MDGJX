@@ -1,0 +1,45 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取文本。
+2. 将文本放入名为`i18n`的对象中，并给每个文本赋予一个默认值`123`。
+3. 根据代码的实际功能，将默认值替换为中文翻译。
+
+以下是JSON格式的结果：
+
+```json
+{
+  "i18n": {
+    "Frequency distribution": "频率分布",
+    "Displays the distribution of bytes in the data as a graph.": "将数据中的字节分布显示为图表。",
+    "Show 0%s": "显示0%",
+    "Show ASCII": "显示ASCII",
+    "No data": "没有数据",
+    "Total data length:": "总数据长度：",
+    "Number of bytes represented:": "已表示的字节数：",
+    "Number of bytes not represented:": "未表示的字节数：",
+    "Byte": "字节",
+    "Percentage": "百分比"
+  }
+}
+```
+
+以下是按照您提供的示例格式化后的结果：
+
+```json
+{
+  "i18n": {
+    "Frequency distribution": "频率分布",
+    "Displays the distribution of bytes in the data as a graph.": "将数据中的字节分布显示为图表。",
+    "Show 0%s": "显示0%",
+    "Show ASCII": "显示ASCII",
+    "No data": "没有数据",
+    "Total data length:": "总数据长度：",
+    "Number of bytes represented:": "已表示的字节数：",
+    "Number of bytes not represented:": "未表示的字节数：",
+    "Byte": "字节",
+    "Frequency %": "频率百分比"
+  }
+}
+```
+
+请注意，以上翻译是根据代码上下文进行的，可能需要根据实际应用场景进一步调整。

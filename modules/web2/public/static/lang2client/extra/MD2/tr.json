@@ -1,0 +1,23 @@
+{
+    "MD2-Advantages-011": "MD2 kullanmanın avantajları nelerdir?",
+    "MD2-AlgorithmDetails-010": "MD2 Algoritması Ayrıntıları",
+    "MD2-Applications-018": "Hangi uygulamalar MD2'yi kullandı veya hala kullanıyor?",
+    "MD2-Breakdown-016": "Zamanla MD2'de kriptografik zayıflıklar keşfedildi ve artık güvenli karma gerektiren tüm uygulamalar için SHA-256 ve SHA-3 gibi daha güçlü alternatifler öneriliyor.",
+    "MD2-CollisionSecurity-015": "MD2'nin modern kriptografik saldırılara karşı zayıf olduğu düşünülmektedir. Hash boyutunun (128 bit) günümüz standartlarına göre küçük olması onu çarpışma saldırılarına karşı savunmasız hale getiriyor.",
+    "MD2-Def-002": "MD2 (Message-Digest Algorithm 2), 1989 yılında Ronald Rivest tarafından tasarlanan bir kriptografik karma işlevidir. Verilen herhangi bir giriş mesajı için 128 bitlik bir karma değeri üretir.",
+    "MD2-DigitalSignature-Risks-021": "Dijital İmzalar için MD2 Kullanmanın Riskleri",
+    "MD2-Disadvantages-014": "MD2'nin dezavantajları ve güvenlik kaygıları nelerdir?",
+    "MD2-FAQ-001": "MD2 nedir?",
+    "MD2-HistoricalUse-020": "Tarihsel olarak MD2, dosya bütünlüğü kontrollerinde ve yazılım güncellemelerinde kullanım alanı bulmuştur, ancak bu uygulamalar büyük ölçüde SHA-256 ve SHA-512 gibi daha güvenli karma işlevlerine geçiş yapmıştır.)",
+    "MD2-History-004": "MD2 nasıl geliştirildi ve tarihçesi nedir?",
+    "MD2-Implementation-013": "Çeşitli platformlarda ve dillerde geniş çapta uygulanmış ve standartlaştırılmıştır; bu, MD2'nin mevcut sistemlere entegre edilmesinin nispeten basit olabileceği anlamına gelir.",
+    "MD2-InsecurityExamples-017": "MD2 Güvenlik Arızası Örnekleri",
+    "MD2-Operation-007": "MD2 işlemi nasıl çalışır?",
+    "MD2-Origin-005": "MD2 başlangıçta MD1'e göre bir iyileştirme olarak oluşturuldu ve önceki algoritmada bulunan bazı zayıflıkları giderdi. O dönemde göreceli basitliği ve hızı nedeniyle popülerlik kazandı.",
+    "MD2-PKI-019": "MD2, bir zamanlar dijital imzalar için Açık Anahtar Altyapısında (PKI) kullanılmıştı ancak saldırılara karşı savunmasızlığı nedeniyle o zamandan beri kullanımdan kaldırıldı. MD2 ile imzalanan sertifikalara artık çoğu sistem güvenmiyor.",
+    "MD2-Process-008": "MD2, giriş mesajını 16 baytın katlarına kadar doldurarak çalışır ve ardından onu bir dizi özel VEYA işlemi, bit döndürme ve ekleme yoluyla işler. Nihai çıktı 128 bitlik bir karma değeridir.",
+    "MD2-Purpose-003": "MD2'nin amacı, verilerin orijinalliğini ve gerçekliğini doğrulamak için kullanılabilecek benzersiz bir dijital parmak izi oluşturarak veri bütünlüğünü sağlamaktır.",
+    "MD2-Rounds-009": "Algoritma, 128 bitlik bir durum değişkeni üzerinde gerçekleştirilen belirli işlemlerle dört turlu bir işlem kullanır. Her tur, doldurulmuş mesajın bloklarını alır ve mesajın tamamı işlenene kadar durumu günceller.",
+    "MD2-Speed-012": "MD2, zamanına göre hızlı kabul ediliyordu ve bazı senaryolarda hala kabul edilebilir bir performansa sahip, bu da onu hesaplama kaynaklarının sınırlı olduğu ortamlar için uygun kılıyor.",
+    "MD2-Successors-006": "Bununla birlikte, aynı karma işlevleri ailesinin bir parçası olan ancak gelişmiş güvenlik özellikleri sunan MD5 ve SHA-1 gibi daha güçlü algoritmalar onun yerini almıştır."
+}

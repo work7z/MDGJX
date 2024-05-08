@@ -1,0 +1,40 @@
+根据您的要求，以下是提炼出的自然文本，并以JSON格式组织，键（key）为原文，值（value）为123（之后会被翻译后的中文替换）。
+
+```json
+{
+  "i18n": {
+    "CipherSaber2 Encrypt": 123,
+    "CipherSaber is a simple symmetric encryption protocol based on the RC4 stream cipher. It gives reasonably strong protection of message confidentiality, yet it's designed to be simple enough that even novice programmers can memorize the algorithm and implement it from scratch.": 123,
+    "https://wikipedia.org/wiki/CipherSaber": 123,
+    "Key": 123,
+    "Rounds": 123
+  }
+}
+```
+
+以下是根据代码的实际功能，对这些文本进行翻译后的结果：
+
+```json
+{
+  "i18n": {
+    "CipherSaber2 Encrypt": "CipherSaber2加密",
+    "CipherSaber is a simple symmetric encryption protocol based on the RC4 stream cipher. It gives reasonably strong protection of message confidentiality, yet it's designed to be simple enough that even novice programmers can memorize the algorithm and implement it from scratch.": "CipherSaber是一个基于RC4流密码的简单对称加密协议。它提供了相当强的消息保密性保护，同时设计得足够简单，以至于即使是新手程序员也能记住算法并从零开始实现。",
+    "https://wikipedia.org/wiki/CipherSaber": "CipherSaber的维基百科页面",
+    "Key": "密钥",
+    "Rounds": "轮数"
+  }
+}
+```
+
+请注意，由于您要求不包含链接和特定的字段，因此我没有包括URL字段。但是，为了完整性，我在翻译中保留了它，您可以根据需要删除。以下是最终的JSON输出：
+
+```json
+{
+  "i18n": {
+    "CipherSaber2 Encrypt": "CipherSaber2加密",
+    "CipherSaber is a simple symmetric encryption protocol based on the RC4 stream cipher. It gives reasonably strong protection of message confidentiality, yet it's designed to be simple enough that even novice programmers can memorize the algorithm and implement it from scratch.": "CipherSaber是一个基于RC4流密码的简单对称加密协议，它提供了相当强的消息保密性保护，同时设计得足够简单，即使是新手程序员也能记住算法并从零开始实现。",
+    "Key": "密钥",
+    "Rounds": "轮数"
+  }
+}
+```

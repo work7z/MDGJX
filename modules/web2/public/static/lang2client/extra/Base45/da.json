@@ -1,0 +1,23 @@
+{
+    "a4r9t": "Kan Base45 afkode enhver Base45-kodet streng uanset dens oprindelse?",
+    "c2vw9k": "Selvom Base45 ikke er så udbredt implementeret som Base64 eller Base32, findes der open source-biblioteker til flere sprog.",
+    "c9q7w": "Hvorfor blev Base45 oprettet?",
+    "d6y9k": "Hvis der ikke er nok bytes til at udfylde den sidste gruppe, bruges udfyldning ikke; i stedet bliver de resterende bit behandlet og afbildet til deres tilsvarende karakter(er).",
+    "e8x2v": "Base45 fungerer ved at opdele inputdataene i grupper på 5 bytes hver. Den konverterer derefter hver gruppe til et decimaltal og tilknytter det til et tilsvarende tegn fra dens 45-tegnsæt.",
+    "f8n4m": "Dens kompakthed tillader mere effektiv udnyttelse af pladsen i QR-koder, mens den bibeholder læsbarheden med standard stregkodescannere.",
+    "g1h5n": "Hvordan virker Base45?",
+    "g6v3b": "Base45's større tegnsæt kan dog øge sandsynligheden for fejl ved håndtering af ikke-alfanumeriske tegn, hvilket kan være et problem i nogle miljøer eller transmissionskanaler.",
+    "i7w2m": "Er der indbyggede Base45-biblioteker i populære programmeringssprog?",
+    "j7k2t": "For at kode data med Base45 skal du bruge et bibliotek eller en funktion, der implementerer Base45-algoritmen.",
+    "m9k1z": "Men hvis de data, der afkodes, indeholder specifik applikationssemantik (f.eks. specifikke QR-kodeformater), kan yderligere behandling være nødvendig efter afkodning.",
+    "q5h8n": "Den største fordel er reduceret strenglængde for den samme mængde kodede data, hvilket gør den velegnet til applikationer, hvor pladseffektivitet er kritisk.",
+    "qv1p5n": "For eksempel kan du i Java bruge 'org.iso.base45'-biblioteket til at kode dine data.",
+    "r9a3t": "Base45 er et tekstbaseret kodningsskema, der koder binære data til ASCII-tegn.",
+    "s3e6r": "Hvordan koder jeg data ved hjælp af Base45?",
+    "u2l8s": "Hvad er Base45?",
+    "x5z1b": "Base45 er udviklet primært til QR-kodebrug i forbindelse med digitale COVID-certifikater.",
+    "y3b6n": "Ja, så længe den kodede streng blev genereret i henhold til Base45-specifikationen, bør enhver kompatibel dekoder være i stand til at afkode den.",
+    "z1n5qr": "Eksempler inkluderer base45 npm-pakke til JavaScript og dotnet-base45 til .NET.",
+    "z5b7m": "Den bruger et større alfabet (0-9, A-Z, a-z, -, ., $, /, +, % og *) sammenlignet med Base64 eller Base32, hvilket resulterer i kortere kodede strenge for de samme inputdata.",
+    "z8m2t": "Hvad er fordelene ved at bruge Base45 frem for Base64 eller Base32?"
+}

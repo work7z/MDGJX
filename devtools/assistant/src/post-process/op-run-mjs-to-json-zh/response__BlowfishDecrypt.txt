@@ -1,0 +1,21 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式的`i18n`对象，并进行了适当的中文翻译。
+
+```json
+{
+  "i18n": {
+    "Blowfish Decrypt": "Blowfish 解密",
+    "Blowfish is a symmetric-key block cipher designed in 1993 by Bruce Schneier and included in a large number of cipher suites and encryption products. AES now receives more attention.": "Blowfish是一种对称密钥块密码，由Bruce Schneier于1993年设计，并被包含在大量的加密套件和加密产品中。现在AES受到了更多的关注。",
+    "IV: The Initialization Vector should be 8 bytes long. If not entered, it will default to 8 null bytes.": "初始化向量（IV）应为8个字节长。如果没有输入，默认为8个空字节。",
+    "Invalid key length: ${key.length} bytes Blowfish uses a key length of 8 bytes (64 bits).": "无效的密钥长度：${key.length}字节，Blowfish使用的密钥长度为8字节（64位）。",
+    "Unable to decrypt input with these parameters.": "无法使用这些参数解密输入。"
+  }
+}
+```
+
+以下是解释：
+
+1. 代码中显示给用户的自然文本被提取出来，并作为`i18n`对象的键。
+2. 每个键对应的值初始设为123，但根据要求，我已经将这些文本翻译成了中文，并替换了这些值。
+3. 错误消息和变量（如`${key.length}`）在翻译时保留了原始格式，以便在代码中使用时可以动态替换。
+
+请注意，上面的翻译是根据代码上下文进行的，可能需要根据实际的应用场景进一步调整。

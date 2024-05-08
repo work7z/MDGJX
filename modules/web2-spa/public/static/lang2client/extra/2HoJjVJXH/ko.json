@@ -1,0 +1,23 @@
+{
+    "c1p3b": "통합되면 제공된 템플릿을 C++ 프로그램에 복사하고 프로그램을 실행하기 전에 자리 표시자를 실제 인코딩된 값으로 바꿉니다.",
+    "c6p4n": "라이브러리를 설치한 후 제공된 템플릿을 Python 스크립트에 복사하고 실행합니다. 라이브러리는 바이트와 Base45로 인코딩된 문자열 간의 변환을 위한 내장 함수를 제공합니다.",
+    "d2w6e": "저장소를 복제/다운로드하고 제공된 헤더 파일을 프로젝트에 포함합니다. 프로젝트 문서에 따라 소스 파일을 컴파일하고 링크합니다.",
+    "d8w1b": "`pip install base45` 또는 `python -m pip install base45`를 실행하여 pip를 사용하여 이 작업을 수행할 수 있습니다.",
+    "f7t1z": "수동으로 또는 SPM(Swift Package Manager)과 같은 패키지 관리자를 통해 Xcode 프로젝트에 라이브러리를 추가하세요.",
+    "f9t2z": "pom.xml 파일에 다음을 추가합니다. `<dependent> <groupId>org.iso</groupId> <artifactId>iso-base45</artifactId> <version>...</version> </dependent>` 여기서 버전이 최신 릴리스입니다.",
+    "g4h7s": "C++의 경우 GitHub 저장소로 제공되는 'base45-cpp' 라이브러리를 사용할 수 있습니다.",
+    "j8s6r": "Kotlin의 경우 Base45 기능이 포함된 'barcode-core' 라이브러리를 사용할 수 있습니다.",
+    "j9s5r": "C#의 경우 NuGet에서 제공되는 'Base45' 라이브러리를 사용할 수 있습니다.",
+    "p5e9n": "Gradle 빌드 스크립트에 라이브러리를 종속성으로 추가합니다. 예를 들어, 앱 수준 build.gradle 파일에서 최신 버전 번호와 함께 `implementation 'com.bottlerocketstudios:barcode-core:...'`를 추가합니다.",
+    "p6e3n": "설치하려면 패키지 관리자 콘솔에서 'Install-Package Base45'를 실행하거나 NuGet 패키지 관리자를 통해 종속성을 추가하세요.",
+    "q2n9r": "추가한 후에는 제공된 템플릿을 Swift 파일에 복사하세요. 이 예에서는 Base45 문자열의 base64 표현이 있는 가상 시나리오를 사용하고 있습니다. 코드를 실행하기 전에 이를 실제 인코딩된 값으로 바꾸십시오.",
+    "q6n1r": "라이브러리는 Base45 변환을 처리하는 인코더 및 디코더 클래스를 제공합니다. 종속성이 추가되면 템플릿 코드를 Java 클래스에 복사하고 실행합니다.",
+    "u9g6t": "이 코드를 실행하려면 '@digitalbazaar/base45' 패키지를 설치해야 합니다.",
+    "v5k3r": "이 라이브러리는 Node.js 애플리케이션에서 Base45 인코딩 및 디코딩을 위한 간단한 API를 제공합니다. 설치 후 제공된 템플릿을 스크립트에 복사하고 Node.js 인터프리터로 실행하세요.",
+    "x2c5e": "Python에서 Base45를 사용하려면 'base45' 라이브러리를 설치해야 합니다.",
+    "y3m7k": "Java의 경우 프로젝트에 Maven 종속성으로 포함될 수 있는 'iso-base45' 라이브러리를 활용하세요.",
+    "y9m3k": "Swift의 경우 GitHub에서 제공되는 'Base45' 라이브러리를 사용할 수 있습니다.",
+    "z3m1t": "종속성을 추가하고 프로젝트를 동기화한 후 제공된 템플릿을 Kotlin 클래스에 복사하고 코드를 실행하기 전에 자리 표시자를 실제 인코딩된 값으로 바꿉니다.",
+    "z7n1m": "npm이나 Yarn을 사용하여 `npm install @digitalbazaar/base45` 또는 `yarn add @digitalbazaar/base45`를 실행하여 설치하세요.",
+    "z8qm2t": "라이브러리는 Base45 작업을 위한 인코더 및 디코더 클래스를 제공합니다. 템플릿 코드를 C# 콘솔 애플리케이션에 복사하고 패키지를 설치한 후 실행합니다."
+}

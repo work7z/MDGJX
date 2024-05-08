@@ -1,0 +1,23 @@
+{
+    "MD2-Advantages-011": "Apakah kelebihan menggunakan MD2?",
+    "MD2-AlgorithmDetails-010": "Butiran Algoritma MD2",
+    "MD2-Applications-018": "Apakah aplikasi yang telah menggunakan atau masih menggunakan MD2?",
+    "MD2-Breakdown-016": "Kelemahan kriptografi telah ditemui dalam MD2 dari semasa ke semasa, dan alternatif yang lebih kukuh seperti SHA-256 dan SHA-3 kini disyorkan untuk semua aplikasi yang memerlukan pencincangan selamat.",
+    "MD2-CollisionSecurity-015": "MD2 dianggap lemah terhadap serangan kriptografi moden. Saiz cincangnya (128 bit) adalah kecil mengikut piawaian hari ini, menjadikannya terdedah kepada serangan perlanggaran.",
+    "MD2-Def-002": "MD2 (Message-Digest Algorithm 2) ialah fungsi cincang kriptografi yang direka oleh Ronald Rivest pada tahun 1989. Ia menghasilkan nilai cincang 128-bit untuk sebarang mesej input yang diberikan.",
+    "MD2-DigitalSignature-Risks-021": "Risiko Menggunakan MD2 untuk Tandatangan Digital",
+    "MD2-Disadvantages-014": "Apakah kelemahan dan kebimbangan keselamatan dengan MD2?",
+    "MD2-FAQ-001": "Apakah MD2?",
+    "MD2-HistoricalUse-020": "Dari segi sejarah, MD2 didapati digunakan dalam semakan integriti fail dan kemas kini perisian, walaupun aplikasi ini sebahagian besarnya telah beralih kepada fungsi cincang yang lebih selamat seperti SHA-256 dan SHA-512.)",
+    "MD2-History-004": "Bagaimanakah MD2 dibangunkan dan apakah sejarahnya?",
+    "MD2-Implementation-013": "Ia telah dilaksanakan secara meluas dan diseragamkan merentas pelbagai platform dan bahasa, yang bermaksud bahawa penyepaduan MD2 ke dalam sistem sedia ada boleh menjadi agak mudah.",
+    "MD2-InsecurityExamples-017": "Contoh Pecahan Keselamatan MD2",
+    "MD2-Operation-007": "Bagaimanakah operasi MD2 berfungsi?",
+    "MD2-Origin-005": "MD2 pada mulanya dicipta sebagai penambahbaikan berbanding MD1, menangani beberapa kelemahan yang terdapat dalam algoritma terdahulu. Ia mendapat populariti kerana kesederhanaan dan kelajuan relatifnya pada masa itu.",
+    "MD2-PKI-019": "MD2 pernah digunakan dalam Infrastruktur Kunci Awam (PKI) untuk tandatangan digital tetapi sejak itu telah ditamatkan kerana terdedah kepada serangan. Sijil yang ditandatangani dengan MD2 tidak lagi dipercayai oleh kebanyakan sistem.",
+    "MD2-Process-008": "MD2 beroperasi dengan memasukkan mesej input kepada gandaan 16 bait dan kemudian memprosesnya melalui satu siri operasi eksklusif-OR, putaran bit dan penambahan. Output akhir ialah nilai hash 128-bit.",
+    "MD2-Purpose-003": "Tujuan MD2 adalah untuk memastikan integriti data dengan menghasilkan cap jari digital unik yang boleh digunakan untuk mengesahkan keaslian dan ketulenan data.",
+    "MD2-Rounds-009": "Algoritma menggunakan proses empat pusingan dengan operasi khusus yang dilakukan pada pembolehubah keadaan 128-bit. Setiap pusingan mengambil blok mesej empuk dan mengemas kini keadaan sehingga keseluruhan mesej diproses.",
+    "MD2-Speed-012": "MD2 dianggap pantas untuk masanya dan masih mempunyai prestasi yang boleh diterima dalam beberapa senario, menjadikannya sesuai untuk persekitaran yang sumber pengiraan terhad.",
+    "MD2-Successors-006": "Walau bagaimanapun, ia telah digantikan oleh algoritma yang lebih kuat seperti MD5 dan SHA-1, yang merupakan sebahagian daripada keluarga fungsi cincang yang sama tetapi menawarkan ciri keselamatan yang dipertingkatkan."
+}

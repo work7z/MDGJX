@@ -1,0 +1,19 @@
+根据您的要求，以下是代码中提取的自然文本，并按照您的要求转换为JSON格式，其中包含英文原文和对应的中文翻译。
+
+```json
+{
+  "i18n": {
+    "Extract information from a JSON object with a JPath query.": "使用JPath查询从JSON对象中提取信息。",
+    "Evaluated expressions are disabled by default for security reasons": "出于安全考虑，默认禁用评估表达式",
+    "Invalid input JSON:": "无效的输入JSON：",
+    "Invalid JPath expression:": "无效的JPath表达式："
+  }
+}
+```
+
+以下是详细的步骤说明：
+
+1. 提取的自然文本不包括代码示例、链接、特定字段（如`exampleInput`、`exampleOutput`等）。
+2. 提取的文本被放置在名为`i18n`的对象中，其中每个文本作为键，其值设置为`123`，但在这里我已经根据文本的实际含义提供了中文翻译。
+3. 对于每个键（即原始文本），我提供了最符合代码功能和上下文的中文翻译作为其值。
+4. 输出的JSON格式如上面的示例所示。

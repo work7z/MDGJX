@@ -1,0 +1,16 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式呈现，其中键为原始文本，值为中文翻译：
+
+```json
+{
+  "i18n": {
+    "ChaCha is a stream cipher designed by Daniel J. Bernstein. It is a variant of the Salsa stream cipher. Several parameterizations exist; 'ChaCha' may refer to the original construction, or to the variant as described in RFC-8439. ChaCha is often used with Poly1305, in the ChaCha20-Poly1305 AEAD construction.": "ChaCha是由Daniel J. Bernstein设计的流密码。它是Salsa流密码的一个变种。存在几种参数化版本；'ChaCha'可能指的是原始构造，或者是RFC-8439中描述的变种。ChaCha通常与Poly1305结合使用，在ChaCha20-Poly1305 AEAD构造中使用。",
+    "Key: ChaCha uses a key of 16 or 32 bytes (128 or 256 bits).": "密钥：ChaCha使用16或32字节（128或256位）的密钥。",
+    "Nonce: ChaCha uses a nonce of 8 or 12 bytes (64 or 96 bits).": "随机数：ChaCha使用8或12字节（64或96位）的随机数。",
+    "Counter: ChaCha uses a counter of 4 or 8 bytes (32 or 64 bits); together, the nonce and counter must add up to 16 bytes. The counter starts at zero at the start of the keystream, and is incremented at every 64 bytes.": "计数器：ChaCha使用4或8字节（32或64位）的计数器；随机数和计数器加起来必须为16字节。计数器在密钥流开始时从零开始，并且每64字节增加一次。",
+    "Invalid key length: ${key.length} bytes. ChaCha uses a key of 16 or 32 bytes (128 or 256 bits).": "无效的密钥长度：${key.length}字节。ChaCha使用16或32字节（128或256位）的密钥。",
+    "Invalid nonce length: ${nonce.length} bytes. ChaCha uses a nonce of 8 or 12 bytes (64 or 96 bits).": "无效的随机数长度：${nonce.length}字节。ChaCha使用8或12字节（64或96位）的随机数。"
+  }
+}
+```
+
+在这个JSON对象中，我将原始文本作为键，并为其提供了中文翻译作为值。注意，由于某些文本包含变量，例如`${key.length}`，这些变量在代码中动态替换，因此我在翻译中也保留了它们的位置。

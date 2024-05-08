@@ -1,0 +1,26 @@
+根据您的要求，以下是提炼出的自然文本，并按照指示转换为JSON格式，然后翻译成中文：
+
+```json
+{
+  "i18n": {
+    "Keyed-Hash Message Authentication Codes (HMAC) are a mechanism for message authentication using cryptographic hash functions.": "基于加密散列函数的消息认证机制——HMAC。",
+    "Key": "密钥",
+    "Hashing function": "散列函数"
+  }
+}
+```
+
+以下是详细的步骤说明：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键（key）是原始文本，值（value）设置为123。
+3. 根据代码的实际功能，将键（key）翻译成中文，并替换它的值123。
+4. 输出JSON结果。
+
+在这个例子中，我找到了以下自然文本：
+
+- "Keyed-Hash Message Authentication Codes (HMAC) are a mechanism for message authentication using cryptographic hash functions." —— 这是类描述的一部分。
+- "Key" —— 这是参数名称的一部分。
+- "Hashing function" —— 这也是参数名称的一部分。
+
+然后，我将这些文本翻译成中文，并按照您的要求放入了`i18n`对象中。

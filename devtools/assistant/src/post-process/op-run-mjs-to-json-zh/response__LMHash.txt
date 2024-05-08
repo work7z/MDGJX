@@ -1,0 +1,18 @@
+根据您的要求，以下是提炼出的自然文本并将其转换为JSON格式的i18n对象，以及对应的中文翻译。
+
+```json
+{
+  "i18n": {
+    "An LM Hash, or LAN Manager Hash, is a deprecated way of storing passwords on old Microsoft operating systems. It is particularly weak and can be cracked in seconds on modern hardware using rainbow tables.": "LM哈希（LAN管理器哈希）是旧版Microsoft操作系统中存储密码的一种已弃用方法。它特别脆弱，在现代硬件上使用彩虹表可以在几秒钟内被破解。"
+  }
+}
+```
+
+在这个例子中，只有一段文本是显示给用户的自然文本，并且它已经被提取出来并放置在i18n对象中。以下是按照您的步骤进行的输出：
+
+1. 找出所有显示给用户的自然文本（这里是类描述）。
+2. 将这些文本放入名为i18n的对象中，键（key）是原文，值（value）最初设置为123。
+3. 将这个值翻译为中文，并替换原始的值123。
+4. 输出结果如上面的JSON所示。
+
+请注意，这段代码中除了描述信息外，其他字段如`name`, `inputType`, `outputType`等，虽然也是文本，但它们可能被视为代码的一部分，用于程序内部使用，而不是直接显示给用户，因此没有包括在i18n对象中。

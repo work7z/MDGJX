@@ -1,0 +1,23 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是文本本身，值设为123作为占位符。
+3. 根据代码的实际功能，将占位符翻译成中文。
+4. 输出JSON结果。
+
+以下是JSON格式的输出：
+
+```json
+{
+  "i18n": {
+    "The HMAC-based One-Time Password algorithm (HOTP) is an algorithm that computes a one-time password from a shared secret key and an incrementing counter. It has been adopted as Internet Engineering Task Force standard RFC 4226, is the cornerstone of Initiative For Open Authentication (OAUTH), and is used in a number of two-factor authentication systems.<br><br>Enter the secret as the input or leave it blank for a random secret to be generated.": "基于HMAC的一次性密码算法（HOTP）是一种从共享密钥和递增计数器计算一次性密码的算法。它已被采纳为互联网工程任务组的标准RFC 4226，是开放认证倡议（OAUTH）的基石，并用于许多双因素认证系统。<br><br>请输入密钥，或者留空以生成随机密钥。",
+    "Generate HOTP": "生成HOTP",
+    "Name": "名称",
+    "Key size": "密钥大小",
+    "Code length": "代码长度",
+    "Counter": "计数器"
+  }
+}
+```
+
+在上述JSON对象中，`i18n`对象的每个键值对都包含原始英文文本和对应的中文翻译。注意，这里不包括示例代码中提到的`exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`和`type`字段，以及任何HTTP链接。

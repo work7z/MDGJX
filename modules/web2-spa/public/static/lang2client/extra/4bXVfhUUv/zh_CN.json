@@ -1,0 +1,11 @@
+{
+    "c6p4n": "在提供的模板中，将解码部分中的占位符替换为实际的 Base85 编码字节（前缀为“b”），然后执行脚本。",
+    "d8w1b": "不需要额外安装，因为它是标准库的一部分。确保您的 Python 版本足够新以包含此功能。",
+    "f9t2z": "通过在您的 Maven 项目中添加“<dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependency>”，将依赖项添加到您的 Maven 项目中。具有最新版本号的 pom.xml 文件。",
+    "q6n1r": "安装库后，将模板代码复制到 Java 类中，并在运行代码之前将占位符替换为实际的 Base85 编码值。",
+    "u9g6t": "对于 JavaScript，您需要安装“base85”包来进行 Base85 编码和解码。",
+    "v5k3r": "安装后，将解码部分中的占位符替换为实际的 Base85 编码字符串并运行脚本。该库处理缓冲区和 Base85 字符串之间的转换。",
+    "x2c5e": "Python有一个内置的'base85'模块，支持Base85编码和解码。",
+    "y3m7k": "对于 Java，请使用“commons-codec”库，其中包括对 Base85 编码和解码的支持。",
+    "z7n1m": "通过运行“npm install base85”或“yarn add base85”使用 npm 安装它。"
+}

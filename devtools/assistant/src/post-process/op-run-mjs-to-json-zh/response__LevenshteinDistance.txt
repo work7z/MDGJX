@@ -1,0 +1,21 @@
+根据您的要求，以下是代码中显示给用户的自然文本的JSON格式表示，以及对应的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Levenshtein Distance": "莱文斯坦距离",
+    "Levenshtein Distance (also known as Edit Distance) is a string metric to measure a difference between two strings that counts operations (insertions, deletions, and substitutions) on single character that are required to change one string to another.": "莱文斯坦距离（也称为编辑距离）是一种用于衡量两个字符串之间差异的字符串度量，它计算了改变一个字符串到另一个字符串所需的单个字符上的操作（插入、删除和替换）。",
+    "Incorrect number of samples. Check your input and/or delimiter.": "样本数量不正确。请检查您的输入和/或分隔符。",
+    "Negative costs are not allowed.": "不允许负成本。"
+  }
+}
+```
+
+在这个JSON对象中，每个key都是原始代码中的自然文本，而对应的value是中文翻译。以下是每个条目的解释：
+
+1. `"Levenshtein Distance"`: 这是类名，直接翻译为“莱文斯坦距离”。
+2. `"Levenshtein Distance (also known as Edit Distance) is a string metric...`": 这是类的描述，翻译时尽量保留了原意，同时进行了适当的简化。
+3. `"Incorrect number of samples. Check your input and/or delimiter."`: 这是抛出的错误信息，提示用户检查输入样本数量和分隔符。
+4. `"Negative costs are not allowed."`: 这也是抛出的错误信息，告知用户不能使用负成本。
+
+以上JSON对象即为根据您要求提炼的结果。

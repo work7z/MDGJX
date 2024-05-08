@@ -1,0 +1,21 @@
+根据您的要求，我们需要提取代码中显示给用户的自然文本，并将它们放入一个名为 `i18n` 的对象中，然后翻译成中文。
+
+以下是提取的文本和对应的中文翻译：
+
+1. "Offset checker" -> "偏移检查器"
+2. "Compares multiple inputs (separated by the specified delimiter) and highlights matching characters which appear at the same position in all samples." -> "比较多个输入（由指定分隔符分隔），并突出显示在所有样本中同一位置出现的匹配字符。"
+3. "Not enough samples, perhaps you need to modify the sample delimiter or add more data?" -> "样本不足，可能需要修改样本分隔符或添加更多数据？"
+
+下面是根据这些信息创建的 JSON 对象：
+
+```json
+{
+  "i18n": {
+    "Offset checker": "偏移检查器",
+    "Compares multiple inputs (separated by the specified delimiter) and highlights matching characters which appear at the same position in all samples.": "比较多个输入（由指定分隔符分隔），并突出显示在所有样本中同一位置出现的匹配字符。",
+    "Not enough samples, perhaps you need to modify the sample delimiter or add more data?": "样本不足，可能需要修改样本分隔符或添加更多数据？"
+  }
+}
+```
+
+请注意，示例中提供的 `value` 为 "123"，但根据您的要求，我已经将它们替换为实际的中文翻译。

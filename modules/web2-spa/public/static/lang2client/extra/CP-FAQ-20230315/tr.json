@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "Programlamayı öğrenmek, çeşitli sektörlerde kariyer fırsatlarının kapısını açar ve yenilikçi çözümler geliştirmenize, görevleri otomatikleştirmenize ve karmaşık sistemleri anlamanıza olanak tanır.",
+    "CP-Advantages-013": "Bilgisayar programlamayı öğrenmenin avantajları nelerdir?",
+    "CP-Basics-001": "Bilgisayar programlama nedir?",
+    "CP-Def-002": "Bilgisayar programlama, bilgisayarlara belirli görevleri nasıl gerçekleştirecekleri konusunda talimat vermek için bir programlama dilinde talimatlar veya kod yazmayı içerir.",
+    "CP-History-004": "Bilgisayar programlamanın tarihçesi nedir?",
+    "CP-History-Origin-005": "İlk programlanabilir makinelerin tarihi, Ada Lovelace'in 19. yüzyılda Charles Babbage'nin Analitik Motoru üzerindeki çalışmasına kadar uzanıyor. Ancak modern programlama, 1940'larda ilk genel amaçlı elektronik bilgisayar olan ENIAC'ın icadıyla başladı.",
+    "CP-Lang-Choice-009": "Dil seçimi proje gereksinimleri, topluluk desteği, öğrenme kolaylığı ve performans ihtiyaçları gibi faktörlere bağlıdır.",
+    "CP-Language-Evolution-006": "O zamandan bu yana programlama dilleri, makine kodundan montaja, ardından FORTRAN, COBOL, C gibi üst düzey dillere ve şimdi de Python, JavaScript ve Rust gibi modern dillere dönüştü.",
+    "CP-Languages-007": "Bazı popüler programlama dilleri nelerdir?",
+    "CP-Languages-List-008": "Popüler programlama dilleri arasında Java, Python, JavaScript, C++, C#, Swift, Go, PHP, Ruby ve Kotlin bulunur. Her birinin kendine has güçlü yönleri ve kullanım durumları vardır; örneğin veri bilimi için Python, web geliştirme için JavaScript ve sistem programlama için C++.",
+    "CP-Process-010": "Bilgisayar programlama süreci nedir?",
+    "CP-Process-Explanation-011": "Programlama genellikle planlamayı (sorunu tanımlama ve çözümü tasarlama), kodlamayı (seçilen dilde kaynak kodu yazma), test etmeyi (hata ayıklama ve işlevselliği doğrulama) ve bakımı (programın zaman içinde güncellenmesi ve iyileştirilmesi) içerir.",
+    "CP-Purpose-003": "Programcılar algoritmalar yaratır, sorunları çözer ve süreçleri otomatikleştirebilen, verileri değiştirebilen ve kullanıcılarla veya diğer sistemlerle etkileşime girebilen yazılım uygulamaları geliştirir.",
+    "CP-SDLC-012": "Bu genellikle gereksinim analizi, tasarım, dağıtım ve kullanıcı kabul testi gibi ek aşamaları içeren bir Yazılım Geliştirme Yaşam Döngüsü (SDLC) içerisinde yapılandırılır.",
+    "CP-Skillset-015": "Aynı zamanda mantıksal düşünmeyi, problem çözme becerilerini ve yeni teknolojilere uyum sağlama yeteneğini geliştirerek dijital çağda insanı daha çok yönlü hale getirir.",
+    "HistOfProg-Wikipedia": "Programlama Dilleri Tarihi - Vikipedi",
+    "SDLC-Wikipedia": "Yazılım Geliştirme Yaşam Döngüsü - Vikipedi",
+    "TIOBE-Index": "TIOBE Endeksi - Yazılım Kalitesi Şirketi"
+}

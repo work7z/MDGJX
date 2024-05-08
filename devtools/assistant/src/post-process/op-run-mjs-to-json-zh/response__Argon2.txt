@@ -1,0 +1,34 @@
+根据您的要求，以下是代码中提取的自然文本，并按照要求转换为 JSON 格式，并进行中文翻译：
+
+```json
+{
+  "i18n": {
+    "Argon2 is a key derivation function that was selected as the winner of the Password Hashing Competition in July 2015. It was designed by Alex Biryukov, Daniel Dinu, and Dmitry Khovratovich from the University of Luxembourg.": "Argon2 是一种密钥派生函数，于2015年7月被选为密码哈希竞赛的获胜者。它由来自卢森堡大学的Alex Biryukov、Daniel Dinu和Dmitry Khovratovich设计。",
+    "Enter the password in the input to generate its hash.": "在输入框中输入密码以生成其哈希值。",
+    "Salt": "盐值",
+    "Iterations": "迭代次数",
+    "Memory (KiB)": "内存（千字节）",
+    "Parallelism": "并行度",
+    "Hash length (bytes)": "哈希长度（字节）",
+    "Type": "类型",
+    "Output format": "输出格式",
+    "Error: ${err.message}": "错误：${err.message}"
+  }
+}
+```
+
+在上面的 JSON 对象中，我保留了错误信息的模板字符串`Error: ${err.message}`，因为它是动态生成的错误信息，并且在实际应用中可能会直接显示给用户。
+
+注意：由于错误信息可能包含动态数据，因此在实际应用中，您可能需要根据具体情况进一步处理此翻译。这里我保留了原始的占位符 `${err.message}` 以便在代码中使用时替换实际的错误消息。
+
+【示例1】的输出如下：
+
+```json
+{
+  "i18n": {
+    "Argon2 is a key derivation function that was selected as the winner of the Password Hashing Competition in July 2015. It was designed by Alex Biryukov, Daniel Dinu, and Dmitry Khovratovich from the University of Luxembourg.": "Argon2 是一种密钥派生函数，于2015年7月被选为密码哈希竞赛的获胜者。它由来自卢森堡大学的Alex Biryukov、Daniel Dinu和Dmitry Khovratovich设计。",
+    "Enter the password in the input to generate its hash.": "在输入框中输入密码以生成其哈希值。",
+    // ... 其他翻译
+  }
+}
+```

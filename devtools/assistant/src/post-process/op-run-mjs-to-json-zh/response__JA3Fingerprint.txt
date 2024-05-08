@@ -1,0 +1,45 @@
+根据您的要求，我找到了所有显示给用户的自然文本，并将它们放入了一个名为`i18n`的对象中。以下是文本的提取和翻译：
+
+```json
+{
+  "JA3 Fingerprint": "JA3指纹",
+  "Generates a JA3 fingerprint to help identify TLS clients based on hashing together values from the Client Hello.": "生成JA3指纹，以帮助根据客户端问候（Client Hello）中的值进行散列来识别TLS客户端。",
+  "Input: A hex stream of the TLS Client Hello packet application layer.": "输入：TLS客户端问候数据包应用层的十六进制流。",
+  "Not handshake data.": "不是握手数据。",
+  "Incorrect handshake length.": "握手长度不正确。",
+  "Not a Client Hello.": "不是客户端问候。",
+  "Not enough data in Client Hello.": "客户端问候中数据不足。",
+  "Hash digest:": "散列摘要：",
+  "Full JA3 string:": "完整的JA3字符串：",
+  "TLS Version:": "TLS版本：",
+  "Cipher Suites:": "密码套件：",
+  "Extensions:": "扩展：",
+  "Elliptic Curves:": "椭圆曲线：",
+  "Elliptic Curve Point Formats:": "椭圆曲线点格式："
+}
+```
+
+根据您的示例，将这个对象放入JSON结构中：
+
+```json
+{
+  "i18n": {
+    "JA3 Fingerprint": "JA3指纹",
+    "Generates a JA3 fingerprint to help identify TLS clients based on hashing together values from the Client Hello.": "生成JA3指纹，以帮助根据客户端问候（Client Hello）中的值进行散列来识别TLS客户端。",
+    "Input: A hex stream of the TLS Client Hello packet application layer.": "输入：TLS客户端问候数据包应用层的十六进制流。",
+    "Not handshake data.": "不是握手数据。",
+    "Incorrect handshake length.": "握手长度不正确。",
+    "Not a Client Hello.": "不是客户端问候。",
+    "Not enough data in Client Hello.": "客户端问候中数据不足。",
+    "Hash digest:": "散列摘要：",
+    "Full JA3 string:": "完整的JA3字符串：",
+    "TLS Version:": "TLS版本：",
+    "Cipher Suites:": "密码套件：",
+    "Extensions:": "扩展：",
+    "Elliptic Curves:": "椭圆曲线：",
+    "Elliptic Curve Point Formats:": "椭圆曲线点格式："
+  }
+}
+```
+
+请注意，我使用了“散列”来翻译“hashing”，这是因为在这个上下文中，它指的是加密散列函数的过程。其他的翻译则尽量保持了原意并符合中文表述习惯。

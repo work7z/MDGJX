@@ -1,0 +1,24 @@
+{
+  "result": "```typescript\n// Description: This TypeScript code exports a collection of cryptographic and data manipulation operations, including encryption, decryption, hashing, encoding, decoding, and more. It provides a comprehensive set of tools for working with various data formats and protocols.\n\nimport { Dot } from './Dot';\n\nexport class Operation {\n  // Example method implementation\n  public getOptDetail(): OptDetail {\n    return {\n      relatedID: 'nothing', // keep it, don't change\n      config: {\n        \"module\": \"Crypto\",\n        \"description\": Dot(\"crypto.desc\", \"This operation performs cryptographic operations.\"),\n        \"infoURL\": \"https://example.com/crypto\",\n        \"inputType\": \"ArrayBuffer\",\n        \"outputType\": \"ArrayBuffer\",\n        \"flowControl\": false,\n        \"manualBake\": false,\n        \"args\": []\n      },\n      infoURL: 'https://example.com/crypto',\n      nousenouseID: 'crypto',\n      optName: Dot(\"crypto.name\", \"Cryptographic Operation\"),\n      optDescription: Dot(\"crypto.desc\", \"This operation performs cryptographic operations.\"),\n      exampleInput: \"\", // Fill it if possible\n      exampleOutput: \"\", // Fill it if possible\n    }\n  }\n}\n```\n\nThis TypeScript code defines an `Operation` class with a `getOptDetail` method that returns metadata about a cryptographic operation. The metadata includes a description, input/output types, and URLs for more information. The description is wrapped in a `Dot` function to allow for localization.",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```typescript\n// Description: This TypeScript code exports a collection of cryptographic and data manipulation operations, including encryption, decryption, hashing, encoding, decoding, and more. It provides a comprehensive set of tools for working with various data formats and protocols.\n\nimport { Dot } from './Dot';\n\nexport class Operation {\n  // Example method implementation\n  public getOptDetail(): OptDetail {\n    return {\n      relatedID: 'nothing', // keep it, don't change\n      config: {\n        \"module\": \"Crypto\",\n        \"description\": Dot(\"crypto.desc\", \"This operation performs cryptographic operations.\"),\n        \"infoURL\": \"https://example.com/crypto\",\n        \"inputType\": \"ArrayBuffer\",\n        \"outputType\": \"ArrayBuffer\",\n        \"flowControl\": false,\n        \"manualBake\": false,\n        \"args\": []\n      },\n      infoURL: 'https://example.com/crypto',\n      nousenouseID: 'crypto',\n      optName: Dot(\"crypto.name\", \"Cryptographic Operation\"),\n      optDescription: Dot(\"crypto.desc\", \"This operation performs cryptographic operations.\"),\n      exampleInput: \"\", // Fill it if possible\n      exampleOutput: \"\", // Fill it if possible\n    }\n  }\n}\n```\n\nThis TypeScript code defines an `Operation` class with a `getOptDetail` method that returns metadata about a cryptographic operation. The metadata includes a description, input/output types, and URLs for more information. The description is wrapped in a `Dot` function to allow for localization.",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1713890494,
+    "id": "8596355843098564957",
+    "model": "glm-4",
+    "request_id": "8596355843098564957",
+    "usage": {
+      "completion_tokens": 310,
+      "prompt_tokens": 8069,
+      "total_tokens": 8379
+    }
+  }
+}

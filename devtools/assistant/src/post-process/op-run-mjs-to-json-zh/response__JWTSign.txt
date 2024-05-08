@@ -1,0 +1,21 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作，并进行了适当的中文翻译。
+
+```json
+{
+  "i18n": {
+    "JWT Sign": "JWT签名",
+    "Signs a JSON object as a JSON Web Token using a provided secret / private key.": "使用提供的私钥/密钥将JSON对象签署为JSON Web Token。",
+    "The key should be either the secret for HMAC algorithms or the PEM-encoded private key for RSA and ECDSA.": "密钥应为HMAC算法的密钥或RSA和ECDSA的PEM编码私钥。",
+    "Error: Have you entered the key correctly? The key should be either the secret for HMAC algorithms or the PEM-encoded private key for RSA and ECDSA.": "错误：您是否正确输入了密钥？密钥应为HMAC算法的密钥或RSA和ECDSA的PEM编码私钥。"
+  }
+}
+```
+
+以下是按照您的步骤进行的操作：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值设置为`123`（这里我直接进行了翻译，而不是先设置为`123`）。
+3. 根据代码的实际功能，对这些文本进行翻译，并替换其值。
+4. 输出JSON结果。
+
+注意：示例中并没有包括所有可能的错误信息或提示，仅包括代码中明显的自然文本。如果需要更全面的翻译，可能还需要考虑代码中的其他动态生成的文本信息。

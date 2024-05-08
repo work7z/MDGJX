@@ -1,0 +1,32 @@
+根据您的要求，以下是提炼出的自然文本并将其转换为JSON格式的过程：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值设置为`123`作为占位符。
+3. 根据代码的功能，将`i18n`中的值翻译为中文。
+4. 输出JSON结果。
+
+以下是转换后的结果：
+
+```json
+{
+  "i18n": {
+    "Renders input Markdown as HTML. HTML rendering is disabled to avoid XSS.": "将输入的Markdown渲染为HTML。为了防止跨站脚本攻击，HTML渲染已被禁用。",
+    "Autoconvert URLs to links": "自动将URL转换为链接",
+    "Enable syntax highlighting": "启用语法高亮"
+  }
+}
+```
+
+以下是按照您的示例格式整理的输出：
+
+```json
+{
+  "i18n": {
+    "Renders input Markdown as HTML. HTML rendering is disabled to avoid XSS.": "将输入的Markdown渲染为HTML。为了防止跨站脚本攻击，HTML渲染已被禁用。",
+    "Autoconvert URLs to links": "自动将URL转换为链接",
+    "Enable syntax highlighting": "启用语法高亮"
+  }
+}
+```
+
+请注意，示例中的值`123`被替换为了每个文本对应的中文翻译。这些翻译是根据代码的功能和上下文进行的。

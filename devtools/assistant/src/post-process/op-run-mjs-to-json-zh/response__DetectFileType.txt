@@ -1,0 +1,24 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是文本，值设置为`123`作为占位符。
+3. 根据代码的实际功能，给出合适的中文翻译。
+4. 输出JSON结果。
+
+以下是JSON格式的结果：
+
+```json
+{
+  "i18n": {
+    "Attempts to guess the MIME (Multipurpose Internet Mail Extensions) type of the data based on 'magic bytes'.": "尝试基于'magic bytes'猜测数据的MIME（多功能互联网邮件扩展）类型。",
+    "Currently supports the following file types: ": "目前支持以下文件类型：",
+    "Unknown file type. Have you tried checking the entropy of this data to determine whether it might be encrypted or compressed?": "未知文件类型。您尝试检查过该数据的熵值以确定它是否可能是加密或压缩的吗？",
+    "File type:": "文件类型：",
+    "Extension:": "扩展名：",
+    "MIME type:": "MIME类型：",
+    "Description:": "描述："
+  }
+}
+```
+
+在上述JSON对象中，键是原始英文文本，值是相应的中文翻译。这些翻译是根据代码的功能和上下文来确定的，以便为用户提供清晰的操作说明和反馈信息。

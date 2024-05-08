@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "A programozás elsajátítása karrierlehetőségeket nyit meg a különböző iparágakban, és lehetővé teszi innovatív megoldások kidolgozását, a feladatok automatizálását és a komplex rendszerek megértését.",
+    "CP-Advantages-013": "Milyen előnyei vannak a számítógépes programozás tanulásának?",
+    "CP-Basics-001": "Mi az a számítógépes programozás?",
+    "CP-Def-002": "A számítógépes programozás magában foglalja az utasítások vagy kódok írását egy programozási nyelven, hogy utasítsa a számítógépeket meghatározott feladatok végrehajtására.",
+    "CP-History-004": "Mi a számítógépes programozás története?",
+    "CP-History-Origin-005": "Az első programozható gépek Ada Lovelace 19. századi, Charles Babbage Analytical Engine-jén végzett munkájából származnak. A modern programozás azonban az 1940-es években feltalálta az első általános célú elektronikus számítógépet, az ENIAC-ot.",
+    "CP-Lang-Choice-009": "A nyelvválasztás olyan tényezőktől függ, mint a projektkövetelmények, a közösségi támogatás, a tanulás könnyűsége és a teljesítményigények.",
+    "CP-Language-Evolution-006": "Azóta a programozási nyelvek a gépi kódtól az assembly-ig, majd olyan magas szintű nyelvekké fejlődtek, mint a FORTRAN, COBOL, C, és most olyan modern nyelvekké, mint a Python, a JavaScript és a Rust.",
+    "CP-Languages-007": "Melyek a népszerű programozási nyelvek?",
+    "CP-Languages-List-008": "A népszerű programozási nyelvek közé tartozik a Java, Python, JavaScript, C++, C#, Swift, Go, PHP, Ruby és Kotlin. Mindegyiknek megvannak a maga erősségei és használati esetei, például a Python az adattudományhoz, a JavaScript a webfejlesztéshez és a C++ a rendszerprogramozáshoz.",
+    "CP-Process-010": "Mi a számítógépes programozás folyamata?",
+    "CP-Process-Explanation-011": "A programozás jellemzően tervezést (a probléma meghatározása és a megoldás megtervezése), a kódolást (a kiválasztott nyelven a forráskód írása), a tesztelést (hibakeresés és a funkcionalitás ellenőrzése) és a karbantartást (a program időbeli frissítése és fejlesztése) foglalja magában.",
+    "CP-Purpose-003": "A programozók algoritmusokat készítenek, problémákat oldanak meg, és szoftveralkalmazásokat készítenek, amelyek automatizálhatják a folyamatokat, manipulálhatják az adatokat, és interakcióba léphetnek a felhasználókkal vagy más rendszerekkel.",
+    "CP-SDLC-012": "Ez gyakran egy szoftverfejlesztési életcikluson (SDLC) belül épül fel, amely további fázisokat is tartalmaz, például a követelmények elemzését, a tervezést, a telepítést és a felhasználói elfogadási tesztelést.",
+    "CP-Skillset-015": "Fejleszti a logikus gondolkodást, a problémamegoldó készségeket és az új technológiákhoz való alkalmazkodóképességet is, így sokoldalúbbá válik a digitális korban.",
+    "HistOfProg-Wikipedia": "Programozási nyelvek története – Wikipédia",
+    "SDLC-Wikipedia": "Szoftverfejlesztési életciklus – Wikipédia",
+    "TIOBE-Index": "TIOBE Index – A szoftverminőségi vállalat"
+}

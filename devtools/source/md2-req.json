@@ -1,0 +1,8 @@
+{
+    "InputText": "This is some input text.",
+    "InputFile": "",
+    "ExtraConfigMap": {
+        "ConfigKey1": "ConfigValue1",
+        "ConfigKey2": "ConfigValue2"
+    }
+}

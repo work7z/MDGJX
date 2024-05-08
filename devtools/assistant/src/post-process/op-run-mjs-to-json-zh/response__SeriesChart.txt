@@ -1,0 +1,24 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值是`123`。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换其值。
+4. 输出JSON结果。
+
+【JSON结果】
+
+```json
+{
+  "i18n": {
+    "Series chart": "序列图",
+    "A time series graph is a line graph of repeated measurements taken over regular time intervals.": "时间序列图是一种折线图，它表示在固定时间间隔内重复测量的数据。",
+    "Record delimiter": "记录分隔符",
+    "Field delimiter": "字段分隔符",
+    "X label": "X轴标签",
+    "Point radius": "点半径",
+    "Series colours": "序列颜色"
+  }
+}
+```
+
+在上面的JSON对象中，每个键值对代表一个自然文本及其对应的中文翻译。这些翻译是根据代码描述和参数说明进行的，尽量保持了原意。如果需要进一步的精确翻译，可能需要根据代码的具体应用场景进行微调。

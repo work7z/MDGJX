@@ -1,0 +1,31 @@
+根据您的要求，以下是代码中显示给用户的自然文本的JSON格式提炼，以及对应的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Shannon Entropy, in the context of information theory, is a measure of the rate at which information is produced by a source of data. It can be used, in a broad sense, to detect whether data is likely to be structured or unstructured. 8 is the maximum, representing highly unstructured, 'random' data. English language text usually falls somewhere between 3.5 and 5. Properly encrypted or compressed data should have an entropy of over 7.5.": "香农熵，在信息论中，是衡量数据源产生信息的速率的一种度量。广义上，它可以用来检测数据是否可能是结构化或非结构化的。8是最大值，代表高度非结构化的、'随机'的数据。英语文本通常在3.5到5之间。适当加密或压缩的数据，其熵值应超过7.5。",
+    "Entropy": "熵",
+    "Charts": "图表",
+    "ArrayBuffer": "数组缓冲区",
+    "json": "JSON",
+    "html": "HTML",
+    "Visualisation": "可视化",
+    "Shannon scale": "香农刻度",
+    "Histogram (Bar)": "柱状图",
+    "Histogram (Line)": "线状图",
+    "Curve": "曲线",
+    "Image": "图像",
+    "Byte": "字节",
+    "Byte Frequency": "字节频率",
+    "Scanning Entropy": "扫描熵",
+    "Entropy": "熵",
+    "Shannon entropy: ${entropy}": "香农熵：${entropy}",
+    "- 0 represents no randomness (i.e. all the bytes in the data have the same value) whereas 8, the maximum, representing a completely random string.": "- 0代表没有随机性（即数据中的所有字节具有相同的值），而8是最大值，代表完全随机的字符串。",
+    "- Standard English text usually falls somewhere between 3.5 and 5.": "- 标准英语文本通常在3.5到5之间。",
+    "- Properly encrypted or compressed data of a reasonable length should have an entropy of over 7.5.": "- 合适长度且正确加密或压缩的数据，其熵值应超过7.5。",
+    "The following results show the entropy of chunks of the input data. Chunks with particularly high entropy could suggest encrypted or compressed sections.": "以下结果显示了输入数据块的熵值。熵值特别高的块可能表明数据是加密或压缩的。"
+  }
+}
+```
+
+请注意，这里的JSON对象的键是原文，值是对应的中文翻译。对于一些变量，例如`${entropy}`，保留了原始格式，因为它将在代码中动态替换。

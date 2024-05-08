@@ -1,0 +1,41 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，并给每个文本分配一个键（key）。
+3. 将这些键对应的值（value）设置为123，作为占位符。
+4. 翻译这些键对应的自然文本为中文，并替换掉占位符123。
+5. 输出最终的JSON结果。
+
+下面是根据以上步骤生成的JSON结果：
+
+```json
+{
+  "i18n": {
+    "scrypt is a password-based key derivation function (PBKDF) created by Colin Percival. The algorithm was specifically designed to make it costly to perform large-scale custom hardware attacks by requiring large amounts of memory. In 2016, the scrypt algorithm was published by IETF as RFC 7914.<br><br>Enter the password in the input to generate its hash.": "scrypt是由Colin Percival创建的基于密码的密钥派生函数（PBKDF）。该算法特别设计为通过要求大量内存来使执行大规模定制硬件攻击变得代价高昂。2016年，scrypt算法被IETF作为RFC 7914发布。<br><br>在输入框中输入密码以生成其哈希值。",
+    "Salt": "盐值",
+    "Iterations (N)": "迭代次数（N）",
+    "Memory factor (r)": "内存因子（r）",
+    "Parallelization factor (p)": "并行因子（p）",
+    "Key length": "密钥长度"
+  }
+}
+```
+
+请注意，我已经将HTML的换行标签`<br><br>`保留在翻译文本中，因为它们在显示时会影响格式。如果不需要这些标签，可以将其删除。
+
+以下是按照您提供的【示例1】格式化后的JSON：
+
+```json
+{
+  "i18n": {
+    "scrypt is a password-based key derivation function (PBKDF) created by Colin Percival. The algorithm was specifically designed to make it costly to perform large-scale custom hardware attacks by requiring large amounts of memory. In 2016, the scrypt algorithm was published by IETF as RFC 7914.<br><br>Enter the password in the input to generate its hash.": "scrypt是由Colin Percival创建的基于密码的密钥派生函数（PBKDF）。该算法特别设计为通过要求大量内存来使执行大规模定制硬件攻击变得代价高昂。2016年，scrypt算法被IETF作为RFC 7914发布。<br><br>请在输入框中输入密码以生成其哈希值。",
+    "Salt": "盐值",
+    "Iterations (N)": "迭代次数（N）",
+    "Memory factor (r)": "内存因子（r）",
+    "Parallelization factor (p)": "并行因子（p）",
+    "Key length": "密钥长度"
+  }
+}
+```
+
+这个JSON对象现在可以用于国际化（i18n）目的，以替换代码中的英文文本。

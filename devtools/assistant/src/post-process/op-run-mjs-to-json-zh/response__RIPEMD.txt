@@ -1,0 +1,19 @@
+根据您的要求，下面是提炼代码中自然文本，并按照指示转换为JSON格式的i18n对象，以及对应的中文翻译。
+
+首先，找到的自然文本如下：
+
+- "RIPEMD (RACE Integrity Primitives Evaluation Message Digest) is a family of cryptographic hash functions developed in Leuven, Belgium, by Hans Dobbertin, Antoon Bosselaers and Bart Preneel at the COSIC research group at the Katholieke Universiteit Leuven, and first published in 1996."
+- "RIPEMD was based upon the design principles used in MD4, and is similar in performance to the more popular SHA-1."
+
+下面是按照您的要求转换为JSON格式的i18n对象，并附上中文翻译：
+
+```json
+{
+  "i18n": {
+    "RIPEMD (RACE Integrity Primitives Evaluation Message Digest) is a family of cryptographic hash functions developed in Leuven, Belgium, by Hans Dobbertin, Antoon Bosselaers and Bart Preneel at the COSIC research group at the Katholieke Universiteit Leuven, and first published in 1996.": "RIPEMD（RACE完整性原语评估消息摘要）是一系列在比利时鲁汶由Hans Dobbertin、Antoon Bosselaers和Bart Preneel在鲁汶天主教大学COSIC研究小组开发的加密哈希函数，并于1996年首次发布。",
+    "RIPEMD was based upon the design principles used in MD4, and is similar in performance to the more popular SHA-1.": "RIPEMD基于MD4的设计原则，其性能与更受欢迎的SHA-1相似。"
+  }
+}
+```
+
+请注意，由于中文翻译需要准确传达原文的意思，因此翻译可能较长，以确保技术细节的准确性。

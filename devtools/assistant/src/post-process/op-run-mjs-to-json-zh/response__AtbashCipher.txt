@@ -1,0 +1,12 @@
+根据您的要求，以下是代码中提取的自然文本，并按照指示转换为JSON格式，同时给出适当的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Atbash Cipher": "阿特巴什密码",
+    "Atbash is a mono-alphabetic substitution cipher originally used to encode the Hebrew alphabet. It has been modified here for use with the Latin alphabet.": "阿特巴什密码是一种单字母替换密码，最初用于编码希伯来字母。在这里，它被修改以适用于拉丁字母。"
+  }
+}
+```
+
+在这段代码中，只有类名和描述字段是显示给用户的自然文本，其他字段如`exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`、`type`等均不符合要求，因此未包含在JSON对象中。同时，我已经根据代码的实际功能对这些文本进行了翻译，并将它们作为JSON对象的键值对中的值。

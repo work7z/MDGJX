@@ -1,0 +1,23 @@
+根据您的要求，以下是代码中显示给用户的自然文本的JSON格式提取，并翻译为中文：
+
+```json
+{
+  "i18n": {
+    "Hex Density chart": "六边形密度图",
+    "Hex density charts are used in a similar way to scatter charts, however rather than rendering tens of thousands of points, it groups the points into a few hundred hexagons to show the distribution.": "六边形密度图与散点图的使用方式类似，但不是渲染成千上万的点，而是将点分组到几百个六边形中以显示分布。",
+    "Record delimiter": "记录分隔符",
+    "Field delimiter": "字段分隔符",
+    "Pack radius": "打包半径",
+    "Draw radius": "绘制半径",
+    "Use column headers as labels": "使用列标题作为标签",
+    "X label": "X标签",
+    "Y label": "Y标签",
+    "Draw hexagon edges": "绘制六边形边缘",
+    "Min colour value": "最小颜色值",
+    "Max colour value": "最大颜色值",
+    "Draw empty hexagons within data boundaries": "在数据边界内绘制空六边形"
+  }
+}
+```
+
+以上JSON对象中的每个key都是原始代码中显示给用户的文本，而value则是相应的中文翻译。这些翻译是根据代码的功能和上下文尽可能贴切地进行的。

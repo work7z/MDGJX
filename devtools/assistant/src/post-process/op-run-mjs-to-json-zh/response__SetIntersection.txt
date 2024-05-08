@@ -1,0 +1,19 @@
+根据您的要求，以下是代码中提取的自然文本，并按照指示转换为JSON格式，其中包含中文翻译：
+
+```json
+{
+  "i18n": {
+    "Set Intersection": "集合交集",
+    "Calculates the intersection of two sets.": "计算两个集合的交集。",
+    "Incorrect number of sets, perhaps you need to modify the sample delimiter or add more samples?": "集合数量不正确，可能需要修改样本分隔符或添加更多样本？"
+  }
+}
+```
+
+以下是每个条目的解释：
+
+1. `"Set Intersection"`: 这是类名，代表集合交集操作。
+2. `"Calculates the intersection of two sets."`: 这是类的描述，说明它的功能是计算两个集合的交集。
+3. `"Incorrect number of sets, perhaps you need to modify the sample delimiter or add more samples?"`: 这是验证输入长度的错误信息，提示用户输入的集合数量不正确，可能需要调整样本分隔符或增加样本数量。
+
+以上翻译是根据代码的上下文和功能进行的，以确保准确传达原意。

@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "Học lập trình mở ra cơ hội nghề nghiệp trong nhiều ngành khác nhau và cho phép bạn phát triển các giải pháp sáng tạo, tự động hóa các nhiệm vụ và hiểu các hệ thống phức tạp.",
+    "CP-Advantages-013": "Học lập trình máy tính có lợi ích gì?",
+    "CP-Basics-001": "Lập trình máy tính là gì?",
+    "CP-Def-002": "Lập trình máy tính liên quan đến việc viết hướng dẫn hoặc mã bằng ngôn ngữ lập trình để hướng dẫn máy tính cách thực hiện các tác vụ cụ thể.",
+    "CP-History-004": "Lịch sử của lập trình máy tính là gì?",
+    "CP-History-Origin-005": "Những cỗ máy lập trình đầu tiên có từ công trình của Ada Lovelace về Công cụ phân tích của Charles Babbage vào thế kỷ 19. Tuy nhiên, lập trình hiện đại đã phát triển nhờ việc phát minh ra máy tính điện tử đa năng đầu tiên, ENIAC, vào những năm 1940.",
+    "CP-Lang-Choice-009": "Việc lựa chọn ngôn ngữ phụ thuộc vào các yếu tố như yêu cầu của dự án, sự hỗ trợ của cộng đồng, tính dễ học và nhu cầu về hiệu suất.",
+    "CP-Language-Evolution-006": "Kể từ đó, các ngôn ngữ lập trình đã phát triển từ mã máy đến hợp ngữ, sau đó đến các ngôn ngữ cấp cao như FORTRAN, COBOL, C và bây giờ là các ngôn ngữ hiện đại như Python, JavaScript và Rust.",
+    "CP-Languages-007": "Một số ngôn ngữ lập trình phổ biến là gì?",
+    "CP-Languages-List-008": "Các ngôn ngữ lập trình phổ biến bao gồm Java, Python, JavaScript, C++, C#, Swift, Go, PHP, Ruby và Kotlin. Mỗi loại đều có điểm mạnh và trường hợp sử dụng riêng, ví dụ: Python cho khoa học dữ liệu, JavaScript để phát triển web và C++ cho lập trình hệ thống.",
+    "CP-Process-010": "Quy trình lập trình máy tính là gì?",
+    "CP-Process-Explanation-011": "Lập trình thường bao gồm lập kế hoạch (xác định vấn đề và thiết kế giải pháp), mã hóa (viết mã nguồn bằng ngôn ngữ đã chọn), kiểm tra (gỡ lỗi và xác minh chức năng) và bảo trì (cập nhật và cải tiến chương trình theo thời gian).",
+    "CP-Purpose-003": "Các lập trình viên tạo ra các thuật toán, giải quyết vấn đề và xây dựng các ứng dụng phần mềm có thể tự động hóa các quy trình, thao tác dữ liệu và tương tác với người dùng hoặc các hệ thống khác.",
+    "CP-SDLC-012": "Điều này thường được cấu trúc trong Vòng đời phát triển phần mềm (SDLC), bao gồm các giai đoạn bổ sung như phân tích yêu cầu, thiết kế, triển khai và kiểm tra sự chấp nhận của người dùng.",
+    "CP-Skillset-015": "Nó cũng cải thiện tư duy logic, kỹ năng giải quyết vấn đề và khả năng thích ứng với các công nghệ mới, khiến con người trở nên linh hoạt hơn trong thời đại kỹ thuật số.",
+    "HistOfProg-Wikipedia": "Lịch sử ngôn ngữ lập trình - Wikipedia",
+    "SDLC-Wikipedia": "Vòng đời phát triển phần mềm - Wikipedia",
+    "TIOBE-Index": "Chỉ số TIOBE - Công ty chất lượng phần mềm"
+}

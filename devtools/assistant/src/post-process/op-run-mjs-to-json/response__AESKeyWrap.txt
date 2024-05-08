@@ -1,0 +1,23 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为`i18n`的对象中，其键是文本内容，值设置为1。
+
+下面是提取后的JSON格式的内容：
+
+```json
+{
+  "i18n": {
+    "AES Key Wrap": 1,
+    "A key wrapping algorithm defined in RFC3394, which is used to protect keys in untrusted storage or communications, using AES.": 1,
+    "This algorithm uses an AES key (KEK: key-encryption key) and a 64-bit IV to encrypt 64-bit blocks.": 1,
+    "KEK must be either 16, 24, or 32 bytes (currently %s bytes)": 1,
+    "IV must be 8 bytes (currently %s bytes)": 1,
+    "input must be 8n (n>=2) bytes (currently %s bytes)": 1
+  }
+}
+```
+
+解释：
+- “AES Key Wrap”是类名，显示给用户。
+- 类描述、错误消息等都是自然文本，也显示给用户。
+- 错误消息中的动态部分（如字节长度）使用 `%s` 占位符表示，这是为了在替换实际值时保持消息的通用性。
+
+注意：示例1中的JSON结构已经按照提取的自然文本内容进行了更新。

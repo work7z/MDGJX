@@ -1,0 +1,20 @@
+{
+    "c5p1b": "Polstring er ikke brugt; længden af ​​det kodede output afhænger direkte af størrelsen af ​​inputdataene.",
+    "c8me6b": "Brugerdefinerede Base62-lignende skemaer kan være skræddersyet til specifikke applikationer, men de overholder generelt det samme princip om at bruge et større tegnsæt end Base64 eller Base32.",
+    "d2w4e": "I lighed med andre basiskonverteringssystemer fungerer Base62 ved at konvertere inputbytes til et stort heltal og derefter udtrykke det som en kombination af tegn fra sit 62-tegnssæt.",
+    "f1t2z": "Base62 blev udviklet til at give et kortere, URL-sikkert alternativ til Base64, især for unikke identifikatorer og korte URL'er.",
+    "g8h7s": "Hvordan virker Base62?",
+    "j4s6r": "Hvordan koder/dekoder jeg med Base62 i JavaScript?",
+    "k9em5e": "Dette gør den ideel til scenarier, hvor en kortfattet, URL-venlig identifikator er påkrævet uden at ofre læsbarheden.",
+    "p9e1n": "Du kan bruge biblioteker som 'base-x' eller 'base62' til Base62-kodning og afkodning i JavaScript.",
+    "q7n3r": "Det undgår også tvetydige tegn som 'O' og '0', 'I' og 'l', hvilket kan føre til menneskelige transskriptionsfejl.",
+    "r6nq2v": "Den primære fordel ved Base62 er dens øgede pladseffektivitet på grund af et større tegnsæt end Base32, men uden ikke-alfanumeriske tegn, der findes i Base64.",
+    "u3i8b": "Hvad er fordelene ved at bruge Base62 frem for Base64 eller Base32?",
+    "v3k5r": "Tegnsættet indeholder alle store og små bogstaver (A-Z, a-z) og cifre (0-9), hvilket giver en mere kompakt repræsentation sammenlignet med Base64 eller Base32.",
+    "w2x9qk": "Selvom Base62 i sig selv ikke har nogen signifikante varianter, kan nogle implementeringer afvige lidt i deres valg af tegnsæt, såsom at ekskludere '+' eller '/', der almindeligvis bruges i Base64.",
+    "x7n1m": "Base62 er et kodningsskema, der repræsenterer binære data som en sekvens på 62 alfanumeriske tegn.",
+    "y3m9k": "Hvorfor blev Base62 oprettet?",
+    "z2m7t": "Eksempel på brug: `const base62 = require('base62'); const encoded = base62.encode('dine-data'); const decoded = base62.decode(encoded);`",
+    "z4t9b": "Hvad er Base62?",
+    "z7t1p": "Er der nogle specifikke varianter af Base62?"
+}

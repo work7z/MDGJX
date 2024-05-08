@@ -1,0 +1,19 @@
+根据您的要求，以下是提炼出的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "Extracts each pixel's RGBA value in an image. These are sometimes used in Steganography to hide text or data.": "提取图像中每个像素的RGBA值。这些值有时在隐写术中用来隐藏文本或数据。",
+    "Please enter a valid image file.": "请输入有效的图像文件。"
+  }
+}
+```
+
+以下是步骤说明：
+
+1. 找出所有显示给用户的自然文本，并忽略掉链接、示例输入输出、输入输出类型、模块类型等字段。
+2. 将这些文本放入一个名为`i18n`的对象中，键（key）是原文，值（value）我暂时用数字123代替。
+3. 根据代码的实际功能，我将这些文本翻译成了中文，并替换了原先的值123。
+4. 输出格式按照您提供的示例进行了格式化。
+
+请注意，我保留了代码中的专业术语，如“RGBA”和“Steganography”，因为它们是特定领域的常用术语。如果需要对这些术语进行解释或翻译，请告知。

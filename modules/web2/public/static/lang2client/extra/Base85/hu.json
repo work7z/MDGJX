@@ -1,0 +1,19 @@
+{
+    "c1p4b": "Ezután minden decimális szám öt Base85 karakterből álló egyedi sorozattá alakul. Ha négynél kevesebb bájt maradt a végére, előfordulhat, hogy kitöltés kerül alkalmazásra.",
+    "d7w2e": "A Base85 úgy működik, hogy a bemeneti adatokat négy bájtos csoportokra osztja, és minden csoportot 0 és 2^32-1 közötti decimális számmá alakít.",
+    "f9t1z": "A Base85-öt eredetileg a bináris adatok hatékony megjelenítésére fejlesztették ki a PostScript dokumentumokban a jobb tömörítési arány érdekében.",
+    "g3h5s": "Hogyan működik a Base85?",
+    "j5s7r": "Hogyan kódolhatok/dekódolhatok Base85-tel JavaScriptben?",
+    "k2em5e": "Ez rövidebb kimeneti karakterláncokat eredményez azonos mennyiségű bemeneti adathoz, ami előnyös lehet olyan forgatókönyvekben, ahol a méret minimalizálása kritikus.",
+    "p8eq9n": "Használhat olyan könyvtárakat, mint a „base85” vagy „ascii85” a Base85 kódolásához és dekódolásához JavaScriptben.",
+    "q2n3r": "Ma már számos olyan alkalmazásban használják, ahol a helytakarékosság és az olvashatóság döntő fontosságú, például PDF-dokumentumok és bizonyos hálózati protokollok.",
+    "r9qn8v": "A Base85 fő előnye a jobb helyhatékonyság a nagyobb karakterkészletnek köszönhetően (85 vs. 64 Base64-ben vagy 32 Base32-ben).",
+    "u1i2b": "Milyen előnyei vannak a Base85 használatának a Base64-hez vagy a Base32-höz képest?",
+    "v4k6r": "A Base64-hez vagy a Base32-hez képest kompaktabb formába kódolja az adatokat nagyobb karakterkészlet használatával.",
+    "w1x4k": "Igen, számos változat létezik, köztük az Ascii85 (PostScript és PDF), a Z85 (ZeroMQ) és az UUencode (régebbi formátum). Mindegyiknek kissé eltérő karakterkészlete és szabályai vannak.",
+    "x9n1b": "A Base85 egy olyan kódolási séma, amely 85 nyomtatható ASCII-karakterből álló bináris adatokat jelenít meg.",
+    "y6m8k": "Miért jött létre a Base85?",
+    "z2t7m": "Mi az a Base85?",
+    "z5m6t": "Használati példa: `const base85 = request('base85'); const encoded = base85.encode('sajat-adat'); const dekódolva = base85.decode(encoded);`",
+    "z9t7p": "Vannak konkrét változatai a Base85-nek?"
+}

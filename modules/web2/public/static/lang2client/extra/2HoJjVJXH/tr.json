@@ -1,0 +1,23 @@
+{
+    "c1p3b": "Entegre edildikten sonra, sağlanan şablonu C++ programınıza kopyalayın ve programı çalıştırmadan önce yer tutucuyu gerçek kodlanmış değerle değiştirin.",
+    "c6p4n": "Kütüphaneyi yükledikten sonra sağlanan şablonu Python betiğinize kopyalayın ve çalıştırın. Kitaplık, baytlar ve Base45 kodlu dizeler arasında dönüştürme yapmak için yerleşik işlevler sunar.",
+    "d2w6e": "Depoyu kopyalayın/indirin ve sağlanan başlık dosyasını projenize ekleyin. Proje belgelerine göre kaynak dosyaları derleyin ve bunlara bağlantı verin.",
+    "d8w1b": "Bunu, 'pip install base45' veya 'python -m pip install base45' çalıştırarak pip kullanarak yapabilirsiniz.",
+    "f7t1z": "Kitaplığı Xcode projenize manuel olarak veya Swift Paket Yöneticisi (SPM) gibi bir paket yöneticisi aracılığıyla ekleyin.",
+    "f9t2z": "Pom.xml dosyanıza şunu ekleyin: `<dependency> <groupId>org.iso</groupId> <artifactId>iso-base45</artifactId> <version>...</version> </dependency>` burada sürüm en son sürümdür.",
+    "g4h7s": "C++ için GitHub deposu olarak kullanılabilen 'base45-cpp' kitaplığını kullanabilirsiniz.",
+    "j8s6r": "Kotlin için Base45 işlevselliğini içeren 'barcode-core' kütüphanesini kullanabilirsiniz.",
+    "j9s5r": "C# için NuGet'te bulunan 'Base45' kitaplığını kullanabilirsiniz.",
+    "p5e9n": "Kütüphaneyi Gradle derleme betiğinize bağımlılık olarak ekleyin. Örneğin, uygulama düzeyindeki build.gradle dosyasına, en son sürüm numarasıyla birlikte `implementation 'com.bottlerockettudios:barcode-core:...'' ekleyin.",
+    "p6e3n": "Yüklemek için Paket Yönetici Konsolunda 'Install-Package Base45'i çalıştırın veya bağımlılığı NuGet Paket Yöneticisi aracılığıyla ekleyin.",
+    "q2n9r": "Eklendikten sonra sağlanan şablonu bir Swift dosyasına kopyalayın. Bu örnekte Base45 dizesinin base64 temsiline sahip olduğunuz varsayımsal bir senaryo kullandığımızı unutmayın; kodu çalıştırmadan önce bunu gerçek kodlanmış değerle değiştirin.",
+    "q6n1r": "Kitaplık, Base45 dönüşümünü gerçekleştiren kodlayıcı ve kod çözücü sınıfları sağlar. Bağımlılık eklendikten sonra şablon kodunu bir Java sınıfına kopyalayın ve yürütün.",
+    "u9g6t": "Bu kodu çalıştırmak için '@digitalbazaar/base45' paketini kurmanız gerekiyor.",
+    "v5k3r": "Bu kitaplık, Node.js uygulamalarında Base45 kodlama ve kod çözme için basit bir API sağlar. Kurulumdan sonra sağlanan şablonu betiğinize kopyalayın ve Node.js yorumlayıcısıyla çalıştırın.",
+    "x2c5e": "Base45'i Python'da kullanmak için 'base45' kitaplığını yüklemeniz gerekir.",
+    "y3m7k": "Java için, projenize Maven bağımlılığı olarak dahil edilebilecek 'iso-base45' kitaplığını kullanın.",
+    "y9m3k": "Swift için GitHub'da bulunan 'Base45' kütüphanesini kullanabilirsiniz.",
+    "z3m1t": "Bağımlılığı ekledikten ve projeyi senkronize ettikten sonra, sağlanan şablonu bir Kotlin sınıfına kopyalayın ve kodu çalıştırmadan önce yer tutucuyu gerçek kodlanmış değerle değiştirin.",
+    "z7n1m": "`npm install @digitalbazaar/base45` veya `yarn add @digitalbazaar/base45` komutunu çalıştırarak yüklemek için npm veya iplik kullanın.",
+    "z8qm2t": "Kütüphane, Base45 işlemleri için kodlayıcı ve kod çözücü sınıfları sağlar. Şablon kodunu bir C# konsol uygulamasına kopyalayın ve paketi yükledikten sonra çalıştırın."
+}

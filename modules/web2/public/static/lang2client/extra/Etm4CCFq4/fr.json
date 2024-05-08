@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "Installez OpenSSL sur votre système et établissez un lien avec les bibliothèques « libssl » et « libcrypto » lors de la création de votre application C++.",
+    "md5-cpp-openssl-0001": "C++ utilise la bibliothèque OpenSSL pour générer des hachages MD5. Vous devez installer OpenSSL et créer un lien vers celui-ci dans votre projet.",
+    "md5-cpp-use-openssl-0003": "L'extrait crée une fonction « getMD5 » qui prend une chaîne d'entrée, calcule son hachage MD5 à l'aide de l'API MD5 d'OpenSSL et renvoie le hachage sous forme de chaîne hexadécimale. Collez ce code dans votre programme C++ et appelez la fonction « getMD5 » avec l'entrée souhaitée.",
+    "md5-csharp-built-in-0001": "En C#, la classe « System.Security.Cryptography.MD5 » est utilisée pour générer des hachages MD5.",
+    "md5-csharp-no-install-0002": "Aucune installation de bibliothèque externe n'est nécessaire puisqu'elle fait partie de .NET Framework/Core.",
+    "md5-csharp-use-0003": "Cet extrait crée une instance MD5, convertit la chaîne d'entrée en octets, calcule le hachage et enfin code le hachage au format Base64. Placez ce code dans le point d’entrée de votre application C# et exécutez-le pour obtenir le hachage MD5 codé en Base64.",
+    "md5-java-built-in-0001": "Java utilise la classe « java.security.MessageDigest » pour générer des hachages MD5.",
+    "md5-java-imports-0002": "Vous devez importer « java.security.MessageDigest » et « java.util.Base64 » pour hacher et encoder le résultat.",
+    "md5-java-use-0003": "L'extrait obtient une instance de l'algorithme de digestion MD5, la met à jour avec les octets de la chaîne d'entrée, puis code le hachage résultant dans une chaîne Base64. Copiez ce code dans une classe Java et exécutez sa méthode principale pour obtenir le hachage MD5 codé en Base64.",
+    "md5-nodejs-built-in-0001": "Dans Node.js, le module « crypto » intégré est utilisé pour générer des hachages MD5.",
+    "md5-nodejs-no-install-0002": "Aucune installation de bibliothèque externe n'est requise puisque « crypto » est préinstallé avec Node.js.",
+    "md5-nodejs-use-0003": "L'extrait crée un objet de hachage à l'aide de `createHash('md5')`, le met à jour avec la chaîne d'entrée, puis convertit le résumé au format hexadécimal via `.digest('hex')`. Collez ce code dans votre script Node.js et exécutez-le pour obtenir le hachage MD5 de la valeur d'entrée.",
+    "md5-php-built-in-0001": "PHP a une fonction intégrée 'md5()' pour générer des hachages MD5.",
+    "md5-php-no-install-0002": "Aucune installation de bibliothèque externe n'est nécessaire car « md5() » est préinstallé en PHP.",
+    "md5-php-use-0003": "Cet exemple simple définit une fonction 'getMD5' qui appelle la fonction PHP 'md5()' sur la chaîne d'entrée fournie. Copiez ce code dans un fichier PHP, enregistrez-le avec une extension .php et exécutez-le sur un serveur Web ou via la ligne de commande pour voir le hachage MD5 de la valeur d'entrée.",
+    "md5-python-built-in-0001": "Python utilise la bibliothèque 'hashlib' intégrée pour générer des hachages MD5.",
+    "md5-python-no-install-0002": "Aucune installation supplémentaire n'est nécessaire car « hashlib » est fourni en standard avec Python.",
+    "md5-python-use-0003": "Le modèle fourni code la chaîne d'entrée en octets avant de créer un objet de hachage MD5. La méthode '.hexdigest()' est ensuite appelée sur l'objet de hachage pour récupérer le hachage MD5 sous forme hexadécimale. Copiez ce code dans un script Python et exécutez-le pour obtenir le hachage MD5."
+}

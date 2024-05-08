@@ -1,0 +1,22 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值是`123`。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换`123`作为值。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "Encipher/decipher with the WW2 Typex machine.": "使用二战时期的Typex机器进行加密/解密。",
+    "Typex was originally built by the British Royal Air Force prior to WW2, and is based on the Enigma machine with some improvements made, including using five rotors with more stepping points and interchangeable wiring cores. It was used across the British and Commonwealth militaries. A number of later variants were produced; here we simulate a WW2 era Mark 22 Typex with plugboards for the reflector and input.": "Typex最初由英国皇家空军在二战前建造，基于恩尼格玛机器并进行了一些改进，包括使用具有更多步进点的五个转子以及可互换的接线核心。它被英国和英联邦军队广泛使用。后来产生了许多变体；在这里，我们模拟了一个二战时期的Mark 22 Typex，带有反射器和输入的插板。",
+    "To configure the reflector plugboard, enter a string of connected pairs of letters in the reflector box, e.g. <code>AB CD EF</code> connects A to B, C to D, and E to F (you'll need to connect every letter). There is also an input plugboard: unlike Enigma's plugboard, it's not restricted to pairs, so it's entered like a rotor (without stepping). To create your own rotor, enter the letters that the rotor maps A to Z to, in order, optionally followed by <code>&lt;</code> then a list of stepping points.": "要配置反射器插板，请在反射器框中输入一系列连接的字母对，例如<code>AB CD EF</code>将A连接到B，C连接到D，E连接到F（您需要连接每个字母）。还有一个输入插板：与恩尼格玛的插板不同，它不仅限于成对，因此它像转子一样输入（无需步进）。要创建您自己的转子，请按顺序输入转子映射A到Z的字母，然后可选地跟随<code>&lt;</code>然后是步进点列表。",
+    "Rotor ${i} must be provided.": "必须提供转子${i}。",
+    "Remove non-alphabet letters and group output": "移除非字母字符并将输出分组"
+  }
+}
+```
+
+请注意，由于代码中存在变量和特殊标记（如`${i}`），它们在翻译中保留了原始格式，因为它们在代码中具有特定的用途。此外，代码中的HTML标签（如`<code>`）和特殊字符（如`&lt;`）也被保留了，因为它们用于格式化文本。如果需要将这些元素也翻译成中文，请进一步说明。

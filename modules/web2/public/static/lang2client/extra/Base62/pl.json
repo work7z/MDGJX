@@ -1,0 +1,20 @@
+{
+    "c5p1b": "Wyściółka nie jest używana; długość zakodowanego wyniku zależy bezpośrednio od rozmiaru danych wejściowych.",
+    "c8me6b": "Niestandardowe schematy podobne do Base62 mogą być dostosowane do konkretnych zastosowań, ale generalnie opierają się na tej samej zasadzie używania większego zestawu znaków niż Base64 lub Base32.",
+    "d2w4e": "Podobnie jak inne podstawowe systemy konwersji, Base62 działa poprzez konwersję bajtów wejściowych na dużą liczbę całkowitą, a następnie wyrażanie jej jako kombinacji znaków z zestawu 62 znaków.",
+    "f1t2z": "Base62 został opracowany, aby zapewnić krótszą, bezpieczną dla adresów URL alternatywę dla Base64, szczególnie w przypadku unikalnych identyfikatorów i krótkich adresów URL.",
+    "g8h7s": "Jak działa Base62?",
+    "j4s6r": "Jak kodować/dekodować za pomocą Base62 w JavaScript?",
+    "k9em5e": "Dzięki temu idealnie nadaje się do scenariuszy, w których wymagany jest zwięzły, przyjazny dla adresu URL identyfikator bez utraty czytelności.",
+    "p9e1n": "Do kodowania i dekodowania Base62 w JavaScript można używać bibliotek takich jak „base-x” lub „base62”.",
+    "q7n3r": "Unika także niejednoznacznych znaków, takich jak „O” i „0”, „I” i „l”, które mogą prowadzić do błędów w transkrypcji przez człowieka.",
+    "r6nq2v": "Podstawową zaletą Base62 jest zwiększone wykorzystanie przestrzeni dzięki większemu zestawowi znaków niż Base32, ale bez znaków innych niż alfanumeryczne występujących w Base64.",
+    "u3i8b": "Jakie są zalety używania Base62 w porównaniu z Base64 lub Base32?",
+    "v3k5r": "Zestaw znaków zawiera wszystkie wielkie i małe litery (A-Z, a-z) oraz cyfry (0-9), zapewniając bardziej zwartą reprezentację w porównaniu do Base64 lub Base32.",
+    "w2x9qk": "Chociaż sam Base62 nie ma znaczących wariantów, niektóre implementacje mogą nieznacznie różnić się wyborem zestawu znaków, na przykład wykluczając „+” lub „/” powszechnie używane w Base64.",
+    "x7n1m": "Base62 to schemat kodowania reprezentujący dane binarne jako sekwencję 62 znaków alfanumerycznych.",
+    "y3m9k": "Dlaczego powstał Base62?",
+    "z2m7t": "Przykładowe użycie: `const base62 = require('base62'); const encoded = base62.encode('twoje-dane'); const dekodowany = base62.decode (zakodowany);`",
+    "z4t9b": "Co to jest Base62?",
+    "z7t1p": "Czy są jakieś konkretne warianty Base62?"
+}

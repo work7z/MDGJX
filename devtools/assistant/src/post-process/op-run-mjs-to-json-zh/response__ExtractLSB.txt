@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本赋予一个键（key），值为`123`。
+3. 根据代码的实际功能，将键对应的值翻译成中文。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "Extract LSB": "提取最低有效位",
+    "Extracts the Least Significant Bit data from each pixel in an image. This is a common way to hide data in Steganography.": "从每个像素中提取最低有效位数据。这是在隐写术中隐藏数据的一种常见方式。",
+    "Please enter a valid image file.": "请输入有效的图像文件。",
+    "Error: Bit argument must be between 0 and 7": "错误：位参数必须在0到7之间"
+  }
+}
+```
+
+说明：
+- `Extract LSB` 是操作的名称，翻译为“提取最低有效位”。
+- 操作描述翻译为“从每个像素中提取最低有效位数据。这是在隐写术中隐藏数据的一种常见方式。”
+- 错误信息翻译为“请输入有效的图像文件。”和“错误：位参数必须在0到7之间”。
+
+以上JSON对象中的每个键值对都代表了一个自然文本及其对应的中文翻译。

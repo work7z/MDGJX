@@ -1,0 +1,21 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本分配一个占位符`123`作为值。
+3. 根据代码的实际功能，对这些文本进行翻译。
+4. 输出JSON结果。
+
+以下是JSON格式的结果：
+
+```json
+{
+  "i18n": {
+    "Data can be split on different characters and rendered as an HTML, ASCII or Markdown table with an optional header row.": "数据可以根据不同的字符分割并渲染成带有可选表头的HTML、ASCII或Markdown表格。",
+    "Supports the CSV (Comma Separated Values) file format by default. Change the cell delimiter argument to <code>\\t</code> to support TSV (Tab Separated Values) or <code>|</code> for PSV (Pipe Separated Values).": "默认支持CSV（逗号分隔值）文件格式。将单元格分隔符参数更改为<code>\\t</code>以支持TSV（制表符分隔值）或<code>|</code>以支持PSV（管道分隔值）。",
+    "You can enter as many delimiters as you like. Each character will be treat as a separate possible delimiter.": "您可以输入任意多的分隔符。每个字符都将被视为一个可能的独立分隔符。",
+    "To Table operation": "到表格操作"
+  }
+}
+```
+
+请注意，代码中的注释和示例文本没有包含在内，因为它们不是直接显示给用户的文本。同样，`exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`和`type`字段也没有包括在内，因为它们不符合您的要求。

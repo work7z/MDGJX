@@ -1,0 +1,23 @@
+{
+    "MD2-Advantages-011": "Ưu điểm của việc sử dụng MD2 là gì?",
+    "MD2-AlgorithmDetails-010": "Chi tiết thuật toán MD2",
+    "MD2-Applications-018": "Những ứng dụng nào đã sử dụng hoặc vẫn sử dụng MD2?",
+    "MD2-Breakdown-016": "Các điểm yếu về mật mã đã được phát hiện trong MD2 theo thời gian và các giải pháp thay thế mạnh hơn như SHA-256 và SHA-3 hiện được khuyến nghị cho tất cả các ứng dụng yêu cầu băm an toàn.",
+    "MD2-CollisionSecurity-015": "MD2 được coi là yếu trước các cuộc tấn công mật mã hiện đại. Kích thước băm của nó (128 bit) nhỏ so với tiêu chuẩn ngày nay, khiến nó dễ bị tấn công va chạm.",
+    "MD2-Def-002": "MD2 (Thuật toán tiêu hóa thông báo 2) là hàm băm mật mã được thiết kế bởi Ronald Rivest vào năm 1989. Nó tạo ra giá trị băm 128 bit cho bất kỳ thông báo đầu vào nhất định nào.",
+    "MD2-DigitalSignature-Risks-021": "Rủi ro khi sử dụng MD2 cho chữ ký số",
+    "MD2-Disadvantages-014": "Những nhược điểm và mối lo ngại về bảo mật với MD2 là gì?",
+    "MD2-FAQ-001": "MD2 là gì?",
+    "MD2-HistoricalUse-020": "Trong lịch sử, MD2 được sử dụng trong kiểm tra tính toàn vẹn của tệp và cập nhật phần mềm, mặc dù các ứng dụng này phần lớn đã chuyển sang các hàm băm an toàn hơn như SHA-256 và SHA-512.)",
+    "MD2-History-004": "MD2 được phát triển như thế nào và lịch sử của nó ra sao?",
+    "MD2-Implementation-013": "Nó đã được triển khai và tiêu chuẩn hóa rộng rãi trên nhiều nền tảng và ngôn ngữ khác nhau, điều đó có nghĩa là việc tích hợp MD2 vào các hệ thống hiện có có thể tương đối đơn giản.",
+    "MD2-InsecurityExamples-017": "Ví dụ về sự cố bảo mật MD2",
+    "MD2-Operation-007": "Hoạt động MD2 hoạt động như thế nào?",
+    "MD2-Origin-005": "MD2 ban đầu được tạo ra như một sự cải tiến so với MD1, giải quyết một số điểm yếu được tìm thấy trong thuật toán trước đó. Nó trở nên phổ biến do tính đơn giản và tốc độ tương đối vào thời điểm đó.",
+    "MD2-PKI-019": "MD2 đã từng được sử dụng trong Cơ sở hạ tầng khóa công khai (PKI) cho chữ ký số nhưng sau đó không được dùng nữa do dễ bị tấn công. Các chứng chỉ được ký bằng MD2 không còn được hầu hết các hệ thống tin cậy nữa.",
+    "MD2-Process-008": "MD2 hoạt động bằng cách đệm thông báo đầu vào thành bội số của 16 byte và sau đó xử lý nó thông qua một loạt các hoạt động OR loại trừ, xoay bit và bổ sung. Đầu ra cuối cùng là giá trị băm 128 bit.",
+    "MD2-Purpose-003": "Mục đích của MD2 là đảm bảo tính toàn vẹn của dữ liệu bằng cách tạo dấu vân tay kỹ thuật số duy nhất có thể được sử dụng để xác minh tính nguyên gốc và tính xác thực của dữ liệu.",
+    "MD2-Rounds-009": "Thuật toán sử dụng quy trình bốn vòng với các hoạt động cụ thể được thực hiện trên biến trạng thái 128 bit. Mỗi vòng lấy các khối tin nhắn được đệm và cập nhật trạng thái cho đến khi toàn bộ tin nhắn được xử lý.",
+    "MD2-Speed-012": "MD2 được coi là nhanh vào thời điểm đó và vẫn có hiệu suất chấp nhận được trong một số trường hợp, khiến nó phù hợp với các môi trường có tài nguyên tính toán hạn chế.",
+    "MD2-Successors-006": "Tuy nhiên, nó đã được thay thế bằng các thuật toán mạnh hơn như MD5 và SHA-1, là một phần của cùng một họ hàm băm nhưng cung cấp các tính năng bảo mật được cải thiện."
+}

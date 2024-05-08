@@ -1,0 +1,83 @@
+name: Dispatch-CICD-server2
+
+on: workflow_dispatch
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools
+      TAG_MODE: true
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::v3.5.$(date +%Y%m%d%H%M%S)
+
+      - name: Run build script
+        id: runbuildscript
+        run: |
+          chmod +x $LAFTOOLS_ROOT/pipeline/build-server2.sh
+          $LAFTOOLS_ROOT/pipeline/build-server2.sh
+
+      - name: CNS Release 1
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.MAIN_APP_SSH_HOST }}
+          port: ${{ secrets.MAIN_APP_SSH_PORT }}
+          username: ${{ secrets.MAIN_APP_SSH_USERNAME }}
+          key: ${{ secrets.MAIN_APP_SSH_KEY }}
+          script: |
+            echo 'Running some command'
+            ls -ahlrt
+            mkdir -p /home/appuser/Server2App-dist
+
+      - name: CNS Release 2
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.MAIN_APP_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: CNS Release 3
+        run: |
+          sftp -o StrictHostKeyChecking=no -P ${{ secrets.MAIN_APP_SSH_PORT }} ${{ secrets.MAIN_APP_SSH_USERNAME }}@${{ secrets.MAIN_APP_SSH_HOST }} <<EOF
+            put $LAFTOOLS_ROOT/modules/server2/docker-dist.tar.gz /home/appuser/Server2App-dist/LafTools-${{steps.get_version.outputs.VERSION}}-dkout.tmp.gz
+            mkdir /home/appuser/Server2App-meta
+            put -r $LAFTOOLS_ROOT/modules/meta/* /home/appuser/Server2App-meta/
+          exit
+          EOF
+          rm ~/.ssh/id_rsa -rf
+
+      - name: CNS Release 4
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.MAIN_APP_SSH_HOST }}
+          port: ${{ secrets.MAIN_APP_SSH_PORT }}
+          username: ${{ secrets.MAIN_APP_SSH_USERNAME }}
+          key: ${{ secrets.MAIN_APP_SSH_KEY }}
+          command_timeout: 200m
+          script: |
+            export ver="${{steps.get_version.outputs.VERSION}}"
+            echo "version: $ver"
+            cd /home/appuser/Server2App-dist
+            rm -rf test-build
+            mkdir test-build
+            cd ./test-build
+            tar -xzf ../LafTools-$ver-dkout.tmp.gz -C .
+            ls -ahlrt
+            docker build  -t localbuild/server2-linux-x64:$ver -f ./Dockerfile .
+            chmod +x ./docker/run-docker.sh
+            ./docker/run-docker.sh server2-inst $ver

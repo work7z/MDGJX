@@ -1,0 +1,19 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将它们放入一个名为 `i18n` 的对象中。以下是提取的文本和对应的中文翻译：
+
+1. "Swap case operation" -> "大小写转换操作"
+2. "SwapCase constructor" -> "大小写转换构造函数"
+3. "Converts uppercase letters to lowercase ones, and lowercase ones to uppercase ones." -> "将大写字母转换为小写，小写字母转换为大写。"
+
+下面是根据上述提取和翻译的 JSON 格式：
+
+```json
+{
+  "i18n": {
+    "Swap case operation": "大小写转换操作",
+    "SwapCase constructor": "大小写转换构造函数",
+    "Converts uppercase letters to lowercase ones, and lowercase ones to uppercase ones.": "将大写字母转换为小写，小写字母转换为大写。"
+  }
+}
+```
+
+请注意，由于代码中没有其他明显的自然文本信息，除了上述提到的内容，所以 `i18n` 对象只包含这些条目。如果代码中有其他需要提取的文本，请提供详细信息，以便进行更新。

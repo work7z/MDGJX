@@ -1,0 +1,40 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤，包括翻译和最终的JSON输出。
+
+1. 提取的自然文本如下：
+
+   - A slightly more complex variation of a caesar cipher, which includes ASCII characters from 33 '!' to 126 '~'. Default rotation: 47.
+   - ROT47 operation.
+   - ROT47 constructor
+   - Highlight ROT47
+   - Highlight ROT47 in reverse
+
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设置为123。
+
+3. 翻译这些文本为中文，并根据上下文进行适当调整：
+
+   - A slightly more complex variation of a caesar cipher, which includes ASCII characters from 33 '!' to 126 '~'. Default rotation: 47.
+     - 一种更为复杂的凯撒密码变体，它包含了从33('!')到126('~')的ASCII字符。默认旋转：47。
+   - ROT47 operation.
+     - ROT47操作。
+   - ROT47 constructor
+     - ROT47构造函数
+   - Highlight ROT47
+     - 高亮显示ROT47
+   - Highlight ROT47 in reverse
+     - 反向高亮显示ROT47
+
+4. 根据上述翻译，下面是最终的JSON输出：
+
+```json
+{
+  "i18n": {
+    "A slightly more complex variation of a caesar cipher, which includes ASCII characters from 33 '!' to 126 '~'. Default rotation: 47.": "一种更为复杂的凯撒密码变体，它包含了从33('!')到126('~')的ASCII字符。默认旋转：47。",
+    "ROT47 operation.": "ROT47操作。",
+    "ROT47 constructor": "ROT47构造函数",
+    "Highlight ROT47": "高亮显示ROT47",
+    "Highlight ROT47 in reverse": "反向高亮显示ROT47"
+  }
+}
+```
+
+请注意，这里假设您希望保留代码中的注释和描述文本，即使它们不是直接显示给用户的。如果需要进一步筛选，请告知。

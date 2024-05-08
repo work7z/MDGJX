@@ -1,0 +1,34 @@
+根据您的要求，下面是将给定代码中的自然文本提取为 JSON 格式的 `i18n` 对象的过程：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入一个名为 `i18n` 的对象中，并给每个文本分配一个键，值为 `1`。
+3. 根据【示例1】，配置 `extra` 字段，并尝试根据代码内容填写 `editor.input` 和 `editor.output`。
+
+以下是 JSON 格式的 `i18n` 对象：
+
+```json
+{
+  "i18n": {
+    "Advanced Encryption Standard (AES) is a U.S. Federal Information Processing Standard (FIPS). It was selected after a 5-year process where 15 competing designs were evaluated.": 1,
+    "Key: The following algorithms will be used based on the size of the key:<ul><li>16 bytes = AES-128</li><li>24 bytes = AES-192</li><li>32 bytes = AES-256</li></ul>You can generate a password-based key using one of the KDF operations.": 1,
+    "IV: The Initialization Vector should be 16 bytes long. If not entered, it will default to 16 null bytes.": 1,
+    "Padding: In CBC and ECB mode, PKCS#7 padding will be used.": 1,
+    "Invalid key length: ${key.length} bytes\n\nThe following algorithms will be used based on the size of the key:\n  16 bytes = AES-128\n  24 bytes = AES-192\n  32 bytes = AES-256": 1
+  },
+  "extra": {
+    "exampleInput": "<>",
+    "exampleOutput": "<>",
+    "editor": {
+      "input": "typescript", // Assuming the code is written in TypeScript based on the import statement
+      "output": "typescript" // Assuming the output is also TypeScript
+    }
+  }
+}
+```
+
+请注意：
+
+- `exampleInput` 和 `exampleOutput` 字段被设置为 `<>`，因为代码中没有提供具体的示例输入和输出。
+- `editor.input` 和 `editor.output` 字段被设置为 `typescript`，这是基于代码中的 `import` 语句和常见的 TypeScript 文件扩展名 `.tsx` 和 `.mjs` 做出的假设。
+- 代码中的错误信息包含了模板字符串 `${key.length}`，这在 JSON 中无法直接表示，因此我将其转换为普通字符串，并在适当的地方加入了换行符 `\n`。
+- 所有提取的文本都按照它们在代码中出现的顺序进行了编号，每个文本的值都是 `1`。这符合您的要求，但请注意，在实际应用中，通常会给每个键分配一个唯一的标识符或翻译字符串的引用。

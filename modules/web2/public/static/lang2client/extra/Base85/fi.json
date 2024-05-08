@@ -1,0 +1,19 @@
+{
+    "c1p4b": "Jokainen desimaaliluku muunnetaan sitten ainutlaatuiseksi viiden Base85-merkin sekvenssiksi. Jos lopussa on vähemmän kuin neljä tavua jäljellä, täyttöä voidaan käyttää.",
+    "d7w2e": "Base85 toimii jakamalla syöttötiedot neljän tavun ryhmiin ja muuttamalla kunkin ryhmän desimaaliluvuksi välillä 0 ja 2^32-1.",
+    "f9t1z": "Base85 kehitettiin alun perin edustamaan tehokkaasti binaaridataa PostScript-asiakirjoissa paremman pakkaussuhteen saavuttamiseksi.",
+    "g3h5s": "Miten Base85 toimii?",
+    "j5s7r": "Kuinka koodaan/dekoodaan Base85:llä JavaScriptissä?",
+    "k2em5e": "Tämä johtaa lyhyempiin lähtöjonoihin samalle syöttödatamäärälle, mikä voi olla hyödyllistä skenaarioissa, joissa koon minimoiminen on kriittistä.",
+    "p8eq9n": "Voit käyttää kirjastoja, kuten 'base85' tai 'ascii85' Base85-koodaukseen ja -koodaukseen JavaScriptissä.",
+    "q2n3r": "Nykyään sitä käytetään useissa sovelluksissa, joissa tilan tehokkuus ja luettavuus ovat ratkaisevan tärkeitä, kuten PDF-dokumenteissa ja tietyissä verkkoprotokollissa.",
+    "r9qn8v": "Base85:n tärkein etu on sen parempi tilatehokkuus suuremman merkistön ansiosta (85 vs. 64 Base64:ssä tai 32 Base32:ssa).",
+    "u1i2b": "Mitä etuja Base85:n käytöstä on Base64:een tai Base32:een verrattuna?",
+    "v4k6r": "Se koodaa tiedot kompaktimpaan muotoon verrattuna Base64:ään tai Base32:een käyttämällä suurempaa merkistöä.",
+    "w1x4k": "Kyllä, useita muunnelmia on olemassa, mukaan lukien Ascii85 (käytetään PostScriptissä ja PDF:ssä), Z85 (ZeroMQ) ja UUencode (vanhempi muoto). Jokaisella on hieman erilainen hahmosarja ja säännöt.",
+    "x9n1b": "Base85 on koodausmalli, joka edustaa binaaridataa käyttämällä 85 tulostettavan ASCII-merkin sarjaa.",
+    "y6m8k": "Miksi Base85 luotiin?",
+    "z2t7m": "Mikä on Base85?",
+    "z5m6t": "Käyttöesimerkki: `const base85 = request('base85'); const koodattu = base85.encode('oma-tieto'); const dekoodattu = base85.decode(koodattu);`",
+    "z9t7p": "Onko Base85:stä tiettyjä muunnelmia?"
+}

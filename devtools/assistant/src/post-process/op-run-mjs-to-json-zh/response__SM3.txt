@@ -1,0 +1,24 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是文本，值设为`123`。
+3. 根据代码的实际功能，将文本翻译成中文，并替换`123`。
+4. 输出JSON结果。
+
+以下是按照上述步骤生成的JSON：
+
+```json
+{
+  "i18n": {
+    "SM3 is a cryptographic hash function used in the Chinese National Standard. SM3 is mainly used in digital signatures, message authentication codes, and pseudorandom number generators. The message digest algorithm consists, by default, of 64 rounds and length of 256.": "SM3是中国国家标准中使用的一种密码散列函数。SM3主要用于数字签名、消息认证码和伪随机数生成器。默认情况下，消息摘要算法由64轮和256位长度组成。"
+  }
+}
+```
+
+以下是解释：
+
+- 提取的文本是类`SM3`的描述字段`description`，它描述了SM3散列函数的特点和使用场景。
+- 将提取的文本作为键，并给它的值赋了一个占位符`123`，然后将其翻译为中文，描述了SM3的用途和特性。
+- 输出的JSON对象遵循了您提供的格式，并且只包含了自然文本的键值对。
+
+请注意，由于代码中只有一段自然文本符合您的要求，所以`i18n`对象中只包含了一个键值对。如果代码中有其他符合要求的文本，它们也应该按照相同的方式被添加到`i18n`对象中。

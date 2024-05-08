@@ -1,0 +1,38 @@
+根据您的要求，以下是代码中显示给用户的自然文本的JSON格式提取，并翻译为中文：
+
+```json
+{
+  "i18n": {
+    "Regular expression": "正则表达式",
+    "Define your own regular expression (regex) to search the input data with, optionally choosing from a list of pre-defined patterns.": "定义你自己的正则表达式（regex）来搜索输入数据，可以选择性地从预设模式列表中选择。",
+    "Supports extended regex syntax including the 'dot matches all' flag, named capture groups, full unicode coverage (including \\p{} categories and scripts as well as astral codes) and recursive matching.": "支持扩展的正则表达式语法，包括“点匹配所有”标志、命名捕获组、完整的Unicode覆盖（包括\\p{}类别和脚本以及星号代码）和递归匹配。",
+    "IPv4 address": "IPv4地址",
+    "IPv6 address": "IPv6地址",
+    "Email address": "电子邮件地址",
+    "URL": "网址",
+    "Domain": "域名",
+    "Windows file path": "Windows文件路径",
+    "UNIX file path": "UNIX文件路径",
+    "MAC address": "MAC地址",
+    "Date (yyyy-mm-dd)": "日期（yyyy-mm-dd）",
+    "Date (dd/mm/yyyy)": "日期（dd/mm/yyyy）",
+    "Date (mm/dd/yyyy)": "日期（mm/dd/yyyy）",
+    "Strings": "字符串",
+    "Regex": "正则表达式",
+    "Case insensitive": "不区分大小写",
+    "^ and $ match at newlines": "^和$在换行符处匹配",
+    "Dot matches all": "点匹配所有",
+    "Unicode support": "支持Unicode",
+    "Astral support": "支持星号代码",
+    "Display total": "显示总数",
+    "Highlight matches": "高亮匹配项",
+    "List matches": "列出匹配项",
+    "List capture groups": "列出捕获组",
+    "List matches with capture groups": "列出带有捕获组的匹配项",
+    "Invalid regex. Details:": "无效的正则表达式。详情：",
+    "Total found:": "找到的总数："
+  }
+}
+```
+
+以上JSON对象中的每个key都是原始代码中的自然文本，而value则是相应的中文翻译。请注意，部分术语（如“正则表达式”、“IPv4地址”等）保留了专业术语，因为它们在技术领域具有明确的含义。

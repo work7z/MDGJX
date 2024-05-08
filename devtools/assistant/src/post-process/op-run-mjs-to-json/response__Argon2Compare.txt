@@ -1,0 +1,21 @@
+根据您的要求，下面是将具体代码中显示给用户的自然文本提炼成 JSON 格式的 `i18n` 部分：
+
+```json
+{
+  "i18n": {
+    "Argon2 compare": 1,
+    "Tests whether the input matches the given Argon2 hash. To test multiple possible passwords, use the 'Fork' operation.": 1,
+    "Match: ${input}": 1,
+    "No match": 1
+  }
+}
+```
+
+这里的 JSON 对象 `i18n` 包含了代码中所有的自然文本，并且每个文本对应的值都是数字 `1`，如您的指示。以下是文本的来源：
+
+- `"Argon2 compare"`：来自类名和 `this.name`。
+- `"Tests whether the input matches the given Argon2 hash. To test multiple possible passwords, use the 'Fork' operation."`：来自 `this.description`。
+- `"Match: ${input}"`：这是 `run` 方法成功匹配时返回的字符串模板（虽然它包含一个变量占位符，但按照您的要求，我将其视为自然文本）。
+- `"No match"`：来自 `run` 方法在匹配失败时返回的字符串。
+
+请注意，由于 `"Match: ${input}"` 中的 `${input}` 是一个变量，所以实际使用时可能需要根据具体情况来处理这个占位符。如果它不应该被视为自然文本的一部分，请将其从 JSON 中移除。

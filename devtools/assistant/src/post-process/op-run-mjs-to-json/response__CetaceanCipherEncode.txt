@@ -1,0 +1,19 @@
+根据您的要求，我们需要从提供的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为 `i18n` 的对象中，其键是文本内容，值设置为1。
+
+下面是根据您的代码提取的自然文本，并按照要求配置的 JSON 对象：
+
+```json
+{
+  "i18n": {
+    "Cetacean Cipher Encode": 1,
+    "Converts any input into Cetacean Cipher. e.g. hi becomes EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe": 1
+  }
+}
+```
+
+在这个例子中，我提取了以下自然文本：
+
+- 类名（也是操作名）："Cetacean Cipher Encode"
+- 描述："Converts any input into Cetacean Cipher. e.g. hi becomes EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe"
+
+请注意，我没有包括注释、URL、或者示例代码中的文本，因为它们不是直接显示给用户的自然文本。同时，按照您的要求，我已经将提取的文本作为键放入了 `i18n` 对象，并给每个键分配了值1。

@@ -1,0 +1,23 @@
+{
+    "a4r9t": "Kan Base45 elke met Base45 gecodeerde tekenreeks decoderen, ongeacht de oorsprong ervan?",
+    "c2vw9k": "Hoewel Base45 niet zo breed geïmplementeerd is als Base64 of Base32, bestaan ​​er open source-bibliotheken voor verschillende talen.",
+    "c9q7w": "Waarom is Base45 gemaakt?",
+    "d6y9k": "Als er niet genoeg bytes zijn om de laatste groep te vullen, wordt er geen opvulling gebruikt; in plaats daarvan worden de resterende bits verwerkt en toegewezen aan hun corresponderende teken(s).",
+    "e8x2v": "Base45 werkt door de invoergegevens in groepen van elk 5 bytes te verdelen. Vervolgens wordt elke groep omgezet in een decimaal getal en wordt dit toegewezen aan een corresponderend teken uit de set van 45 tekens.",
+    "f8n4m": "De compactheid maakt een efficiënter gebruik van de ruimte in QR-codes mogelijk, terwijl de leesbaarheid met standaard barcodescanners behouden blijft.",
+    "g1h5n": "Hoe werkt Base45?",
+    "g6v3b": "De grotere tekenset van Base45 kan echter de kans op fouten vergroten bij het omgaan met niet-alfanumerieke tekens, wat in sommige omgevingen of transmissiekanalen een probleem kan zijn.",
+    "i7w2m": "Zijn er ingebouwde Base45-bibliotheken in populaire programmeertalen?",
+    "j7k2t": "Om gegevens met Base45 te coderen, hebt u een bibliotheek of functie nodig die het Base45-algoritme implementeert.",
+    "m9k1z": "Als de gegevens die worden gedecodeerd echter specifieke toepassingssemantiek bevatten (bijvoorbeeld specifieke QR-codeformaten), kan na het decoderen aanvullende verwerking nodig zijn.",
+    "q5h8n": "Het belangrijkste voordeel is de kortere tekenreekslengte voor dezelfde hoeveelheid gecodeerde gegevens, waardoor het geschikt is voor toepassingen waarbij ruimte-efficiëntie van cruciaal belang is.",
+    "qv1p5n": "In Java kunt u bijvoorbeeld de bibliotheek 'org.iso.base45' gebruiken om uw gegevens te coderen.",
+    "r9a3t": "Base45 is een op tekst gebaseerd coderingsschema dat binaire gegevens codeert in ASCII-tekens.",
+    "s3e6r": "Hoe codeer ik gegevens met Base45?",
+    "u2l8s": "Wat is Base45?",
+    "x5z1b": "Base45 is voornamelijk ontwikkeld voor het gebruik van QR-codes in de context van digitale COVID-certificaten.",
+    "y3b6n": "Ja, zolang de gecodeerde string is gegenereerd volgens de Base45-specificatie, zou elke compatibele decoder deze moeten kunnen decoderen.",
+    "z1n5qr": "Voorbeelden hiervan zijn het base45 npm-pakket voor JavaScript en dotnet-base45 voor .NET.",
+    "z5b7m": "Het gebruikt een groter alfabet (0-9, A-Z, a-z, -, ., $, /, +, % en *) vergeleken met Base64 of Base32, wat resulteert in kortere gecodeerde tekenreeksen voor dezelfde invoergegevens.",
+    "z8m2t": "Wat zijn de voordelen van het gebruik van Base45 ten opzichte van Base64 of Base32?"
+}

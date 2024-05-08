@@ -1,0 +1,28 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本赋予一个唯一的key。
+3. 用中文翻译这些文本，并作为其value。
+4. 输出JSON结果。
+
+以下是按照这些步骤生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Streebog": "Streebog",
+    "Streebog is a cryptographic hash function defined in the Russian national standard GOST R 34.11-2012": "Streebog是定义在俄罗斯国家标准GOST R 34.11-2012中的加密哈希函数",
+    "It was created to replace an obsolete GOST hash function defined in the old standard GOST R 34.11-94, and as an asymmetric reply to SHA-3 competition by the US National Institute of Standards and Technology.": "它被创建用以替换在旧标准GOST R 34.11-94中定义的过时的GOST哈希函数，并作为美国国家标准与技术研究院SHA-3竞赛的非对称回应。",
+    "Digest length": "摘要长度"
+  }
+}
+```
+
+以下是详细步骤的说明：
+
+- **Streebog**: 这是算法的名称，保留英文。
+- **Streebog is a cryptographic hash function...**: 这是算法的描述，已经翻译成中文。
+- **It was created to replace...**: 这是算法背景的描述，也已经翻译成中文。
+- **Digest length**: 这是参数的名称，已翻译成中文。
+
+请注意，由于代码中没有其他明显的自然文本用于用户显示，所以只包含了上述文本。同时，考虑到算法的专有名词和特定技术背景，部分内容保留了英文。如果需要进一步翻译，可能需要根据上下文具体调整。

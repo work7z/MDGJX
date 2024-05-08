@@ -1,0 +1,43 @@
+根据您的要求，下面是提炼代码中自然文本并转换为JSON格式的步骤：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设为`123`。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换其值。
+4. 输出JSON结果。
+
+下面是根据上述步骤创建的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Untar": "123",
+    "Unpacks a tarball and displays it per file.": "解压tar包并逐文件显示。",
+    "List<File>": "文件列表",
+    "Displays the files in HTML for web apps.": "为Web应用程序以HTML格式显示文件。"
+  }
+}
+```
+
+以下是解释：
+
+- "Untar"：类名，这里翻译为“解压tar包”。
+- "Unpacks a tarball and displays it per file."：类的描述，翻译为“解压tar包并逐文件显示”。
+- "List<File>"：输出类型，这里直接使用“文件列表”来代替。
+- "Displays the files in HTML for web apps."：方法描述，翻译为“为Web应用程序以HTML格式显示文件”。
+
+请注意，这里没有包括方法名`run`和`present`，因为它们不是自然文本，而是代码中的方法名。
+
+【输出示例】
+
+```json
+{
+  "i18n": {
+    "Untar": "解压tar包",
+    "Unpacks a tarball and displays it per file.": "解压tar包并逐文件显示。",
+    "List<File>": "文件列表",
+    "Displays the files in HTML for web apps.": "为Web应用程序以HTML格式显示文件。"
+  }
+}
+```
+
+这个JSON对象现在可以用于国际化（i18n）的替换和翻译工作。

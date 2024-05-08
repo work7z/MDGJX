@@ -1,0 +1,34 @@
+```json
+{
+  "i18n": {
+    "Magic:": "魔术数字:",
+    "Format:": "格式:",
+    "Endianness:": "字节序:",
+    "Version:": "版本:",
+    "ABI:": "应用程序二进制接口:",
+    "ABI Version:": "应用程序二进制接口版本:",
+    "Type:": "类型:",
+    "Instruction Set Architecture:": "指令集架构:",
+    "ELF Version:": "ELF版本:",
+    "Entry Point:": "入口点:",
+    "Entry PHOFF:": "程序头偏移:",
+    "Entry SHOFF:": "节头偏移:",
+    "Flags:": "标志:",
+    "ELF Header Size:": "ELF头大小:",
+    "Program Header Size:": "程序头大小:",
+    "Program Header Entries:": "程序头条目:",
+    "Section Header Size:": "节头大小:",
+    "Section Header Entries:": "节头条目:",
+    "Section Header Names:": "节头名称:",
+    "Type:": "类型:",
+    "Section Name: ": "节名称:",
+    "Flags:": "标志:",
+    "Section Vaddr in memory:": "节在内存中的虚拟地址:",
+    "Offset of the section:": "节的偏移:",
+    "Section Size:": "节大小:",
+    "Associated Section:": "相关节:",
+    "Section Extra Information:": "节额外信息:",
+    "Symbol Name:": "符号名称:"
+  }
+}
+```

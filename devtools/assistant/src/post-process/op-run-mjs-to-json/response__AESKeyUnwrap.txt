@@ -1,0 +1,23 @@
+根据您的要求，下面是将具体代码中显示给用户的自然文本提炼成 JSON 格式的 `i18n` 对象：
+
+```json
+{
+  "i18n": {
+    "AES Key Unwrap": 1,
+    "Decryptor for a key wrapping algorithm defined in RFC3394, which is used to protect keys in untrusted storage or communications, using AES.": 1,
+    "This algorithm uses an AES key (KEK: key-encryption key) and a 64-bit IV to decrypt 64-bit blocks.": 1,
+    "KEK must be either 16, 24, or 32 bytes (currently %s bytes)": 1,
+    "IV must be 8 bytes (currently %s bytes)": 1,
+    "input must be 8n (n>=3) bytes (currently %s bytes)": 1,
+    "IV mismatch": 1
+  }
+}
+```
+
+说明：
+
+1. 提取的文本中不包括 URL、示例输入输出、输入输出类型、模块类型等字段。
+2. 对于包含占位符（例如 `%s`）的文本，保留了这些占位符，以便在实际使用时替换为相应的值。
+3. 每个文本的值设置为 `1`，这可以根据实际需要进行调整，通常用于表示该文本已被识别和提取。
+
+请注意，根据您的代码，我还移除了 `exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`、`type` 字段中可能包含的自然文本，因为您的要求是忽略这些字段。如果这些字段中包含需要提取的文本，请告知我以便进行相应的调整。

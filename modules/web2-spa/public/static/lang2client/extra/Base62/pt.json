@@ -1,0 +1,20 @@
+{
+    "c5p1b": "O preenchimento não é usado; o comprimento da saída codificada depende diretamente do tamanho dos dados de entrada.",
+    "c8me6b": "Esquemas personalizados do tipo Base62 podem ser adaptados para aplicativos específicos, mas geralmente aderem ao mesmo princípio de usar um conjunto de caracteres maior que Base64 ou Base32.",
+    "d2w4e": "Semelhante a outros sistemas de conversão de base, o Base62 funciona convertendo bytes de entrada em um número inteiro grande e, em seguida, expressando-o como uma combinação de caracteres de seu conjunto de 62 caracteres.",
+    "f1t2z": "Base62 foi desenvolvido para fornecer uma alternativa mais curta e segura para URLs ao Base64, especialmente para identificadores exclusivos e URLs curtos.",
+    "g8h7s": "Como funciona o Base62?",
+    "j4s6r": "Como codifico/decodifico com Base62 em JavaScript?",
+    "k9em5e": "Isso o torna ideal para cenários em que é necessário um identificador conciso e compatível com URL, sem sacrificar a legibilidade.",
+    "p9e1n": "Você pode usar bibliotecas como 'base-x' ou 'base62' para codificação e decodificação Base62 em JavaScript.",
+    "q7n3r": "Também evita caracteres ambíguos como ‘O’ e ‘0’, ‘I’ e ‘l’, que podem levar a erros de transcrição humana.",
+    "r6nq2v": "A principal vantagem do Base62 é sua maior eficiência de espaço devido a um conjunto de caracteres maior que o Base32, mas sem caracteres não alfanuméricos encontrados no Base64.",
+    "u3i8b": "Quais são as vantagens de usar Base62 em vez de Base64 ou Base32?",
+    "v3k5r": "O conjunto de caracteres inclui todas as letras maiúsculas e minúsculas (A-Z, a-z) e dígitos (0-9), fornecendo uma representação mais compacta em comparação com Base64 ou Base32.",
+    "w2x9qk": "Embora o Base62 em si não tenha variantes significativas, algumas implementações podem diferir ligeiramente na escolha do conjunto de caracteres, como a exclusão de '+' ou '/' comumente usado em Base64.",
+    "x7n1m": "Base62 é um esquema de codificação que representa dados binários como uma sequência de 62 caracteres alfanuméricos.",
+    "y3m9k": "Por que o Base62 foi criado?",
+    "z2m7t": "Exemplo de uso: `const base62 = require('base62'); const codificado = base62.encode('seus dados'); const decodificado = base62.decode(codificado);`",
+    "z4t9b": "O que é Base62?",
+    "z7t1p": "Existem variantes específicas do Base62?"
+}

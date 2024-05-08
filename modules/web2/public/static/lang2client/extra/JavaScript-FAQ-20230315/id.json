@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "Apa itu JavaScript?",
+    "JS-DOM-API-007": "Bagaimana JavaScript berinteraksi dengan DOM?",
+    "JS-DOM-API-Explanation-008": "JavaScript menyediakan API Model Objek Dokumen (DOM) untuk memanipulasi HTML dan CSS, memungkinkan pengembang mengubah konten, gaya, dan pendengar acara secara dinamis.",
+    "JS-DOM-Example-009": "Misalnya, Anda dapat memilih elemen dan mengubah konten teksnya: `document.getElementById('myElement').textContent = 'New Text';`",
+    "JS-Data-Types-010": "Apa saja tipe data dalam JavaScript?",
+    "JS-Data-Types-List-011": "JavaScript mendukung berbagai tipe data termasuk tipe data primitif seperti string, angka, boolean, null, tidak terdefinisi, dan simbol, serta tipe kompleks seperti objek dan array.",
+    "JS-Def-002": "JavaScript (JS) adalah bahasa pemrograman interpretasi tingkat tinggi yang banyak digunakan untuk membuat aplikasi web, meningkatkan antarmuka pengguna, dan membangun logika sisi server dengan Node.js.",
+    "JS-Event-Loop-013": "Apa yang dimaksud dengan perulangan peristiwa dalam JavaScript?",
+    "JS-Event-Loop-Explanation-014": "Perulangan peristiwa adalah bagian inti dari model konkurensi JavaScript, yang memungkinkan eksekusi asinkron melalui panggilan balik, janji, dan async/menunggu.",
+    "JS-Event-Loop-Process-015": "Ini menjalankan skrip utama terlebih dahulu, kemudian menjalankan fungsi panggilan balik apa pun ketika peristiwa terkait (seperti masukan pengguna atau respons jaringan) terjadi, mengelolanya melalui sistem antrian.",
+    "JS-Function-Syntax-006": "Fungsi didefinisikan menggunakan kata kunci `fungsi` diikuti dengan nama fungsi dan parameter yang diapit tanda kurung. Badan fungsi dibungkus dengan kurung kurawal: `functiongreet(name) { console.log(`Hello, ${name}!`); }`",
+    "JS-Purpose-003": "Ini awalnya dikembangkan oleh Brendan Eich di Netscape pada tahun 1995 dan sejak itu berkembang menjadi salah satu bahasa paling populer, didukung oleh semua browser web dan platform utama seperti Electron dan React Native.",
+    "JS-Syntax-004": "Apa sintaks dasar JavaScript?",
+    "JS-Type-Checking-012": "Pemeriksaan tipe dapat dilakukan menggunakan konstruktor (`typeof value === 'string'`) atau operator `instanceof` untuk objek yang diwarisi dari konstruktor bawaan (misalnya, `value instanceof Array`).",
+    "MDN-DOM-API": "MDN Web Docs - Memanipulasi Dokumen",
+    "MDN-Event-Loop": "Dokumen Web MDN - Perulangan Peristiwa",
+    "MDN-JS-Guide": "Dokumen Web MDN - Panduan JavaScript",
+    "MDN-JS-Types": "Dokumen Web MDN - Tipe Data dan Struktur Data"
+}

@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码提炼为 JSON 格式的步骤和结果：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入一个名为 `i18n` 的对象中，键是自然文本，值设置为 `123`。
+3. 根据代码的实际功能，将 `i18n` 中的英文文本翻译为中文，并替换其值。
+4. 输出 JSON 结果。
+
+以下是 JSON 格式的输出：
+
+```json
+{
+  "i18n": {
+    "Unicode Text Format": "Unicode文本格式",
+    "Adds Unicode combining characters to change formatting of plaintext.": "添加Unicode组合字符以改变纯文本的格式。",
+    "Underline": "下划线",
+    "Strikethrough": "删除线"
+  }
+}
+```
+
+解释：
+- `Unicode Text Format` 是类名，我将其翻译为 `Unicode文本格式`。
+- `Adds Unicode combining characters to change formatting of plaintext.` 是描述，我将其翻译为 `添加Unicode组合字符以改变纯文本的格式。`。
+- `Underline` 和 `Strikethrough` 是参数名，分别代表添加下划线和删除线，因此直接使用 `下划线` 和 `删除线` 作为翻译。
+
+注意：由于代码中没有其他自然文本信息，且示例中不包括字段名称（如 `name`, `description` 等），因此只包含了上述内容。如果需要字段名翻译，请额外说明。

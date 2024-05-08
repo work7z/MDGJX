@@ -1,0 +1,50 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤，以及翻译成中文的例子：
+
+1. 找出所有自然文本：
+   - "Cetacean Cipher Decode"
+   - "Decode Cetacean Cipher input. e.g. EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe becomes hi"
+   - "hi"
+
+2. 将这些文本放入一个名为`i18n`的对象中，并给每个文本赋予一个键，值设为123。
+
+3. 翻译这些文本为中文，并替换其值。
+
+4. 输出JSON结果。
+
+下面是根据上述步骤生成的JSON格式：
+
+```json
+{
+  "i18n": {
+    "Cetacean Cipher Decode": "123",
+    "Decode Cetacean Cipher input. e.g. EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe becomes hi": "123",
+    "hi": "123"
+  }
+}
+```
+
+以下是翻译后的JSON格式：
+
+```json
+{
+  "i18n": {
+    "Cetacean Cipher Decode": "鲸类密码解码",
+    "Decode Cetacean Cipher input. e.g. EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe becomes hi": "解码鲸类密码输入。例如：EEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe 变成 hi",
+    "hi": "你好"
+  }
+}
+```
+
+以下是最终的JSON输出：
+
+```json
+{
+  "i18n": {
+    "Cetacean Cipher Decode": "鲸类密码解码",
+    "Decode Cetacean Cipher input. e.g. EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe becomes hi": "解码鲸类密码输入。例如：EEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe 会变成 'hi'",
+    "hi": "你好"
+  }
+}
+```
+
+请注意，这里的翻译是基于代码的功能和上下文进行的，可能需要根据实际使用情况进一步调整。

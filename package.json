@@ -1,0 +1,81 @@
+{
+  "name": "laftools-go",
+  "version": "v2.2.42",
+  "scripts": {
+    "add-license": "sh ./pipeline/dev-add-license-to-each-file.sh",
+    "fe-handle-CN-pre-release": "sh ./devtools/release/download-and-verify.sh",
+    "fe-job": "sh ./pipeline/dev-run-scan-and-generate.sh",
+    "fe-sync": "sh ./pipeline/dev-sync-copy-files.sh",
+    "fe-release": "sh ./devtools/docs-generator/pipeline/build.sh",
+    "fe-docs-gen": "sh ./devtools/docs-generator/pipeline/build.sh",
+    "do-tag": "sh ./pipeline/do-tag.sh",
+    "fe-release-full": "npm run fe-scan-all && npm run fe-release-docs",
+    "win-clean": "taskkill /F /IM bash.exe",
+    "fe-web": "(cd ./modules/web2 && npm run dev)",
+    "fe-css": "(cd ./modules/web && sh ./job-tailwind.sh)",
+    "fe-extra": "go run ./core/app.go dev-extra --config $LAFTOOLS_ROOT/devtools/config/laft-system-dev.json",
+    "fe-build": "(cd ./modules/web && npm run build)",
+    "fe-scan-other": "(cd ./devtools/scripts/scan/ && node ./scan-entry.js --skip-langlist=zh_CN)",
+    "fe-scan-zh": "(cd ./devtools/scripts/scan/ && node ./scan-entry.js --langlist=zh_CN )",
+    "fe-scan-all": "(cd ./devtools/scripts/scan/ && node ./scan-entry.js)",
+    "be-server2": "(cd ./modules/server2 && npm run dev)",
+    "build-all": "./pipeline/build-all.sh",
+    "test-all": "./pipeline/test-all.sh",
+    "build-linux": "./pipeline/build-all.sh linux",
+    "test-linux": "(cd $LAFTOOLS_ROOT/dist/os/linux-x64 && ./run.sh)",
+    "push-docker": "./pipeline/push-docker.sh",
+    "build-docker": "./pipeline/build-docker.sh",
+    "test-docker": "sudo docker run -p 0.0.0.0:39000:39000 codegentoolbox/laftools-linux-x64:insider"
+  },
+  "keywords": [
+    "cipher",
+    "cypher",
+    "encode",
+    "decode",
+    "encrypt",
+    "decrypt",
+    "base64",
+    "xor",
+    "charset",
+    "hex",
+    "encoding",
+    "format",
+    "cybersecurity",
+    "data manipulation",
+    "data analysis"
+  ],
+  "author": "",
+  "license": "AGPL-3.0-only",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "import-sort-cli": "^6.0.0",
+    "import-sort-style-renke": "^6.0.0",
+    "prettier": "^3.1.1"
+  },
+  "dependencies": {
+    "lint-staged": "^15.2.0"
+  },
+  "lint-staged": {
+    "modules/web/src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "modules/web/src/**/*.{css,scss,less}": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "all"
+  },
+  "importSort": {
+    ".js, .jsx": {
+      "style": "renke"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

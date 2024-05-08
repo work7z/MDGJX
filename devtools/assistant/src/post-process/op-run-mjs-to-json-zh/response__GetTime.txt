@@ -1,0 +1,26 @@
+根据您的要求，以下是提炼代码中自然文本并转换为JSON格式的过程：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键（key）是自然文本，值（value）设为123。
+3. 根据代码的实际功能，将`i18n`中的值翻译成中文。
+4. 输出JSON结果。
+
+以下是转换后的结果：
+
+```json
+{
+  "i18n": {
+    "Get Time": "获取时间",
+    "Generates a timestamp showing the amount of time since the UNIX epoch (1970-01-01 00:00:00 UTC). Uses the W3C High Resolution Time API.": "生成一个时间戳，显示自UNIX纪元（1970年1月1日 00:00:00 UTC）以来的时间量。使用W3C高分辨率时间API。",
+    "Unknown granularity value:": "未知的粒度值："
+  }
+}
+```
+
+以下是详细的步骤说明：
+
+- "Get Time" 是操作的名字，翻译为 "获取时间"。
+- "Generates a timestamp showing the amount of time since the UNIX epoch (1970-01-01 00:00:00 UTC). Uses the W3C High Resolution Time API." 是操作的描述，翻译为 "生成一个时间戳，显示自UNIX纪元（1970年1月1日 00:00:00 UTC）以来的时间量。使用W3C高分辨率时间API。"。
+- "Unknown granularity value:" 是错误信息的一部分，翻译为 "未知的粒度值："。
+
+请注意，由于代码中的`exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`、`type`字段并不包含自然文本，所以它们没有被包括在`i18n`对象中。同时，错误信息中的变量`granularity`没有翻译，因为它在运行时会被替换为具体的值。

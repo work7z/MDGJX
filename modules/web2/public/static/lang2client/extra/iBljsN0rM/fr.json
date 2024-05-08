@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Une fois intégré, copiez le modèle fourni dans votre programme C++ et remplacez l'espace réservé par la valeur codée réelle avant d'exécuter le programme.",
+    "c6p4n": "Dans le modèle fourni, remplacez l'espace réservé dans la partie décodage par les octets réels codés en Base58 (préfixés par « b » pour la chaîne binaire), puis exécutez le script.",
+    "d2w6e": "Clonez/téléchargez le référentiel, incluez le fichier d'en-tête base58.h dans votre projet et compilez/liez les fichiers sources selon les instructions du projet.",
+    "d8w1b": "Aucune installation supplémentaire n'est nécessaire car elle est livrée avec la bibliothèque standard. Assurez-vous cependant que votre version de Python est suffisamment récente pour inclure cette fonctionnalité.",
+    "f9t2z": "Ajoutez la dépendance à votre projet Maven en ajoutant `<dependency> <groupId>org.bitcoinj</groupId> <artifactId>bitcoinj-core</artifactId> <version>...</version> </dependency>` où version doit être remplacé par la dernière version.",
+    "g4h7s": "Pour C++, vous pouvez utiliser les « bibliothèques illimitées Bitcoin » qui fournissent la fonctionnalité Base58.",
+    "j9s5r": "Pour C#, utilisez la bibliothèque « NBitcoin » pour gérer l'encodage et le décodage Base58.",
+    "k3m2e": "Copiez le modèle fourni dans un nouveau fichier Go, remplacez l'espace réservé par la valeur codée réelle, puis exécutez le fichier en utilisant « go run yourfile.go »",
+    "p6e3n": "Installez le package via NuGet en exécutant « Install-Package NBitcoin » dans la console Package Manager ou ajoutez-le via NuGet Package Manager.",
+    "q6n1r": "Après avoir installé la bibliothèque, copiez le code du modèle dans une classe Java et remplacez l'espace réservé par la valeur codée réelle avant d'exécuter le code.",
+    "r4n6v": "Ajoutez la dépendance à votre projet en exécutant « go get github.com/btcsuite/btcutil ». Cela téléchargera et installera le package.",
+    "u7i9b": "Pour Go, utilisez le package « btcutil » disponible sur GitHub, en particulier son module base58.",
+    "u9g6t": "Pour exécuter ce code, vous devez installer le package « base-x » qui prend en charge l'encodage et le décodage Base58.",
+    "v5k3r": "Cette bibliothèque fournit une API flexible pour créer des encodages de base, notamment Base58. Une fois installé, remplacez l'espace réservé dans la section de décodage par la valeur codée réelle et exécutez le script.",
+    "x2c5e": "Le module « base58 » intégré de Python peut être utilisé pour l'encodage et le décodage Base58.",
+    "y3m7k": "Pour Java, utilisez la bibliothèque « bitcoinj » qui inclut la fonctionnalité d'encodage et de décodage Base58.",
+    "z7n1m": "Installez-le via npm en exécutant `npm install base-x` ou `yarn add base-x`.",
+    "z8em2t": "Après l'installation, copiez le modèle fourni dans une application console C# et remplacez l'espace réservé par la valeur codée réelle avant d'exécuter le programme."
+}

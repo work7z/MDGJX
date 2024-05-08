@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "Qu'est-ce que JavaScript ?",
+    "JS-DOM-API-007": "Comment JavaScript interagit-il avec le DOM ?",
+    "JS-DOM-API-Explanation-008": "JavaScript fournit une API DOM (Document Object Model) pour manipuler HTML et CSS, permettant aux développeurs de modifier dynamiquement le contenu, le style et les écouteurs d'événements.",
+    "JS-DOM-Example-009": "Par exemple, vous pouvez sélectionner un élément et modifier son contenu textuel : `document.getElementById('myElement').textContent = 'New Text';`",
+    "JS-Data-Types-010": "Quels sont les types de données en JavaScript ?",
+    "JS-Data-Types-List-011": "JavaScript prend en charge divers types de données, y compris les types primitifs tels que les chaînes, les nombres, les booléens, les valeurs nulles, non définies et les symboles, ainsi que les types complexes tels que les objets et les tableaux.",
+    "JS-Def-002": "JavaScript (JS) est un langage de programmation interprété de haut niveau largement utilisé pour créer des applications Web, améliorer les interfaces utilisateur et créer une logique côté serveur avec Node.js.",
+    "JS-Event-Loop-013": "Qu'est-ce que la boucle d'événements en JavaScript ?",
+    "JS-Event-Loop-Explanation-014": "La boucle d'événements est un élément essentiel du modèle de concurrence de JavaScript, qui permet une exécution asynchrone via des rappels, des promesses et une synchronisation/attente.",
+    "JS-Event-Loop-Process-015": "Il exécute d'abord le script principal, puis exécute toutes les fonctions de rappel lorsque leurs événements associés (comme les entrées de l'utilisateur ou les réponses du réseau) se produisent, en les gérant via un système de file d'attente.",
+    "JS-Function-Syntax-006": "Les fonctions sont définies à l'aide du mot-clé `function` suivi du nom de la fonction et des paramètres entre parenthèses. Le corps de la fonction est entouré d'accolades : `function greet(name) { console.log(`Hello, ${name}!`); }`",
+    "JS-Purpose-003": "Il a été initialement développé par Brendan Eich chez Netscape en 1995 et est depuis devenu l'un des langages les plus populaires, pris en charge par tous les principaux navigateurs Web et plates-formes comme Electron et React Native.",
+    "JS-Syntax-004": "Quelle est la syntaxe de base de JavaScript ?",
+    "JS-Type-Checking-012": "La vérification de type peut être effectuée à l'aide de constructeurs (`typeof value === 'string'`) ou de l'opérateur `instanceof` pour les objets héritant des constructeurs intégrés (par exemple, `value instanceof Array`).",
+    "MDN-DOM-API": "MDN Web Docs - Manipulation de documents",
+    "MDN-Event-Loop": "MDN Web Docs - Boucle d'événements",
+    "MDN-JS-Guide": "Documents Web MDN - Guide JavaScript",
+    "MDN-JS-Types": "MDN Web Docs - Types de données et structures de données"
+}

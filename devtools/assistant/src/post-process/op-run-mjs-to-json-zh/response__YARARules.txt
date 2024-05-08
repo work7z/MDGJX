@@ -1,0 +1,28 @@
+根据您的要求，我首先从代码中提取所有显示给用户的自然文本，并将它们放入一个名为`i18n`的对象中，每个文本的值设置为123。然后我将这些文本翻译成中文，并替换对应的值。
+
+以下是提取和翻译的结果：
+
+```json
+{
+  "i18n": {
+    "YARA Rules": "YARA规则",
+    "YARA is a tool developed at VirusTotal, primarily aimed at helping malware researchers to identify and classify malware samples. It matches based on rules specified by the user containing textual or binary patterns and a boolean expression. For help on writing rules, see the YARA documentation.": "YARA是由VirusTotal开发的工具，主要用于帮助恶意软件研究人员识别和分类恶意软件样本。它基于用户指定的包含文本或二进制模式以及布尔表达式的规则进行匹配。有关编写规则的帮助，请参阅YARA文档。",
+    "Rules": "规则",
+    "Show strings": "显示字符串",
+    "Show string lengths": "显示字符串长度",
+    "Show metadata": "显示元数据",
+    "Show counts": "显示计数",
+    "Show rule warnings": "显示规则警告",
+    "Show console module messages": "显示控制台模块消息",
+    "Error on line {0}: {1}": "第{0}行错误：{1}",
+    "Warning on line {0}: {1}": "第{0}行警告：{1}",
+    "Input matches rule \"{0}\"{1}{2}.": "输入与规则\"{0}\"{1}{2}匹配。",
+    "Rule \"{0}\"{1} matches{2}": "规则\"{0}\"{1}匹配{2}",
+    "Pos {0}, length {1}, identifier {2}, data: \"{3}\"": "位置{0}，长度{1}，标识符{2}，数据：\"{3}\""
+  }
+}
+```
+
+请注意，对于占位符（如`{0}`、`{1}`等），我保留了原始的英文格式，因为在代码中它们将被动态替换，并不需要翻译。同时，我假设代码中的错误和警告消息是显示给用户的，因此也将它们包含在内。
+
+如果需要进一步的帮助，比如具体到每个字段在代码中的位置或者有其他的翻译要求，请告知。

@@ -1,0 +1,20 @@
+{
+    "c5m1b": "Một biến thể khác, Base58Flickr, hơi khác một chút về bộ ký tự. Nó thay thế '+' bằng ',' và '/' bằng '-', thích ứng với nhu cầu URL của Flickr.",
+    "c6p9b": "Nếu độ dài của dữ liệu đầu vào không chia hết cho 8 thì phần đệm sẽ không được sử dụng; thay vào đó, mỗi nhóm không đầy đủ sẽ được xử lý độc lập.",
+    "d3w2e": "Base58 hoạt động bằng cách chuyển đổi byte đầu vào thành một số nguyên lớn, sau đó biểu thị số nguyên đó dưới dạng kết hợp các ký tự từ bộ 58 ký tự của nó (A-Z, a-z, 1-9).",
+    "f4t7z": "Base58 ban đầu được phát triển cho Bitcoin để đại diện cho các địa chỉ công khai và khóa riêng mà không có sự mơ hồ.",
+    "g7h5k": "Base58 hoạt động như thế nào?",
+    "j6s3r": "Làm cách nào để mã hóa/giải mã bằng Base58 trong JavaScript?",
+    "k1m4e": "Tuy nhiên, nó không mang lại hiệu quả về không gian tương tự như Base64 hoặc Base32 vì nó sử dụng ít ký tự hơn trong bảng chữ cái.",
+    "pq5e9n": "Bạn có thể sử dụng các thư viện như 'bs58' để thực hiện mã hóa và giải mã Base58 trong JavaScript.",
+    "q2x8k": "Việc sử dụng nó đã mở rộng sang các loại tiền điện tử và các tình huống khác, nơi mong muốn các chuỗi chống lỗi, có thể đọc được của con người.",
+    "r2n7v": "Ưu điểm chính là tăng khả năng đọc do loại trừ các ký tự trông giống nhau, giảm lỗi khi nhập thủ công.",
+    "s1b3m": "Không giống như Base64 hoặc Base32, nó loại trừ các ký tự '0', 'O', 'I' và 'l' dễ bị nhầm lẫn, làm cho nó phù hợp với URL và mã QR.",
+    "u8i5b": "Ưu điểm của việc sử dụng Base58 so với Base64 hoặc Base32 là gì?",
+    "v4n9t": "Base58 là sơ đồ mã hóa biểu diễn dữ liệu nhị phân dưới dạng một chuỗi các ký tự chữ và số.",
+    "w3x7k": "Có, một số biến thể phổ biến bao gồm Base58Check, bổ sung tổng kiểm tra để phát hiện lỗi, thường được sử dụng trong Bitcoin.",
+    "x2z6r": "Base58 là gì?",
+    "y9m1n": "Tại sao Base58 được tạo ra?",
+    "z1m2t": "Cách sử dụng ví dụ: `const được mã hóa = bs58.encode('your-data'); const đã giải mã = ​​bs58.decode(được mã hóa);`",
+    "z9t2p": "Có biến thể cụ thể nào của Base58 không?"
+}

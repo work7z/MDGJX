@@ -1,0 +1,23 @@
+{
+    "MD4-Advantages-011": "Mitä etuja MD4:n käytöstä on?",
+    "MD4-AlgorithmDetails-010": "MD4-algoritmin tiedot",
+    "MD4-Applications-018": "Mitkä sovellukset ovat käyttäneet tai käyttävät edelleen MD4:ää?",
+    "MD4-Breakdown-016": "Algoritmin suunnitteluvirheet ovat johtaneet käytännön hyökkäyksiin, jotka mahdollistavat helpot hash-törmäykset ja jopa osittaiset esikuvahyökkäykset, mikä tekee MD4:stä sopimattoman mihinkään turvalliseen kryptografiseen käyttötapaukseen nykyään.",
+    "MD4-CollisionSecurity-015": "MD4:llä on useita kryptografisia heikkouksia, mukaan lukien alttius törmäyshyökkäyksille. Tämä tarkoittaa, että kaksi eri tuloa voivat tuottaa saman hash-tulosteen, mikä tekee siitä turvattoman sovelluksille, jotka vaativat törmäyskestävyyttä tai vahvaa viestin eheyttä.",
+    "MD4-Def-002": "MD4 (Message-Digest Algorithm 4) on Ronald Rivestin vuonna 1990 suunnittelema kryptografinen hash-funktio. Se tuottaa 128-bittisen hajautusarvon mille tahansa syötetylle viestille.",
+    "MD4-DigitalSignature-Risks-021": "MD4:n käytön riskit digitaalisiin allekirjoituksiin",
+    "MD4-Disadvantages-014": "Mitkä ovat MD4:n haitat ja turvallisuusongelmat?",
+    "MD4-FAQ-001": "Mikä on MD4?",
+    "MD4-HistoricalUse-019": "Historiallisesti MD4:ää käytettiin digitaalisissa allekirjoituksissa, tiedostojen eheyden tarkistuksissa ja ohjelmistopäivityksissä. Haavoittuvuuksiensa vuoksi nämä sovellukset ovat kuitenkin suurelta osin siirtyneet turvallisempiin vaihtoehtoihin, kuten SHA-256 ja SHA-3.",
+    "MD4-History-004": "Miten MD4 kehitettiin ja mikä on sen historiallinen merkitys?",
+    "MD4-Implementation-013": "Se on otettu käyttöön ja standardoitu laajasti eri alustoilla ja kielillä, mikä mahdollistaa helpon integroinnin olemassa oleviin järjestelmiin, vaikka tämän edun painavat sen nykyaikaisissa yhteyksissä turvallisuusnäkökohdat.",
+    "MD4-InsecurityExamples-017": "Esimerkkejä MD4-tietoturvahäiriöistä",
+    "MD4-LegacySystems-020": "MD4 saattaa edelleen olla olemassa vanhoissa järjestelmissä, mutta sen käyttöä ei suositella kaikissa tilanteissa, joissa turvallisuus on huolenaihe. Nykyaikaiset standardit eivät enää suosittele MD4:ää mihinkään salaustarkoituksiin.",
+    "MD4-Operation-007": "Miten MD4 toimii?",
+    "MD4-Origin-005": "MD4 oli MD2:n ja MD3:n evoluutio, jonka tarkoituksena oli tarjota nopeampi suorituskyky säilyttäen samalla suojausominaisuudet. Kuitenkin kävi selväksi, että MD4:llä on useita tietoturvaheikkouksia.",
+    "MD4-Process-008": "MD4 käsittelee syöttöviestin täyttämällä sen 512 bitin kerrannaiseksi ja jakamalla sen 16 sanan lohkoihin. Algoritmi toimii sitten näillä lohkoilla käyttämällä neljää käsittelykierrosta, jotka sisältävät bittikohtaisia ​​operaatioita, modulaarisia lisäyksiä ja epälineaarisia funktioita.",
+    "MD4-Purpose-003": "MD4:n tarkoituksena on varmistaa tietojen eheys luomalla kiinteäkokoinen digitaalinen sormenjälki, jonka avulla voidaan varmistaa alkuperäisten tietojen aitous ja eheys.",
+    "MD4-Rounds-009": "Kun kaikki lohkot on käsitelty, tuloksena oleva sisäinen tila muunnetaan lopulliseksi 128-bittiseksi hash-arvoksi.",
+    "MD4-Speed-012": "MD4 suunniteltiin alun perin nopeammaksi kuin edeltäjänsä, mikä teki siitä suositun sovelluksissa, jotka vaativat nopeaa tiivistystä sen julkaisuhetkellä.",
+    "MD4-Successors-006": "Puutteistaan ​​huolimatta MD4 loi pohjan myöhemmille hajautustoiminnoille, kuten MD5:lle ja SHA-1:lle, jotka paransivat sen suunnittelua, mutta myös perivät osan sen haavoittuvuuksista ajan myötä."
+}

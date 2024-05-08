@@ -1,0 +1,17 @@
+{
+    "YAML-Advantages-001": "YAML 的優點是什麼？",
+    "YAML-Advantages-002": "YAML 易於人類閱讀且易於編寫，使其成為個人檔案的熱門選擇。",
+    "YAML-Advantages-003": "它也易於閱讀和編寫，並且通常與所有程式語言結合使用。",
+    "YAML-Basics-001": "什麼是 YAML？",
+    "YAML-Def-002": "YAML（YAML Ain't Markup Language）是一種人類可讀的資料序列化標準，可與所有程式語言結合使用，通常用於編寫設定檔。",
+    "YAML-Disadvantages-001": "YAML 的缺點是什麼？",
+    "YAML-Disadvantages-002": "YAML 可能難以解析且容易出錯。",
+    "YAML-Disadvantages-003": "它也不像其他資料序列化格式（例如 JSON）那樣得到廣泛支援。",
+    "YAML-Example-001": "YAML 檔案是什麼樣的？",
+    "YAML-Example-002": "一個簡單的 YAML 檔案由鍵值對組成，每對以冒號分隔。",
+    "YAML-Example-003": "例如，YAML 檔案可能如下所示：",
+    "YAML-Purpose-003": "它被設計為易於人類閱讀，通常用於以易於讀寫的格式表達資料結構和序列化。",
+    "YAML-Usage-001": "YAML 有何用途？",
+    "YAML-Usage-002": "YAML 通常用於設定檔以及儲存或傳輸資料的應用程式。",
+    "YAML-Usage-003": "它通常用於儲存或傳輸資料的應用程式（例如設定檔）以及儲存或傳輸資料的應用程式。"
+}

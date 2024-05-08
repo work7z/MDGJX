@@ -1,0 +1,22 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为`i18n`的对象中，其键是提取的文本，值设置为1。
+
+下面是根据您的要求转换后的JSON格式：
+
+```json
+{
+  "i18n": {
+    "Provides a place to write comments within the flow of the recipe. This operation has no computational effect.": 1
+  }
+}
+```
+
+在这个特定的代码示例中，只有一段文本符合要求，即类`Comment`的描述字段：
+
+```typescript
+this.description =
+  "Provides a place to write comments within the flow of the recipe. This operation has no computational effect.";
+```
+
+其他字段如`name`, `inputType`, `outputType`等不符合您所要求的自然文本的定义，因此它们没有被包含在`i18n`对象中。
+
+参考示例1，上述JSON已经配置好i18n，并只包含必要的自然文本。

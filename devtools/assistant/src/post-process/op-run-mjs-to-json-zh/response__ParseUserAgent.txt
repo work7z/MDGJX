@@ -1,0 +1,49 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤，包括翻译成中文：
+
+1. 提取自然文本。
+2. 放入名为`i18n`的对象中，键（key）是自然文本，值（value）设为123。
+3. 翻译这些文本为中文，并替换掉原来的值123。
+
+下面是根据上述步骤生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Attempts to identify and categorise information contained in a user-agent string.": "尝试识别和分类用户代理字符串中包含的信息。",
+    "Browser": "浏览器",
+    "Name": "名称",
+    "Version": "版本",
+    "Device": "设备",
+    "Model": "型号",
+    "Type": "类型",
+    "Vendor": "制造商",
+    "Engine": "引擎",
+    "OS": "操作系统",
+    "CPU": "CPU",
+    "Architecture": "架构"
+  }
+}
+```
+
+以下是参考示例1的输出：
+
+```json
+{
+  "i18n": {
+    "Attempts to identify and categorise information contained in a user-agent string.": "尝试识别和分类用户代理字符串中包含的信息。",
+    "Browser": "123", // 这里替换为中文 "浏览器"
+    "Name": "123", // 这里替换为中文 "名称"
+    "Version": "123", // 这里替换为中文 "版本"
+    "Device": "123", // 这里替换为中文 "设备"
+    "Model": "123", // 这里替换为中文 "型号"
+    "Type": "123", // 这里替换为中文 "类型"
+    "Vendor": "123", // 这里替换为中文 "制造商"
+    "Engine": "123", // 这里替换为中文 "引擎"
+    "OS": "123", // 这里替换为中文 "操作系统"
+    "CPU": "123", // 这里替换为中文 "CPU"
+    "Architecture": "123" // 这里替换为中文 "架构"
+  }
+}
+```
+
+请注意，我已经将所有的值`123`替换为了对应的中文翻译。如果需要保留`123`作为占位符，请按照上面的第一个JSON对象格式进行操作。

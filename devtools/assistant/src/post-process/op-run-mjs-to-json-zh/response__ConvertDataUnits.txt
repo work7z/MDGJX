@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的i18n对象，并翻译成中文的过程：
+
+1. 提炼英文文本：
+   - Convert data units
+   - Converts a unit of data to another format.
+   - Input units
+   - Output units
+
+2. 将这些文本放入i18n对象，并给每个文本分配一个默认值123。
+
+3. 翻译这些文本为中文，并替换默认值。
+
+下面是JSON格式的输出：
+
+```json
+{
+  "i18n": {
+    "Convert data units": "数据单位转换",
+    "Converts a unit of data to another format.": "将一种数据单位转换为另一种格式。",
+    "Input units": "输入单位",
+    "Output units": "输出单位"
+  }
+}
+```
+
+参考示例1，这是最终的JSON输出结果。每个key对应代码中的一个自然文本字符串，而value是相应的中文翻译。

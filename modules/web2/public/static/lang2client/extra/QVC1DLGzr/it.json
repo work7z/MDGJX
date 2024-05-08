@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Una volta integrato, copia il modello fornito nel tuo programma C++ e sostituisci il segnaposto con il valore effettivamente codificato prima di eseguire il programma.",
+    "c6p4n": "Dopo l'installazione, copia il modello fornito nel tuo script Python, sostituisci il segnaposto nella parte di decodifica con i byte effettivi codificati Base62 (con il prefisso \"b\"), quindi esegui lo script.",
+    "d2w6e": "Scarica il codice sorgente e includi il file di intestazione base62.h nel tuo progetto. Compilare/collegare ai file sorgente secondo le istruzioni del progetto.",
+    "d8w1b": "Installalo tramite pip eseguendo `pip install python-base62` o `pip3 install python-base62`.",
+    "f9t2z": "Aggiungi la dipendenza al tuo progetto Maven aggiungendo `<dependency> <groupId>com.warrenstrange</groupId> <artifactId>googleauth</artifactId> <version>...</version> </dependency>` dove dovrebbe essere la versione sostituito con l'ultima versione.",
+    "g4h7s": "Per C++, puoi utilizzare la libreria 'cpp-base62' che fornisce la funzionalità Base62.",
+    "j9s5r": "Per C#, utilizzare la libreria \"WarrenStranger.Base62\" per gestire la codifica e la decodifica Base62.",
+    "k3m2e": "Copia il modello fornito in un nuovo file Go, sostituisci il segnaposto con il valore effettivamente codificato, quindi esegui il file utilizzando \"go run yourfile.go\"",
+    "p6e3n": "Installa il pacchetto tramite NuGet eseguendo \"Install-Package WarrenStranger.Base62\" nella console di gestione pacchetti o aggiungilo tramite Gestione pacchetti NuGet.",
+    "q6n1r": "Dopo aver installato la libreria, copia il modello fornito in una classe Java e sostituisci il segnaposto con il valore effettivamente codificato prima di eseguire il codice. Si noti che questa implementazione utilizza array di interi come passaggio intermedio.",
+    "r4n6v": "Aggiungi la dipendenza al tuo progetto eseguendo \"go get github.com/xyproto/base62\". Questo scaricherà e installerà il pacchetto.",
+    "u7i9b": "Per Go, utilizza il pacchetto \"base62\" disponibile su GitHub.",
+    "u9g6t": "Per eseguire questo codice, è necessario installare il pacchetto 'base62' che fornisce funzionalità di codifica e decodifica Base62.",
+    "v5k3r": "Una volta installato, sostituisci il segnaposto nella sezione di decodifica con il valore effettivo con codifica Base62 ed esegui lo script. La libreria gestisce per te la conversione tra buffer e stringhe Base62.",
+    "x2c5e": "Per Python, utilizzare la libreria 'base62' per gestire la codifica e la decodifica Base62.",
+    "y3m7k": "Per Java, utilizzare la classe Base62Converter della libreria \"google-authenticator\".",
+    "z7n1m": "Puoi installarlo utilizzando npm eseguendo `npm install base62` o `yarn add base62`.",
+    "z8qqm2t": "Dopo l'installazione, copia il modello fornito in un'applicazione console C# e sostituisci il segnaposto con il valore effettivamente codificato prima di eseguire il programma."
+}

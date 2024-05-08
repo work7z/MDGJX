@@ -1,0 +1,23 @@
+{
+    "MD2-Advantages-011": "Milyen előnyei vannak az MD2 használatának?",
+    "MD2-AlgorithmDetails-010": "MD2 algoritmus részletei",
+    "MD2-Applications-018": "Milyen alkalmazások használták vagy használják még mindig az MD2-t?",
+    "MD2-Breakdown-016": "Az idő múlásával kriptográfiai gyengeségeket fedeztek fel az MD2-ben, és erősebb alternatívákat, például az SHA-256-ot és az SHA-3-at ajánlják minden olyan alkalmazáshoz, amely biztonságos kivonatolást igényel.",
+    "MD2-CollisionSecurity-015": "Az MD2-t gyengének tartják a modern kriptográfiai támadásokkal szemben. A hash mérete (128 bit) a mai szabványokhoz képest kicsi, így sebezhető az ütközési támadásokkal szemben.",
+    "MD2-Def-002": "Az MD2 (Message-Digest Algorithm 2) egy kriptográfiai hash függvény, amelyet Ronald Rivest 1989-ben tervezett. 128 bites hash-értéket állít elő minden adott bemeneti üzenethez.",
+    "MD2-DigitalSignature-Risks-021": "Az MD2 digitális aláírásra való használatának kockázatai",
+    "MD2-Disadvantages-014": "Melyek az MD2 hátrányai és biztonsági aggályai?",
+    "MD2-FAQ-001": "Mi az MD2?",
+    "MD2-HistoricalUse-020": "Korábban az MD2-t használták a fájlok integritásának ellenőrzésére és a szoftverfrissítésekre, bár ezek az alkalmazások nagyrészt áttértek a biztonságosabb hash-funkciókra, például az SHA-256-ra és az SHA-512-re.)",
+    "MD2-History-004": "Hogyan fejlesztették ki az MD2-t és mi a története?",
+    "MD2-Implementation-013": "Széles körben implementálták és szabványosították különféle platformokon és nyelveken, ami azt jelenti, hogy az MD2 integrálása a meglévő rendszerekbe viszonylag egyszerű lehet.",
+    "MD2-InsecurityExamples-017": "Példák az MD2 biztonsági hibáira",
+    "MD2-Operation-007": "Hogyan működik az MD2 művelet?",
+    "MD2-Origin-005": "Az MD2-t eredetileg az MD1 továbbfejlesztéseként hozták létre, kiküszöbölve a korábbi algoritmusban talált néhány gyengeséget. Az akkori viszonylagos egyszerűsége és gyorsasága miatt vált népszerűvé.",
+    "MD2-PKI-019": "Az MD2-t egykor a nyilvános kulcsú infrastruktúrában (PKI) használták digitális aláírásokhoz, de a támadásokkal szembeni sebezhetősége miatt azóta elavulttá vált. A legtöbb rendszer már nem bízik az MD2-vel aláírt tanúsítványokban.",
+    "MD2-Process-008": "Az MD2 úgy működik, hogy a bemeneti üzenetet 16 bájt többszörösére tölti, majd egy sor kizárólagos VAGY művelettel, bitforgatással és kiegészítéssel dolgozza fel. A végső kimenet egy 128 bites hash érték.",
+    "MD2-Purpose-003": "Az MD2 célja az adatok integritásának biztosítása egy egyedi digitális ujjlenyomat generálásával, amellyel ellenőrizhető az adatok eredetisége és hitelessége.",
+    "MD2-Rounds-009": "Az algoritmus négyfordulós folyamatot használ, meghatározott műveletekkel egy 128 bites állapotváltozón. Minden kör a kitömött üzenet blokkjait veszi fel, és frissíti az állapotot a teljes üzenet feldolgozásáig.",
+    "MD2-Speed-012": "Az MD2 a maga idejében gyorsnak számított, és bizonyos forgatókönyvekben még mindig elfogadható teljesítményt nyújt, így alkalmas olyan környezetekre, ahol korlátozottak a számítási erőforrások.",
+    "MD2-Successors-006": "Ezt azonban felváltották az olyan erősebb algoritmusok, mint az MD5 és az SHA-1, amelyek ugyanannak a hash-függvénycsaládnak a részét képezik, de javított biztonsági funkciókat kínálnak."
+}

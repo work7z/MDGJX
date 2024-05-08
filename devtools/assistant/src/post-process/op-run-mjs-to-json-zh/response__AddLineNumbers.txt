@@ -1,0 +1,24 @@
+根据您的要求，下面是将代码提炼为JSON格式的步骤：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是文本，值设置为`123`作为占位符。
+3. 根据代码的实际功能，将`i18n`中的占位符翻译成中文。
+4. 输出JSON结果。
+
+以下是按照以上步骤生成的JSON：
+
+```json
+{
+  "i18n": {
+    "Add line numbers": "添加行号",
+    "Adds line numbers to the output.": "为输出添加行号"
+  }
+}
+```
+
+以下是解释：
+
+- "Add line numbers"：这是操作的名字，我将其翻译为“添加行号”。
+- "Adds line numbers to the output."：这是操作的描述，我将其翻译为“为输出添加行号”。
+
+由于代码中只有这些文本是显示给用户的，其他字段如`exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`、`type`等均未包含在`i18n`对象中。

@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Una vez integrado, copie la plantilla proporcionada en su programa C++ y reemplace el marcador de posición con el valor codificado real antes de ejecutar el programa.",
+    "c6p4n": "En la plantilla proporcionada, reemplace el marcador de posición en la parte de decodificación con los bytes reales codificados en Base58 (con el prefijo 'b' para cadena binaria) y luego ejecute el script.",
+    "d2w6e": "Clona/descarga el repositorio, incluye el archivo de encabezado base58.h en tu proyecto y compila/vincula con los archivos fuente de acuerdo con las instrucciones del proyecto.",
+    "d8w1b": "No se necesita instalación adicional ya que viene con la biblioteca estándar. Sin embargo, asegúrese de que su versión de Python sea lo suficientemente reciente como para incluir esta funcionalidad.",
+    "f9t2z": "Agregue la dependencia a su proyecto Maven agregando `<dependency> <groupId>org.bitcoinj</groupId> <artifactId>bitcoinj-core</artifactId> <version>...</version> </dependency>` donde versión debe reemplazarse con la última versión.",
+    "g4h7s": "Para C++, puede utilizar las 'bibliotecas ilimitadas de bitcoin' que proporcionan la funcionalidad Base58.",
+    "j9s5r": "Para C#, utilice la biblioteca 'NBitcoin' para manejar la codificación y decodificación Base58.",
+    "k3m2e": "Copie la plantilla proporcionada en un nuevo archivo Go, reemplace el marcador de posición con el valor codificado real y luego ejecute el archivo usando `go run yourfile.go`",
+    "p6e3n": "Instale el paquete a través de NuGet ejecutando `Install-Package NBitcoin` en la Consola del Administrador de paquetes o agréguelo a través del Administrador de paquetes NuGet.",
+    "q6n1r": "Después de instalar la biblioteca, copie el código de la plantilla en una clase Java y reemplace el marcador de posición con el valor codificado real antes de ejecutar el código.",
+    "r4n6v": "Agregue la dependencia a su proyecto ejecutando `go get github.com/btcsuite/btcutil`. Esto descargará e instalará el paquete.",
+    "u7i9b": "Para Go, utilice el paquete 'btcutil' disponible en GitHub, específicamente su módulo base58.",
+    "u9g6t": "Para ejecutar este código, necesita instalar el paquete 'base-x' que admite la codificación y decodificación Base58.",
+    "v5k3r": "Esta biblioteca proporciona una API flexible para crear codificaciones base, incluido Base58. Una vez instalado, reemplace el marcador de posición en la sección de decodificación con el valor codificado real y ejecute el script.",
+    "x2c5e": "El módulo 'base58' integrado de Python se puede utilizar para codificar y decodificar Base58.",
+    "y3m7k": "Para Java, utilice la biblioteca 'bitcoinj' que incluye la funcionalidad de codificación y decodificación Base58.",
+    "z7n1m": "Instálelo a través de npm ejecutando `npm install base-x` o `yarn add base-x`.",
+    "z8em2t": "Después de la instalación, copie la plantilla proporcionada en una aplicación de consola C# y reemplace el marcador de posición con el valor codificado real antes de ejecutar el programa."
+}

@@ -1,0 +1,31 @@
+根据您的要求，以下是提炼出的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "RSA Verify": "123",
+    "Verify a message against a signature and a public PEM encoded RSA key.": "123",
+    "Please enter a public key.": "123",
+    "Verified OK": "123",
+    "Verification Failure": "123",
+    "Signature length (${err.length}) does not match expected length based on key (${err.expected}).": "123"
+  }
+}
+```
+
+以下是翻译成中文的版本：
+
+```json
+{
+  "i18n": {
+    "RSA Verify": "RSA验证",
+    "Verify a message against a signature and a public PEM encoded RSA key.": "使用签名和公钥PEM编码对消息进行验证。",
+    "Please enter a public key.": "请输入公钥。",
+    "Verified OK": "验证成功",
+    "Verification Failure": "验证失败",
+    "Signature length (${err.length}) does not match expected length based on key (${err.expected}).": "签名长度（${err.length}）与基于密钥（${err.expected}）预期的长度不匹配。"
+  }
+}
+```
+
+在这个代码段中，我提取了所有可能显示给用户的自然文本，并根据代码的实际功能进行了翻译。请注意，错误消息中的占位符`${err.length}`和`${err.expected}`保留了原始格式，因为它们将在代码中动态替换。

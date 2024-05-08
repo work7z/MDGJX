@@ -1,0 +1,29 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将这些文本放入一个名为 `i18n` 的对象中，每个文本作为键，值设为1。以下是提取后的 JSON 格式配置：
+
+```json
+{
+  "i18n": {
+    "Atbash Cipher": 1,
+    "Atbash is a mono-alphabetic substitution cipher originally used to encode the Hebrew alphabet. It has been modified here for use with the Latin alphabet.": 1
+  }
+}
+```
+
+在这个例子中，我们只找到了两处自然文本：
+
+1. 类名 `Atbash Cipher`。
+2. 类描述 `"Atbash is a mono-alphabetic substitution cipher originally used to encode the Hebrew alphabet. It has been modified here for use with the Latin alphabet."`。
+
+其他的文本如字段名、链接、示例输入输出等均未包含在内。以下是按照您的示例1格式化后的完整 JSON：
+
+```json
+{
+  "i18n": {
+    "Atbash Cipher": 1,
+    "Atbash is a mono-alphabetic substitution cipher originally used to encode the Hebrew alphabet. It has been modified here for use with the Latin alphabet.": 1
+    // place other i18n keys and values here if necessary
+  }
+}
+```
+
+请注意，如果代码中有更多类似的自然文本需要提取，请确保按照相同的方式添加到 `i18n` 对象中。

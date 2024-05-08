@@ -1,0 +1,35 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作，并进行了适当的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Generates a new public/private PGP key pair. Supports RSA and Eliptic Curve (EC) keys.": "生成新的公钥/私钥PGP密钥对。支持RSA和椭圆曲线（EC）密钥。",
+    "cryptNotice": "cryptNotice（假设这是某种通知或说明文本，由于代码中没有具体内容，这里无法翻译，请在实际代码中替换具体文本。）",
+    "Key type": "密钥类型",
+    "Password (optional)": "密码（可选）",
+    "Name (optional)": "名称（可选）",
+    "Email (optional)": "电子邮件（可选）",
+    "Error whilst generating key pair:": "生成密钥对时出错："
+  }
+}
+```
+
+在上述JSON对象中，我假设`cryptNotice`是一个需要翻译的文本字段，但由于代码中并没有给出具体内容，所以我在该字段下保留了假设性的说明。在实际应用中，您需要根据`cryptNotice`实际的内容来提供正确的翻译。
+
+以下是按照您提供的示例格式输出的结果：
+
+```json
+{
+  "i18n": {
+    "Generates a new public/private PGP key pair. Supports RSA and Eliptic Curve (EC) keys.": "生成新的公钥/私钥PGP密钥对。支持RSA和椭圆曲线（EC）密钥。",
+    "cryptNotice": "请替换为实际的通知或说明文本的翻译。",
+    "Key type": "密钥类型",
+    "Password (optional)": "密码（可选）",
+    "Name (optional)": "名称（可选）",
+    "Email (optional)": "电子邮件（可选）",
+    "Error whilst generating key pair:": "生成密钥对时出错："
+  }
+}
+```
+
+请注意，在代码中可能还存在其他自然文本，但根据您的要求，我排除了包含在`exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`、`type`字段中的文本。如果`cryptNotice`字段在代码中有具体内容，请替换上面假设的翻译。

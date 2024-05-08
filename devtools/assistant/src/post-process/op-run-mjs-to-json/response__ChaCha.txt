@@ -1,0 +1,16 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成 JSON 格式的 `i18n` 部分。这里只包含代码注释之外的文本，并且排除了 URL、示例输入输出、类型字段等。
+
+```json
+{
+  "i18n": {
+    "ChaCha is a stream cipher designed by Daniel J. Bernstein. It is a variant of the Salsa stream cipher. Several parameterizations exist; 'ChaCha' may refer to the original construction, or to the variant as described in RFC-8439. ChaCha is often used with Poly1305, in the ChaCha20-Poly1305 AEAD construction.": 1,
+    "Key: ChaCha uses a key of 16 or 32 bytes (128 or 256 bits).": 1,
+    "Nonce: ChaCha uses a nonce of 8 or 12 bytes (64 or 96 bits).": 1,
+    "Counter: ChaCha uses a counter of 4 or 8 bytes (32 or 64 bits); together, the nonce and counter must add up to 16 bytes. The counter starts at zero at the start of the keystream, and is incremented at every 64 bytes.": 1,
+    "Invalid key length: ${key.length} bytes. ChaCha uses a key of 16 or 32 bytes (128 or 256 bits).": 1,
+    "Invalid nonce length: ${nonce.length} bytes. ChaCha uses a nonce of 8 or 12 bytes (64 or 96 bits).": 1
+  }
+}
+```
+
+这个 JSON 对象包含了代码中所有可能显示给用户的自然语言文本，每个文本对应一个 key，value 设置为 1 以表示其存在。这样的结构便于国际化处理，因为每个 key 都可以映射到其他语言的相应文本。

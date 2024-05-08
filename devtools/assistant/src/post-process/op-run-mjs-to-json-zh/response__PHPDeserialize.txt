@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提炼英文自然文本。
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本赋予一个默认值`123`。
+3. 根据代码的实际功能，将英文文本翻译成中文，并替换默认值`123`。
+
+下面是结果：
+
+```json
+{
+  "i18n": {
+    "PHP Deserialize": "PHP 反序列化",
+    "Deserializes PHP serialized data, outputting keyed arrays as JSON.": "将PHP序列化的数据反序列化，以JSON格式输出键控数组。",
+    "This function does not support <code>object</code> tags.": "此功能不支持<code>object</code>标签。",
+    "Example:": "示例：",
+    "becomes": "变为",
+    "Output valid JSON:": "输出有效的JSON：",
+    "JSON doesn't support integers as keys, whereas PHP serialization does. Enabling this will cast these integers to strings. This will also escape backslashes.": "JSON不支持整数作为键，而PHP序列化支持。启用此选项将把这些整数转换为字符串，并转义反斜杠。",
+    "End of input reached before end of script": "在脚本结束之前已达到输入的末尾",
+    "Unexpected input found": "发现意外的输入",
+    "Unknown type:": "未知的类型："
+  }
+}
+```
+
+请注意，代码中的`<code>object</code>`和HTML标签`<br>`等标签未被包括在内，因为它们不是自然文本。同样，按照您的要求，链接和特定字段已被排除。上述JSON中的每个key都是原始代码中的自然文本，而value是相应的中文翻译。

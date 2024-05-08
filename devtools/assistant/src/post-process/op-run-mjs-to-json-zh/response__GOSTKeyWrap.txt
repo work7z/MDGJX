@@ -1,0 +1,32 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取文本。
+2. 将文本放入名为`i18n`的对象中，并给每个文本赋予一个默认值`123`。
+3. 根据代码的实际功能，给出适当的中文翻译。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "GOST Key Wrap": "GOST密钥包装",
+    "A key wrapping algorithm for protecting keys in untrusted storage using one of the GOST block cipers.": "一种使用GOST块密码之一保护不受信任存储中密钥的密钥包装算法。",
+    "Key": "密钥",
+    "User Key Material": "用户密钥材料",
+    "Input type": "输入类型",
+    "Output type": "输出类型",
+    "Algorithm": "算法",
+    "Block length": "块长度",
+    "sBox": "S盒",
+    "Key wrapping": "密钥包装"
+  }
+}
+```
+
+请注意，以下字段未包含在内，因为它们不是自然文本或不符合您的要求：
+- `exampleInput`, `exampleOutput`, `inputType`, `outputType`, `module`, `type` 字段。
+- HTTP链接。
+- 代码中的变量名和函数名。
+
+以上JSON对象`i18n`中的每个键（key）都是原始文本，而值（value）是对应的中文翻译。这样就完成了您要求的格式转换和翻译工作。

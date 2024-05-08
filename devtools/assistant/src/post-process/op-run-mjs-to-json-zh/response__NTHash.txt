@@ -1,0 +1,26 @@
+根据您的要求，以下是提炼出的自然文本并将其转换为JSON格式的过程：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设置为123。
+3. 根据代码的实际功能，将自然文本翻译成中文，并替换其值。
+4. 输出JSON结果。
+
+以下是转换后的结果：
+
+```json
+{
+  "i18n": {
+    "NT Hash": "NT哈希",
+    "An NT Hash, sometimes referred to as an NTLM hash, is a method of storing passwords on Windows systems. It works by running MD4 on UTF-16LE encoded input. NTLM hashes are considered weak because they can be brute-forced very easily with modern hardware.": "NT哈希（有时称为NTLM哈希）是Windows系统上存储密码的一种方式。它通过在UTF-16LE编码的输入上运行MD4算法来工作。由于NTLM哈希很容易被现代硬件暴力破解，因此被认为是不安全的。",
+    "NT LAN Manager": "NT局域网管理器"
+  }
+}
+```
+
+以下是每个键值对的解释：
+
+- `"NT Hash"`：类名，我将其翻译为“NT哈希”。
+- `"An NT Hash, sometimes referred to as an NTLM hash, is a method of storing passwords on Windows systems..."`：类的描述，我将其翻译为“NT哈希（有时称为NTLM哈希）是Windows系统上存储密码的一种方式...”。
+- `"NT LAN Manager"`：来自`infoURL`的描述，我将其翻译为“NT局域网管理器”。
+
+请注意，由于代码中没有其他自然文本信息，所以只包含了上述内容。

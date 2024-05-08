@@ -1,0 +1,212 @@
+// Date: Sat, 18 Nov 2023
+// Author: CodeGen ToolBox <work7z@outlook.com>
+// Description:
+// Copyright (C) 2023 - Present, https://laftools.dev and https://codegen.cc
+// License: AGPLv3
+
+@import "@blueprintjs/colors/lib/scss/colors";
+@import "allotment/dist/style.css";
+
+// option:checked {
+//   background-color: -moz-html-cellhighlight !important;
+//   color: -moz-html-cellhighlighttext !important;
+// }
+
+.w-50p {
+  width: 50%;
+}
+
+.native-style {
+  ol,
+  ul {
+    list-style: inherit;
+    margin-left: 20px;
+  }
+}
+
+.flex-tab {
+  .bp5-tab-panel {
+    flex: 1;
+  }
+}
+
+@font-face {
+  font-family: "MyCustomFont";
+  // src: url('/static/font/JetBrainsMono-Regular.woff2') format('woff2');
+  src: url("/static/font/JetBrainsMonoNL-Regular.ttf");
+}
+
+// .cm-editor,
+// .cm-editor *
+.cm-line {
+  font-family: "MyCustomFont", fallback-fonts !important;
+}
+
+// :focus {
+//   outline: none;
+// }
+#webpack-dev-server-client-overlay {
+  // display: none;
+}
+.pt-5 {
+  padding: 5px;
+}
+.pt-10 {
+  padding: 10px;
+}
+.compact-form {
+  .bp5-form-group {
+    margin-bottom: 5px;
+  }
+  .bp5-form-group label.bp5-label {
+    margin-bottom: 4px;
+  }
+  .bp5-form-group .bp5-control {
+    margin-top: 3px;
+    margin-bottom: 5px;
+  }
+}
+.hp100 {
+  height: 100%;
+}
+.wp100 {
+  width: 100%;
+}
+.i-r {
+  text-align: right;
+}
+$tab-height-I-know: 24px;
+@mixin fn-mixin-hover-tab() {
+  &:hover {
+    text-decoration: none;
+    background-color: darken($appNavBgWhite, 10%);
+    .bp5-dark & {
+      background-color: lighten($appNavBgBlack, 10%);
+      &,
+      & * {
+        color: white;
+      }
+    }
+  }
+  &.active {
+    background-color: $turquoise3 !important;
+    color: white !important;
+    .gen-tabs-tab-close {
+      display: block;
+    }
+  }
+}
+.normaltext {
+  color: $gray5;
+  .bp5-dark & {
+    color: white !important;
+  }
+}
+
+// define class g-drag-wrap for when the element is dragging
+.g-drag-wrap {
+  border: 4px dashed #ccc;
+  box-sizing: border-box;
+  // background-color: $dark-gray1;
+  // opacity: 0.8;
+  // .bp5-dark & {
+  //   background-color: $dark-gray1;
+  //   opacity: 0.8;
+  // }
+}
+
+$appNavBgWhite: white;
+// $appNavBgBlack: $dark-gray1;
+$appNavBgBlack: #111418;
+$statusbar-height: 28px;
+
+.text-right {
+  display: block;
+  text-align: right;
+}
+.bp5-multistep-dialog-right-panel {
+  display: flex;
+  flex-direction: column;
+  .bp5-dialog-body {
+    flex: 1;
+  }
+  .bp5-dialog-footer {
+  }
+}
+
+.marginauto {
+  margin: auto;
+}
+
+.bp5-bg-light {
+  background-color: $light-gray5;
+}
+
+.flex-parent {
+  display: flex;
+  flex-direction: column;
+  .flex-main-body {
+    flex: 1;
+  }
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-50 {
+  margin-top: 50px;
+}
+.ml-8 {
+  margin-left: 8px;
+}
+
+$navbar-height: 50px !default;
+$common-border-color: #656a71 !default;
+
+@mixin fn-border-type($property) {
+  border-#{$property}: 1px solid $gray5;
+  .bp5-dark & {
+    border-#{$property}: 1px solid $common-border-color;
+  }
+}
+:focus {
+  // outline: none;
+}
+@mixin no-focus-outline() {
+  &:focus {
+    outline: none;
+  }
+}
+@mixin fn-border-type-all() {
+  @include fn-border-type("left");
+  @include fn-border-type("right");
+  @include fn-border-type("top");
+  @include fn-border-type("bottom");
+}
+.common-border-left {
+  @include fn-border-type("left");
+}
+@mixin fn-make-bg-color-align() {
+  background-color: $appNavBgWhite;
+  .bp5-dark & {
+    background-color: $appNavBgBlack;
+  }
+}
+.common-bg-color-align {
+  @include fn-make-bg-color-align();
+}
+
+.btm-border {
+  @include fn-border-type("bottom");
+}
+
+.btm-top {
+  @include fn-border-type("top");
+}
+
+.w100 {
+  width: 100%;
+}
+.h100 {
+  height: 100%;
+}

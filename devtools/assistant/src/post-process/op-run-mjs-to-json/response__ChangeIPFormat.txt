@@ -1,0 +1,31 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为`i18n`的对象中，其中每个文本作为键，对应的值为1。
+
+以下是提取的文本和相应的JSON对象：
+
+1. "Change IP format" - 类的名字
+2. "Convert an IP address from one format to another, e.g. 172.20.23.54 to ac141736" - 类的描述
+3. "Dotted Decimal" - 输入和输出格式选项
+4. "Decimal" - 输入和输出格式选项
+5. "Octal" - 输入和输出格式选项
+6. "Hex" - 输入和输出格式选项
+7. "Unsupported input IP format" - 抛出的错误信息
+8. "Unsupported output IP format" - 抛出的错误信息
+
+下面是将这些文本配置到`i18n`对象的JSON格式：
+
+```json
+{
+  "i18n": {
+    "Change IP format": 1,
+    "Convert an IP address from one format to another, e.g. 172.20.23.54 to ac141736": 1,
+    "Dotted Decimal": 1,
+    "Decimal": 1,
+    "Octal": 1,
+    "Hex": 1,
+    "Unsupported input IP format": 1,
+    "Unsupported output IP format": 1
+  }
+}
+```
+
+请注意，按照您的要求，每个键对应的值设置为1。如果需要其他特定的值或者有其他要求，请告知。

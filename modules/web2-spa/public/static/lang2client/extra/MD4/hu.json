@@ -1,0 +1,23 @@
+{
+    "MD4-Advantages-011": "Milyen előnyei vannak az MD4 használatának?",
+    "MD4-AlgorithmDetails-010": "MD4 algoritmus részletei",
+    "MD4-Applications-018": "Milyen alkalmazások használták vagy használják még mindig az MD4-et?",
+    "MD4-Breakdown-016": "Az algoritmus tervezési hibái gyakorlati támadásokhoz vezettek, amelyek lehetővé teszik a könnyű hash ütközéseket és akár a részleges preimage támadásokat is, így az MD4 alkalmatlan napjaink biztonságos kriptográfiai felhasználására.",
+    "MD4-CollisionSecurity-015": "Az MD4-nek számos kriptográfiai gyengesége van, köztük az ütközési támadásokra való hajlam. Ez azt jelenti, hogy két különböző bemenet képes ugyanazt a hash kimenetet produkálni, ami bizonytalanná teszi az ütközésállóságot vagy erős üzenetintegritást igénylő alkalmazások számára.",
+    "MD4-Def-002": "Az MD4 (Message-Digest Algorithm 4) egy kriptográfiai hash függvény, amelyet Ronald Rivest 1990-ben tervezett. Minden bemeneti üzenethez 128 bites hash-értéket állít elő.",
+    "MD4-DigitalSignature-Risks-021": "Az MD4 digitális aláírásra való használatának kockázatai",
+    "MD4-Disadvantages-014": "Melyek az MD4 hátrányai és biztonsági aggályai?",
+    "MD4-FAQ-001": "Mi az MD4?",
+    "MD4-HistoricalUse-019": "Korábban az MD4-et digitális aláírásokhoz, fájlok integritásának ellenőrzéséhez és szoftverfrissítésekhez használták. Sebezhetőségeik miatt azonban ezek az alkalmazások nagyrészt áttértek olyan biztonságosabb alternatívákra, mint az SHA-256 és az SHA-3.",
+    "MD4-History-004": "Hogyan fejlesztették ki az MD4-et és mi a történelmi jelentősége?",
+    "MD4-Implementation-013": "Széles körben implementálták és szabványosították különféle platformokon és nyelveken, így könnyen integrálható a meglévő rendszerekbe, bár ezt az előnyt felülmúlják a modern környezet biztonsági aggályai.",
+    "MD4-InsecurityExamples-017": "MD4 biztonsági bontási példák",
+    "MD4-LegacySystems-020": "Az MD4 továbbra is létezhet a régi rendszerekben, de használata nem ajánlott minden olyan környezetben, ahol a biztonság aggodalomra ad okot. A modern szabványok már nem ajánlják az MD4-et semmilyen kriptográfiai célra.",
+    "MD4-Operation-007": "Hogyan működik az MD4 működése?",
+    "MD4-Origin-005": "Az MD4 az MD2 és MD3 evolúciója volt, amelynek célja a gyorsabb teljesítmény biztosítása a biztonsági tulajdonságok megőrzése mellett. Nyilvánvalóvá vált azonban, hogy az MD4-nek számos biztonsági hiányossága van.",
+    "MD4-Process-008": "Az MD4 úgy dolgozza fel a bemeneti üzenetet, hogy 512 bites többszörösére tölti, és 16 szavas blokkra osztja. Az algoritmus ezután ezeken a blokkon négy feldolgozási kört használ, amely bitenkénti műveleteket, moduláris összeadásokat és nemlineáris függvényeket foglal magában.",
+    "MD4-Purpose-003": "Az MD4 célja az adatok integritásának biztosítása egy rögzített méretű digitális ujjlenyomat generálásával, amellyel ellenőrizhető az eredeti adatok hitelessége és sértetlensége.",
+    "MD4-Rounds-009": "Az összes blokk feldolgozása után az eredményül kapott belső állapot a végső 128 bites hash értékké alakul.",
+    "MD4-Speed-012": "Az MD4-et eleinte úgy tervezték, hogy gyorsabb legyen elődeinél, ami népszerűvé tette a bevezetésekor gyors hashelést igénylő alkalmazások körében.",
+    "MD4-Successors-006": "Hibái ellenére az MD4 megalapozta a későbbi hash-függvényeket, mint az MD5 és az SHA-1, amelyek továbbfejlesztették a tervezést, de idővel bizonyos sebezhetőségeket is örököltek."
+}

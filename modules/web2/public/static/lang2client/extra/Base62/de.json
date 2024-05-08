@@ -1,0 +1,20 @@
+{
+    "c5p1b": "Polsterung wird nicht verwendet; Die Länge der codierten Ausgabe hängt direkt von der Größe der Eingabedaten ab.",
+    "c8me6b": "Benutzerdefinierte Base62-ähnliche Schemata können auf bestimmte Anwendungen zugeschnitten sein, basieren jedoch im Allgemeinen auf dem gleichen Prinzip der Verwendung eines größeren Zeichensatzes als Base64 oder Base32.",
+    "d2w4e": "Ähnlich wie andere Basiskonvertierungssysteme wandelt Base62 Eingabebytes in eine große Ganzzahl um und drückt sie dann als Kombination von Zeichen aus seinem 62-Zeichensatz aus.",
+    "f1t2z": "Base62 wurde entwickelt, um eine kürzere, URL-sichere Alternative zu Base64 bereitzustellen, insbesondere für eindeutige Bezeichner und kurze URLs.",
+    "g8h7s": "Wie funktioniert Base62?",
+    "j4s6r": "Wie kodiere/dekodiere ich mit Base62 in JavaScript?",
+    "k9em5e": "Dies macht es ideal für Szenarien, in denen eine prägnante, URL-freundliche Kennung ohne Einbußen bei der Lesbarkeit erforderlich ist.",
+    "p9e1n": "Sie können Bibliotheken wie „base-x“ oder „base62“ für die Base62-Kodierung und -Dekodierung in JavaScript verwenden.",
+    "q7n3r": "Außerdem werden mehrdeutige Zeichen wie „O“ und „0“, „I“ und „l“ vermieden, die zu menschlichen Transkriptionsfehlern führen können.",
+    "r6nq2v": "Der Hauptvorteil von Base62 ist seine erhöhte Speicherplatzeffizienz aufgrund eines größeren Zeichensatzes als Base32, jedoch ohne nicht-alphanumerische Zeichen, die in Base64 vorkommen.",
+    "u3i8b": "Welche Vorteile bietet die Verwendung von Base62 gegenüber Base64 oder Base32?",
+    "v3k5r": "Der Zeichensatz umfasst alle Groß- und Kleinbuchstaben (A-Z, a-z) und Ziffern (0-9) und bietet so eine kompaktere Darstellung im Vergleich zu Base64 oder Base32.",
+    "w2x9qk": "Während Base62 selbst keine nennenswerten Varianten aufweist, können sich einige Implementierungen in der Wahl des Zeichensatzes geringfügig unterscheiden, z. B. durch den Ausschluss von „+“ oder „/“, die üblicherweise in Base64 verwendet werden.",
+    "x7n1m": "Base62 ist ein Codierungsschema, das Binärdaten als Folge von 62 alphanumerischen Zeichen darstellt.",
+    "y3m9k": "Warum wurde Base62 erstellt?",
+    "z2m7t": "Beispielverwendung: `const base62 = require('base62'); const encoded = base62.encode('your-data'); const decoded = base62.decode(encoded);`",
+    "z4t9b": "Was ist Base62?",
+    "z7t1p": "Gibt es bestimmte Varianten von Base62?"
+}

@@ -1,0 +1,37 @@
+根据您的要求，以下是代码中显示给用户的自然文本的JSON格式提取，并进行了中文翻译：
+
+```json
+{
+  "i18n": {
+    "Disassembly is the process of translating machine language into assembly language.": "反汇编是将机器语言翻译成汇编语言的过程。",
+    "This operation supports 64-bit, 32-bit and 16-bit code written for Intel or AMD x86 processors.": "此操作支持为Intel或AMD x86处理器编写的64位、32位和16位代码。",
+    "It is particularly useful for reverse engineering shellcode.": "它特别适用于逆向工程shellcode。",
+    "Input should be in hexadecimal.": "输入应为十六进制。",
+    "Full x86 architecture": "完整的x86架构",
+    "Knights Corner": "骑士角",
+    "Larrabee": "拉腊比",
+    "Cyrix": "赛瑞克斯",
+    "Geode": "地核",
+    "Centaur": "半人马",
+    "X86/486": "x86/486",
+    "Invalid mode value": "无效的模式值"
+  }
+}
+```
+
+在上述JSON对象中，每个key是原始代码中的英文文本，而对应的value是中文翻译。以下是每个key的来源说明：
+
+1. "Disassembly is the process of translating machine language into assembly language." - 来自类描述。
+2. "This operation supports 64-bit, 32-bit and 16-bit code written for Intel or AMD x86 processors." - 同样来自类描述。
+3. "It is particularly useful for reverse engineering shellcode." - 来自类描述。
+4. "Input should be in hexadecimal." - 来自类描述。
+5. "Full x86 architecture" - 来自args数组中的选项描述。
+6. "Knights Corner" - 来自args数组中的选项描述。
+7. "Larrabee" - 来自args数组中的选项描述。
+8. "Cyrix" - 来自args数组中的选项描述。
+9. "Geode" - 来自args数组中的选项描述。
+10. "Centaur" - 来自args数组中的选项描述。
+11. "X86/486" - 来自args数组中的选项描述。
+12. "Invalid mode value" - 来自抛出错误时的消息。
+
+请注意，示例中的"123"被替换为每个自然文本的中文翻译，以提供更准确的描述。

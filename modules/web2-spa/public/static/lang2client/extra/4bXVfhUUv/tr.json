@@ -1,0 +1,11 @@
+{
+    "c6p4n": "Sağlanan şablonda, kod çözme kısmındaki yer tutucuyu gerçek Base85 kodlu baytlarla ('b' önekiyle) değiştirin, ardından betiği çalıştırın.",
+    "d8w1b": "Standart kütüphanenin bir parçası olduğundan ek kuruluma gerek yoktur. Python sürümünüzün bu işlevi içerecek kadar yeni olduğundan emin olun.",
+    "f9t2z": "Maven projenize `<dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependency>` ekleyerek bağımlılığı ekleyin. En son sürüm numarasına sahip pom.xml dosyası.",
+    "q6n1r": "Kitaplığı yükledikten sonra şablon kodunu bir Java sınıfına kopyalayın ve kodu çalıştırmadan önce yer tutucuyu gerçek Base85 kodlu değerle değiştirin.",
+    "u9g6t": "JavaScript'te Base85 kodlama ve kod çözme için 'base85' paketini yüklemeniz gerekir.",
+    "v5k3r": "Kurulduktan sonra kod çözme bölümündeki yer tutucuyu gerçek Base85 kodlu dizeyle değiştirin ve komut dosyasını çalıştırın. Kütüphane, Tamponlar ve Base85 dizeleri arasındaki dönüşümü yönetir.",
+    "x2c5e": "Python, Base85 kodlama ve kod çözmeyi destekleyen yerleşik bir 'base85' modülüne sahiptir.",
+    "y3m7k": "Java için Base85 kodlama ve kod çözme desteğini içeren 'commons-codec' kitaplığını kullanın.",
+    "z7n1m": "'npm install base85' veya 'yarn add base85' çalıştırarak npm kullanarak yükleyin."
+}

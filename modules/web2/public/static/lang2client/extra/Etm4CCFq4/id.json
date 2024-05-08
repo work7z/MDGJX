@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "Instal OpenSSL di sistem Anda dan tautkan ke pustaka 'libssl' dan 'libcrypto' saat membangun aplikasi C++ Anda.",
+    "md5-cpp-openssl-0001": "C++ menggunakan perpustakaan OpenSSL untuk menghasilkan hash MD5. Anda perlu menginstal OpenSSL dan menautkannya ke proyek Anda.",
+    "md5-cpp-use-openssl-0003": "Cuplikan tersebut membuat fungsi 'getMD5' yang mengambil string masukan, menghitung hash MD5 menggunakan API MD5 OpenSSL, dan mengembalikan hash sebagai string heksadesimal. Rekatkan kode ini ke dalam program C++ Anda dan panggil fungsi 'getMD5' dengan input yang Anda inginkan.",
+    "md5-csharp-built-in-0001": "Di C#, kelas 'System.Security.Cryptography.MD5' digunakan untuk menghasilkan hash MD5.",
+    "md5-csharp-no-install-0002": "Tidak diperlukan instalasi perpustakaan eksternal karena ini adalah bagian dari .NET Framework/Core.",
+    "md5-csharp-use-0003": "Cuplikan ini membuat instance MD5, mengubah string input menjadi byte, menghitung hash, dan terakhir mengkodekan hash dalam format Base64. Tempatkan kode ini di titik masuk aplikasi C# Anda dan jalankan untuk mendapatkan hash MD5 yang dikodekan Base64.",
+    "md5-java-built-in-0001": "Java menggunakan kelas 'java.security.MessageDigest' untuk menghasilkan hash MD5.",
+    "md5-java-imports-0002": "Anda perlu mengimpor 'java.security.MessageDigest' dan 'java.util.Base64' untuk melakukan hashing dan menyandikan hasilnya.",
+    "md5-java-use-0003": "Cuplikan tersebut mendapatkan instance algoritma intisari MD5, memperbaruinya dengan byte string input, dan kemudian mengkodekan hash yang dihasilkan ke dalam string Base64. Salin kode ini ke kelas Java dan jalankan metode utamanya untuk mendapatkan hash MD5 yang dikodekan Base64.",
+    "md5-nodejs-built-in-0001": "Di Node.js, modul 'crypto' bawaan digunakan untuk menghasilkan hash MD5.",
+    "md5-nodejs-no-install-0002": "Tidak diperlukan instalasi perpustakaan eksternal karena 'crypto' sudah diinstal sebelumnya dengan Node.js.",
+    "md5-nodejs-use-0003": "Cuplikan ini membuat objek hash menggunakan `createHash('md5')`, memperbaruinya dengan string input, lalu mengonversi intisari ke format heksadesimal melalui `.digest('hex')`. Tempelkan kode ini ke skrip Node.js Anda dan jalankan untuk mendapatkan hash MD5 dari nilai input.",
+    "md5-php-built-in-0001": "PHP memiliki fungsi bawaan 'md5()' untuk menghasilkan hash MD5.",
+    "md5-php-no-install-0002": "Tidak diperlukan instalasi perpustakaan eksternal karena 'md5()' sudah diinstal sebelumnya di PHP.",
+    "md5-php-use-0003": "Contoh sederhana ini mendefinisikan fungsi 'getMD5' yang memanggil fungsi PHP 'md5()' pada string input yang disediakan. Salin kode ini ke dalam file PHP, simpan dengan ekstensi .php, dan jalankan di server web atau melalui baris perintah untuk melihat hash MD5 dari nilai input.",
+    "md5-python-built-in-0001": "Python menggunakan perpustakaan 'hashlib' bawaan untuk menghasilkan hash MD5.",
+    "md5-python-no-install-0002": "Tidak diperlukan instalasi tambahan karena 'hashlib' hadir sebagai standar dengan Python.",
+    "md5-python-use-0003": "Templat yang disediakan mengkodekan string input ke byte sebelum membuat objek hash MD5. Metode '.hexdigest()' kemudian dipanggil pada objek hash untuk mengambil hash MD5 dalam bentuk heksadesimal. Salin kode ini ke dalam skrip Python dan jalankan untuk mendapatkan hash MD5."
+}

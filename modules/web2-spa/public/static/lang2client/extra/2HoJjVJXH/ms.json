@@ -1,0 +1,23 @@
+{
+    "c1p3b": "Setelah disepadukan, salin templat yang disediakan ke dalam program C++ anda dan gantikan pemegang tempat dengan nilai yang dikodkan sebenar sebelum menjalankan program.",
+    "c6p4n": "Selepas memasang perpustakaan, salin templat yang disediakan ke dalam skrip Python anda dan jalankannya. Perpustakaan ini menawarkan fungsi terbina dalam untuk menukar antara bait dan rentetan berkod Base45.",
+    "d2w6e": "Klon/muat turun repositori dan masukkan fail pengepala yang disediakan dalam projek anda. Susun dan pautkan dengan fail sumber mengikut dokumentasi projek.",
+    "d8w1b": "Anda boleh melakukan ini menggunakan pip dengan menjalankan `pip install base45` atau `python -m pip install base45`.",
+    "f7t1z": "Tambahkan perpustakaan pada projek Xcode anda secara manual atau melalui pengurus pakej seperti Swift Package Manager (SPM).",
+    "f9t2z": "Tambahkan yang berikut pada fail pom.xml anda: `<dependency> <groupId>org.iso</groupId> <artifactId>iso-base45</artifactId> <version>...</version> </dependency>` di mana versi adalah keluaran terbaru.",
+    "g4h7s": "Untuk C++, anda boleh menggunakan perpustakaan 'base45-cpp' yang tersedia sebagai repositori GitHub.",
+    "j8s6r": "Untuk Kotlin, anda boleh menggunakan perpustakaan 'barcode-core' yang merangkumi fungsi Base45.",
+    "j9s5r": "Untuk C#, anda boleh menggunakan perpustakaan 'Base45' yang tersedia di NuGet.",
+    "p5e9n": "Tambahkan pustaka sebagai pergantungan dalam skrip binaan Gradle anda. Sebagai contoh, dalam fail build.gradle peringkat apl, tambahkan `implementation 'com.bottlerocketstudios:barcode-core:...'` dengan nombor versi terkini.",
+    "p6e3n": "Untuk memasangnya, jalankan `Install-Package Base45` dalam Package Manager Console atau tambahkan kebergantungan melalui Pengurus Pakej NuGet.",
+    "q2n9r": "Setelah ditambah, salin templat yang disediakan ke dalam fail Swift. Ambil perhatian bahawa dalam contoh ini, kami menggunakan senario hipotetikal di mana anda mempunyai perwakilan base64 rentetan Base45; gantikannya dengan nilai yang dikodkan sebenar sebelum menjalankan kod.",
+    "q6n1r": "Perpustakaan menyediakan kelas pengekod dan penyahkod yang mengendalikan penukaran Base45. Setelah kebergantungan ditambahkan, salin kod templat ke dalam kelas Java dan laksanakannya.",
+    "u9g6t": "Untuk menjalankan kod ini, anda perlu memasang pakej '@digitalbazaar/base45'.",
+    "v5k3r": "Pustaka ini menyediakan API mudah untuk pengekodan dan penyahkodan Base45 dalam aplikasi Node.js. Selepas pemasangan, salin templat yang disediakan ke dalam skrip anda dan laksanakannya dengan jurubahasa Node.js.",
+    "x2c5e": "Untuk menggunakan Base45 dalam Python, anda perlu memasang perpustakaan 'base45'.",
+    "y3m7k": "Untuk Java, gunakan perpustakaan 'iso-base45' yang boleh disertakan dalam projek anda sebagai pergantungan Maven.",
+    "y9m3k": "Untuk Swift, anda boleh menggunakan perpustakaan 'Base45' yang tersedia di GitHub.",
+    "z3m1t": "Selepas menambah kebergantungan dan menyegerakkan projek, salin templat yang disediakan ke dalam kelas Kotlin, menggantikan ruang letak dengan nilai yang dikodkan sebenar sebelum menjalankan kod.",
+    "z7n1m": "Gunakan npm atau benang untuk memasangnya dengan menjalankan `npm install @digitalbazaar/base45` atau `yarn add @digitalbazaar/base45`.",
+    "z8qm2t": "Perpustakaan menyediakan kelas pengekod dan penyahkod untuk operasi Base45. Salin kod templat ke dalam aplikasi konsol C# dan laksanakannya selepas memasang pakej."
+}

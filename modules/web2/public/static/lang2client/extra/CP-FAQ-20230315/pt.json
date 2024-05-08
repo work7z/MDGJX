@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "Aprender a programar abre oportunidades de carreira em vários setores e permite desenvolver soluções inovadoras, automatizar tarefas e compreender sistemas complexos.",
+    "CP-Advantages-013": "Quais são as vantagens de aprender programação de computadores?",
+    "CP-Basics-001": "O que é programação de computadores?",
+    "CP-Def-002": "A programação de computadores envolve escrever instruções, ou código, em uma linguagem de programação para instruir os computadores sobre como executar tarefas específicas.",
+    "CP-History-004": "Qual é a história da programação de computadores?",
+    "CP-History-Origin-005": "As primeiras máquinas programáveis ​​datam do trabalho de Ada Lovelace na Máquina Analítica de Charles Babbage no século XIX. Contudo, a programação moderna decolou com a invenção do primeiro computador eletrônico de uso geral, o ENIAC, na década de 1940.",
+    "CP-Lang-Choice-009": "A escolha do idioma depende de fatores como requisitos do projeto, apoio da comunidade, facilidade de aprendizagem e necessidades de desempenho.",
+    "CP-Language-Evolution-006": "Desde então, as linguagens de programação evoluíram do código de máquina para o assembly, depois para linguagens de alto nível como FORTRAN, COBOL, C e agora para linguagens modernas como Python, JavaScript e Rust.",
+    "CP-Languages-007": "Quais são algumas linguagens de programação populares?",
+    "CP-Languages-List-008": "Linguagens de programação populares incluem Java, Python, JavaScript, C++, C#, Swift, Go, PHP, Ruby e Kotlin. Cada um tem seus próprios pontos fortes e casos de uso, por exemplo, Python para ciência de dados, JavaScript para desenvolvimento web e C++ para programação de sistemas.",
+    "CP-Process-010": "Qual é o processo de programação de computadores?",
+    "CP-Process-Explanation-011": "A programação normalmente envolve planejamento (definir o problema e projetar a solução), codificação (escrever o código-fonte em uma linguagem escolhida), teste (depurar e verificar a funcionalidade) e manutenção (atualizar e melhorar o programa ao longo do tempo).",
+    "CP-Purpose-003": "Os programadores criam algoritmos, resolvem problemas e constroem aplicativos de software que podem automatizar processos, manipular dados e interagir com usuários ou outros sistemas.",
+    "CP-SDLC-012": "Geralmente, isso é estruturado em um Ciclo de Vida de Desenvolvimento de Software (SDLC), que inclui fases adicionais, como análise de requisitos, design, implantação e testes de aceitação do usuário.",
+    "CP-Skillset-015": "Também melhora o pensamento lógico, as habilidades de resolução de problemas e a adaptabilidade às novas tecnologias, tornando-o mais versátil na era digital.",
+    "HistOfProg-Wikipedia": "História das Linguagens de Programação - Wikipedia",
+    "SDLC-Wikipedia": "Ciclo de vida de desenvolvimento de software - Wikipedia",
+    "TIOBE-Index": "Índice TIOBE - A Empresa de Qualidade de Software"
+}

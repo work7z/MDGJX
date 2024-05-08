@@ -1,0 +1,34 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤，包括翻译成中文：
+
+1. 提炼文本。
+2. 放入名为`i18n`的对象中，键（key）是原始文本，值（value）先用123占位。
+3. 翻译这些文本。
+4. 输出为JSON格式。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "Resize Image": "调整图片大小",
+    "Resizes an image to the specified width and height values.": "将图片调整到指定的高度和宽度值。",
+    "Invalid file type.": "无效的文件类型。",
+    "Error loading image.": "加载图片出错。",
+    "Error resizing image.": "调整图片大小出错。",
+    "Width": "宽度",
+    "Height": "高度",
+    "Unit type": "单位类型",
+    "Maintain aspect ratio": "保持宽高比",
+    "Resizing algorithm": "调整大小算法",
+    "Pixels": "像素",
+    "Percent": "百分比",
+    "Nearest Neighbour": "最近邻",
+    "Bilinear": "双线性",
+    "Bicubic": "双三次",
+    "Hermite": "埃尔米特",
+    "Bezier": "贝塞尔"
+  }
+}
+```
+
+在这个JSON对象中，每个键值对（key-value pair）的键（key）是原始的英文文本，值（value）是相应的中文翻译。这些文本是从代码注释和用户界面相关的字符串中提取的，不包括URL、示例输入输出、类型定义等。

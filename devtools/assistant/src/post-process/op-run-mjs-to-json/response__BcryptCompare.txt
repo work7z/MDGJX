@@ -1,0 +1,25 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将这些文本作为JSON对象中的键，每个键的值设为1。以下是提取后的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "Bcrypt compare": 1,
+    "Tests whether the input matches the given bcrypt hash. To test multiple possible passwords, use the 'Fork' operation.": 1,
+    "Progress: %": 1,
+    "Match: %": 1,
+    "No match": 1
+  }
+}
+```
+
+以下是详细解释：
+
+- "Bcrypt compare"：来自类名和构造函数中的 `this.name`。
+- "Tests whether the input matches the given bcrypt hash... 'Fork' operation."：来自构造函数中的 `this.description`。
+- "Progress: %"：虽然它包含一个占位符 `%`，但它是显示给用户的文本，来自 `run` 方法中进度回调的字符串。
+- "Match: %"：同样包含占位符 `%`，用于用户界面显示匹配结果，来自 `run` 方法返回的字符串。
+- "No match"：表示不匹配时显示给用户的文本，也来自 `run` 方法返回的字符串。
+
+请注意，占位符 `%` 保持原样，因为它是动态替换的部分，而不是固定的文本内容。如果需要替换为实际的文本，请根据实际应用场景进行修改。 
+
+根据【示例1】，这个JSON对象可以放置在相应的位置以配置i18n。

@@ -1,0 +1,27 @@
+根据您的要求，以下是提炼代码中自然文本并转换为JSON格式的过程：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设为123。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换其值。
+4. 输出JSON结果。
+
+以下是转换后的结果：
+
+```json
+{
+  "i18n": {
+    "Bcrypt compare": "Bcrypt比较",
+    "Tests whether the input matches the given bcrypt hash. To test multiple possible passwords, use the 'Fork' operation.": "测试输入是否与给定的bcrypt哈希匹配。要测试多个可能的密码，请使用'Fork'操作。",
+    "Match: ": "匹配：",
+    "No match": "不匹配"
+  }
+}
+```
+
+以下是详细的步骤说明：
+
+- "Bcrypt compare"：这是操作的名字，直接翻译为“Bcrypt比较”。
+- "Tests whether the input matches the given bcrypt hash... 'Fork' operation."：这是操作的描述，解释了操作的功能和额外的使用提示，翻译为“测试输入是否与给定的bcrypt哈希匹配...使用'Fork'操作”。
+- "Match: " 和 "No match"：这是操作返回的结果文本，分别翻译为“匹配：”和“不匹配”。
+
+请注意，我没有包括像"Progress: "这样的文本，因为它不是直接显示给用户的自然文本，而是作为进度回调的一部分。如果需要包含这样的文本，请告知我以便更新结果。

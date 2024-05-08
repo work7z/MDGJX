@@ -1,0 +1,24 @@
+根据您的要求，我首先从代码中提取出所有显示给用户的自然文本，然后将其放入一个名为`i18n`的对象中，并给每个文本赋予一个默认值123。接着，我将这些文本翻译成中文，并替换掉默认值。以下是结果：
+
+```json
+{
+  "i18n": {
+    "P-list Viewer": "P列表查看器",
+    "In the macOS, iOS, NeXTSTEP, and GNUstep programming frameworks, property list files are files that store serialized objects. Property list files use the filename extension .plist, and thus are often referred to as p-list files.": "在macOS、iOS、NeXTSTEP和GNUstep编程框架中，属性列表文件是存储序列化对象的文件。属性列表文件使用文件扩展名.plist，因此通常被称为p-list文件。",
+    "This operation displays plist files in a human readable format.": "此操作以人类可读的格式显示plist文件。"
+  }
+}
+```
+
+以下是详细的步骤说明：
+
+1. 从代码中提取的自然文本包括：
+   - "P-list Viewer"：类名，显示给用户。
+   - "In the macOS, iOS, NeXTSTEP, and GNUstep programming frameworks, property list files are files that store serialized objects. Property list files use the filename extension .plist, and thus are often referred to as p-list files."：类的描述。
+   - "This operation displays plist files in a human readable format."：该操作的功能描述。
+
+2. 将这些文本放入`i18n`对象，并赋予默认值123。
+
+3. 根据代码的实际功能，我将这些文本翻译成中文，并替换了默认值。
+
+4. 输出结果如上所示。

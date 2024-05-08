@@ -1,0 +1,34 @@
+根据您的要求，下面是提炼后的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "RC4": "123",
+    "is a widely-used stream cipher designed by Ron Rivest. It is used in popular protocols such as SSL and WEP. Although remarkable for its simplicity and speed, the algorithm's history doesn't inspire confidence in its security.": "123"
+  }
+}
+```
+
+下面是根据代码的实际功能，将这些文本翻译为中文，并替换其value值：
+
+```json
+{
+  "i18n": {
+    "RC4": "RC4",
+    "is a widely-used stream cipher designed by Ron Rivest. It is used in popular protocols such as SSL and WEP. Although remarkable for its simplicity and speed, the algorithm's history doesn't inspire confidence in its security.": "RC4是由Ron Rivest设计的广泛使用的流密码。它被用于诸如SSL和WEP等流行协议中。尽管其简洁和速度令人瞩目，但该算法的历史并不让人对其安全性充满信心。"
+  }
+}
+```
+
+参考示例1，最终的输出结果如下：
+
+```json
+{
+  "i18n": {
+    "RC4": "RC4",
+    "description": "RC4是由Ron Rivest设计的广泛使用的流密码。它被用于诸如SSL和WEP等流行协议中。尽管其简洁和速度令人瞩目，但该算法的历史并不让人对其安全性充满信心。"
+  }
+}
+```
+
+请注意，这里只包含了描述信息，因为其他字段（如字段名、协议名等）要么是非自然文本，要么是代码的一部分，不适合按照您的要求进行提取和翻译。

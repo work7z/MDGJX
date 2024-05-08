@@ -1,0 +1,17 @@
+{
+    "YAML-Advantages-001": "Ưu điểm của YAML là gì?",
+    "YAML-Advantages-002": "YAML dễ đọc và dễ viết, khiến nó trở thành lựa chọn phổ biến cho các tệp cấu hình.",
+    "YAML-Advantages-003": "Nó cũng dễ đọc và viết và thường được sử dụng cùng với tất cả các ngôn ngữ lập trình.",
+    "YAML-Basics-001": "YAML là gì?",
+    "YAML-Def-002": "YAML (YAML Ain't Markup Language) là một tiêu chuẩn tuần tự hóa dữ liệu mà con người có thể đọc được, có thể được sử dụng cùng với tất cả các ngôn ngữ lập trình và thường được sử dụng để ghi các tệp cấu hình.",
+    "YAML-Disadvantages-001": "Nhược điểm của YAML là gì?",
+    "YAML-Disadvantages-002": "YAML có thể khó phân tích cú pháp và dễ mắc lỗi.",
+    "YAML-Disadvantages-003": "Nó cũng không được hỗ trợ rộng rãi như các định dạng tuần tự hóa dữ liệu khác, chẳng hạn như JSON.",
+    "YAML-Example-001": "Tệp YAML trông như thế nào?",
+    "YAML-Example-002": "Một tệp YAML đơn giản bao gồm các cặp khóa-giá trị, mỗi cặp được phân tách bằng dấu hai chấm.",
+    "YAML-Example-003": "Ví dụ: tệp YAML có thể trông như thế này:",
+    "YAML-Purpose-003": "Nó được thiết kế để con người dễ đọc và thường được sử dụng để thể hiện cấu trúc dữ liệu và tuần tự hóa ở định dạng dễ đọc và viết.",
+    "YAML-Usage-001": "YAML dùng để làm gì?",
+    "YAML-Usage-002": "YAML thường được sử dụng cho các tệp cấu hình và trong các ứng dụng nơi dữ liệu được lưu trữ hoặc truyền đi.",
+    "YAML-Usage-003": "Nó thường được sử dụng trong các ứng dụng nơi dữ liệu được lưu trữ hoặc truyền đi, chẳng hạn như trong các tệp cấu hình và trong các ứng dụng nơi dữ liệu được lưu trữ hoặc truyền đi."
+}

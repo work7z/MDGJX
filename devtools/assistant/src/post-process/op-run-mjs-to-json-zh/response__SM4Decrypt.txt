@@ -1,0 +1,23 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作，并翻译成中文。
+
+首先，我们找出所有符合条件的自然文本：
+
+1. SM4 is a 128-bit block cipher, currently established as a national standard (GB/T 32907-2016) of China.
+2. Invalid key length: {0} bytes\nSM4 uses a key length of 16 bytes (128 bits).
+3. Invalid IV length: {0} bytes\nSM4 uses an IV length of 16 bytes (128 bits).\nMake sure you have specified the type correctly (e.g. Hex vs UTF8).
+
+然后，我们将这些文本放入一个名为`i18n`的对象中，并给每个文本赋予一个默认值123。
+
+下面是JSON格式和中文翻译：
+
+```json
+{
+  "i18n": {
+    "SM4 is a 128-bit block cipher, currently established as a national standard (GB/T 32907-2016) of China.": "SM4是一种128位分组密码，目前已成为中国的国家标准（GB/T 32907-2016）。",
+    "Invalid key length: {0} bytes\nSM4 uses a key length of 16 bytes (128 bits).": "无效的密钥长度：{0}字节\nSM4的密钥长度应为16字节（128位）。",
+    "Invalid IV length: {0} bytes\nSM4 uses an IV length of 16 bytes (128 bits).\nMake sure you have specified the type correctly (e.g. Hex vs UTF8).": "无效的初始化向量长度：{0}字节\nSM4的初始化向量长度应为16字节（128位）。\n请确保正确指定了类型（例如，十六进制与UTF8）。"
+  }
+}
+```
+
+请注意，在翻译中保留了`{0}`占位符，因为它在代码中用于动态替换实际值。同时，根据代码的实际功能，我选择了合适的翻译来替换原来的英文描述。

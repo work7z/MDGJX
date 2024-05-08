@@ -1,0 +1,19 @@
+根据您的要求，以下是代码中提取的自然文本，并按照指示转换为JSON格式，然后进行中文翻译：
+
+```json
+{
+  "i18n": {
+    "Returns the inverse of each byte.": "返回每个字节的反码。",
+    "Bitwise operation": "位运算",
+    "Highlight NOT": "突出显示NOT操作",
+    "Highlight NOT in reverse": "反向突出显示NOT操作"
+  }
+}
+```
+
+解释：
+1. "Returns the inverse of each byte."：这是对`NOT`操作描述的翻译，即返回每个字节的反码。
+2. "Bitwise operation"：虽然这个词组没有直接在代码中作为自然文本出现，但是根据上下文（例如`infoURL`字段）和代码的功能，我认为它是对位运算的一种描述，因此也包含在内。
+3. "Highlight NOT" 和 "Highlight NOT in reverse"：这两个文本描述了突出显示位运算中NOT操作的方法，包括正向和反向。
+
+请注意，由于代码中没有其他自然文本，除了上述提到的字段外，我没有包括其他内容。同时，由于代码示例没有提供具体的字段作为自然文本，例如"exampleInput"和"exampleOutput"，所以它们也没有被包含在JSON对象中。

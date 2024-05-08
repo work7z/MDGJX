@@ -1,0 +1,30 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式呈现，其中包含翻译后的中文：
+
+```json
+{
+  "i18n": {
+    "GOST Key Unwrap": "GOST密钥解包",
+    "A decryptor for keys wrapped using one of the GOST block ciphers.": "用于解包使用GOST块密码之一加密的密钥的解密器。",
+    "Key": "密钥",
+    "User Key Material": "用户密钥材料",
+    "Input type": "输入类型",
+    "Output type": "输出类型",
+    "Algorithm": "算法",
+    "Block length": "块长度",
+    "sBox": "S盒",
+    "Key wrapping": "密钥包装",
+    "Incorrect input length. Must be a multiple of the block size.": "输入长度不正确。必须是块大小的倍数。"
+  }
+}
+```
+
+以下是每个key的翻译说明：
+
+- "GOST Key Unwrap"：直接翻译为“GOST密钥解包”，描述了该操作的主要功能。
+- "A decryptor for keys wrapped using one of the GOST block ciphers."：翻译为“用于解包使用GOST块密码之一加密的密钥的解密器。”，概述了该操作的作用。
+- "Key"和"User Key Material"：分别翻译为“密钥”和“用户密钥材料”，这些是操作中用到的参数名称。
+- "Input type"和"Output type"：翻译为“输入类型”和“输出类型”，描述了参数选项。
+- "Algorithm"、"Block length"、"sBox"和"Key wrapping"：分别翻译为“算法”、“块长度”、“S盒”和“密钥包装”，这些都是操作配置的选项。
+- "Incorrect input length. Must be a multiple of the block size."：翻译为“输入长度不正确。必须是块大小的倍数。”，这是错误提示信息。
+
+以上翻译尽可能贴切代码的实际功能。

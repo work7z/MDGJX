@@ -1,0 +1,20 @@
+/* General reset for consistent styling across browsers */
+* {  margin: 0;  padding: 0;  box-sizing: border-box;} body {
+  font-family: Arial, sans-serif;
+    line-height: 
+    1.6;
+         background-color: #f0f0f0;
+}
+.main-content {
+  padding: 2rem 1rem;
+}
+
+        .button {
+  display: inline-block;
+        background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}

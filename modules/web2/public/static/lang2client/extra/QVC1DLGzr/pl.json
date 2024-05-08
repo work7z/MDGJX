@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Po integracji skopiuj dostarczony szablon do programu C++ i zastąp symbol zastępczy rzeczywistą zakodowaną wartością przed uruchomieniem programu.",
+    "c6p4n": "Po instalacji skopiuj dostarczony szablon do skryptu Pythona, zastąp symbol zastępczy w części dekodującej rzeczywistymi bajtami zakodowanymi w formacie Base62 (z przedrostkiem „b”), a następnie uruchom skrypt.",
+    "d2w6e": "Pobierz kod źródłowy i dołącz plik nagłówkowy base62.h do swojego projektu. Skompiluj/połącz z plikami źródłowymi zgodnie z instrukcjami projektu.",
+    "d8w1b": "Zainstaluj go za pomocą pip, uruchamiając polecenie `pip install python-base62` lub `pip3 install python-base62`.",
+    "f9t2z": "Dodaj zależność do swojego projektu Maven, dodając `<dependenty> <groupId>com.warrenstrange</groupId> <artifactId>googleauth</artifactId> <version>...</version> </dependent>` w miejscu, w którym powinna znajdować się wersja zastąpiony najnowszą wersją.",
+    "g4h7s": "W przypadku C++ można użyć biblioteki „cpp-base62”, która zapewnia funkcjonalność Base62.",
+    "j9s5r": "W przypadku języka C# użyj biblioteki „WarrenStranger.Base62” do obsługi kodowania i dekodowania Base62.",
+    "k3m2e": "Skopiuj dostarczony szablon do nowego pliku Go, zastąp symbol zastępczy rzeczywistą zakodowaną wartością, a następnie uruchom plik za pomocą polecenia „go run yourfile.go”",
+    "p6e3n": "Zainstaluj pakiet za pośrednictwem NuGet, uruchamiając „Install-Package WarrenStranger.Base62” w konsoli Menedżera pakietów lub dodaj go za pomocą Menedżera pakietów NuGet.",
+    "q6n1r": "Po zainstalowaniu biblioteki skopiuj dostarczony szablon do klasy Java i zastąp symbol zastępczy rzeczywistą zakodowaną wartością przed uruchomieniem kodu. Należy zauważyć, że w tej implementacji jako krok pośredni wykorzystywane są tablice liczb całkowitych.",
+    "r4n6v": "Dodaj zależność do swojego projektu, uruchamiając `go get github.com/xyproto/base62`. Spowoduje to pobranie i zainstalowanie pakietu.",
+    "u7i9b": "W przypadku Go użyj pakietu „base62” dostępnego w GitHub.",
+    "u9g6t": "Aby uruchomić ten kod, musisz zainstalować pakiet „base62”, który zapewnia możliwości kodowania i dekodowania Base62.",
+    "v5k3r": "Po zainstalowaniu zastąp symbol zastępczy w sekcji dekodowania rzeczywistą wartością zakodowaną w formacie Base62 i wykonaj skrypt. Biblioteka obsługuje konwersję pomiędzy buforami i ciągami Base62.",
+    "x2c5e": "W przypadku języka Python użyj biblioteki „base62” do obsługi kodowania i dekodowania Base62.",
+    "y3m7k": "W przypadku języka Java użyj klasy Base62Converter z biblioteki „google-authenticator”.",
+    "z7n1m": "Możesz go zainstalować za pomocą npm, uruchamiając `npm install base62` lub `yarn add base62`.",
+    "z8qqm2t": "Po instalacji skopiuj dostarczony szablon do aplikacji konsolowej C# i zastąp symbol zastępczy rzeczywistą zakodowaną wartością przed uruchomieniem programu."
+}

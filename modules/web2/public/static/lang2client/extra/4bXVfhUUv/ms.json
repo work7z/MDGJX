@@ -1,0 +1,11 @@
+{
+    "c6p4n": "Dalam templat yang disediakan, gantikan pemegang tempat dalam bahagian penyahkod dengan bait yang dikodkan Base85 sebenar (diawalan 'b'), kemudian laksanakan skrip.",
+    "d8w1b": "Tiada pemasangan tambahan diperlukan kerana ia adalah sebahagian daripada perpustakaan standard. Pastikan versi Python anda cukup terkini untuk memasukkan fungsi ini.",
+    "f9t2z": "Tambahkan kebergantungan pada projek Maven anda dengan memasukkan `<dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependency>` dalam anda fail pom.xml dengan nombor versi terkini.",
+    "q6n1r": "Selepas memasang pustaka, salin kod templat ke dalam kelas Java dan gantikan pemegang tempat dengan nilai berkod Base85 sebenar sebelum menjalankan kod.",
+    "u9g6t": "Untuk JavaScript, anda perlu memasang pakej 'base85' untuk pengekodan dan penyahkodan Base85.",
+    "v5k3r": "Setelah dipasang, gantikan pemegang tempat dalam bahagian penyahkod dengan rentetan berkod Base85 sebenar dan jalankan skrip. Perpustakaan mengendalikan penukaran antara rentetan Penampan dan Base85.",
+    "x2c5e": "Python mempunyai modul 'base85' terbina dalam yang menyokong pengekodan dan penyahkodan Base85.",
+    "y3m7k": "Untuk Java, gunakan pustaka 'commons-codec' yang merangkumi sokongan untuk pengekodan dan penyahkodan Base85.",
+    "z7n1m": "Pasangnya menggunakan npm dengan menjalankan `npm install base85` atau `yarn add base85`."
+}

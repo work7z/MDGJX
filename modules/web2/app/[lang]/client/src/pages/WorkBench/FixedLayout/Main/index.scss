@@ -1,0 +1,142 @@
+// Date: Sat, 18 Nov 2023
+// Author: CodeGen ToolBox <work7z@outlook.com>
+// Description:
+// Copyright (C) 2023 - Present, https://laftools.dev and https://codegen.cc
+// License: AGPLv3
+
+@import "../../../../styles/var.scss";
+@import "@blueprintjs/colors/lib/scss/colors";
+
+$val-height-menu-foot: 30px;
+
+.tab-title-panel-wp {
+  display: flex;
+  flex-direction: row;
+  // width: 100%;
+  height: 100%;
+}
+
+@mixin fn-bg-color($lightColor, $darkColor) {
+  background: $lightColor !important;
+  .bp5-dark & {
+    background: $darkColor !important;
+  }
+}
+$nav-menu-h: $val-height-menu-foot;
+$nav-foot-h: $val-height-menu-foot;
+$sys-tab-h: $val-height-menu-foot * 1;
+
+.fixed-wb-p {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+
+  .fixed-wb-nav-body {
+    @include fn-make-bg-color-align();
+    height: calc(100% - #{$nav-menu-h} - #{$nav-foot-h} - 2px);
+    // height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+}
+.fix-wb-p-pack {
+  height: calc(100% - #{$nav-menu-h} - 1px);
+}
+
+@mixin edge-ui-bg() {
+  @include fn-bg-color($light-gray5, $dark-gray2);
+}
+@mixin edge-ui-bg-active() {
+  // @include fn-bg-color($light-gray4, $dark-gray4);
+  @include fn-bg-color(#e4eefb, #2b323d);
+}
+.using-edge-ui-bg {
+  @include edge-ui-bg();
+}
+
+.nav-same-menu {
+  // @include edge-ui-bg();
+}
+.fixed-wb-nav-foot-wrapper {
+  position: relative;
+  height: 100%;
+  .fixed-web-nav-foot-center {
+    height: calc(100% - #{$nav-menu-h} - 1px);
+  }
+}
+.fixed-wb-nav-foot {
+  height: $nav-foot-h;
+  @include edge-ui-bg();
+  @include fn-border-type("top");
+  @include fn-border-type("left");
+
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
+  // width: 100%;
+}
+
+.fixed-wb-nav-menu {
+  @include fn-border-type("bottom");
+  height: $nav-menu-h;
+  @include edge-ui-bg();
+  @include no-focus-outline();
+}
+
+.sys-tab-pane-wp {
+  width: 100%;
+  height: 100%;
+  &,
+  & > * {
+    text-wrap: nowrap;
+  }
+}
+.sys-tab-pane-wp-title {
+  padding: 0 5px;
+  height: $sys-tab-h;
+  @include fn-border-type("bottom");
+  @include edge-ui-bg();
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .wp-focus-p &,
+  .wp-focus-p.sys-tab-pane-wp & {
+    @include edge-ui-bg-active();
+  }
+}
+// #{$sys-tab-h} -
+.sys-tab-pane-wp-body {
+  height: calc(100% - #{$sys-tab-h} - 1px);
+}
+
+.tab-title-panel-p {
+  @include edge-ui-bg();
+  &.tab-mode-left {
+    @include fn-border-type("right");
+    margin-top: -1px;
+  }
+  &.tab-mode-right {
+    @include fn-border-type("left");
+  }
+  .bp5-button {
+    // width: 100px;
+    min-width: auto;
+    white-space: nowrap;
+  }
+  .tab-title-panel-btn-group {
+    display: flex;
+    transform: rotate(90deg);
+
+    .bp5-button {
+      border-radius: 0;
+    }
+  }
+  &.tab-mode-left {
+    .bp5-button {
+      transform: rotate(-180deg);
+    }
+  }
+  .bp5-intent-primary {
+    // @include fn-bg-color($light-gray5, $gray5);
+  }
+}

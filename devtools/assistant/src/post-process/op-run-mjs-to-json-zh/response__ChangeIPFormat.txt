@@ -1,0 +1,28 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式呈现，其中包含翻译后的中文：
+
+```json
+{
+  "i18n": {
+    "Change IP format": "更改IP格式",
+    "Convert an IP address from one format to another, e.g. 172.20.23.54 to ac141736": "将IP地址从一种格式转换为另一种格式，例如，从172.20.23.54转换为ac141736",
+    "Input format": "输入格式",
+    "Output format": "输出格式",
+    "Dotted Decimal": "点分十进制",
+    "Decimal": "十进制",
+    "Octal": "八进制",
+    "Hex": "十六进制",
+    "Unsupported input IP format": "不支持的输入IP格式",
+    "Unsupported output IP format": "不支持的输出IP格式"
+  }
+}
+```
+
+以下是每个文本的提取和翻译说明：
+
+- "Change IP format"：直接翻译为“更改IP格式”。
+- "Convert an IP address from one format to another, e.g. 172.20.23.54 to ac141736"：翻译时保留了技术含义，说明该操作可以将IP地址从一种表示形式转换为另一种。
+- "Input format" 和 "Output format" 分别翻译为“输入格式”和“输出格式”。
+- "Dotted Decimal", "Decimal", "Octal", "Hex" 这几个术语是数值表示法，分别翻译为“点分十进制”、“十进制”、“八进制”和“十六进制”。
+- "Unsupported input IP format" 和 "Unsupported output IP format" 翻译为“不支持的输入IP格式”和“不支持的输出IP格式”，这两个错误信息会在输入或输出格式不被支持时显示给用户。
+
+以上JSON对象中的每个键值对都遵循了您的要求，即键是原始英文文本，值是翻译后的中文文本。

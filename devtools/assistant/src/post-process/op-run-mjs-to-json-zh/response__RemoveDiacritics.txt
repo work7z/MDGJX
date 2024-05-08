@@ -1,0 +1,30 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，并给每个文本赋予一个键（key）。
+3. 将这些键对应的值（value）设置为123作为占位符。
+4. 根据代码的实际功能，将这些占位符翻译成中文。
+
+下面是JSON格式的结果：
+
+```json
+{
+  "i18n": {
+    "Remove Diacritics": "移除变音符号",
+    "Replaces accented characters with their latin character equivalent. Accented characters are made up of Unicode combining characters, so unicode text formatting such as strikethroughs and underlines will also be removed.": "将带变音符号的字符替换为它们的拉丁字符等价形式。带变音符号的字符由Unicode组合字符构成，因此也会移除下划线和删除线等Unicode文本格式。"
+  }
+}
+```
+
+以下是按照您的示例格式化后的结果：
+
+```json
+{
+  "i18n": {
+    "Remove Diacritics": "移除变音符号",
+    "Replaces accented characters with their latin character equivalent. Accented characters are made up of Unicode combining characters, so unicode text formatting such as strikethroughs and underlines will also be removed.": "将带变音符号的字符替换为它们的拉丁字符等价形式。由于这些字符由Unicode组合字符构成，因此也会移除包括删除线和下划线在内的Unicode文本格式。"
+  }
+}
+```
+
+请注意，我假设了`"Remove Diacritics"`是操作或功能的名称，并且将其翻译为“移除变音符号”。对于描述，我也尽量保持了原意，同时进行了适当的翻译。

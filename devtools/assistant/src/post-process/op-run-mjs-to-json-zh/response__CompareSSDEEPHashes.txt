@@ -1,0 +1,50 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式，并进行中文翻译的过程：
+
+1. 提炼文本：
+   - "Compare SSDEEP hashes"
+   - "Compares two SSDEEP fuzzy hashes to determine the similarity between them on a scale of 0 to 100."
+   - "Ssdeep"
+   - "Incorrect number of samples."
+
+2. 放入对象 `i18n` 并命名，值设为123：
+
+```json
+{
+  "i18n": {
+    "Compare SSDEEP hashes": 123,
+    "Compares two SSDEEP fuzzy hashes to determine the similarity between them on a scale of 0 to 100.": 123,
+    "Ssdeep": 123,
+    "Incorrect number of samples.": 123
+  }
+}
+```
+
+3. 翻译并替换值：
+
+```json
+{
+  "i18n": {
+    "Compare SSDEEP hashes": "比较SSDEEP哈希值",
+    "Compares two SSDEEP fuzzy hashes to determine the similarity between them on a scale of 0 to 100.": "比较两个SSDEEP模糊哈希值，以确定它们之间的相似度，范围从0到100。",
+    "Ssdeep": "SSDEEP",
+    "Incorrect number of samples.": "样本数量不正确。"
+  }
+}
+```
+
+注意：`Ssdeep`是一个专有名词，通常不需要翻译，这里保留原样。
+
+4. 输出JSON结果：
+
+```json
+{
+  "i18n": {
+    "Compare SSDEEP hashes": "比较SSDEEP哈希值",
+    "Compares two SSDEEP fuzzy hashes to determine the similarity between them on a scale of 0 to 100.": "比较两个SSDEEP模糊哈希值，以确定它们之间的相似度，范围从0到100。",
+    "Ssdeep": "SSDEEP",
+    "Incorrect number of samples.": "样本数量不正确。"
+  }
+}
+```
+
+以上即完成了您的要求。

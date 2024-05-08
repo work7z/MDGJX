@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设为`123`。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换其值。
+4. 输出JSON结果。
+
+以下是按照上述步骤生成的JSON：
+
+```json
+{
+  "i18n": {
+    "OR the input with the given key.<br>e.g. <code>fe023da5</code>": "使用给定的密钥对输入进行或运算。<br>例如：<code>fe023da5</code>",
+    "OR operation": "或运算",
+    "Highlight OR": "突出显示或运算",
+    "Highlight OR in reverse": "反向突出显示或运算"
+  }
+}
+```
+
+解释：
+- “OR the input with the given key.<br>e.g. <code>fe023da5</code>”是描述或运算的操作，翻译后为“使用给定的密钥对输入进行或运算。<br>例如：<code>fe023da5</code>”。
+- “OR operation”是对该类的一个简单描述，翻译为“或运算”。
+- “Highlight OR”和“Highlight OR in reverse”是关于突出显示或运算的描述，分别翻译为“突出显示或运算”和“反向突出显示或运算”。
+
+请注意，代码中的`<br>`和`<code>`是HTML标签，用于格式化文本，这里保留是为了保持文本的格式。如果不需要这些标签，可以将其移除。

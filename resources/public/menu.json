@@ -1,0 +1,1374 @@
+{
+  "root": true,
+  "children": [
+    {
+      "label": "Dashboard",
+      "icon": "layers",
+      "children": [
+        {
+          "icon": "area-of-interest",
+          "label": "Home",
+          
+          "id": "home"
+        },
+        {
+          "icon": "build",
+          "label": "Extension DevTools",
+          
+          "id": "extdevtools"
+        },
+        {
+          "icon": "import",
+          "label": "Import and Export",
+          
+          "id": "ImportAndExport"
+        },
+        {
+          "icon": "clean",
+          "label": "Extensions",
+          
+          "id": "ExtensionStore"
+        }
+      ],
+      
+      "id": "dashboard"
+    },
+    {
+      "label": "Utility Server",
+      "icon": "globe",
+      "children": [
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Static and Redirect",
+              
+              "id": "ServerStatic"
+            },
+            {
+              "icon": "application",
+              "label": "Swift Terminal",
+              
+              "id": "SwiftTerminal"
+            }
+          ],
+          "label": "Basic Service",
+          
+          "id": "base_service"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "FTP Transfer",
+              
+              "id": "FTPTransfer"
+            }
+          ],
+          "label": "File Service",
+          
+          "id": "file_service"
+        }
+      ],
+      
+      "id": "server"
+    },
+    {
+      "label": "Database Management",
+      "icon": "database",
+      "children": [
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "SQL Drafts",
+              
+              "id": "SQLDrafts"
+            }
+          ],
+          "label": "Basic Service",
+          
+          "id": "rdbms_menu"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Redis Data Tools",
+              
+              "id": "RedisDrafts"
+            }
+          ],
+          "label": "Extended Service",
+          
+          "id": "extended_service"
+        }
+      ],
+      
+      "id": "database"
+    },
+    {
+      "label": "Code Generator",
+      "icon": "oil-field",
+      "children": [
+        {
+          "children": [
+            {
+              "label": "JSON to Model",
+              
+              "id": "BizJSONToCode"
+            },
+            {
+              "label": "XML to Model",
+              
+              "id": "BizXMLToCodeM"
+            },
+            {
+              "label": "SQL to Model",
+              
+              "id": "SQLToBean200"
+            }
+          ],
+          "icon": "series-configuration",
+          "label": "Data Transfer Layer",
+          
+          "id": "dto"
+        },
+        {
+          "children": [
+            {
+              
+              "label": "MyBatis Plus",
+              
+              "id": "BizMyBatis"
+            }
+          ],
+          "icon": "series-derived",
+          "label": "Data Access Layer",
+          
+          "id": "dao"
+        }
+      ],
+      
+      "id": "gen"
+    },
+    {
+      "label": "Graphic Tools",
+      "icon": "contrast",
+      "children": [
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Base64 Previewer",
+              
+              "id": "Base64Previewer"
+            }
+          ],
+          "icon": "inherited-group",
+          "label": "Graphic Formats",
+          
+          "id": "graphic_formats"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "QRCode Decoder",
+              
+              "id": "QRCodeDecoder"
+            },
+            {
+              "icon": "application",
+              "label": "QRCode Encoder",
+              
+              "id": "QRCodeCreator"
+            }
+          ],
+          "icon": "barcode",
+          "label": "QRCode",
+          
+          "id": "plaintext"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Color Chooser",
+              
+              "id": "ColorPicker"
+            }
+          ],
+          "icon": "draw",
+          "label": "Drawing",
+          
+          "id": "colordraw"
+        }
+      ],
+      
+      "id": "color"
+    },
+    {
+      "label": "Time Tools",
+      "icon": "time",
+      "children": [
+        {
+          "label": "Timestamp",
+          
+          "icon": "array-timestamp",
+          "id": "timestamp"
+        },
+        {
+          "label": "TimeZone",
+          
+          "icon": "area-of-interest",
+          "id": "timezone"
+        },
+        {
+          "icon": "route",
+          "label": "Date Interval Calculator",
+          
+          "id": "DateCalcTool100"
+        },
+        {
+          "icon": "timeline-events",
+          "label": "Cron Expression",
+          
+          "id": "TimeCrontab"
+        }
+      ],
+      
+      "id": "time"
+    },
+    {
+      "label": "Text Tools",
+      "icon": "new-text-box",
+      "children": [
+        {
+          "label": "Quick Differentiate",
+          "children": [
+            {
+              "label": "Text Compare",
+              "icon": "multi-select",
+              
+              "id": "textcompare"
+            },
+            {
+              "icon": "application",
+              "label": "Power Diff",
+              
+              "id": "PowerDiff200"
+            }
+          ],
+          "icon": "inbox-search",
+          
+          "id": "quick_difference"
+        },
+        {
+          "label": "Text Case",
+          "icon": "polygon-filter",
+          "children": [
+            {
+              "label": "ASCII Text",
+              
+              "icon": "pivot",
+              "id": "ascii"
+            },
+            {
+              "label": "Numeric Text",
+              
+              "icon": "array-timestamp",
+              "id": "numerictext"
+            },
+            {
+              "label": "Chinese Text",
+              
+              "icon": "translate",
+              "id": "chinesetext"
+            },
+            {
+              "icon": "font",
+              "label": "ASCII <-> Text",
+              
+              "id": "TextASCIITools200"
+            },
+            {
+              "icon": "citation",
+              "label": "Chinese Han Tools",
+              
+              "id": "TextHanTools200"
+            },
+            {
+              "icon": "new-link",
+              "label": "Multi-Line <-> One-Line",
+              
+              "id": "TextMultipleToOne"
+            },
+            {
+              "icon": "new-grid-item",
+              "label": "Morse Code Translator",
+              
+              "id": "MorseCode"
+            },
+            {
+              "icon": "fork",
+              "label": "Join Chars Replacer",
+              
+              "id": "TextJoinTools"
+            }
+          ],
+          
+          "id": "textcase"
+        },
+        {
+          "label": "Random Tools",
+          "icon": "random",
+          "children": [
+            {
+              "label": "UUID",
+              
+              "icon": "social-media",
+              "id": "uuid"
+            },
+            {
+              "icon": "social-media",
+              "label": "Mock",
+              
+              "id": "TextRandomMock"
+            },
+            {
+              "icon": "social-media",
+              "label": "PlainText",
+              
+              "id": "TextRandomText"
+            }
+          ],
+          
+          "id": "random"
+        },
+        {
+          "label": "Code Beautify",
+          "icon": "code",
+          "children": [
+            {
+              
+              "label": "HTML",
+              
+              "icon": "array",
+              "id": "beautify_html"
+            },
+            {
+              
+              "label": "XML",
+              
+              "icon": "array",
+              "id": "beautify_xml"
+            },
+            {
+              
+              "label": "YAML",
+              
+              "icon": "array",
+              "id": "beautify_yaml"
+            },
+            {
+              
+              "label": "CSS",
+              
+              "icon": "array",
+              "id": "beautify_css"
+            },
+            {
+              
+              "label": "LESS",
+              
+              "icon": "array",
+              "id": "beautify_less"
+            },
+            {
+              
+              "label": "SASS",
+              
+              "icon": "array",
+              "id": "beautify_sass"
+            },
+            {
+              
+              "label": "JSON",
+              
+              "icon": "array",
+              "id": "beautify_json"
+            },
+            {
+              
+              "label": "MarkDown",
+              
+              "icon": "array",
+              "id": "beautify_markdown"
+            },
+            {
+              
+              "label": "JavaScript",
+              
+              "icon": "array",
+              "id": "beautify_javascript"
+            },
+            {
+              
+              "label": "TypeScript",
+              
+              "icon": "array",
+              "id": "beautify_typescript"
+            },
+            {
+              
+              "label": "SQL",
+              
+              "icon": "array",
+              "id": "beautify_sql"
+            },
+            {
+              
+              "label": "Graphql",
+              
+              "icon": "array",
+              "id": "beautify_graphql"
+            }
+          ],
+          
+          "id": "beautify"
+        },
+        {
+          "icon": "git-merge",
+          "label": "YAML Helper",
+          "children": [
+            {
+              
+              "icon": "key-tab",
+              "label": "YAML Formatter",
+              "id": "beautify_yaml"
+            },
+            {
+              "icon": "flow-review-branch",
+              "label": "YAML <-> JSON",
+              
+              "id": "YamlJSONTool"
+            }
+          ],
+          
+          "id": "yaml_helper"
+        },
+        {
+          "icon": "flow-review-branch",
+          "label": "SQL Helper",
+          "children": [
+            {
+              
+              "icon": "key-tab",
+              "label": "SQL Formatter",
+              "id": "beautify_sql"
+            },
+            {
+              "icon": "flow-end",
+              "label": "SQL to JSON",
+              
+              "id": "SQLToJSON200"
+            },
+            {
+              "icon": "flow-review",
+              "label": "DML to JSON",
+              
+              "id": "DMLToJSON200"
+            }
+          ],
+          
+          "id": "dsl_tools"
+        },
+        {
+          "icon": "document-open",
+          "label": "XML Helper",
+          "children": [
+            {
+              "label": "XML Formatter",
+              "icon": "key-tab",
+              
+              "id": "xml_transform"
+            },
+            {
+              "icon": "oil-field",
+              "label": "XML XPath",
+              
+              "id": "XMLXPath"
+            },
+            {
+              "icon": "geosearch",
+              "label": "XML Query(JSoup)",
+              
+              "id": "XMLJSoup"
+            }
+          ],
+          
+          "id": "xmlhelper"
+        },
+        {
+          "label": "JSON Helper",
+          "icon": "pivot-table",
+          "children": [
+            {
+              "label": "JSON Formatter",
+              "icon": "key-tab",
+              
+              "id": "json_transform"
+            },
+            {
+              "icon": "geosearch",
+              "label": "JSON Prober",
+              
+              "id": "JSONProbe"
+            },
+            {
+              "icon": "flow-branch",
+              "label": "JSON Flattener",
+              
+              "id": "JSONFlattenDeep"
+            },
+            {
+              "icon": "oil-field",
+              "label": "JSON XPath",
+              
+              "id": "JSONXPath"
+            },
+            {
+              "icon": "exchange",
+              "label": "JSON Mapper",
+              
+              "id": "JSONQMapper"
+            },
+            {
+              "icon": "filter-list",
+              "label": "JSON Filter",
+              
+              "id": "JSONQFilter"
+            },
+            {
+              "icon": "unresolve",
+              "label": "JSON ZipTool",
+              
+              "id": "JSONZipper"
+            }
+          ],
+          
+          "id": "jsonhelper"
+        },
+        {
+          "children": [
+            {
+              "icon": "filter-list",
+              "label": "Text Filter",
+              
+              "id": "TextHelperFilter"
+            },
+            {
+              "icon": "stacked-chart",
+              "label": "Text Shuffler",
+              
+              "id": "TextHelperShuffle"
+            },
+            {
+              "icon": "sort-alphabetical",
+              "label": "Text Sorter",
+              
+              "id": "TextHelperSorter"
+            },
+            {
+              "icon": "bring-data",
+              "label": "Text Deduplicator",
+              
+              "id": "TextHelperUniquer"
+            }
+          ],
+          "icon": "paragraph",
+          "label": "PlainText Helper",
+          
+          "id": "plaintext"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Regex Tester",
+              
+              "id": "RegexTester"
+            }
+          ],
+          "icon": "print",
+          "label": "Text Matcher",
+          
+          "id": "text_matcher"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "File Path Convertor",
+              "id": "SystemFormat",
+              
+              "raw_label": "File Path Convertor"
+            }
+          ],
+          "icon": "area-of-interest",
+          "label": "System Formats",
+          
+          "id": "system_formats"
+        }
+      ],
+      
+      "id": "text"
+    },
+    {
+      "label": "Codec Tools",
+      "icon": "lock",
+      "children": [
+        {
+          "label": "Digest Algorithm",
+          "icon": "segmented-control",
+          
+          "children": [
+            {
+              "label": "MD5",
+              "enable": true,
+              "id": "md5"
+            },
+            {
+              "label": "MD2",
+              "enable": true,
+              "id": "md2"
+            },
+            {
+              "label": "SHA",
+              
+              
+              "id": "encrypt_sha"
+            }
+          ],
+          "id": "digest"
+        },
+        {
+          "label": "Encode/Decode",
+          "icon": "widget-button",
+          
+          "children": [
+            {
+              "label": "Base64",
+              
+              
+              "id": "encode_base64"
+            },
+            {
+              "label": "URL Codec",
+              
+              "id": "encode_url"
+            },
+            {
+              
+              "label": "Base32",
+              
+              "id": "Base32"
+            },
+            {
+              "icon": "application",
+              "label": "Hex Digits",
+              
+              "id": "TextHexConverter"
+            },
+            {
+              "label": "Unicode Codec",
+              
+              "id": "UnicodeConversion"
+            },
+            {
+              "label": "Hex <-> Base64",
+              
+              "id": "HexBaseBiConverter"
+            },
+            {
+              "label": "QueryString Codec",
+              
+              "id": "QueryStringConversion"
+            }
+          ],
+          "id": "encode"
+        },
+        {
+          "label": "Escape/UnEscape",
+          "icon": "flow-branch",
+          
+          "children": [
+            {
+              "label": "XML",
+              
+              "id": "escape_xml"
+            },
+            {
+              "label": "HTML",
+              
+              "id": "escape_html"
+            },
+            {
+              "label": "CSV",
+              
+              "id": "escape_csv"
+            },
+            {
+              "label": "Java String",
+              
+              "id": "escape_java"
+            },
+            {
+              "label": "JSON String",
+              
+              "id": "escape_json"
+            },
+            {
+              "label": "JavaScript String",
+              
+              "id": "escape_javascript"
+            }
+          ],
+          "id": "escape"
+        },
+        {
+          "children": [
+            {
+              "label": "PBE Algorithm With SHA1 And RC2",
+              
+              "id": "SymPBEWithSHA1AndRC240"
+            },
+            {
+              "label": "PBE Algorithm With MD5 And DES",
+              
+              "id": "SymPBEWithMD5AndDES"
+            },
+            {
+              "label": "RC6 Algorithm",
+              
+              "id": "SymRC6"
+            },
+            {
+              "label": "RC4 Algorithm",
+              
+              "id": "SymRC4"
+            },
+            {
+              "label": "RC5 Algorithm",
+              
+              "id": "SymRC5"
+            },
+            {
+              "label": "RC2 Algorithm",
+              
+              "id": "SymRC2"
+            },
+            {
+              "label": "TripleDES Algorithm",
+              
+              "id": "SymDESede"
+            },
+            {
+              "label": "Blowfish Algorithm",
+              
+              "id": "SymBlowfish"
+            },
+            {
+              "label": "DES Algorithm",
+              
+              "id": "SymDES"
+            },
+            {
+              "label": "PBE Algorithm With SHA1 And DES",
+              
+              "id": "SymPBEWithSHA1AndDESede"
+            },
+            {
+              "label": "AES Algorithm",
+              
+              "id": "SymAES"
+            },
+            {
+              "label": "ARC4 Algorithm",
+              
+              "id": "SymARCFOUR"
+            }
+          ],
+          "icon": "exchange",
+          "label": "Symmetric Crypto",
+          
+          "id": "Symmetric_Crypto"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "JWT Token Decoder",
+              
+              "id": "JWTDecoder"
+            },
+            {
+              "icon": "application",
+              "label": "JWT Token Encoder",
+              
+              "id": "JWTEncoder"
+            }
+          ],
+          "icon": "shield",
+          "label": "Web Auth",
+          
+          "id": "web_token"
+        },
+        {
+          "children": [
+            {
+              "label": "Asymmetric Encryption(SM2)",
+              
+              "id": "EncryptSM2"
+            },
+            {
+              "label": "Message Digest(SM3)",
+              
+              "id": "EncryptSM3"
+            },
+            {
+              "label": "Symmetric Encryption(SM4)",
+              
+              "id": "EncryptSM4"
+            }
+          ],
+          "icon": "lock",
+          "label": "National Commercial Algorithm",
+          
+          "id": "national_commercial_algorithm"
+        },
+        {
+          "children": [
+            {
+              "label": "RSA Algorithm",
+              
+              "id": "ASymRSA"
+            }
+          ],
+          "icon": "exchange",
+          "label": "Asymmetric Crypto",
+          
+          "id": "Asymmetric_Crypto"
+        },
+        {
+          "children": [
+            {
+              "label": "ZipText",
+              
+              "id": "ZipText"
+            }
+          ],
+          "icon": "archive",
+          "label": "Compress and Decompress",
+          
+          "id": "compress_and_decompress"
+        }
+      ],
+      
+      "id": "codec"
+    },
+    {
+      "label": "Translation Tools",
+      "icon": "translate",
+      "children": [
+        {
+          "icon": "signal-search",
+          "rank": 0,
+          "label": "JSON Translate",
+          
+          "id": "TranslateForJSON"
+        },
+        {
+          "label": "Text Translate",
+          "icon": "search-text",
+          
+          "id": "texttranslate"
+        },
+        {
+          "icon": "data-lineage",
+          "label": "Properties Translate",
+          
+          "id": "TranslateForProperties"
+        },
+        {
+          "icon": "new-text-box",
+          "label": "PlainText Translate",
+          
+          "id": "TranslateForCustomizer"
+        }
+      ],
+      
+      "id": "translate"
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Lorem Ipsum",
+              
+              "id": "LoremC"
+            },
+            {
+              "icon": "application",
+              "label": "Sundry Text",
+              
+              "id": "NamePubC"
+            }
+          ],
+          "icon": "diagram-tree",
+          "label": "Mock Data Tools",
+          
+          "id": "mock_data_tools"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "HTML Previewer",
+              "id": "WebWorld_html",
+              
+              "raw_label": "HTML Previewer"
+            },
+            {
+              "icon": "application",
+              "label": "LESS to CSS",
+              "id": "WebWorld_less_to_css",
+              
+              "raw_label": "LESS to CSS"
+            }
+          ],
+          "icon": "crown",
+          "label": "Web World",
+          
+          "id": "web_world_menu"
+        },
+        {
+          "children": [
+            {
+              
+              "icon": "application",
+              "label": "Groovy",
+              
+              "id": "PlayGroundGroovy"
+            },
+            {
+              
+              "icon": "application",
+              "label": "Node.js",
+              
+              "id": "PlayGroundNodeJS"
+            }
+          ],
+          "icon": "lab-test",
+          "label": "Programming",
+          
+          "id": "train_lang"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Regex Tester",
+              
+              "id": "RegexTester"
+            }
+          ],
+          "icon": "derive-column",
+          "label": "Expression Tools",
+          
+          "raw_label": "Expression Tools"
+        },
+        {
+          "children": [
+            {
+              
+              "icon": "application",
+              "label": "doT.js",
+              
+              "id": "RenderDoT"
+            },
+            {
+              
+              "icon": "application",
+              "label": "HandleBars.js",
+              
+              "id": "RenderHandleBars"
+            }
+          ],
+          "icon": "geofence",
+          "label": "Template Renderer",
+          
+          "id": "tempalte_renderer"
+        }
+      ],
+      "icon": "cycle",
+      "label": "Training Ground",
+      
+      "id": "train_ground"
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Available Ports",
+              
+              "id": "IPLocalPortChecker"
+            },
+            {
+              "icon": "application",
+              "label": "IPv4 Masker",
+              
+              "id": "IPAddrMasker"
+            },
+            {
+              "icon": "application",
+              "label": "IPv4 <-> Long",
+              
+              "id": "IPLongConverter"
+            },
+            {
+              "icon": "application",
+              "label": "DNS Lookup",
+              
+              "id": "IPAddrDNSQuery"
+            }
+          ],
+          "icon": "ip-address",
+          "label": "IP Tools",
+          
+          "id": "sys_ip_tools"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Curl Command Parser",
+              
+              "id": "CurlParser"
+            },
+            {
+              "icon": "application",
+              "label": "Curl to API Request",
+              
+              "id": "CurlToAPI"
+            }
+          ],
+          "icon": "series-search",
+          "label": "App Layer Helper",
+          
+          "id": "app_layer_helper"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "IPv4 Utilities",
+              "id": "IPv4Calculator",
+              
+              "raw_label": "IPv4 Utilities"
+            },
+            {
+              "icon": "application",
+              "label": "IPv4 Network Calculator",
+              "id": "IPv4Calculator_ipv4_detail",
+              
+              "raw_label": "IPv4 Network Calculator"
+            },
+            {
+              "icon": "application",
+              "label": "IPv4 Address Convertor",
+              "id": "IPv4Calculator_ipv4_addr",
+              
+              "raw_label": "IPv4 Address Convertor"
+            },
+            {
+              "icon": "application",
+              "label": "Get Subnet Mask by Netmask Bits",
+              "id": "IPv4Calculator_get_subnet_mask_by_bits",
+              
+              "raw_label": "Get Subnet Mask by Netmask Bits"
+            },
+            {
+              "icon": "application",
+              "label": "Convert Subnet Mask by Netmask Bits",
+              "id": "IPv4Calculator_convert_subnet_mask",
+              
+              "raw_label": "Convert Subnet Mask by Netmask Bits"
+            },
+            {
+              "icon": "application",
+              "label": "Get Subnet Mask via the Number of Host",
+              "id": "IPv4Calculator_get_subnet_mask_by_host",
+              
+              "raw_label": "Get Subnet Mask via the Number of Host"
+            },
+            {
+              "icon": "application",
+              "label": "Nodes/Hosts Calculator",
+              "id": "IPv4Calculator_host_nodes_calculator",
+              
+              "raw_label": "Nodes/Hosts Calculator"
+            },
+            {
+              "icon": "application",
+              "label": "Subnet Mask Convertor",
+              "id": "IPv4Calculator_subnet_format_convertor",
+              
+              "raw_label": "Subnet Mask Convertor"
+            },
+            {
+              "icon": "application",
+              "label": "Subnet Mask Inversion",
+              "id": "IPv4Calculator_subnet_mask_inversion",
+              
+              "raw_label": "Subnet Mask Inversion"
+            }
+          ],
+          "icon": "antenna",
+          "label": "Internet Layer Helper",
+          
+          "id": "internet_layer_helper"
+        }
+      ],
+      "icon": "cell-tower",
+      "label": "Network Analysis",
+      
+      "id": "sys_network"
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Front-End Compatibility Checker",
+              
+              "id": "Caniuse"
+            }
+          ],
+          "icon": "buggy",
+          "label": "Front-End Tools",
+          
+          "id": "frontend_tools"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "ManPage for Linux",
+              
+              "id": "LinuxManPage"
+            },
+            {
+              "icon": "application",
+              "label": "CDN Static Resource",
+              
+              "id": "CDNTool100"
+            }
+          ],
+          "icon": "inbox-search",
+          "label": "General Docs",
+          
+          "id": "unix_like_os"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Install JDK/JRE",
+              
+              "id": "JDKJRE100"
+            },
+            {
+              "icon": "home",
+              "label": "Resources Navigator",
+              "id": "SoftwareCenter_index",
+              
+              "raw_label": "Resources Navigator"
+            }
+          ],
+          "icon": "inbox-geo",
+          "label": "SDK Resources",
+          
+          "id": "sdk_downloader"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Maven Repository",
+              "id": "MavenRepo_main",
+              
+              "raw_label": "Maven Repository"
+            },
+            {
+              "icon": "application",
+              "label": "Analyze My POM.xml",
+              "id": "MavenRepo_analyze_my_pom",
+              
+              "raw_label": "Analyze My POM.xml"
+            }
+          ],
+          "icon": "series-configuration",
+          "label": "Java Tools",
+          
+          "id": "java_docs"
+        }
+      ],
+      "icon": "hat",
+      "label": "Docs Center",
+      
+      "id": "doc_centre"
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Sync My Files",
+              
+              "id": "FileSync"
+            },
+            {
+              "icon": "application",
+              "label": "File History",
+              
+              "id": "FileHistory"
+            }
+          ],
+          "icon": "history",
+          "label": "File System Helper",
+          
+          "id": "fs_tool"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Archive My Files",
+              
+              "id": "FileArchive"
+            }
+          ],
+          "icon": "unarchive",
+          "label": "Backup Helper",
+          
+          "id": "backup_helper"
+        },
+        {
+          "children": [
+            {
+              "icon": "application",
+              "label": "Command Scheduler",
+              
+              "id": "CmdScheduler"
+            }
+          ],
+          "icon": "git-push",
+          "label": "Integrated System Helper",
+          
+          "id": "integrated_system_helper"
+        }
+      ],
+      "icon": "diagram-tree",
+      "label": "System Tools",
+      
+      "id": "system_tools"
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "label": "Keyboard Event",
+              
+              "id": "KeyboardListen"
+            }
+          ],
+          "icon": "third-party",
+          "label": "W3C Standard",
+          
+          "id": "w3ctools"
+        },
+        {
+          "children": [
+            {
+              "label": "React Style Conversion",
+              
+              "id": "ReactReplaceStyle"
+            },
+            {
+              "label": "React ClassName Conversion",
+              
+              "id": "ReactReplaceClz"
+            }
+          ],
+          "icon": "prescription",
+          "label": "React Framework",
+          
+          "id": "react_frame_work"
+        }
+      ],
+      "icon": "globe",
+      "label": "FrontEnd Tools",
+      
+      "id": "frontend_tools"
+    },
+    {
+      "children": [
+        {
+          "icon": "calculator",
+          "label": "Basic Calculator",
+          
+          "id": "BasicCalc"
+        },
+        {
+          "icon": "numerical",
+          "label": "Binary-Coded Decimal",
+          
+          "id": "MathBCD"
+        },
+        {
+          "icon": "clean",
+          "label": "HexBinDecOct",
+          
+          "id": "NumberDigits"
+        }
+      ],
+      "icon": "numerical",
+      "label": "Math Tools",
+      
+      "id": "mathTools"
+    },
+    {
+      "children": [
+        {
+          "icon": "clipboard",
+          "label": "Clipboard",
+          
+          "id": "NotesClipBoard"
+        }
+      ],
+      "icon": "paperclip",
+      "label": "Notes",
+      
+      "id": "sysnotes"
+    }
+  ]
+}

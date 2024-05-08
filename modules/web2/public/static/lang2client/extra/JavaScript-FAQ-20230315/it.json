@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "Cos'è JavaScript?",
+    "JS-DOM-API-007": "Come interagisce JavaScript con il DOM?",
+    "JS-DOM-API-Explanation-008": "JavaScript fornisce un'API DOM (Document Object Model) per manipolare HTML e CSS, consentendo agli sviluppatori di modificare dinamicamente contenuto, stile e ascoltatori di eventi.",
+    "JS-DOM-Example-009": "Ad esempio, puoi selezionare un elemento e modificarne il contenuto testuale: `document.getElementById('myElement').textContent = 'New Text';`",
+    "JS-Data-Types-010": "Quali sono i tipi di dati in JavaScript?",
+    "JS-Data-Types-List-011": "JavaScript supporta vari tipi di dati, inclusi quelli primitivi come stringa, numero, booleano, null, non definito e simbolo, nonché tipi complessi come oggetto e array.",
+    "JS-Def-002": "JavaScript (JS) è un linguaggio di programmazione interpretato di alto livello ampiamente utilizzato per creare applicazioni Web, migliorare le interfacce utente e creare logica lato server con Node.js.",
+    "JS-Event-Loop-013": "Cos'è il ciclo di eventi in JavaScript?",
+    "JS-Event-Loop-Explanation-014": "Il ciclo di eventi è una parte fondamentale del modello di concorrenza di JavaScript, che consente l'esecuzione asincrona tramite callback, promesse e async/await.",
+    "JS-Event-Loop-Process-015": "Esegue prima lo script principale, quindi esegue eventuali funzioni di callback quando si verificano gli eventi associati (come input dell'utente o risposte di rete), gestendoli tramite un sistema di code.",
+    "JS-Function-Syntax-006": "Le funzioni vengono definite utilizzando la parola chiave \"funzione\" seguita dal nome della funzione e dai parametri racchiusi tra parentesi. Il corpo della funzione è racchiuso tra parentesi graffe: `function greet(name) { console.log(`Hello, ${name}!`); }`",
+    "JS-Purpose-003": "Inizialmente è stato sviluppato da Brendan Eich presso Netscape nel 1995 e da allora si è evoluto in uno dei linguaggi più popolari, supportato da tutti i principali browser Web e piattaforme come Electron e React Native.",
+    "JS-Syntax-004": "Qual è la sintassi di base di JavaScript?",
+    "JS-Type-Checking-012": "Il controllo del tipo può essere effettuato utilizzando i costruttori (`typeof value === 'string'`) o l'operatore `instanceof` per gli oggetti che ereditano dai costruttori incorporati (ad esempio, `value exampleof Array`).",
+    "MDN-DOM-API": "MDN Web Docs - Manipolazione dei documenti",
+    "MDN-Event-Loop": "Documenti Web MDN - Ciclo di eventi",
+    "MDN-JS-Guide": "Documenti Web MDN - Guida JavaScript",
+    "MDN-JS-Types": "Documenti Web MDN: tipi di dati e strutture di dati"
+}

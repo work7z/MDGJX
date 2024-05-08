@@ -1,0 +1,33 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将这些文本放入一个名为`i18n`的对象中，其中每个文本的键值设置为1。以下是提取后的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "Contain Image": 1,
+    "Scales an image to the specified width and height, maintaining the aspect ratio. The image may be letterboxed.": 1,
+    "Width": 1,
+    "Height": 1,
+    "Horizontal align": 1,
+    "Left": 1,
+    "Center": 1,
+    "Right": 1,
+    "Vertical align": 1,
+    "Top": 1,
+    "Middle": 1,
+    "Bottom": 1,
+    "Resizing algorithm": 1,
+    "Nearest Neighbour": 1,
+    "Bilinear": 1,
+    "Bicubic": 1,
+    "Hermite": 1,
+    "Bezier": 1,
+    "Opaque background": 1,
+    "Invalid file type.": 1,
+    "Error loading image.": 1,
+    "Containing image...": 1,
+    "Error containing image.": 1
+  }
+}
+```
+
+这个JSON对象包含了代码中所有可能显示给用户的文本，例如操作名称、描述、参数名称、选项值以及错误消息。每个文本的值都被设置为1，按照您的要求进行了配置。

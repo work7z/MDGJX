@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "Pasang OpenSSL pada sistem anda dan pautkan dengan perpustakaan 'libssl' dan 'libcrypto' semasa membina aplikasi C++ anda.",
+    "md5-cpp-openssl-0001": "C++ menggunakan perpustakaan OpenSSL untuk menjana cincang MD5. Anda perlu memasang OpenSSL dan memautkannya dalam projek anda.",
+    "md5-cpp-use-openssl-0003": "Coretan mencipta fungsi 'getMD5' yang mengambil rentetan input, mengira cincangan MD5nya menggunakan API MD5 OpenSSL dan mengembalikan cincangan itu sebagai rentetan perenambelasan. Tampalkan kod ini ke dalam program C++ anda dan panggil fungsi 'getMD5' dengan input yang anda inginkan.",
+    "md5-csharp-built-in-0001": "Dalam C#, kelas 'System.Security.Cryptography.MD5' digunakan untuk menjana cincang MD5.",
+    "md5-csharp-no-install-0002": "Tiada pemasangan perpustakaan luaran diperlukan kerana ia adalah sebahagian daripada .NET Framework/Core.",
+    "md5-csharp-use-0003": "Coretan ini mencipta tika MD5, menukar rentetan input kepada bait, mengira cincang dan akhirnya mengekod cincang dalam format Base64. Letakkan kod ini dalam titik masuk aplikasi C# anda dan jalankannya untuk mendapatkan cincangan MD5 yang dikodkan Base64.",
+    "md5-java-built-in-0001": "Java menggunakan kelas 'java.security.MessageDigest' untuk menjana cincang MD5.",
+    "md5-java-imports-0002": "Anda perlu mengimport 'java.security.MessageDigest' dan 'java.util.Base64' untuk pencincangan dan pengekodan hasilnya.",
+    "md5-java-use-0003": "Coretan mendapat contoh algoritma ringkasan MD5, mengemas kininya dengan bait rentetan input dan kemudian mengekodkan cincangan yang terhasil ke dalam rentetan Base64. Salin kod ini ke dalam kelas Java dan laksanakan kaedah utamanya untuk mendapatkan cincangan MD5 yang dikodkan Base64.",
+    "md5-nodejs-built-in-0001": "Dalam Node.js, modul 'crypto' terbina dalam digunakan untuk menjana cincang MD5.",
+    "md5-nodejs-no-install-0002": "Tiada pemasangan perpustakaan luaran diperlukan kerana 'crypto' diprapasang dengan Node.js.",
+    "md5-nodejs-use-0003": "Coretan mencipta objek cincang menggunakan `createHash('md5')`, mengemas kininya dengan rentetan input dan kemudian menukar ringkasan kepada format perenambelasan melalui `.digest('hex')`. Tampalkan kod ini ke dalam skrip Node.js anda dan laksanakannya untuk mendapatkan cincangan MD5 bagi nilai input.",
+    "md5-php-built-in-0001": "PHP mempunyai fungsi terbina dalam 'md5()' untuk menjana cincang MD5.",
+    "md5-php-no-install-0002": "Tiada pemasangan perpustakaan luaran diperlukan kerana 'md5()' diprapasang dalam PHP.",
+    "md5-php-use-0003": "Contoh mudah ini mentakrifkan fungsi 'getMD5' yang memanggil fungsi PHP 'md5()' pada rentetan input yang disediakan. Salin kod ini ke dalam fail PHP, simpannya dengan sambungan .php dan jalankannya dalam pelayan web atau melalui baris arahan untuk melihat cincangan MD5 bagi nilai input.",
+    "md5-python-built-in-0001": "Python menggunakan perpustakaan 'hashlib' terbina dalam untuk menjana cincang MD5.",
+    "md5-python-no-install-0002": "Tiada pemasangan tambahan diperlukan kerana 'hashlib' disertakan dengan Python.",
+    "md5-python-use-0003": "Templat yang disediakan mengekod rentetan input kepada bait sebelum mencipta objek cincang MD5. Kaedah '.hexdigest()' kemudian dipanggil pada objek cincang untuk mendapatkan cincang MD5 dalam bentuk perenambelasan. Salin kod ini ke dalam skrip Python dan jalankannya untuk mendapatkan cincangan MD5."
+}

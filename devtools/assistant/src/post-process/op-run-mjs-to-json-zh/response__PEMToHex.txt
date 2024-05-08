@@ -1,0 +1,26 @@
+根据您的要求，下面是提炼出的JSON格式数据，其中包含了代码中所有显示给用户的自然文本，并进行了适当的中文翻译。
+
+```json
+{
+  "i18n": {
+    "PEM to Hex": "PEM转十六进制",
+    "Converts PEM (Privacy Enhanced Mail) format to a hexadecimal DER (Distinguished Encoding Rules) string.": "将PEM（隐私增强邮件）格式转换为十六进制DER（区分编码规则）字符串。",
+    "PEM footer '{footer}' not found": "未找到PEM页脚 '{footer}'"
+  }
+}
+```
+
+以下是详细步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本赋予一个默认值123。
+3. 根据代码的实际功能，将自然文本翻译成中文，并替换掉默认值123。
+4. 输出JSON结果。
+
+在上述JSON中，我提取了以下自然文本：
+
+- "PEM to Hex"：操作名称。
+- "Converts PEM (Privacy Enhanced Mail) format to a hexadecimal DER (Distinguished Encoding Rules) string."：操作描述。
+- "PEM footer '{footer}' not found"：错误信息。
+
+这些文本的中文翻译是根据代码的上下文和功能进行的。希望这符合您的要求。

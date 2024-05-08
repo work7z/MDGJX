@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Po integracji skopiuj dostarczony szablon do programu C++ i zastąp symbol zastępczy rzeczywistą zakodowaną wartością przed uruchomieniem programu.",
+    "c6p4n": "W dostarczonym szablonie zastąp symbol zastępczy w części dekodowanej rzeczywistymi bajtami zakodowanymi w formacie Base58 (z przedrostkiem „b” w przypadku ciągu binarnego), a następnie uruchom skrypt.",
+    "d2w6e": "Sklonuj/pobierz repozytorium, dołącz plik nagłówkowy base58.h do swojego projektu i skompiluj/połącz z plikami źródłowymi zgodnie z instrukcjami projektu.",
+    "d8w1b": "Nie jest wymagana żadna dodatkowa instalacja, ponieważ jest dostarczana ze standardową biblioteką. Upewnij się jednak, że Twoja wersja języka Python jest na tyle aktualna, że ​​zawiera tę funkcję.",
+    "f9t2z": "Dodaj zależność do swojego projektu Maven, dodając `<dependent> <groupId>org.bitcoinj</groupId> <artifactId>bitcoinj-core</artifactId> <version>...</version> </dependent>` gdzie wersja należy zastąpić najnowszą wersją.",
+    "g4h7s": "W przypadku C++ możesz użyć bibliotek „bitcoin-unlimited-libraries”, które zapewniają funkcjonalność Base58.",
+    "j9s5r": "W przypadku języka C# użyj biblioteki „NBitcoin” do obsługi kodowania i dekodowania Base58.",
+    "k3m2e": "Skopiuj dostarczony szablon do nowego pliku Go, zastąp symbol zastępczy rzeczywistą zakodowaną wartością, a następnie uruchom plik za pomocą polecenia „go run yourfile.go”",
+    "p6e3n": "Zainstaluj pakiet za pośrednictwem NuGet, uruchamiając „Install-Package NBitcoin” w konsoli Menedżera pakietów lub dodaj go za pomocą Menedżera pakietów NuGet.",
+    "q6n1r": "Po zainstalowaniu biblioteki skopiuj kod szablonu do klasy Java i zastąp symbol zastępczy rzeczywistą zakodowaną wartością przed uruchomieniem kodu.",
+    "r4n6v": "Dodaj zależność do swojego projektu, uruchamiając polecenie „go get github.com/btcsuite/btcutil”. Spowoduje to pobranie i zainstalowanie pakietu.",
+    "u7i9b": "W przypadku Go użyj pakietu „btcutil” dostępnego w GitHub, a konkretnie jego modułu base58.",
+    "u9g6t": "Aby uruchomić ten kod, musisz zainstalować pakiet „base-x”, który obsługuje kodowanie i dekodowanie Base58.",
+    "v5k3r": "Ta biblioteka zapewnia elastyczny interfejs API do tworzenia podstawowych kodowań, w tym Base58. Po zainstalowaniu zastąp symbol zastępczy w sekcji dekodowania rzeczywistą zakodowaną wartością i wykonaj skrypt.",
+    "x2c5e": "Wbudowany moduł Pythona „base58” może być używany do kodowania i dekodowania Base58.",
+    "y3m7k": "W przypadku języka Java użyj biblioteki „bitcoinj”, która zawiera funkcję kodowania i dekodowania Base58.",
+    "z7n1m": "Zainstaluj go przez npm, uruchamiając `npm install base-x` lub `yarn add base-x`.",
+    "z8em2t": "Po instalacji skopiuj dostarczony szablon do aplikacji konsolowej C# i zastąp symbol zastępczy rzeczywistą zakodowaną wartością przed uruchomieniem programu."
+}

@@ -1,0 +1,23 @@
+{
+    "c1p3b": "整合後，將提供的範本複製到您的 C++ 程式中，並在執行程式之前將佔位符替換為實際編碼值。",
+    "c6p4n": "安裝庫後，將提供的範本複製到 Python 腳本中並運行它。該程式庫提供了用於在位元組和 Base45 編碼字串之間進行轉換的內建函數。",
+    "d2w6e": "克隆/下載儲存庫並將提供的頭文件包含在您的專案中。根據專案文檔編譯並連結原始檔。",
+    "d8w1b": "您可以透過執行“pip install base45”或“python -m pip install base45”來使用 pip 來執行此操作。",
+    "f7t1z": "手動或透過 Swift Package Manager (SPM) 等套件管理器將程式庫新增至您的 Xcode 專案。",
+    "f9t2z": "將以下內容加入您的pom.xml 檔案：`<dependency> <groupId>org.iso</groupId> <artifactId>iso-base45</artifactId> <version>...</version> </dependency >`，其中版本是最新版本。",
+    "g4h7s": "對於 C++，您可以使用“base45-cpp”庫，該庫作為 GitHub 儲存庫提供。",
+    "j8s6r": "對於 Kotlin，您可以使用包含 Base45 功能的「barcode-core」庫。",
+    "j9s5r": "對於 C#，您可以使用 NuGet 上提供的「Base45」庫。",
+    "p5e9n": "將庫新增為 Gradle 建置腳本中的依賴項。例如，在應用程式層級 build.gradle 檔案中，新增帶有最新版本號碼的「implementation 'com.bottlerocketstudios:barcode-core:...'」。",
+    "p6e3n": "要安裝它，請在套件管理器控製台中執行「Install-Package Base45」或透過 NuGet 套件管理器新增相依性。",
+    "q2n9r": "新增後，將提供的範本複製到 Swift 檔案中。請註意，在此範例中，我們使用假設場景，其中您擁有 Base45 字串的 Base64 表示形式；在運行程式碼之前將其替換為實際的編碼值。",
+    "q6n1r": "該庫提供了處理 Base45 轉換的編碼器和解碼器類別。新增依賴項後，將模板程式碼複製到 Java 類別中並執行它。",
+    "u9g6t": "要運行此程式碼，您需要安裝“@digitalbazaar/base45”套件。",
+    "v5k3r": "該函式庫為 Node.js 應用程式中的 Base45 編碼和解碼提供了一個簡單的 API。安裝後，將提供的範本複製到腳本中並使用 Node.js 解釋器執行。",
+    "x2c5e": "要在 Python 中使用 Base45，您需要安裝「base45」庫。",
+    "y3m7k": "對於 Java，請使用「iso-base45」庫，該庫可以作為 Maven 依賴項包含在您的專案中。",
+    "y9m3k": "對於 Swift，您可以使用 GitHub 上提供的「Base45」庫。",
+    "z3m1t": "新增依賴項並同步專案後，將提供的範本複製到 Kotlin 類別中，在運行程式碼之前將佔位符替換為實際編碼值。",
+    "z7n1m": "透過執行「npm install @digitalbazaar/base45」或「yarn add @digitalbazaar/base45」使用 npm 或yarn 來安裝它。",
+    "z8qm2t": "此庫提供用於 Base45 操作的編碼器和解碼器類別。將模板程式碼複製到 C# 控製台應用程式中，並在安裝套件後執行它。"
+}

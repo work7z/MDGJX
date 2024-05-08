@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "Zainstaluj OpenSSL w swoim systemie i połącz się z bibliotekami „libssl” i „libcrypto” podczas tworzenia aplikacji w C++.",
+    "md5-cpp-openssl-0001": "C++ używa biblioteki OpenSSL do generowania skrótów MD5. Musisz zainstalować OpenSSL i połączyć się z nim w swoim projekcie.",
+    "md5-cpp-use-openssl-0003": "Fragment tworzy funkcję „getMD5”, która pobiera ciąg wejściowy, oblicza wartość skrótu MD5 przy użyciu interfejsu API MD5 OpenSSL i zwraca wartość skrótu w postaci ciągu szesnastkowego. Wklej ten kod do swojego programu w C++ i wywołaj funkcję „getMD5”, podając żądane dane wejściowe.",
+    "md5-csharp-built-in-0001": "W języku C# do generowania skrótów MD5 używana jest klasa „System.Security.Cryptography.MD5”.",
+    "md5-csharp-no-install-0002": "Nie jest wymagana instalacja biblioteki zewnętrznej, ponieważ jest ona częścią .NET Framework/Core.",
+    "md5-csharp-use-0003": "Ten fragment kodu tworzy instancję MD5, konwertuje ciąg wejściowy na bajty, oblicza skrót i na koniec koduje skrót w formacie Base64. Umieść ten kod w punkcie wejścia aplikacji C# i uruchom go, aby uzyskać skrót MD5 zakodowany w formacie Base64.",
+    "md5-java-built-in-0001": "Java używa klasy „java.security.MessageDigest” do generowania skrótów MD5.",
+    "md5-java-imports-0002": "Musisz zaimportować „java.security.MessageDigest” i „java.util.Base64” w celu zaszyfrowania i zakodowania wyniku.",
+    "md5-java-use-0003": "Fragment pobiera instancję algorytmu skrótu MD5, aktualizuje ją bajtami ciągu wejściowego, a następnie koduje wynikowy skrót w ciągu Base64. Skopiuj ten kod do klasy Java i wykonaj jej główną metodę, aby uzyskać skrót MD5 zakodowany w formacie Base64.",
+    "md5-nodejs-built-in-0001": "W Node.js wbudowany moduł „krypto” służy do generowania skrótów MD5.",
+    "md5-nodejs-no-install-0002": "Nie jest wymagana instalacja biblioteki zewnętrznej, ponieważ „crypto” jest preinstalowane w Node.js.",
+    "md5-nodejs-use-0003": "Fragment kodu tworzy obiekt mieszający za pomocą `createHash('md5')`, aktualizuje go ciągiem wejściowym, a następnie konwertuje skrót do formatu szesnastkowego za pomocą `.digest('hex')`. Wklej ten kod do skryptu Node.js i wykonaj go, aby uzyskać skrót MD5 wartości wejściowej.",
+    "md5-php-built-in-0001": "PHP ma wbudowaną funkcję „md5()” do generowania skrótów MD5.",
+    "md5-php-no-install-0002": "Nie jest wymagana instalacja zewnętrznej biblioteki, ponieważ funkcja „md5()” jest preinstalowana w PHP.",
+    "md5-php-use-0003": "Ten prosty przykład definiuje funkcję „getMD5”, która wywołuje funkcję PHP „md5()” na podanym ciągu wejściowym. Skopiuj ten kod do pliku PHP, zapisz go z rozszerzeniem .php i uruchom go na serwerze WWW lub za pomocą wiersza poleceń, aby zobaczyć skrót MD5 wartości wejściowej.",
+    "md5-python-built-in-0001": "Python używa wbudowanej biblioteki „hashlib” do generowania skrótów MD5.",
+    "md5-python-no-install-0002": "Nie jest wymagana żadna dodatkowa instalacja, ponieważ „hashlib” jest standardowym wyposażeniem Pythona.",
+    "md5-python-use-0003": "Dostarczony szablon koduje ciąg wejściowy w bajtach przed utworzeniem obiektu skrótu MD5. Następnie wywoływana jest metoda „.hexdigest()” na obiekcie hash w celu pobrania skrótu MD5 w postaci szesnastkowej. Skopiuj ten kod do skryptu Pythona i uruchom go, aby uzyskać skrót MD5."
+}

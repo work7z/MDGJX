@@ -1,0 +1,22 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的i18n对象，并附上中文翻译：
+
+```json
+{
+  "i18n": {
+    "The Bifid cipher is a cipher which uses a Polybius square in conjunction with transposition, which can be fairly difficult to decipher without knowing the alphabet keyword.": "Bifid密码是一种结合了Polybius方格和换位技术的密码，不知道字母关键词的情况下很难解密。",
+    "The key must consist only of letters in the English alphabet": "密钥必须仅包含英文字母"
+  }
+}
+```
+
+以下是详细的步骤说明：
+
+1. 在代码中找到的自然文本如下：
+   - "The Bifid cipher is a cipher which uses a Polybius square in conjunction with transposition, which can be fairly difficult to decipher without knowing the alphabet keyword."，这是对Bifid密码的描述。
+   - "The key must consist only of letters in the English alphabet"，这是关于密钥输入的提示。
+
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本赋予一个默认值`123`。
+
+3. 根据代码的实际功能，我提供了上述文本的中文翻译，并将其替换了默认值`123`。
+
+4. 输出的JSON格式如上所示，遵循了您提供的示例1的结构。

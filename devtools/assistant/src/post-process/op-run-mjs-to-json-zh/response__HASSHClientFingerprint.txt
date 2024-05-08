@@ -1,0 +1,21 @@
+根据您的要求，我首先找出所有显示给用户的自然文本，然后将其放入一个名为`i18n`的对象中，并给每个文本赋予一个默认值123。接着，我将这些文本翻译成中文，并替换掉原来的默认值。以下是结果：
+
+```json
+{
+  "i18n": {
+    "HASSH Client Fingerprint": "HASSH客户端指纹",
+    "Generates a HASSH fingerprint to help identify SSH clients based on hashing together values from the Client Key Exchange Init message.": "通过将客户端密钥交换初始化消息中的值进行哈希处理，生成HASSH指纹以帮助识别SSH客户端。",
+    "Input: A hex stream of the SSH_MSG_KEXINIT packet application layer from Client to Server.": "输入：从客户端到服务器的SSH_MSG_KEXINIT数据包应用层的十六进制流。",
+    "Incorrect packet length.": "数据包长度不正确。",
+    "Not a Key Exchange Init.": "不是密钥交换初始化。",
+    "Hash digest:": "哈希摘要：",
+    "Full HASSH algorithms string:": "完整的HASSH算法字符串：",
+    "Key Exchange Algorithms:": "密钥交换算法：",
+    "Encryption Algorithms Client to Server:": "客户端到服务器的加密算法：",
+    "MAC Algorithms Client to Server:": "客户端到服务器的MAC算法：",
+    "Compression Algorithms Client to Server:": "客户端到服务器的压缩算法："
+  }
+}
+```
+
+这个JSON对象包含了代码中所有用户可见的自然文本及其对应的中文翻译。请注意，某些技术术语（如HASSH、SSH、MAC等）在翻译时保留了其英文形式，因为它们在技术领域具有特定的含义，并且通常不进行翻译。

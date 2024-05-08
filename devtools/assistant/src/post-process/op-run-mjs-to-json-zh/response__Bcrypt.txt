@@ -1,0 +1,17 @@
+根据您的要求，以下是代码中提取的自然文本，并按照指示转换为JSON格式，其中包含英文原文和对应的中文翻译。
+
+```json
+{
+  "i18n": {
+    "bcrypt is a password hashing function designed by Niels Provos and David Mazières, based on the Blowfish cipher, and presented at USENIX in 1999. Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function: over time, the iteration count (rounds) can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power.": "bcrypt是由Niels Provos和David Mazières设计的密码散列函数，基于Blowfish算法，并于1999年在USENIX会议上提出。除了包含盐值以防止彩虹表攻击外，bcrypt还是一个自适应函数：随着时间的推移，可以通过增加迭代次数（轮数）来使其变慢，即使计算能力增强，也能抵抗暴力破解攻击。",
+    "Enter the password in the input to generate its hash.": "在输入框中输入密码以生成其散列值。"
+  }
+}
+```
+
+在这个JSON对象中，每个key都是代码中的自然文本，而value则是相应的中文翻译。以下是文本的提取和翻译过程：
+
+1. 描述字段 `description` 中的文本被提取并翻译。
+2. 输入提示 `Enter the password in the input to generate its hash.` 也被提取并翻译。
+
+请注意，示例中的value值“123”被替换为实际的中文翻译。由于代码中未提供其他自然文本，所以这里只包含了这两项。

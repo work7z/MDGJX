@@ -1,0 +1,25 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作：
+
+1. 提炼英文自然文本。
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本赋予一个键（key）。
+3. 根据代码的实际功能，给出这些自然文本的中文翻译作为值（value）。
+4. 输出JSON结果。
+
+下面是结果：
+
+```json
+{
+  "i18n": {
+    "Split Colour Channels": "分离颜色通道",
+    "Splits the given image into its red, green and blue colour channels.": "将给定的图像分离为红色、绿色和蓝色颜色通道。",
+    "Invalid file type.": "无效的文件类型。",
+    "Could not split red channel: ${err}": "无法分离红色通道：${err}",
+    "Could not split green channel: ${err}": "无法分离绿色通道：${err}",
+    "Could not split blue channel: ${err}": "无法分离蓝色通道：${err}"
+  }
+}
+```
+
+请注意，在翻译中，我保留了错误信息中的`${err}`占位符，这是因为在实际代码中，它会替换为具体的错误信息。
+
+这样的JSON对象可以被用于国际化（i18n）库，以便在不同的语言环境中显示正确的文本。

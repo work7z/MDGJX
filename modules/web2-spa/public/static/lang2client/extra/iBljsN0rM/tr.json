@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Entegre edildikten sonra, sağlanan şablonu C++ programınıza kopyalayın ve programı çalıştırmadan önce yer tutucuyu gerçek kodlanmış değerle değiştirin.",
+    "c6p4n": "Sağlanan şablonda, kod çözme kısmındaki yer tutucuyu gerçek Base58 kodlu baytlarla (ikili dize için 'b' önekiyle) değiştirin ve ardından betiği çalıştırın.",
+    "d2w6e": "Depoyu kopyalayın/indirin, base58.h başlık dosyasını projenize ekleyin ve projenin talimatlarına göre kaynak dosyalara göre derleyin/bağlantı kurun.",
+    "d8w1b": "Standart kütüphaneyle birlikte geldiğinden ek kuruluma gerek yoktur. Ancak Python sürümünüzün bu işlevi içerecek kadar yeni olduğundan emin olun.",
+    "f9t2z": "Versiyonun bulunduğu yere `<dependency> <groupId>org.bitcoinj</groupId> <artifactId>bitcoinj-core</artifactId> <version>...</version> </dependency>` ekleyerek bağımlılığı Maven projenize ekleyin. en son sürümle değiştirilmelidir.",
+    "g4h7s": "C++ için Base58 işlevselliği sağlayan 'bitcoin-unlimited-libraries'i kullanabilirsiniz.",
+    "j9s5r": "C# için Base58 kodlama ve kod çözme işlemlerini gerçekleştirmek üzere 'NBitcoin' kitaplığını kullanın.",
+    "k3m2e": "Sağlanan şablonu yeni bir Go dosyasına kopyalayın, yer tutucuyu gerçek kodlanmış değerle değiştirin ve ardından \"go run yourfile.go\"yu kullanarak dosyayı çalıştırın.",
+    "p6e3n": "Paketi, Paket Yönetici Konsolu'nda \"Install-Package NBitcoin\"i çalıştırarak NuGet aracılığıyla yükleyin veya NuGet Paket Yöneticisi aracılığıyla ekleyin.",
+    "q6n1r": "Kitaplığı yükledikten sonra şablon kodunu bir Java sınıfına kopyalayın ve kodu çalıştırmadan önce yer tutucuyu gerçek kodlanmış değerle değiştirin.",
+    "r4n6v": "'go get github.com/btcsuite/btcutil' komutunu çalıştırarak projenize bağımlılığı ekleyin. Bu paketi indirip yükleyecektir.",
+    "u7i9b": "Go için GitHub'da bulunan 'btcutil' paketini, özellikle de base58 modülünü kullanın.",
+    "u9g6t": "Bu kodu çalıştırmak için Base58 kodlama ve kod çözmeyi destekleyen 'base-x' paketini kurmanız gerekir.",
+    "v5k3r": "Bu kitaplık, Base58 de dahil olmak üzere temel kodlamalar oluşturmak için esnek bir API sağlar. Kurulduktan sonra kod çözme bölümündeki yer tutucuyu gerçek kodlanmış değerle değiştirin ve komut dosyasını çalıştırın.",
+    "x2c5e": "Python'un yerleşik 'base58' modülü, Base58 kodlama ve kod çözme için kullanılabilir.",
+    "y3m7k": "Java için Base58 kodlama ve kod çözme işlevselliğini içeren 'bitcoinj' kitaplığını kullanın.",
+    "z7n1m": "'npm install base-x' veya 'yarn add base-x' çalıştırarak npm aracılığıyla yükleyin.",
+    "z8em2t": "Kurulumdan sonra, sağlanan şablonu bir C# konsol uygulamasına kopyalayın ve programı çalıştırmadan önce yer tutucuyu gerçek kodlanmış değerle değiştirin."
+}

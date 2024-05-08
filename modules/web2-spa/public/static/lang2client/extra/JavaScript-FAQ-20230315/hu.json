@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "Mi az a JavaScript?",
+    "JS-DOM-API-007": "Hogyan működik együtt a JavaScript a DOM-mal?",
+    "JS-DOM-API-Explanation-008": "A JavaScript egy dokumentumobjektum-modell (DOM) API-t biztosít a HTML és a CSS kezeléséhez, lehetővé téve a fejlesztők számára, hogy dinamikusan módosítsák a tartalmat, a stílust és az eseményfigyelőket.",
+    "JS-DOM-Example-009": "Például kiválaszthat egy elemet, és módosíthatja a szöveg tartalmát: `document.getElementById('myElement').textContent = 'Új szöveg';`",
+    "JS-Data-Types-010": "Milyen adattípusok vannak a JavaScriptben?",
+    "JS-Data-Types-List-011": "A JavaScript különféle adattípusokat támogat, beleértve a primitíveket, például a karakterláncot, a számot, a logikai értéket, a nullát, a nem definiált és a szimbólumokat, valamint az összetett típusokat, például az objektumokat és a tömböket.",
+    "JS-Def-002": "A JavaScript (JS) egy magas szintű, értelmezett programozási nyelv, amelyet széles körben használnak webalkalmazások létrehozására, felhasználói felületek fejlesztésére és szerveroldali logika építésére a Node.js segítségével.",
+    "JS-Event-Loop-013": "Mi az eseményhurok a JavaScriptben?",
+    "JS-Event-Loop-Explanation-014": "Az eseményhurok a JavaScript egyidejűségi modelljének alapvető része, amely lehetővé teszi az aszinkron végrehajtást visszahívásokon, ígéreteken és aszinkron/várakozáson keresztül.",
+    "JS-Event-Loop-Process-015": "Először a fő szkriptet futtatja, majd végrehajtja a visszahívási funkciókat, amikor a hozzájuk tartozó események (például felhasználói bevitel vagy hálózati válaszok) előfordulnak, és egy sorrendszeren keresztül kezeli azokat.",
+    "JS-Function-Syntax-006": "A függvények meghatározása a \"function\" kulcsszóval, majd a függvénynévvel és a paraméterekkel zárójelben történik. A függvénytörzs kapcsos zárójelekbe van foglalva: `function greet(name) { console.log(`Hello, ${name}!`); }`",
+    "JS-Purpose-003": "Kezdetben Brendan Eich fejlesztette ki a Netscape-nél 1995-ben, és azóta az egyik legnépszerűbb nyelvvé fejlődött, amelyet minden nagyobb webböngésző és platform támogat, mint például az Electron és a React Native.",
+    "JS-Syntax-004": "Mi a JavaScript alapvető szintaxisa?",
+    "JS-Type-Checking-012": "A típusellenőrzés végrehajtható konstruktorokkal (`typeof value === 'string'`) vagy az `instanceof` operátorral a beépített konstruktoroktól öröklődő objektumok esetén (pl. `value instanceof Array`).",
+    "MDN-DOM-API": "MDN Web Docs – Dokumentumok kezelése",
+    "MDN-Event-Loop": "MDN Web Docs – Eseményhurok",
+    "MDN-JS-Guide": "MDN Web Docs – JavaScript útmutató",
+    "MDN-JS-Types": "MDN Web Docs – Adattípusok és adatstruktúrák"
+}

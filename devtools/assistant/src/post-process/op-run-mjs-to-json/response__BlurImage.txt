@@ -1,0 +1,27 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本作为JSON对象中的键值对放入`i18n`对象中。下面是提取后的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "Blur Image": 1,
+    "Applies a blur effect to the image.<br><br>Gaussian blur is much slower than fast blur, but produces better results.": 1,
+    "Invalid file type.": 1,
+    "Error loading image. (${err})": 1,
+    "Fast blurring image...": 1,
+    "Gaussian blurring image...": 1,
+    "Error blurring image. (${err})": 1
+  }
+}
+```
+
+以下是每个键值对的解释：
+
+- `"Blur Image"`: 来自类名和构造函数中的`this.name`。
+- `"Applies a blur effect to the image.<br><br>Gaussian blur is much slower than fast blur, but produces better results."`: 来自构造函数中的`this.description`。
+- `"Invalid file type."`: 在多个地方用作错误消息。
+- `"Error loading image. (${err})"`: 当图像加载失败时显示的错误消息。
+- `"Fast blurring image..."`: 当选择快速模糊类型时发送的状态消息。
+- `"Gaussian blurring image..."`: 当选择高斯模糊类型时发送的状态消息。
+- `"Error blurring image. (${err})"`: 在模糊图像过程中出现错误时显示的错误消息。
+
+请注意，由于JSON格式不支持HTML标签，所以保留了`<br><br>`标签，但实际使用时可能需要根据实际环境进行转义或处理。此外，模板字符串（如`${err}`）也被保留，因为它们是代码的一部分，而不是自然文本。如果不需要这些动态部分，应将其从键中移除。

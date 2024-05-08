@@ -1,0 +1,20 @@
+{
+    "c5p1b": "Pehmustetta ei käytetä; koodatun lähdön pituus riippuu suoraan tulodatan koosta.",
+    "c8me6b": "Mukautetut Base62:n kaltaiset mallit voidaan räätälöidä tiettyihin sovelluksiin, mutta ne noudattavat yleensä samaa periaatetta, jossa käytetään suurempaa merkistöä kuin Base64 tai Base32.",
+    "d2w4e": "Muiden perusmuunnosjärjestelmien tapaan Base62 toimii muuntamalla syötetavut suureksi kokonaisluvuksi ja ilmaisemalla sen sitten merkkien yhdistelmänä sen 62 merkkijoukosta.",
+    "f1t2z": "Base62 kehitettiin tarjoamaan lyhyempi, URL-suojattu vaihtoehto Base64:lle, erityisesti yksilöllisille tunnisteille ja lyhyille URL-osoitteille.",
+    "g8h7s": "Miten Base62 toimii?",
+    "j4s6r": "Kuinka voin koodata/dekoodata Base62:lla JavaScriptissä?",
+    "k9em5e": "Tämä tekee siitä ihanteellisen tilanteisiin, joissa vaaditaan ytimekäs, URL-ystävällinen tunniste luettavuuden tinkimättä.",
+    "p9e1n": "Voit käyttää kirjastoja, kuten 'base-x' tai 'base62' Base62-koodaukseen ja -dekoodaukseen JavaScriptissä.",
+    "q7n3r": "Se välttää myös moniselitteiset merkit, kuten 'O' ja '0', 'I' ja 'l', jotka voivat johtaa inhimillisiin transkriptiovirheisiin.",
+    "r6nq2v": "Base62:n ensisijainen etu on sen lisääntynyt tilantehokkuus Base32:ta suuremman merkistön ansiosta, mutta ilman Base64:ssä olevia ei-aakkosnumeerisia merkkejä.",
+    "u3i8b": "Mitä etuja Base62:n käyttämisestä on Base64:ään tai Base32:een verrattuna?",
+    "v3k5r": "Merkistö sisältää kaikki isot ja pienet kirjaimet (A-Z, a-z) ja numerot (0-9), mikä tarjoaa kompaktimman esityksen kuin Base64 tai Base32.",
+    "w2x9qk": "Vaikka Base62:lla itsessään ei ole merkittäviä muunnelmia, jotkin toteutukset voivat poiketa hieman merkistövalinnoistaan, kuten Base64:ssä yleisesti käytettyjen \"+\" tai \"/\" poissulkeminen.",
+    "x7n1m": "Base62 on koodausmalli, joka esittää binääridataa 62 aakkosnumeerisen merkin sekvenssinä.",
+    "y3m9k": "Miksi Base62 luotiin?",
+    "z2m7t": "Käyttöesimerkki: `const base62 = request('base62'); const koodattu = base62.encode('oma-tietosi'); const dekoodattu = base62.decode(koodattu);`",
+    "z4t9b": "Mikä on Base62?",
+    "z7t1p": "Onko Base62:sta tiettyjä muunnelmia?"
+}

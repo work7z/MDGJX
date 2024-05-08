@@ -1,0 +1,29 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤：
+
+1. 提取文本。
+2. 将这些文本放入名为`i18n`的对象中，键是提取的文本，值设为`123`作为占位符。
+3. 根据代码的实际功能，将`i18n`中的值翻译成中文。
+4. 输出JSON结果。
+
+下面是结果：
+
+```json
+{
+  "i18n": {
+    "Takes a single domain name and performs a DNS lookup using DNS over HTTPS.": "使用DNS over HTTPS对单个域名执行DNS查询。",
+    "By default, Cloudflare and Google DNS over HTTPS services are supported.": "默认支持Cloudflare和Google的DNS over HTTPS服务。",
+    "Can be used with any service that supports the GET parameters name and type.": "可以与任何支持name和type GET参数的服务一起使用。",
+    "Resolver": "解析器",
+    "Google": "谷歌",
+    "Cloudflare": "Cloudflare",
+    "Request Type": "请求类型",
+    "Answer Data Only": "仅答案数据",
+    "Disable DNSSEC validation": "禁用DNSSEC验证",
+    "This error could be caused by one of the following:": "此错误可能由以下原因之一引起：",
+    " - An invalid Resolver URL": " - 无效的解析器URL",
+    "Error making request to": "请求时发生错误"
+  }
+}
+```
+
+请注意，我已省略了HTML标签和代码片段，因为它们不是自然文本。同时，我也将错误消息翻译成了中文，以便用户更容易理解。这些翻译是根据代码上下文进行的，可能需要根据实际使用情况进一步调整。

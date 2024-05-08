@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "Das Erlernen des Programmierens eröffnet Karrieremöglichkeiten in verschiedenen Branchen und ermöglicht es Ihnen, innovative Lösungen zu entwickeln, Aufgaben zu automatisieren und komplexe Systeme zu verstehen.",
+    "CP-Advantages-013": "Was sind die Vorteile des Erlernens der Computerprogrammierung?",
+    "CP-Basics-001": "Was ist Computerprogrammierung?",
+    "CP-Def-002": "Bei der Computerprogrammierung geht es darum, Anweisungen oder Code in einer Programmiersprache zu schreiben, um Computern Anweisungen zur Ausführung bestimmter Aufgaben zu geben.",
+    "CP-History-004": "Was ist die Geschichte der Computerprogrammierung?",
+    "CP-History-Origin-005": "Die ersten programmierbaren Maschinen gehen auf Ada Lovelaces Arbeit an Charles Babbages Analytical Engine im 19. Jahrhundert zurück. Mit der Erfindung des ersten universellen elektronischen Computers, ENIAC, in den 1940er Jahren erlebte die moderne Programmierung jedoch einen Aufschwung.",
+    "CP-Lang-Choice-009": "Die Wahl der Sprache hängt von Faktoren wie den Projektanforderungen, der Unterstützung der Gemeinschaft, der Leichtigkeit des Lernens und den Leistungsanforderungen ab.",
+    "CP-Language-Evolution-006": "Seitdem haben sich Programmiersprachen vom Maschinencode zum Assembler entwickelt, dann zu Hochsprachen wie FORTRAN, COBOL, C und nun zu modernen Sprachen wie Python, JavaScript und Rust.",
+    "CP-Languages-007": "Was sind einige beliebte Programmiersprachen?",
+    "CP-Languages-List-008": "Zu den beliebten Programmiersprachen gehören Java, Python, JavaScript, C++, C#, Swift, Go, PHP, Ruby und Kotlin. Jedes hat seine eigenen Stärken und Anwendungsfälle, z. B. Python für die Datenwissenschaft, JavaScript für die Webentwicklung und C++ für die Systemprogrammierung.",
+    "CP-Process-010": "Was ist der Prozess der Computerprogrammierung?",
+    "CP-Process-Explanation-011": "Die Programmierung umfasst typischerweise Planung (Definition des Problems und Entwurf der Lösung), Codierung (Schreiben des Quellcodes in einer ausgewählten Sprache), Testen (Debuggen und Überprüfen der Funktionalität) und Wartung (Aktualisierung und Verbesserung des Programms im Laufe der Zeit).",
+    "CP-Purpose-003": "Programmierer erstellen Algorithmen, lösen Probleme und erstellen Softwareanwendungen, die Prozesse automatisieren, Daten manipulieren und mit Benutzern oder anderen Systemen interagieren können.",
+    "CP-SDLC-012": "Dies ist häufig im Rahmen eines Software Development Life Cycle (SDLC) strukturiert, der zusätzliche Phasen wie Anforderungsanalyse, Design, Bereitstellung und Benutzerakzeptanztests umfasst.",
+    "CP-Skillset-015": "Es verbessert auch das logische Denken, die Fähigkeiten zur Problemlösung und die Anpassungsfähigkeit an neue Technologien und macht Sie im digitalen Zeitalter vielseitiger.",
+    "HistOfProg-Wikipedia": "Geschichte der Programmiersprachen – Wikipedia",
+    "SDLC-Wikipedia": "Lebenszyklus der Softwareentwicklung – Wikipedia",
+    "TIOBE-Index": "TIOBE Index – Das Software-Qualitätsunternehmen"
+}

@@ -1,0 +1,21 @@
+根据您的要求，下面是将代码中的自然文本提取出来，并按照要求转换为JSON格式的i18n对象，其中包含中文翻译：
+
+```json
+{
+  "i18n": {
+    "Group IP addresses": "分组IP地址",
+    "Groups a list of IP addresses into subnets. Supports both IPv4 and IPv6 addresses.": "将IP地址列表分组到子网中，支持IPv4和IPv6地址。",
+    "Subnet (CIDR)": "子网（CIDR）",
+    "Only show the subnets": "仅显示子网",
+    "CIDR must be less than 32 for IPv4 or 128 for IPv6": "对于IPv4，CIDR必须小于32；对于IPv6，CIDR必须小于128。"
+  }
+}
+```
+
+以下是提取和翻译的过程：
+
+1. 找出所有显示给用户的自然文本（不包括http链接、代码示例等）。
+2. 将这些文本放入一个名为i18n的对象中，并给每个文本赋予一个默认值123。
+3. 根据代码的实际功能，将这些文本翻译成中文，并替换掉默认值123。
+
+请注意，某些描述性文本可能需要根据上下文进行适当的翻译调整，以确保准确性和清晰性。上述翻译是基于代码提供的描述性文本进行的。

@@ -1,0 +1,11 @@
+{
+    "c6p4n": "Nel modello fornito, sostituisci il segnaposto nella parte di decodifica con i byte effettivi con codifica Base85 (con il prefisso \"b\"), quindi esegui lo script.",
+    "d8w1b": "Non è necessaria alcuna installazione aggiuntiva poiché fa parte della libreria standard. Assicurati che la tua versione di Python sia sufficientemente recente da includere questa funzionalità.",
+    "f9t2z": "Aggiungi la dipendenza al tuo progetto Maven includendo `<dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependency>` nel tuo pom.xml con il numero di versione più recente.",
+    "q6n1r": "Dopo aver installato la libreria, copiare il codice del modello in una classe Java e sostituire il segnaposto con il valore effettivo con codifica Base85 prima di eseguire il codice.",
+    "u9g6t": "Per JavaScript, è necessario installare il pacchetto 'base85' per la codifica e decodifica Base85.",
+    "v5k3r": "Una volta installato, sostituisci il segnaposto nella sezione di decodifica con la stringa effettiva con codifica Base85 ed esegui lo script. La libreria gestisce la conversione tra Buffer e stringhe Base85.",
+    "x2c5e": "Python ha un modulo \"base85\" integrato che supporta la codifica e la decodifica Base85.",
+    "y3m7k": "Per Java, utilizzare la libreria 'commons-codec' che include il supporto per la codifica e decodifica Base85.",
+    "z7n1m": "Installalo utilizzando npm eseguendo `npm install base85` o `yarn add base85`."
+}

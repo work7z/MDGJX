@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "什么是 JavaScript？",
+    "JS-DOM-API-007": "JavaScript 如何与 DOM 交互？",
+    "JS-DOM-API-Explanation-008": "JavaScript 提供文档对象模型 (DOM) API 来操作 HTML 和 CSS，使开发人员能够动态更改内容、样式和事件侦听器。",
+    "JS-DOM-Example-009": "例如，您可以选择一个元素并更改其文本内容：`document.getElementById('myElement').textContent = 'New Text';`",
+    "JS-Data-Types-010": "JavaScript 中有哪些数据类型？",
+    "JS-Data-Types-List-011": "JavaScript 支持各种数据类型，包括字符串、数字、布尔值、null、未定义和符号等原始数据类型，以及对象和数组等复杂类型。",
+    "JS-Def-002": "JavaScript (JS) 是一种高级解释性编程语言，广泛用于创建 Web 应用程序、增强用户界面以及使用 Node.js 构建服务器端逻辑。",
+    "JS-Event-Loop-013": "JavaScript 中的事件循环是什么？",
+    "JS-Event-Loop-Explanation-014": "事件循环是 JavaScript 并发模型的核心部分，它允许通过回调、promise 和 async/await 进行异步执行。",
+    "JS-Event-Loop-Process-015": "它首先运行主脚本，然后在相关事件（如用户输入或网络响应）发生时执行任何回调函数，并通过队列系统管理它们。",
+    "JS-Function-Syntax-006": "函数是使用“function”关键字定义的，后跟函数名称和括在括号中的参数。函数体用大括号括起来： `functiongreet(name) { console.log(`Hello, ${name}!`); }`",
+    "JS-Purpose-003": "它最初由 Netscape 的 Brendan Eich 于 1995 年开发，现已发展成为最流行的语言之一，受到所有主要 Web 浏览器和平台（如 Electron 和 React Native）的支持。",
+    "JS-Syntax-004": "JavaScript 的基本语法是什么？",
+    "JS-Type-Checking-012": "类型检查可以使用构造函数（`typeof value === 'string'`）或从内置构造函数继承的对象的`instanceof`运算符（例如，`value instanceof Array`）来完成。",
+    "MDN-DOM-API": "MDN Web 文档 - 操作文档",
+    "MDN-Event-Loop": "MDN 网络文档 - 事件循环",
+    "MDN-JS-Guide": "MDN 网络文档 - JavaScript 指南",
+    "MDN-JS-Types": "MDN Web 文档 - 数据类型和数据结构"
+}

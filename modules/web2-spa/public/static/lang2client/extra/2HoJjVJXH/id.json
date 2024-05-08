@@ -1,0 +1,23 @@
+{
+    "c1p3b": "Setelah terintegrasi, salin templat yang disediakan ke dalam program C++ Anda dan ganti placeholder dengan nilai yang disandikan sebenarnya sebelum menjalankan program.",
+    "c6p4n": "Setelah menginstal perpustakaan, salin templat yang disediakan ke skrip Python Anda dan jalankan. Pustaka ini menawarkan fungsi bawaan untuk mengkonversi antara byte dan string yang dikodekan Base45.",
+    "d2w6e": "Kloning/unduh repositori dan sertakan file header yang disediakan dalam proyek Anda. Kompilasi dan tautkan ke file sumber sesuai dengan dokumentasi proyek.",
+    "d8w1b": "Anda dapat melakukan ini menggunakan pip dengan menjalankan `pip install base45` atau `python -m pip install base45`.",
+    "f7t1z": "Tambahkan perpustakaan ke proyek Xcode Anda secara manual atau melalui manajer paket seperti Swift Package Manager (SPM).",
+    "f9t2z": "Tambahkan yang berikut ke file pom.xml Anda: `<dependency> <groupId>org.iso</groupId> <artifactId>iso-base45</artifactId> <version>...</version> </dependency>` di mana versi adalah rilis terbaru.",
+    "g4h7s": "Untuk C++, Anda dapat menggunakan perpustakaan 'base45-cpp' yang tersedia sebagai repositori GitHub.",
+    "j8s6r": "Untuk Kotlin, Anda dapat menggunakan perpustakaan 'barcode-core' yang mencakup fungsionalitas Base45.",
+    "j9s5r": "Untuk C#, Anda dapat menggunakan perpustakaan 'Base45' yang tersedia di NuGet.",
+    "p5e9n": "Tambahkan pustaka sebagai dependensi dalam skrip build Gradle Anda. Misalnya, di file build.gradle tingkat aplikasi, tambahkan `implementation 'com.bottlerocketstudios:barcode-core:...'` dengan nomor versi terbaru.",
+    "p6e3n": "Untuk menginstalnya, jalankan `Install-Package Base45` di Package Manager Console atau tambahkan ketergantungan melalui NuGet Package Manager.",
+    "q2n9r": "Setelah ditambahkan, salin template yang disediakan ke file Swift. Perhatikan bahwa dalam contoh ini, kami menggunakan skenario hipotetis di mana Anda memiliki representasi base64 string Base45; ganti dengan nilai aktual yang disandikan sebelum menjalankan kode.",
+    "q6n1r": "Perpustakaan menyediakan kelas encoder dan decoder yang menangani konversi Base45. Setelah ketergantungan ditambahkan, salin kode templat ke kelas Java dan jalankan.",
+    "u9g6t": "Untuk menjalankan kode ini, Anda perlu menginstal paket '@digitalbazaar/base45'.",
+    "v5k3r": "Pustaka ini menyediakan API sederhana untuk pengkodean dan dekode Base45 dalam aplikasi Node.js. Setelah instalasi, salin templat yang disediakan ke dalam skrip Anda dan jalankan dengan juru bahasa Node.js.",
+    "x2c5e": "Untuk menggunakan Base45 dengan Python, Anda perlu menginstal perpustakaan 'base45'.",
+    "y3m7k": "Untuk Java, manfaatkan perpustakaan 'iso-base45' yang dapat disertakan dalam proyek Anda sebagai ketergantungan Maven.",
+    "y9m3k": "Untuk Swift, Anda dapat menggunakan perpustakaan 'Base45' yang tersedia di GitHub.",
+    "z3m1t": "Setelah menambahkan ketergantungan dan menyinkronkan proyek, salin templat yang disediakan ke kelas Kotlin, ganti placeholder dengan nilai sebenarnya yang dikodekan sebelum menjalankan kode.",
+    "z7n1m": "Gunakan npm atau benang untuk menginstalnya dengan menjalankan `npm install @digitalbazaar/base45` atau `yarn add @digitalbazaar/base45`.",
+    "z8qm2t": "Perpustakaan menyediakan kelas encoder dan decoder untuk operasi Base45. Salin kode templat ke aplikasi konsol C# dan jalankan setelah menginstal paket."
+}

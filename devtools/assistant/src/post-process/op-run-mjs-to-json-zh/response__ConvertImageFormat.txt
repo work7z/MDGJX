@@ -1,0 +1,35 @@
+根据您的要求，以下是代码中显示给用户的自然文本的JSON格式提取，以及翻译后的中文对照：
+
+```json
+{
+  "i18n": {
+    "Convert Image Format": "转换图像格式",
+    "Converts an image between different formats. Supported formats:": "在不同的格式之间转换图像。支持的格式：",
+    "Joint Photographic Experts Group (JPEG)": "联合图像专家组（JPEG）",
+    "Portable Network Graphics (PNG)": "便携式网络图形（PNG）",
+    "Bitmap (BMP)": "位图（BMP）",
+    "Tagged Image File Format (TIFF)": "标记图像文件格式（TIFF）",
+    "Note: GIF files are supported for input, but cannot be outputted.": "注意：支持GIF文件作为输入，但不能作为输出。",
+    "Invalid file format.": "无效的文件格式。",
+    "Error opening image file.": "打开图像文件时出错。",
+    "Error converting image format.": "转换图像格式时出错。",
+    "Invalid file type.": "无效的文件类型。"
+  }
+}
+```
+
+以下是每个文本的来源和对应的中文翻译：
+
+1. "Convert Image Format" - 来自类名和构造函数中的 `this.name`，翻译为“转换图像格式”。
+2. "Converts an image between different formats. Supported formats:" - 来自构造函数中的 `this.description`，翻译为“在不同的格式之间转换图像。支持的格式：”。
+3. "Joint Photographic Experts Group (JPEG)" - 来自构造函数中的 `this.description`，翻译为“联合图像专家组（JPEG）”。
+4. "Portable Network Graphics (PNG)" - 来自构造函数中的 `this.description`，翻译为“便携式网络图形（PNG）”。
+5. "Bitmap (BMP)" - 来自构造函数中的 `this.description`，翻译为“位图（BMP）”。
+6. "Tagged Image File Format (TIFF)" - 来自构造函数中的 `this.description`，翻译为“标记图像文件格式（TIFF）”。
+7. "Note: GIF files are supported for input, but cannot be outputted." - 来自构造函数中的 `this.description`，翻译为“注意：支持GIF文件作为输入，但不能作为输出。”。
+8. "Invalid file format." - 来自 `run` 方法中的错误抛出，翻译为“无效的文件格式。”。
+9. "Error opening image file." - 来自 `run` 方法中的错误抛出，翻译为“打开图像文件时出错。”。
+10. "Error converting image format." - 来自 `run` 方法中的错误抛出，翻译为“转换图像格式时出错。”。
+11. "Invalid file type." - 来自 `present` 方法中的错误抛出，翻译为“无效的文件类型。”。
+
+以上JSON对象中的每个key是原始文本，value是相应的中文翻译。

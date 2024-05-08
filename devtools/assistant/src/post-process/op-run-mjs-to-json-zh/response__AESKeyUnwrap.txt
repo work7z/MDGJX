@@ -1,0 +1,17 @@
+根据您的要求，以下是代码中提取的自然文本，并按照指示转换为JSON格式，包括翻译：
+
+```json
+{
+  "i18n": {
+    "AES Key Unwrap": "AES密钥解包",
+    "Decryptor for a key wrapping algorithm defined in RFC3394, which is used to protect keys in untrusted storage or communications, using AES.": "根据RFC3394定义的密钥包装算法的解密器，用于在不可信存储或通信中使用AES保护密钥。",
+    "This algorithm uses an AES key (KEK: key-encryption key) and a 64-bit IV to decrypt 64-bit blocks.": "此算法使用AES密钥（KEK：密钥加密密钥）和64位IV来解密64位块。",
+    "KEK must be either 16, 24, or 32 bytes (currently {0} bytes)": "KEK必须是16、24或32字节（当前为{0}字节）",
+    "IV must be 8 bytes (currently {0} bytes)": "IV必须是8字节（当前为{0}字节）",
+    "input must be 8n (n>=3) bytes (currently {0} bytes)": "输入必须是8n（n>=3）字节（当前为{0}字节）",
+    "IV mismatch": "IV不匹配"
+  }
+}
+```
+
+在上述JSON对象中，每个key都是原始代码中的自然文本，而value则是相应的中文翻译。注意，对于一些可能包含变量的文本，我使用了占位符`{0}`，这是因为在实际代码中这些值会被动态替换。

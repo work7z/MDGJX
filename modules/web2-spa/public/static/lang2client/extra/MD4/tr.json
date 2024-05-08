@@ -1,0 +1,23 @@
+{
+    "MD4-Advantages-011": "MD4 kullanmanın avantajları nelerdir?",
+    "MD4-AlgorithmDetails-010": "MD4 Algoritmasının Detayları",
+    "MD4-Applications-018": "Hangi uygulamalar MD4'ü kullandı veya hala kullanıyor?",
+    "MD4-Breakdown-016": "Algoritmanın tasarım kusurları, kolay karma çarpışmalara ve hatta kısmi ön görüntü saldırılarına izin veren pratik saldırılara yol açarak MD4'ü günümüzün herhangi bir güvenli kriptografik kullanım durumu için uygunsuz hale getirdi.",
+    "MD4-CollisionSecurity-015": "MD4'ün çarpışma saldırılarına yatkınlık da dahil olmak üzere çeşitli kriptografik zayıflıkları vardır. Bu, iki farklı girişin aynı hash çıktısını üretebileceği anlamına gelir; bu da onu çarpışma direnci veya güçlü mesaj bütünlüğü gerektiren uygulamalar için güvensiz hale getirir.",
+    "MD4-Def-002": "MD4 (Message-Digest Algorithm 4), 1990 yılında Ronald Rivest tarafından tasarlanan bir kriptografik karma işlevidir. Verilen herhangi bir giriş mesajı için 128 bitlik bir karma değeri üretir.",
+    "MD4-DigitalSignature-Risks-021": "Dijital İmzalar için MD4 Kullanmanın Riskleri",
+    "MD4-Disadvantages-014": "MD4'ün dezavantajları ve güvenlik kaygıları nelerdir?",
+    "MD4-FAQ-001": "MD4 nedir?",
+    "MD4-HistoricalUse-019": "Tarihsel olarak MD4, dijital imzalarda, dosya bütünlüğü kontrollerinde ve yazılım güncellemelerinde kullanıldı. Ancak güvenlik açıkları nedeniyle bu uygulamalar büyük ölçüde SHA-256 ve SHA-3 gibi daha güvenli alternatiflere geçiş yaptı.",
+    "MD4-History-004": "MD4 nasıl geliştirildi ve tarihsel önemi nedir?",
+    "MD4-Implementation-013": "Çeşitli platformlarda ve dillerde geniş çapta uygulanmış ve standartlaştırılmıştır; mevcut sistemlere entegrasyon kolaylığı sağlar, ancak modern bağlamlardaki güvenlik kaygıları bu avantaja ağır basmaktadır.",
+    "MD4-InsecurityExamples-017": "MD4 Güvenlik Arızası Örnekleri",
+    "MD4-LegacySystems-020": "MD4 eski sistemlerde hala mevcut olabilir ancak güvenliğin önemli olduğu tüm bağlamlarda kullanımı önerilmez. Modern standartlar artık herhangi bir şifreleme amacıyla MD4'ü önermemektedir.",
+    "MD4-Operation-007": "MD4 operasyonu nasıl çalışır?",
+    "MD4-Origin-005": "MD4, güvenlik özelliklerini korurken daha hızlı performans sağlamayı amaçlayan MD2 ve MD3'ün gelişmiş haliydi. Ancak MD4'ün birçok güvenlik zaafına sahip olduğu ortaya çıktı.",
+    "MD4-Process-008": "MD4, giriş mesajını 512 bitin katlarına doldurarak ve 16 kelimelik bloklara bölerek işler. Algoritma daha sonra bit düzeyinde işlemleri, modüler eklemeleri ve doğrusal olmayan işlevleri içeren dört işlem turu kullanarak bu bloklar üzerinde çalışır.",
+    "MD4-Purpose-003": "MD4'ün amacı, orijinal verilerin gerçekliğini ve bütünlüğünü doğrulamak için kullanılabilecek sabit boyutlu bir dijital parmak izi oluşturarak veri bütünlüğünü sağlamaktır.",
+    "MD4-Rounds-009": "Tüm bloklar işlendikten sonra ortaya çıkan dahili durum, son 128 bitlik karma değerine dönüştürülür.",
+    "MD4-Speed-012": "MD4 başlangıçta öncüllerinden daha hızlı olacak şekilde tasarlandı ve bu da onu piyasaya sürüldüğü sırada hızlı karma gerektiren uygulamalar için popüler hale getirdi.",
+    "MD4-Successors-006": "MD4, kusurlarına rağmen, MD5 ve SHA-1 gibi sonraki hash fonksiyonlarının temelini attı; bu, tasarımını geliştirdi ancak aynı zamanda zaman içinde bazı güvenlik açıklarını da devraldı."
+}

@@ -1,0 +1,20 @@
+{
+    "c5m1b": "Další varianta, Base58Flickr, se mírně liší svou znakovou sadou. Nahrazuje '+' ',' a '/' '-' a přizpůsobuje se potřebám URL Flickru.",
+    "c6p9b": "Pokud délka vstupních dat není dělitelná 8, výplň se nepoužívá; místo toho se s každou nekompletní skupinou zachází nezávisle.",
+    "d3w2e": "Base58 funguje tak, že převádí vstupní bajty na velké celé číslo a poté toto celé číslo vyjádří jako kombinaci znaků z jeho 58znakové sady (A-Z, a-z, 1-9).",
+    "f4t7z": "Base58 byl původně vyvinut pro bitcoiny, aby reprezentoval veřejné adresy a soukromé klíče bez dvojznačnosti.",
+    "g7h5k": "Jak Base58 funguje?",
+    "j6s3r": "Jak zakóduji/dekóduji pomocí Base58 v JavaScriptu?",
+    "k1m4e": "Nenabízí však úplně stejnou prostorovou efektivitu jako Base64 nebo Base32, protože používá méně znaků ve své abecedě.",
+    "pq5e9n": "K provádění kódování a dekódování Base58 v JavaScriptu můžete použít knihovny jako 'bs58'.",
+    "q2x8k": "Jeho použití se rozšířilo na další kryptoměny a scénáře, kde jsou požadovány lidsky čitelné řetězce odolné proti chybám.",
+    "r2n7v": "Hlavní výhodou je zvýšená čitelnost díky vyloučení podobně vypadajících znaků, což snižuje chyby při ručním zadávání.",
+    "s1b3m": "Na rozdíl od Base64 nebo Base32 vylučuje snadno zaměnitelné znaky '0', 'O', 'I' a 'l', takže je vhodný pro adresy URL a QR kódy.",
+    "u8i5b": "Jaké jsou výhody používání Base58 oproti Base64 nebo Base32?",
+    "v4n9t": "Base58 je kódovací schéma, které představuje binární data jako sekvenci alfanumerických znaků.",
+    "w3x7k": "Ano, některé oblíbené varianty zahrnují Base58Check, který přidává kontrolní součet pro detekci chyb, běžně používaný v bitcoinech.",
+    "x2z6r": "Co je Base58?",
+    "y9m1n": "Proč byl vytvořen Base58?",
+    "z1m2t": "Příklad použití: `const encoded = bs58.encode('vaše-data'); const decoded = bs58.decode(encoded);`",
+    "z9t2p": "Existují nějaké konkrétní varianty Base58?"
+}

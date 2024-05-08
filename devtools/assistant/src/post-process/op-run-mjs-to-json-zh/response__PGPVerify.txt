@@ -1,0 +1,37 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式的i18n对象，并附上中文翻译：
+
+```json
+{
+  "i18n": {
+    "Input: the ASCII-armoured encrypted PGP message you want to verify.": "输入：您想要验证的ASCII编码加密的PGP消息。",
+    "Argument: the ASCII-armoured PGP public key of the signer": "参数：签名者的ASCII编码PGP公钥",
+    "This operation uses PGP to decrypt a clearsigned message.": "此操作使用PGP来解密一个清晰签名的消息。",
+    "Pretty Good Privacy is an encryption standard (OpenPGP) used for encrypting, decrypting, and signing messages.": "Pretty Good Privacy（优良隐私）是一种加密标准（OpenPGP），用于加密、解密和签名消息。",
+    "This function uses the Keybase implementation of PGP.": "此功能使用Keybase的PGP实现。",
+    "Enter the public key of the signer.": "输入签名者的公钥。",
+    "Signed by": "签名者",
+    "PGP key ID:": "PGP密钥ID：",
+    "PGP fingerprint:": "PGP指纹：",
+    "Signed on": "签名时间：",
+    "----------------------------------": "----------------------------------",
+    "Couldn't verify message:": "无法验证消息："
+  }
+}
+```
+
+在上述JSON对象中，每个key都是原始代码中出现的自然文本，而value则是相应的中文翻译。请注意，有些文本如"----------------------------------"没有实际意义，仅作为分隔符，因此我也将其保留并翻译为相同的符号。
+
+【示例1】的格式化输出如下：
+
+```json
+{
+  "i18n": {
+    "Input: the ASCII-armoured encrypted PGP message you want to verify.": "输入：您想要验证的ASCII编码加密的PGP消息。",
+    "Argument: the ASCII-armoured PGP public key of the signer": "参数：签名者的ASCII编码PGP公钥",
+    // ... 其他翻译
+    "Couldn't verify message:": "无法验证消息："
+  }
+}
+```
+
+以上即为根据您的代码和指示完成的JSON对象和中文翻译。

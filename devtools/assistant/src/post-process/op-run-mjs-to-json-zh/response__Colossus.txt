@@ -1,0 +1,28 @@
+```json
+{
+  "i18n": {
+    "Colossus is the name of the world's first electronic computer.": "巨人计算机是世界上第一台电子计算机的名字。",
+    "Ten Colossi were designed by Tommy Flowers and built at the Post Office Research Labs at Dollis Hill in 1943 during World War 2.": "在第二次世界大战期间，1943年，汤米·弗劳尔斯设计了10台巨人计算机，并在多尔利斯山的邮政研究实验室建造。",
+    "They assisted with the breaking of the German Lorenz cipher attachment, a machine created to encipher communications between Hitler and his generals on the front lines.": "它们协助破解了德国洛伦兹密码附件，这是一种用于加密希特勒与前线将军之间通信的机器。",
+    "To learn more, Virtual Colossus, an online, browser based simulation of a Colossus computer is available at virtualcolossus.co.uk.": "要了解更多信息，可以在virtualcolossus.co.uk上找到基于浏览器的巨人计算机在线模拟器Virtual Colossus。",
+    "A more detailed description of this operation can be found here.": "关于此操作的更详细描述可以在这里找到。",
+    "Invalid ITA2 character : ": "无效的ITA2字符：",
+    "Switch R -Q can only be set to blank, . or x": "开关R-Q只能设置为空白、.或x",
+    "Switch Add-Equals can only be set to blank, . or x": "开关Add-Equals只能设置为空白、.或x",
+    "Switch Total Motor can only be set to blank, . or x": "开关Total Motor只能设置为空白、.或x",
+    "Set Total must be between 0000 and 9999": "设置总数必须在0000到9999之间",
+    "start must be between 1 and 43": "起始位置必须在1到43之间",
+    "start must be between 1 and 47": "起始位置必须在1到47之间",
+    "start must be between 1 and 51": "起始位置必须在1到51之间",
+    "start must be between 1 and 53": "起始位置必须在1到53之间",
+    "start must be between 1 and 59": "起始位置必须在1到59之间",
+    "start must be between 1 and 37": "起始位置必须在1到37之间",
+    "start must be between 1 and 61": "起始位置必须在1到61之间",
+    "start must be between 1 and 41": "起始位置必须在1到41之间",
+    "start must be between 1 and 31": "起始位置必须在1到31之间",
+    "start must be between 1 and 29": "起始位置必须在1到29之间",
+    "start must be between 1 and 26": "起始位置必须在1到26之间",
+    "start must be between 1 and 23": "起始位置必须在1到23之间"
+  }
+}
+```

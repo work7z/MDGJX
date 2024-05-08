@@ -1,0 +1,32 @@
+根据您的要求，以下是提炼代码中自然文本并转换为JSON格式的步骤：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键为自然文本，值为`123`。
+3. 根据代码的实际功能，将自然文本翻译为中文，并替换其值。
+4. 输出JSON结果。
+
+以下是转换后的结果：
+
+```json
+{
+  "i18n": {
+    "Divide": "123",
+    "Divides a list of numbers. If an item in the string is not a number it is excluded from the list.": "123",
+    "e.g. 0x0a 8 .5 becomes 2.5": "例如：0x0a 8 .5 变成 2.5"
+  }
+}
+```
+
+以下是每个键的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Divide": "除法",
+    "Divides a list of numbers. If an item in the string is not a number it is excluded from the list.": "将一个数字列表进行除法运算。如果字符串中的项不是数字，它将被排除在列表之外。",
+    "e.g. 0x0a 8 .5 becomes 2.5": "例如：0x0a 8 .5 变成 2.5"
+  }
+}
+```
+
+请注意，示例中的`"123"`仅作为占位符，我已经将其替换为相应的中文翻译。

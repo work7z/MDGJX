@@ -1,0 +1,30 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是文本本身，值设置为`123`作为占位符。
+3. 根据代码的实际功能，对这些文本进行中文翻译。
+4. 输出JSON结果。
+
+以下是JSON格式的输出：
+
+```json
+{
+  "i18n": {
+    "Action Message Format (AMF) is a binary format used to serialize object graphs such as ActionScript objects and XML, or send messages between an Adobe Flash client and a remote service, usually a Flash Media Server or third party alternatives.": "动作消息格式（AMF）是一种用于序列化诸如ActionScript对象和XML的对象图，或者在Adobe Flash客户端和远程服务之间发送消息的二进制格式，通常是Flash媒体服务器或第三方替代方案。",
+    "AMF Decode": "AMF 解码",
+    "Encodings": "编码",
+    "Deserializes an AMF encoded object.": "对AMF编码的对象进行反序列化。",
+    "Format": "格式"
+  }
+}
+```
+
+以下是每个键值对的解释：
+
+- `"AMF Decode"`: 操作的名称，翻译为“AMF 解码”。
+- `"Encodings"`: 模块名称，翻译为“编码”。
+- `"Action Message Format (AMF) is a binary format... third party alternatives."`: 代码中的描述，翻译为“动作消息格式（AMF）是一种用于序列化对象图...通常是Flash媒体服务器或第三方替代方案。”
+- `"Deserializes an AMF encoded object."`: 操作的简短描述，翻译为“对AMF编码的对象进行反序列化。”
+- `"Format"`: 参数名称，翻译为“格式”。
+
+请注意，由于代码中没有提供`Deserializes an AMF encoded object.`的原文，我根据操作的实际功能进行了适当的假设和翻译。如果原文有所不同，请相应地调整该翻译。

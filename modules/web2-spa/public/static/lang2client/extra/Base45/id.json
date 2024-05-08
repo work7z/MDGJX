@@ -1,0 +1,23 @@
+{
+    "a4r9t": "Bisakah Base45 mendekode string apa pun yang dikodekan Base45 terlepas dari asalnya?",
+    "c2vw9k": "Meskipun Base45 tidak diterapkan secara luas seperti Base64 atau Base32, perpustakaan sumber terbuka tersedia untuk beberapa bahasa.",
+    "c9q7w": "Mengapa Base45 dibuat?",
+    "d6y9k": "Jika byte tidak cukup untuk mengisi grup terakhir, padding tidak digunakan; sebaliknya, bit-bit yang tersisa diproses dan dipetakan ke karakter yang sesuai.",
+    "e8x2v": "Base45 bekerja dengan membagi data masukan menjadi kelompok-kelompok yang masing-masing terdiri dari 5 byte. Ia kemudian mengubah setiap grup menjadi angka desimal dan memetakannya ke karakter yang sesuai dari kumpulan 45 karakternya.",
+    "f8n4m": "Kekompakannya memungkinkan penggunaan ruang yang lebih efisien dalam kode QR dengan tetap menjaga keterbacaan dengan pemindai kode batang standar.",
+    "g1h5n": "Bagaimana cara kerja Base45?",
+    "g6v3b": "Namun, rangkaian karakter Base45 yang lebih besar dapat meningkatkan kemungkinan kesalahan saat menangani karakter non-alfanumerik, yang dapat menjadi masalah di beberapa lingkungan atau saluran transmisi.",
+    "i7w2m": "Apakah ada perpustakaan Base45 bawaan dalam bahasa pemrograman populer?",
+    "j7k2t": "Untuk mengkodekan data dengan Base45, Anda memerlukan perpustakaan atau fungsi yang mengimplementasikan algoritma Base45.",
+    "m9k1z": "Namun, jika data yang didekode berisi semantik aplikasi tertentu (misalnya, format kode QR tertentu), pemrosesan tambahan mungkin diperlukan setelah dekode.",
+    "q5h8n": "Keuntungan utamanya adalah pengurangan panjang string untuk jumlah data yang dikodekan sama, sehingga cocok untuk aplikasi yang mengutamakan efisiensi ruang.",
+    "qv1p5n": "Misalnya, di Java, Anda bisa menggunakan perpustakaan 'org.iso.base45' untuk menyandikan data Anda.",
+    "r9a3t": "Base45 adalah skema pengkodean berbasis teks yang mengkodekan data biner menjadi karakter ASCII.",
+    "s3e6r": "Bagaimana cara menyandikan data menggunakan Base45?",
+    "u2l8s": "Apa itu Base45?",
+    "x5z1b": "Base45 dikembangkan terutama untuk penggunaan kode QR dalam konteks sertifikat COVID digital.",
+    "y3b6n": "Ya, selama string yang disandikan dihasilkan sesuai dengan spesifikasi Base45, dekoder yang sesuai harus dapat mendekodekannya.",
+    "z1n5qr": "Contohnya termasuk paket npm base45 untuk JavaScript dan dotnet-base45 untuk .NET.",
+    "z5b7m": "Ini menggunakan alfabet yang lebih besar (0-9, A-Z, a-z, -, ., $, /, +, %, dan *) dibandingkan dengan Base64 atau Base32, menghasilkan string yang dikodekan lebih pendek untuk data input yang sama.",
+    "z8m2t": "Apa kelebihan menggunakan Base45 dibandingkan Base64 atau Base32?"
+}

@@ -1,0 +1,23 @@
+{
+    "MD6-AlgorithmDetails-010": "MD6 Algoritmedetaljer",
+    "MD6-ComparisonSHA3-020": "Hvordan er MD6 sammenlignet med SHA-3 (Keccak)?",
+    "MD6-Def-002": "MD6 (Message-Digest Algorithm 6) er en kryptografisk hash-funksjon designet av Ronald Rivest i 2008. Det er en videreutvikling av MD-familien, og tilbyr variable utdatastørrelser fra 128 til 512 biter.",
+    "MD6-FAQ-001": "Hva er MD6?",
+    "MD6-FutureDevelopments-028": "Er det planlagt noen fremtidige utviklinger eller forbedringer for MD6?",
+    "MD6-FutureUnknown-029": "Per nå er det ingen offentlig tilgjengelig informasjon om pågående utvikling eller planer om å forbedre MD6-algoritmen. Kryptografisk forskning fortsetter å utvikle seg, og nye algoritmer kan dukke opp for å møte nye trusler eller krav.",
+    "MD6-History-004": "Hvordan ble MD6 utviklet og hva førte til opprettelsen?",
+    "MD6-Operation-007": "Hvordan fungerer MD6-drift?",
+    "MD6-Origin-005": "MD6 ble opprettet som et svar på sårbarhetene som ble funnet i MD5 og SHA-1, som ble mye brukt på den tiden. Den hadde som mål å gi et sikrere alternativ med økt fleksibilitet med hensyn til utdatastørrelse.",
+    "MD6-PKI-Alternatives-027": "For PKI og digitale signaturapplikasjoner brukes standarder som RSA/SHA-256 eller ECDSA med SHA-2 eller SHA-3 varianter i stedet. Disse har gått gjennom omfattende analyser og har etablert tillit innenfor kryptomiljøet.",
+    "MD6-PKI-Considerations-026": "Mens MD6 var ment å gi sterkere sikkerhet enn tidligere hash-funksjoner som MD5, har den ikke blitt tatt i bruk for PKI eller digitale signaturordninger på grunn av dens relative nyhet og mangel på bred aksept fra kryptografisk fellesskap.",
+    "MD6-Process-008": "MD6 behandler inngangsmeldinger gjennom en rekke komprimeringsfunksjoner som brukes i en trelignende struktur. Algoritmen kan operere parallelt, noe som bidrar til ytelsen for større innganger.",
+    "MD6-Purpose-003": "MD6 har som mål å gi robuste sikkerhetsfunksjoner og forbedret ytelse sammenlignet med forgjengerne, noe som gjør den egnet for en rekke applikasjoner som krever kollisjonsbestandig hashing og kontroll av meldingsintegritet.",
+    "MD6-Rounds-009": "Hver node i MD6-treet gjennomgår flere runder med blandingsoperasjoner som involverer modulær addisjon, bitvis XOR og ikke-lineære permutasjoner. Den endelige rotnoden representerer hash-sammendraget til inndatameldingen.",
+    "MD6-SecurityUpgrade-006": "Utformingen av MD6 er bygget på konseptet med trebasert hashing, slik at den kan tilby bedre beskyttelse mot preimage og kollisjonsangrep enn tidligere MD-algoritmer, samtidig som den gir høyere gjennomstrømning for store datasett.",
+    "MD6-StayingCurrent-030": "Det er viktig å holde seg oppdatert med de siste forskningsfunnene og anbefalingene fra kryptografiske eksperter når du velger en hash-funksjon for enhver applikasjon, spesielt ettersom landskapet for kryptografisk sikkerhet utvikler seg over tid.",
+    "MD6-UseInPKI-025": "Kan MD6 brukes til Public Key Infrastructure (PKI) eller digitale signaturer?",
+    "MD6-vs-SHA3-Adoption-023": "SHA-3 har blitt tatt i bruk som en offisiell NIST-standard og har fått utbredt bruk på grunn av sin robuste sikkerhet og ytelse. MD6, til tross for at den er teoretisk sikker, har ikke sett samme nivå av adopsjon eller standardisering.",
+    "MD6-vs-SHA3-DiffDesign-021": "MD6 og SHA-3 er begge designet med sikkerhet i tankene, men de bruker forskjellige hashing-teknikker. MD6 bruker en trebasert design for forbedret parallellitet, mens SHA-3 er basert på svampkonstruksjonen.",
+    "MD6-vs-SHA3-Flexibility-022": "MD6 tilbyr variable utdatalengder, noe som kan være fordelaktig for applikasjoner som krever tilpassede hash-størrelser. SHA-3 støtter også variable utgangslengder, selv om den vanligste varianten, SHAKE, gir enda mer fleksibilitet med utganger med vilkårlig lengde.",
+    "SHA3-NISTStandard-024": "SHA-3 standardisering"
+}

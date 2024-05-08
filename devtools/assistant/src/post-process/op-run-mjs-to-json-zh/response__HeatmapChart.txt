@@ -1,0 +1,19 @@
+根据您的要求，以下是代码中显示给用户的自然文本的JSON格式提取，以及相应的中文翻译：
+
+```json
+{
+  "i18n": {
+    "A heatmap is a graphical representation of data where the individual values contained in a matrix are represented as colors.": "热力图是一种数据图形表示，其中矩阵中包含的各个值以颜色表示。",
+    "Number of vertical bins must be greater than 0": "垂直箱的数量必须大于0",
+    "Number of horizontal bins must be greater than 0": "水平箱的数量必须大于0",
+    "Count: ${count}\nPercentage: ${perc.toFixed(2)}%": "计数：${count}\n百分比：${perc.toFixed(2)}%"
+  }
+}
+```
+
+说明：
+1. 我提取了代码中描述性文本，包括类描述、错误消息和工具提示。
+2. 错误消息和工具提示中的动态部分（如 `${count}` 和 `${perc.toFixed(2)}`）保留了原始的占位符格式，因为它们将在代码中动态替换。
+3. 对于翻译，我尽量保持了原意，同时使语言通顺易懂。
+
+请注意，由于工具提示中的文本涉及到动态替换的部分，因此我保留了原始的模板字符串格式。在实际应用中，这些值将需要通过程序进行替换。

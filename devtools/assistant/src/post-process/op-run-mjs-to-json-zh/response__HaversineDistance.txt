@@ -1,0 +1,28 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设为`123`作为占位符。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换掉值`123`。
+4. 输出JSON结果。
+
+以下是按照上述步骤生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Haversine distance": "哈弗斯距离",
+    "Returns the distance between two pairs of GPS latitude and longitude co-ordinates in metres.": "返回两对GPS纬度和经度坐标之间的距离（以米为单位）。",
+    "e.g. 51.487263,-0.124323, 38.9517,-77.1467": "例如：51.487263,-0.124323, 38.9517,-77.1467",
+    "Input must in the format lat1, lng1, lat2, lng2": "输入必须遵循格式：纬度1，经度1，纬度2，经度2"
+  }
+}
+```
+
+以下是每个键值对的解释：
+
+- "Haversine distance"：这是操作的名字，翻译为“哈弗斯距离”，是指使用哈弗斯公式计算地球上两点间距离的方法。
+- "Returns the distance between two pairs of GPS latitude and longitude co-ordinates in metres."：这是操作的描述，翻译为“返回两对GPS纬度和经度坐标之间的距离（以米为单位）。”。
+- "e.g. 51.487263,-0.124323, 38.9517,-77.1467"：这是输入的例子，保留原文，因为它是一个示例坐标，没有实际文本需要翻译。
+- "Input must in the format lat1, lng1, lat2, lng2"：这是输入错误时的提示信息，翻译为“输入必须遵循格式：纬度1，经度1，纬度2，经度2”。
+
+请注意，示例中的坐标没有翻译，因为它们是具体的示例数据，而不是自然语言文本。

@@ -1,0 +1,47 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作，并翻译成中文。
+
+首先，我们找到所有符合条件的自然文本：
+
+1. "Whirlpool is a cryptographic hash function designed by Vincent Rijmen (co-creator of AES) and Paulo S. L. M. Barreto, who first described it in 2000."
+2. "Several variants exist: ... "
+3. "Whirlpool-0 is the original version released in 2000."
+4. "Whirlpool-T is the first revision, released in 2001, improving the generation of the s-box."
+5. "Whirlpool is the latest revision, released in 2003, fixing a flaw in the diffusion matrix."
+6. "Variant"
+7. "Rounds"
+
+然后，我们将这些文本放入名为`i18n`的对象中，并给出初始值123。
+
+下面是JSON格式和中文翻译：
+
+```json
+{
+  "i18n": {
+    "Whirlpool is a cryptographic hash function designed by Vincent Rijmen (co-creator of AES) and Paulo S. L. M. Barreto, who first described it in 2000.": "Whirlpool是由Vincent Rijmen（AES的共同创造者）和Paulo S. L. M. Barreto设计的加密哈希函数，他们首次在2000年描述了它。",
+    "Several variants exist: ... ": "存在几个版本：... ",
+    "Whirlpool-0 is the original version released in 2000.": "Whirlpool-0是2000年发布的原始版本。",
+    "Whirlpool-T is the first revision, released in 2001, improving the generation of the s-box.": "Whirlpool-T是2001年发布的第一版修订，改进了s盒的生成。",
+    "Whirlpool is the latest revision, released in 2003, fixing a flaw in the diffusion matrix.": "Whirlpool是2003年发布的最新修订版，修复了扩散矩阵中的缺陷。",
+    "Variant": "变体",
+    "Rounds": "轮次"
+  }
+}
+```
+
+请注意，由于某些文本（如“Several variants exist: ...”）在代码中是部分展示的，所以我在翻译中也保留了省略号以表示这是部分内容。如果需要完整的句子，可能需要根据上下文进一步补充。
+
+【输出示例】
+
+```json
+{
+  "i18n": {
+    "Whirlpool is a cryptographic hash function designed by Vincent Rijmen (co-creator of AES) and Paulo S. L. M. Barreto, who first described it in 2000.": "Whirlpool是由Vincent Rijmen（AES的共同创造者）和Paulo S. L. M. Barreto设计的加密哈希函数，他们首次在2000年描述了它。",
+    "Several variants exist: ... ": "存在几个版本：... ",
+    "Whirlpool-0 is the original version released in 2000.": "Whirlpool-0是2000年发布的原始版本。",
+    "Whirlpool-T is the first revision, released in 2001, improving the generation of the s-box.": "Whirlpool-T是2001年发布的第一版修订，改进了s盒的生成。",
+    "Whirlpool is the latest revision, released in 2003, fixing a flaw in the diffusion matrix.": "Whirlpool是2003年发布的最新修订版，修复了扩散矩阵中的缺陷。",
+    "Variant": "变体",
+    "Rounds": "轮次"
+  }
+}
+```

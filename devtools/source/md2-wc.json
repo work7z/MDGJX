@@ -1,0 +1,6 @@
+{
+    "HTTPHeaders": {
+        "Content-Type": ["application/json"],
+        "X-LOCAL-USER-LANG": ["zh_CN"]
+    }
+}

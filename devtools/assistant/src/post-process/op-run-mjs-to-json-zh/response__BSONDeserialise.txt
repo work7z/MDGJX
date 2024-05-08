@@ -1,0 +1,28 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式，并进行中文翻译的过程：
+
+1. 提炼英文自然文本：
+   - BSON is a computer data interchange format used mainly as a data storage and network transfer format in the MongoDB database.
+   - It is a binary form for representing simple data structures, associative arrays (called objects or documents in MongoDB), and various data types of specific interest to MongoDB.
+   - The name 'BSON' is based on the term JSON and stands for 'Binary JSON'.
+   - Input data should be in a raw bytes format.
+
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本赋予一个key，value暂时设为123。
+
+3. 翻译这些文本为中文，并替换value值。
+
+4. 输出JSON结果。
+
+下面是结果：
+
+```json
+{
+  "i18n": {
+    "BSON is a computer data interchange format used mainly as a data storage and network transfer format in the MongoDB database.": "BSON主要用作MongoDB数据库中的数据存储和网络传输格式，是一种计算机数据交换格式。",
+    "It is a binary form for representing simple data structures, associative arrays (called objects or documents in MongoDB), and various data types of specific interest to MongoDB.": "它是用于表示简单数据结构、关联数组（在MongoDB中称为对象或文档）以及MongoDB特别关注的各种数据类型的二进制形式。",
+    "The name 'BSON' is based on the term JSON and stands for 'Binary JSON'.": "BSON这个名字来源于JSON术语，代表的是‘二进制JSON’。",
+    "Input data should be in a raw bytes format.": "输入数据应该是原始字节格式。"
+  }
+}
+```
+
+按照您提供的【示例1】，这是最终的JSON输出格式。每个key对应的是原始的英文文本，而value则是其对应的中文翻译。

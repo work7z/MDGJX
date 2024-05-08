@@ -1,0 +1,30 @@
+根据您的要求，以下是提炼代码中自然文本并转换为 JSON 格式的步骤：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入名为 `i18n` 的对象中，键是自然文本，值设置为 `123`。
+3. 根据代码的实际功能，将自然文本翻译为中文，并替换 `123` 作为值。
+4. 输出 JSON 结果。
+
+以下是转换后的 JSON 格式：
+
+```json
+{
+  "i18n": {
+    "Strip HTTP headers": "去除HTTP头部",
+    "Removes HTTP headers from a request or response by looking for the first instance of a double newline.": "通过查找首次出现的双换行符来去除请求或响应中的HTTP头部。"
+  }
+}
+```
+
+以下是按照您的示例格式化的 JSON：
+
+```json
+{
+  "i18n": {
+    "Strip HTTP headers": "去除HTTP头部",
+    "Removes HTTP headers from a request or response by looking for the first instance of a double newline.": "通过寻找首次出现的双换行符来移除请求或响应中的HTTP头部。"
+  }
+}
+```
+
+请注意，由于代码中只有两个自然文本片段，所以 `i18n` 对象中只包含这两个键值对。如果代码中有其他相关文本，它们也应该按照同样的方式被添加和翻译。

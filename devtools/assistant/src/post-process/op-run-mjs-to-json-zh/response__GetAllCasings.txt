@@ -1,0 +1,33 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成 JSON 格式，并进行中文翻译的过程：
+
+1. 找出所有自然文本：
+   - "Get All Casings"
+   - "Outputs all possible casing variations of a string."
+
+2. 将这些文本放入一个名为 `i18n` 的对象，并给它们赋值为123。
+
+3. 翻译这些文本为中文，并替换它们的值。
+
+下面是根据上述步骤生成的 JSON：
+
+```json
+{
+  "i18n": {
+    "Get All Casings": "获取所有大小写变体",
+    "Outputs all possible casing variations of a string.": "输出字符串所有可能的大小写变体"
+  }
+}
+```
+
+【输出示例】
+
+```json
+{
+  "i18n": {
+    "Get All Casings": "获取所有大小写变体",
+    "Outputs all possible casing variations of a string.": "输出字符串的所有可能大小写版本"
+  }
+}
+```
+
+请注意，翻译是根据代码的上下文进行的，可能需要根据实际的应用场景进一步调整。在这个例子中，"casing variations" 被翻译为“大小写变体”或“大小写版本”，这取决于具体想要表达的含义。

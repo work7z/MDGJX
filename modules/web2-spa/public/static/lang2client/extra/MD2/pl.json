@@ -1,0 +1,23 @@
+{
+    "MD2-Advantages-011": "Jakie są zalety korzystania z MD2?",
+    "MD2-AlgorithmDetails-010": "Szczegóły algorytmu MD2",
+    "MD2-Applications-018": "Jakie aplikacje korzystały lub nadal korzystają z MD2?",
+    "MD2-Breakdown-016": "Z biegiem czasu w MD2 odkryto słabe punkty kryptograficzne i obecnie zaleca się stosowanie silniejszych alternatyw, takich jak SHA-256 i SHA-3, do wszystkich aplikacji wymagających bezpiecznego mieszania.",
+    "MD2-CollisionSecurity-015": "Uważa się, że MD2 jest słaby w obliczu współczesnych ataków kryptograficznych. Jego rozmiar skrótu (128 bitów) jest niewielki jak na dzisiejsze standardy, co czyni go podatnym na ataki kolizyjne.",
+    "MD2-Def-002": "MD2 (Message-Digest Algorithm 2) to kryptograficzna funkcja skrótu zaprojektowana przez Ronalda Rivesta w 1989 roku. Tworzy ona 128-bitową wartość skrótu dla dowolnego komunikatu wejściowego.",
+    "MD2-DigitalSignature-Risks-021": "Ryzyko związane z używaniem MD2 do podpisów cyfrowych",
+    "MD2-Disadvantages-014": "Jakie są wady i problemy związane z bezpieczeństwem MD2?",
+    "MD2-FAQ-001": "Co to jest MD2?",
+    "MD2-HistoricalUse-020": "Historycznie rzecz biorąc, MD2 znalazło zastosowanie w sprawdzaniu integralności plików i aktualizacjach oprogramowania, chociaż aplikacje te w dużej mierze przeszły na bezpieczniejsze funkcje mieszające, takie jak SHA-256 i SHA-512.)",
+    "MD2-History-004": "Jak powstało MD2 i jaka jest jego historia?",
+    "MD2-Implementation-013": "Został on szeroko wdrożony i ustandaryzowany na różnych platformach i językach, co oznacza, że ​​integracja MD2 z istniejącymi systemami może być stosunkowo prosta.",
+    "MD2-InsecurityExamples-017": "Przykłady awarii zabezpieczeń MD2",
+    "MD2-Operation-007": "Jak działa operacja MD2?",
+    "MD2-Origin-005": "MD2 został początkowo stworzony jako ulepszenie w stosunku do MD1, usuwając pewne słabości znalezione we wcześniejszym algorytmie. Zyskał popularność dzięki swojej względnej prostocie i szybkości w tamtym czasie.",
+    "MD2-PKI-019": "MD2 był kiedyś używany w infrastrukturze klucza publicznego (PKI) do podpisów cyfrowych, ale od tego czasu został wycofany ze względu na jego podatność na ataki. Certyfikaty podpisane za pomocą MD2 nie są już zaufane przez większość systemów.",
+    "MD2-Process-008": "MD2 działa poprzez dopełnianie komunikatu wejściowego do wielokrotności 16 bajtów, a następnie przetwarza go poprzez serię operacji wyłącznych OR, rotacji bitów i dodawania. Końcowym wyjściem jest 128-bitowa wartość skrótu.",
+    "MD2-Purpose-003": "Celem MD2 jest zapewnienie integralności danych poprzez wygenerowanie unikalnego cyfrowego odcisku palca, który może zostać wykorzystany do sprawdzenia oryginalności i autentyczności danych.",
+    "MD2-Rounds-009": "Algorytm wykorzystuje proces składający się z czterech rund, w którym określone operacje są wykonywane na 128-bitowej zmiennej stanu. Każda runda pobiera bloki uzupełnionej wiadomości i aktualizuje stan do momentu przetworzenia całej wiadomości.",
+    "MD2-Speed-012": "MD2 był w swoim czasie uważany za szybki i nadal ma akceptowalną wydajność w niektórych scenariuszach, dzięki czemu nadaje się do środowisk, w których zasoby obliczeniowe są ograniczone.",
+    "MD2-Successors-006": "Został on jednak zastąpiony silniejszymi algorytmami, takimi jak MD5 i SHA-1, które należą do tej samej rodziny funkcji skrótu, ale oferują ulepszone funkcje bezpieczeństwa."
+}

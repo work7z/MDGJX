@@ -1,0 +1,20 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式的`i18n`部分，并翻译成中文：
+
+```json
+{
+  "i18n": {
+    "Derive PBKDF2 key": "派生PBKDF2密钥",
+    "PBKDF2 is a password-based key derivation function. It is part of RSA Laboratories' Public-Key Cryptography Standards (PKCS) series, specifically PKCS #5 v2.0, also published as Internet Engineering Task Force's RFC 2898.": "PBKDF2是一种基于密码的密钥派生函数。它是RSA实验室公钥密码学标准（PKCS）系列的一部分，具体为PKCS #5 v2.0，也作为互联网工程任务组（IETF）的RFC 2898发布。",
+    "In many applications of cryptography, user security is ultimately dependent on a password, and because a password usually can't be used directly as a cryptographic key, some processing is required.": "在许多密码学应用中，用户的安全性最终取决于密码，因为密码通常不能直接用作加密密钥，所以需要进行一些处理。",
+    "A salt provides a large set of keys for any given password, and an iteration count increases the cost of producing keys from a password, thereby also increasing the difficulty of attack.": "一个盐（salt）为任何给定的密码提供大量密钥，迭代次数增加了从密码生成密钥的成本，从而也增加了攻击的难度。",
+    "If you leave the salt argument empty, a random salt will be generated.": "如果您留空盐（salt）参数，将生成一个随机盐。",
+    "Passphrase": "密码短语",
+    "Key size": "密钥大小",
+    "Iterations": "迭代次数",
+    "Hashing function": "散列函数",
+    "Salt": "盐"
+  }
+}
+```
+
+参考示例1，这是最终的JSON输出格式。每个key都是原始代码中的自然文本，而其对应的value是中文翻译。请注意，这里没有包括URL和代码中的示例文本，因为它们不符合您所要求的自然文本的定义。

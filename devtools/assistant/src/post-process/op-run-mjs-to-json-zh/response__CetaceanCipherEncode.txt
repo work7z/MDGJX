@@ -1,0 +1,44 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设为`123`。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换其值。
+4. 输出JSON结果。
+
+以下是按照上述步骤创建的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Cetacean Cipher Encode": "123",
+    "Converts any input into Cetacean Cipher. <br/><br/>e.g. <code>hi</code> becomes <code>EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe</code>": "123",
+    "Learn more about Dolphins": "123"
+  }
+}
+```
+
+下面是翻译为中文后的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Cetacean Cipher Encode": "鲸类密码编码",
+    "Converts any input into Cetacean Cipher. <br/><br/>e.g. <code>hi</code> becomes <code>EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe</code>": "将任何输入转换为鲸类密码。例如：<code>hi</code> 转换为 <code>EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe</code>",
+    "Learn more about Dolphins": "了解更多关于海豚的信息"
+  }
+}
+```
+
+注意：`Learn more about Dolphins` 是根据`this.infoURL`的内容推断出的自然文本，用于描述链接的目的。
+
+【输出示例】
+
+```json
+{
+  "i18n": {
+    "Cetacean Cipher Encode": "鲸类密码编码",
+    "Converts any input into Cetacean Cipher. <br/><br/>e.g. <code>hi</code> becomes <code>EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe</code>": "将任何输入转换为鲸类密码。例如：<code>hi</code> 转换为 <code>EEEEEEEEEeeEeEEEEEEEEEEEEeeEeEEe</code>",
+    "Learn more about Dolphins": "了解更多关于海豚的信息"
+  }
+}
+```

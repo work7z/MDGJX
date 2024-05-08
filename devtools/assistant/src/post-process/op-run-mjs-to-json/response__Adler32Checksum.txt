@@ -1,0 +1,28 @@
+根据您的要求，下面是将代码提炼为JSON格式的结果：
+
+```json
+{
+  "i18n": {
+    "Adler-32 Checksum": 1,
+    "Adler-32 is a checksum algorithm which was invented by Mark Adler in 1995, and is a modification of the Fletcher checksum. Compared to a cyclic redundancy check of the same length, it trades reliability for speed (preferring the latter).": 1,
+    "Adler-32 is more reliable than Fletcher-16, and slightly less reliable than Fletcher-32.": 1
+  },
+  "extra": {
+    "exampleInput": "<>",
+    "exampleOutput": "<>",
+    "editor": {
+      "input": "typescript",
+      "output": "javascript"
+    }
+  }
+}
+```
+
+在这个JSON对象中：
+
+- `i18n`字段包含了所有从代码中提取的自然文本，其中key是文本内容，value设置为1。
+- `extra`字段中的`exampleInput`和`exampleOutput`由于在代码中没有找到具体的示例，所以使用了`<>`来代替。
+- `editor.input`设置为`typescript`，因为代码是使用TypeScript编写的。
+- `editor.output`设置为`javascript`，因为代码的输出是字符串，而JavaScript是字符串的自然表示。
+
+请注意，`infoURL`字段的内容没有被包含在内，因为它是一个链接，不符合您要求的自然文本的定义。同样，其他字段如`exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`和`type`也没有被包含。

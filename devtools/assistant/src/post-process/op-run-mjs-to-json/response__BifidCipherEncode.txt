@@ -1,0 +1,27 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为 `i18n` 的对象中，其中每个文本对应一个键，其值为1。
+
+下面是提取后的 JSON 格式的 `i18n` 对象内容：
+
+```json
+{
+  "i18n": {
+    "The Bifid cipher is a cipher which uses a Polybius square in conjunction with transposition, which can be fairly difficult to decipher without knowing the alphabet keyword.": 1,
+    "The key must consist only of letters in the English alphabet": 1,
+    "Bifid Cipher Encode": 1
+  }
+}
+```
+
+以下是提取过程的详细步骤：
+
+1. 我们忽略了代码中的链接、示例输入、示例输出、输入类型、输出类型、模块类型和其他技术字段。
+2. 我们只选择了那些直接显示给用户的文本，如描述、错误消息和操作名称。
+3. 每个文本都作为 `i18n` 对象的一个键，其值设置为1。
+
+在上述 JSON 中，以下是包含的文本：
+
+- "The Bifid cipher is a cipher which uses a Polybius square in conjunction with transposition, which can be fairly difficult to decipher without knowing the alphabet keyword."：这是对 Bifid Cipher Encode 的描述。
+- "The key must consist only of letters in the English alphabet"：这是错误消息，当密钥不符合要求时抛出。
+- "Bifid Cipher Encode"：这是操作的名字。
+
+请注意，这个 JSON 对象是根据您提供的代码和指示创建的，如果需要进一步的调整，请告知。

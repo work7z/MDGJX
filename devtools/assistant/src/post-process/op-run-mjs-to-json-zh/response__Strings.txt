@@ -1,0 +1,35 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取文本。
+2. 将文本放入名为`i18n`的对象中，并给每个文本赋予一个默认值`123`。
+3. 根据代码的实际功能，将默认值替换为中文翻译。
+4. 输出JSON结果。
+
+以下是JSON格式的输出：
+
+```json
+{
+  "i18n": {
+    "Extracts all strings from the input.": "从输入中提取所有字符串。",
+    "Single byte": "单字节",
+    "16-bit littleendian": "16位小端",
+    "16-bit bigendian": "16位大端",
+    "All": "所有",
+    "Minimum length": "最小长度",
+    "Match": "匹配",
+    "ASCII": "ASCII",
+    "Alphanumeric + punctuation (A)": "字母数字加标点（ASCII）",
+    "All printable chars (A)": "所有可打印字符（ASCII）",
+    "Null-terminated strings (A)": "以空字符终止的字符串（ASCII）",
+    "Unicode": "Unicode",
+    "Alphanumeric + punctuation (U)": "字母数字加标点（Unicode）",
+    "All printable chars (U)": "所有可打印字符（Unicode）",
+    "Null-terminated strings (U)": "以空字符终止的字符串（Unicode）",
+    "Display total": "显示总数",
+    "Sort": "排序",
+    "Unique": "唯一"
+  }
+}
+```
+
+请注意，示例1中提供的结构已经按照提取的文本和翻译进行了填充。这些翻译是根据代码中参数描述的语境进行的，可能需要根据实际应用场景进一步调整。

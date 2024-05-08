@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "Ohjelmoinnin oppiminen avaa uramahdollisuuksia eri toimialoilla ja mahdollistaa innovatiivisten ratkaisujen kehittämisen, tehtävien automatisoinnin ja monimutkaisten järjestelmien ymmärtämisen.",
+    "CP-Advantages-013": "Mitä etuja tietokoneohjelmoinnin oppimisesta on?",
+    "CP-Basics-001": "Mitä on tietokoneohjelmointi?",
+    "CP-Def-002": "Tietokoneohjelmointi sisältää ohjeiden tai koodin kirjoittamisen ohjelmointikielellä, joka ohjaa tietokoneita suorittamaan tiettyjä tehtäviä.",
+    "CP-History-004": "Mikä on tietokoneohjelmoinnin historia?",
+    "CP-History-Origin-005": "Ensimmäiset ohjelmoitavat koneet juontavat juurensa Ada Lovelacen työstä Charles Babbagen analyyttiseen koneeseen 1800-luvulla. Kuitenkin moderni ohjelmointi lähti liikkeelle ensimmäisen yleiskäyttöisen elektronisen tietokoneen, ENIAC:n, keksimisen myötä 1940-luvulla.",
+    "CP-Lang-Choice-009": "Kielen valinta riippuu tekijöistä, kuten projektin vaatimuksista, yhteisön tuesta, oppimisen helppoudesta ja suoritustarpeista.",
+    "CP-Language-Evolution-006": "Siitä lähtien ohjelmointikielet ovat kehittyneet konekoodista kokoonpanoksi, sitten korkean tason kieliksi, kuten FORTRAN, COBOL, C, ja nyt moderneiksi kieliksi, kuten Python, JavaScript ja Rust.",
+    "CP-Languages-007": "Mitkä ovat suosittuja ohjelmointikieliä?",
+    "CP-Languages-List-008": "Suosittuja ohjelmointikieliä ovat Java, Python, JavaScript, C++, C#, Swift, Go, PHP, Ruby ja Kotlin. Jokaisella on omat vahvuutensa ja käyttötapansa, esim. Python datatieteeseen, JavaScript verkkokehitykseen ja C++ järjestelmäohjelmointiin.",
+    "CP-Process-010": "Mikä on tietokoneohjelmointiprosessi?",
+    "CP-Process-Explanation-011": "Ohjelmointiin kuuluu tyypillisesti suunnittelu (ongelman määrittely ja ratkaisun suunnittelu), koodaus (lähdekoodin kirjoittaminen valitulla kielellä), testaus (virheenkorjaus ja toimivuuden tarkistaminen) ja ylläpito (ohjelman päivitys ja parantaminen ajan myötä).",
+    "CP-Purpose-003": "Ohjelmoijat luovat algoritmeja, ratkaisevat ongelmia ja rakentavat ohjelmistosovelluksia, jotka voivat automatisoida prosesseja, käsitellä tietoja ja olla vuorovaikutuksessa käyttäjien tai muiden järjestelmien kanssa.",
+    "CP-SDLC-012": "Tämä rakentuu usein ohjelmistokehityksen elinkaariin (SDLC), joka sisältää lisävaiheita, kuten vaatimusanalyysin, suunnittelun, käyttöönoton ja käyttäjien hyväksyntätestauksen.",
+    "CP-Skillset-015": "Se parantaa myös loogista ajattelua, ongelmanratkaisutaitoja ja sopeutumiskykyä uusiin teknologioihin, mikä tekee ihmisestä monipuolisemman digitaaliaikana.",
+    "HistOfProg-Wikipedia": "Ohjelmointikielten historia - Wikipedia",
+    "SDLC-Wikipedia": "Ohjelmistokehityksen elinkaari - Wikipedia",
+    "TIOBE-Index": "TIOBE-indeksi – ohjelmistojen laatuyritys"
+}

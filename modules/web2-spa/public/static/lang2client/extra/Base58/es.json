@@ -1,0 +1,20 @@
+{
+    "c5m1b": "Otra variante, Base58Flickr, difiere ligeramente en su conjunto de caracteres. Reemplaza '+' por ',' y '/' por '-', adaptándose a las necesidades de URL de Flickr.",
+    "c6p9b": "Si la longitud de los datos de entrada no es divisible por 8, no se utiliza el relleno; en cambio, cada grupo no completo se trata de forma independiente.",
+    "d3w2e": "Base58 funciona convirtiendo bytes de entrada en un número entero grande y luego expresa ese número entero como una combinación de caracteres de su conjunto de 58 caracteres (A-Z, a-z, 1-9).",
+    "f4t7z": "Base58 se desarrolló inicialmente para Bitcoin para representar direcciones públicas y claves privadas sin ambigüedad.",
+    "g7h5k": "¿Cómo funciona Base58?",
+    "j6s3r": "¿Cómo codifico/decodifico con Base58 en JavaScript?",
+    "k1m4e": "Sin embargo, no ofrece la misma eficiencia de espacio que Base64 o Base32 ya que utiliza menos caracteres en su alfabeto.",
+    "pq5e9n": "Puede utilizar bibliotecas como 'bs58' para realizar la codificación y decodificación Base58 en JavaScript.",
+    "q2x8k": "Su uso se ha expandido a otras criptomonedas y escenarios donde se desean cadenas legibles por humanos y resistentes a errores.",
+    "r2n7v": "La principal ventaja es una mayor legibilidad debido a la exclusión de caracteres de apariencia similar, lo que reduce los errores durante la entrada manual.",
+    "s1b3m": "A diferencia de Base64 o Base32, excluye los caracteres '0', 'O', 'I' y 'l' que se confunden fácilmente, lo que lo hace adecuado para URL y códigos QR.",
+    "u8i5b": "¿Cuáles son las ventajas de utilizar Base58 sobre Base64 o Base32?",
+    "v4n9t": "Base58 es un esquema de codificación que representa datos binarios como una secuencia de caracteres alfanuméricos.",
+    "w3x7k": "Sí, algunas variantes populares incluyen Base58Check, que agrega una suma de verificación para la detección de errores, comúnmente utilizada en Bitcoin.",
+    "x2z6r": "¿Qué es Base58?",
+    "y9m1n": "¿Por qué se creó Base58?",
+    "z1m2t": "Uso de ejemplo: `const codificado = bs58.encode('tus-datos'); const decodificado = bs58.decode (codificado);`",
+    "z9t2p": "¿Existen variantes específicas de Base58?"
+}

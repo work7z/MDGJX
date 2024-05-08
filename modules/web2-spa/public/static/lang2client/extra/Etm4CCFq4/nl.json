@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "Installeer OpenSSL op uw systeem en koppel met 'libssl'- en 'libcrypto'-bibliotheken bij het bouwen van uw C++-applicatie.",
+    "md5-cpp-openssl-0001": "C++ gebruikt de OpenSSL-bibliotheek om MD5-hashes te genereren. U moet OpenSSL installeren en er een koppeling mee maken in uw project.",
+    "md5-cpp-use-openssl-0003": "Het fragment creëert een functie 'getMD5' die een invoertekenreeks nodig heeft, de MD5-hash berekent met behulp van de MD5 API van OpenSSL en de hash retourneert als een hexadecimale tekenreeks. Plak deze code in uw C++-programma en roep de functie 'getMD5' aan met de gewenste invoer.",
+    "md5-csharp-built-in-0001": "In C# wordt de klasse 'System.Security.Cryptography.MD5' gebruikt om MD5-hashes te genereren.",
+    "md5-csharp-no-install-0002": "Er is geen externe bibliotheekinstallatie nodig omdat deze deel uitmaakt van .NET Framework/Core.",
+    "md5-csharp-use-0003": "Dit fragment creëert een MD5-instantie, converteert de invoerreeks naar bytes, berekent de hash en codeert uiteindelijk de hash in Base64-indeling. Plaats deze code in het toegangspunt van uw C#-toepassing en voer deze uit om de Base64-gecodeerde MD5-hash te verkrijgen.",
+    "md5-java-built-in-0001": "Java gebruikt de klasse 'java.security.MessageDigest' om MD5-hashes te genereren.",
+    "md5-java-imports-0002": "U moet 'java.security.MessageDigest' en 'java.util.Base64' importeren om het resultaat te hashen en te coderen.",
+    "md5-java-use-0003": "Het fragment haalt een exemplaar op van het MD5-digestalgoritme, werkt dit bij met de bytes van de invoerreeks en codeert vervolgens de resulterende hash in een Base64-reeks. Kopieer deze code naar een Java-klasse en voer de hoofdmethode uit om de Base64-gecodeerde MD5-hash te verkrijgen.",
+    "md5-nodejs-built-in-0001": "In Node.js wordt de ingebouwde 'crypto'-module gebruikt voor het genereren van MD5-hashes.",
+    "md5-nodejs-no-install-0002": "Er is geen externe bibliotheekinstallatie vereist omdat 'crypto' vooraf is geïnstalleerd met Node.js.",
+    "md5-nodejs-use-0003": "Het fragment creëert een hash-object met behulp van `createHash('md5')`, werkt het bij met de invoertekenreeks en converteert vervolgens de samenvatting naar hexadecimaal formaat via `.digest('hex')`. Plak deze code in uw Node.js-script en voer deze uit om de MD5-hash van de invoerwaarde te verkrijgen.",
+    "md5-php-built-in-0001": "PHP heeft een ingebouwde functie 'md5()' voor het genereren van MD5-hashes.",
+    "md5-php-no-install-0002": "Er is geen externe bibliotheekinstallatie nodig omdat 'md5()' vooraf is geïnstalleerd in PHP.",
+    "md5-php-use-0003": "Dit eenvoudige voorbeeld definieert een 'getMD5'-functie die de PHP-functie 'md5()' aanroept op de opgegeven invoertekenreeks. Kopieer deze code naar een PHP-bestand, sla het op met de extensie .php en voer het uit op een webserver of via de opdrachtregel om de MD5-hash van de invoerwaarde te bekijken.",
+    "md5-python-built-in-0001": "Python gebruikt de ingebouwde 'hashlib'-bibliotheek voor het genereren van MD5-hashes.",
+    "md5-python-no-install-0002": "Er is geen extra installatie nodig omdat 'hashlib' standaard bij Python wordt geleverd.",
+    "md5-python-use-0003": "De meegeleverde sjabloon codeert de invoerreeks naar bytes voordat een MD5-hashobject wordt gemaakt. De '.hexdigest()'-methode wordt vervolgens aangeroepen op het hash-object om de MD5-hash in hexadecimale vorm op te halen. Kopieer deze code naar een Python-script en voer het uit om de MD5-hash te verkrijgen."
+}

@@ -1,0 +1,47 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式的步骤，并进行了适当的翻译：
+
+1. 提炼英文自然文本。
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本赋予一个默认值`123`。
+3. 翻译这些文本为中文，并替换默认值。
+
+以下是JSON格式的结果：
+
+```json
+{
+  "i18n": {
+    "Extract IP addresses": "提取IP地址",
+    "Extracts all IPv4 and IPv6 addresses.": "提取所有IPv4和IPv6地址。",
+    "Warning: Given a string": "警告：给定一个字符串",
+    "this will match": "这将匹配",
+    "so always check the original input!": "因此请始终检查原始输入！",
+    "IPv4": "IPv4",
+    "IPv6": "IPv6",
+    "Remove local IPv4 addresses": "移除本地IPv4地址",
+    "Display total": "显示总数",
+    "Sort": "排序",
+    "Unique": "唯一"
+  }
+}
+```
+
+根据代码的实际功能，以下是更准确的翻译：
+
+```json
+{
+  "i18n": {
+    "Extract IP addresses": "提取IP地址",
+    "Extracts all IPv4 and IPv6 addresses.": "提取所有IPv4和IPv6地址。",
+    "Warning: Given a string": "注意：如果输入字符串",
+    "this will match": "可能会匹配到",
+    "so always check the original input!": "请务必检查原始输入内容！",
+    "IPv4": "IPv4地址",
+    "IPv6": "IPv6地址",
+    "Remove local IPv4 addresses": "移除私有IPv4地址",
+    "Display total": "显示IP总数",
+    "Sort": "IP排序",
+    "Unique": "去重"
+  }
+}
+```
+
+请注意，由于代码示例中并没有提供具体的用户显示文本，除了类描述和警告之外，其他如参数名等文本可能不会直接显示给用户，因此这部分翻译可能需要根据实际应用场景进一步调整。

@@ -1,0 +1,20 @@
+{
+    "c5m1b": "Une autre variante, Base58Flickr, diffère légèrement par son jeu de caractères. Il remplace '+' par ',' et '/' par '-', s'adaptant aux besoins d'URL de Flickr.",
+    "c6p9b": "Si la longueur des données d'entrée n'est pas divisible par 8, le remplissage n'est pas utilisé ; au lieu de cela, chaque groupe non complet est traité indépendamment.",
+    "d3w2e": "Base58 fonctionne en convertissant les octets d'entrée en un grand entier, puis en exprimant cet entier sous la forme d'une combinaison de caractères de son jeu de 58 caractères (A-Z, a-z, 1-9).",
+    "f4t7z": "Base58 a été initialement développé pour Bitcoin afin de représenter sans ambiguïté les adresses publiques et les clés privées.",
+    "g7h5k": "Comment fonctionne Base58 ?",
+    "j6s3r": "Comment encoder/décoder avec Base58 en JavaScript ?",
+    "k1m4e": "Cependant, il n'offre pas tout à fait la même efficacité spatiale que Base64 ou Base32 puisqu'il utilise moins de caractères dans son alphabet.",
+    "pq5e9n": "Vous pouvez utiliser des bibliothèques telles que « bs58 » pour effectuer l'encodage et le décodage Base58 en JavaScript.",
+    "q2x8k": "Son utilisation s'est étendue à d'autres crypto-monnaies et scénarios dans lesquels des chaînes lisibles par l'homme et résistantes aux erreurs sont souhaitées.",
+    "r2n7v": "Le principal avantage est une lisibilité accrue grâce à l’exclusion des caractères d’apparence similaire, réduisant ainsi les erreurs lors de la saisie manuelle.",
+    "s1b3m": "Contrairement à Base64 ou Base32, il exclut les caractères « 0 », « O », « I » et « l » facilement confondus, ce qui le rend adapté aux URL et aux codes QR.",
+    "u8i5b": "Quels sont les avantages d’utiliser Base58 par rapport à Base64 ou Base32 ?",
+    "v4n9t": "Base58 est un schéma de codage qui représente les données binaires sous la forme d'une séquence de caractères alphanumériques.",
+    "w3x7k": "Oui, certaines variantes populaires incluent Base58Check, qui ajoute une somme de contrôle pour la détection des erreurs, couramment utilisée dans Bitcoin.",
+    "x2z6r": "Qu’est-ce que Base58 ?",
+    "y9m1n": "Pourquoi Base58 a-t-il été créé ?",
+    "z1m2t": "Exemple d'utilisation : `const encoded = bs58.encode('your-data'); const décodé = bs58.decode (encodé);`",
+    "z9t2p": "Existe-t-il des variantes spécifiques de Base58 ?"
+}

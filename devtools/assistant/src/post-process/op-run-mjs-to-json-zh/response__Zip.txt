@@ -1,0 +1,39 @@
+根据您的要求，我们需要提取代码中显示给用户的自然文本，并将它们放入一个名为 `i18n` 的对象中，然后进行翻译。
+
+以下是提取的文本和对应的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Zip": "压缩",
+    "Compresses data using the PKZIP algorithm with the given filename.": "使用给定的文件名和PKZIP算法压缩数据。",
+    "No support for multiple files at this time.": "目前不支持多个文件。",
+    "Filename": "文件名",
+    "Comment": "注释",
+    "Password": "密码",
+    "Compression method": "压缩方法",
+    "Operating system": "操作系统",
+    "Compression type": "压缩类型"
+  }
+}
+```
+
+根据上述提取和翻译，下面是放入JSON格式的结果：
+
+```json
+{
+  "i18n": {
+    "Zip": "压缩",
+    "Compresses data using the PKZIP algorithm with the given filename.": "使用给定的文件名和PKZIP算法压缩数据。",
+    "No support for multiple files at this time.": "目前不支持多个文件。",
+    "Filename": "文件名",
+    "Comment": "注释",
+    "Password": "密码",
+    "Compression method": "压缩方法",
+    "Operating system": "操作系统",
+    "Compression type": "压缩类型"
+  }
+}
+```
+
+这就是根据您的要求处理后的JSON对象。每个键（key）都是原始的英文文本，而每个值（value）是对应的中文翻译。

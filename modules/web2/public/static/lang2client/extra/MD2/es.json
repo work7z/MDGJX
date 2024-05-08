@@ -1,0 +1,23 @@
+{
+    "MD2-Advantages-011": "¿Cuáles son las ventajas de utilizar MD2?",
+    "MD2-AlgorithmDetails-010": "Detalles del algoritmo MD2",
+    "MD2-Applications-018": "¿Qué aplicaciones han utilizado o siguen utilizando MD2?",
+    "MD2-Breakdown-016": "Con el tiempo se han descubierto debilidades criptográficas en MD2 y ahora se recomiendan alternativas más potentes como SHA-256 y SHA-3 para todas las aplicaciones que requieren hash seguro.",
+    "MD2-CollisionSecurity-015": "Se considera que MD2 es débil contra los ataques criptográficos modernos. Su tamaño de hash (128 bits) es pequeño para los estándares actuales, lo que lo hace vulnerable a ataques de colisión.",
+    "MD2-Def-002": "MD2 (Algoritmo 2 de resumen de mensajes) es una función hash criptográfica diseñada por Ronald Rivest en 1989. Produce un valor hash de 128 bits para cualquier mensaje de entrada determinado.",
+    "MD2-DigitalSignature-Risks-021": "Riesgos de utilizar MD2 para firmas digitales",
+    "MD2-Disadvantages-014": "¿Cuáles son las desventajas y problemas de seguridad con MD2?",
+    "MD2-FAQ-001": "¿Qué es MD2?",
+    "MD2-HistoricalUse-020": "Históricamente, MD2 encontró uso en comprobaciones de integridad de archivos y actualizaciones de software, aunque estas aplicaciones han pasado en gran medida a funciones hash más seguras, como SHA-256 y SHA-512).",
+    "MD2-History-004": "¿Cómo se desarrolló MD2 y cuál es su historia?",
+    "MD2-Implementation-013": "Se ha implementado y estandarizado ampliamente en varias plataformas y lenguajes, lo que significa que integrar MD2 en los sistemas existentes puede ser relativamente sencillo.",
+    "MD2-InsecurityExamples-017": "Ejemplos de averías de seguridad de MD2",
+    "MD2-Operation-007": "¿Cómo funciona la operación MD2?",
+    "MD2-Origin-005": "MD2 se creó inicialmente como una mejora con respecto a MD1, abordando algunas debilidades encontradas en el algoritmo anterior. Ganó popularidad debido a su relativa simplicidad y velocidad en ese momento.",
+    "MD2-PKI-019": "MD2 alguna vez se usó en la infraestructura de clave pública (PKI) para firmas digitales, pero desde entonces ha quedado obsoleto debido a su vulnerabilidad a los ataques. La mayoría de los sistemas ya no confían en los certificados firmados con MD2.",
+    "MD2-Process-008": "MD2 opera rellenando el mensaje de entrada a un múltiplo de 16 bytes y luego lo procesa a través de una serie de operaciones OR exclusivas, rotaciones de bits y adiciones. El resultado final es un valor hash de 128 bits.",
+    "MD2-Purpose-003": "El propósito de MD2 es garantizar la integridad de los datos generando una huella digital única que puede usarse para verificar la originalidad y autenticidad de los datos.",
+    "MD2-Rounds-009": "El algoritmo utiliza un proceso de cuatro rondas con operaciones específicas realizadas en una variable de estado de 128 bits. Cada ronda toma bloques del mensaje rellenado y actualiza el estado hasta que se procesa todo el mensaje.",
+    "MD2-Speed-012": "MD2 se consideraba rápido para su época y aún tiene un rendimiento aceptable en algunos escenarios, lo que lo hace adecuado para entornos donde los recursos computacionales son limitados.",
+    "MD2-Successors-006": "Sin embargo, ha sido reemplazado por algoritmos más potentes como MD5 y SHA-1, que forman parte de la misma familia de funciones hash pero ofrecen características de seguridad mejoradas."
+}

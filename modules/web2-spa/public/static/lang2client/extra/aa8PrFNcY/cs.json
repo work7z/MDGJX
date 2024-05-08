@@ -1,0 +1,16 @@
+{
+    "CSSNano": "cssnano – GitHub",
+    "HTMLMinifier": "HTMLMinifier – GitHub",
+    "MDN-Minification": "MDN Web Docs – Minifikace",
+    "Minify-Basics-001": "Co znamená minifikace kódu nebo souborů?",
+    "Minify-CLI-Usage-009": "Většina těchto nástrojů má jak rozhraní příkazového řádku (CLI), tak rozhraní API, která vývojářům umožňují automatizovat proces minifikace během vývoje a nasazení.",
+    "Minify-Def-002": "Minifikace je proces zmenšování velikosti kódu (HTML, CSS, JavaScript atd.) odstraněním nepotřebných znaků, jako jsou prázdná místa, komentáře a zalomení řádků, aniž by to ovlivnilo jeho funkčnost.",
+    "Minify-Example-007k": "Například z {0} se po minifikaci může stát {1}.",
+    "Minify-How-Works-004": "Jak funguje minifikace kódu?",
+    "Minify-Process-005": "Minifikátory používají algoritmy k analýze struktury zdrojového kódu, odstranění nadbytečných prvků a zkrácení názvů proměnných, kde je to možné. Výsledkem je menší velikost souboru při zachování původního chování kódu.",
+    "Minify-Purpose-003": "Primárním účelem minifikace je zlepšit výkon webu a zkrátit dobu načítání stránky snížením množství dat, která je třeba přenést mezi serverem a klientem.",
+    "Minify-Tools-007": "Jaké jsou některé oblíbené nástroje pro minifikaci kódu?",
+    "Minify-Tools-List-008": "Mezi oblíbené nástroje pro minifikaci kódu patří UglifyJS pro JavaScript, Terser, který je evolucí UglifyJS, HTMLMinifier pro HTML a CSSNano pro CSS. Tyto nástroje lze často integrovat do procesů sestavování pomocí spouštěčů úloh, jako je Gulp nebo Webpack.",
+    "Terser": "Terser – GitHub",
+    "UglifyJS": "UglifyJS – GitHub"
+}

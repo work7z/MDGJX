@@ -1,0 +1,27 @@
+根据您的要求，以下是提取自给定代码的自然文本，并以JSON格式呈现，其中包含翻译后的中文：
+
+```json
+{
+  "i18n": {
+    "Emulation of the Bombe machine.": "Bombe机器的仿真。",
+    "used at Bletchley Park to attack Enigma, based on work by Polish and British cryptanalysts.": "在布莱切利园使用，基于波兰和英国密码分析员的工作攻击恩尼格玛机。",
+    "To run this you need to have a 'crib', which is some known plaintext for a chunk of the target ciphertext, and know the rotors used.": "要运行此操作，您需要有一个'crib'，即目标密文的一部分已知明文，并知道使用的转子。",
+    "The machine will suggest possible configurations of the Enigma.": "机器将建议恩尼格玛可能的配置。",
+    "Each suggestion has the rotor start positions (left to right) and known plugboard pairs.": "每个建议都包含转子起始位置（从左到右）和已知的插板对。",
+    "Choosing a crib: First, note that Enigma cannot encrypt a letter to itself, which allows you to rule out some positions for possible cribs.": "选择crib：首先，请注意恩尼格玛不能将一个字母加密成它自己，这使您可以排除一些可能的crib位置。",
+    "Secondly, the Bombe does not simulate the Enigma's middle rotor stepping.": "其次，Bombe不模拟恩尼格玛中间转子的步进。",
+    "The longer your crib, the more likely a step happened within it, which will prevent the attack working.": "您的crib越长，其中发生步进的可能性就越大，这将阻止攻击生效。",
+    "However, other than that, longer cribs are generally better.": "然而，除此之外，较长的crib通常更好。",
+    "The attack produces a 'menu' which maps ciphertext letters to plaintext, and the goal is to produce 'loops'.": "攻击生成一个将密文字母映射到明文的'menu'，目标是产生'loops'。",
+    "If the menu seems good but the right answer isn't produced, your crib may be wrong, or you may have overlapped the middle rotor stepping - try a different crib.": "如果menu看起来不错，但没有产生正确答案，您的crib可能是错误的，或者您可能重叠了中间转子的步进 - 尝试不同的crib。",
+    "Output is not sufficient to fully decrypt the data.": "输出不足以完全解密数据。",
+    "You will have to recover the rest of the plugboard settings by inspection.": "您需要通过检查恢复插板的其余设置。",
+    "If your output is correct for a bit, and then goes wrong, adjust the ring and start position on the right-hand rotor together until the output improves.": "如果您的输出部分正确，然后出错，请一起调整右手转子的环和起始位置，直到输出改善。",
+    "If necessary, repeat for the middle rotor.": "如有必要，对中间转子重复此操作。",
+    "Bombe run with loops in menu (2+ desirable): stops, % done": "Bombe运行，菜单中带有loops（2+个更理想）：已停止次数，完成百分比",
+    "Bombe run on menu with loops (2+ desirable). Note: Rotor positions are listed left to right and start at the beginning of the crib, and ignore stepping and the ring setting. Some plugboard settings are determined. A decryption preview starting at the beginning of the crib and ignoring stepping is also provided.": "在带有loops（2+个更理想）的菜单上运行Bombe。注意：转子位置从左到右列出，从crib的开始位置开始，并忽略步进和环设置。确定了一些插板设置。还提供了从crib开始并忽略步进的解密预览。"
+  }
+}
+```
+
+请注意，我已经省略了与用户界面相关的文本（例如“Left-most (4th) rotor”），并且没有包括HTML标签或代码中的URL。上面的JSON对象包含了代码中显示给用户的自然文本以及相应的中文翻译。

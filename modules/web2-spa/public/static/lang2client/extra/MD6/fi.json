@@ -1,0 +1,23 @@
+{
+    "MD6-AlgorithmDetails-010": "MD6-algoritmin tiedot",
+    "MD6-ComparisonSHA3-020": "Miten MD6 verrataan SHA-3:een (Keccak)?",
+    "MD6-Def-002": "MD6 (Message-Digest Algorithm 6) on Ronald Rivestin vuonna 2008 suunnittelema kryptografinen hash-funktio. Se on MD-perheen evoluutio, joka tarjoaa vaihtelevia lähtökokoja 128-512 bitin välillä.",
+    "MD6-FAQ-001": "Mikä on MD6?",
+    "MD6-FutureDevelopments-028": "Onko MD6:lle suunniteltu tulevaa kehitystä tai parannuksia?",
+    "MD6-FutureUnknown-029": "Toistaiseksi MD6-algoritmin meneillään olevasta kehityksestä tai suunnitelmista parantaa ei ole julkisesti saatavilla olevaa tietoa. Kryptografinen tutkimus kehittyy edelleen, ja uusia algoritmeja voi syntyä uusiin uhkiin tai vaatimuksiin vastaamiseksi.",
+    "MD6-History-004": "Miten MD6 kehitettiin ja mikä johti sen luomiseen?",
+    "MD6-Operation-007": "Miten MD6:n toiminta toimii?",
+    "MD6-Origin-005": "MD6 luotiin vastauksena MD5:n ja SHA-1:n haavoittuvuuksiin, joita tuolloin käytettiin laajalti. Sen tavoitteena oli tarjota turvallisempi vaihtoehto, joka lisää joustavuutta tuotoskoon suhteen.",
+    "MD6-PKI-Alternatives-027": "PKI- ja digitaalisen allekirjoituksen sovelluksissa sen sijaan käytetään yleisesti standardeja, kuten RSA/SHA-256 tai ECDSA SHA-2- tai SHA-3-muunnelmilla. Nämä ovat käyneet läpi laajan analyysin ja ovat luoneet luottamuksen salausyhteisössä.",
+    "MD6-PKI-Considerations-026": "Vaikka MD6:n oli tarkoitus tarjota vahvempi tietoturva kuin aiemmat hash-toiminnot, kuten MD5, sitä ei ole otettu laajalti käyttöön PKI- tai digitaalisissa allekirjoitusjärjestelmissä sen suhteellisen uutuuden ja laajan kryptografisen yhteisön hyväksynnän puutteen vuoksi.",
+    "MD6-Process-008": "MD6 käsittelee syöttöviestejä useiden pakkaustoimintojen avulla, joita käytetään puumaisessa rakenteessa. Algoritmi voi toimia rinnakkain, mikä edistää sen suorituskykyä suuremmilla tuloilla.",
+    "MD6-Purpose-003": "MD6 pyrkii tarjoamaan vankkoja suojausominaisuuksia ja paremman suorituskyvyn edeltäjiinsä verrattuna, mikä tekee siitä sopivan useisiin sovelluksiin, jotka vaativat törmäyksenkestävää tiivistystä ja viestien eheystarkistuksia.",
+    "MD6-Rounds-009": "Jokainen MD6-puun solmu käy läpi useita sekoitusoperaatioita, joihin sisältyy modulaarinen lisäys, bittikohtainen XOR ja epälineaariset permutaatiot. Lopullinen juurisolmun arvo edustaa syöttöviestin hash-tiivistettä.",
+    "MD6-SecurityUpgrade-006": "MD6:n suunnittelu perustuu puupohjaiseen hajautuskonseptiin, mikä mahdollistaa paremman suojan esikuva- ja törmäyshyökkäyksiä vastaan ​​kuin aiemmat MD-algoritmit, samalla kun se tarjoaa suuremman suorituskyvyn suurille tietojoukoille.",
+    "MD6-StayingCurrent-030": "On tärkeää pysyä ajan tasalla viimeisimmistä tutkimustuloksista ja kryptografisten asiantuntijoiden suosituksista valittaessa hash-toimintoa mille tahansa sovellukselle, varsinkin kun kryptografisen suojauksen maisema kehittyy ajan myötä.",
+    "MD6-UseInPKI-025": "Voidaanko MD6:ta käyttää julkisen avaimen infrastruktuuriin (PKI) tai digitaalisiin allekirjoituksiin?",
+    "MD6-vs-SHA3-Adoption-023": "SHA-3 on hyväksytty viralliseksi NIST-standardiksi, ja se on saanut laajan käytön vankan turvallisuuden ja suorituskyvyn ansiosta. Vaikka MD6 on teoreettisesti turvallinen, se ei ole nähnyt samaa käyttöönotto- tai standardointitasoa.",
+    "MD6-vs-SHA3-DiffDesign-021": "MD6 ja SHA-3 on molemmat suunniteltu turvallisuutta ajatellen, mutta ne käyttävät erilaisia ​​hajautustekniikoita. MD6 käyttää puupohjaista suunnittelua parantaakseen yhdensuuntaisuutta, kun taas SHA-3 perustuu sienirakenteeseen.",
+    "MD6-vs-SHA3-Flexibility-022": "MD6 tarjoaa vaihtelevia lähtöpituuksia, mikä voi olla edullista sovelluksissa, jotka vaativat mukautettuja hajautuskokoja. SHA-3 tukee myös vaihtelevia lähtöpituuksia, vaikka sen yleisin muunnelma, SHAKE, tarjoaa vielä enemmän joustavuutta mielivaltaisen pituisten lähtöjen kanssa.",
+    "SHA3-NISTStandard-024": "SHA-3 standardointi"
+}

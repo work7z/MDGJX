@@ -1,0 +1,41 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式，并翻译成中文的过程：
+
+1. 提炼英文自然文本：
+   - "Zlib Deflate"
+   - "Compresses data using the deflate algorithm adding zlib headers."
+   - "For more information, visit Wikipedia."
+   - "Compression type"
+
+2. 放入JSON对象并命名`i18n`，key是自然文本，value是123。
+
+3. 翻译`i18n`中的文本为中文。
+
+4. 输出JSON结果。
+
+下面是结果：
+
+```json
+{
+  "i18n": {
+    "Zlib Deflate": "Zlib压缩",
+    "Compresses data using the deflate algorithm adding zlib headers.": "使用deflate算法并添加zlib头部压缩数据。",
+    "For more information, visit Wikipedia.": "更多信息，请访问维基百科。",
+    "Compression type": "压缩类型"
+  }
+}
+```
+
+根据您的示例1，将结果格式化为以下形式：
+
+```json
+{
+  "i18n": {
+    "Zlib Deflate": "Zlib压缩",
+    "Compresses data using the deflate algorithm adding zlib headers.": "使用deflate算法并添加zlib头部压缩数据。",
+    "For more information, visit Wikipedia.": "更多信息，请访问维基百科。",
+    "Compression type": "压缩类型"
+  }
+}
+```
+
+请注意，在原始代码中并没有直接出现"exampleInput"、"exampleOutput"、"inputType"、"outputType"、"module"和"type"字段，因此它们没有被包含在上述JSON中。同时，"infoURL"字段的内容被翻译并调整为更符合中文语境的表述。

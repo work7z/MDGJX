@@ -1,0 +1,23 @@
+{
+    "MD6-AlgorithmDetails-010": "MD6 Algoritmasının Detayları",
+    "MD6-ComparisonSHA3-020": "MD6, SHA-3 (Keccak) ile nasıl karşılaştırılır?",
+    "MD6-Def-002": "MD6 (Message-Digest Algorithm 6), 2008 yılında Ronald Rivest tarafından tasarlanan bir kriptografik karma işlevidir. 128 ila 512 bit arasında değişen değişken çıktı boyutları sunan, MD ailesinin bir evrimidir.",
+    "MD6-FAQ-001": "MD6 nedir?",
+    "MD6-FutureDevelopments-028": "MD6 için gelecekte planlanan herhangi bir gelişme veya iyileştirme var mı?",
+    "MD6-FutureUnknown-029": "Şu an itibariyle, devam eden geliştirmeler veya MD6 algoritmasının iyileştirilmesine yönelik planlar hakkında kamuya açık herhangi bir bilgi bulunmuyor. Kriptografik araştırmalar gelişmeye devam ediyor ve ortaya çıkan tehditleri veya gereksinimleri karşılamak için yeni algoritmalar ortaya çıkabilir.",
+    "MD6-History-004": "MD6 nasıl geliştirildi ve yaratılmasına ne yol açtı?",
+    "MD6-Operation-007": "MD6 işlemi nasıl çalışır?",
+    "MD6-Origin-005": "MD6, o dönemde yaygın olarak kullanılan MD5 ve SHA-1'de bulunan güvenlik açıklarına yanıt olarak oluşturuldu. Çıktı boyutu konusunda artan esneklikle daha güvenli bir alternatif sunmayı amaçladı.",
+    "MD6-PKI-Alternatives-027": "PKI ve dijital imza uygulamaları için bunun yerine RSA/SHA-256 veya SHA-2 veya SHA-3 varyantlı ECDSA gibi standartlar yaygın olarak kullanılmaktadır. Bunlar kapsamlı analizlerden geçmiş ve kriptografi topluluğu içinde güven oluşturmuştur.",
+    "MD6-PKI-Considerations-026": "MD6'nın, MD5 gibi önceki karma işlevlerinden daha güçlü güvenlik sağlaması amaçlanmış olsa da, göreceli yeniliği ve geniş kriptografik topluluk kabulü eksikliği nedeniyle PKI veya dijital imza şemaları için geniş çapta benimsenmemiştir.",
+    "MD6-Process-008": "MD6, giriş mesajlarını ağaç benzeri bir yapıda uygulanan bir dizi sıkıştırma işlevi aracılığıyla işler. Algoritma paralel olarak çalışabilir, bu da daha büyük girdiler için performansına katkıda bulunur.",
+    "MD6-Purpose-003": "MD6, öncüllerine kıyasla sağlam güvenlik özellikleri ve gelişmiş performans sunmayı amaçlayarak, çarpışmaya dayanıklı karma ve mesaj bütünlüğü kontrolleri gerektiren çeşitli uygulamalar için uygun hale getiriyor.",
+    "MD6-Rounds-009": "MD6 ağacındaki her düğüm, modüler ekleme, bit düzeyinde XOR ve doğrusal olmayan permütasyonları içeren birden fazla karıştırma işlemi turundan geçer. Nihai kök düğüm değeri, giriş mesajının karma özetini temsil eder.",
+    "MD6-SecurityUpgrade-006": "MD6'nın tasarımı, ağaç tabanlı karma kavramı üzerine inşa edilmiştir; bu, onun önceki MD algoritmalarına göre ön görüntü ve çarpışma saldırılarına karşı daha iyi koruma sağlamasına ve aynı zamanda büyük veri kümeleri için daha yüksek verim sağlamasına olanak tanır.",
+    "MD6-StayingCurrent-030": "Herhangi bir uygulama için karma işlevi seçerken, özellikle kriptografik güvenliğin ortamı zaman içinde geliştikçe, en son araştırma bulguları ve kriptografi uzmanlarının önerileriyle güncel kalmak çok önemlidir.",
+    "MD6-UseInPKI-025": "MD6, Açık Anahtar Altyapısı (PKI) veya dijital imzalar için kullanılabilir mi?",
+    "MD6-vs-SHA3-Adoption-023": "SHA-3, resmi bir NIST standardı olarak benimsenmiş ve sağlam güvenliği ve performansı nedeniyle yaygın kullanım kazanmıştır. MD6, teorik olarak güvenli olmasına rağmen aynı düzeyde benimsenme veya standardizasyon görmedi.",
+    "MD6-vs-SHA3-DiffDesign-021": "MD6 ve SHA-3'ün her ikisi de güvenlik göz önünde bulundurularak tasarlanmıştır ancak farklı karma teknikleri kullanırlar. MD6 gelişmiş paralellik için ağaç tabanlı bir tasarım kullanırken, SHA-3 sünger yapısını temel alır.",
+    "MD6-vs-SHA3-Flexibility-022": "MD6, özel karma boyutları gerektiren uygulamalar için avantajlı olabilecek değişken çıkış uzunlukları sunar. SHA-3 ayrıca değişken çıkış uzunluklarını da destekler; ancak en yaygın çeşidi olan SHAKE, isteğe bağlı uzunluktaki çıkışlarla daha da fazla esneklik sağlar.",
+    "SHA3-NISTStandard-024": "SHA-3 Standardizasyonu"
+}

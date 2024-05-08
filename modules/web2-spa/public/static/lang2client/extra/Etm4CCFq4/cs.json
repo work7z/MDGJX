@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "Nainstalujte OpenSSL na váš systém a při sestavování vaší C++ aplikace se propojte s knihovnami 'libssl' a 'libcrypto'.",
+    "md5-cpp-openssl-0001": "C++ používá knihovnu OpenSSL ke generování MD5 hash. Musíte nainstalovat OpenSSL a propojit jej ve svém projektu.",
+    "md5-cpp-use-openssl-0003": "Úryvek vytvoří funkci 'getMD5', která vezme vstupní řetězec, vypočítá svůj hash MD5 pomocí MD5 API OpenSSL a vrátí hash jako hexadecimální řetězec. Vložte tento kód do svého C++ programu a zavolejte funkci 'getMD5' s požadovaným vstupem.",
+    "md5-csharp-built-in-0001": "V C# se třída 'System.Security.Cryptography.MD5' používá ke generování MD5 hash.",
+    "md5-csharp-no-install-0002": "Není potřeba žádná externí instalace knihovny, protože je součástí .NET Framework/Core.",
+    "md5-csharp-use-0003": "Tento fragment vytvoří instanci MD5, převede vstupní řetězec na bajty, vypočítá hash a nakonec zakóduje hash ve formátu Base64. Umístěte tento kód do vstupního bodu vaší aplikace C# a spusťte jej, abyste získali hash MD5 zakódovaný v Base64.",
+    "md5-java-built-in-0001": "Java používá ke generování MD5 hash třídu 'java.security.MessageDigest'.",
+    "md5-java-imports-0002": "Pro hashování a kódování výsledku je třeba importovat 'java.security.MessageDigest' a 'java.util.Base64'.",
+    "md5-java-use-0003": "Fragment získá instanci algoritmu digestu MD5, aktualizuje jej bajty vstupního řetězce a poté zakóduje výsledný hash do řetězce Base64. Zkopírujte tento kód do třídy Java a spusťte jeho hlavní metodu, abyste získali hash MD5 zakódovaný v Base64.",
+    "md5-nodejs-built-in-0001": "V Node.js se pro generování hashů MD5 používá vestavěný modul „crypto“.",
+    "md5-nodejs-no-install-0002": "Není vyžadována žádná externí instalace knihovny, protože „crypto“ je předinstalováno s Node.js.",
+    "md5-nodejs-use-0003": "Fragment vytvoří objekt hash pomocí `createHash('md5')`, aktualizuje jej vstupním řetězcem a poté převede výtah do hexadecimálního formátu pomocí `.digest('hex')`. Vložte tento kód do skriptu Node.js a spusťte jej, abyste získali hash MD5 vstupní hodnoty.",
+    "md5-php-built-in-0001": "PHP má vestavěnou funkci 'md5()' pro generování MD5 hash.",
+    "md5-php-no-install-0002": "Není potřeba žádná externí instalace knihovny, protože 'md5()' je v PHP předinstalováno.",
+    "md5-php-use-0003": "Tento jednoduchý příklad definuje funkci 'getMD5', která volá funkci PHP 'md5()' na poskytnutém vstupním řetězci. Zkopírujte tento kód do souboru PHP, uložte jej s příponou .php a spusťte jej na webovém serveru nebo pomocí příkazového řádku, abyste viděli hash MD5 vstupní hodnoty.",
+    "md5-python-built-in-0001": "Python používá pro generování MD5 hash vestavěnou knihovnu 'hashlib'.",
+    "md5-python-no-install-0002": "Není potřeba žádná další instalace, protože 'hashlib' je standardně součástí Pythonu.",
+    "md5-python-use-0003": "Poskytnutá šablona zakóduje vstupní řetězec na bajty před vytvořením objektu hash MD5. Metoda '.hexdigest()' je poté zavolána na objekt hash, aby se získala hodnota hash MD5 v šestnáctkovém tvaru. Zkopírujte tento kód do skriptu Python a spusťte jej, abyste získali hash MD5."
+}

@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "Co to jest JavaScript?",
+    "JS-DOM-API-007": "Jak JavaScript współdziała z DOM?",
+    "JS-DOM-API-Explanation-008": "JavaScript udostępnia interfejs API Document Object Model (DOM) do manipulowania kodem HTML i CSS, umożliwiając programistom dynamiczną zmianę treści, stylu i detektorów zdarzeń.",
+    "JS-DOM-Example-009": "Na przykład możesz wybrać element i zmienić jego zawartość tekstową: `document.getElementById('myElement').textContent = 'Nowy tekst';`",
+    "JS-Data-Types-010": "Jakie są typy danych w JavaScript?",
+    "JS-Data-Types-List-011": "JavaScript obsługuje różne typy danych, w tym prymitywne, takie jak ciąg, liczba, wartość logiczna, null, niezdefiniowane i symbol, a także typy złożone, takie jak obiekt i tablica.",
+    "JS-Def-002": "JavaScript (JS) to interpretowany język programowania wysokiego poziomu, powszechnie używany do tworzenia aplikacji internetowych, ulepszania interfejsów użytkownika i tworzenia logiki po stronie serwera za pomocą Node.js.",
+    "JS-Event-Loop-013": "Jaka jest pętla zdarzeń w JavaScript?",
+    "JS-Event-Loop-Explanation-014": "Pętla zdarzeń jest podstawową częścią modelu współbieżności JavaScriptu, który umożliwia asynchroniczne wykonywanie poprzez wywołania zwrotne, obietnice i async/await.",
+    "JS-Event-Loop-Process-015": "Najpierw uruchamia główny skrypt, a następnie wykonuje wszelkie funkcje wywołania zwrotnego, gdy wystąpią powiązane z nimi zdarzenia (takie jak dane wejściowe użytkownika lub odpowiedzi sieciowe), zarządzając nimi poprzez system kolejek.",
+    "JS-Function-Syntax-006": "Funkcje definiuje się za pomocą słowa kluczowego „funkcja”, po którym następuje nazwa funkcji i parametry ujęte w nawiasy. Treść funkcji ujęta jest w nawiasy klamrowe: `function greet(name) { console.log(`Witajcie, ${name}!`); }`",
+    "JS-Purpose-003": "Został pierwotnie opracowany przez Brendana Eicha w Netscape w 1995 roku i od tego czasu stał się jednym z najpopularniejszych języków, obsługiwanym przez wszystkie główne przeglądarki internetowe i platformy, takie jak Electron i React Native.",
+    "JS-Syntax-004": "Jaka jest podstawowa składnia JavaScriptu?",
+    "JS-Type-Checking-012": "Sprawdzanie typu można przeprowadzić za pomocą konstruktorów („typeof wartość === „string”) lub operatora „instanceof” dla obiektów dziedziczących z wbudowanych konstruktorów (np. „value instanceof Array”).",
+    "MDN-DOM-API": "Dokumenty internetowe MDN — manipulowanie dokumentami",
+    "MDN-Event-Loop": "Dokumenty internetowe MDN — pętla zdarzeń",
+    "MDN-JS-Guide": "Dokumenty internetowe MDN — przewodnik po języku JavaScript",
+    "MDN-JS-Types": "Dokumenty internetowe MDN — typy danych i struktury danych"
+}

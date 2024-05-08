@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "Asenna OpenSSL järjestelmääsi ja linkitä libssl- ja libcrypto-kirjastoihin C++-sovelluksen rakentamisen yhteydessä.",
+    "md5-cpp-openssl-0001": "C++ käyttää OpenSSL-kirjastoa MD5-tiivisteiden luomiseen. Sinun on asennettava OpenSSL ja linkitettävä sitä vastaan ​​projektissasi.",
+    "md5-cpp-use-openssl-0003": "Katkelma luo funktion \"getMD5\", joka ottaa syötemerkkijonon, laskee sen MD5-tiivisteen OpenSSL:n MD5 API:n avulla ja palauttaa tiivisteen heksadesimaalimerkkijonona. Liitä tämä koodi C++-ohjelmaasi ja kutsu 'getMD5'-funktiota haluamallasi syötteellä.",
+    "md5-csharp-built-in-0001": "C#:ssa luokkaa \"System.Security.Cryptography.MD5\" käytetään luomaan MD5-tiiviste.",
+    "md5-csharp-no-install-0002": "Ulkoista kirjastoa ei tarvitse asentaa, koska se on osa .NET Framework/Corea.",
+    "md5-csharp-use-0003": "Tämä katkelma luo MD5-ilmentymän, muuntaa syötemerkkijonon tavuiksi, laskee tiivisteen ja lopuksi koodaa tiivisteen Base64-muotoon. Aseta tämä koodi C#-sovelluksesi aloituspisteeseen ja suorita se saadaksesi Base64-koodatun MD5-tiivisteen.",
+    "md5-java-built-in-0001": "Java käyttää luokkaa \"java.security.MessageDigest\" MD5-tiivisteiden luomiseen.",
+    "md5-java-imports-0002": "Sinun on tuotava \"java.security.MessageDigest\" ja \"java.util.Base64\" tuloksen hajauttamista ja koodausta varten.",
+    "md5-java-use-0003": "Katkelma saa MD5:n tiivistelmäalgoritmin esiintymän, päivittää sen syötemerkkijonon tavuilla ja koodaa sitten tuloksena olevan hashin Base64-merkkijonoksi. Kopioi tämä koodi Java-luokkaan ja suorita sen päämenetelmä saadaksesi Base64-koodatun MD5-tiivisteen.",
+    "md5-nodejs-built-in-0001": "Node.js:ssä sisäänrakennettua kryptomoduulia käytetään MD5-tiivisteiden luomiseen.",
+    "md5-nodejs-no-install-0002": "Ulkoista kirjaston asennusta ei tarvita, koska \"crypto\" on esiasennettu Node.js:n kanssa.",
+    "md5-nodejs-use-0003": "Katkelma luo hajautusobjektin käyttämällä \"createHash('md5')\" -komentoa, päivittää sen syötemerkkijonolla ja muuntaa sitten tiivistelmän heksadesimaalimuotoon .digest('hex') -komennolla. Liitä tämä koodi Node.js-skriptiisi ja suorita se saadaksesi syöttöarvon MD5-hajautusarvon.",
+    "md5-php-built-in-0001": "PHP:ssä on sisäänrakennettu toiminto \"md5()\" MD5-tiivisteiden luomiseen.",
+    "md5-php-no-install-0002": "Ulkoista kirjaston asennusta ei tarvita, koska 'md5()' on esiasennettu PHP:hen.",
+    "md5-php-use-0003": "Tämä yksinkertainen esimerkki määrittelee 'getMD5'-funktion, joka kutsuu PHP:n md5()-funktiota toimitetussa syötemerkkijonossa. Kopioi tämä koodi PHP-tiedostoon, tallenna se .php-tunnisteella ja suorita se verkkopalvelimella tai komentorivin kautta nähdäksesi syöttöarvon MD5-hajautusarvon.",
+    "md5-python-built-in-0001": "Python käyttää sisäänrakennettua \"hashlib\"-kirjastoa MD5-tiivisteiden luomiseen.",
+    "md5-python-no-install-0002": "Lisäasennusta ei tarvita, koska \"hashlib\" on vakiona Pythonissa.",
+    "md5-python-use-0003": "Mukana toimitettu malli koodaa syötemerkkijonon tavuiksi ennen MD5-hajautusobjektin luomista. '.hexdigest()'-menetelmää kutsutaan sitten hash-objektiin hakemaan MD5-tiiviste heksadesimaalimuodossa. Kopioi tämä koodi Python-skriptiin ja suorita se saadaksesi MD5-hajautusarvon."
+}

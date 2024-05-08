@@ -1,0 +1,48 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值设为`123`。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换其值。
+4. 输出JSON结果。
+
+以下是按照这些步骤创建的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Takes a Universal Resource Locator (URL) and 'Defangs' it; meaning the URL becomes invalid, neutralising the risk of accidentally clicking on a malicious link.": "将统一资源定位符（URL）进行'去活性'处理；这意味着URL变得无效，从而降低了意外点击恶意链接的风险。",
+    "This is often used when dealing with malicious links or IOCs.": "这通常用于处理恶意链接或威胁指标。",
+    "Works well when combined with the 'Extract URLs' operation.": "与'提取URL'操作结合使用效果更佳。",
+    "Defang URL": "去活性URL",
+    "Escape dots": "转义点",
+    "Escape http": "转义http",
+    "Escape ://": "转义://",
+    "Process": "处理",
+    "Valid domains and full URLs": "有效域名和完整URL",
+    "Only full URLs": "仅完整URL",
+    "Everything": "全部内容"
+  }
+}
+```
+
+在上述JSON对象中，每个键是一个英文描述，对应的值是中文翻译。以下是按照您提供的示例格式化后的结果：
+
+```json
+{
+  "i18n": {
+    "Defang URL": "去活性URL",
+    "Takes a Universal Resource Locator (URL) and 'Defangs' it; meaning the URL becomes invalid, neutralising the risk of accidentally clicking on a malicious link.": "将统一资源定位符（URL）进行'去活性'处理；这意味着URL变得无效，从而降低了意外点击恶意链接的风险。",
+    "This is often used when dealing with malicious links or IOCs.": "这通常用于处理恶意链接或威胁指标。",
+    "Works well when combined with the 'Extract URLs' operation.": "与'提取URL'操作结合使用效果更佳。",
+    "Escape dots": "转义点",
+    "Escape http": "转义http",
+    "Escape ://": "转义://",
+    "Process": "处理",
+    "Valid domains and full URLs": "有效域名和完整URL",
+    "Only full URLs": "仅完整URL",
+    "Everything": "全部内容"
+  }
+}
+```
+
+请注意，我已将每个自然文本的值从`123`替换为相应的中文翻译。

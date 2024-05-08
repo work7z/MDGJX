@@ -1,0 +1,23 @@
+{
+    "a4r9t": "Base45, kaynağına bakılmaksızın Base45 kodlu herhangi bir dizenin kodunu çözebilir mi?",
+    "c2vw9k": "Base45, Base64 veya Base32 kadar yaygın olarak uygulanmasa da birçok dil için açık kaynak kitaplıklar mevcuttur.",
+    "c9q7w": "Base45 neden oluşturuldu?",
+    "d6y9k": "Son grubu doldurmaya yetecek kadar bayt yoksa dolgu kullanılmaz; bunun yerine geri kalan bitler işlenir ve karşılık gelen karakter(ler)le eşlenir.",
+    "e8x2v": "Base45, giriş verilerini her biri 5 baytlık gruplara bölerek çalışır. Daha sonra her grubu bir ondalık sayıya dönüştürür ve onu 45 karakterlik kümeden karşılık gelen bir karakterle eşleştirir.",
+    "f8n4m": "Kompaktlığı, standart barkod tarayıcılarla okunabilirliği korurken, QR kodlarında alanın daha verimli kullanılmasına olanak tanır.",
+    "g1h5n": "Base45 nasıl çalışır?",
+    "g6v3b": "Ancak Base45'in daha büyük karakter seti, alfasayısal olmayan karakterlerle çalışırken hata olasılığını artırabilir; bu, bazı ortamlarda veya iletim kanallarında sorun olabilir.",
+    "i7w2m": "Popüler programlama dillerinde yerleşik Base45 kütüphaneleri var mı?",
+    "j7k2t": "Verileri Base45 ile kodlamak için Base45 algoritmasını uygulayan bir kitaplığa veya işleve ihtiyacınız vardır.",
+    "m9k1z": "Bununla birlikte, kodu çözülen veriler belirli uygulama anlamlarını içeriyorsa (örneğin, belirli QR kodu formatları), kod çözme sonrasında ek işlemler gerekli olabilir.",
+    "q5h8n": "Ana avantajı, aynı miktarda kodlanmış veri için dize uzunluğunun azaltılmasıdır, bu da onu alan verimliliğinin kritik olduğu uygulamalar için uygun hale getirir.",
+    "qv1p5n": "Örneğin Java'da verilerinizi kodlamak için 'org.iso.base45' kitaplığını kullanabilirsiniz.",
+    "r9a3t": "Base45, ikili verileri ASCII karakterlerine kodlayan metin tabanlı bir kodlama şemasıdır.",
+    "s3e6r": "Base45'i kullanarak verileri nasıl kodlayabilirim?",
+    "u2l8s": "Base45 nedir?",
+    "x5z1b": "Base45, öncelikli olarak dijital COVİD sertifikaları kapsamında QR kod kullanımı için geliştirildi.",
+    "y3b6n": "Evet, kodlanmış dize Base45 spesifikasyonuna göre oluşturulduğu sürece herhangi bir uyumlu kod çözücünün kodu çözebilmesi gerekir.",
+    "z1n5qr": "Örnekler arasında JavaScript için base45 npm paketi ve .NET için dotnet-base45 yer alır.",
+    "z5b7m": "Base64 veya Base32'ye kıyasla daha büyük bir alfabe (0-9, A-Z, a-z, -, ., $, /, +, % ve *) kullanır, bu da aynı giriş verileri için daha kısa kodlanmış dizelerle sonuçlanır.",
+    "z8m2t": "Base45 kullanmanın Base64 veya Base32'ye göre avantajları nelerdir?"
+}

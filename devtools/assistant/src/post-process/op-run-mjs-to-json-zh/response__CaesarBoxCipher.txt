@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤，并进行了适当的中文翻译：
+
+1. 提炼文本。
+2. 放入名为`i18n`的对象中，键（key）是自然文本，值（value）设置为123。
+3. 翻译`i18n`中的值。
+4. 输出JSON结果。
+
+以下是JSON格式的输出：
+
+```json
+{
+  "i18n": {
+    "Caesar Box Cipher": "凯撒盒密码",
+    "Caesar Box is a transposition cipher used in the Roman Empire, in which letters of the message are written in rows in a square (or a rectangle) and then, read by column.": "凯撒盒密码是罗马帝国时期使用的一种换位密码，它将信息的字母按行写入一个正方形（或长方形）中，然后按列读取。",
+    "Box Height": "盒子高度"
+  }
+}
+```
+
+以下是详细步骤的说明：
+
+- 第一个键值对是操作的名字，直接翻译为“凯撒盒密码”。
+- 第二个键值对是操作的描述，我将其翻译为“凯撒盒密码是罗马帝国时期使用的一种换位密码，它将信息的字母按行写入一个正方形（或长方形）中，然后按列读取。”
+- 第三个键值对是从参数列表中提取的，直接翻译为“盒子高度”。
+
+请注意，由于代码示例中没有提供`exampleInput`、`exampleOutput`等字段，所以这些字段没有被包含在JSON中。如果这些字段存在于原始代码中，并且需要被包含，请按照同样的步骤进行添加和翻译。

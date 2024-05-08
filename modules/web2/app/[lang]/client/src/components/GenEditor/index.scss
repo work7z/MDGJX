@@ -1,0 +1,27 @@
+// Date: Sat, 18 Nov 2023
+// Author: CodeGen ToolBox <work7z@outlook.com>
+// Description:
+// Copyright (C) 2023 - Present, https://laftools.dev and https://codegen.cc
+// License: AGPLv3
+
+.gen-editor {
+  width: 100%;
+  height: 100%;
+  .gen-editor-title {
+    // flex space-between
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .gen-editor-title-text {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+}
+// $simpleHeight: 230px;
+.gen-editor-textarea-simple {
+  //   font-size: 13px;
+  //   height: $simpleHeight;
+  //   max-height: $simpleHeight;
+  //   overflow: auto;
+}

@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "Cài đặt OpenSSL trên hệ thống của bạn và liên kết với các thư viện 'libssl' và 'libcrypto' khi xây dựng ứng dụng C++ của bạn.",
+    "md5-cpp-openssl-0001": "C++ sử dụng thư viện OpenSSL để tạo băm MD5. Bạn cần cài đặt OpenSSL và liên kết với nó trong dự án của bạn.",
+    "md5-cpp-use-openssl-0003": "Đoạn mã tạo hàm 'getMD5' nhận chuỗi đầu vào, tính toán hàm băm MD5 bằng API MD5 của OpenSSL và trả về hàm băm dưới dạng chuỗi thập lục phân. Dán mã này vào chương trình C++ của bạn và gọi hàm 'getMD5' với thông tin đầu vào bạn muốn.",
+    "md5-csharp-built-in-0001": "Trong C#, lớp 'System.Security.Cryptography.MD5' được sử dụng để tạo băm MD5.",
+    "md5-csharp-no-install-0002": "Không cần cài đặt thư viện bên ngoài vì nó là một phần của .NET Framework/Core.",
+    "md5-csharp-use-0003": "Đoạn mã này tạo một phiên bản MD5, chuyển đổi chuỗi đầu vào thành byte, tính toán hàm băm và cuối cùng mã hóa hàm băm ở định dạng Base64. Đặt mã này vào điểm vào của ứng dụng C# của bạn và chạy nó để lấy hàm băm MD5 được mã hóa Base64.",
+    "md5-java-built-in-0001": "Java sử dụng lớp 'java.security.MessageDigest' để tạo băm MD5.",
+    "md5-java-imports-0002": "Bạn cần nhập 'java.security.MessageDigest' và 'java.util.Base64' để băm và mã hóa kết quả.",
+    "md5-java-use-0003": "Đoạn mã lấy một phiên bản của thuật toán phân loại MD5, cập nhật nó bằng các byte của chuỗi đầu vào, sau đó mã hóa hàm băm kết quả thành chuỗi Base64. Sao chép mã này vào một lớp Java và thực thi phương thức chính của nó để lấy hàm băm MD5 được mã hóa Base64.",
+    "md5-nodejs-built-in-0001": "Trong Node.js, mô-đun 'mật mã' tích hợp được sử dụng để tạo băm MD5.",
+    "md5-nodejs-no-install-0002": "Không cần cài đặt thư viện bên ngoài vì 'crypto' được cài đặt sẵn với Node.js.",
+    "md5-nodejs-use-0003": "Đoạn mã tạo một đối tượng băm bằng cách sử dụng `createHash('md5')`, cập nhật nó bằng chuỗi đầu vào, sau đó chuyển đổi thông báo tóm tắt sang định dạng thập lục phân thông qua `.digest('hex')`. Dán mã này vào tập lệnh Node.js của bạn và thực thi nó để lấy hàm băm MD5 của giá trị đầu vào.",
+    "md5-php-built-in-0001": "PHP có hàm dựng sẵn 'md5()' để tạo băm MD5.",
+    "md5-php-no-install-0002": "Không cần cài đặt thư viện bên ngoài vì 'md5()' được cài đặt sẵn trong PHP.",
+    "md5-php-use-0003": "Ví dụ đơn giản này định nghĩa hàm 'getMD5' gọi hàm 'md5()' của PHP trên chuỗi đầu vào được cung cấp. Sao chép mã này vào tệp PHP, lưu mã có phần mở rộng .php và chạy mã này trong máy chủ web hoặc thông qua dòng lệnh để xem hàm băm MD5 của giá trị đầu vào.",
+    "md5-python-built-in-0001": "Python sử dụng thư viện 'hashlib' tích hợp để tạo băm MD5.",
+    "md5-python-no-install-0002": "Không cần cài đặt bổ sung vì 'hashlib' đạt tiêu chuẩn với Python.",
+    "md5-python-use-0003": "Mẫu được cung cấp mã hóa chuỗi đầu vào thành byte trước khi tạo đối tượng băm MD5. Sau đó, phương thức '.hexdigest()' được gọi trên đối tượng băm để truy xuất hàm băm MD5 ở dạng thập lục phân. Sao chép mã này vào tập lệnh Python và chạy nó để lấy hàm băm MD5."
+}

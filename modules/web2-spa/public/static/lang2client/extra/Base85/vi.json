@@ -1,0 +1,19 @@
+{
+    "c1p4b": "Mỗi số thập phân sau đó được chuyển đổi thành một chuỗi duy nhất gồm năm ký tự Base85. Nếu còn lại ít hơn bốn byte ở cuối, phần đệm có thể được áp dụng.",
+    "d7w2e": "Base85 hoạt động bằng cách chia dữ liệu đầu vào thành các nhóm bốn byte và chuyển đổi mỗi nhóm thành số thập phân trong khoảng từ 0 đến 2^32-1.",
+    "f9t1z": "Base85 ban đầu được phát triển để thể hiện hiệu quả dữ liệu nhị phân trong tài liệu PostScript để có tỷ lệ nén tốt hơn.",
+    "g3h5s": "Base85 hoạt động như thế nào?",
+    "j5s7r": "Làm cách nào để mã hóa/giải mã bằng Base85 trong JavaScript?",
+    "k2em5e": "Điều này dẫn đến các chuỗi đầu ra ngắn hơn cho cùng một lượng dữ liệu đầu vào, điều này có thể có lợi trong các trường hợp cần giảm thiểu kích thước.",
+    "p8eq9n": "Bạn có thể sử dụng các thư viện như 'base85' hoặc 'ascii85' để mã hóa và giải mã Base85 trong JavaScript.",
+    "q2n3r": "Ngày nay, nó được sử dụng trong nhiều ứng dụng khác nhau, nơi mà hiệu quả về không gian và khả năng đọc là rất quan trọng, chẳng hạn như tài liệu PDF và một số giao thức mạng nhất định.",
+    "r9qn8v": "Ưu điểm chính của Base85 là hiệu quả không gian được cải thiện nhờ bộ ký tự lớn hơn (85 so với 64 trong Base64 hoặc 32 trong Base32).",
+    "u1i2b": "Ưu điểm của việc sử dụng Base85 so với Base64 hoặc Base32 là gì?",
+    "v4k6r": "Nó mã hóa dữ liệu thành dạng nhỏ gọn hơn so với Base64 hoặc Base32 bằng cách sử dụng bộ ký tự lớn hơn.",
+    "w1x4k": "Có, tồn tại một số biến thể, bao gồm Ascii85 (được sử dụng trong PostScript và PDF), Z85 (ZeroMQ) và UUencode (định dạng cũ hơn). Mỗi người có một bộ ký tự và quy tắc hơi khác nhau.",
+    "x9n1b": "Base85 là sơ đồ mã hóa thể hiện dữ liệu nhị phân bằng cách sử dụng bộ 85 ký tự ASCII có thể in được.",
+    "y6m8k": "Tại sao Base85 được tạo ra?",
+    "z2t7m": "Base85 là gì?",
+    "z5m6t": "Ví dụ sử dụng: `const base85 = require('base85'); const được mã hóa = base85.encode('your-data'); const được giải mã = ​​base85.decode(được mã hóa);`",
+    "z9t7p": "Có biến thể cụ thể nào của Base85 không?"
+}

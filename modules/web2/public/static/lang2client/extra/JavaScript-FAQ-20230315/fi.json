@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "Mikä on JavaScript?",
+    "JS-DOM-API-007": "Miten JavaScript on vuorovaikutuksessa DOM:n kanssa?",
+    "JS-DOM-API-Explanation-008": "JavaScript tarjoaa Document Object Model (DOM) -sovellusliittymän HTML:n ja CSS:n manipulointiin, jolloin kehittäjät voivat muuttaa sisältöä, tyyliä ja tapahtumakuuntelijoita dynaamisesti.",
+    "JS-DOM-Example-009": "Voit esimerkiksi valita elementin ja muuttaa sen tekstisisältöä: `document.getElementById('myElement').textContent = 'Uusi teksti';`",
+    "JS-Data-Types-010": "Mitkä ovat JavaScriptin tietotyypit?",
+    "JS-Data-Types-List-011": "JavaScript tukee useita tietotyyppejä, mukaan lukien primitiiviset tietotyypit, kuten merkkijono, numero, boolean, nolla, määrittelemätön ja symboli, sekä monimutkaisia ​​tyyppejä, kuten objekti ja taulukko.",
+    "JS-Def-002": "JavaScript (JS) on korkean tason tulkittu ohjelmointikieli, jota käytetään laajasti verkkosovellusten luomiseen, käyttöliittymien parantamiseen ja palvelinpuolen logiikan rakentamiseen Node.js:n avulla.",
+    "JS-Event-Loop-013": "Mikä on JavaScriptin tapahtumasilmukka?",
+    "JS-Event-Loop-Explanation-014": "Tapahtumasilmukka on JavaScriptin samanaikaisuusmallin ydinosa, joka mahdollistaa asynkronisen suorituksen takaisinkutsujen, lupausten ja asynkronoinnin/odotuksen kautta.",
+    "JS-Event-Loop-Process-015": "Se suorittaa ensin pääkomentosarjan ja suorittaa sitten takaisinkutsun toiminnot, kun niihin liittyvät tapahtumat (kuten käyttäjän syöte tai verkkovastaukset) tapahtuvat, ja hallitsee niitä jonojärjestelmän kautta.",
+    "JS-Function-Syntax-006": "Funktiot määritellään käyttämällä funktion avainsanaa, jota seuraa funktion nimi ja suluissa olevat parametrit. Funktion runko on kääritty aaltosulkeisiin: `function greet(name) { console.log(`Hei, ${nimi}!`); }`",
+    "JS-Purpose-003": "Sen kehitti alun perin Brendan Eich Netscapessa vuonna 1995, ja siitä on sittemmin kehittynyt yksi suosituimmista kielistä, jota tukevat kaikki tärkeimmät verkkoselaimet ja alustat, kuten Electron ja React Native.",
+    "JS-Syntax-004": "Mikä on JavaScriptin perussyntaksi?",
+    "JS-Type-Checking-012": "Tyyppitarkistus voidaan tehdä käyttämällä konstruktoreita (`typeof value === 'merkkijono') tai `instanceof`-operaattoria objekteille, jotka perivät sisäänrakennetuilta rakentajilta (esim. `value instanceof Array`).",
+    "MDN-DOM-API": "MDN Web Docs - Asiakirjojen käsittely",
+    "MDN-Event-Loop": "MDN Web Docs - Tapahtumasilmukka",
+    "MDN-JS-Guide": "MDN Web Docs - JavaScript-opas",
+    "MDN-JS-Types": "MDN Web Docs - tietotyypit ja tietorakenteet"
+}

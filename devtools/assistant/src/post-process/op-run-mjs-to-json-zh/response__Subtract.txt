@@ -1,0 +1,45 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式，并进行中文翻译的过程：
+
+1. 提炼英文自然文本：
+   - "Subtracts a list of numbers. If an item in the string is not a number it is excluded from the list."
+   - "e.g. 0x0a 8 .5 becomes 1.5"
+   - "Subtract"
+
+2. 放入`i18n`对象，并赋予初始值123：
+   ```json
+   {
+     "i18n": {
+       "Subtracts a list of numbers. If an item in the string is not a number it is excluded from the list.": 123,
+       "e.g. 0x0a 8 .5 becomes 1.5": 123,
+       "Subtract": 123
+     }
+   }
+   ```
+
+3. 根据代码实际功能，翻译为中文：
+   - "Subtracts a list of numbers. If an item in the string is not a number it is excluded from the list." 翻译为："减去一系列数字。如果字符串中的项不是数字，则将其从列表中排除。"
+   - "e.g. 0x0a 8 .5 becomes 1.5" 翻译为："例如，0x0a 8 .5 变成 1.5"
+   - "Subtract" 翻译为："减法"
+
+4. 将翻译后的中文文本替换`i18n`中的value值123，得到最终JSON：
+   ```json
+   {
+     "i18n": {
+       "减去一系列数字。如果字符串中的项不是数字，则将其从列表中排除。": "减去一系列数字。如果字符串中的项不是数字，则将其从列表中排除。",
+       "例如，0x0a 8 .5 变成 1.5": "例如，0x0a 8 .5 变成 1.5",
+       "减法": "减法"
+     }
+   }
+   ```
+
+【输出示例】
+
+```json
+{
+  "i18n": {
+    "减去一系列数字。如果字符串中的项不是数字，则将其从列表中排除。": "减去一系列数字。如果字符串中的项不是数字，则将其从列表中排除。",
+    "例如，0x0a 8 .5 变成 1.5": "例如，0x0a 8 .5 变成 1.5",
+    "减法": "减法"
+  }
+}
+```

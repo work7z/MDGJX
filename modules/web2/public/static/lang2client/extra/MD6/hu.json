@@ -1,0 +1,23 @@
+{
+    "MD6-AlgorithmDetails-010": "MD6 algoritmus részletei",
+    "MD6-ComparisonSHA3-020": "Miben hasonlít az MD6 az SHA-3-hoz (Keccak)?",
+    "MD6-Def-002": "Az MD6 (Message-Digest Algorithm 6) egy kriptográfiai hash függvény, amelyet Ronald Rivest 2008-ban tervezett. Ez az MD család továbbfejlesztése, amely 128 és 512 bit között változó kimeneti méreteket kínál.",
+    "MD6-FAQ-001": "Mi az MD6?",
+    "MD6-FutureDevelopments-028": "Terveznek-e további fejlesztéseket vagy fejlesztéseket az MD6-on?",
+    "MD6-FutureUnknown-029": "Jelenleg nincs nyilvánosan elérhető információ az MD6 algoritmus folyamatban lévő fejlesztéséről vagy fejlesztési terveiről. A kriptográfiai kutatás folyamatosan fejlődik, és új algoritmusok jelenhetnek meg a felmerülő fenyegetések vagy követelmények kezelésére.",
+    "MD6-History-004": "Hogyan fejlesztették ki az MD6-ot, és mi vezetett a létrehozásához?",
+    "MD6-Operation-007": "Hogyan működik az MD6 működése?",
+    "MD6-Origin-005": "Az MD6 az akkoriban széles körben használt MD5-ben és SHA-1-ben talált sebezhetőségekre adott válaszként jött létre. Célja volt, hogy biztonságosabb alternatívát nyújtson, nagyobb rugalmassággal a kimeneti méret tekintetében.",
+    "MD6-PKI-Alternatives-027": "A PKI és a digitális aláírási alkalmazásokhoz általában olyan szabványokat használnak, mint az RSA/SHA-256 vagy az ECDSA SHA-2 vagy SHA-3 változatokkal. Ezek kiterjedt elemzésen mentek keresztül, és bizalmat alakítottak ki a kriptográfiai közösségen belül.",
+    "MD6-PKI-Considerations-026": "Míg az MD6-nak az volt a célja, hogy erősebb biztonságot nyújtson, mint a korábbi hash-funkciók, mint például az MD5, viszonylagos újdonsága és a kriptográfiai közösség széles körű elfogadásának hiánya miatt nem alkalmazták széles körben PKI- vagy digitális aláírási sémákhoz.",
+    "MD6-Process-008": "Az MD6 a bemeneti üzeneteket tömörítési függvények sorozatán keresztül dolgozza fel, amelyeket faszerű struktúrában alkalmaznak. Az algoritmus párhuzamosan is működhet, ami hozzájárul a nagyobb bemenetek teljesítményéhez.",
+    "MD6-Purpose-003": "Az MD6 célja, hogy robusztus biztonsági funkciókat és jobb teljesítményt nyújtson elődeihez képest, így alkalmassá teszi számos olyan alkalmazáshoz, amelyek ütközésálló kivonatolást és üzenetintegritás-ellenőrzést igényelnek.",
+    "MD6-Rounds-009": "Az MD6 fa minden csomópontja többszörös keverési műveleten megy keresztül, beleértve a moduláris összeadást, a bitenkénti XOR-t és a nem lineáris permutációkat. A gyökércsomópont végső értéke a bemeneti üzenet hash kivonatát jelenti.",
+    "MD6-SecurityUpgrade-006": "Az MD6 kialakítása a fa alapú kivonatolás koncepciójára épül, lehetővé téve, hogy jobb védelmet nyújtson az előkép- és ütközési támadásokkal szemben, mint a korábbi MD-algoritmusok, ugyanakkor nagyobb átviteli sebességet biztosít nagy adathalmazok számára.",
+    "MD6-StayingCurrent-030": "Alapvető fontosságú, hogy naprakész legyen a legújabb kutatási eredményekkel és a kriptográfiai szakértők ajánlásaival, amikor bármilyen alkalmazáshoz hash-függvényt választunk, különösen, mivel a kriptográfiai biztonság környezete idővel fejlődik.",
+    "MD6-UseInPKI-025": "Használható az MD6 nyilvános kulcsú infrastruktúrához (PKI) vagy digitális aláírásokhoz?",
+    "MD6-vs-SHA3-Adoption-023": "Az SHA-3-at hivatalos NIST szabványként fogadták el, és robusztus biztonságának és teljesítményének köszönhetően széles körben elterjedt. Az MD6, annak ellenére, hogy elméletileg biztonságos, még nem látott ilyen szintű átvételt vagy szabványosítást.",
+    "MD6-vs-SHA3-DiffDesign-021": "Az MD6 és az SHA-3 egyaránt a biztonságot szem előtt tartva készült, de különböző kivonatolási technikákat alkalmaznak. Az MD6 fa alapú kialakítást használ a jobb párhuzamosság érdekében, míg az SHA-3 a szivacsszerkezeten alapul.",
+    "MD6-vs-SHA3-Flexibility-022": "Az MD6 változó kimeneti hosszúságokat kínál, ami előnyös lehet azoknál az alkalmazásoknál, amelyek egyedi hashméretet igényelnek. Az SHA-3 a változó kimeneti hosszúságokat is támogatja, bár legelterjedtebb változata, a SHAKE még nagyobb rugalmasságot biztosít tetszőleges hosszúságú kimenetekkel.",
+    "SHA3-NISTStandard-024": "SHA-3 szabványosítás"
+}

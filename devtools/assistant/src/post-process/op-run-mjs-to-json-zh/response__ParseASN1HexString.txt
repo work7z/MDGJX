@@ -1,0 +1,22 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式组织，包括翻译后的中文：
+
+```json
+{
+  "i18n": {
+    "Parse ASN.1 hex string": "解析ASN.1十六进制字符串",
+    "Abstract Syntax Notation One (ASN.1) is a standard and notation that describes rules and structures for representing, encoding, transmitting, and decoding data in telecommunications and computer networking.": "抽象语法标记一（ASN.1）是一种标准及标记法，用于描述在电信和计算机网络中代表、编码、传输和解码数据的规则和结构。",
+    "This operation parses arbitrary ASN.1 data and presents the resulting tree.": "此操作解析任意的ASN.1数据并展示生成的树状结构。",
+    "Starting index": "起始索引",
+    "Truncate octet strings longer than": "截断超过长度的八位字节字符串"
+  }
+}
+```
+
+以下是详细的步骤说明：
+
+1. 提取所有自然文本，并忽略掉URL、示例输入输出、输入输出类型、模块类型等字段。
+2. 将这些文本放入一个名为`i18n`的对象中，键（key）是原始文本，值（value）我暂时使用123作为占位符。
+3. 根据代码的实际功能，对这些键（key）进行了翻译，并将翻译后的中文作为值（value）。
+4. 输出格式按照提供的示例进行组织。
+
+请注意，翻译是基于对代码上下文的理解，可能需要根据实际应用场景进一步调整。

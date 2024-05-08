@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "Vad är JavaScript?",
+    "JS-DOM-API-007": "Hur interagerar JavaScript med DOM?",
+    "JS-DOM-API-Explanation-008": "JavaScript tillhandahåller ett Document Object Model (DOM) API för att manipulera HTML och CSS, vilket gör det möjligt för utvecklare att ändra innehåll, stil och händelseavlyssnare dynamiskt.",
+    "JS-DOM-Example-009": "Du kan till exempel välja ett element och ändra dess textinnehåll: `document.getElementById('myElement').textContent = 'Ny text';`",
+    "JS-Data-Types-010": "Vilka är datatyperna i JavaScript?",
+    "JS-Data-Types-List-011": "JavaScript stöder olika datatyper inklusive primitiva sådana som sträng, tal, boolean, null, odefinierad och symbol, såväl som komplexa typer som objekt och array.",
+    "JS-Def-002": "JavaScript (JS) är ett tolkat programmeringsspråk på hög nivå som används i stor utsträckning för att skapa webbapplikationer, förbättra användargränssnitt och bygga logik på serversidan med Node.js.",
+    "JS-Event-Loop-013": "Vad är händelseslingan i JavaScript?",
+    "JS-Event-Loop-Explanation-014": "Händelseloopen är en central del av JavaScripts samtidighetsmodell, som tillåter asynkron exekvering genom återuppringningar, löften och asynkronisering/avväntar.",
+    "JS-Event-Loop-Process-015": "Det kör huvudskriptet först och kör sedan alla återuppringningsfunktioner när deras associerade händelser (som användarinmatning eller nätverkssvar) inträffar, och hanterar dem genom ett kösystem.",
+    "JS-Function-Syntax-006": "Funktioner definieras med nyckelordet \"function\" följt av funktionsnamnet och parametrarna inom parentes. Funktionens brödtext är insvept i hängslen: `function greet(name) { console.log(`Hej, ${name}!`); }`",
+    "JS-Purpose-003": "Det utvecklades ursprungligen av Brendan Eich på Netscape 1995 och har sedan dess utvecklats till ett av de mest populära språken, som stöds av alla större webbläsare och plattformar som Electron och React Native.",
+    "JS-Syntax-004": "Vad är den grundläggande syntaxen för JavaScript?",
+    "JS-Type-Checking-012": "Typkontroll kan göras med hjälp av konstruktorer (`typeof value === 'string'`) eller operatorn `instanceof` för objekt som ärver från inbyggda konstruktorer (t.ex. `value instanceof Array`).",
+    "MDN-DOM-API": "MDN Web Docs - Manipulera dokument",
+    "MDN-Event-Loop": "MDN Web Docs - Event Loop",
+    "MDN-JS-Guide": "MDN Web Docs - JavaScript-guide",
+    "MDN-JS-Types": "MDN Web Docs - Datatyper och datastrukturer"
+}

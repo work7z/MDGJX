@@ -1,0 +1,28 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式的步骤和结果：
+
+1. 提取所有自然文本（不包括链接、示例输入输出、输入输出类型、模块类型等）。
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本分配一个默认值`123`作为其value。
+3. 根据代码的实际功能，将自然文本翻译成中文，并替换其value值。
+4. 输出JSON结果。
+
+下面是JSON格式的输出：
+
+```json
+{
+  "i18n": {
+    "Derive HKDF key": "派生HKDF密钥",
+    "A simple Hashed Message Authenticaton Code (HMAC)-based key derivation function (HKDF), defined in RFC5869.": "一个基于散列消息认证码（HMAC）的简单密钥派生函数（HKDF），定义于RFC5869。",
+    "Salt": "盐值",
+    "Info": "信息",
+    "Hashing function": "散列函数",
+    "Extract mode": "提取模式",
+    "L (number of output octets)": "L（输出八位字节的数量）",
+    "L must be non-negative": "L必须为非负数",
+    "L too large (maximum length for %s is %d)": "L过大（对于%s的最大长度是%d）"
+  }
+}
+```
+
+注意：
+- `%s` 和 `%d` 是占位符，用于在代码中动态替换为具体的散列函数名称和最大长度值。在翻译中，我保留了这些占位符，因为它们在实际应用中会被替换。
+- “派生HKDF密钥”和“盐值”等翻译是根据代码的上下文进行的，可能需要根据具体的使用场景进一步调整。

@@ -1,0 +1,21 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成 JSON 格式的示例：
+
+```json
+{
+  "i18n": {
+    "Emulation of the Bombe machine used at Bletchley Park to attack Enigma, based on work by Polish and British cryptanalysts.": 1,
+    "To run this you need to have a 'crib', which is some known plaintext for a chunk of the target ciphertext, and know the rotors used.": 1,
+    "The machine will suggest possible configurations of the Enigma. Each suggestion has the rotor start positions (left to right) and known plugboard pairs.": 1,
+    "Choosing a crib: First, note that Enigma cannot encrypt a letter to itself, which allows you to rule out some positions for possible cribs. Secondly, the Bombe does not simulate the Enigma's middle rotor stepping. The longer your crib, the more likely a step happened within it, which will prevent the attack working. However, other than that, longer cribs are generally better. The attack produces a 'menu' which maps ciphertext letters to plaintext, and the goal is to produce 'loops': for example, with ciphertext ABC and crib CAB, we have the mappings A<-=>C, B<-=>A, and C<-=>B, which produces a loop A-B-C-A. The more loops, the better the crib.": 1,
+    "If the menu seems good but the right answer isn't produced, your crib may be wrong, or you may have overlapped the middle rotor stepping - try a different crib.": 1,
+    "Output is not sufficient to fully decrypt the data. You will have to recover the rest of the plugboard settings by inspection. And the ring position is not taken into account: this affects when the middle rotor steps. If your output is correct for a bit, and then goes wrong, adjust the ring and start position on the right-hand rotor together until the output improves. If necessary, repeat for the middle rotor.": 1,
+    "By default this operation runs the checking machine, a manual process to verify the quality of Bombe stops, on each stop, discarding stops which fail. If you want to see how many times the hardware actually stops for a given input, disable the checking machine.": 1,
+    "Bombe run with loops in menu (2+ desirable): stops, % done": 1,
+    "Crib cannot be empty": 1,
+    "Offset cannot be negative": 1,
+    "Bombe run on menu with loops (2+ desirable). Note: Rotor positions are listed left to right and start at the beginning of the crib, and ignore stepping and the ring setting. Some plugboard settings are determined. A decryption preview starting at the beginning of the crib and ignoring stepping is also provided.": 1
+  }
+}
+```
+
+请注意，我提取了所有用户可见的文本，并忽略了链接、示例输入/输出、输入/输出类型、模块类型和其他代码中的技术字段。每个文本的值设置为1，按照您的要求。如果需要进一步的调整，请告知。

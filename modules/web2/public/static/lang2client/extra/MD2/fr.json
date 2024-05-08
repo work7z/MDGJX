@@ -1,0 +1,23 @@
+{
+    "MD2-Advantages-011": "Quels sont les avantages d’utiliser MD2 ?",
+    "MD2-AlgorithmDetails-010": "Détails de l'algorithme MD2",
+    "MD2-Applications-018": "Quelles applications ont utilisé ou utilisent encore MD2 ?",
+    "MD2-Breakdown-016": "Des faiblesses cryptographiques ont été découvertes dans MD2 au fil du temps, et des alternatives plus puissantes comme SHA-256 et SHA-3 sont désormais recommandées pour toutes les applications nécessitant un hachage sécurisé.",
+    "MD2-CollisionSecurity-015": "MD2 est considéré comme faible face aux attaques cryptographiques modernes. Sa taille de hachage (128 bits) est petite par rapport aux normes actuelles, ce qui le rend vulnérable aux attaques par collision.",
+    "MD2-Def-002": "MD2 (Message-Digest Algorithm 2) est une fonction de hachage cryptographique conçue par Ronald Rivest en 1989. Elle produit une valeur de hachage de 128 bits pour tout message d'entrée donné.",
+    "MD2-DigitalSignature-Risks-021": "Risques liés à l'utilisation de MD2 pour les signatures numériques",
+    "MD2-Disadvantages-014": "Quels sont les inconvénients et les problèmes de sécurité de MD2 ?",
+    "MD2-FAQ-001": "Qu’est-ce que MD2 ?",
+    "MD2-HistoricalUse-020": "Historiquement, MD2 a été utilisé dans les contrôles d'intégrité des fichiers et les mises à jour logicielles, bien que ces applications aient largement évolué vers des fonctions de hachage plus sécurisées telles que SHA-256 et SHA-512.)",
+    "MD2-History-004": "Comment a été développé MD2 et quelle est son histoire ?",
+    "MD2-Implementation-013": "Il a été largement implémenté et standardisé sur diverses plates-formes et langages, ce qui signifie que l'intégration de MD2 dans les systèmes existants peut être relativement simple.",
+    "MD2-InsecurityExamples-017": "Exemples de pannes de sécurité MD2",
+    "MD2-Operation-007": "Comment fonctionne le fonctionnement MD2 ?",
+    "MD2-Origin-005": "MD2 a été initialement créé comme une amélioration par rapport à MD1, corrigeant certaines faiblesses trouvées dans l'algorithme précédent. Il a gagné en popularité en raison de sa relative simplicité et de sa rapidité à l’époque.",
+    "MD2-PKI-019": "MD2 était autrefois utilisé dans l'infrastructure à clé publique (PKI) pour les signatures numériques, mais est depuis obsolète en raison de sa vulnérabilité aux attaques. Les certificats signés avec MD2 ne sont plus approuvés par la plupart des systèmes.",
+    "MD2-Process-008": "MD2 fonctionne en complétant le message d'entrée à un multiple de 16 octets, puis le traite via une série d'opérations OU exclusif, de rotations de bits et d'ajouts. Le résultat final est une valeur de hachage de 128 bits.",
+    "MD2-Purpose-003": "Le but de MD2 est de garantir l'intégrité des données en générant une empreinte numérique unique qui peut être utilisée pour vérifier l'originalité et l'authenticité des données.",
+    "MD2-Rounds-009": "L'algorithme utilise un processus en quatre tours avec des opérations spécifiques effectuées sur une variable d'état de 128 bits. Chaque cycle prend des blocs du message complété et met à jour l'état jusqu'à ce que l'intégralité du message soit traitée.",
+    "MD2-Speed-012": "MD2 était considéré comme rapide pour l'époque et offre toujours des performances acceptables dans certains scénarios, ce qui le rend adapté aux environnements où les ressources informatiques sont limitées.",
+    "MD2-Successors-006": "Cependant, il a été remplacé par des algorithmes plus puissants comme MD5 et SHA-1, qui font partie de la même famille de fonctions de hachage mais offrent des fonctionnalités de sécurité améliorées."
+}

@@ -1,0 +1,34 @@
+根据您的要求，我们需要提取代码中显示给用户的自然文本，并将这些文本作为JSON对象中的键，每个键对应的值设为1。以下是提取后的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "CipherSaber2 Encrypt": 1,
+    "CipherSaber is a simple symmetric encryption protocol based on the RC4 stream cipher. It gives reasonably strong protection of message confidentiality, yet it's designed to be simple enough that even novice programmers can memorize the algorithm and implement it from scratch.": 1,
+    "Key": 1,
+    "Rounds": 1
+  }
+}
+```
+
+这个JSON对象包含了以下自然文本：
+
+- 类名 "CipherSaber2 Encrypt"
+- 类描述 "CipherSaber is a simple symmetric encryption protocol based on the RC4 stream cipher..."
+- 参数名 "Key"
+- 参数名 "Rounds"
+
+以下是按照您提供的示例1格式化的结果：
+
+```json
+{
+  "i18n": {
+    "CipherSaber2 Encrypt": 1,
+    "CipherSaber description": 1,
+    "Key": 1,
+    "Rounds": 1
+  }
+}
+```
+
+在这个例子中，我将类描述赋予了一个更简洁的键名 "CipherSaber description"，以避免在JSON对象中键的长度过长。如果需要保持原始文本，请使用上面第一个JSON对象。

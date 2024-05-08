@@ -1,0 +1,16 @@
+{
+    "dWbBm": "C# inkluderer klassen 'System.Convert' med innebygde metoder ToBase64String og FromBase64String som lar deg kode og dekode Base64-data. Inndatastrengen konverteres først til en byte-array ved hjelp av UTF-8-koding, deretter kodet og dekodet deretter.",
+    "eN4fM": "I Rust kan du bruke 'base64'-kassen for Base64-koding og dekoding. Legg til 'base64 = \\\"1.x\\\"' til Cargo.toml-filen din under [avhengigheter], kjør 'cargo build', og inkluder de nødvendige importene i koden din for å bruke disse funksjonene.",
+    "fTt2N": "Perl krever 'MIME::Base64'-modulen for Base64-koding og dekoding. Installer den ved å kjøre 'cpan install MIME::Base64' hvis den ikke allerede er installert.",
+    "gT6re": "C++ har ikke en innebygd Base64-implementering. Dette eksemplet bruker OpenSSL-biblioteket til å utføre Base64-koding og dekoding. For å bruke OpenSSL, installer det på systemet ditt og koble til de aktuelle bibliotekene når du kompilerer programmet.",
+    "h7rUq": "I Node.js kan den innebygde 'Buffer'-klassen håndtere Base64-koding og dekoding uten å kreve noen eksterne biblioteker. Denne kodebiten koder strengen 'TEST12345' til Base64 og dekoder den deretter tilbake til den opprinnelige strengen.",
+    "jRzgS": "Swifts Foundation-rammeverk inkluderer innebygde metoder for Base64-koding og dekoding. Ingen eksterne biblioteker er nødvendig; bare importer 'Foundation' for å bruke disse funksjonene.",
+    "jZvLJ": "PHP kommer med innebygde funksjoner 'base64_encode()' og 'base64_decode()' for håndtering av Base64-operasjoner. Disse funksjonene er lett tilgjengelige og krever ingen ekstra oppsett eller installasjon.",
+    "kZd9G": "Ruby har et innebygd 'base64'-bibliotek som gir metoder for Base64-koding og dekoding. Inkluder biblioteket med 'require \\\"base64\\\"' i skriptet ditt.",
+    "rLXJN": "I Kotlin kan Androids innebygde 'android.util.Base64'-klasse brukes til Base64-koding og dekoding. Dette eksemplet forutsetter et Android-miljø; for ikke-Android Kotlin-prosjekter, vurder å bruke 'java.util.Base64'.",
+    "sBxHr": "Scala bruker Javas innebygde 'java.util.Base64'-klasse for Base64-operasjoner. Sørg for at du kjører på en JVM-plattform med Java 8 eller høyere.",
+    "sKx5t": "Javas innebygde 'java.util.Base64'-klasse, tilgjengelig siden Java 8, gir metoder for Base64-koding og dekoding. Inndatastrengen konverteres til byte ved hjelp av UTF-8-koding, deretter kodet og dekodet etter behov.",
+    "tR8pY": "Go tilbyr en standard bibliotekpakke 'encoding/base64' med funksjoner for Base64-koding og dekoding. Ingen eksterne avhengigheter er nødvendig; importer ganske enkelt denne pakken til Go-programmet og kall opp de aktuelle funksjonene.",
+    "uW7eZ": "I C er det ingen innebygd Base64-implementering. Dette eksemplet bruker OpenSSL-biblioteket for Base64-koding og dekoding. For å bruke denne kodebiten, installer OpenSSL på systemet ditt og koble til de aktuelle bibliotekene når du kompilerer programmet med en kommando som ligner på 'gcc -o base64_example base64_example.c -lssl -lcrypto'.",
+    "z9kVv": "Python har en innebygd 'base64'-modul som gir metoder for Base64-koding og dekoding. Inndatastrengen konverteres først til byte ved hjelp av UTF-8-koding før den kodes til Base64, og deretter dekodes tilbake til sin opprinnelige form."
+}

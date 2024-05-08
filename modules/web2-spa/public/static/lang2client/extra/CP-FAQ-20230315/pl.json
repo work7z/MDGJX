@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "Nauka programowania otwiera możliwości kariery w różnych branżach i pozwala opracowywać innowacyjne rozwiązania, automatyzować zadania i rozumieć złożone systemy.",
+    "CP-Advantages-013": "Jakie są zalety nauki programowania?",
+    "CP-Basics-001": "Co to jest programowanie komputerowe?",
+    "CP-Def-002": "Programowanie komputerowe polega na pisaniu instrukcji, czyli kodu, w języku programowania, który instruuje komputery, jak wykonywać określone zadania.",
+    "CP-History-004": "Jaka jest historia programowania komputerów?",
+    "CP-History-Origin-005": "Pierwsze programowalne maszyny powstały w XIX wieku, gdy Ada Lovelace pracowała nad maszyną analityczną Charlesa Babbage’a. Jednak nowoczesne programowanie nabrało rozpędu wraz z wynalezieniem pierwszego komputera elektronicznego ogólnego przeznaczenia, ENIAC, w latach czterdziestych XX wieku.",
+    "CP-Lang-Choice-009": "Wybór języka zależy od takich czynników, jak wymagania projektu, wsparcie społeczności, łatwość nauki i potrzeby wydajnościowe.",
+    "CP-Language-Evolution-006": "Od tego czasu języki programowania ewoluowały od kodu maszynowego do asemblera, następnie do języków wysokiego poziomu, takich jak FORTRAN, COBOL, C, a obecnie do współczesnych języków, takich jak Python, JavaScript i Rust.",
+    "CP-Languages-007": "Jakie są popularne języki programowania?",
+    "CP-Languages-List-008": "Popularne języki programowania to Java, Python, JavaScript, C++, C#, Swift, Go, PHP, Ruby i Kotlin. Każdy z nich ma swoje mocne strony i przypadki użycia, np. Python do nauki o danych, JavaScript do tworzenia stron internetowych i C++ do programowania systemowego.",
+    "CP-Process-010": "Jak wygląda proces programowania komputera?",
+    "CP-Process-Explanation-011": "Programowanie zazwyczaj obejmuje planowanie (definiowanie problemu i projektowanie rozwiązania), kodowanie (pisanie kodu źródłowego w wybranym języku), testowanie (debugowanie i weryfikacja funkcjonalności) oraz konserwację (aktualizowanie i ulepszanie programu w miarę upływu czasu).",
+    "CP-Purpose-003": "Programiści tworzą algorytmy, rozwiązują problemy i budują aplikacje, które mogą automatyzować procesy, manipulować danymi i wchodzić w interakcję z użytkownikami lub innymi systemami.",
+    "CP-SDLC-012": "Często jest to zorganizowane w ramach cyklu życia oprogramowania (SDLC), który obejmuje dodatkowe fazy, takie jak analiza wymagań, projektowanie, wdrażanie i testowanie akceptacji użytkownika.",
+    "CP-Skillset-015": "Poprawia także logiczne myślenie, umiejętności rozwiązywania problemów i zdolność dostosowywania się do nowych technologii, dzięki czemu jesteśmy bardziej wszechstronni w erze cyfrowej.",
+    "HistOfProg-Wikipedia": "Historia języków programowania – Wikipedia",
+    "SDLC-Wikipedia": "Cykl życia oprogramowania – Wikipedia",
+    "TIOBE-Index": "Indeks TIOBE — firma zajmująca się jakością oprogramowania"
+}

@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "Installer OpenSSL på systemet ditt og koble til bibliotekene 'libssl' og 'libcrypto' når du bygger din C++-applikasjon.",
+    "md5-cpp-openssl-0001": "C++ bruker OpenSSL-biblioteket til å generere MD5-hasher. Du må installere OpenSSL og koble til det i prosjektet ditt.",
+    "md5-cpp-use-openssl-0003": "Snippet oppretter en funksjon 'getMD5' som tar en inndatastreng, beregner MD5-hash ved hjelp av OpenSSLs MD5 API, og returnerer hashen som en heksadesimal streng. Lim inn denne koden i C++-programmet ditt og kall opp 'getMD5'-funksjonen med ønsket inngang.",
+    "md5-csharp-built-in-0001": "I C# brukes klassen 'System.Security.Cryptography.MD5' til å generere MD5-hasher.",
+    "md5-csharp-no-install-0002": "Ingen ekstern bibliotekinstallasjon er nødvendig siden det er en del av .NET Framework/Core.",
+    "md5-csharp-use-0003": "Denne kodebiten oppretter en MD5-forekomst, konverterer inndatastrengen til byte, beregner hashen og koder til slutt hashen i Base64-format. Plasser denne koden i C#-applikasjonens inngangspunkt og kjør den for å få den Base64-kodede MD5-hashen.",
+    "md5-java-built-in-0001": "Java bruker klassen 'java.security.MessageDigest' for å generere MD5-hasher.",
+    "md5-java-imports-0002": "Du må importere 'java.security.MessageDigest' og 'java.util.Base64' for hashing og koding av resultatet.",
+    "md5-java-use-0003": "Kodebiten får en forekomst av MD5-sammendragsalgoritmen, oppdaterer den med inngangsstrengens byte, og koder deretter den resulterende hashen til en Base64-streng. Kopier denne koden til en Java-klasse og utfør hovedmetoden for å få den Base64-kodede MD5-hashen.",
+    "md5-nodejs-built-in-0001": "I Node.js brukes den innebygde 'crypto'-modulen for å generere MD5-hasher.",
+    "md5-nodejs-no-install-0002": "Ingen ekstern bibliotekinstallasjon er nødvendig siden 'crypto' kommer forhåndsinstallert med Node.js.",
+    "md5-nodejs-use-0003": "Kodebiten oppretter et hash-objekt ved å bruke `createHash('md5')`, oppdaterer det med inndatastrengen, og konverterer deretter sammendraget til heksadesimalt format via `.digest('hex')`. Lim inn denne koden i Node.js-skriptet og kjør den for å få MD5-hashen til inngangsverdien.",
+    "md5-php-built-in-0001": "PHP har en innebygd funksjon 'md5()' for å generere MD5-hasher.",
+    "md5-php-no-install-0002": "Ingen ekstern bibliotekinstallasjon er nødvendig da 'md5()' kommer forhåndsinstallert i PHP.",
+    "md5-php-use-0003": "Dette enkle eksemplet definerer en 'getMD5'-funksjon som kaller PHP-funksjonen 'md5()' på den angitte inndatastrengen. Kopier denne koden til en PHP-fil, lagre den med en .php-utvidelse, og kjør den på en webserver eller gjennom kommandolinjen for å se MD5-hashen til inngangsverdien.",
+    "md5-python-built-in-0001": "Python bruker det innebygde 'hashlib'-biblioteket for å generere MD5-hasher.",
+    "md5-python-no-install-0002": "Ingen ekstra installasjon er nødvendig da 'hashlib' kommer som standard med Python.",
+    "md5-python-use-0003": "Den medfølgende malen koder inngangsstrengen til byte før du oppretter et MD5-hash-objekt. '.hexdigest()'-metoden kalles deretter på hash-objektet for å hente MD5-hashen i heksadesimal form. Kopier denne koden inn i et Python-skript og kjør den for å få MD5-hash."
+}

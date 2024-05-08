@@ -1,0 +1,23 @@
+{
+    "MD4-Advantages-011": "Jaké jsou výhody používání MD4?",
+    "MD4-AlgorithmDetails-010": "Podrobnosti algoritmu MD4",
+    "MD4-Applications-018": "Jaké aplikace používaly nebo stále používají MD4?",
+    "MD4-Breakdown-016": "Chyby v návrhu algoritmu vedly k praktickým útokům umožňujícím snadné hašovací kolize a dokonce i částečné útoky s předobrazem, což činí MD4 dnes nevhodným pro jakýkoli případ bezpečného kryptografického použití.",
+    "MD4-CollisionSecurity-015": "MD4 má několik kryptografických slabin, včetně náchylnosti ke kolizním útokům. To znamená, že dva různé vstupy mohou produkovat stejný hash výstup, což jej činí nezabezpečeným pro aplikace vyžadující odolnost proti kolizi nebo silnou integritu zpráv.",
+    "MD4-Def-002": "MD4 (Message-Digest Algorithm 4) je kryptografická hašovací funkce navržená Ronaldem Rivestem v roce 1990. Vytváří 128bitovou hašovací hodnotu pro jakoukoli danou vstupní zprávu.",
+    "MD4-DigitalSignature-Risks-021": "Rizika používání MD4 pro digitální podpisy",
+    "MD4-Disadvantages-014": "Jaké jsou nevýhody a bezpečnostní problémy s MD4?",
+    "MD4-FAQ-001": "Co je MD4?",
+    "MD4-HistoricalUse-019": "Historicky se MD4 používal při digitálních podpisech, kontrolách integrity souborů a aktualizacích softwaru. Kvůli svým zranitelnostem však tyto aplikace z velké části přešly na bezpečnější alternativy, jako jsou SHA-256 a SHA-3.",
+    "MD4-History-004": "Jak byl MD4 vyvinut a jaký je jeho historický význam?",
+    "MD4-Implementation-013": "Byl široce implementován a standardizován napříč různými platformami a jazyky, což umožňuje snadnou integraci do stávajících systémů, i když tuto výhodu převažují obavy o bezpečnost v moderních kontextech.",
+    "MD4-InsecurityExamples-017": "Příklady rozpadu zabezpečení MD4",
+    "MD4-LegacySystems-020": "MD4 může stále existovat ve starších systémech, ale jeho použití se nedoporučuje ve všech kontextech, kde jde o bezpečnost. Moderní standardy již nedoporučují MD4 pro žádné kryptografické účely.",
+    "MD4-Operation-007": "Jak funguje provoz MD4?",
+    "MD4-Origin-005": "MD4 byl evolucí MD2 a MD3, která měla poskytovat rychlejší výkon při zachování bezpečnostních vlastností. Ukázalo se však, že MD4 má několik bezpečnostních slabin.",
+    "MD4-Process-008": "MD4 zpracovává vstupní zprávu tak, že ji vyplní na násobek 512 bitů a rozdělí ji do 16slovných bloků. Algoritmus pak pracuje s těmito bloky pomocí čtyř kol zpracování zahrnujících bitové operace, modulární sčítání a nelineární funkce.",
+    "MD4-Purpose-003": "Účelem MD4 je zajistit integritu dat generováním digitálního otisku pevné velikosti, který lze použít k ověření pravosti a integrity původních dat.",
+    "MD4-Rounds-009": "Po zpracování všech bloků se výsledný vnitřní stav transformuje na konečnou 128bitovou hodnotu hash.",
+    "MD4-Speed-012": "MD4 byl původně navržen tak, aby byl rychlejší než jeho předchůdci, díky čemuž byl oblíbený pro aplikace, které v době svého uvedení vyžadovaly rychlé hashování.",
+    "MD4-Successors-006": "Navzdory svým nedostatkům položil MD4 základy pro následné hashovací funkce, jako jsou MD5 a SHA-1, které zlepšily svůj design, ale časem také zdědily některé jeho zranitelnosti."
+}

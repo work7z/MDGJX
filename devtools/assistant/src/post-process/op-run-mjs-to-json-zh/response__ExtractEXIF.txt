@@ -1,0 +1,31 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式的i18n对象，并附上翻译：
+
+```json
+{
+  "i18n": {
+    "Extracts EXIF data from an image.": "从图像中提取EXIF数据。",
+    "EXIF data is metadata embedded in images (JPEG, JPG, TIFF) and audio files.": "EXIF数据是嵌入在图像（JPEG, JPG, TIFF）和音频文件中的元数据。",
+    "EXIF data from photos usually contains information about the image file itself as well as the device used to create it.": "照片中的EXIF数据通常包含有关图像文件本身以及创建它的设备的信息。",
+    "Found {numTags} tags.": "找到{numTags}个标签。",
+    "Could not extract EXIF data from image: {err}": "无法从图像中提取EXIF数据：{err}"
+  }
+}
+```
+
+在上述JSON中，每个key对应于代码中的自然文本，并且已经将value替换为相应的中文翻译。注意，对于动态数据（如标签数量或错误信息），我使用了花括号 `{}` 作为占位符。
+
+以下是按照您提供的示例格式，将上述JSON结果输出的样子：
+
+```json
+{
+  "i18n": {
+    "Extracts EXIF data from an image.": "从图像中提取EXIF数据。",
+    "EXIF data is metadata embedded in images (JPEG, JPG, TIFF) and audio files.": "EXIF数据是嵌入在图像（JPEG, JPG, TIFF）和音频文件中的元数据。",
+    "EXIF data from photos usually contains information about the image file itself as well as the device used to create it.": "照片中的EXIF数据通常包含有关图像文件本身以及创建它的设备的信息。",
+    "Found {numTags} tags.": "找到{numTags}个标签。",
+    "Could not extract EXIF data from image: {err}": "无法从图像中提取EXIF数据：{err}"
+  }
+}
+```
+
+请注意，错误信息 `{err}` 在翻译中保留了原始格式，以便在实际代码中可以根据错误对象动态替换。

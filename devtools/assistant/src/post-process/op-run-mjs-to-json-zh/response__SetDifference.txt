@@ -1,0 +1,25 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取文本。
+2. 放入名为`i18n`的对象中，键为提取的文本，值为`123`。
+3. 根据代码的实际功能，将值翻译为中文。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "Set Difference": "集合差集",
+    "Calculates the difference, or relative complement, of two sets.": "计算两个集合的差集或相对补集。",
+    "Incorrect number of sets, perhaps you need to modify the sample delimiter or add more samples?": "集合数量不正确，可能需要修改样本分隔符或添加更多样本。"
+  }
+}
+```
+
+解释：
+- "Set Difference" 是操作的名称，我将其翻译为 "集合差集"。
+- "Calculates the difference, or relative complement, of two sets." 是对操作描述的翻译，我将其翻译为 "计算两个集合的差集或相对补集。"。
+- "Incorrect number of sets, perhaps you need to modify the sample delimiter or add more samples?" 是错误信息，我将其翻译为 "集合数量不正确，可能需要修改样本分隔符或添加更多样本。"。
+
+请注意，我没有包括示例和注释中的文本，因为这些不是直接显示给用户的文本。

@@ -1,0 +1,32 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本：
+   - "Packs the input into a tarball.<br><br>No support for multiple files at this time."
+
+2. 放到一个名为`i18n`的对象中，并给每个文本分配一个key，其value为123（示例值）。
+
+3. 翻译这些文本为中文，并替换value值。
+
+下面是JSON格式的结果：
+
+```json
+{
+  "i18n": {
+    "Packs the input into a tarball.<br><br>No support for multiple files at this time.": "将输入打包成tarball。目前不支持多个文件。"
+  }
+}
+```
+
+根据代码的实际功能，这段文本是描述`Tar`操作的作用和限制。
+
+【输出结果】
+
+```json
+{
+  "i18n": {
+    "Packs the input into a tarball.<br><br>No support for multiple files at this time.": "将输入打包成tarball。目前不支持处理多个文件。"
+  }
+}
+```
+
+请注意，这里假设代码中的自然文本指的是类描述中的字符串。如果有其他文本需要提取，请提供更具体的信息。

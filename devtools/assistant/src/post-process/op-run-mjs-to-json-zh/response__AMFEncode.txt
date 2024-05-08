@@ -1,0 +1,40 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是文本本身，值设置为`123`作为占位符。
+3. 根据代码的实际功能，将键对应的值翻译成中文。
+4. 输出JSON结果。
+
+下面是按照以上步骤生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Action Message Format (AMF) is a binary format used to serialize object graphs such as ActionScript objects and XML, or send messages between an Adobe Flash client and a remote service, usually a Flash Media Server or third party alternatives.": "123",
+    "AMF Encode": "123",
+    "Encodings": "123",
+    "AMF Encode operation": "123",
+    "AMF0": "123",
+    "AMF3": "123",
+    "Format": "123"
+  }
+}
+```
+
+然后，将占位符`123`替换为中文翻译：
+
+```json
+{
+  "i18n": {
+    "Action Message Format (AMF) is a binary format used to serialize object graphs such as ActionScript objects and XML, or send messages between an Adobe Flash client and a remote service, usually a Flash Media Server or third party alternatives.": "动作消息格式（AMF）是一种用于序列化诸如ActionScript对象和XML的对象图，或者用于在Adobe Flash客户端和远程服务之间发送消息的二进制格式，通常用于Flash媒体服务器或第三方替代方案。",
+    "AMF Encode": "AMF编码",
+    "Encodings": "编码",
+    "AMF Encode operation": "AMF编码操作",
+    "AMF0": "AMF0",
+    "AMF3": "AMF3",
+    "Format": "格式"
+  }
+}
+```
+
+这样，我们就得到了一个包含代码中所有自然文本及其中文翻译的JSON对象。

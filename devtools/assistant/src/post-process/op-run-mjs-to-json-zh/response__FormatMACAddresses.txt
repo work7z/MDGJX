@@ -1,0 +1,29 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤：
+
+1. 提取文本。
+2. 将文本放入名为`i18n`的对象中，并给每个文本分配一个默认值`123`。
+3. 根据代码的实际功能，将默认值替换为中文翻译。
+4. 输出JSON结果。
+
+下面是根据以上步骤创建的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Format MAC addresses": "格式化MAC地址",
+    "Displays given MAC addresses in multiple different formats.": "以多种不同格式显示给定的MAC地址。",
+    "Expects addresses in a list separated by newlines, spaces or commas.": "预期输入以换行符、空格或逗号分隔的地址列表。",
+    "WARNING: There are no validity checks.": "警告：没有进行有效性检查。",
+    "Output case": "输出大小写",
+    "Upper only": "仅大写",
+    "Lower only": "仅小写",
+    "No delimiter": "无分隔符",
+    "Dash delimiter": "短划线分隔符",
+    "Colon delimiter": "冒号分隔符",
+    "Cisco style": "思科样式",
+    "IPv6 interface ID": "IPv6接口ID"
+  }
+}
+```
+
+请注意，我使用了简体中文进行翻译，并且假设`i18n`对象的`value`值`123`代表需要替换的占位符。根据代码的实际功能，这些翻译应该能够准确描述每个文本的含义。如果需要进一步的上下文或更精确的翻译，请提供更多信息。

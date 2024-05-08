@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Når den er integreret, skal du kopiere den medfølgende skabelon ind i dit C++-program og erstatte pladsholderen med den faktiske kodede værdi, før du kører programmet.",
+    "c6p4n": "I den medfølgende skabelon skal du erstatte pladsholderen i afkodningsdelen med de faktiske Base58-kodede bytes (med præfikset 'b' for binær streng), og derefter køre scriptet.",
+    "d2w6e": "Klon/download repository, inkluder base58.h header-filen i dit projekt, og kompilér/link mod kildefilerne i henhold til projektets instruktioner.",
+    "d8w1b": "Ingen yderligere installation er nødvendig, da det følger med standardbiblioteket. Sørg dog for, at din Python-version er ny nok til at inkludere denne funktionalitet.",
+    "f9t2z": "Tilføj afhængigheden til dit Maven-projekt ved at tilføje `<dependency> <groupId>org.bitcoinj</groupId> <artifactId>bitcoinj-core</artifactId> <version>...</version> </dependency>` hvor version skal udskiftes med den seneste udgivelse.",
+    "g4h7s": "Til C++ kan du bruge 'bitcoin-unlimited-libraries', som giver Base58-funktionalitet.",
+    "j9s5r": "For C#, brug 'NBitcoin'-biblioteket til at håndtere Base58-kodning og afkodning.",
+    "k3m2e": "Kopier den medfølgende skabelon til en ny Go-fil, erstat pladsholderen med den faktiske kodede værdi, og kør derefter filen ved at bruge `go run yourfile.go`",
+    "p6e3n": "Installer pakken via NuGet ved at køre `Install-Package NBitcoin` i Package Manager Console eller tilføj den gennem NuGet Package Manager.",
+    "q6n1r": "Efter installation af biblioteket skal du kopiere skabelonkoden til en Java-klasse og erstatte pladsholderen med den faktiske kodede værdi, før du kører koden.",
+    "r4n6v": "Tilføj afhængigheden til dit projekt ved at køre `go get github.com/btcsuite/btcutil`. Dette vil downloade og installere pakken.",
+    "u7i9b": "Til Go skal du bruge 'btcutil'-pakken, der er tilgængelig på GitHub, specifikt dets base58-modul.",
+    "u9g6t": "For at køre denne kode skal du installere 'base-x'-pakken, som understøtter Base58-kodning og afkodning.",
+    "v5k3r": "Dette bibliotek giver en fleksibel API til at skabe basiskodninger, inklusive Base58. Når den er installeret, skal du erstatte pladsholderen i afkodningssektionen med den faktiske kodede værdi og udføre scriptet.",
+    "x2c5e": "Pythons indbyggede 'base58'-modul kan bruges til Base58-kodning og afkodning.",
+    "y3m7k": "Til Java skal du bruge 'bitcoinj'-biblioteket, som inkluderer Base58-kodnings- og afkodningsfunktionalitet.",
+    "z7n1m": "Installer det via npm ved at køre `npm install base-x` eller `yarn add base-x`.",
+    "z8em2t": "Efter installationen skal du kopiere den medfølgende skabelon til en C#-konsolapplikation og erstatte pladsholderen med den faktiske kodede værdi, før du kører programmet."
+}

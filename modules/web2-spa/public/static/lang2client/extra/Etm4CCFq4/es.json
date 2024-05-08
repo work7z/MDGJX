@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "Instale OpenSSL en su sistema y vincúlelo con las bibliotecas 'libssl' y 'libcrypto' cuando cree su aplicación C++.",
+    "md5-cpp-openssl-0001": "C++ utiliza la biblioteca OpenSSL para generar hashes MD5. Debe instalar OpenSSL y vincularlo en su proyecto.",
+    "md5-cpp-use-openssl-0003": "El fragmento crea una función 'getMD5' que toma una cadena de entrada, calcula su hash MD5 utilizando la API MD5 de OpenSSL y devuelve el hash como una cadena hexadecimal. Pegue este código en su programa C++ y llame a la función 'getMD5' con la entrada que desee.",
+    "md5-csharp-built-in-0001": "En C#, la clase 'System.Security.Cryptography.MD5' se utiliza para generar hashes MD5.",
+    "md5-csharp-no-install-0002": "No se necesita instalación de biblioteca externa ya que es parte de .NET Framework/Core.",
+    "md5-csharp-use-0003": "Este fragmento crea una instancia MD5, convierte la cadena de entrada en bytes, calcula el hash y finalmente codifica el hash en formato Base64. Coloque este código en el punto de entrada de su aplicación C# y ejecútelo para obtener el hash MD5 codificado en Base64.",
+    "md5-java-built-in-0001": "Java utiliza la clase 'java.security.MessageDigest' para generar hashes MD5.",
+    "md5-java-imports-0002": "Debe importar 'java.security.MessageDigest' y 'java.util.Base64' para realizar hash y codificar el resultado.",
+    "md5-java-use-0003": "El fragmento obtiene una instancia del algoritmo de resumen MD5, lo actualiza con los bytes de la cadena de entrada y luego codifica el hash resultante en una cadena Base64. Copie este código en una clase Java y ejecute su método principal para obtener el hash MD5 codificado en Base64.",
+    "md5-nodejs-built-in-0001": "En Node.js, el módulo 'crypto' incorporado se utiliza para generar hashes MD5.",
+    "md5-nodejs-no-install-0002": "No se requiere instalación de biblioteca externa ya que 'crypto' viene preinstalado con Node.js.",
+    "md5-nodejs-use-0003": "El fragmento crea un objeto hash usando `createHash('md5')`, lo actualiza con la cadena de entrada y luego convierte el resumen al formato hexadecimal mediante `.digest('hex')`. Pegue este código en su script Node.js y ejecútelo para obtener el hash MD5 del valor de entrada.",
+    "md5-php-built-in-0001": "PHP tiene una función incorporada 'md5()' para generar hashes MD5.",
+    "md5-php-no-install-0002": "No se necesita instalación de biblioteca externa ya que 'md5()' viene preinstalado en PHP.",
+    "md5-php-use-0003": "Este ejemplo simple define una función 'getMD5' que llama a la función PHP 'md5()' en la cadena de entrada proporcionada. Copie este código en un archivo PHP, guárdelo con una extensión .php y ejecútelo en un servidor web o mediante la línea de comando para ver el hash MD5 del valor de entrada.",
+    "md5-python-built-in-0001": "Python utiliza la biblioteca incorporada 'hashlib' para generar hashes MD5.",
+    "md5-python-no-install-0002": "No se necesita instalación adicional ya que 'hashlib' viene de serie con Python.",
+    "md5-python-use-0003": "La plantilla proporcionada codifica la cadena de entrada en bytes antes de crear un objeto hash MD5. Luego se llama al método '.hexdigest()' en el objeto hash para recuperar el hash MD5 en formato hexadecimal. Copie este código en un script de Python y ejecútelo para obtener el hash MD5."
+}

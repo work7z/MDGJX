@@ -1,0 +1,19 @@
+根据您的要求，下面是提取自给定代码的自然文本，并将其转换为JSON格式的i18n对象。首先，我将列出英文原文，然后用我认为最合适的中文翻译替换value值。
+
+```json
+{
+  "i18n": {
+    "Converts a Type-Length-Value (TLV) encoded string into a JSON object. Can optionally include a Key / Type entry.": "将类型-长度-值（TLV）编码的字符串转换成JSON对象。可以选择性地包含键/类型条目。",
+    "Tags: Key-Length-Value, KLV, Length-Value, LV": "标签：键-长度-值，KLV，长度-值，LV",
+    "Type or Length size must be greater than 0": "类型或长度大小必须大于0"
+  }
+}
+```
+
+以下是详细的步骤说明：
+
+1. 从代码中提取的自然文本（排除不符合要求的文本）。
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本分配一个默认值`123`。
+3. 根据代码的实际功能，我将这些默认值替换为适当的中文翻译。
+
+请注意，示例中的默认值`123`被替换为了每个字符串对应的中文翻译。这个翻译是根据代码上下文进行的，可能需要根据实际应用场景进一步调整。

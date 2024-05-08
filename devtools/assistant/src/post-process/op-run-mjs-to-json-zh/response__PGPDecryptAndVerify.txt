@@ -1,0 +1,21 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式的i18n对象，并附上中文翻译：
+
+```json
+{
+  "i18n": {
+    "PGP Decrypt and Verify": "PGP解密和验证",
+    "Input: the ASCII-armoured encrypted PGP message you want to verify.": "输入：您想要验证的ASCII编码的加密PGP消息。",
+    "Arguments: the ASCII-armoured PGP public key of the signer, the ASCII-armoured private key of the recipient (and the private key password if necessary).": "参数：签名者的ASCII编码的PGP公钥，接收者的ASCII编码的PGP私钥（如果需要，还包括私钥密码）。",
+    "This operation uses PGP to decrypt and verify an encrypted digital signature.": "此操作使用PGP来解密和验证加密的数字签名。",
+    "Pretty Good Privacy is an encryption standard (OpenPGP) used for encrypting, decrypting, and signing messages.": "相当好的隐私（Pretty Good Privacy）是一种加密标准（OpenPGP），用于加密、解密和签署消息。",
+    "This function uses the Keybase implementation of PGP.": "此功能使用Keybase的PGP实现。",
+    "Enter the public key of the signer.": "输入签名者的公钥。",
+    "Enter the private key of the recipient.": "输入接收者的私钥。",
+    "Could not identify a key manager.": "无法识别密钥管理器。",
+    "The data does not appear to be signed.": "数据似乎没有被签名。",
+    "Couldn't verify message: ${err}": "无法验证消息：${err}"
+  }
+}
+```
+
+请注意，在翻译时，我保留了错误消息中的`${err}`占位符，因为它会被动态替换为实际的错误信息。其他的文本均按照代码的实际功能进行了翻译。

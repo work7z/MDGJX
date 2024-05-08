@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "Telepítse az OpenSSL-t a rendszerére, és kapcsolódjon a „libssl” és „libcrypto” könyvtárakhoz a C++ alkalmazás létrehozásakor.",
+    "md5-cpp-openssl-0001": "A C++ az OpenSSL könyvtárat használja az MD5 hashek generálására. Telepítenie kell az OpenSSL-t, és hozzá kell kapcsolódnia a projektben.",
+    "md5-cpp-use-openssl-0003": "A kódrészlet létrehoz egy „getMD5” függvényt, amely egy bemeneti karakterláncot vesz fel, kiszámítja az MD5-kivonatát az OpenSSL MD5 API-jával, és hexadecimális karakterláncként adja vissza a hash-t. Illessze be ezt a kódot a C++ programba, és hívja meg a „getMD5” függvényt a kívánt bemenettel.",
+    "md5-csharp-built-in-0001": "A C# nyelvben a 'System.Security.Cryptography.MD5' osztályt használják az MD5 hashek generálására.",
+    "md5-csharp-no-install-0002": "Nincs szükség külső könyvtár telepítésére, mivel a .NET Framework/Core része.",
+    "md5-csharp-use-0003": "Ez a kódrészlet létrehoz egy MD5-példányt, a bemeneti karakterláncot bájtokká alakítja, kiszámítja a hash-t, és végül Base64 formátumban kódolja a hash-t. Helyezze ezt a kódot a C#-alkalmazás belépési pontjába, és futtassa a Base64 kódolású MD5 hash megszerzéséhez.",
+    "md5-java-built-in-0001": "A Java a „java.security.MessageDigest” osztályt használja az MD5 hashek generálására.",
+    "md5-java-imports-0002": "Az eredmény kivonatolásához és kódolásához importálnia kell a „java.security.MessageDigest” és a „java.util.Base64” fájlt.",
+    "md5-java-use-0003": "A részlet megkapja az MD5 kivonatoló algoritmus egy példányát, frissíti azt a bemeneti karakterlánc bájtjaival, majd a kapott hash-t egy Base64 karakterláncba kódolja. Másolja ezt a kódot egy Java osztályba, és hajtsa végre a fő metódust a Base64 kódolású MD5 hash eléréséhez.",
+    "md5-nodejs-built-in-0001": "A Node.js-ben a beépített „crypto” modult használják az MD5 hashek generálására.",
+    "md5-nodejs-no-install-0002": "Nincs szükség külső könyvtár telepítésére, mivel a „crypto” előre telepítve van a Node.js-szal.",
+    "md5-nodejs-use-0003": "A kódrészlet létrehoz egy hash objektumot a `createHash('md5')' használatával, frissíti azt a bemeneti karakterlánccal, majd a kivonatot hexadecimális formátumra alakítja a `.digest('hex')' segítségével. Illessze be ezt a kódot a Node.js szkriptbe, és futtassa, hogy megkapja a bemeneti érték MD5-kivonatát.",
+    "md5-php-built-in-0001": "A PHP beépített „md5()” funkcióval rendelkezik az MD5 hashek generálására.",
+    "md5-php-no-install-0002": "Nincs szükség külső könyvtár telepítésére, mivel az 'md5()' előre telepítve van a PHP-ben.",
+    "md5-php-use-0003": "Ez az egyszerű példa egy „getMD5” függvényt határoz meg, amely a PHP „md5()” függvényét hívja meg a megadott bemeneti karakterláncon. Másolja ezt a kódot egy PHP-fájlba, mentse el .php kiterjesztéssel, és futtassa egy webszerveren vagy a parancssoron keresztül a bemeneti érték MD5-kivonatának megtekintéséhez.",
+    "md5-python-built-in-0001": "A Python a beépített „hashlib” könyvtárat használja az MD5 hashek generálására.",
+    "md5-python-no-install-0002": "Nincs szükség további telepítésre, mivel a „hashlib” a Python alapfelszereltsége.",
+    "md5-python-use-0003": "A megadott sablon bájtokká kódolja a bemeneti karakterláncot, mielőtt létrehozna egy MD5 hash objektumot. A '.hexdigest()' metódus ezután meghívásra kerül a hash objektumon, hogy lekérje az MD5 hash-t hexadecimális formában. Másolja ezt a kódot egy Python-szkriptbe, és futtassa az MD5 hash beszerzéséhez."
+}

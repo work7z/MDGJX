@@ -1,0 +1,23 @@
+根据您的要求，以下是提取自给定代码的自然文本，并按照您的要求转换为 JSON 格式，并进行适当的中文翻译。
+
+```json
+{
+  "i18n": {
+    "The Luhn algorithm, also known as the modulus 10 or mod 10 algorithm, is a simple checksum formula used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers and Canadian Social Insurance Numbers.": "卢恩算法，也称为模10或mod 10算法，是一种简单的校验和公式，用于验证各种识别号码，例如信用卡号码、IMEI号码和加拿大社会保险号码。",
+    "Character: %s is not a digit.": "字符：%s 不是数字。",
+    "Checksum: %d": "校验和：%d",
+    "Checkdigit: %d": "校验位：%d",
+    "Luhn Validated String: %s": "卢恩验证字符串：%s"
+  }
+}
+```
+
+以下是解释：
+
+1. 从代码中提取的自然文本被用作 JSON 对象 `i18n` 的键。
+2. 每个键的值被设置为 `123` 的地方，我已经替换为了相应的中文翻译。
+3. 对于错误消息和输出格式字符串，我使用了占位符（如 `%s` 和 `%d`），这些占位符在代码中用于动态插入变量。
+
+请注意，错误消息 "Character: %s is not a digit." 中的 `%s` 是一个占位符，用于插入导致错误的字符。类似地，"Checksum: %d" 和 "Checkdigit: %d" 中的 `%d` 用于插入数字值。
+
+这个 JSON 对象现在可以被用来为用户提供本地化的界面。

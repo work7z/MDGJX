@@ -1,0 +1,20 @@
+根据您的要求，以下是代码中提取的自然文本，并按照指示翻译成中文，最后以 JSON 格式呈现：
+
+```json
+{
+  "i18n": {
+    "Rotate left": "左旋",
+    "Rotates each byte to the left by the number of bits specified, optionally carrying the excess bits over to the next byte. Currently only supports 8-bit values.": "按指定位数将每个字节左旋，可选择将多余的位传递到下一个字节。目前仅支持8位值。",
+    "Amount": "数量",
+    "Carry through": "进位"
+  }
+}
+```
+
+说明：
+- "Rotate left"：操作名称，翻译为“左旋”。
+- "Rotates each byte to the left..."：操作描述，翻译为“按指定位数将每个字节左旋...”。
+- "Amount"：参数名称，翻译为“数量”。
+- "Carry through"：参数名称，翻译为“进位”。
+
+以上 JSON 对象中的 key 是原始文本，value 是对应的中文翻译。

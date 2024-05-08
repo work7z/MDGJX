@@ -1,0 +1,23 @@
+{
+    "MD4-Advantages-011": "Ưu điểm của việc sử dụng MD4 là gì?",
+    "MD4-AlgorithmDetails-010": "Chi tiết thuật toán MD4",
+    "MD4-Applications-018": "Những ứng dụng nào đã sử dụng hoặc vẫn sử dụng MD4?",
+    "MD4-Breakdown-016": "Các sai sót trong thiết kế của thuật toán đã dẫn đến các cuộc tấn công thực tế cho phép dễ dàng xảy ra xung đột băm và thậm chí là tấn công tiền ảnh một phần, khiến MD4 không phù hợp với bất kỳ trường hợp sử dụng mật mã an toàn nào hiện nay.",
+    "MD4-CollisionSecurity-015": "MD4 có một số điểm yếu về mật mã, bao gồm cả khả năng dễ bị tấn công va chạm. Điều này có nghĩa là hai đầu vào khác nhau có thể tạo ra cùng một đầu ra băm, khiến nó không an toàn đối với các ứng dụng yêu cầu khả năng chống va chạm hoặc tính toàn vẹn của thông điệp mạnh.",
+    "MD4-Def-002": "MD4 (Thuật toán tiêu hóa thông báo 4) là hàm băm mật mã được thiết kế bởi Ronald Rivest vào năm 1990. Nó tạo ra giá trị băm 128 bit cho bất kỳ thông báo đầu vào cụ thể nào.",
+    "MD4-DigitalSignature-Risks-021": "Rủi ro khi sử dụng MD4 cho chữ ký số",
+    "MD4-Disadvantages-014": "Những nhược điểm và mối lo ngại về bảo mật với MD4 là gì?",
+    "MD4-FAQ-001": "MD4 là gì?",
+    "MD4-HistoricalUse-019": "Trong lịch sử, MD4 được sử dụng trong chữ ký số, kiểm tra tính toàn vẹn của tệp và cập nhật phần mềm. Tuy nhiên, do lỗ hổng bảo mật, các ứng dụng này phần lớn đã chuyển sang các lựa chọn thay thế an toàn hơn như SHA-256 và SHA-3.",
+    "MD4-History-004": "MD4 được phát triển như thế nào và ý nghĩa lịch sử của nó là gì?",
+    "MD4-Implementation-013": "Nó đã được triển khai và tiêu chuẩn hóa rộng rãi trên nhiều nền tảng và ngôn ngữ khác nhau, giúp dễ dàng tích hợp vào các hệ thống hiện có, mặc dù lợi thế này bị lấn át bởi những lo ngại về bảo mật của nó trong bối cảnh hiện đại.",
+    "MD4-InsecurityExamples-017": "Ví dụ về sự cố bảo mật MD4",
+    "MD4-LegacySystems-020": "MD4 có thể vẫn tồn tại trong các hệ thống cũ, nhưng việc sử dụng nó không được khuyến khích trong mọi bối cảnh mà vấn đề bảo mật là mối lo ngại. Các tiêu chuẩn hiện đại không còn khuyến nghị MD4 cho bất kỳ mục đích mã hóa nào nữa.",
+    "MD4-Operation-007": "Hoạt động MD4 hoạt động như thế nào?",
+    "MD4-Origin-005": "MD4 là sự phát triển của MD2 và MD3, nhằm mang lại hiệu suất nhanh hơn trong khi vẫn duy trì các thuộc tính bảo mật. Tuy nhiên, rõ ràng là MD4 có một số điểm yếu về bảo mật.",
+    "MD4-Process-008": "MD4 xử lý thông báo đầu vào bằng cách đệm nó thành bội số của 512 bit và chia nó thành các khối 16 từ. Sau đó, thuật toán sẽ hoạt động trên các khối này bằng cách sử dụng bốn vòng xử lý liên quan đến các phép toán theo bit, phép cộng mô-đun và các hàm phi tuyến tính.",
+    "MD4-Purpose-003": "Mục đích của MD4 là đảm bảo tính toàn vẹn của dữ liệu bằng cách tạo dấu vân tay kỹ thuật số có kích thước cố định có thể được sử dụng để xác minh tính xác thực và tính toàn vẹn của dữ liệu gốc.",
+    "MD4-Rounds-009": "Sau khi tất cả các khối được xử lý, trạng thái bên trong thu được sẽ được chuyển thành giá trị băm 128 bit cuối cùng.",
+    "MD4-Speed-012": "MD4 ban đầu được thiết kế để nhanh hơn các phiên bản tiền nhiệm, điều này khiến nó trở nên phổ biến đối với các ứng dụng yêu cầu băm nhanh tại thời điểm được giới thiệu.",
+    "MD4-Successors-006": "Bất chấp những sai sót của nó, MD4 đã đặt nền móng cho các hàm băm tiếp theo như MD5 và SHA-1, những hàm này đã được cải tiến về thiết kế nhưng cũng kế thừa một số lỗ hổng theo thời gian."
+}

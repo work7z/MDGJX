@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Kun se on integroitu, kopioi toimitettu malli C++-ohjelmaasi ja korvaa paikkamerkki todellisella koodatulla arvolla ennen ohjelman suorittamista.",
+    "c6p4n": "Asennuksen jälkeen kopioi toimitettu malli Python-skriptiisi, korvaa dekoodausosan paikkamerkki todellisilla Base62-koodatuilla tavuilla (etuliite 'b') ja suorita sitten komentosarja.",
+    "d2w6e": "Lataa lähdekoodi ja sisällytä base62.h-otsikkotiedosto projektiisi. Käännä/linkitä lähdetiedostoja vastaan ​​projektin ohjeiden mukaan.",
+    "d8w1b": "Asenna se pipin kautta suorittamalla \"pip install python-base62\" tai \"pip3 install python-base62\".",
+    "f9t2z": "Lisää riippuvuus Maven-projektiisi lisäämällä `<dependency> <groupId>com.warrenstrange</groupId> <artifactId>googleauth</artifactId> <version>...</version> </dependency>` mihin version pitäisi olla korvattu uusimmalla julkaisulla.",
+    "g4h7s": "C++:ssa voit käyttää 'cpp-base62'-kirjastoa, joka tarjoaa Base62-toiminnot.",
+    "j9s5r": "C#:ssa käytä 'WarrenStranger.Base62'-kirjastoa Base62-koodauksen ja -koodauksen käsittelemiseen.",
+    "k3m2e": "Kopioi toimitettu malli uuteen Go-tiedostoon, korvaa paikkamerkki todellisella koodatulla arvolla ja suorita tiedosto käyttämällä \"go run yourfile.go\"",
+    "p6e3n": "Asenna paketti NuGetin kautta suorittamalla `Install-Package WarrenStranger.Base62' Package Manager Consolessa tai lisää se NuGet Package Managerin kautta.",
+    "q6n1r": "Kun olet asentanut kirjaston, kopioi toimitettu malli Java-luokkaan ja korvaa paikkamerkki todellisella koodatulla arvolla ennen koodin suorittamista. Huomaa, että tämä toteutus käyttää kokonaislukutaulukoita välivaiheena.",
+    "r4n6v": "Lisää riippuvuus projektiisi suorittamalla \"go get github.com/xyproto/base62\". Tämä lataa ja asentaa paketin.",
+    "u7i9b": "Käytä Goa varten GitHubista saatavilla olevaa base62-pakettia.",
+    "u9g6t": "Tämän koodin suorittamiseksi sinun on asennettava 'base62'-paketti, joka tarjoaa Base62-koodaus- ja dekoodausominaisuudet.",
+    "v5k3r": "Kun olet asentanut, korvaa dekoodausosion paikkamerkki todellisella Base62-koodatulla arvolla ja suorita komentosarja. Kirjasto hoitaa muunnoksen puskurien ja Base62-merkkijonojen välillä puolestasi.",
+    "x2c5e": "Pythonissa käytä 'base62'-kirjastoa Base62-koodauksen ja -koodauksen käsittelemiseen.",
+    "y3m7k": "Javaa varten käytä google-authenticator-kirjaston Base62Converter-luokkaa.",
+    "z7n1m": "Voit asentaa sen npm:llä suorittamalla `npm install base62` tai `yarn add base62`.",
+    "z8qqm2t": "Asennuksen jälkeen kopioi mukana toimitettu malli C#-konsolisovellukseen ja korvaa paikkamerkki todellisella koodatulla arvolla ennen ohjelman suorittamista."
+}

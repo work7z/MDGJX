@@ -1,0 +1,20 @@
+{
+    "c1p3b": "集成后，将提供的模板复制到您的 C++ 程序中，并在运行程序之前将占位符替换为实际编码值。",
+    "c6p4n": "在提供的模板中，将解码部分中的占位符替换为实际的 Base58 编码字节（前缀为“b”表示二进制字符串），然后运行脚本。",
+    "d2w6e": "克隆/下载仓库，在项目中包含 base58.h 头文件，并根据项目的说明编译/链接源文件。",
+    "d8w1b": "无需额外安装，因为它附带标准库。但是，请确保您的 Python 版本足够新以包含此功能。",
+    "f9t2z": "通过添加 `<dependency> <groupId>org.bitcoinj</groupId> <artifactId>bitcoinj-core</artifactId> <version>...</version> </dependency>` 将依赖项添加到 Maven 项目，其中版本应替换为最新版本。",
+    "g4h7s": "对于 C++，您可以使用提供 Base58 功能的“bitcoin-unlimited-libraries”。",
+    "j9s5r": "对于 C#，使用“NBitcoin”库来处理 Base58 编码和解码。",
+    "k3m2e": "将提供的模板复制到新的 Go 文件中，将占位符替换为实际编码值，然后使用“go run yourfile.go”运行该文件",
+    "p6e3n": "通过在程序包管理器控制台中运行“Install-Package NBitcoin”来通过 NuGet 安装程序包，或者通过 NuGet 程序包管理器添加它。",
+    "q6n1r": "安装库后，将模板代码复制到 Java 类中，并在运行代码之前将占位符替换为实际编码值。",
+    "r4n6v": "通过运行“go get github.com/btcsuite/btcutil”将依赖项添加到您的项目中。这将下载并安装该软件包。",
+    "u7i9b": "对于 Go，请利用 GitHub 上提供的“btcutil”包，特别是其 base58 模块。",
+    "u9g6t": "要运行此代码，您需要安装支持 Base58 编码和解码的“base-x”软件包。",
+    "v5k3r": "该库提供了用于创建基本编码（包括 Base58）的灵活 API。安装后，将解码部分中的占位符替换为实际编码值并执行脚本。",
+    "x2c5e": "Python内置的'base58'模块可用于Base58编码和解码。",
+    "y3m7k": "对于 Java，请使用“bitcoinj”库，其中包括 Base58 编码和解码功能。",
+    "z7n1m": "通过运行“npm install base-x”或“yarn add base-x”通过 npm 安装它。",
+    "z8em2t": "安装后，将提供的模板复制到 C# 控制台应用程序中，并在运行程序之前将占位符替换为实际编码值。"
+}

@@ -1,0 +1,18 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作，并进行了适当的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Generate QR Code": "生成二维码",
+    "Generates a Quick Response (QR) code from the input text.": "从输入文本生成快速响应（QR）代码。",
+    "A QR code is a type of matrix barcode (or two-dimensional barcode) first designed in 1994 for the automotive industry in Japan. A barcode is a machine-readable optical label that contains information about the item to which it is attached.": "二维码是一种矩阵条码（或二维条码），最初于1994年为日本的汽车工业设计。条码是一种机器可读的光学标签，包含有关其所附物品的信息。",
+    "Image Format": "图像格式",
+    "Module size (px)": "模块大小（像素）",
+    "Margin (num modules)": "边距（模块数）",
+    "Error correction": "纠错等级",
+    "Invalid file type.": "无效的文件类型"
+  }
+}
+```
+
+以上JSON对象中的`i18n`部分包含了从代码中提取的自然文本，以及对应的中文翻译。这些文本是从类`GenerateQRCode`的注释和字段中提取的，它们是用户界面中可能显示给用户的文本。对于每个文本条目，其键（key）是原始英文文本，值（value）是对应的中文翻译。示例中的数字“123”被替换为了适当的中文翻译。

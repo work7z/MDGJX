@@ -1,0 +1,40 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设为123。
+3. 根据代码的实际功能，给出最合适的中文翻译。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "Parse UDP": "解析UDP",
+    "Parses a UDP header and payload (if present).": "解析UDP头部和有效载荷（如果存在）。",
+    "User Datagram Protocol": "用户数据报协议",
+    "Unrecognised input format.": "未识别的输入格式。",
+    "Need 8 bytes for a UDP Header": "UDP头部需要8个字节",
+    "Source port": "源端口",
+    "Destination port": "目的端口",
+    "Length": "长度",
+    "Checksum": "校验和",
+    "Data": "数据"
+  }
+}
+```
+
+以下是每个键值对的解释：
+
+- "Parse UDP"：类名，翻译为“解析UDP”。
+- "Parses a UDP header and payload (if present)."：类描述，翻译为“解析UDP头部和有效载荷（如果存在）”。
+- "User Datagram Protocol"：从infoURL字段推断，这是对UDP的描述，翻译为“用户数据报协议”。
+- "Unrecognised input format."：错误信息，翻译为“未识别的输入格式”。
+- "Need 8 bytes for a UDP Header"：错误信息，翻译为“UDP头部需要8个字节”。
+- "Source port"：UDP数据包字段，翻译为“源端口”。
+- "Destination port"：UDP数据包字段，翻译为“目的端口”。
+- "Length"：UDP数据包字段，翻译为“长度”。
+- "Checksum"：UDP数据包字段，翻译为“校验和”。
+- "Data"：UDP数据包字段，翻译为“数据”。
+
+请注意，示例中的`i18n`对象的值已替换为相应的中文翻译，而不是原始的123占位符。

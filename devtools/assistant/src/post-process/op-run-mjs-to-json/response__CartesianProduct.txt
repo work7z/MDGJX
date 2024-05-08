@@ -1,0 +1,29 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为 `i18n` 的对象中，其中每个文本作为键，值设为1。以下是提取后的 JSON 格式的对象：
+
+```json
+{
+  "i18n": {
+    "Cartesian Product": 1,
+    "Calculates the cartesian product of multiple sets of data, returning all possible combinations.": 1,
+    "Incorrect number of sets, perhaps you need to modify the sample delimiter or add more samples?": 1,
+    "Sample delimiter": 1,
+    "Item delimiter": 1
+  }
+}
+```
+
+以下是按照您的示例1格式化后的 JSON：
+
+```json
+{
+  "i18n": {
+    "Cartesian Product": 1,
+    "Calculates the cartesian product of multiple sets of data, returning all possible combinations.": 1,
+    "Incorrect number of sets, perhaps you need to modify the sample delimiter or add more samples?": 1,
+    "Sample delimiter": 1,
+    "Item delimiter": 1
+  }
+}
+```
+
+在这个 JSON 对象中，我已经排除了所有 URL、代码示例、输入输出类型、模块类型和其他指定的字段，只包含显示给用户的自然文本。每个文本字符串的值都被设置为1，以满足您的要求。

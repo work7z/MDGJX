@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "LafTools Extensions",
+    "description": "Learn more please visit: https://laftools.dev or https://laftools.cn",
+    "version": "1.0",
+    "action": {
+        "default_popup": "hello.html",
+        "default_icon": "icon.png"
+    }
+}

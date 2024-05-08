@@ -1,0 +1,51 @@
+name: Dispatch-CDN-flush-CN
+
+on: workflow_dispatch
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-flush-CN
+      TAG_MODE: true
+      TXCOSID: ${{ secrets.TXCOSID }}
+      TXCOSKEY: ${{ secrets.TXCOSKEY }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.21
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Get dependencies
+        run: go mod download
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::v2.5.$(date +%Y%m%d%H%M%S)
+
+      - name: Run build script
+        id: runbuildscript
+        run: |
+          cd /home/runner/work/LafTools/LafTools/devtools/release
+          chmod +x ./refresh-cdn.sh
+          ./refresh-cdn.sh "${{secrets.TXCOSID}}" "${{secrets.TXCOSKEY}}"

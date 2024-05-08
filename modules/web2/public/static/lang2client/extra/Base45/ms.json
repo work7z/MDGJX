@@ -1,0 +1,23 @@
+{
+    "a4r9t": "Bolehkah Base45 menyahkod sebarang rentetan berkod Base45 tanpa mengira asalnya?",
+    "c2vw9k": "Walaupun Base45 tidak dilaksanakan secara meluas seperti Base64 atau Base32, perpustakaan sumber terbuka wujud untuk beberapa bahasa.",
+    "c9q7w": "Mengapa Base45 dicipta?",
+    "d6y9k": "Jika tidak ada bait yang mencukupi untuk mengisi kumpulan terakhir, padding tidak digunakan; sebaliknya, bit yang tinggal diproses dan dipetakan kepada aksara yang sepadan.",
+    "e8x2v": "Base45 berfungsi dengan membahagikan data input kepada kumpulan 5 bait setiap satu. Ia kemudian menukar setiap kumpulan kepada nombor perpuluhan dan memetakannya kepada aksara yang sepadan daripada set 45 aksaranya.",
+    "f8n4m": "Kekompakannya membolehkan penggunaan ruang yang lebih cekap dalam kod QR sambil mengekalkan kebolehbacaan dengan pengimbas kod bar standard.",
+    "g1h5n": "Bagaimanakah Base45 berfungsi?",
+    "g6v3b": "Walau bagaimanapun, set aksara Base45 yang lebih besar mungkin meningkatkan kemungkinan ralat apabila berurusan dengan aksara bukan abjad angka, yang boleh menjadi isu dalam sesetengah persekitaran atau saluran penghantaran.",
+    "i7w2m": "Adakah terdapat perpustakaan Base45 terbina dalam dalam bahasa pengaturcaraan popular?",
+    "j7k2t": "Untuk mengekod data dengan Base45, anda memerlukan perpustakaan atau fungsi yang melaksanakan algoritma Base45.",
+    "m9k1z": "Walau bagaimanapun, jika data yang dinyahkodkan mengandungi semantik aplikasi tertentu (cth., format kod QR tertentu), pemprosesan tambahan mungkin diperlukan selepas penyahkodan.",
+    "q5h8n": "Kelebihan utama ialah mengurangkan panjang rentetan untuk jumlah data yang dikodkan yang sama, menjadikannya sesuai untuk aplikasi di mana kecekapan ruang adalah kritikal.",
+    "qv1p5n": "Contohnya, dalam Java, anda boleh menggunakan perpustakaan 'org.iso.base45' untuk mengekod data anda.",
+    "r9a3t": "Base45 ialah skim pengekodan berasaskan teks yang mengekod data binari ke dalam aksara ASCII.",
+    "s3e6r": "Bagaimanakah saya boleh mengekod data menggunakan Base45?",
+    "u2l8s": "Apakah itu Base45?",
+    "x5z1b": "Base45 dibangunkan terutamanya untuk penggunaan kod QR dalam konteks sijil COVID digital.",
+    "y3b6n": "Ya, selagi rentetan yang dikodkan dijana mengikut spesifikasi Base45, mana-mana penyahkod yang mematuhi mesti boleh menyahkodnya.",
+    "z1n5qr": "Contohnya termasuk pakej base45 npm untuk JavaScript dan dotnet-base45 untuk .NET.",
+    "z5b7m": "Ia menggunakan abjad yang lebih besar (0-9, A-Z, a-z, -, ., $, /, +, %, dan *) berbanding Base64 atau Base32, menghasilkan rentetan dikodkan yang lebih pendek untuk data input yang sama.",
+    "z8m2t": "Apakah kelebihan menggunakan Base45 berbanding Base64 atau Base32?"
+}

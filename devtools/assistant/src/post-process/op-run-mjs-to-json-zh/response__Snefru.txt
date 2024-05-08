@@ -1,0 +1,28 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值设为123。
+3. 根据代码的实际功能，将`i18n`中的值翻译成中文。
+4. 输出JSON结果。
+
+以下是JSON格式的输出：
+
+```json
+{
+  "i18n": {
+    "Snefru": "Snefru",
+    "Snefru is a cryptographic hash function invented by Ralph Merkle in 1990 while working at Xerox PARC. The function supports 128-bit and 256-bit output. It was named after the Egyptian Pharaoh Sneferu, continuing the tradition of the Khufu and Khafre block ciphers.<br><br>The original design of Snefru was shown to be insecure by Eli Biham and Adi Shamir who were able to use differential cryptanalysis to find hash collisions. The design was then modified by increasing the number of iterations of the main pass of the algorithm from two to eight.": "Snefru是由Ralph Merkle在1990年于Xerox PARC工作期间发明的加密散列函数。该函数支持128位和256位的输出。它以埃及法老Sneferu的名字命名，延续了Khufu和Khafre分组密码的传统。<br><br>Snefru的原始设计被Eli Biham和Adi Shamir证明是不安全的，他们能够使用差分密码分析找到散列碰撞。随后，通过将算法主循环的迭代次数从两次增加到八次来修改设计。",
+    "Size": "大小",
+    "Rounds": "轮次"
+  }
+}
+```
+
+在这个JSON对象中，我提取了以下自然文本：
+
+- "Snefru"：类名，直接保留英文。
+- 类描述：关于Snefru散列函数的详细描述，已翻译成中文。
+- "Size"：参数名，翻译为“大小”。
+- "Rounds"：参数名，翻译为“轮次”。
+
+请注意，由于示例1中没有提供具体的代码文本内容，我假设您需要提取的是类描述和参数名。如果需要提取更多信息，请提供具体要求。

@@ -1,0 +1,45 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式的步骤：
+
+1. 提取所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是文本本身，值设为`123`。
+3. 根据代码的实际功能，对这些文本进行翻译。
+4. 输出JSON结果。
+
+以下是按照这些步骤执行的示例：
+
+```json
+{
+  "i18n": {
+    "Vigenère Decode": "123",
+    "The Vigenere cipher is a method of encrypting alphabetic text by using a series of different Caesar ciphers based on the letters of a keyword. It is a simple form of polyalphabetic substitution.": "123",
+    "No key entered": "123",
+    "The key must consist only of letters": "123"
+  }
+}
+```
+
+下面是翻译后的JSON：
+
+```json
+{
+  "i18n": {
+    "Vigenère Decode": "维吉尼亚解密",
+    "The Vigenere cipher is a method of encrypting alphabetic text by using a series of different Caesar ciphers based on the letters of a keyword. It is a simple form of polyalphabetic substitution.": "维吉尼亚密码是一种通过使用一系列基于关键词字母的不同凯撒密码来加密字母文本的方法。它是一种简单的多字母替换形式。",
+    "No key entered": "未输入密钥",
+    "The key must consist only of letters": "密钥必须仅由字母组成"
+  }
+}
+```
+
+根据您的【示例1】，这是最终的JSON输出：
+
+```json
+{
+  "i18n": {
+    "Vigenère Decode": "维吉尼亚解密",
+    "The Vigenere cipher is a method of encrypting alphabetic text by using a series of different Caesar ciphers based on the letters of a keyword. It is a simple form of polyalphabetic substitution.": "维吉尼亚密码是一种通过使用一系列基于关键词字母的不同凯撒密码来加密字母文本的方法。它是一种简单的多字母替换形式。",
+    "No key entered": "未输入密钥",
+    "The key must consist only of letters": "密钥必须仅由字母组成"
+  }
+}
+```

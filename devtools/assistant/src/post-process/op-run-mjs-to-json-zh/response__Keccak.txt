@@ -1,0 +1,24 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是文本，值设置为`123`。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换其值。
+4. 输出JSON结果。
+
+下面是根据以上步骤生成的JSON：
+
+```json
+{
+  "i18n": {
+    "The Keccak hash algorithm was designed by Guido Bertoni, Joan Daemen, Michaël Peeters, and Gilles Van Assche, building upon RadioGatún. It was selected as the winner of the SHA-3 design competition.<br><br>This version of the algorithm is Keccak[c=2d] and differs from the SHA-3 specification.": "Keccak哈希算法由Guido Bertoni、Joan Daemen、Michaël Peeters和Gilles Van Assche设计，基于RadioGatún构建。它被选为SHA-3设计竞赛的胜出者。<br><br>此算法版本为Keccak[c=2d]，与SHA-3规范有所不同。",
+    "Invalid size": "无效的大小"
+  }
+}
+```
+
+在这个JSON对象中：
+
+- 第一个键是关于Keccak算法的描述，其值已翻译成中文。
+- 第二个键是可能的错误信息，也已翻译成中文。
+
+请注意，我保留了HTML的`<br>`标签，因为它们在显示时会影响文本的格式。如果不需要这些标签，可以将其删除。

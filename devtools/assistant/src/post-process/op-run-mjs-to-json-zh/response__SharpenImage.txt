@@ -1,0 +1,31 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的i18n对象，并进行了适当的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Sharpen Image": "锐化图像",
+    "Sharpens an image (Unsharp mask)": "锐化图像（非锐化掩模）",
+    "Invalid file type.": "无效的文件类型。",
+    "Error loading image.": "加载图像时出错。",
+    "Sharpening image... (Cloning image)": "正在锐化图像...（克隆图像）",
+    "Sharpening image... (Blurring cloned image)": "正在锐化图像...（模糊克隆图像）",
+    "Sharpening image... (Creating unsharp mask)": "正在锐化图像...（创建非锐化掩模）",
+    "Sharpening image... (Merging with unsharp mask)": "正在锐化图像...（与非锐化掩模合并）",
+    "Error sharpening image.": "锐化图像时出错。"
+  }
+}
+```
+
+以上JSON对象中的每个key都是代码中显示给用户的自然文本，而对应的value是中文翻译。以下是每个翻译的说明：
+
+- "Sharpen Image"：类名和操作名称，翻译为“锐化图像”。
+- "Sharpens an image (Unsharp mask)"：操作描述，翻译为“锐化图像（非锐化掩模）”。
+- "Invalid file type."：错误信息，翻译为“无效的文件类型。”。
+- "Error loading image."：错误信息，翻译为“加载图像时出错。”。
+- "Sharpening image... (Cloning image)"：状态信息，翻译为“正在锐化图像...（克隆图像）”。
+- "Sharpening image... (Blurring cloned image)"：状态信息，翻译为“正在锐化图像...（模糊克隆图像）”。
+- "Sharpening image... (Creating unsharp mask)"：状态信息，翻译为“正在锐化图像...（创建非锐化掩模）”。
+- "Sharpening image... (Merging with unsharp mask)"：状态信息，翻译为“正在锐化图像...（与非锐化掩模合并）”。
+- "Error sharpening image."：错误信息，翻译为“锐化图像时出错。”。
+
+请注意，以上翻译是根据代码的上下文和功能进行的，可能需要根据实际应用场景进一步调整。

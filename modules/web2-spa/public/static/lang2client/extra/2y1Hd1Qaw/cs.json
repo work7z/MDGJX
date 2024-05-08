@@ -1,0 +1,16 @@
+{
+    "dWbBm": "C# obsahuje třídu 'System.Convert' s vestavěnými metodami ToBase64String a FromBase64String, které vám umožňují kódovat a dekódovat data Base64. Vstupní řetězec je nejprve převeden na bajtové pole pomocí kódování UTF-8, poté je odpovídajícím způsobem zakódován a dekódován.",
+    "eN4fM": "V Rustu můžete použít bednu 'base64' pro kódování a dekódování Base64. Přidejte 'base64 = \\\"1.x\\\"' do svého souboru Cargo.toml v sekci [dependencies], spusťte 'cargo build' a zahrňte do svého kódu nezbytné importy, abyste mohli tyto funkce využívat.",
+    "fTt2N": "Perl vyžaduje modul 'MIME::Base64' pro kódování a dekódování Base64. Nainstalujte jej spuštěním 'cpan install MIME::Base64', pokud ještě není nainstalován.",
+    "gT6re": "C++ nemá nativní implementaci Base64. Tento příklad používá knihovnu OpenSSL k provádění kódování a dekódování Base64. Chcete-li používat OpenSSL, nainstalujte jej do svého systému a při kompilaci programu propojte s příslušnými knihovnami.",
+    "h7rUq": "Vestavěná třída 'Buffer' v Node.js zvládne kódování a dekódování Base64, aniž by vyžadovala jakékoli externí knihovny. Tento fragment kódu zakóduje řetězec 'TEST12345' na Base64 a poté jej dekóduje zpět na původní řetězec.",
+    "jRzgS": "Rámec Swift Foundation obsahuje vestavěné metody pro kódování a dekódování Base64. Nejsou potřeba žádné externí knihovny; jednoduše importujte „Foundation“, abyste mohli tyto funkce používat.",
+    "jZvLJ": "PHP přichází s vestavěnými funkcemi 'base64_encode()' a 'base64_decode()' pro zpracování operací Base64. Tyto funkce jsou snadno dostupné a nevyžadují žádné další nastavení nebo instalaci.",
+    "kZd9G": "Ruby má vestavěnou knihovnu 'base64', která poskytuje metody pro kódování a dekódování Base64. Zahrňte do skriptu knihovnu s 'require \\\"base64\\\"'.",
+    "rLXJN": "V Kotlinu lze pro kódování a dekódování Base64 použít vestavěnou třídu Androidu 'android.util.Base64'. Tento příklad předpokládá prostředí Android; pro projekty Kotlin jiných než Android zvažte použití 'java.util.Base64'.",
+    "sBxHr": "Scala používá pro operace Base64 vestavěnou třídu Java 'java.util.Base64'. Ujistěte se, že používáte platformu JVM s Java 8 nebo vyšší.",
+    "sKx5t": "Vestavěná třída Java 'java.util.Base64', dostupná od verze Java 8, poskytuje metody pro kódování a dekódování Base64. Vstupní řetězec je převeden na bajty pomocí kódování UTF-8, poté je podle potřeby zakódován a dekódován.",
+    "tR8pY": "Go poskytuje standardní knihovní balíček 'encoding/base64' s funkcemi pro kódování a dekódování Base64. Nejsou vyžadovány žádné externí závislosti; jednoduše importujte tento balíček do svého programu Go a zavolejte příslušné funkce.",
+    "uW7eZ": "V C neexistuje žádná nativní implementace Base64. Tento příklad používá knihovnu OpenSSL pro kódování a dekódování Base64. Chcete-li použít tento úryvek kódu, nainstalujte si do systému OpenSSL a při kompilaci programu propojte s příslušnými knihovnami pomocí příkazu podobného 'gcc -o base64_example base64_example.c -lssl -lcrypto'.",
+    "z9kVv": "Python má vestavěný modul 'base64', který poskytuje metody pro kódování a dekódování Base64. Vstupní řetězec je nejprve převeden na bajty pomocí kódování UTF-8, než je zakódován do Base64, a poté dekódován zpět do své původní podoby."
+}

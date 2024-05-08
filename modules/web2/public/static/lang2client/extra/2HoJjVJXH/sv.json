@@ -1,0 +1,23 @@
+{
+    "c1p3b": "När den har integrerats kopierar du den medföljande mallen till ditt C++-program och ersätter platshållaren med det faktiska kodade värdet innan du kör programmet.",
+    "c6p4n": "Efter att du har installerat biblioteket, kopiera den medföljande mallen till ditt Python-skript och kör det. Biblioteket erbjuder inbyggda funktioner för konvertering mellan byte och Base45-kodade strängar.",
+    "d2w6e": "Klona/ladda ner förvaret och inkludera den medföljande rubrikfilen i ditt projekt. Kompilera och länka mot källfilerna enligt projektets dokumentation.",
+    "d8w1b": "Du kan göra detta med pip genom att köra `pip install base45` eller `python -m pip install base45`.",
+    "f7t1z": "Lägg till biblioteket till ditt Xcode-projekt manuellt eller via en pakethanterare som Swift Package Manager (SPM).",
+    "f9t2z": "Lägg till följande i din pom.xml-fil: `<dependency> <groupId>org.iso</groupId> <artifactId>iso-base45</artifactId> <version>...</version> </dependency>` där versionen är den senaste versionen.",
+    "g4h7s": "För C++ kan du använda 'base45-cpp'-biblioteket som är tillgängligt som ett GitHub-förråd.",
+    "j8s6r": "För Kotlin kan du använda 'streckcode-core'-biblioteket som inkluderar Base45-funktionalitet.",
+    "j9s5r": "För C# kan du använda 'Base45'-biblioteket som finns på NuGet.",
+    "p5e9n": "Lägg till biblioteket som ett beroende i ditt Gradle-byggskript. Till exempel, i app-nivå build.gradle-filen, lägg till `implementation 'com.bottlerocketstudios:barcode-core:...'` med det senaste versionsnumret.",
+    "p6e3n": "För att installera det, kör `Install-Package Base45` i Package Manager Console eller lägg till beroendet via NuGet Package Manager.",
+    "q2n9r": "När du har lagt till kopierar du den medföljande mallen till en Swift-fil. Observera att i det här exemplet använder vi ett hypotetiskt scenario där du har Base45-strängens base64-representation; ersätt det med det faktiska kodade värdet innan du kör koden.",
+    "q6n1r": "Biblioteket tillhandahåller kodnings- och avkodarklasser som hanterar Base45-konvertering. När beroendet har lagts till kopierar du mallkoden till en Java-klass och kör den.",
+    "u9g6t": "För att köra den här koden måste du installera paketet '@digitalbazaar/base45'.",
+    "v5k3r": "Detta bibliotek tillhandahåller ett enkelt API för Base45-kodning och avkodning i Node.js-applikationer. Efter installationen kopierar du den medföljande mallen till ditt skript och kör den med Node.js-tolken.",
+    "x2c5e": "För att använda Base45 i Python måste du installera 'base45'-biblioteket.",
+    "y3m7k": "För Java, använd 'iso-base45'-biblioteket som kan inkluderas i ditt projekt som ett Maven-beroende.",
+    "y9m3k": "För Swift kan du använda 'Base45'-biblioteket som är tillgängligt på GitHub.",
+    "z3m1t": "Efter att ha lagt till beroendet och synkroniserat projektet kopierar du den medföljande mallen till en Kotlin-klass och ersätter platshållaren med det faktiska kodade värdet innan du kör koden.",
+    "z7n1m": "Använd npm eller yarn för att installera det genom att köra `npm install @digitalbazaar/base45` eller `yarn add @digitalbazaar/base45`.",
+    "z8qm2t": "Biblioteket tillhandahåller kodnings- och avkodarklasser för Base45-operationer. Kopiera mallkoden till en C#-konsolapplikation och kör den efter installation av paketet."
+}

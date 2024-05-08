@@ -1,0 +1,16 @@
+{
+    "dWbBm": "C# bao gồm lớp 'System.Convert' với các phương thức tích hợp ToBase64String và FromBase64String cho phép bạn mã hóa và giải mã dữ liệu Base64. Chuỗi đầu vào trước tiên được chuyển đổi thành mảng byte bằng cách sử dụng mã hóa UTF-8, sau đó được mã hóa và giải mã tương ứng.",
+    "eN4fM": "Trong Rust, bạn có thể sử dụng thùng 'base64' để mã hóa và giải mã Base64. Thêm 'base64 = \\\"1.x\\\"' vào tệp Cargo.toml của bạn trong phần [phụ thuộc], chạy 'cargo build' và bao gồm các mục nhập cần thiết trong mã của bạn để sử dụng các chức năng này.",
+    "fTt2N": "Perl yêu cầu mô-đun 'MIME::Base64' để mã hóa và giải mã Base64. Cài đặt nó bằng cách chạy 'cpan install MIME::Base64' nếu chưa được cài đặt.",
+    "gT6re": "C++ không có triển khai Base64 nguyên gốc. Ví dụ này sử dụng thư viện OpenSSL để thực hiện mã hóa và giải mã Base64. Để sử dụng OpenSSL, hãy cài đặt nó trên hệ thống của bạn và liên kết với các thư viện thích hợp khi biên dịch chương trình của bạn.",
+    "h7rUq": "Trong Node.js, lớp 'Bộ đệm' tích hợp có thể xử lý mã hóa và giải mã Base64 mà không yêu cầu bất kỳ thư viện bên ngoài nào. Đoạn mã này mã hóa chuỗi 'TEST12345' thành Base64 và sau đó giải mã nó trở lại chuỗi ban đầu.",
+    "jRzgS": "Khung Foundation của Swift bao gồm các phương thức tích hợp để mã hóa và giải mã Base64. Không cần thư viện bên ngoài; chỉ cần nhập 'Nền tảng' để sử dụng các tính năng này.",
+    "jZvLJ": "PHP đi kèm với các hàm dựng sẵn 'base64_encode()' và 'base64_decode()' để xử lý các hoạt động Base64. Các chức năng này có sẵn và không cần thiết lập hoặc cài đặt bổ sung.",
+    "kZd9G": "Ruby có thư viện 'base64' tích hợp cung cấp các phương thức mã hóa và giải mã Base64. Bao gồm thư viện có 'require \\\"base64\\'' trong tập lệnh của bạn.",
+    "rLXJN": "Trong Kotlin, lớp 'android.util.Base64' tích hợp của Android có thể được sử dụng để mã hóa và giải mã Base64. Ví dụ này giả định môi trường Android; đối với các dự án Kotlin không phải Android, hãy cân nhắc sử dụng 'java.util.Base64'.",
+    "sBxHr": "Scala sử dụng lớp 'java.util.Base64' tích hợp của Java cho các hoạt động Base64. Đảm bảo bạn đang chạy trên nền tảng JVM có Java 8 trở lên.",
+    "sKx5t": "Lớp 'java.util.Base64' tích hợp của Java, có sẵn kể từ Java 8, cung cấp các phương thức mã hóa và giải mã Base64. Chuỗi đầu vào được chuyển đổi thành byte bằng cách sử dụng mã hóa UTF-8, sau đó được mã hóa và giải mã nếu cần.",
+    "tR8pY": "Go cung cấp gói thư viện tiêu chuẩn 'encoding/base64' với các chức năng mã hóa và giải mã Base64. Không cần phụ thuộc bên ngoài; chỉ cần nhập gói này vào chương trình Go của bạn và gọi các hàm thích hợp.",
+    "uW7eZ": "Trong C, không có triển khai Base64 gốc. Ví dụ này sử dụng thư viện OpenSSL để mã hóa và giải mã Base64. Để sử dụng đoạn mã này, hãy cài đặt OpenSSL trên hệ thống của bạn và liên kết với các thư viện thích hợp khi biên dịch chương trình của bạn bằng lệnh tương tự như 'gcc -o base64_example base64_example.c -lssl -lcrypto'.",
+    "z9kVv": "Python có mô-đun 'base64' tích hợp cung cấp các phương thức mã hóa và giải mã Base64. Chuỗi đầu vào trước tiên được chuyển đổi thành byte bằng cách sử dụng mã hóa UTF-8 trước khi được mã hóa thành Base64, sau đó được giải mã trở lại dạng ban đầu."
+}

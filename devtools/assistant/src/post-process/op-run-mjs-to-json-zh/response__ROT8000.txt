@@ -1,0 +1,17 @@
+根据您的要求，我们需要提取代码中显示给用户的自然文本，并将它们放入一个名为`i18n`的对象中。以下是提取的文本和对应的中文翻译：
+
+1. "ROT8000" - 这似乎是一个操作或算法的名称，我们可以保留其英文不变。
+2. "The simple Caesar-cypher encryption that replaces each Unicode character with the one 0x8000 places forward or back along the alphabet." - 这是一个关于ROT8000操作的描述。
+
+下面是根据这些信息构建的JSON对象：
+
+```json
+{
+  "i18n": {
+    "ROT8000": "ROT8000",
+    "The simple Caesar-cypher encryption that replaces each Unicode character with the one 0x8000 places forward or back along the alphabet.": "这是一个简单的凯撒密码加密，它将每个Unicode字符替换为字母表中前移或后移0x8000位置的字符。"
+  }
+}
+```
+
+请注意，在实际的代码中没有其他自然文本信息显示给用户，因此这里只包含了操作名称和描述。其他的字段如`exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`和`type`都没有在代码示例中提供，因此没有被包含在`i18n`对象中。

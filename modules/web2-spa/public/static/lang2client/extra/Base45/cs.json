@@ -1,0 +1,23 @@
+{
+    "a4r9t": "Může Base45 dekódovat jakýkoli řetězec kódovaný Base45 bez ohledu na jeho původ?",
+    "c2vw9k": "Ačkoli Base45 není tak široce implementován jako Base64 nebo Base32, existují knihovny s otevřeným zdrojovým kódem pro několik jazyků.",
+    "c9q7w": "Proč byla vytvořena Base45?",
+    "d6y9k": "Pokud není dostatek bajtů k vyplnění poslední skupiny, výplň se nepoužívá; místo toho jsou zbývající bity zpracovány a mapovány na jejich odpovídající znak (znaky).",
+    "e8x2v": "Base45 funguje tak, že vstupní data rozděluje do skupin po 5 bytech. Poté převede každou skupinu na desetinné číslo a namapuje ji na odpovídající znak ze své 45znakové sady.",
+    "f8n4m": "Jeho kompaktnost umožňuje efektivnější využití prostoru v QR kódech při zachování čitelnosti standardními čtečkami čárových kódů.",
+    "g1h5n": "Jak Base45 funguje?",
+    "g6v3b": "Větší znaková sada Base45 však může zvýšit pravděpodobnost chyb při práci s nealfanumerickými znaky, což může být problém v některých prostředích nebo přenosových kanálech.",
+    "i7w2m": "Existují nějaké vestavěné knihovny Base45 v oblíbených programovacích jazycích?",
+    "j7k2t": "Ke kódování dat pomocí Base45 potřebujete knihovnu nebo funkci, která implementuje algoritmus Base45.",
+    "m9k1z": "Pokud však dekódovaná data obsahují specifickou aplikační sémantiku (např. specifické formáty QR kódu), může být po dekódování nutné další zpracování.",
+    "q5h8n": "Hlavní výhodou je zkrácená délka řetězce pro stejné množství kódovaných dat, díky čemuž je vhodný pro aplikace, kde je kritická prostorová efektivita.",
+    "qv1p5n": "Například v Javě můžete ke kódování dat použít knihovnu 'org.iso.base45'.",
+    "r9a3t": "Base45 je textové kódovací schéma, které kóduje binární data do znaků ASCII.",
+    "s3e6r": "Jak zakóduji data pomocí Base45?",
+    "u2l8s": "Co je Base45?",
+    "x5z1b": "Base45 byl vyvinut primárně pro použití QR kódu v kontextu digitálních COVID certifikátů.",
+    "y3b6n": "Ano, pokud byl kódovaný řetězec generován podle specifikace Base45, měl by být schopen jej dekódovat jakýkoli vyhovující dekodér.",
+    "z1n5qr": "Příklady zahrnují base45 npm balíček pro JavaScript a dotnet-base45 pro .NET.",
+    "z5b7m": "Používá větší abecedu (0-9, A-Z, a-z, -, ., $, /, +, %, a *) ve srovnání s Base64 nebo Base32, což vede ke kratším kódovaným řetězcům pro stejná vstupní data.",
+    "z8m2t": "Jaké jsou výhody používání Base45 oproti Base64 nebo Base32?"
+}

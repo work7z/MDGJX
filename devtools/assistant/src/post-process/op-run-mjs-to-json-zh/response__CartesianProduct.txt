@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式的过程：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是文本，值设为`123`作为占位符。
+3. 根据代码的实际功能，将这些键值对的值翻译成中文。
+4. 输出JSON结果。
+
+以下是JSON格式的结果：
+
+```json
+{
+  "i18n": {
+    "Cartesian Product": "笛卡尔积",
+    "Calculates the cartesian product of multiple sets of data, returning all possible combinations.": "计算多个数据集的笛卡尔积，返回所有可能的组合。",
+    "Incorrect number of sets, perhaps you need to modify the sample delimiter or add more samples?": "集合数量不正确，您可能需要修改样本分隔符或添加更多样本？"
+  }
+}
+```
+
+以下是每个键值对的解释：
+
+- "Cartesian Product"：类名，翻译为“笛卡尔积”。
+- "Calculates the cartesian product of multiple sets of data, returning all possible combinations."：类的描述，翻译为“计算多个数据集的笛卡尔积，返回所有可能的组合。”
+- "Incorrect number of sets, perhaps you need to modify the sample delimiter or add more samples?"：抛出错误时的提示信息，翻译为“集合数量不正确，您可能需要修改样本分隔符或添加更多样本？”。
+
+请注意，示例中并没有包括所有可能的用户可见文本，例如函数名和参数名等，因为它们不是自然语言描述，而是代码的一部分。如果需要包括这些，请进一步说明。

@@ -1,0 +1,11 @@
+{
+    "c6p4n": "Ersetzen Sie in der bereitgestellten Vorlage den Platzhalter im Dekodierungsteil durch die tatsächlichen Base85-codierten Bytes (mit dem Präfix „b“) und führen Sie dann das Skript aus.",
+    "d8w1b": "Es ist keine zusätzliche Installation erforderlich, da es Teil der Standardbibliothek ist. Stellen Sie sicher, dass Ihre Python-Version aktuell genug ist, um diese Funktionalität zu enthalten.",
+    "f9t2z": "Fügen Sie die Abhängigkeit zu Ihrem Maven-Projekt hinzu, indem Sie „<dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependency>“ in Ihr Projekt aufnehmen pom.xml-Datei mit der neuesten Versionsnummer.",
+    "q6n1r": "Kopieren Sie nach der Installation der Bibliothek den Vorlagencode in eine Java-Klasse und ersetzen Sie den Platzhalter durch den tatsächlichen Base85-codierten Wert, bevor Sie den Code ausführen.",
+    "u9g6t": "Für JavaScript müssen Sie das Paket „base85“ für die Base85-Kodierung und -Dekodierung installieren.",
+    "v5k3r": "Ersetzen Sie nach der Installation den Platzhalter im Dekodierabschnitt durch die tatsächliche Base85-kodierte Zeichenfolge und führen Sie das Skript aus. Die Bibliothek übernimmt die Konvertierung zwischen Puffern und Base85-Zeichenfolgen.",
+    "x2c5e": "Python verfügt über ein integriertes „base85“-Modul, das Base85-Kodierung und -Dekodierung unterstützt.",
+    "y3m7k": "Verwenden Sie für Java die Bibliothek „commons-codec“, die Unterstützung für Base85-Kodierung und -Dekodierung bietet.",
+    "z7n1m": "Installieren Sie es mit npm, indem Sie „npm install base85“ oder „yarn add base85“ ausführen."
+}

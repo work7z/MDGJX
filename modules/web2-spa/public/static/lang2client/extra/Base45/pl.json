@@ -1,0 +1,23 @@
+{
+    "a4r9t": "Czy Base45 może dekodować dowolny ciąg zakodowany w Base45, niezależnie od jego pochodzenia?",
+    "c2vw9k": "Chociaż Base45 nie jest tak powszechnie wdrażany jak Base64 czy Base32, istnieją biblioteki open source dla kilku języków.",
+    "c9q7w": "Dlaczego powstał Base45?",
+    "d6y9k": "Jeśli nie ma wystarczającej liczby bajtów do wypełnienia ostatniej grupy, dopełnienie nie jest stosowane; zamiast tego pozostałe bity są przetwarzane i mapowane na odpowiadające im znaki.",
+    "e8x2v": "Base45 działa poprzez dzielenie danych wejściowych na grupy po 5 bajtów każda. Następnie konwertuje każdą grupę na liczbę dziesiętną i przypisuje ją do odpowiedniego znaku z zestawu 45 znaków.",
+    "f8n4m": "Jego zwartość pozwala na bardziej efektywne wykorzystanie miejsca w kodach QR przy jednoczesnym zachowaniu czytelności w przypadku standardowych skanerów kodów kreskowych.",
+    "g1h5n": "Jak działa Base45?",
+    "g6v3b": "Jednakże większy zestaw znaków Base45 może zwiększać prawdopodobieństwo błędów w przypadku znaków innych niż alfanumeryczne, co może stanowić problem w niektórych środowiskach lub kanałach transmisji.",
+    "i7w2m": "Czy są jakieś wbudowane biblioteki Base45 w popularnych językach programowania?",
+    "j7k2t": "Aby zakodować dane za pomocą Base45, potrzebujesz biblioteki lub funkcji implementującej algorytm Base45.",
+    "m9k1z": "Jeśli jednak dekodowane dane zawierają specyficzną semantykę aplikacji (np. określone formaty kodów QR), po dekodowaniu może być konieczne dodatkowe przetwarzanie.",
+    "q5h8n": "Główną zaletą jest zmniejszona długość ciągu dla tej samej ilości zakodowanych danych, dzięki czemu nadaje się do zastosowań, w których krytyczna jest oszczędność miejsca.",
+    "qv1p5n": "Na przykład w Javie możesz użyć biblioteki „org.iso.base45” do kodowania danych.",
+    "r9a3t": "Base45 to tekstowy schemat kodowania, który koduje dane binarne w znakach ASCII.",
+    "s3e6r": "Jak kodować dane przy użyciu Base45?",
+    "u2l8s": "Co to jest Base45?",
+    "x5z1b": "Base45 został opracowany przede wszystkim do wykorzystania kodów QR w kontekście cyfrowych certyfikatów COVID.",
+    "y3b6n": "Tak, o ile zakodowany ciąg został wygenerowany zgodnie ze specyfikacją Base45, każdy zgodny dekoder powinien być w stanie go zdekodować.",
+    "z1n5qr": "Przykłady obejmują pakiet base45 npm dla języka JavaScript i dotnet-base45 dla platformy .NET.",
+    "z5b7m": "Używa większego alfabetu (0-9, A-Z, a-z, -,., $, /, +,% i *) w porównaniu do Base64 lub Base32, co skutkuje krótszymi zakodowanymi ciągami dla tych samych danych wejściowych.",
+    "z8m2t": "Jakie są zalety używania Base45 w porównaniu z Base64 lub Base32?"
+}

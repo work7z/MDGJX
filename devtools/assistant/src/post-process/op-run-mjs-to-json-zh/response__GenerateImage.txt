@@ -1,0 +1,40 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本：
+   - "Generate Image"
+   - "Generates an image using the input as pixel values."
+   - "Pixel Scale Factor needs to be > 0"
+   - "Pixels per Row needs to be > 0"
+   - "Number of bytes is not a divisor of {bytesPerPixel}"
+   - "Generating image from data..."
+   - "Scaling image..."
+   - "Error while generating image from pixel values. ({err})"
+   - "Error generating image. ({err})"
+   - "Invalid file type."
+
+2. 将这些文本放入名为`i18n`的对象中，并给它们赋值为123。
+
+3. 翻译这些文本为中文，并替换它们的值。
+
+4. 输出JSON结果。
+
+下面是根据以上步骤生成的JSON：
+
+```json
+{
+  "i18n": {
+    "Generate Image": "生成图像",
+    "Generates an image using the input as pixel values.": "使用输入作为像素值生成图像。",
+    "Pixel Scale Factor needs to be > 0": "像素缩放因子需要大于0",
+    "Pixels per Row needs to be > 0": "每行像素数需要大于0",
+    "Number of bytes is not a divisor of {bytesPerPixel}": "字节数不是{bytesPerPixel}的除数",
+    "Generating image from data...": "从数据生成图像...",
+    "Scaling image...": "缩放图像...",
+    "Error while generating image from pixel values. ({err})": "从像素值生成图像时出错。({err})",
+    "Error generating image. ({err})": "生成图像出错。({err})",
+    "Invalid file type.": "无效的文件类型。"
+  }
+}
+```
+
+请注意，错误信息中的`{err}`是一个占位符，用于动态插入错误信息，因此在翻译中保留了它。

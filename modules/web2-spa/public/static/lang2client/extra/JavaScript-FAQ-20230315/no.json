@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "Hva er JavaScript?",
+    "JS-DOM-API-007": "Hvordan samhandler JavaScript med DOM?",
+    "JS-DOM-API-Explanation-008": "JavaScript gir en Document Object Model (DOM) API for å manipulere HTML og CSS, slik at utviklere kan endre innhold, stil og hendelseslyttere dynamisk.",
+    "JS-DOM-Example-009": "Du kan for eksempel velge et element og endre dets tekstinnhold: `document.getElementById('myElement').textContent = 'Ny tekst';`",
+    "JS-Data-Types-010": "Hva er datatypene i JavaScript?",
+    "JS-Data-Types-List-011": "JavaScript støtter ulike datatyper inkludert primitive som streng, tall, boolsk, null, udefinert og symbol, samt komplekse typer som objekt og matrise.",
+    "JS-Def-002": "JavaScript (JS) er et tolket programmeringsspråk på høyt nivå som er mye brukt for å lage webapplikasjoner, forbedre brukergrensesnitt og bygge logikk på serversiden med Node.js.",
+    "JS-Event-Loop-013": "Hva er hendelsesløkken i JavaScript?",
+    "JS-Event-Loop-Explanation-014": "Hendelsesløkken er en kjernedel av JavaScripts samtidighetsmodell, som tillater asynkron utførelse gjennom tilbakeringinger, løfter og asynkronisering/avventing.",
+    "JS-Event-Loop-Process-015": "Den kjører hovedskriptet først, og utfører deretter eventuelle tilbakeringingsfunksjoner når deres tilknyttede hendelser (som brukerinndata eller nettverkssvar) oppstår, og administrerer dem gjennom et køsystem.",
+    "JS-Function-Syntax-006": "Funksjoner er definert ved å bruke nøkkelordet \"function\" etterfulgt av funksjonsnavnet og parameterne i parentes. Funksjonsteksten er pakket inn i krøllete klammeparenteser: `function greet(name) { console.log(`Hei, ${name}!`); }`",
+    "JS-Purpose-003": "Det ble opprinnelig utviklet av Brendan Eich hos Netscape i 1995 og har siden utviklet seg til et av de mest populære språkene, støttet av alle store nettlesere og plattformer som Electron og React Native.",
+    "JS-Syntax-004": "Hva er den grunnleggende syntaksen til JavaScript?",
+    "JS-Type-Checking-012": "Typekontroll kan gjøres ved å bruke konstruktører (`typeof value === 'string'`) eller `instanceof`-operatoren for objekter som arver fra innebygde konstruktører (f.eks. `value instanceof Array`).",
+    "MDN-DOM-API": "MDN Web Docs - Manipulere dokumenter",
+    "MDN-Event-Loop": "MDN Web Docs - Event Loop",
+    "MDN-JS-Guide": "MDN Web Docs - JavaScript-veiledning",
+    "MDN-JS-Types": "MDN Web Docs - Datatyper og datastrukturer"
+}

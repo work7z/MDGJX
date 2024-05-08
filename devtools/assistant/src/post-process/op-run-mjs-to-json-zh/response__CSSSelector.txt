@@ -1,0 +1,21 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式呈现，其中包含英文原文和对应的中文翻译。
+
+```json
+{
+  "i18n": {
+    "Extract information from an HTML document with a CSS selector": "使用CSS选择器从HTML文档中提取信息",
+    "CSS selector": "CSS选择器",
+    "Delimiter": "分隔符",
+    "Invalid input HTML.": "无效的输入HTML。",
+    "Invalid CSS Selector. Details:": "无效的CSS选择器。详情："
+  }
+}
+```
+
+以下是每个条目的解释：
+
+- "Extract information from an HTML document with a CSS selector"：这是对操作功能的描述，因此翻译为“使用CSS选择器从HTML文档中提取信息”。
+- "CSS selector" 和 "Delimiter" 是参数名称，分别翻译为“CSS选择器”和“分隔符”。
+- "Invalid input HTML." 和 "Invalid CSS Selector. Details:" 是可能抛出的错误信息，分别翻译为“无效的输入HTML。”和“无效的CSS选择器。详情：”。
+
+请注意，错误信息中的换行符`\n`在JSON中通常不需要特殊处理，因为它是字符串的一部分。如果需要在实际应用中输出换行，请在处理字符串时添加。

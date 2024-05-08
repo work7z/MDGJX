@@ -1,0 +1,33 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键为原文，值为`123`。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换`123`。
+4. 输出JSON结果。
+
+以下是JSON格式的结果：
+
+```json
+{
+  "i18n": {
+    "Raw Deflate": "原始Deflate",
+    "Compresses data using the deflate algorithm with no headers.": "使用不带头的deflate算法压缩数据。",
+    "Compression type": "压缩类型"
+  }
+}
+```
+
+以下是按照您的要求，将上述JSON格式结果放入到示例1结构中的样子：
+
+```json
+{
+  "i18n": {
+    "Raw Deflate": "原始Deflate",
+    "Compresses data using the deflate algorithm with no headers.": "使用不带头的deflate算法压缩数据。",
+    "Compression type": "压缩类型"
+    // 其他自然文本和对应的中文翻译
+  }
+}
+```
+
+请注意，由于代码中自然文本较少，且功能明确，我直接给出了翻译。如果代码中有更多复杂的文本，可能需要更详细的上下文来进行准确翻译。

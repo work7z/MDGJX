@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是文本本身，值设为`123`作为占位符。
+3. 根据代码的功能，给出适当的中文翻译。
+4. 输出JSON结果。
+
+以下是JSON格式的输出：
+
+```json
+{
+  "i18n": {
+    "LZString Compress": "LZString 压缩",
+    "Compress the input with lz-string.": "使用 lz-string 压缩输入。",
+    "Unable to find compression function": "无法找到压缩功能"
+  }
+}
+```
+
+以下是按照您的要求，逐步解释上述JSON的构造：
+
+- `"LZString Compress"`：这是类名，代表了这个操作的功能，我将其翻译为`"LZString 压缩"`。
+- `"Compress the input with lz-string."`：这是对操作的描述，我将其翻译为`"使用 lz-string 压缩输入。"`.
+- `"Unable to find compression function"`：这是可能抛出的错误信息，我将其翻译为`"无法找到压缩功能"`。
+
+请注意，我没有包括`infoURL`字段，因为它包含了HTTP链接，根据您的要求，这不属于自然文本。同样，我也排除了其他指定的字段。

@@ -1,0 +1,11 @@
+{
+    "c6p4n": "Korvaa toimitetussa mallissa dekoodausosan paikkamerkki todellisilla Base85-koodatuilla tavuilla (etuliite 'b') ja suorita sitten komentosarja.",
+    "d8w1b": "Lisäasennusta ei tarvita, koska se on osa vakiokirjastoa. Varmista, että Python-versiosi on tarpeeksi uusi, jotta se sisältää tämän toiminnon.",
+    "f9t2z": "Lisää riippuvuus Maven-projektiisi lisäämällä `<dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependency>` pom.xml-tiedosto, jossa on uusin versionumero.",
+    "q6n1r": "Kun olet asentanut kirjaston, kopioi mallin koodi Java-luokkaan ja korvaa paikkamerkki todellisella Base85-koodatulla arvolla ennen koodin suorittamista.",
+    "u9g6t": "JavaScriptiä varten sinun on asennettava Base85-paketti Base85-koodausta ja -dekoodausta varten.",
+    "v5k3r": "Kun olet asentanut, korvaa dekoodausosion paikkamerkki todellisella Base85-koodatulla merkkijonolla ja suorita komentosarja. Kirjasto käsittelee muunnoksen puskurien ja Base85-merkkijonojen välillä.",
+    "x2c5e": "Pythonissa on sisäänrakennettu \"base85\"-moduuli, joka tukee Base85-koodausta ja -dekoodausta.",
+    "y3m7k": "Javaa varten käytä Commons-codec-kirjastoa, joka sisältää tuen Base85-koodaukselle ja dekoodaukselle.",
+    "z7n1m": "Asenna se npm:llä suorittamalla `npm install base85` tai `yarn add base85`."
+}

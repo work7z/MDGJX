@@ -1,0 +1,28 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取文本。
+2. 将文本放入名为`i18n`的对象中，并给每个文本赋予初始值`123`。
+3. 根据代码的实际功能，将文本翻译成中文。
+
+下面是JSON格式的结果：
+
+```json
+{
+  "i18n": {
+    "Emulation of the Bombe machine.": "模拟Bombe机器。",
+    "This version carries out multiple Bombe runs to handle unknown rotor configurations.": "此版本执行多次Bombe运行以处理未知的转子配置。",
+    "You should test your menu on the single Bombe operation before running it here.": "在在这里运行之前，您应该在单个Bombe操作上测试您的菜单。",
+    "See the description of the Bombe operation for instructions on choosing a crib.": "有关选择crib的说明，请参阅Bombe操作的描述。",
+    "More detailed descriptions of the Enigma, Typex and Bombe operations can be found here.": "关于Enigma、Typex和Bombe操作的更详细描述可以在这里找到。",
+    "Bombe run with loops in menu (2+ desirable): stops, % done, remaining": "Bombe运行在菜单中带有循环（2+为宜）：已停止，完成百分比，剩余时间",
+    "Rotor wiring must be 26 unique uppercase letters": "转子接线必须是26个唯一的大写字母",
+    "A minimum of three rotors must be supplied": "必须提供至少三个转子",
+    "A minimum of one reflector must be supplied": "必须提供至少一个反射器",
+    "Crib cannot be empty": "crib不能为空",
+    "Offset cannot be negative": "偏移量不能为负数",
+    "Bombe run on menu with loops (2+ desirable).": "在菜单上运行Bombe，带有循环（2+为宜）。"
+  }
+}
+```
+
+请注意，由于代码中包含的文本内容较多，这里仅包含了与用户交互相关的自然语言文本，并且假定HTML标签和链接文本不应包含在内。如果需要更多的细节或者不同的处理方式，请告知。

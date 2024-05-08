@@ -1,0 +1,12 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的i18n对象，并翻译成中文：
+
+```json
+{
+  "i18n": {
+    "Given a CIDR range (e.g. 10.0.0.0/24), hyphenated range (e.g. 10.0.0.0 - 10.0.1.0), or a list of IPs and/or CIDR ranges (separated by a new line), this operation provides network information and enumerates all IP addresses in the range. IPv6 is supported but will not be enumerated.": "该操作可以解析CIDR范围（例如10.0.0.0/24）、连字符范围（例如10.0.0.0 - 10.0.1.0）或IP地址和/或CIDR范围的列表（由换行符分隔），并提供网络信息以及枚举范围内的所有IP地址。支持IPv6，但不会进行枚举。",
+    "Invalid input. Enter either a CIDR range (e.g. 10.0.0.0/24) or a hyphenated range (e.g. 10.0.0.0 - 10.0.1.0). IPv6 also supported.": "输入无效。请输入CIDR范围（例如10.0.0.0/24）或连字符范围（例如10.0.0.0 - 10.0.1.0）。也支持IPv6。"
+  }
+}
+```
+
+在这个JSON对象中，每个key都是原始代码中的自然文本，而value则是相应的中文翻译。这些翻译是根据代码的实际功能进行的，旨在准确传达代码的用途和用户交互信息。

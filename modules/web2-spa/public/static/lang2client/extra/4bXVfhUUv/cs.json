@@ -1,0 +1,11 @@
+{
+    "c6p4n": "V poskytnuté šabloně nahraďte zástupný symbol v dekódovací části skutečnými bajty zakódovanými v Base85 (s předponou 'b') a poté spusťte skript.",
+    "d8w1b": "Není potřeba žádná další instalace, protože je součástí standardní knihovny. Ujistěte se, že vaše verze Pythonu je dostatečně aktuální, aby zahrnovala tuto funkci.",
+    "f9t2z": "Přidejte závislost do svého projektu Maven zahrnutím `<dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependency>` do svého pom.xml s číslem nejnovější verze.",
+    "q6n1r": "Po instalaci knihovny zkopírujte kód šablony do třídy Java a před spuštěním kódu nahraďte zástupný symbol skutečnou hodnotou zakódovanou v Base85.",
+    "u9g6t": "Pro JavaScript musíte nainstalovat balíček 'base85' pro kódování a dekódování Base85.",
+    "v5k3r": "Po instalaci nahraďte zástupný symbol v části dekódování skutečným řetězcem zakódovaným v Base85 a spusťte skript. Knihovna zpracovává konverzi mezi řetězci Buffers a Base85.",
+    "x2c5e": "Python má vestavěný modul 'base85', který podporuje kódování a dekódování Base85.",
+    "y3m7k": "Pro Javu použijte knihovnu 'commons-codec', která zahrnuje podporu pro kódování a dekódování Base85.",
+    "z7n1m": "Nainstalujte jej pomocí npm spuštěním `npm install base85` nebo `yarn add base85`."
+}

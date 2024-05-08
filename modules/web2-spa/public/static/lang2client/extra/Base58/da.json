@@ -1,0 +1,20 @@
+{
+    "c5m1b": "En anden variant, Base58Flickr, adskiller sig lidt i sit tegnsæt. Den erstatter '+' med ',' og '/' med '-', tilpasset Flickrs URL-behov.",
+    "c6p9b": "Hvis inputdataens længde ikke er delelig med 8, bruges polstring ikke; i stedet behandles hver ikke-fuld gruppe uafhængigt.",
+    "d3w2e": "Base58 fungerer ved at konvertere input-bytes til et stort heltal og derefter udtrykke dette heltal som en kombination af tegn fra dets 58-tegnsæt (A-Z, a-z, 1-9).",
+    "f4t7z": "Base58 blev oprindeligt udviklet til Bitcoin til at repræsentere offentlige adresser og private nøgler uden tvetydighed.",
+    "g7h5k": "Hvordan virker Base58?",
+    "j6s3r": "Hvordan koder/dekoder jeg med Base58 i JavaScript?",
+    "k1m4e": "Den tilbyder dog ikke helt den samme pladseffektivitet som Base64 eller Base32, da den bruger færre tegn i alfabetet.",
+    "pq5e9n": "Du kan bruge biblioteker som 'bs58' til at udføre Base58-kodning og afkodning i JavaScript.",
+    "q2x8k": "Dets brug er udvidet til andre kryptovalutaer og scenarier, hvor menneskelæselige, fejlbestandige strenge ønskes.",
+    "r2n7v": "Den største fordel er øget læsbarhed på grund af udelukkelse af lignende tegn, hvilket reducerer fejl under manuel indtastning.",
+    "s1b3m": "I modsætning til Base64 eller Base32 udelukker den de let forvirrede '0', 'O', 'I' og 'l' tegn, hvilket gør den velegnet til URL'er og QR-koder.",
+    "u8i5b": "Hvad er fordelene ved at bruge Base58 frem for Base64 eller Base32?",
+    "v4n9t": "Base58 er et kodningsskema, der repræsenterer binære data som en sekvens af alfanumeriske tegn.",
+    "w3x7k": "Ja, nogle populære varianter inkluderer Base58Check, som tilføjer en kontrolsum til fejldetektion, der almindeligvis bruges i Bitcoin.",
+    "x2z6r": "Hvad er Base58?",
+    "y9m1n": "Hvorfor blev Base58 oprettet?",
+    "z1m2t": "Eksempel på brug: `const encoded = bs58.encode('dine-data'); const decoded = bs58.decode(encoded);`",
+    "z9t2p": "Er der nogle specifikke varianter af Base58?"
+}

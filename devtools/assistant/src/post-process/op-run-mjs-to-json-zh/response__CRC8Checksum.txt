@@ -1,0 +1,27 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式呈现，其中键是原始文本，值是“123”作为占位符，随后我将提供中文翻译。
+
+```json
+{
+  "i18n": {
+    "CRC-8 Checksum": "123",
+    "A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data.": "123",
+    "The CRC was invented by W. Wesley Peterson in 1961.": "123",
+    "Unknown checksum algorithm": "123"
+  }
+}
+```
+
+下面是中文翻译，我将根据代码的实际功能进行翻译：
+
+```json
+{
+  "i18n": {
+    "CRC-8 Checksum": "CRC-8 校验和",
+    "A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data.": "循环冗余校验（CRC）是一种常用的错误检测码，用于数字网络和存储设备中检测原始数据意外更改。",
+    "The CRC was invented by W. Wesley Peterson in 1961.": "CRC 是由 W. Wesley Peterson 在 1961 年发明的。",
+    "Unknown checksum algorithm": "未知的校验算法"
+  }
+}
+```
+
+请注意，以上翻译是根据代码上下文进行的，可能需要根据实际应用场景进一步调整。

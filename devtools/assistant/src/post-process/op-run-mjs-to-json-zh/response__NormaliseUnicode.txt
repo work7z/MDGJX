@@ -1,0 +1,50 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式，并翻译成中文的过程：
+
+1. 提炼英文自然文本：
+   - "Normalise Unicode"
+   - "Transform Unicode characters to one of the Normalisation Forms"
+   - "Unknown Normalisation Form"
+
+2. 放入JSON对象并命名为`i18n`，并给每个文本赋予初始值123：
+
+   ```json
+   {
+     "i18n": {
+       "Normalise Unicode": 123,
+       "Transform Unicode characters to one of the Normalisation Forms": 123,
+       "Unknown Normalisation Form": 123
+     }
+   }
+   ```
+
+3. 根据代码的实际功能，将文本翻译为中文，并替换其value值：
+
+   - "Normalise Unicode" 翻译为 "Unicode 规范化"
+   - "Transform Unicode characters to one of the Normalisation Forms" 翻译为 "将Unicode字符转换为规范化形式之一"
+   - "Unknown Normalisation Form" 翻译为 "未知的规范化形式"
+
+   更新后的JSON对象如下：
+
+   ```json
+   {
+     "i18n": {
+       "Unicode 规范化": "Unicode 规范化",
+       "将Unicode字符转换为规范化形式之一": "将Unicode字符转换为规范化形式之一",
+       "未知的规范化形式": "未知的规范化形式"
+     }
+   }
+   ```
+
+4. 输出结果：
+
+   ```json
+   {
+     "i18n": {
+       "Normalise Unicode": "Unicode 规范化",
+       "Transform Unicode characters to one of the Normalisation Forms": "将Unicode字符转换为规范化形式之一",
+       "Unknown Normalisation Form": "未知的规范化形式"
+     }
+   }
+   ```
+
+以上步骤完成了您的要求，将代码中的自然文本提取并翻译为中文。

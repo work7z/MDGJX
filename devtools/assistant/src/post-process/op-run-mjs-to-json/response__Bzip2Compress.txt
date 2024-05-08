@@ -1,0 +1,29 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将这些文本放入一个JSON对象中，其结构如下：
+
+```json
+{
+  "i18n": {
+    "text1": 1,
+    "text2": 1,
+    // ... 其他文本
+  }
+}
+```
+
+下面是根据您提供的代码提取的自然文本：
+
+```json
+{
+  "i18n": {
+    "Bzip2 Compress": 1,
+    "Bzip2 is a compression library developed by Julian Seward (of GHC fame) that uses the Burrows-Wheeler algorithm. It only supports compressing single files and its compression is slow, however is more effective than Deflate (.gz & .zip).": 1,
+    "Please provide an input.": 1,
+    "Loading Bzip2...": 1,
+    "Compressing data...": 1,
+    "Block size (100s of kb)": 1,
+    "Work factor": 1
+  }
+}
+```
+
+这个JSON对象包含了代码中所有符合要求的自然文本，作为键值对的键，并且每个键对应的值都是1。注意，这里不包括示例代码、链接、类型定义等非自然文本内容。

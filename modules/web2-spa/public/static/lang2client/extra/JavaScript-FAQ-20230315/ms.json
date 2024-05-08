@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "Apakah JavaScript?",
+    "JS-DOM-API-007": "Bagaimanakah JavaScript berinteraksi dengan DOM?",
+    "JS-DOM-API-Explanation-008": "JavaScript menyediakan API Document Object Model (DOM) untuk memanipulasi HTML dan CSS, membolehkan pembangun menukar kandungan, gaya dan pendengar acara secara dinamik.",
+    "JS-DOM-Example-009": "Sebagai contoh, anda boleh memilih elemen dan menukar kandungan teksnya: `document.getElementById('myElement').textContent = 'New Text';`",
+    "JS-Data-Types-010": "Apakah jenis data dalam JavaScript?",
+    "JS-Data-Types-List-011": "JavaScript menyokong pelbagai jenis data termasuk yang primitif seperti rentetan, nombor, boolean, null, undefined dan simbol, serta jenis kompleks seperti objek dan tatasusunan.",
+    "JS-Def-002": "JavaScript (JS) ialah bahasa pengaturcaraan peringkat tinggi yang ditafsirkan yang digunakan secara meluas untuk mencipta aplikasi web, meningkatkan antara muka pengguna dan membina logik sisi pelayan dengan Node.js.",
+    "JS-Event-Loop-013": "Apakah gelung acara dalam JavaScript?",
+    "JS-Event-Loop-Explanation-014": "Gelung acara ialah bahagian teras model konkurensi JavaScript, yang membenarkan pelaksanaan tak segerak melalui panggilan balik, janji dan async/menunggu.",
+    "JS-Event-Loop-Process-015": "Ia menjalankan skrip utama terlebih dahulu, kemudian melaksanakan sebarang fungsi panggil balik apabila peristiwa berkaitannya (seperti input pengguna atau respons rangkaian) berlaku, menguruskannya melalui sistem baris gilir.",
+    "JS-Function-Syntax-006": "Fungsi ditakrifkan menggunakan kata kunci `fungsi` diikuti dengan nama fungsi dan parameter yang disertakan dalam kurungan. Badan fungsi dibalut dengan pendakap kerinting: `function greet(name) { console.log(`Hello, ${name}!`); }`",
+    "JS-Purpose-003": "Ia pada mulanya dibangunkan oleh Brendan Eich di Netscape pada tahun 1995 dan sejak itu telah berkembang menjadi salah satu bahasa yang paling popular, disokong oleh semua pelayar web dan platform utama seperti Electron dan React Native.",
+    "JS-Syntax-004": "Apakah sintaks asas JavaScript?",
+    "JS-Type-Checking-012": "Semakan jenis boleh dilakukan menggunakan pembina (`typeof value === 'string'`) atau operator `instanceof` untuk objek yang diwarisi daripada pembina terbina dalam (cth., `value instanceof Array`).",
+    "MDN-DOM-API": "Dokumen Web MDN - Memanipulasi Dokumen",
+    "MDN-Event-Loop": "Dokumen Web MDN - Gelung Acara",
+    "MDN-JS-Guide": "Dokumen Web MDN - Panduan JavaScript",
+    "MDN-JS-Types": "Dokumen Web MDN - Jenis Data dan Struktur Data"
+}

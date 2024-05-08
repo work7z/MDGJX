@@ -1,0 +1,35 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设为`123`。
+3. 根据代码的实际功能，将`i18n`中的值翻译成中文。
+4. 输出JSON结果。
+
+以下是JSON格式的结果：
+
+```json
+{
+  "i18n": {
+    "RSA Sign": "RSA签名",
+    "Sign a plaintext message with a PEM encoded RSA key.": "使用PEM编码的RSA密钥对纯文本消息进行签名。",
+    "Please enter a private key.": "请输入一个私钥。",
+    "Message Digest Algorithm": "消息摘要算法"
+  }
+}
+```
+
+以下是按照您的示例格式化的结果：
+
+```json
+{
+  "i18n": {
+    "RSA Sign": "RSA签名",
+    "Sign a plaintext message with a PEM encoded RSA key.": "使用PEM编码的RSA密钥对纯文本消息进行签名。",
+    "Please enter a private key.": "请输入私钥。",
+    "Message Digest Algorithm": "消息摘要算法"
+    // 其他自然文本和对应的中文翻译
+  }
+}
+```
+
+请注意，示例中的`value`值`123`被替换为了每个文本对应的中文翻译。这些翻译是基于代码的功能和上下文进行的。

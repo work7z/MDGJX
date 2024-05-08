@@ -1,0 +1,23 @@
+{
+    "a4r9t": "¿Puede Base45 decodificar cualquier cadena codificada en Base45 independientemente de su origen?",
+    "c2vw9k": "Si bien Base45 no está tan implementado como Base64 o Base32, existen bibliotecas de código abierto para varios idiomas.",
+    "c9q7w": "¿Por qué se creó Base45?",
+    "d6y9k": "Si no hay suficientes bytes para llenar el último grupo, no se utiliza el relleno; en cambio, los bits restantes se procesan y asignan a sus caracteres correspondientes.",
+    "e8x2v": "Base45 funciona dividiendo los datos de entrada en grupos de 5 bytes cada uno. Luego convierte cada grupo en un número decimal y lo asigna al carácter correspondiente de su conjunto de 45 caracteres.",
+    "f8n4m": "Su tamaño compacto permite un uso más eficiente del espacio en los códigos QR y al mismo tiempo mantiene la legibilidad con lectores de códigos de barras estándar.",
+    "g1h5n": "¿Cómo funciona Base45?",
+    "g6v3b": "Sin embargo, el conjunto de caracteres más grande de Base45 puede aumentar la probabilidad de errores al tratar con caracteres no alfanuméricos, lo que podría ser un problema en algunos entornos o canales de transmisión.",
+    "i7w2m": "¿Existen bibliotecas Base45 integradas en lenguajes de programación populares?",
+    "j7k2t": "Para codificar datos con Base45, necesita una biblioteca o función que implemente el algoritmo Base45.",
+    "m9k1z": "Sin embargo, si los datos que se están decodificando contienen una semántica de aplicación específica (por ejemplo, formatos de códigos QR específicos), es posible que sea necesario un procesamiento adicional después de la decodificación.",
+    "q5h8n": "La principal ventaja es la longitud reducida de la cadena para la misma cantidad de datos codificados, lo que lo hace adecuado para aplicaciones donde la eficiencia del espacio es crítica.",
+    "qv1p5n": "Por ejemplo, en Java, puedes utilizar la biblioteca 'org.iso.base45' para codificar tus datos.",
+    "r9a3t": "Base45 es un esquema de codificación basado en texto que codifica datos binarios en caracteres ASCII.",
+    "s3e6r": "¿Cómo codifico datos usando Base45?",
+    "u2l8s": "¿Qué es Base45?",
+    "x5z1b": "Base45 se desarrolló principalmente para el uso de códigos QR en el contexto de los certificados COVID digitales.",
+    "y3b6n": "Sí, siempre que la cadena codificada se genere de acuerdo con la especificación Base45, cualquier decodificador compatible debería poder decodificarla.",
+    "z1n5qr": "Los ejemplos incluyen el paquete base45 npm para JavaScript y dotnet-base45 para .NET.",
+    "z5b7m": "Utiliza un alfabeto más grande (0-9, A-Z, a-z, -, ., $, /, +, %, y *) en comparación con Base64 o Base32, lo que da como resultado cadenas codificadas más cortas para los mismos datos de entrada.",
+    "z8m2t": "¿Cuáles son las ventajas de utilizar Base45 sobre Base64 o Base32?"
+}

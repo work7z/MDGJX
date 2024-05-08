@@ -1,0 +1,25 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作：
+
+1. 提取文本。
+2. 放入名为`i18n`的对象中，键是提取的文本，值设为`123`。
+3. 翻译这些文本为中文，并替换`123`作为值。
+4. 输出JSON结果。
+
+以下是JSON格式：
+
+```json
+{
+  "i18n": {
+    "Index of Coincidence": "巧合指数",
+    "Index of Coincidence (IC) is the probability of two randomly selected characters being the same. This can be used to determine whether text is readable or random, with English text having an IC of around 0.066. IC can therefore be a sound method to automate frequency analysis.": "巧合指数（IC）是两个随机选择的字符相同的概率。这可以用来确定文本是否可读或随机，英语文本的IC大约为0.066。因此，IC可以是自动化频率分析的一个可靠方法。",
+    "Index of Coincidence:": "巧合指数：",
+    "Normalized:": "标准化：",
+    "- 0 represents complete randomness (all characters are unique), whereas 1 represents no randomness (all characters are identical).": "- 0代表完全随机（所有字符都是唯一的），而1代表没有随机性（所有字符都相同）。",
+    "- English text generally has an IC of between 0.67 to 0.78.": "- 英语文本的IC通常在0.067到0.078之间。",
+    "- 'Random' text is determined by the probability that each letter occurs the same number of times as another.": "- “随机”文本由每个字母出现的次数与另一个字母相同的概率确定。",
+    "The graph shows the IC of the input data. A low IC generally means that the text is random, compressed or encrypted.": "该图表显示了输入数据的IC。通常，IC较低意味着文本是随机的、压缩的或加密的。"
+  }
+}
+```
+
+请注意，我已经将提取的文本翻译成了中文，并按照代码的实际功能进行了适当的调整。这些翻译可以作为本地化（i18n）的参考。

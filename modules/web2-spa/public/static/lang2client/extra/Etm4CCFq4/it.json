@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "Installa OpenSSL sul tuo sistema e collegalo alle librerie \"libssl\" e \"libcrypto\" durante la creazione della tua applicazione C++.",
+    "md5-cpp-openssl-0001": "C++ utilizza la libreria OpenSSL per generare hash MD5. Devi installare OpenSSL e collegarti ad esso nel tuo progetto.",
+    "md5-cpp-use-openssl-0003": "Lo snippet crea una funzione \"getMD5\" che accetta una stringa di input, calcola il suo hash MD5 utilizzando l'API MD5 di OpenSSL e restituisce l'hash come stringa esadecimale. Incolla questo codice nel tuo programma C++ e chiama la funzione \"getMD5\" con l'input desiderato.",
+    "md5-csharp-built-in-0001": "In C#, la classe \"System.Security.Cryptography.MD5\" viene utilizzata per generare hash MD5.",
+    "md5-csharp-no-install-0002": "Non è necessaria l'installazione di librerie esterne poiché fanno parte di .NET Framework/Core.",
+    "md5-csharp-use-0003": "Questo frammento crea un'istanza MD5, converte la stringa di input in byte, calcola l'hash e infine codifica l'hash in formato Base64. Inserisci questo codice nel punto di ingresso dell'applicazione C# ed eseguilo per ottenere l'hash MD5 con codifica Base64.",
+    "md5-java-built-in-0001": "Java utilizza la classe \"java.security.MessageDigest\" per generare hash MD5.",
+    "md5-java-imports-0002": "È necessario importare \"java.security.MessageDigest\" e \"java.util.Base64\" per l'hashing e la codifica del risultato.",
+    "md5-java-use-0003": "Lo snippet ottiene un'istanza dell'algoritmo digest MD5, lo aggiorna con i byte della stringa di input e quindi codifica l'hash risultante in una stringa Base64. Copia questo codice in una classe Java ed esegui il suo metodo principale per ottenere l'hash MD5 con codifica Base64.",
+    "md5-nodejs-built-in-0001": "In Node.js, il modulo \"crittografico\" integrato viene utilizzato per generare hash MD5.",
+    "md5-nodejs-no-install-0002": "Non è richiesta l'installazione di librerie esterne poiché \"crypto\" viene preinstallato con Node.js.",
+    "md5-nodejs-use-0003": "Lo snippet crea un oggetto hash utilizzando `createHash('md5')`, lo aggiorna con la stringa di input e quindi converte il digest in formato esadecimale tramite `.digest('hex')`. Incolla questo codice nel tuo script Node.js ed eseguilo per ottenere l'hash MD5 del valore di input.",
+    "md5-php-built-in-0001": "PHP ha una funzione incorporata 'md5()' per generare hash MD5.",
+    "md5-php-no-install-0002": "Non è necessaria l'installazione di librerie esterne poiché 'md5()' è preinstallato in PHP.",
+    "md5-php-use-0003": "Questo semplice esempio definisce una funzione 'getMD5' che chiama la funzione PHP 'md5()' sulla stringa di input fornita. Copia questo codice in un file PHP, salvalo con estensione .php ed eseguilo in un server web o tramite la riga di comando per vedere l'hash MD5 del valore di input.",
+    "md5-python-built-in-0001": "Python utilizza la libreria incorporata \"hashlib\" per generare hash MD5.",
+    "md5-python-no-install-0002": "Non è necessaria alcuna installazione aggiuntiva poiché \"hashlib\" viene fornito di serie con Python.",
+    "md5-python-use-0003": "Il modello fornito codifica la stringa di input in byte prima di creare un oggetto hash MD5. Il metodo '.hexdigest()' viene quindi chiamato sull'oggetto hash per recuperare l'hash MD5 in formato esadecimale. Copia questo codice in uno script Python ed eseguilo per ottenere l'hash MD5."
+}

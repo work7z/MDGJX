@@ -1,0 +1,22 @@
+根据您的要求，以下是代码中提取的自然文本，并按照指示转换为JSON格式，并进行适当的中文翻译。
+
+```json
+{
+  "i18n": {
+    "A1Z26 Cipher Encode": "A1Z26加密编码",
+    "Converts alphabet characters into their corresponding alphabet order number.": "将字母字符转换为其对应的字母顺序编号。",
+    "e.g. a becomes 1 and b becomes 2.": "例如，a变成1，b变成2。",
+    "Non-alphabet characters are dropped.": "非字母字符将被丢弃。",
+    "Delimiter": "分隔符"
+  }
+}
+```
+
+以下是步骤说明：
+
+1. 提取所有显示给用户的自然文本，不包括URL、示例输入输出、输入输出类型、模块类型等字段。
+2. 将这些文本放入一个名为`i18n`的对象中，键是原始文本，值初始设为123。
+3. 根据代码的实际功能，对这些键进行中文翻译，并替换掉原来的值123。
+4. 输出格式按照提供的示例进行组织。
+
+请注意，翻译是基于代码上下文进行的，可能需要根据实际应用场景进一步调整。

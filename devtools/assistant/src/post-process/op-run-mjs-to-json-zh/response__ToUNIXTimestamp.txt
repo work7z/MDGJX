@@ -1,0 +1,25 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤，包括翻译成中文：
+
+1. 提炼文本。
+2. 放入名为`i18n`的对象中，键是文本，值初始设为`123`。
+3. 翻译文本。
+4. 输出JSON结果。
+
+下面是结果：
+
+```json
+{
+  "i18n": {
+    "To UNIX Timestamp": "转换为UNIX时间戳",
+    "Parses a datetime string in UTC and returns the corresponding UNIX timestamp.": "解析UTC中的日期时间字符串，并返回相应的UNIX时间戳。",
+    "e.g. Mon 1 January 2001 11:00:00 becomes 978346800": "例如：Mon 1 January 2001 11:00:00 转换为 978346800",
+    "A UNIX timestamp is a 32-bit value representing the number of seconds since January 1, 1970 UTC (the UNIX epoch).": "UNIX时间戳是一个32位值，表示自1970年1月1日UTC（UNIX纪元）以来的秒数。",
+    "Units": "单位",
+    "Treat as UTC": "视为UTC",
+    "Show parsed datetime": "显示解析的日期时间",
+    "Unrecognised unit": "未识别的单位"
+  }
+}
+```
+
+注意：以上翻译是根据代码的功能和上下文进行的，可能需要根据具体的使用场景进一步调整。

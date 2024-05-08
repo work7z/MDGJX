@@ -1,0 +1,35 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本赋予一个键（key）。
+3. 将这些键对应的值（value）设置为123作为占位符。
+4. 将这些文本翻译成中文，并替换掉占位符123。
+5. 输出JSON结果。
+
+以下是按照这些步骤生成的JSON格式：
+
+```json
+{
+  "i18n": {
+    "From Case Insensitive Regex": "123",
+    "Converts a case-insensitive regex string to a case sensitive regex string (no guarantee on it being the proper original casing) in case the i flag wasn't available at the time but now is, or you need it to be case-sensitive again.": "123",
+    "e.g. [mM][oO][zZ][iI][lL][lL][aA]/[0-9].[0-9] .*</code> becomes <code>Mozilla/[0-9].[0-9] .*</code>": "123",
+    "Regular expression": "123"
+  }
+}
+```
+
+然后，根据代码的实际功能，我将这些文本翻译成中文：
+
+```json
+{
+  "i18n": {
+    "From Case Insensitive Regex": "从大小写不敏感的正则表达式",
+    "Converts a case-insensitive regex string to a case sensitive regex string (no guarantee on it being the proper original casing) in case the i flag wasn't available at the time but now is, or you need it to be case-sensitive again.": "将大小写不敏感的正则表达式字符串转换为大小写敏感的正则表达式字符串（不保证是正确的原始大小写），以防当时没有i标志但现在有了，或者您需要它再次成为大小写敏感的。",
+    "e.g. [mM][oO][zZ][iI][lL][lL][aA]/[0-9].[0-9] .*</code> becomes <code>Mozilla/[0-9].[0-9] .*</code>": "例如：[mM][oO][zZ][iI][lL][lL][aA]/[0-9].[0-9] .*</code> 会变成 <code>Mozilla/[0-9].[0-9] .*</code>",
+    "Regular expression": "正则表达式"
+  }
+}
+```
+
+请注意，由于代码示例中的文本包含HTML标签（如`<code>`），这些标签在翻译时被保留，因为它们是格式的一部分，而不是自然文本内容的一部分。如果需要移除这些标签，请告知。

@@ -1,0 +1,11 @@
+{
+    "c6p4n": "A megadott sablonban cserélje ki a helyőrzőt a dekódolási részben a tényleges Base85 kódolású bájtokra (előtagként 'b'), majd futtassa a parancsfájlt.",
+    "d8w1b": "Nincs szükség további telepítésre, mivel a szabványos könyvtár része. Győződjön meg arról, hogy Python verziója elég friss ahhoz, hogy tartalmazza ezt a funkciót.",
+    "f9t2z": "Adja hozzá a függőséget a Maven-projekthez úgy, hogy belefoglalja a `<dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependency>` elemet. pom.xml fájl a legújabb verziószámmal.",
+    "q6n1r": "A könyvtár telepítése után másolja a sablonkódot egy Java osztályba, és a kód futtatása előtt cserélje ki a helyőrzőt a tényleges Base85 kódolású értékre.",
+    "u9g6t": "JavaScript esetén telepítenie kell a „base85” csomagot a Base85 kódolásához és dekódolásához.",
+    "v5k3r": "A telepítés után cserélje ki a dekódolási szakasz helyőrzőjét a tényleges Base85 kódolású karakterláncra, és futtassa a szkriptet. A könyvtár kezeli a pufferek és a Base85 karakterláncok közötti átalakítást.",
+    "x2c5e": "A Python rendelkezik egy beépített „base85” modullal, amely támogatja a Base85 kódolást és dekódolást.",
+    "y3m7k": "Java esetén használja a „commons-codec” könyvtárat, amely támogatja a Base85 kódolást és dekódolást.",
+    "z7n1m": "Telepítse az npm használatával az \"npm install base85\" vagy a \"yarn add base85\" futtatásával."
+}

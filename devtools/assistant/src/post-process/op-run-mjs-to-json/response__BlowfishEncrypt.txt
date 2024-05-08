@@ -1,0 +1,29 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为 `i18n` 的对象中，其中每个文本作为键，对应的值为数字 `1`。
+
+下面是根据您提供的代码提取的自然文本，并按照要求放置到 JSON 对象中的 `i18n` 部分：
+
+```json
+{
+  "i18n": {
+    "Blowfish Encrypt": 1,
+    "Blowfish is a symmetric-key block cipher designed in 1993 by Bruce Schneier and included in a large number of cipher suites and encryption products. AES now receives more attention.": 1,
+    "IV: The Initialization Vector should be 8 bytes long. If not entered, it will default to 8 null bytes.": 1,
+    "Invalid key length: ${key.length} bytes\nBlowfish uses a key length of 8 bytes (64 bits).": 1,
+    "Key": 1,
+    "IV": 1,
+    "Mode": 1,
+    "Input": 1,
+    "Output": 1
+  }
+}
+```
+
+在这个 JSON 对象中，我提取了以下自然文本：
+
+- 类名 `Blowfish Encrypt`
+- 类描述信息
+- 关于 IV 的说明
+- 抛出的错误信息（注意模板字符串 `${key.length}` 被保留）
+- 参数名 `Key`, `IV`, `Mode`, `Input`, `Output`
+
+请注意，因为模板字符串在运行时会被动态替换，所以错误信息中的 `${key.length}` 部分被保留下来，以便在实际使用时可以替换为相应的值。如果不需要这样的动态替换，并且只需要显示给用户的静态文本，那么可以将这部分替换为具体的数字或描述。

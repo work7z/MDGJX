@@ -1,0 +1,21 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为`i18n`的JSON对象中，其中每个文本作为键，值设为1。
+
+下面是提取后的JSON对象：
+
+```json
+{
+  "i18n": {
+    "The Affine cipher is a type of monoalphabetic substitution cipher. To decrypt, each letter in an alphabet is mapped to its numeric equivalent, decrypted by a mathematical function, and converted back to a letter.": 1,
+    "The values of a and b can only be integers.": 1,
+    "The value of `a` must be coprime to 26.": 1
+  }
+}
+```
+
+这里是提取的文本：
+
+1. 类描述（`description`字段）: "The Affine cipher is a type of monoalphabetic substitution cipher. To decrypt, each letter in an alphabet is mapped to its numeric equivalent, decrypted by a mathematical function, and converted back to a letter."
+2. 错误信息（`OperationError`抛出的错误）: "The values of a and b can only be integers."
+3. 另一个错误信息（`OperationError`抛出的错误）: "The value of `a` must be coprime to 26."
+
+请注意，示例5中提供的文本似乎并不在给定的代码中，因此我没有包含它。同时，我忽略了所有URL、代码示例、输入/输出类型描述、模块名称和类型字段，正如您的要求。

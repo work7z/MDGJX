@@ -1,0 +1,20 @@
+{
+    "c5p1b": "Bantalan tidak digunakan; panjang keluaran yang dikodekan bergantung langsung pada ukuran data masukan.",
+    "c8me6b": "Skema khusus seperti Base62 mungkin disesuaikan untuk aplikasi tertentu, tetapi umumnya mengikuti prinsip yang sama dalam menggunakan kumpulan karakter yang lebih besar daripada Base64 atau Base32.",
+    "d2w4e": "Mirip dengan sistem konversi dasar lainnya, Base62 bekerja dengan mengubah byte masukan menjadi bilangan bulat besar, kemudian mengekspresikannya sebagai kombinasi karakter dari kumpulan 62 karakternya.",
+    "f1t2z": "Base62 dikembangkan untuk memberikan alternatif yang lebih pendek dan aman untuk URL dibandingkan Base64, khususnya untuk pengidentifikasi unik dan URL pendek.",
+    "g8h7s": "Bagaimana cara kerja Base62?",
+    "j4s6r": "Bagaimana cara menyandikan/mendekode dengan Base62 di JavaScript?",
+    "k9em5e": "Hal ini menjadikannya ideal untuk skenario yang memerlukan pengidentifikasi yang ringkas dan ramah URL tanpa mengorbankan keterbacaan.",
+    "p9e1n": "Anda dapat menggunakan perpustakaan seperti 'base-x' atau 'base62' untuk pengkodean dan decoding Base62 dalam JavaScript.",
+    "q7n3r": "Hal ini juga menghindari karakter ambigu seperti 'O' dan '0', 'I' dan 'l', yang dapat menyebabkan kesalahan transkripsi manusia.",
+    "r6nq2v": "Keuntungan utama Base62 adalah peningkatan efisiensi ruang karena kumpulan karakter yang lebih besar daripada Base32 tetapi tanpa karakter non-alfanumerik yang ditemukan di Base64.",
+    "u3i8b": "Apa keuntungan menggunakan Base62 dibandingkan Base64 atau Base32?",
+    "v3k5r": "Kumpulan karakter mencakup semua huruf besar dan kecil (A-Z, a-z) serta angka (0-9), memberikan representasi yang lebih ringkas dibandingkan dengan Base64 atau Base32.",
+    "w2x9qk": "Meskipun Base62 sendiri tidak memiliki varian yang signifikan, beberapa implementasi mungkin sedikit berbeda dalam pilihan rangkaian karakternya, seperti mengecualikan '+' atau '/' yang umum digunakan di Base64.",
+    "x7n1m": "Base62 adalah skema pengkodean yang mewakili data biner sebagai urutan 62 karakter alfanumerik.",
+    "y3m9k": "Mengapa Base62 dibuat?",
+    "z2m7t": "Contoh penggunaan: `const base62 = require('base62'); const dikodekan = base62.encode('data-Anda'); const didekodekan = base62.decode(dikodekan);`",
+    "z4t9b": "Apa itu Base62?",
+    "z7t1p": "Apakah ada varian spesifik dari Base62?"
+}

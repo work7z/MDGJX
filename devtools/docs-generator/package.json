@@ -1,0 +1,19 @@
+{
+    "devDependencies": {
+        "@types/chokidar": "^2.1.3",
+        "@types/node": "^8.10.66",
+        "nodemon": "^3.1.0",
+        "ts-node": "^10.9.2"
+    },
+    "dependencies": {
+        "@types/lodash": "^4.14.202",
+        "chokidar": "^3.5.3",
+        "lodash": "^4.17.21",
+        "typescript": "^5.2.2",
+        "websocket": "^1.0.34"
+    },
+    "scripts": {
+        "dev": "sh ./pipeline/dev.sh",
+        "build": "tsc --jsx react --outDir ./dist && node ./dist/gen.js"
+    }
+}

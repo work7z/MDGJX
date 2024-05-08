@@ -1,0 +1,17 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式呈现，其中键为原始文本，值为中文翻译：
+
+```json
+{
+  "i18n": {
+    "Adds text onto an image.": "在图片上添加文本。",
+    "Text can be horizontally or vertically aligned, or the position can be manually specified.": "文本可以水平或垂直对齐，或者手动指定位置。",
+    "Variants of the Roboto font face are available in any size or colour.": "Roboto字体变体可用于任何大小和颜色。",
+    "Invalid file type.": "无效的文件类型。",
+    "Error loading image.": "加载图片出错。",
+    "Adding text to image...": "正在向图片添加文本...",
+    "Error adding text to image.": "向图片添加文本出错。"
+  }
+}
+```
+
+以上翻译是根据代码的功能和上下文进行的，应该能准确反映原文的意思。

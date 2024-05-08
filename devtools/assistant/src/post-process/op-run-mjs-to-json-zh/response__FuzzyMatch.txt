@@ -1,0 +1,33 @@
+根据您的要求，我们需要提取代码中显示给用户的自然文本，并将它们放入一个名为`i18n`的对象中。以下是提取的文本和对应的中文翻译：
+
+1. "Fuzzy Match" -> 模糊匹配
+2. "Conducts a fuzzy search to find a pattern within the input based on weighted criteria." -> 执行基于加权条件的模糊搜索以在输入中找到模式。
+3. "e.g. A search for <code>dpan</code> will match on <code><b>D</b>on't <b>Pan</b>ic</code>" -> 例如，搜索<code>dpan</code>将会匹配到<code><b>D</b>on't <b>Pan</b>ic</code>
+4. "Bonus for adjacent matches" -> 相邻匹配的奖励
+5. "Bonus if match occurs after a separator" -> 如果匹配出现在分隔符之后，给予奖励
+6. "Bonus if match is uppercase and previous is lower" -> 如果匹配是大写且前一个字符是小写，给予奖励
+7. "Bonus if the first letter is matched" -> 如果第一个字母匹配，给予奖励
+8. "Penalty applied for every letter in the input before the first match" -> 对输入中第一个匹配之前的每个字母应用惩罚
+9. "Maxiumum penalty for leading letters" -> 首字母的最大惩罚
+10. "No matches." -> 没有匹配项。
+
+下面是根据上述提取的文本生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Fuzzy Match": "模糊匹配",
+    "Conducts a fuzzy search to find a pattern within the input based on weighted criteria.": "执行基于加权条件的模糊搜索以在输入中找到模式。",
+    "e.g. A search for <code>dpan</code> will match on <code><b>D</b>on't <b>Pan</b>ic</code>": "例如，搜索<code>dpan</code>将会匹配到<code><b>D</b>on't <b>Pan</b>ic</code>",
+    "Bonus for adjacent matches": "相邻匹配的奖励",
+    "Bonus if match occurs after a separator": "如果匹配出现在分隔符之后，给予奖励",
+    "Bonus if match is uppercase and previous is lower": "如果匹配是大写且前一个字符是小写，给予奖励",
+    "Bonus if the first letter is matched": "如果第一个字母匹配，给予奖励",
+    "Penalty applied for every letter in the input before the first match": "对输入中第一个匹配之前的每个字母应用惩罚",
+    "Maxiumum penalty for leading letters": "首字母的最大惩罚",
+    "No matches.": "没有匹配项。"
+  }
+}
+```
+
+请注意，由于某些文本含有HTML标签，如`<code>`和`<b>`，这些标签在提取自然文本时被保留，因为它们是文本的一部分，用于格式化显示。如果需要去除这些标签，请告知。

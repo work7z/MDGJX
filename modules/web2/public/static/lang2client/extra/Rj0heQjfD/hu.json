@@ -1,0 +1,17 @@
+{
+    "YAML-Advantages-001": "Mik a YAML előnyei?",
+    "YAML-Advantages-002": "A YAML ember által olvasható és könnyen írható, így a konfigurációs fájlok népszerű választása.",
+    "YAML-Advantages-003": "Ezenkívül könnyen olvasható és írható, és gyakran minden programozási nyelvvel együtt használják.",
+    "YAML-Basics-001": "Mi az a YAML?",
+    "YAML-Def-002": "A YAML (YAML Ain't Markup Language) egy ember által olvasható adatsorosítási szabvány, amely minden programozási nyelvvel együtt használható, és gyakran használják konfigurációs fájlok írására.",
+    "YAML-Disadvantages-001": "Mik a YAML hátrányai?",
+    "YAML-Disadvantages-002": "A YAML-t nehéz lehet elemezni, és hajlamos lehet a hibákra.",
+    "YAML-Disadvantages-003": "Ezenkívül nem támogatott olyan széles körben, mint más adatsoros formátumok, például a JSON.",
+    "YAML-Example-001": "Hogyan néz ki egy YAML fájl?",
+    "YAML-Example-002": "Egy egyszerű YAML-fájl kulcs-érték párokból áll, és mindegyik pár kettősponttal van elválasztva.",
+    "YAML-Example-003": "Például egy YAML fájl így nézhet ki:",
+    "YAML-Purpose-003": "Úgy tervezték, hogy könnyen olvasható legyen az emberek számára, és gyakran használják az adatstruktúrák és a sorosozás kifejezésére olyan formátumban, amely könnyen olvasható és írható.",
+    "YAML-Usage-001": "Mire használható a YAML?",
+    "YAML-Usage-002": "A YAML-t gyakran használják konfigurációs fájlokhoz és olyan alkalmazásokhoz, ahol adatokat tárolnak vagy továbbítanak.",
+    "YAML-Usage-003": "Általában olyan alkalmazásokban használják, ahol adatokat tárolnak vagy továbbítanak, például konfigurációs fájlokban, és olyan alkalmazásokban, ahol adatokat tárolnak vagy továbbítanak."
+}

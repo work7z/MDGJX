@@ -1,0 +1,33 @@
+根据您的要求，我首先从代码中提取所有显示给用户的自然文本，并将它们放入一个名为`i18n`的对象中，其中键是文本本身，值我暂时用`123`代替。以下是提取的结果：
+
+```json
+{
+  "i18n": {
+    "Select a part of the input data using a regular expression (regex), and run all subsequent operations on each match separately.": "123",
+    "You can use up to one capture group, where the recipe will only be run on the data in the capture group. If there's more than one capture group, only the first one will be operated on.": "123",
+    "Use the Merge operation to reset the effects of subsection.": "123",
+    "Section (regex)": "123",
+    "Case sensitive matching": "123",
+    "Global matching": "123",
+    "Ignore errors": "123"
+  }
+}
+```
+
+接下来，我会将这些文本翻译成中文，并替换掉`123`：
+
+```json
+{
+  "i18n": {
+    "Select a part of the input data using a regular expression (regex), and run all subsequent operations on each match separately.": "使用正则表达式选择输入数据的一部分，并对每个匹配项分别执行后续操作。",
+    "You can use up to one capture group, where the recipe will only be run on the data in the capture group. If there's more than one capture group, only the first one will be operated on.": "您可以使用最多一个捕获组，配方只会在捕获组中的数据上运行。如果有多个捕获组，只有第一个会被操作。",
+    "Use the Merge operation to reset the effects of subsection.": "使用合并操作来重置分段的影响。",
+    "Section (regex)": "区域（正则表达式）",
+    "Case sensitive matching": "区分大小写的匹配",
+    "Global matching": "全局匹配",
+    "Ignore errors": "忽略错误"
+  }
+}
+```
+
+以上JSON对象即为根据代码中的自然文本和其功能翻译后的结果。

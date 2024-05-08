@@ -1,0 +1,44 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设为`123`。
+3. 根据代码的实际功能，将`i18n`中的值翻译成中文。
+4. 输出JSON结果。
+
+以下是按照以上步骤创建的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Bcrypt parse": "123",
+    "Parses a bcrypt hash to determine the number of rounds used, the salt, and the password hash.": "123",
+    "Error:": "123"
+  }
+}
+```
+
+下面是翻译成中文的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Bcrypt parse": "BCrypt 解析",
+    "Parses a bcrypt hash to determine the number of rounds used, the salt, and the password hash.": "解析BCrypt哈希以确定使用的轮数、盐和密码哈希。",
+    "Error:": "错误："
+  }
+}
+```
+
+根据您的示例1，这里是最终的输出：
+
+```json
+{
+  "i18n": {
+    "Bcrypt parse": "BCrypt 解析",
+    "Parses a bcrypt hash to determine the number of rounds used, the salt, and the password hash.": "解析BCrypt哈希以确定使用的轮数、盐和密码哈希。",
+    "Error:": "错误："
+  }
+}
+```
+
+请注意，这里假设代码中的`"Error: "`也是要显示给用户的自然文本。如果这不是自然文本，则应从`i18n`对象中移除。

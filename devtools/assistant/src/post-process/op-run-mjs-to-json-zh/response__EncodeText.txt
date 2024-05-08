@@ -1,0 +1,35 @@
+根据您的要求，下面是提炼代码中自然文本，并将其转换为JSON格式的步骤：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是文本，值设置为`123`。
+3. 根据代码的功能，将`i18n`中的值翻译为中文。
+4. 输出JSON结果。
+
+以下是转换后的结果：
+
+```json
+{
+  "i18n": {
+    "Encode text": "编码文本",
+    "Encodes text into the chosen character encoding.": "将文本编码为选定的字符编码。",
+    "Supported charsets are:": "支持的字符集包括：",
+    "Encode text operation": "编码文本操作"
+  }
+}
+```
+
+以下是详细步骤：
+
+- **找出自然文本**：从代码中，我找到了以下自然文本：
+  - "Encode text"
+  - "Encodes text into the chosen character encoding."
+  - "Supported charsets are:"
+  - "Encode text operation"（从注释中提取）
+
+- **创建i18n对象**：将这些文本作为键，值设为`123`。
+
+- **翻译为中文**：根据代码的实际功能，我将这些文本翻译为中文。
+
+- **输出结果**：按照示例1的格式，将对象输出。
+
+请注意，"exampleInput"、"exampleOutput"、"inputType"、"outputType"、"module"、"type"字段在您的指示中被排除在外。同时，由于代码中没有提供具体的"Encode text operation"的描述，我假设这是对类的描述，并将其包含在内。如果这不符合您的意图，请相应地调整。

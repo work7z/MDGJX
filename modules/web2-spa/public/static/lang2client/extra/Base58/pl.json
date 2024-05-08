@@ -1,0 +1,20 @@
+{
+    "c5m1b": "Inny wariant, Base58Flickr, różni się nieco zestawem znaków. Zamienia „+” na „”, a „/” na „-”, dostosowując się do potrzeb adresu URL serwisu Flickr.",
+    "c6p9b": "Jeśli długość danych wejściowych nie jest podzielna przez 8, dopełnienie nie jest stosowane; zamiast tego każda niepełna grupa jest traktowana niezależnie.",
+    "d3w2e": "Base58 działa poprzez konwersję bajtów wejściowych na dużą liczbę całkowitą, a następnie wyrażenie tej liczby całkowitej jako kombinacji znaków z zestawu 58 znaków (A-Z, a-z, 1-9).",
+    "f4t7z": "Base58 został początkowo opracowany dla Bitcoina, aby reprezentować adresy publiczne i klucze prywatne w sposób jednoznaczny.",
+    "g7h5k": "Jak działa Base58?",
+    "j6s3r": "Jak kodować/dekodować za pomocą Base58 w JavaScript?",
+    "k1m4e": "Jednak nie oferuje takiej samej wydajności przestrzennej jak Base64 lub Base32, ponieważ używa mniej znaków w alfabecie.",
+    "pq5e9n": "Do kodowania i dekodowania Base58 w JavaScript można używać bibliotek takich jak „bs58”.",
+    "q2x8k": "Jego zastosowanie rozszerzyło się na inne kryptowaluty i scenariusze, w których pożądane są ciągi znaków czytelne dla człowieka i odporne na błędy.",
+    "r2n7v": "Główną zaletą jest zwiększona czytelność poprzez wykluczenie podobnie wyglądających znaków, co ogranicza błędy podczas ręcznego wprowadzania.",
+    "s1b3m": "W przeciwieństwie do Base64 lub Base32 wyklucza łatwe do pomylenia znaki „0”, „O”, „I” i „l”, dzięki czemu nadaje się do adresów URL i kodów QR.",
+    "u8i5b": "Jakie są zalety używania Base58 w porównaniu z Base64 lub Base32?",
+    "v4n9t": "Base58 to schemat kodowania reprezentujący dane binarne jako ciąg znaków alfanumerycznych.",
+    "w3x7k": "Tak, niektóre popularne warianty obejmują Base58Check, który dodaje sumę kontrolną do wykrywania błędów, powszechnie używaną w Bitcoinie.",
+    "x2z6r": "Co to jest Base58?",
+    "y9m1n": "Dlaczego powstał Base58?",
+    "z1m2t": "Przykładowe użycie: `const encoded = bs58.encode('twoje-dane'); const decode = bs58.decode(encoded);`",
+    "z9t2p": "Czy są jakieś konkretne warianty Base58?"
+}

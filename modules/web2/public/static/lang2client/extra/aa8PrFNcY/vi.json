@@ -1,0 +1,16 @@
+{
+    "CSSNano": "cssnano - GitHub",
+    "HTMLMinifier": "Công cụ khai thác HTML - GitHub",
+    "MDN-Minification": "Tài liệu web MDN - Giảm thiểu",
+    "Minify-Basics-001": "Ý nghĩa của việc thu nhỏ mã hoặc tập tin là gì?",
+    "Minify-CLI-Usage-009": "Hầu hết các công cụ này đều có cả giao diện dòng lệnh (CLI) và API cho phép nhà phát triển tự động hóa quy trình thu nhỏ trong quá trình phát triển và triển khai.",
+    "Minify-Def-002": "Giảm thiểu là quá trình giảm kích thước mã (HTML, CSS, JavaScript, v.v.) bằng cách xóa các ký tự không cần thiết như khoảng trắng, nhận xét và ngắt dòng mà không ảnh hưởng đến chức năng của nó.",
+    "Minify-Example-007k": "Ví dụ: {0} có thể trở thành {1} sau khi rút gọn.",
+    "Minify-How-Works-004": "Việc thu nhỏ mã hoạt động như thế nào?",
+    "Minify-Process-005": "Công cụ khai thác sử dụng thuật toán để phân tích cấu trúc mã nguồn, loại bỏ các phần tử thừa và rút ngắn tên biến nếu có thể. Điều này dẫn đến kích thước tệp nhỏ hơn trong khi vẫn duy trì hoạt động ban đầu của mã.",
+    "Minify-Purpose-003": "Mục đích chính của việc thu nhỏ là cải thiện hiệu suất trang web và giảm thời gian tải trang bằng cách giảm lượng dữ liệu cần truyền giữa máy chủ và máy khách.",
+    "Minify-Tools-007": "Một số công cụ phổ biến để giảm thiểu mã là gì?",
+    "Minify-Tools-List-008": "Các công cụ phổ biến để rút gọn mã bao gồm UglifyJS cho JavaScript, Terser là một sự phát triển của UglifyJS, HTMLMinifier cho HTML và CSSNano cho CSS. Những công cụ này thường có thể được tích hợp vào quy trình xây dựng bằng cách sử dụng các trình chạy tác vụ như Gulp hoặc Webpack.",
+    "Terser": "Terser - GitHub",
+    "UglifyJS": "UglifyJS - GitHub"
+}

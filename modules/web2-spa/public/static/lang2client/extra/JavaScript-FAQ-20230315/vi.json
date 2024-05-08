@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "JavaScript là gì?",
+    "JS-DOM-API-007": "JavaScript tương tác với DOM như thế nào?",
+    "JS-DOM-API-Explanation-008": "JavaScript cung cấp API Mô hình đối tượng tài liệu (DOM) để thao tác HTML và CSS, cho phép các nhà phát triển thay đổi nội dung, kiểu và trình xử lý sự kiện một cách linh hoạt.",
+    "JS-DOM-Example-009": "Ví dụ: bạn có thể chọn một phần tử và thay đổi nội dung văn bản của nó: `document.getElementById('myElement').textContent = 'New Text';`",
+    "JS-Data-Types-010": "Các kiểu dữ liệu trong JavaScript là gì?",
+    "JS-Data-Types-List-011": "JavaScript hỗ trợ nhiều kiểu dữ liệu khác nhau bao gồm các kiểu dữ liệu nguyên thủy như chuỗi, số, boolean, null, không xác định và ký hiệu cũng như các kiểu phức tạp như đối tượng và mảng.",
+    "JS-Def-002": "JavaScript (JS) là ngôn ngữ lập trình thông dịch, cấp cao được sử dụng rộng rãi để tạo các ứng dụng web, nâng cao giao diện người dùng và xây dựng logic phía máy chủ với Node.js.",
+    "JS-Event-Loop-013": "Vòng lặp sự kiện trong JavaScript là gì?",
+    "JS-Event-Loop-Explanation-014": "Vòng lặp sự kiện là phần cốt lõi của mô hình đồng thời của JavaScript, cho phép thực thi không đồng bộ thông qua lệnh gọi lại, lời hứa và không đồng bộ/chờ đợi.",
+    "JS-Event-Loop-Process-015": "Trước tiên, nó chạy tập lệnh chính, sau đó thực thi bất kỳ chức năng gọi lại nào khi các sự kiện liên quan của chúng (như phản hồi của người dùng hoặc mạng) xảy ra, quản lý chúng thông qua hệ thống xếp hàng.",
+    "JS-Function-Syntax-006": "Các hàm được xác định bằng từ khóa `function`, theo sau là tên hàm và các tham số được đặt trong dấu ngoặc đơn. Phần thân hàm được bao bọc trong dấu ngoặc nhọn: `function hello(name) { console.log(`Hello, ${name}!`); }`",
+    "JS-Purpose-003": "Nó ban đầu được phát triển bởi Brendan Eich tại Netscape vào năm 1995 và từ đó đã phát triển thành một trong những ngôn ngữ phổ biến nhất, được hỗ trợ bởi tất cả các trình duyệt và nền tảng web lớn như Electron và React Native.",
+    "JS-Syntax-004": "Cú pháp cơ bản của JavaScript là gì?",
+    "JS-Type-Checking-012": "Việc kiểm tra kiểu có thể được thực hiện bằng cách sử dụng các hàm tạo (`typeof value === 'string'`) hoặc toán tử `instanceof` cho các đối tượng kế thừa từ các hàm tạo có sẵn (ví dụ: `value instanceof Array`).",
+    "MDN-DOM-API": "Tài liệu web MDN - Thao tác với tài liệu",
+    "MDN-Event-Loop": "Tài liệu web MDN - Vòng lặp sự kiện",
+    "MDN-JS-Guide": "Tài liệu web MDN - Hướng dẫn JavaScript",
+    "MDN-JS-Types": "Tài liệu web MDN - Kiểu dữ liệu và cấu trúc dữ liệu"
+}

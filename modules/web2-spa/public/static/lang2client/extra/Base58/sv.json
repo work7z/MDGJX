@@ -1,0 +1,20 @@
+{
+    "c5m1b": "En annan variant, Base58Flickr, skiljer sig något i sin karaktärsuppsättning. Den ersätter '+' med ',' och '/' med '-', anpassad efter Flickrs URL-behov.",
+    "c6p9b": "Om indatas längd inte är delbar med 8, används inte utfyllnad; istället behandlas varje icke-full grupp oberoende.",
+    "d3w2e": "Base58 fungerar genom att konvertera indatabytes till ett stort heltal och sedan uttrycka det heltal som en kombination av tecken från dess 58-teckenuppsättning (A-Z, a-z, 1-9).",
+    "f4t7z": "Base58 utvecklades ursprungligen för Bitcoin för att representera allmänna adresser och privata nycklar utan tvetydighet.",
+    "g7h5k": "Hur fungerar Base58?",
+    "j6s3r": "Hur kodar/avkodar jag med Base58 i JavaScript?",
+    "k1m4e": "Den erbjuder dock inte riktigt samma utrymmeseffektivitet som Base64 eller Base32 eftersom den använder färre tecken i alfabetet.",
+    "pq5e9n": "Du kan använda bibliotek som 'bs58' för att utföra Base58-kodning och avkodning i JavaScript.",
+    "q2x8k": "Dess användning har utökats till andra kryptovalutor och scenarier där mänskligt läsbara, felbeständiga strängar önskas.",
+    "r2n7v": "Den största fördelen är ökad läsbarhet på grund av att tecken som ser liknande ut utesluts, vilket minskar fel vid manuell inmatning.",
+    "s1b3m": "Till skillnad från Base64 eller Base32 utesluter den de lätt förvirrade tecknen '0', 'O', 'I' och 'l', vilket gör den lämplig för webbadresser och QR-koder.",
+    "u8i5b": "Vilka är fördelarna med att använda Base58 framför Base64 eller Base32?",
+    "v4n9t": "Base58 är ett kodningsschema som representerar binär data som en sekvens av alfanumeriska tecken.",
+    "w3x7k": "Ja, några populära varianter inkluderar Base58Check, som lägger till en kontrollsumma för feldetektering, som vanligtvis används i Bitcoin.",
+    "x2z6r": "Vad är Base58?",
+    "y9m1n": "Varför skapades Base58?",
+    "z1m2t": "Exempel på användning: `const encoded = bs58.encode('din-data'); const decoded = bs58.decode(encoded);`",
+    "z9t2p": "Finns det några specifika varianter av Base58?"
+}

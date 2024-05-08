@@ -1,0 +1,17 @@
+{
+    "YAML-Advantages-001": "Apa kelebihan YAML?",
+    "YAML-Advantages-002": "YAML dapat dibaca manusia dan mudah ditulis, menjadikannya pilihan populer untuk file konfigurasi.",
+    "YAML-Advantages-003": "Ini juga mudah dibaca dan ditulis, dan sering digunakan bersama dengan semua bahasa pemrograman.",
+    "YAML-Basics-001": "Apa itu YAML?",
+    "YAML-Def-002": "YAML (YAML Ain't Markup Language) adalah standar serialisasi data yang dapat dibaca manusia yang dapat digunakan bersama dengan semua bahasa pemrograman dan sering digunakan untuk menulis file konfigurasi.",
+    "YAML-Disadvantages-001": "Apa kelemahan YAML?",
+    "YAML-Disadvantages-002": "YAML mungkin sulit diurai dan rentan terhadap kesalahan.",
+    "YAML-Disadvantages-003": "Format ini juga tidak didukung secara luas seperti format serialisasi data lainnya, seperti JSON.",
+    "YAML-Example-001": "Seperti apa tampilan file YAML?",
+    "YAML-Example-002": "File YAML sederhana terdiri dari pasangan nilai kunci, dengan setiap pasangan dipisahkan oleh titik dua.",
+    "YAML-Example-003": "Misalnya, file YAML mungkin terlihat seperti ini:",
+    "YAML-Purpose-003": "Ini dirancang agar mudah dibaca oleh manusia dan sering digunakan untuk mengekspresikan struktur data dan serialisasi dalam format yang mudah dibaca dan ditulis.",
+    "YAML-Usage-001": "Untuk apa YAML digunakan?",
+    "YAML-Usage-002": "YAML sering digunakan untuk file konfigurasi dan aplikasi tempat data disimpan atau dikirim.",
+    "YAML-Usage-003": "Ini biasanya digunakan dalam aplikasi tempat data disimpan atau dikirim, seperti dalam file konfigurasi, dan dalam aplikasi tempat data disimpan atau dikirim."
+}

@@ -1,0 +1,28 @@
+// Date: Thu, 11 Jan 2024
+// Author: Ryan Laf <work7z@outlook.com>
+// Description:
+// License: AGPLv3
+// Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+    background: yellowgreen;
+  }
+  80% {
+    opacity: 1;
+    background-color: rgb(20, 198, 198);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animated-loading-bar2 {
+  // background-color: #00d6fff2;
+  animation: pulse 1s infinite;
+  transition: all 0.3s;
+}

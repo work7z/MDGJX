@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "Co je JavaScript?",
+    "JS-DOM-API-007": "Jak JavaScript interaguje s DOM?",
+    "JS-DOM-API-Explanation-008": "JavaScript poskytuje rozhraní DOM (Document Object Model) API pro manipulaci s HTML a CSS a umožňuje vývojářům dynamicky měnit obsah, styl a posluchače událostí.",
+    "JS-DOM-Example-009": "Můžete například vybrat prvek a změnit jeho textový obsah: `document.getElementById('myElement').textContent = 'Nový text';`",
+    "JS-Data-Types-010": "Jaké jsou datové typy v JavaScriptu?",
+    "JS-Data-Types-List-011": "JavaScript podporuje různé typy dat, včetně primitivních datových typů, jako je řetězec, číslo, boolean, null, nedefinovaný a symbol, a také komplexní typy, jako je objekt a pole.",
+    "JS-Def-002": "JavaScript (JS) je interpretovaný programovací jazyk na vysoké úrovni, který se široce používá pro vytváření webových aplikací, vylepšování uživatelských rozhraní a vytváření logiky na straně serveru pomocí Node.js.",
+    "JS-Event-Loop-013": "Co je smyčka událostí v JavaScriptu?",
+    "JS-Event-Loop-Explanation-014": "Smyčka událostí je základní součástí modelu souběžnosti JavaScriptu, který umožňuje asynchronní provádění prostřednictvím zpětných volání, slibů a async/wait.",
+    "JS-Event-Loop-Process-015": "Nejprve spustí hlavní skript a poté provede jakékoli funkce zpětného volání, když dojde k jejich přidruženým událostem (jako je vstup uživatele nebo síťové odezvy), a spravuje je prostřednictvím systému fronty.",
+    "JS-Function-Syntax-006": "Funkce jsou definovány pomocí klíčového slova `function` následovaného názvem funkce a parametry uzavřenými v závorkách. Tělo funkce je zabaleno do složených závorek: `function greet(name) { console.log(`Ahoj, ${name}!`); }`",
+    "JS-Purpose-003": "Původně jej vyvinul Brendan Eich v Netscape v roce 1995 a od té doby se vyvinul v jeden z nejpopulárnějších jazyků, který podporují všechny hlavní webové prohlížeče a platformy jako Electron a React Native.",
+    "JS-Syntax-004": "Jaká je základní syntaxe JavaScriptu?",
+    "JS-Type-Checking-012": "Kontrolu typu lze provést pomocí konstruktorů (`typeof value === 'string'`) nebo operátoru `instanceof` pro objekty dědící z vestavěných konstruktorů (např. `value instanceof Array`).",
+    "MDN-DOM-API": "Webové dokumenty MDN – manipulace s dokumenty",
+    "MDN-Event-Loop": "Webové dokumenty MDN – smyčka událostí",
+    "MDN-JS-Guide": "MDN Web Docs - JavaScript Guide",
+    "MDN-JS-Types": "Webové dokumenty MDN – datové typy a datové struktury"
+}

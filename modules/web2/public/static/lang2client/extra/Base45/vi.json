@@ -1,0 +1,23 @@
+{
+    "a4r9t": "Base45 có thể giải mã bất kỳ chuỗi được mã hóa Base45 nào bất kể nguồn gốc của nó không?",
+    "c2vw9k": "Mặc dù Base45 không được triển khai rộng rãi như Base64 hoặc Base32, nhưng các thư viện nguồn mở vẫn tồn tại cho một số ngôn ngữ.",
+    "c9q7w": "Tại sao Base45 được tạo ra?",
+    "d6y9k": "Nếu không có đủ byte để điền vào nhóm cuối cùng thì phần đệm sẽ không được sử dụng; thay vào đó, các bit còn lại được xử lý và ánh xạ tới (các) ký tự tương ứng của chúng.",
+    "e8x2v": "Base45 hoạt động bằng cách chia dữ liệu đầu vào thành các nhóm, mỗi nhóm 5 byte. Sau đó, nó chuyển đổi từng nhóm thành số thập phân và ánh xạ nó thành ký tự tương ứng từ bộ 45 ký tự của nó.",
+    "f8n4m": "Tính nhỏ gọn của nó cho phép sử dụng không gian hiệu quả hơn trong mã QR trong khi vẫn duy trì khả năng đọc được bằng máy quét mã vạch tiêu chuẩn.",
+    "g1h5n": "Base45 hoạt động như thế nào?",
+    "g6v3b": "Tuy nhiên, bộ ký tự lớn hơn của Base45 có thể làm tăng khả năng xảy ra lỗi khi xử lý các ký tự không phải chữ và số. Đây có thể là sự cố trong một số môi trường hoặc kênh truyền.",
+    "i7w2m": "Có thư viện Base45 tích hợp nào trong các ngôn ngữ lập trình phổ biến không?",
+    "j7k2t": "Để mã hóa dữ liệu bằng Base45, bạn cần có thư viện hoặc hàm triển khai thuật toán Base45.",
+    "m9k1z": "Tuy nhiên, nếu dữ liệu được giải mã chứa ngữ nghĩa ứng dụng cụ thể (ví dụ: các định dạng mã QR cụ thể), việc xử lý bổ sung có thể cần thiết sau khi giải mã.",
+    "q5h8n": "Ưu điểm chính là giảm độ dài chuỗi cho cùng một lượng dữ liệu được mã hóa, khiến nó phù hợp với các ứng dụng yêu cầu hiệu quả về không gian.",
+    "qv1p5n": "Ví dụ: trong Java, bạn có thể sử dụng thư viện 'org.iso.base45' để mã hóa dữ liệu của mình.",
+    "r9a3t": "Base45 là sơ đồ mã hóa dựa trên văn bản mã hóa dữ liệu nhị phân thành các ký tự ASCII.",
+    "s3e6r": "Làm cách nào để mã hóa dữ liệu bằng Base45?",
+    "u2l8s": "Base45 là gì?",
+    "x5z1b": "Base45 được phát triển chủ yếu để sử dụng mã QR trong bối cảnh chứng chỉ COVID kỹ thuật số.",
+    "y3b6n": "Có, miễn là chuỗi mã hóa được tạo theo thông số kỹ thuật Base45 thì bất kỳ bộ giải mã tuân thủ nào cũng có thể giải mã được chuỗi đó.",
+    "z1n5qr": "Các ví dụ bao gồm gói npm base45 cho JavaScript và dotnet-base45 cho .NET.",
+    "z5b7m": "Nó sử dụng bảng chữ cái lớn hơn (0-9, A-Z, a-z, -, ., $, /, +, % và *) so với Base64 hoặc Base32, dẫn đến các chuỗi được mã hóa ngắn hơn cho cùng một dữ liệu đầu vào.",
+    "z8m2t": "Ưu điểm của việc sử dụng Base45 so với Base64 hoặc Base32 là gì?"
+}

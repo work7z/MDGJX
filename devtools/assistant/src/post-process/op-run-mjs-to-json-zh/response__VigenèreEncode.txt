@@ -1,0 +1,29 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是文本，值设置为`123`。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换其值。
+4. 输出JSON结果。
+
+以下是按照这些步骤生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "The Vigenere cipher is a method of encrypting alphabetic text by using a series of different Caesar ciphers based on the letters of a keyword. It is a simple form of polyalphabetic substitution.": "维吉尼亚密码是一种通过使用基于关键词字母的一系列不同的凯撒密码来加密字母文本的方法。它是一种简单的多字母替换形式。",
+    "No key entered": "未输入密钥",
+    "The key must consist only of letters": "密钥必须仅由字母组成"
+  }
+}
+```
+
+以下是详细的步骤：
+
+- 从代码中提取的自然文本包括：
+  - `The Vigenere cipher is a method of encrypting alphabetic text by using a series of different Caesar ciphers based on the letters of a keyword. It is a simple form of polyalphabetic substitution.`（维吉尼亚密码的描述）
+  - `No key entered`（错误信息，当没有输入密钥时抛出）
+  - `The key must consist only of letters`（错误信息，当密钥包含非字母字符时抛出）
+
+- 这些文本被放置在`i18n`对象中，并且我已经尝试给出了最合适的中文翻译。
+
+- 最后，这个`i18n`对象被包含在更大的JSON结构中，如上面的示例所示。值`123`被替换为相应的中文翻译。

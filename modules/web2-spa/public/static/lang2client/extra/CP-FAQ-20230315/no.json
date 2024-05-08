@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "Å lære å programmere åpner for karrieremuligheter på tvers av ulike bransjer og lar deg utvikle innovative løsninger, automatisere oppgaver og forstå komplekse systemer.",
+    "CP-Advantages-013": "Hva er fordelene med å lære dataprogrammering?",
+    "CP-Basics-001": "Hva er dataprogrammering?",
+    "CP-Def-002": "Dataprogrammering innebærer å skrive instruksjoner, eller kode, på et programmeringsspråk for å instruere datamaskiner om hvordan de skal utføre spesifikke oppgaver.",
+    "CP-History-004": "Hva er historien til dataprogrammering?",
+    "CP-History-Origin-005": "De første programmerbare maskinene dateres tilbake til Ada Lovelaces arbeid med Charles Babbages Analytical Engine på 1800-tallet. Moderne programmering tok imidlertid fart med oppfinnelsen av den første elektroniske datamaskinen for generell bruk, ENIAC, på 1940-tallet.",
+    "CP-Lang-Choice-009": "Valget av språk avhenger av faktorer som prosjektkrav, fellesskapsstøtte, enkel læring og ytelsesbehov.",
+    "CP-Language-Evolution-006": "Siden den gang har programmeringsspråk utviklet seg fra maskinkode til montering, deretter til høynivåspråk som FORTRAN, COBOL, C, og nå til moderne språk som Python, JavaScript og Rust.",
+    "CP-Languages-007": "Hva er noen populære programmeringsspråk?",
+    "CP-Languages-List-008": "Populære programmeringsspråk inkluderer Java, Python, JavaScript, C++, C#, Swift, Go, PHP, Ruby og Kotlin. Hver har sine egne styrker og brukstilfeller, for eksempel Python for datavitenskap, JavaScript for webutvikling og C++ for systemprogrammering.",
+    "CP-Process-010": "Hva er prosessen med dataprogrammering?",
+    "CP-Process-Explanation-011": "Programmering involverer vanligvis planlegging (definering av problemet og utforming av løsningen), koding (skriving av kildekode på et valgt språk), testing (feilsøking og verifisering av funksjonalitet) og vedlikehold (oppdatering og forbedring av programmet over tid).",
+    "CP-Purpose-003": "Programmerere lager algoritmer, løser problemer og bygger programvareapplikasjoner som kan automatisere prosesser, manipulere data og samhandle med brukere eller andre systemer.",
+    "CP-SDLC-012": "Dette er ofte strukturert innenfor en Software Development Life Cycle (SDLC) som inkluderer tilleggsfaser som kravanalyse, design, distribusjon og brukeraksepttesting.",
+    "CP-Skillset-015": "Det forbedrer også logisk tenkning, problemløsningsevner og tilpasningsevne til nye teknologier, noe som gjør en mer allsidig i den digitale tidsalderen.",
+    "HistOfProg-Wikipedia": "Historie om programmeringsspråk - Wikipedia",
+    "SDLC-Wikipedia": "Programvareutvikling livssyklus - Wikipedia",
+    "TIOBE-Index": "TIOBE Index - The Software Quality Company"
+}

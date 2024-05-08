@@ -1,0 +1,23 @@
+{
+    "MD4-Advantages-011": "¿Cuáles son las ventajas de utilizar MD4?",
+    "MD4-AlgorithmDetails-010": "Detalles del algoritmo MD4",
+    "MD4-Applications-018": "¿Qué aplicaciones han usado o siguen usando MD4?",
+    "MD4-Breakdown-016": "Los fallos de diseño del algoritmo han dado lugar a ataques prácticos que permiten colisiones de hash fáciles e incluso ataques parciales de preimagen, lo que hace que MD4 no sea adecuado para ningún caso de uso criptográfico seguro en la actualidad.",
+    "MD4-CollisionSecurity-015": "MD4 tiene varias debilidades criptográficas, incluida la susceptibilidad a ataques de colisión. Esto significa que dos entradas diferentes pueden producir la misma salida hash, lo que la hace insegura para aplicaciones que requieren resistencia a colisiones o una fuerte integridad del mensaje.",
+    "MD4-Def-002": "MD4 (Algoritmo 4 de resumen de mensajes) es una función hash criptográfica diseñada por Ronald Rivest en 1990. Produce un valor hash de 128 bits para cualquier mensaje de entrada determinado.",
+    "MD4-DigitalSignature-Risks-021": "Riesgos de utilizar MD4 para firmas digitales",
+    "MD4-Disadvantages-014": "¿Cuáles son las desventajas y problemas de seguridad con MD4?",
+    "MD4-FAQ-001": "¿Qué es MD4?",
+    "MD4-HistoricalUse-019": "Históricamente, MD4 se utilizaba en firmas digitales, comprobaciones de integridad de archivos y actualizaciones de software. Sin embargo, debido a sus vulnerabilidades, estas aplicaciones han pasado en gran medida a alternativas más seguras como SHA-256 y SHA-3.",
+    "MD4-History-004": "¿Cómo se desarrolló MD4 y cuál es su importancia histórica?",
+    "MD4-Implementation-013": "Se ha implementado y estandarizado ampliamente en varias plataformas e idiomas, lo que facilita la integración en los sistemas existentes, aunque esta ventaja se ve superada por sus preocupaciones de seguridad en los contextos modernos.",
+    "MD4-InsecurityExamples-017": "Ejemplos de fallas de seguridad de MD4",
+    "MD4-LegacySystems-020": "Es posible que MD4 todavía exista en sistemas heredados, pero se desaconseja su uso en todos los contextos donde la seguridad es una preocupación. Los estándares modernos ya no recomiendan MD4 para ningún propósito criptográfico.",
+    "MD4-Operation-007": "¿Cómo funciona la operación MD4?",
+    "MD4-Origin-005": "MD4 fue una evolución de MD2 y MD3, destinada a proporcionar un rendimiento más rápido manteniendo las propiedades de seguridad. Sin embargo, se hizo evidente que MD4 tiene varias debilidades de seguridad.",
+    "MD4-Process-008": "MD4 procesa el mensaje de entrada rellenándolo hasta un múltiplo de 512 bits y dividiéndolo en bloques de 16 palabras. Luego, el algoritmo opera en estos bloques utilizando cuatro rondas de procesamiento que involucran operaciones bit a bit, adiciones modulares y funciones no lineales.",
+    "MD4-Purpose-003": "El propósito de MD4 es garantizar la integridad de los datos generando una huella digital de tamaño fijo que puede usarse para verificar la autenticidad y la integridad de los datos originales.",
+    "MD4-Rounds-009": "Una vez procesados ​​todos los bloques, el estado interno resultante se transforma en el valor hash final de 128 bits.",
+    "MD4-Speed-012": "MD4 fue diseñado inicialmente para ser más rápido que sus predecesores, lo que lo hizo popular para aplicaciones que requerían hash rápido en el momento de su introducción.",
+    "MD4-Successors-006": "A pesar de sus defectos, MD4 sentó las bases para funciones hash posteriores como MD5 y SHA-1, que mejoraron su diseño pero también heredaron algunas de sus vulnerabilidades con el tiempo."
+}

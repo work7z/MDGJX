@@ -1,0 +1,20 @@
+{
+    "c1p3b": "整合後，將提供的範本複製到您的 C++ 程式中，並在執行程式之前將佔位符替換為實際編碼值。",
+    "c6p4n": "安裝後，將提供的範本複製到 Python 腳本中，將解碼部分中的佔位符替換為實際的 Base62 編碼位元組（前綴為「b」），然後執行腳本。",
+    "d2w6e": "下載原始碼並將 base62.h 頭檔包含在您的專案中。根據專案的說明編譯/連結原始檔。",
+    "d8w1b": "透過執行「pip install python-base62」或「pip3 install python-base62」透過 pip 安裝它。",
+    "f9t2z": "透過新增`<dependency> <groupId>com.warrenstrange</groupId> <artifactId>googleauth</artifactId> <version>...</version> </dependency>` 將依賴項新增至您的Maven 項目，其中版本應為替換為最新版本。",
+    "g4h7s": "對於 C++，您可以使用提供 Base62 功能的「cpp-base62」函式庫。",
+    "j9s5r": "對於 C#，使用「WarrenStranger.Base62」函式庫來處理 Base62 編碼和解碼。",
+    "k3m2e": "將提供的範本複製到新的 Go 檔案中，將佔位符替換為實際編碼值，然後使用“go run yourfile.go”運行該文件",
+    "p6e3n": "透過在套件管理器控製台中執行「Install-Package WarrenStranger.Base62」來透過 NuGet 安裝程式包，或透過 NuGet 套件管理器新增它。",
+    "q6n1r": "安裝程式庫後，將提供的範本複製到 Java 類別中，並在執行程式碼之前將佔位符替換為實際編碼值。請註意，此實作使用整數數組作為中間步驟。",
+    "r4n6v": "透過執行「go get github.com/xyproto/base62」將依賴項新增至您的專案。這將下載並安裝該軟體包。",
+    "u7i9b": "對於 Go，請使用 GitHub 上提供的「base62」套件。",
+    "u9g6t": "要執行此程式碼，您需要安裝提供 Base62 編碼和解碼功能的「base62」套件。",
+    "v5k3r": "安裝後，將解碼部分中的佔位符替換為實際的 Base62 編碼值並執行腳本。該程式庫為您處理緩衝區和 Base62 字串之間的轉換。",
+    "x2c5e": "對於 Python，使用「base62」函式庫來處理 Base62 編碼和解碼。",
+    "y3m7k": "對於 Java，請使用「google-authenticator」庫的 Base62Converter 類別。",
+    "z7n1m": "您可以透過執行「npm install base62」或「yarn add base62」來使用 npm 安裝它。",
+    "z8qqm2t": "安裝後，將提供的範本複製到 C# 控製台應用程式中，並在執行程式之前將佔位符替換為實際編碼值。"
+}

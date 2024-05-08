@@ -1,0 +1,23 @@
+{
+    "c1p3b": "Po integraci zkopírujte poskytnutou šablonu do svého programu C++ a před spuštěním programu nahraďte zástupný symbol skutečnou zakódovanou hodnotou.",
+    "c6p4n": "Po instalaci knihovny zkopírujte poskytnutou šablonu do skriptu Python a spusťte ji. Knihovna nabízí vestavěné funkce pro převod mezi bajty a řetězci kódovanými Base45.",
+    "d2w6e": "Naklonujte/stáhněte si úložiště a zahrňte do svého projektu poskytnutý soubor záhlaví. Zkompilujte a propojte zdrojové soubory podle dokumentace projektu.",
+    "d8w1b": "Můžete to udělat pomocí pip spuštěním `pip install base45` nebo `python -m pip install base45`.",
+    "f7t1z": "Přidejte knihovnu do svého projektu Xcode ručně nebo prostřednictvím správce balíčků, jako je Swift Package Manager (SPM).",
+    "f9t2z": "Přidejte do svého souboru pom.xml následující: `<dependency> <groupId>org.iso</groupId> <artifactId>iso-base45</artifactId> <version>...</version> </dependency>` kde verze je nejnovější vydání.",
+    "g4h7s": "Pro C++ můžete použít knihovnu 'base45-cpp', která je k dispozici jako úložiště GitHub.",
+    "j8s6r": "Pro Kotlin můžete použít knihovnu 'čárového kódu', která obsahuje funkcionalitu Base45.",
+    "j9s5r": "Pro C# můžete použít knihovnu 'Base45' dostupnou na NuGet.",
+    "p5e9n": "Přidejte knihovnu jako závislost ve skriptu sestavení Gradle. Například do souboru build.gradle na úrovni aplikace přidejte `implementation 'com.bottlerocketstudios:barcode-core:...'` s číslem nejnovější verze.",
+    "p6e3n": "Chcete-li jej nainstalovat, spusťte `Install-Package Base45` v konzole Správce balíčků nebo přidejte závislost pomocí Správce balíčků NuGet.",
+    "q2n9r": "Po přidání zkopírujte poskytnutou šablonu do souboru Swift. Všimněte si, že v tomto příkladu používáme hypotetický scénář, kde máte base64 reprezentaci řetězce Base45; před spuštěním kódu ji nahraďte skutečnou zakódovanou hodnotou.",
+    "q6n1r": "Knihovna poskytuje třídy kodérů a dekodérů, které zpracovávají konverzi Base45. Jakmile je závislost přidána, zkopírujte kód šablony do třídy Java a spusťte ji.",
+    "u9g6t": "Chcete-li spustit tento kód, musíte nainstalovat balíček '@digitalbazaar/base45'.",
+    "v5k3r": "Tato knihovna poskytuje jednoduché API pro kódování a dekódování Base45 v aplikacích Node.js. Po instalaci zkopírujte poskytnutou šablonu do svého skriptu a spusťte ji pomocí interpretu Node.js.",
+    "x2c5e": "Chcete-li používat Base45 v Pythonu, budete muset nainstalovat knihovnu 'base45'.",
+    "y3m7k": "Pro Javu použijte knihovnu 'iso-base45', kterou lze zahrnout do vašeho projektu jako závislost Maven.",
+    "y9m3k": "Pro Swift můžete použít knihovnu 'Base45' dostupnou na GitHubu.",
+    "z3m1t": "Po přidání závislosti a synchronizaci projektu zkopírujte poskytnutou šablonu do třídy Kotlin a před spuštěním kódu nahraďte zástupný symbol skutečnou zakódovanou hodnotou.",
+    "z7n1m": "K instalaci použijte npm nebo yarn spuštěním `npm install @digitalbazaar/base45` nebo `yarn add @digitalbazaar/base45`.",
+    "z8qm2t": "Knihovna poskytuje třídy kodérů a dekodérů pro operace Base45. Zkopírujte kód šablony do konzolové aplikace C# a spusťte jej po instalaci balíčku."
+}

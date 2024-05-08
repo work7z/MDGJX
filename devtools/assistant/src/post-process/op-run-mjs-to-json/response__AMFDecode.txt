@@ -1,0 +1,23 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将这些文本放入一个名为`i18n`的对象中，其中每个文本作为键，对应的值为1。
+
+以下是提取后的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "AMF Decode": 1,
+    "Action Message Format (AMF) is a binary format used to serialize object graphs such as ActionScript objects and XML, or send messages between an Adobe Flash client and a remote service, usually a Flash Media Server or third party alternatives.": 1,
+    "Format": 1
+  }
+}
+```
+
+这个JSON对象包含了代码中所有满足条件的自然文本。
+
+以下是详细解释：
+
+1. 类名 `AMFDecode` 被作为自然文本添加到`i18n`对象中。
+2. 类的描述（`description` 字段）也被添加，这是一个较长的文本，描述了AMF的作用。
+3. 参数对象中的 `name` 字段（"Format"）也被包含在内。
+
+其他字段如 `exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`、`type` 都没有被包含，因为它们不符合您的要求。同时，所有链接和代码注释也被排除在外。

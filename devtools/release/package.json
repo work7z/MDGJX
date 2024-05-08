@@ -1,0 +1,19 @@
+{
+  "name": "release",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0-only",
+  "dependencies": {
+    "@types/node": "^20.12.3",
+    "cos-nodejs-sdk-v5": "^2.13.4",
+    "qcloud-cdn-node-sdk": "^1.0.0",
+    "shelljs": "^0.8.5",
+    "tencentcloud-sdk-nodejs-cdn": "^4.0.818"
+  }
+}

@@ -1,0 +1,19 @@
+根据您的要求，我们需要从提供的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为`i18n`的对象中，其中每个文本作为键，对应的值为1。
+
+下面是根据您的要求生成的JSON格式：
+
+```json
+{
+  "i18n": {
+    "BSON serialise": 1,
+    "BSON is a computer data interchange format used mainly as a data storage and network transfer format in the MongoDB database. It is a binary form for representing simple data structures, associative arrays (called objects or documents in MongoDB), and various data types of specific interest to MongoDB. The name 'BSON' is based on the term JSON and stands for 'Binary JSON'. Input data should be valid JSON.": 1
+  }
+}
+```
+
+在这个例子中，我们提取了以下自然文本：
+
+- "BSON serialise"（类名）
+- 类描述中的长文本，它解释了BSON是什么，以及输入数据的期望格式。
+
+其他字段如`exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`、`type`以及URL链接等，根据您的要求，没有被包含在`i18n`对象中。

@@ -1,0 +1,19 @@
+根据您的要求，以下是代码中提取的自然文本，并按照您的要求转换为JSON格式，并进行适当的中文翻译。
+
+```json
+{
+  "i18n": {
+    "Set Union": "集合的并集",
+    "Calculates the union of two sets.": "计算两个集合的并集。",
+    "Incorrect number of sets, perhaps you need to modify the sample delimiter or add more samples?": "集合数量不正确，可能需要修改样本分隔符或添加更多样本？"
+  }
+}
+```
+
+以下是每个条目的解释：
+
+1. `"Set Union"`: 这是操作的名字，我将其翻译为“集合的并集”。
+2. `"Calculates the union of two sets."`: 这是操作的描述，我将其翻译为“计算两个集合的并集。”
+3. `"Incorrect number of sets, perhaps you need to modify the sample delimiter or add more samples?"`: 这是验证输入长度的错误信息，我将其翻译为“集合数量不正确，可能需要修改样本分隔符或添加更多样本？”。
+
+请注意，我没有包括那些明显不是自然文本的元素，例如字段名、变量名、链接等。

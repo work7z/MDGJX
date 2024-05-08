@@ -1,0 +1,20 @@
+{
+    "c5m1b": "Een andere variant, Base58Flickr, verschilt enigszins qua karakterset. Het vervangt '+' door ',' en '/' door '-', en past zich aan de URL-behoeften van Flickr aan.",
+    "c6p9b": "Als de lengte van de invoergegevens niet deelbaar is door 8, wordt er geen opvulling gebruikt; in plaats daarvan wordt elke niet-volledige groep afzonderlijk behandeld.",
+    "d3w2e": "Base58 werkt door invoerbytes om te zetten in een groot geheel getal, en dat gehele getal vervolgens uit te drukken als een combinatie van tekens uit de set van 58 tekens (A-Z, a-z, 1-9).",
+    "f4t7z": "Base58 werd in eerste instantie ontwikkeld voor Bitcoin om openbare adressen en privésleutels zonder dubbelzinnigheid weer te geven.",
+    "g7h5k": "Hoe werkt Base58?",
+    "j6s3r": "Hoe codeer/decodeer ik met Base58 in JavaScript?",
+    "k1m4e": "Het biedt echter niet dezelfde ruimte-efficiëntie als Base64 of Base32, omdat het minder tekens in het alfabet gebruikt.",
+    "pq5e9n": "U kunt bibliotheken zoals 'bs58' gebruiken om Base58-codering en -decodering in JavaScript uit te voeren.",
+    "q2x8k": "Het gebruik ervan is uitgebreid naar andere cryptocurrencies en scenario's waarin voor mensen leesbare, foutbestendige tekenreeksen gewenst zijn.",
+    "r2n7v": "Het belangrijkste voordeel is een grotere leesbaarheid doordat gelijksoortige tekens worden uitgesloten, waardoor fouten bij handmatige invoer worden verminderd.",
+    "s1b3m": "In tegenstelling tot Base64 of Base32 worden de gemakkelijk te verwarren '0'-, 'O'-, 'I'- en 'l'-tekens uitgesloten, waardoor het geschikt is voor URL's en QR-codes.",
+    "u8i5b": "Wat zijn de voordelen van het gebruik van Base58 ten opzichte van Base64 of Base32?",
+    "v4n9t": "Base58 is een coderingsschema dat binaire gegevens weergeeft als een reeks alfanumerieke tekens.",
+    "w3x7k": "Ja, sommige populaire varianten omvatten Base58Check, dat een controlesom toevoegt voor foutdetectie, die vaak wordt gebruikt in Bitcoin.",
+    "x2z6r": "Wat is Base58?",
+    "y9m1n": "Waarom is Base58 gemaakt?",
+    "z1m2t": "Voorbeeldgebruik: `const gecodeerd = bs58.encode('uw-gegevens'); const gedecodeerd = bs58.decode(gecodeerd);`",
+    "z9t2p": "Zijn er specifieke varianten van Base58?"
+}

@@ -1,0 +1,51 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取文本。
+2. 将文本放入名为`i18n`的对象中，键是文本，值设为`123`。
+3. 翻译这些键为中文，并替换`123`。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "SIGABA": "SIGABA",
+    "Encipher/decipher with the WW2 SIGABA machine.": "使用二战时期的SIGABA机器进行加密/解密。",
+    "SIGABA, otherwise known as ECM Mark II, was used by the United States for message encryption during WW2 up to the 1950s.": "SIGABA，也称为ECM Mark II，在二战期间直至20世纪50年代，被美国用于信息加密。",
+    "It was developed in the 1930s by the US Army and Navy, and has up to this day never been broken.": "它是在20世纪30年代由美国陆军和海军开发的，至今从未被破解。",
+    "Consisting of 15 rotors: 5 cipher rotors and 10 rotors (5 control rotors and 5 index rotors) controlling the stepping of the cipher rotors, the rotor stepping for SIGABA is much more complex than other rotor machines of its time, such as Enigma.": "它由15个转子组成：5个加密转子，10个控制转子（5个控制转子和5个索引转子）控制加密转子的步进，SIGABA的转子步进比其时代的其他转子机器（如恩尼格玛机）要复杂得多。",
+    "All example rotor wirings are random example sets.": "所有示例转子接线都是随机示例集。",
+    "To configure rotor wirings, for the cipher and control rotors enter a string of letters which map from A to Z, and for the index rotors enter a sequence of numbers which map from 0 to 9.": "要配置转子接线，对于加密和控制转子，请输入从A到Z映射的一串字母，对于索引转子，请输入从0到9映射的数字序列。",
+    "Note that encryption is not the same as decryption, so first choose the desired mode.": "请注意，加密与解密不同，因此首先选择所需的模式。",
+    "Note: Whilst this has been tested against other software emulators, it has not been tested against hardware.": "注意：虽然这已经与其他软件模拟器进行了测试，但尚未与硬件进行测试。",
+    "1st (left-hand) cipher rotor": "第一个（左侧）加密转子",
+    "1st cipher rotor reversed": "第一个加密转子反向",
+    "1st cipher rotor intial value": "第一个加密转子初始值",
+    "2nd cipher rotor": "第二个加密转子",
+    "2nd cipher rotor reversed": "第二个加密转子反向",
+    "2nd cipher rotor intial value": "第二个加密转子初始值",
+    "3rd (middle) cipher rotor": "第三个（中间）加密转子",
+    "3rd cipher rotor reversed": "第三个加密转子反向",
+    "3rd cipher rotor intial value": "第三个加密转子初始值",
+    "4th cipher rotor": "第四个加密转子",
+    "4th cipher rotor reversed": "第四个加密转子反向",
+    "4th cipher rotor intial value": "第四个加密转子初始值",
+    "5th (right-hand) cipher rotor": "第五个（右侧）加密转子",
+    "5th cipher rotor reversed": "第五个加密转子反向",
+    "5th cipher rotor intial value": "第五个加密转子初始值",
+    "1st (left-hand) control rotor": "第一个（左侧）控制转子",
+    "1st control rotor reversed": "第一个控制转子反向",
+    "1st control rotor intial value": "第一个控制转子初始值",
+    "2nd control rotor": "第二个控制转子",
+    "2nd control rotor reversed": "第二个控制转子反向",
+    "2nd control rotor intial value": "第二个控制转子初始值",
+    "3rd (middle) control rotor": "第三个（中间）控制转子",
+    "3rd control rotor reversed": "第三个控制转子反向",
+    "3rd control rotor intial value": "第三个控制转子初始值",
+    "4th control rotor": "第四个控制转子",
+    "4th control rotor reversed": "第四个控制转子反向",
+    "4th control rotor intial value": "第四个控制转子初始值",
+    "5th (right-hand) control rotor": "第五个（右侧）控制转子",
+    "5th control rotor reversed": "第五个控制转子反向",
+    "5th control rotor intial value": "第五个控制转子初始值",
+    "

@@ -1,0 +1,53 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取的自然文本如下：
+
+   - "XOR Brute Force"
+   - "Enumerate all possible XOR solutions. Current maximum key length is 2 due to browser performance.<br><br>Optionally enter a string that you expect to find in the plaintext to filter results (crib)."
+   - "Exclusive or"
+   - "Key length"
+   - "Sample length"
+   - "Sample offset"
+   - "Scheme"
+   - "Null preserving"
+   - "Print key"
+   - "Output as hex"
+   - "Crib (known plaintext string)"
+
+2. 将这些文本放入一个名为`i18n`的对象中，并给每个文本分配一个默认值`123`。
+
+3. 根据代码的实际功能，下面是这些文本的中文翻译：
+
+   - "XOR Brute Force"：XOR暴力破解
+   - "Enumerate all possible XOR solutions..."：枚举所有可能的XOR解密方案...
+   - "Exclusive or"：异或
+   - "Key length"：密钥长度
+   - "Sample length"：样本长度
+   - "Sample offset"：样本偏移
+   - "Scheme"：方案
+   - "Null preserving"：保留空值
+   - "Print key"：打印密钥
+   - "Output as hex"：以十六进制输出
+   - "Crib (known plaintext string)"：已知明文字符串（crib）
+
+4. 根据上述翻译，下面是JSON格式的输出：
+
+```json
+{
+  "i18n": {
+    "XOR Brute Force": "XOR暴力破解",
+    "Enumerate all possible XOR solutions...": "枚举所有可能的XOR解密方案...",
+    "Exclusive or": "异或",
+    "Key length": "密钥长度",
+    "Sample length": "样本长度",
+    "Sample offset": "样本偏移",
+    "Scheme": "方案",
+    "Null preserving": "保留空值",
+    "Print key": "打印密钥",
+    "Output as hex": "以十六进制输出",
+    "Crib (known plaintext string)": "已知明文字符串（crib）"
+  }
+}
+```
+
+请注意，由于代码示例中并没有提供具体的`i18n`字段，以上步骤是基于代码中出现的自然文本字符串及其上下文推断出来的。实际的`i18n`实现可能需要根据具体的前端框架或库进行调整。

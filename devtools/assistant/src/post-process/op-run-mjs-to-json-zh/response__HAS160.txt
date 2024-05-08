@@ -1,0 +1,55 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式，并翻译成中文的过程：
+
+1. 提炼英文自然文本：
+   - HAS-160 is a cryptographic hash function designed for use with the Korean KCDSA digital signature algorithm.
+   - It is derived from SHA-1, with assorted changes intended to increase its security.
+   - It produces a 160-bit output.
+   - HAS-160 is used in the same way as SHA-1.
+   - First it divides input in blocks of 512 bits each and pads the final block.
+   - A digest function updates the intermediate hash value by processing the input blocks in turn.
+   - The message digest algorithm consists, by default, of 80 rounds.
+
+2. 放入JSON对象并命名`i18n`：
+   ```json
+   {
+     "i18n": {
+       "HAS-160 is a cryptographic hash function designed for use with the Korean KCDSA digital signature algorithm.": 123,
+       "It is derived from SHA-1, with assorted changes intended to increase its security.": 123,
+       "It produces a 160-bit output.": 123,
+       "HAS-160 is used in the same way as SHA-1.": 123,
+       "First it divides input in blocks of 512 bits each and pads the final block.": 123,
+       "A digest function updates the intermediate hash value by processing the input blocks in turn.": 123,
+       "The message digest algorithm consists, by default, of 80 rounds.": 123
+     }
+   }
+   ```
+
+3. 翻译成中文：
+   ```json
+   {
+     "i18n": {
+       "HAS-160 is a cryptographic hash function designed for use with the Korean KCDSA digital signature algorithm.": "HAS-160是一种加密哈希函数，专为与韩国KCDSA数字签名算法配合使用而设计。",
+       "It is derived from SHA-1, with assorted changes intended to increase its security.": "它源自SHA-1，经过一系列修改以增强安全性。",
+       "It produces a 160-bit output.": "它产生一个160位的输出。",
+       "HAS-160 is used in the same way as SHA-1.": "HAS-160的使用方式与SHA-1相同。",
+       "First it divides input in blocks of 512 bits each and pads the final block.": "首先，它将输入分成每个512位的块，并对最后一个块进行填充。",
+       "A digest function updates the intermediate hash value by processing the input blocks in turn.": "一个摘要函数通过逐个处理输入块来更新中间哈希值。",
+       "The message digest algorithm consists, by default, of 80 rounds.": "默认情况下，消息摘要算法由80轮组成。"
+     }
+   }
+   ```
+
+4. 输出JSON结果：
+   ```json
+   {
+     "i18n": {
+       "HAS-160是一种加密哈希函数，专为与韩国KCDSA数字签名算法配合使用而设计。": "HAS-160是一种加密哈希函数，专为与韩国KCDSA数字签名算法配合使用而设计。",
+       "它源自SHA-1，经过一系列修改以增强安全性。": "它源自SHA-1，经过一系列修改以增强安全性。",
+       "它产生一个160位的输出。": "它产生一个160位的输出。",
+       "HAS-160的使用方式与SHA-1相同。": "HAS-160的使用方式与SHA-1相同。",
+       "首先，它将输入分成每个512位的块，并对最后一个块进行填充。": "首先，它将输入分成每个512位的块，并对最后一个块进行填充。",
+       "一个摘要函数通过逐个处理输入块来更新中间哈希值。": "一个摘要函数通过逐个处理输入块来更新中间哈希值。",
+       "默认情况下，消息摘要算法由80轮组成。": "默认情况下，消息摘要算法由80轮组成。"
+     }
+   }
+   ```

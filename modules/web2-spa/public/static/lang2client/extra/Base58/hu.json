@@ -1,0 +1,20 @@
+{
+    "c5m1b": "Egy másik változat, a Base58Flickr, kissé eltér a karakterkészletében. A „+” jelet „,”-re, a „/”-t pedig „-”-re cseréli, a Flickr URL-igényeihez igazodva.",
+    "c6p9b": "Ha a bemeneti adatok hossza nem osztható 8-cal, a kitöltés nem kerül felhasználásra; ehelyett minden nem teljes csoportot egymástól függetlenül kezelünk.",
+    "d3w2e": "A Base58 úgy működik, hogy a bemeneti bájtokat nagy egész számmá alakítja, majd ezt az egész számot az 58 karakterből álló karakterek kombinációjaként fejezi ki (A-Z, a-z, 1-9).",
+    "f4t7z": "A Base58-at eredetileg a Bitcoin számára fejlesztették ki, hogy a nyilvános címeket és a privát kulcsokat félreérthetetlenül képviselje.",
+    "g7h5k": "Hogyan működik a Base58?",
+    "j6s3r": "Hogyan kódolhatok/dekódolhatok Base58-al JavaScriptben?",
+    "k1m4e": "Azonban nem kínál olyan helyhatékonyságot, mint a Base64 vagy a Base32, mivel kevesebb karaktert használ az ábécéjében.",
+    "pq5e9n": "Használhat olyan könyvtárakat, mint a „bs58” a Base58 kódolás és dekódolás végrehajtásához JavaScriptben.",
+    "q2x8k": "Használata más kriptovalutákra és forgatókönyvekre is kiterjedt, ahol az ember által olvasható, hibaálló karakterláncok kívánatosak.",
+    "r2n7v": "A fő előny a megnövelt olvashatóság a hasonló megjelenésű karakterek kizárása miatt, ami csökkenti a hibákat a kézi bevitel során.",
+    "s1b3m": "A Base64-től és a Base32-től eltérően kizárja a könnyen összekeverhető '0', 'O', 'I' és 'l' karaktereket, így alkalmas URL-ekre és QR-kódokra.",
+    "u8i5b": "Milyen előnyei vannak a Base58 használatának a Base64-hez vagy a Base32-höz képest?",
+    "v4n9t": "A Base58 egy olyan kódolási séma, amely a bináris adatokat alfanumerikus karakterek sorozataként jeleníti meg.",
+    "w3x7k": "Igen, néhány népszerű változat közé tartozik a Base58Check, amely ellenőrző összeget ad a hibaészleléshez, amelyet általában a Bitcoinban használnak.",
+    "x2z6r": "Mi az a Base58?",
+    "y9m1n": "Miért jött létre a Base58?",
+    "z1m2t": "Példa a felhasználásra: `const encoded = bs58.encode('sajat-adat'); const dekódolva = bs58.decode(encoded);`",
+    "z9t2p": "Vannak a Base58-nak konkrét változatai?"
+}

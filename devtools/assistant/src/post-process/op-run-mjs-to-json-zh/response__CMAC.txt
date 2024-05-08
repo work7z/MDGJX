@@ -1,0 +1,23 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提炼文本。
+2. 将文本放入名为`i18n`的对象中，并给每个文本赋予初始值`123`。
+3. 根据代码的实际功能，为每个文本提供恰当的中文翻译。
+4. 输出JSON结果。
+
+【JSON结果】
+
+```json
+{
+  "i18n": {
+    "CMAC is a block-cipher based message authentication code algorithm.": "CMAC是基于块密码的消息认证码算法。",
+    "RFC4493 defines AES-CMAC that uses AES encryption with a 128-bit key.": "RFC4493定义了使用128位密钥的AES加密的AES-CMAC。",
+    "NIST SP 800-38B suggests usages of AES with other key lengths and Triple DES.": "NIST SP 800-38B建议使用不同密钥长度的AES和Triple DES。",
+    "The key for AES must be either 16, 24, or 32 bytes (currently %s bytes)": "AES的密钥必须是16、24或32字节（当前为%s字节）",
+    "The key for Triple DES must be 16 or 24 bytes (currently %s bytes)": "Triple DES的密钥必须是16或24字节（当前为%s字节）",
+    "Undefined encryption algorithm": "未定义的加密算法"
+  }
+}
+```
+
+请注意，在翻译中我保留了占位符`%s`，它用于在代码中插入实际的字节数。这样的翻译保留了原文的灵活性，以便在实际使用中可以根据需要插入正确的数值。

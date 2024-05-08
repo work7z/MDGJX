@@ -1,0 +1,27 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式的`i18n`对象，并进行了适当的中文翻译。
+
+```json
+{
+  "i18n": {
+    "Hamming Distance": "汉明距离",
+    "In information theory, the Hamming distance between two strings of equal length is the number of positions at which the corresponding symbols are different. In other words, it measures the minimum number of substitutions required to change one string into the other, or the minimum number of errors that could have transformed one string into the other. In a more general context, the Hamming distance is one of several string metrics for measuring the edit distance between two sequences.": "在信息论中，两个等长字符串之间的汉明距离是指对应符号不同的位置数。换句话说，它衡量将一个字符串转换为另一个字符串所需的最小替换次数，或者可能将一个字符串转换为另一个字符串的最小错误数。在更一般的背景下，汉明距离是衡量两个序列之间编辑距离的几种字符串度量方法之一。",
+    "Error: You can only calculate the edit distance between 2 strings. Please ensure exactly two inputs are provided, separated by the specified delimiter.": "错误：您只能计算两个字符串之间的编辑距离。请确保提供了两个输入，并由指定的分隔符分隔。",
+    "Error: Both inputs must be of the same length.": "错误：两个输入的长度必须相同。"
+  }
+}
+```
+
+以下是按照您的要求，将这个`i18n`对象放入一个JSON结构中的样子：
+
+```json
+{
+  "i18n": {
+    "Hamming Distance": "汉明距离",
+    "description": "在信息论中，两个等长字符串之间的汉明距离是指对应符号不同的位置数。换句话说，它衡量将一个字符串转换为另一个字符串所需的最小替换次数，或者可能将一个字符串转换为另一个字符串的最小错误数。在更一般的背景下，汉明距离是衡量两个序列之间编辑距离的几种字符串度量方法之一。",
+    "errorTwoStrings": "错误：您只能计算两个字符串之间的编辑距离。请确保提供了两个输入，并由指定的分隔符分隔。",
+    "errorDifferentLength": "错误：两个输入的长度必须相同。"
+  }
+}
+```
+
+在这个JSON结构中，每个key对应于原文中的自然文本，而value则是翻译后的中文描述。为了方便理解和使用，我给每个key都取了一个简短的描述性名称。

@@ -1,0 +1,17 @@
+{
+    "YAML-Advantages-001": "Quais são as vantagens do YAML?",
+    "YAML-Advantages-002": "YAML é legível e fácil de escrever, tornando-o uma escolha popular para arquivos de configuração.",
+    "YAML-Advantages-003": "Também é fácil de ler e escrever e costuma ser usado em conjunto com todas as linguagens de programação.",
+    "YAML-Basics-001": "O que é YAML?",
+    "YAML-Def-002": "YAML (YAML Ain't Markup Language) é um padrão de serialização de dados legível por humanos que pode ser usado em conjunto com todas as linguagens de programação e é frequentemente usado para escrever arquivos de configuração.",
+    "YAML-Disadvantages-001": "Quais são as desvantagens do YAML?",
+    "YAML-Disadvantages-002": "YAML pode ser difícil de analisar e pode estar sujeito a erros.",
+    "YAML-Disadvantages-003": "Também não é tão amplamente suportado como outros formatos de serialização de dados, como JSON.",
+    "YAML-Example-001": "Qual é a aparência de um arquivo YAML?",
+    "YAML-Example-002": "Um arquivo YAML simples consiste em pares de valores-chave, com cada par separado por dois pontos.",
+    "YAML-Example-003": "Por exemplo, um arquivo YAML pode ter esta aparência:",
+    "YAML-Purpose-003": "Ele foi projetado para ser facilmente legível por humanos e geralmente é usado para expressar estruturas de dados e serialização em um formato fácil de ler e escrever.",
+    "YAML-Usage-001": "Para que é usado o YAML?",
+    "YAML-Usage-002": "YAML é frequentemente usado para arquivos de configuração e em aplicativos onde os dados estão sendo armazenados ou transmitidos.",
+    "YAML-Usage-003": "É comumente usado em aplicativos onde os dados estão sendo armazenados ou transmitidos, como em arquivos de configuração, e em aplicativos onde os dados estão sendo armazenados ou transmitidos."
+}

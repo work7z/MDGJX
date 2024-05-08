@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式的操作，并进行了适当的中文翻译。
+
+```json
+{
+  "i18n": {
+    "Scan for Embedded Files": "扫描嵌入文件",
+    "Scans the data for potential embedded files by looking for magic bytes at all offsets. This operation is prone to false positives.": "通过在所有偏移量处查找魔数来扫描数据中潜在的嵌入文件。此操作容易产生误报。",
+    "WARNING: Files over about 100KB in size will take a VERY long time to process.": "警告：大约100KB以上的文件将需要非常长的处理时间。",
+    "Scanning data for 'magic bytes' which may indicate embedded files. The following results may be false positives and should not be treated as reliable. Any sufficiently long file is likely to contain these magic bytes coincidentally.": "正在扫描可能指示嵌入文件的数据中的“魔数”。以下结果可能是误报，不应视为可靠。任何足够长的文件都可能巧合地包含这些魔数。",
+    "Offset {offset} (0x{hexOffset}):": "偏移量 {offset} (0x{hexOffset}):",
+    "File type:": "文件类型：",
+    "Extension:": "扩展名：",
+    "MIME type:": "MIME类型：",
+    "Description:": "描述：",
+    "No embedded files were found.": "未找到嵌入文件。"
+  }
+}
+```
+
+以下是每个键值对的解释：
+
+- 键是原始英文文本，值是123的占位符，在这里我将其替换为对应的中文翻译。
+
+请注意，代码中的`{offset}`和`{hexOffset}`是动态的，会被实际的偏移量替换，因此我在翻译中保留了它们作为占位符。同样的，对于`{type.fileDetails.name}`、`{type.fileDetails.extension}`、`{type.fileDetails.mime}`和`{type.fileDetails.description}`这样的动态部分，我没有在JSON中创建单独的条目，因为它们是根据运行时数据动态生成的。
+
+根据您的示例，我已经将这个JSON结果格式化并输出。

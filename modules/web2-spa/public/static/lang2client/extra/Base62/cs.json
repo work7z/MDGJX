@@ -1,0 +1,20 @@
+{
+    "c5p1b": "Vycpávka se nepoužívá; délka kódovaného výstupu závisí přímo na velikosti vstupních dat.",
+    "c8me6b": "Vlastní schémata podobná Base62 mohou být přizpůsobena konkrétním aplikacím, ale obecně dodržují stejný princip používání větší znakové sady než Base64 nebo Base32.",
+    "d2w4e": "Podobně jako jiné základní konverzní systémy, Base62 funguje tak, že převádí vstupní bajty na velké celé číslo a poté je vyjadřuje jako kombinaci znaků ze své 62znakové sady.",
+    "f1t2z": "Base62 byl vyvinut, aby poskytoval kratší, URL bezpečnou alternativu k Base64, zejména pro jedinečné identifikátory a krátké adresy URL.",
+    "g8h7s": "Jak Base62 funguje?",
+    "j4s6r": "Jak zakóduji/dekóduji pomocí Base62 v JavaScriptu?",
+    "k9em5e": "Díky tomu je ideální pro scénáře, kde je vyžadován stručný, pro URL vhodný identifikátor, aniž by byla obětována čitelnost.",
+    "p9e1n": "Pro kódování a dekódování Base62 v JavaScriptu můžete použít knihovny jako 'base-x' nebo 'base62'.",
+    "q7n3r": "Vyhýbá se také nejednoznačným znakům jako 'O' a '0', 'I' a 'l', které mohou vést k lidským chybám při přepisu.",
+    "r6nq2v": "Primární výhodou Base62 je jeho zvýšená prostorová efektivita díky větší znakové sadě než Base32, ale bez nealfanumerických znaků nalezených v Base64.",
+    "u3i8b": "Jaké jsou výhody používání Base62 oproti Base64 nebo Base32?",
+    "v3k5r": "Sada znaků obsahuje všechna velká a malá písmena (A-Z, a-z) a číslice (0-9), což poskytuje kompaktnější zobrazení ve srovnání s Base64 nebo Base32.",
+    "w2x9qk": "Ačkoli Base62 sám o sobě nemá žádné významné varianty, některé implementace se mohou mírně lišit ve výběru znakové sady, jako je například vyloučení '+' nebo '/' běžně používaných v Base64.",
+    "x7n1m": "Base62 je kódovací schéma, které představuje binární data jako sekvenci 62 alfanumerických znaků.",
+    "y3m9k": "Proč byl vytvořen Base62?",
+    "z2m7t": "Příklad použití: `const base62 = require('base62'); const encoded = base62.encode('vaše-data'); const decoded = base62.decode(encoded);`",
+    "z4t9b": "Co je Base62?",
+    "z7t1p": "Existují nějaké konkrétní varianty Base62?"
+}

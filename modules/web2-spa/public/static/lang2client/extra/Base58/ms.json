@@ -1,0 +1,20 @@
+{
+    "c5m1b": "Satu lagi varian, Base58Flickr, berbeza sedikit dalam set wataknya. Ia menggantikan '+' dengan ',' dan '/' dengan '-', menyesuaikan diri dengan keperluan URL Flickr.",
+    "c6p9b": "Jika panjang data input tidak boleh dibahagikan dengan 8, padding tidak digunakan; sebaliknya, setiap kumpulan bukan penuh dilayan secara bebas.",
+    "d3w2e": "Base58 berfungsi dengan menukar bait input kepada integer besar, kemudian menyatakan integer itu sebagai gabungan aksara daripada set 58 aksaranya (A-Z, a-z, 1-9).",
+    "f4t7z": "Base58 pada mulanya dibangunkan untuk Bitcoin untuk mewakili alamat awam dan kunci peribadi tanpa kesamaran.",
+    "g7h5k": "Bagaimanakah Base58 berfungsi?",
+    "j6s3r": "Bagaimanakah saya boleh mengekod/menyahkod dengan Base58 dalam JavaScript?",
+    "k1m4e": "Walau bagaimanapun, ia tidak menawarkan kecekapan ruang yang agak sama seperti Base64 atau Base32 kerana ia menggunakan lebih sedikit aksara dalam abjadnya.",
+    "pq5e9n": "Anda boleh menggunakan perpustakaan seperti 'bs58' untuk melaksanakan pengekodan dan penyahkodan Base58 dalam JavaScript.",
+    "q2x8k": "Penggunaannya telah berkembang kepada mata wang kripto dan senario lain di mana rentetan yang boleh dibaca manusia dan tahan ralat dikehendaki.",
+    "r2n7v": "Kelebihan utama ialah peningkatan kebolehbacaan kerana mengecualikan aksara yang kelihatan serupa, mengurangkan ralat semasa kemasukan manual.",
+    "s1b3m": "Tidak seperti Base64 atau Base32, ia mengecualikan aksara '0', 'O', 'I' dan 'l' yang mudah dikelirukan, menjadikannya sesuai untuk URL dan kod QR.",
+    "u8i5b": "Apakah kelebihan menggunakan Base58 berbanding Base64 atau Base32?",
+    "v4n9t": "Base58 ialah skim pengekodan yang mewakili data binari sebagai jujukan aksara alfanumerik.",
+    "w3x7k": "Ya, beberapa varian popular termasuk Base58Check, yang menambah jumlah semak untuk pengesanan ralat, yang biasa digunakan dalam Bitcoin.",
+    "x2z6r": "Apakah itu Base58?",
+    "y9m1n": "Mengapa Base58 dicipta?",
+    "z1m2t": "Contoh penggunaan: `const dikodkan = bs58.encode('data-anda'); const dinyahkod = bs58.decode(dikodkan);`",
+    "z9t2p": "Adakah terdapat sebarang varian khusus Base58?"
+}

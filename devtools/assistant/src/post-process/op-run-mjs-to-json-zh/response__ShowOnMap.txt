@@ -1,0 +1,31 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取文本。
+2. 将文本放入名为`i18n`的对象中，并给每个文本分配一个默认值`123`。
+3. 根据代码的实际功能，将文本翻译成中文，并替换默认值。
+
+下面是JSON格式的结果：
+
+```json
+{
+  "i18n": {
+    "Show on map": "在地图上显示",
+    "Displays co-ordinates on a slippy map.": "在可滑动地图上显示坐标。",
+    "Co-ordinates will be converted to decimal degrees before being shown on the map.": "坐标将在显示在地图上前转换为十进制度。",
+    "Supported formats:": "支持的格式：",
+    "Degrees Minutes Seconds (DMS)": "度分秒（DMS）",
+    "Degrees Decimal Minutes (DDM)": "度小数分（DDM）",
+    "Decimal Degrees (DD)": "十进制度（DD）",
+    "Geohash": "地理哈希",
+    "Military Grid Reference System (MGRS)": "军事网格参考系统（MGRS）",
+    "Ordnance Survey National Grid (OSNG)": "英国测量局国家网格（OSNG）",
+    "Universal Transverse Mercator (UTM)": "通用横墨卡托（UTM）",
+    "This operation will not work offline.": "此操作不支持离线使用。",
+    "Zoom Level": "缩放级别",
+    "Input Format": "输入格式",
+    "Input Delimiter": "输入分隔符"
+  }
+}
+```
+
+请注意，我没有包括一些明显的或不必要的信息，比如代码示例、URL、类型定义等。这个JSON对象中的key-value对可以用于国际化和本地化，其中key是原始英文文本，value是对应的中文翻译。

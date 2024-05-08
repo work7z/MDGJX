@@ -1,0 +1,11 @@
+{
+    "c6p4n": "Dans le modèle fourni, remplacez l'espace réservé dans la partie décodage par les octets réels codés en Base85 (préfixés par « b »), puis exécutez le script.",
+    "d8w1b": "Aucune installation supplémentaire n'est nécessaire puisqu'elle fait partie de la bibliothèque standard. Assurez-vous que votre version de Python est suffisamment récente pour inclure cette fonctionnalité.",
+    "f9t2z": "Ajoutez la dépendance à votre projet Maven en incluant `<dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependency>` dans votre fichier pom.xml avec le dernier numéro de version.",
+    "q6n1r": "Après avoir installé la bibliothèque, copiez le code du modèle dans une classe Java et remplacez l'espace réservé par la valeur réelle codée en Base85 avant d'exécuter le code.",
+    "u9g6t": "Pour JavaScript, vous devez installer le package « base85 » pour l'encodage et le décodage Base85.",
+    "v5k3r": "Une fois installé, remplacez l'espace réservé dans la section de décodage par la chaîne réelle codée en Base85 et exécutez le script. La bibliothèque gère la conversion entre les chaînes Buffers et Base85.",
+    "x2c5e": "Python dispose d'un module « base85 » intégré qui prend en charge l'encodage et le décodage Base85.",
+    "y3m7k": "Pour Java, utilisez la bibliothèque « commons-codec » qui inclut la prise en charge de l'encodage et du décodage Base85.",
+    "z7n1m": "Installez-le à l'aide de npm en exécutant `npm install base85` ou `yarn add base85`."
+}

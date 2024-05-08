@@ -1,0 +1,23 @@
+{
+    "MD2-Advantages-011": "Wat zijn de voordelen van het gebruik van MD2?",
+    "MD2-AlgorithmDetails-010": "MD2-algoritmedetails",
+    "MD2-Applications-018": "Welke toepassingen hebben MD2 gebruikt of gebruiken dit nog steeds?",
+    "MD2-Breakdown-016": "Er zijn in de loop van de tijd cryptografische zwakheden ontdekt in MD2, en sterkere alternatieven zoals SHA-256 en SHA-3 worden nu aanbevolen voor alle toepassingen die veilige hashing vereisen.",
+    "MD2-CollisionSecurity-015": "MD2 wordt als zwak beschouwd tegen moderne cryptografische aanvallen. De hashgrootte (128 bits) is naar huidige maatstaven klein, waardoor deze kwetsbaar is voor botsingsaanvallen.",
+    "MD2-Def-002": "MD2 (Message-Digest Algorithm 2) is een cryptografische hashfunctie ontworpen door Ronald Rivest in 1989. Het produceert een hashwaarde van 128 bits voor elk gegeven invoerbericht.",
+    "MD2-DigitalSignature-Risks-021": "Risico's van het gebruik van MD2 voor digitale handtekeningen",
+    "MD2-Disadvantages-014": "Wat zijn de nadelen en veiligheidsproblemen van MD2?",
+    "MD2-FAQ-001": "Wat is MD2?",
+    "MD2-HistoricalUse-020": "Historisch gezien werd MD2 gebruikt bij controles van de bestandsintegriteit en software-updates, hoewel deze toepassingen grotendeels zijn overgestapt op veiligere hash-functies zoals SHA-256 en SHA-512.)",
+    "MD2-History-004": "Hoe is MD2 ontwikkeld en wat is de geschiedenis ervan?",
+    "MD2-Implementation-013": "Het is op grote schaal geïmplementeerd en gestandaardiseerd op verschillende platforms en talen, wat betekent dat het integreren van MD2 in bestaande systemen relatief eenvoudig kan zijn.",
+    "MD2-InsecurityExamples-017": "Voorbeelden van MD2-beveiligingsanalyses",
+    "MD2-Operation-007": "Hoe werkt de MD2-operatie?",
+    "MD2-Origin-005": "MD2 is in eerste instantie gemaakt als een verbetering ten opzichte van MD1, waarmee enkele zwakke punten in het eerdere algoritme werden aangepakt. Het werd destijds populair vanwege zijn relatieve eenvoud en snelheid.",
+    "MD2-PKI-019": "MD2 werd ooit gebruikt in Public Key Infrastructure (PKI) voor digitale handtekeningen, maar is sindsdien verouderd vanwege de kwetsbaarheid voor aanvallen. Met MD2 ondertekende certificaten worden door de meeste systemen niet langer vertrouwd.",
+    "MD2-Process-008": "MD2 werkt door het invoerbericht op te vullen tot een veelvoud van 16 bytes en het vervolgens te verwerken via een reeks exclusieve OF-bewerkingen, bitrotaties en toevoegingen. De uiteindelijke uitvoer is een hashwaarde van 128 bits.",
+    "MD2-Purpose-003": "Het doel van MD2 is het waarborgen van de gegevensintegriteit door het genereren van een unieke digitale vingerafdruk die kan worden gebruikt om de originaliteit en authenticiteit van de gegevens te verifiëren.",
+    "MD2-Rounds-009": "Het algoritme maakt gebruik van een proces van vier ronden waarbij specifieke bewerkingen worden uitgevoerd op een 128-bits statusvariabele. Elke ronde neemt blokken van het opgevulde bericht op en werkt de status bij totdat het hele bericht is verwerkt.",
+    "MD2-Speed-012": "MD2 werd voor zijn tijd als snel beschouwd en levert in sommige scenario's nog steeds acceptabele prestaties, waardoor het geschikt is voor omgevingen waar de computerbronnen beperkt zijn.",
+    "MD2-Successors-006": "Het is echter vervangen door sterkere algoritmen zoals MD5 en SHA-1, die deel uitmaken van dezelfde familie van hash-functies, maar verbeterde beveiligingsfuncties bieden."
+}

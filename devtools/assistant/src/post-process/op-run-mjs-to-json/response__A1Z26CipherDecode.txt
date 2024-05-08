@@ -1,0 +1,29 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将它们放入一个名为 `i18n` 的对象中，其中每个文本作为键，值设为1。同时，我们需要配置 `extra` 字段，根据代码内容和示例5自动填写 `editor.input` 和 `editor.output` 的值。
+
+以下是处理后的 JSON 格式：
+
+```json
+{
+  "i18n": {
+    "A1Z26 Cipher Decode": 1,
+    "Converts alphabet order numbers into their corresponding alphabet character.<br><br>e.g. <code>1</code> becomes <code>a</code> and <code>2</code> becomes <code>b</code>.": 1,
+    "all numbers must be between 1 and 26.": 1
+  },
+  "extra": {
+    "exampleInput": "<>",
+    "exampleOutput": "<>",
+    "editor": {
+      "input": "typescript", // 根据 import 语句和文件扩展名推断
+      "output": "javascript" // 假设输出是字符串，因此使用javascript
+    }
+  }
+}
+```
+
+解释：
+1. `i18n` 对象包含了所有从代码中提取的自然文本。
+2. `extra` 字段中的 `exampleInput` 和 `exampleOutput` 由于没有具体的示例文本在代码中提供，因此使用 `<>` 表示空。
+3. `editor.input` 设置为 `typescript` 是因为代码文件使用了 `.tsx` 和 `.mjs` 扩展名，这通常与 TypeScript 相关。
+4. `editor.output` 设置为 `javascript` 是因为代码的输出类型是 `string`，并且没有明确指出需要其他类型的输出。
+
+请注意，由于代码中没有提供具体的 `exampleInput` 和 `exampleOutput` 的值，上述 JSON 中的这两个字段是按照您的要求留空的。如果需要具体的例子，它们应当根据代码的实际输出和输入进行填充。

@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "At lære at programmere åbner op for karrieremuligheder på tværs af forskellige brancher og giver dig mulighed for at udvikle innovative løsninger, automatisere opgaver og forstå komplekse systemer.",
+    "CP-Advantages-013": "Hvad er fordelene ved at lære computerprogrammering?",
+    "CP-Basics-001": "Hvad er computerprogrammering?",
+    "CP-Def-002": "Computerprogrammering involverer at skrive instruktioner eller kode i et programmeringssprog for at instruere computere i, hvordan de skal udføre specifikke opgaver.",
+    "CP-History-004": "Hvad er historien om computerprogrammering?",
+    "CP-History-Origin-005": "De første programmerbare maskiner går tilbage til Ada Lovelaces arbejde med Charles Babbages Analytical Engine i det 19. århundrede. Imidlertid tog moderne programmering fart med opfindelsen af ​​den første almindelige elektroniske computer, ENIAC, i 1940'erne.",
+    "CP-Lang-Choice-009": "Valget af sprog afhænger af faktorer som projektkrav, støtte fra lokalsamfundet, nem læring og præstationsbehov.",
+    "CP-Language-Evolution-006": "Siden da har programmeringssprog udviklet sig fra maskinkode til montering, derefter til højniveausprog som FORTRAN, COBOL, C og nu til moderne sprog som Python, JavaScript og Rust.",
+    "CP-Languages-007": "Hvad er nogle populære programmeringssprog?",
+    "CP-Languages-List-008": "Populære programmeringssprog inkluderer Java, Python, JavaScript, C++, C#, Swift, Go, PHP, Ruby og Kotlin. Hver har sine egne styrker og anvendelsesmuligheder, f.eks. Python til datavidenskab, JavaScript til webudvikling og C++ til systemprogrammering.",
+    "CP-Process-010": "Hvad er processen med computerprogrammering?",
+    "CP-Process-Explanation-011": "Programmering involverer typisk planlægning (definering af problemet og design af løsningen), kodning (skrivning af kildekode på et valgt sprog), test (fejlretning og verifikation af funktionalitet) og vedligeholdelse (opdatering og forbedring af programmet over tid).",
+    "CP-Purpose-003": "Programmører skaber algoritmer, løser problemer og bygger softwareapplikationer, der kan automatisere processer, manipulere data og interagere med brugere eller andre systemer.",
+    "CP-SDLC-012": "Dette er ofte struktureret inden for en Software Development Life Cycle (SDLC), som omfatter yderligere faser som kravanalyse, design, implementering og test af brugeraccept.",
+    "CP-Skillset-015": "Det forbedrer også logisk tænkning, problemløsningsevner og tilpasningsevne til nye teknologier, hvilket gør en mere alsidig i den digitale tidsalder.",
+    "HistOfProg-Wikipedia": "Programmeringssprogenes historie - Wikipedia",
+    "SDLC-Wikipedia": "Softwareudviklings livscyklus - Wikipedia",
+    "TIOBE-Index": "TIOBE Index - Software Quality Company"
+}

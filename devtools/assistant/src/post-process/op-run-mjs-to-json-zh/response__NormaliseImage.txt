@@ -1,0 +1,23 @@
+根据您的要求，以下是代码中提取的自然文本，并按照您的要求转换为JSON格式，以及对应的中文翻译。
+
+```json
+{
+  "i18n": {
+    "Normalise Image": "图像标准化",
+    "Normalise the image colours.": "标准化图像颜色。",
+    "Invalid file type.": "无效的文件类型。",
+    "Error opening image file.": "打开图像文件时出错。",
+    "Error normalising image.": "标准化图像时出错。"
+  }
+}
+```
+
+以下是每个key对应的中文翻译：
+
+- "Normalise Image"：此为操作名称，中文翻译为“图像标准化”。
+- "Normalise the image colours."：这是对操作描述的翻译，中文为“标准化图像颜色。”。
+- "Invalid file type."：这是抛出的错误信息，中文翻译为“无效的文件类型。”。
+- "Error opening image file."：这是在打开图像文件时可能抛出的错误，中文翻译为“打开图像文件时出错。”。
+- "Error normalising image."：这是在标准化图像时可能抛出的错误，中文翻译为“标准化图像时出错。”。
+
+请注意，这些翻译是根据代码的上下文进行的，可能需要根据实际应用场景进一步调整。

@@ -1,0 +1,42 @@
+// Date: Sat, 18 Nov 2023
+// Author: CodeGen ToolBox <work7z@outlook.com>
+// Description:
+// Copyright (C) 2023 - Present, https://laftools.dev and https://codegen.cc
+// License: AGPLv3
+
+// import vars.scss
+@import "../../styles/var.scss";
+@import "@blueprintjs/colors/lib/scss/colors";
+
+// write styles for gen-tabs-tab, it is a compact tab component, and contains a close button on the right side. also include active appreance
+
+.gen-tabs {
+  @include fn-border-type-all();
+  .gen-tabs-tab {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: $tab-height-I-know;
+    line-height: $tab-height-I-know;
+    font-size: 13px;
+
+    .gen-tabs-tab-title {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    transition: all 0.3s;
+    .gen-tabs-tab-close {
+      margin-left: 10px;
+      display: none;
+    }
+    @include fn-mixin-hover-tab();
+  }
+  .gen-tabs-tab-content {
+    @include fn-border-type("top");
+  }
+}

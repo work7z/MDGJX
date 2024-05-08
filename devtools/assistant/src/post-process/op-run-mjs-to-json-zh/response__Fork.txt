@@ -1,0 +1,19 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值设置为`123`。
+3. 根据代码的实际功能，将`i18n`中的值翻译成中文。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "Split the input data up based on the specified delimiter and run all subsequent operations on each branch separately.": "根据指定的分隔符拆分输入数据，并在每个分支上分别运行后续的所有操作。",
+    "For example, to decode multiple Base64 strings, enter them all on separate lines then add the 'Fork' and 'From Base64' operations to the recipe. Each string will be decoded separately.": "例如，要解码多个Base64字符串，请在单独的行中输入它们，然后向配方中添加 'Fork' 和 'From Base64' 操作。每个字符串将分别被解码。"
+  }
+}
+```
+
+在这段代码中，只有两个自然文本段被用作描述字段，它们被包含在`i18n`对象中，并且我已经根据代码的上下文将它们翻译成了中文。其他的文本，如字段名称或变量名称，并不被认为是显示给用户的自然文本，因此它们没有被包含在内。

@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "Imparare a programmare apre opportunità di carriera in vari settori e consente di sviluppare soluzioni innovative, automatizzare le attività e comprendere sistemi complessi.",
+    "CP-Advantages-013": "Quali sono i vantaggi di imparare a programmare il computer?",
+    "CP-Basics-001": "Cos'è la programmazione informatica?",
+    "CP-Def-002": "La programmazione informatica prevede la scrittura di istruzioni, o codice, in un linguaggio di programmazione per istruire i computer su come eseguire compiti specifici.",
+    "CP-History-004": "Qual è la storia della programmazione informatica?",
+    "CP-History-Origin-005": "Le prime macchine programmabili risalgono al lavoro di Ada Lovelace sulla macchina analitica di Charles Babbage nel XIX secolo. Tuttavia, la programmazione moderna decollò con l’invenzione del primo computer elettronico universale, l’ENIAC, negli anni ’40.",
+    "CP-Lang-Choice-009": "La scelta della lingua dipende da fattori quali i requisiti del progetto, il sostegno della comunità, la facilità di apprendimento e le esigenze prestazionali.",
+    "CP-Language-Evolution-006": "Da allora, i linguaggi di programmazione si sono evoluti dal codice macchina all’assembly, quindi a linguaggi di alto livello come FORTRAN, COBOL, C e ora a linguaggi moderni come Python, JavaScript e Rust.",
+    "CP-Languages-007": "Quali sono alcuni linguaggi di programmazione popolari?",
+    "CP-Languages-List-008": "I linguaggi di programmazione più diffusi includono Java, Python, JavaScript, C++, C#, Swift, Go, PHP, Ruby e Kotlin. Ognuno ha i propri punti di forza e casi d'uso, ad esempio Python per la scienza dei dati, JavaScript per lo sviluppo web e C++ per la programmazione di sistema.",
+    "CP-Process-010": "Qual è il processo di programmazione del computer?",
+    "CP-Process-Explanation-011": "La programmazione in genere comporta la pianificazione (definizione del problema e progettazione della soluzione), codifica (scrittura del codice sorgente nella lingua scelta), test (debug e verifica della funzionalità) e manutenzione (aggiornamento e miglioramento del programma nel tempo).",
+    "CP-Purpose-003": "I programmatori creano algoritmi, risolvono problemi e creano applicazioni software in grado di automatizzare processi, manipolare dati e interagire con utenti o altri sistemi.",
+    "CP-SDLC-012": "Questo è spesso strutturato all'interno di un ciclo di vita dello sviluppo software (SDLC) che include fasi aggiuntive come l'analisi dei requisiti, la progettazione, l'implementazione e il test di accettazione da parte degli utenti.",
+    "CP-Skillset-015": "Migliora inoltre il pensiero logico, le capacità di risoluzione dei problemi e l'adattabilità alle nuove tecnologie, rendendoli più versatili nell'era digitale.",
+    "HistOfProg-Wikipedia": "Storia dei linguaggi di programmazione - Wikipedia",
+    "SDLC-Wikipedia": "Ciclo di vita dello sviluppo software - Wikipedia",
+    "TIOBE-Index": "Indice TIOBE - La società di qualità del software"
+}

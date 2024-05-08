@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Az integrálást követően másolja be a megadott sablont a C++ programba, és a program futtatása előtt cserélje ki a helyőrzőt a tényleges kódolt értékre.",
+    "c6p4n": "A telepítés után másolja be a megadott sablont a Python-szkriptbe, cserélje ki a helyőrzőt a dekódolási részben a tényleges Base62 kódolású bájtokra (\"b\" előtaggal), majd futtassa a szkriptet.",
+    "d2w6e": "Töltse le a forráskódot, és foglalja bele a base62.h fejlécfájlt a projektbe. Fordítsa/linkelje a forrásfájlokat a projekt utasításai szerint.",
+    "d8w1b": "Telepítse pip-en keresztül a \"pip install python-base62\" vagy a \"pip3 install python-base62\" futtatásával.",
+    "f9t2z": "Adja hozzá a függőséget Maven-projektjéhez a `<dependency> <groupId>com.warrenstrange</groupId> <artifactId>googleauth</artifactId> <version>...</version> </dependency>` hozzáadásával, ahol a verziónak lennie kell lecserélték a legújabb kiadásra.",
+    "g4h7s": "C++ esetén használhatja a 'cpp-base62' könyvtárat, amely Base62 funkciókat biztosít.",
+    "j9s5r": "C# esetén használja a 'WarrenStranger.Base62' könyvtárat a Base62 kódolás és dekódolás kezelésére.",
+    "k3m2e": "Másolja a megadott sablont egy új Go fájlba, cserélje ki a helyőrzőt a tényleges kódolt értékre, majd futtassa a fájlt a \"go run yourfile.go\" használatával.",
+    "p6e3n": "Telepítse a csomagot a NuGet segítségével az `Install-Package WarrenStranger.Base62` futtatásával a Package Manager Console-ban, vagy adja hozzá a NuGet Package Manageren keresztül.",
+    "q6n1r": "A könyvtár telepítése után másolja a megadott sablont egy Java osztályba, és a kód futtatása előtt cserélje ki a helyőrzőt a tényleges kódolt értékre. Vegye figyelembe, hogy ez a megvalósítás egész szám tömböket használ köztes lépésként.",
+    "r4n6v": "Adja hozzá a függőséget a projekthez a `go get github.com/xyproto/base62` futtatásával. Ezzel letölti és telepíti a csomagot.",
+    "u7i9b": "A Go esetében használja a GitHubon elérhető „base62” csomagot.",
+    "u9g6t": "A kód futtatásához telepítenie kell a „base62” csomagot, amely Base62 kódolási és dekódolási képességeket biztosít.",
+    "v5k3r": "A telepítés után cserélje ki a helyőrzőt a dekódolási szakaszban a tényleges Base62 kódolású értékre, és futtassa a parancsfájlt. A könyvtár kezeli helyetted a pufferek és a Base62 karakterláncok közötti átalakítást.",
+    "x2c5e": "Python esetén használja a „base62” könyvtárat a Base62 kódolás és dekódolás kezelésére.",
+    "y3m7k": "Java esetén használja a 'google-authenticator' könyvtár Base62Converter osztályát.",
+    "z7n1m": "Az npm használatával telepítheti az `npm install base62` vagy a `yarn add base62` futtatásával.",
+    "z8qqm2t": "A telepítés után másolja át a megadott sablont egy C# konzolalkalmazásba, és a program futtatása előtt cserélje ki a helyőrzőt a tényleges kódolt értékre."
+}

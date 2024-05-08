@@ -1,0 +1,31 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作，并翻译成中文：
+
+```json
+{
+  "i18n": {
+    "Bacon Cipher Encode": "培根密码编码",
+    "Bacon's cipher or the Baconian cipher is a method of steganography devised by Francis Bacon in 1605. A message is concealed in the presentation of text, rather than its content.": "培根密码或培根式密码是弗朗西斯·培根于1605年发明的一种隐写术。信息被隐藏在文本的表现形式中，而不是其内容中。",
+    "Alphabet": "字母表",
+    "Translation": "翻译",
+    "Keep extra characters": "保留额外字符",
+    "Invert Translation": "反转翻译"
+  }
+}
+```
+
+以下是根据您的示例1格式化的JSON输出：
+
+```json
+{
+  "i18n": {
+    "Bacon Cipher Encode": "培根密码编码",
+    "description": "培根密码或培根式密码是弗朗西斯·培根于1605年发明的一种隐写术。信息被隐藏在文本的表现形式中，而不是其内容中。",
+    "Alphabet": "字母表",
+    "Translation": "翻译",
+    "Keep extra characters": "保留额外字符",
+    "Invert Translation": "反转翻译"
+  }
+}
+```
+
+请注意，这里假设代码中的字段如“name”、“description”等是显示给用户的自然文本的一部分。如果这不是您的意图，请告知我以便进行相应的调整。

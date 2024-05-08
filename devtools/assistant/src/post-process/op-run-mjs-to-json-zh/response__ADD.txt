@@ -1,0 +1,22 @@
+根据您的要求，以下是代码中提取的自然文本，并按照指示转换为JSON格式，其中包含翻译后的中文：
+
+```json
+{
+  "i18n": {
+    "ADD the input with the given key (e.g. <code>fe023da5</code>), MOD 255": "将输入与给定的键（例如 <code>fe023da5</code>）相加，模255"
+  }
+}
+```
+
+以下是提取和翻译的过程：
+
+1. 在代码中找到的自然文本是：
+   - `ADD the input with the given key (e.g. <code>fe023da5</code>), MOD 255`
+
+2. 将这些文本放入名为`i18n`的对象中，键是原文，值设为123。
+
+3. 根据代码的实际功能，将原文翻译为中文，并替换其值：
+   - 原文："ADD the input with the given key (e.g. <code>fe023da5</code>), MOD 255"
+   - 翻译："将输入与给定的键（例如 <code>fe023da5</code>）相加，模255"
+
+4. 输出JSON结果，如上所示。

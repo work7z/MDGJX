@@ -1,0 +1,29 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值是`123`。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换其值。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "ROT47 Brute Force": "ROT47暴力破解",
+    "Try all meaningful amounts for ROT47. Optionally you can enter your known plaintext (crib) to filter the result.": "尝试所有有意义的ROT47偏移量。可选地，您可以输入已知的明文（crib）来过滤结果。",
+    "Sample length": "样本长度",
+    "Sample offset": "样本偏移",
+    "Print amount": "打印数量",
+    "Crib (known plaintext string)": "已知明文字符串（crib）"
+  }
+}
+```
+
+以下是每个键值对的解释：
+
+- "ROT47 Brute Force"：这是操作的名称，我将其翻译为"ROT47暴力破解"。
+- "Try all meaningful amounts for ROT47...plaintext (crib) to filter the result."：这是操作的描述，我将其翻译为"尝试所有有意义的ROT47偏移量...已知的明文（crib）来过滤结果。"。
+- "Sample length"、"Sample offset"、"Print amount"和"Crib (known plaintext string)"：这些都是参数的名称，我已经将它们翻译为中文。
+
+请注意，这些翻译是根据代码上下文进行的，可能需要根据实际使用情况进一步调整。

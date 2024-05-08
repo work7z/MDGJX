@@ -1,0 +1,39 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本赋予一个默认值`123`。
+3. 根据代码的实际功能，对这些文本进行翻译。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "Parse SSH Host Key": "解析SSH主机密钥",
+    "Parses a SSH host key and extracts fields from it.": "解析SSH主机密钥并从中提取字段。",
+    "The key type can be:": "密钥类型可以是：",
+    "ssh-rsa": "SSH-RSA",
+    "ssh-dss": "SSH-DSS",
+    "ecdsa-sha2": "ECDSA-SHA2",
+    "ssh-ed25519": "SSH-ED25519",
+    "The key format can be either Hex or Base64.": "密钥格式可以是十六进制或Base64。",
+    "Key type:": "密钥类型：",
+    "Exponent:": "指数：",
+    "Modulus:": "模数：",
+    "p:": "p值：",
+    "q:": "q值：",
+    "g:": "g值：",
+    "y:": "y值：",
+    "Curve:": "曲线：",
+    "Point:": "点：",
+    "x:": "x值：",
+    "Unsupported key type.": "不支持的密钥类型。",
+    "Parameters:": "参数：",
+    "Invalid input format.": "无效的输入格式。",
+    "Unable to detect input key format.": "无法检测输入密钥格式。"
+  }
+}
+```
+
+请注意，这里只翻译了代码中显示给用户的自然文本，并且假设这些文本是用于用户界面上显示的。对于一些技术术语，例如密钥类型和格式，我保留了其英文原文，因为它们通常在中文技术文档中也以英文形式出现。如果需要进一步的翻译，请告知。

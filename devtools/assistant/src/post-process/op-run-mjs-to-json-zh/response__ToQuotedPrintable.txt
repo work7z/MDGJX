@@ -1,0 +1,15 @@
+根据您的要求，以下是代码中显示给用户的自然文本，提炼为JSON格式，并翻译为中文：
+
+```json
+{
+  "i18n": {
+    "To Quoted Printable": "转换为引用可打印格式",
+    "Quoted-Printable, or QP encoding, is an encoding using printable ASCII characters (alphanumeric and the equals sign '=') to transmit 8-bit data over a 7-bit data path or, generally, over a medium which is not 8-bit clean. It is defined as a MIME content transfer encoding for use in e-mail.": "引用可打印（Quoted-Printable，简称QP编码）是一种使用可打印的ASCII字符（字母数字和等号'='）来在7位数据路径上或通常在不支持8位数据的媒介上传输8位数据的编码方式。它被定义为MIME邮件内容传输编码。",
+    "QP works by using the equals sign '=' as an escape character. It also limits line length to 76, as some software has limits on line length.": "QP编码通过使用等号'='作为转义字符。同时，它还将行长度限制为76，因为某些软件对行长度有限制。",
+    "Encodes mime data.": "编码MIME数据。",
+    "Adds soft line breaks to a string. Lines can't be longer that 76 + <CR><LF> = 78 bytes": "向字符串中添加软换行符。行长度不能超过76 + <CR><LF> = 78字节"
+  }
+}
+```
+
+以上JSON对象中的key是原文，value是对应的中文翻译。这些翻译是根据代码的实际功能以及显示给用户的文本内容进行的。

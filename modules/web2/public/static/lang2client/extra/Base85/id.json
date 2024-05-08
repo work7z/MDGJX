@@ -1,0 +1,19 @@
+{
+    "c1p4b": "Setiap angka desimal kemudian diubah menjadi urutan unik lima karakter Base85. Jika tersisa kurang dari empat byte di bagian akhir, padding mungkin diterapkan.",
+    "d7w2e": "Base85 bekerja dengan membagi data masukan menjadi kelompok empat byte dan mengubah setiap kelompok menjadi angka desimal antara 0 dan 2^32-1.",
+    "f9t1z": "Base85 awalnya dikembangkan untuk merepresentasikan data biner secara efisien dalam dokumen PostScript untuk rasio kompresi yang lebih baik.",
+    "g3h5s": "Bagaimana cara kerja Base85?",
+    "j5s7r": "Bagaimana cara menyandikan/mendekode dengan Base85 di JavaScript?",
+    "k2em5e": "Hal ini menghasilkan string keluaran yang lebih pendek untuk jumlah data masukan yang sama, yang dapat bermanfaat dalam skenario di mana meminimalkan ukuran sangatlah penting.",
+    "p8eq9n": "Anda dapat menggunakan perpustakaan seperti 'base85' atau 'ascii85' untuk pengkodean dan decoding Base85 dalam JavaScript.",
+    "q2n3r": "Saat ini, ini digunakan dalam berbagai aplikasi yang mengutamakan efisiensi ruang dan keterbacaan, seperti dokumen PDF dan protokol jaringan tertentu.",
+    "r9qn8v": "Keuntungan utama Base85 adalah peningkatan efisiensi ruang karena kumpulan karakter yang lebih besar (85 vs. 64 di Base64 atau 32 di Base32).",
+    "u1i2b": "Apa keuntungan menggunakan Base85 dibandingkan Base64 atau Base32?",
+    "v4k6r": "Ini mengkodekan data ke dalam bentuk yang lebih kompak dibandingkan dengan Base64 atau Base32 dengan menggunakan kumpulan karakter yang lebih besar.",
+    "w1x4k": "Ya, ada beberapa varian, termasuk Ascii85 (digunakan dalam PostScript dan PDF), Z85 (ZeroMQ), dan UUencode (format lama). Masing-masing memiliki karakter dan aturan yang sedikit berbeda.",
+    "x9n1b": "Base85 adalah skema pengkodean yang merepresentasikan data biner menggunakan sekumpulan 85 karakter ASCII yang dapat dicetak.",
+    "y6m8k": "Mengapa Base85 dibuat?",
+    "z2t7m": "Apa itu Base85?",
+    "z5m6t": "Contoh penggunaan: `const base85 = require('base85'); const dikodekan = base85.encode('data-Anda'); const didekodekan = base85.decode(dikodekan);`",
+    "z9t7p": "Apakah ada varian spesifik dari Base85?"
+}

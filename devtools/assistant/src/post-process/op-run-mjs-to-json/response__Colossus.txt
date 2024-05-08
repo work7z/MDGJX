@@ -1,0 +1,15 @@
+```json
+{
+  "i18n": {
+    "Colossus is the name of the world's first electronic computer. Ten Colossi were designed by Tommy Flowers and built at the Post Office Research Labs at Dollis Hill in 1943 during World War 2. They assisted with the breaking of the German Lorenz cipher attachment, a machine created to encipher communications between Hitler and his generals on the front lines.": 1,
+    "To learn more, Virtual Colossus, an online, browser based simulation of a Colossus computer is available at virtualcolossus.co.uk.": 1,
+    "A more detailed description of this operation can be found here.": 1,
+    "Invalid ITA2 character : ": 1,
+    "Switch R -Q can only be set to blank, . or x": 1,
+    "Set Total must be between 0000 and 9999": 1,
+    "start must be between 1 and ": 1,
+    "Colossus Printer": 1,
+    "Colossus Counters": 1
+  }
+}
+```

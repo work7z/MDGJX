@@ -1,0 +1,16 @@
+{
+    "CSSNano": "cssnano - GitHub",
+    "HTMLMinifier": "HTMLMinifier - GitHub",
+    "MDN-Minification": "MDN 웹 문서 - 축소",
+    "Minify-Basics-001": "코드나 파일을 축소한다는 것은 무엇을 의미합니까?",
+    "Minify-CLI-Usage-009": "이러한 도구의 대부분에는 개발자가 개발 및 배포 중에 축소 프로세스를 자동화할 수 있는 명령줄 인터페이스(CLI)와 API가 모두 포함되어 있습니다.",
+    "Minify-Def-002": "축소는 기능에 영향을 주지 않고 공백, 주석, 줄바꿈 등 불필요한 문자를 제거하여 코드(HTML, CSS, JavaScript 등)의 크기를 줄이는 프로세스입니다.",
+    "Minify-Example-007k": "예를 들어, 축소 후에는 {0}이 {1}이 될 수 있습니다.",
+    "Minify-How-Works-004": "코드 축소는 어떻게 작동하나요?",
+    "Minify-Process-005": "축소기는 알고리즘을 사용하여 소스 코드의 구조를 분석하고 불필요한 요소를 제거하며 가능한 경우 변수 이름을 줄입니다. 이렇게 하면 코드의 원래 동작을 유지하면서 파일 크기가 작아집니다.",
+    "Minify-Purpose-003": "축소의 주요 목적은 서버와 클라이언트 간에 전송해야 하는 데이터 양을 줄여 웹 사이트 성능을 향상하고 페이지 로드 시간을 줄이는 것입니다.",
+    "Minify-Tools-007": "코드를 축소하는 데 널리 사용되는 도구는 무엇입니까?",
+    "Minify-Tools-List-008": "코드 축소에 널리 사용되는 도구로는 JavaScript용 UglifyJS, UglifyJS의 발전 버전인 Terser, HTML용 HTMLMinifier, CSS용 CSSNano가 있습니다. 이러한 도구는 Gulp 또는 Webpack과 같은 작업 실행기를 사용하여 빌드 프로세스에 통합될 수 있는 경우가 많습니다.",
+    "Terser": "터서-GitHub",
+    "UglifyJS": "UglifyJS - GitHub"
+}

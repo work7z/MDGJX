@@ -1,0 +1,22 @@
+根据您的要求，以下是代码中提取的自然文本，并按照要求转换为JSON格式，然后进行中文翻译：
+
+```json
+{
+  "i18n": {
+    "JA3S Fingerprint": "JA3S指纹",
+    "Generates a JA3S fingerprint to help identify TLS servers based on hashing together values from the Server Hello.": "生成JA3S指纹，以帮助根据服务器问候中的值的哈希识别TLS服务器。",
+    "Input: A hex stream of the TLS Server Hello record application layer.": "输入：TLS服务器问候记录应用层的十六进制流。",
+    "Not handshake data.": "不是握手数据。",
+    "Incorrect handshake length.": "握手长度不正确。",
+    "Not a Server Hello.": "不是服务器问候。",
+    "Not enough data in Server Hello.": "服务器问候中的数据不足。",
+    "Hash digest:": "哈希摘要：",
+    "Full JA3S string:": "完整的JA3S字符串：",
+    "TLS Version:": "TLS版本：",
+    "Cipher Suite:": "加密套件：",
+    "Extensions:": "扩展："
+  }
+}
+```
+
+以上JSON对象`i18n`包含了从代码中提取的显示给用户的自然文本，以及对应的中文翻译。请注意，由于代码中的文本描述性较强，翻译时尽量保持了原文的技术含义和表述方式。

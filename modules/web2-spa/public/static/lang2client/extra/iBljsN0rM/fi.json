@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Kun se on integroitu, kopioi toimitettu malli C++-ohjelmaasi ja korvaa paikkamerkki todellisella koodatulla arvolla ennen ohjelman suorittamista.",
+    "c6p4n": "Korvaa toimitetun mallin dekoodausosan paikkamerkki todellisilla Base58-koodatuilla tavuilla (binäärimerkkijonon etuliitteellä \"b\") ja suorita sitten komentosarja.",
+    "d2w6e": "Kloonaa/lataa arkisto, sisällytä projektiisi base58.h-otsikkotiedosto ja käännä/linkitä lähdetiedostoja vastaan ​​projektin ohjeiden mukaisesti.",
+    "d8w1b": "Lisäasennusta ei tarvita, koska se tulee vakiokirjaston mukana. Varmista kuitenkin, että Python-versiosi on tarpeeksi uusi, jotta se sisältää tämän toiminnon.",
+    "f9t2z": "Lisää riippuvuus Maven-projektiisi lisäämällä `<dependency> <groupId>org.bitcoinj</groupId> <artifactId>bitcoinj-core</artifactId> <version>...</version> </dependency>` missä versio tulee korvata uusimmalla julkaisulla.",
+    "g4h7s": "C++:ssa voit käyttää 'bitcoin-unlimited-libraries' -kirjastoa, joka tarjoaa Base58-toiminnallisuuden.",
+    "j9s5r": "C#:ssa käytä NBitcoin-kirjastoa Base58-koodauksen ja dekoodauksen käsittelemiseen.",
+    "k3m2e": "Kopioi toimitettu malli uuteen Go-tiedostoon, korvaa paikkamerkki todellisella koodatulla arvolla ja suorita tiedosto käyttämällä \"go run yourfile.go\"",
+    "p6e3n": "Asenna paketti NuGetin kautta suorittamalla Package Manager Consolessa \"Install-Package NBitcoin\" tai lisää se NuGet Package Managerin kautta.",
+    "q6n1r": "Kun olet asentanut kirjaston, kopioi mallikoodi Java-luokkaan ja korvaa paikkamerkki todellisella koodatulla arvolla ennen koodin suorittamista.",
+    "r4n6v": "Lisää riippuvuus projektiisi suorittamalla \"go get github.com/btcuite/btcutil\". Tämä lataa ja asentaa paketin.",
+    "u7i9b": "Käytä Goa varten GitHubissa saatavilla olevaa \"btcutil\"-pakettia, erityisesti sen base58-moduulia.",
+    "u9g6t": "Tämän koodin suorittamiseksi sinun on asennettava 'base-x'-paketti, joka tukee Base58-koodausta ja dekoodausta.",
+    "v5k3r": "Tämä kirjasto tarjoaa joustavan API:n peruskoodausten luomiseen, mukaan lukien Base58. Kun olet asentanut, korvaa dekoodausosion paikkamerkki todellisella koodatulla arvolla ja suorita komentosarja.",
+    "x2c5e": "Pythonin sisäänrakennettua 'base58'-moduulia voidaan käyttää Base58-koodaukseen ja -dekoodaukseen.",
+    "y3m7k": "Javaa varten käytä \"bitcoinj\"-kirjastoa, joka sisältää Base58-koodaus- ja dekoodaustoiminnot.",
+    "z7n1m": "Asenna se npm:n kautta suorittamalla \"npm install base-x\" tai \"yarn add base-x\".",
+    "z8em2t": "Asennuksen jälkeen kopioi mukana toimitettu malli C#-konsolisovellukseen ja korvaa paikkamerkki todellisella koodatulla arvolla ennen ohjelman suorittamista."
+}

@@ -1,0 +1,28 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将这些文本作为键值对放入一个名为 `i18n` 的对象中，其中每个键对应的值设为1。以下是提取后的 JSON 格式的结果：
+
+```json
+{
+  "i18n": {
+    "CBOR Decode": 1,
+    "Concise Binary Object Representation (CBOR) is a binary data serialization format loosely based on JSON. Like JSON it allows the transmission of data objects that contain name–value pairs, but in a more concise manner. This increases processing and transfer speeds at the cost of human readability. It is defined in IETF RFC 8949.": 1
+  }
+}
+```
+
+在这个例子中，我们提取了两段自然文本：
+
+1. 类名 `CBOR Decode`。
+2. 类的描述，即 `description` 字段的值。
+
+以下是按照您提供的模板格式化的结果：
+
+```json
+{
+  "i18n": {
+    "CBOR Decode": 1,
+    "Concise Binary Object Representation (CBOR) is a binary data serialization format loosely based on JSON. Like JSON it allows the transmission of data objects that contain name–value pairs, but in a more concise manner. This increases processing and transfer speeds at the cost of human readability. It is defined in IETF RFC 8949.": 1
+  }
+}
+```
+
+这个 JSON 对象可以用于国际化和本地化（i18n）的配置，其中键（key）是原始文本，值（value）设置为1，便于在需要时替换为实际的本地化翻译文本。

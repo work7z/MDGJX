@@ -1,0 +1,28 @@
+根据您的要求，我们需要从给定的代码中提取所有显示给用户的自然文本，并将这些文本放入一个名为`i18n`的对象中，其中每个文本作为键，对应的值为1。
+
+下面是根据您的要求生成的JSON格式：
+
+```json
+{
+  "i18n": {
+    "Avro to JSON": 1,
+    "Converts Avro encoded data into JSON.": 1,
+    "Please provide an input.": 1,
+    "Error parsing Avro file.": 1
+  }
+}
+```
+
+以下是提取过程：
+
+1. 找到所有自然文本，即不包含链接、代码示例、类型定义等的用户可见文本。
+2. 将这些文本作为键值对放入`i18n`对象中。
+
+在上述代码中，以下文本被认为是自然文本：
+
+- "Avro to JSON"（操作名称）
+- "Converts Avro encoded data into JSON."（操作描述）
+- "Please provide an input."（错误信息）
+- "Error parsing Avro file."（错误信息）
+
+这些文本被添加到了`i18n`对象中，每个键对应一个值1，如上面的JSON所示。

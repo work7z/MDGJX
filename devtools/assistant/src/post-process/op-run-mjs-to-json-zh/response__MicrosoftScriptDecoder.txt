@@ -1,0 +1,47 @@
+根据您的要求，下面是将代码中的自然文本提取出来，并以JSON格式表示的过程：
+
+1. 提取的自然文本如下：
+
+   - "Microsoft Script Decoder"
+   - "Decodes Microsoft Encoded Script files that have been encoded with Microsoft's custom encoding. These are often VBS (Visual Basic Script) files that are encoded and renamed with a '.vbe' extention or JS (JScript) files renamed with a '.jse' extention."
+   - "Sample"
+   - "Encoded:"
+   - "Decoded:"
+
+2. 将这些文本放入一个名为`i18n`的对象中，并给每个文本赋予一个默认值123：
+
+   ```json
+   {
+     "i18n": {
+       "Microsoft Script Decoder": 123,
+       "Decodes Microsoft Encoded Script files that have been encoded with Microsoft's custom encoding. These are often VBS (Visual Basic Script) files that are encoded and renamed with a '.vbe' extention or JS (JScript) files renamed with a '.jse' extention.": 123,
+       "Sample": 123,
+       "Encoded:": 123,
+       "Decoded:": 123
+     }
+   }
+   ```
+
+3. 根据代码的实际功能，下面是这些文本的中文翻译：
+
+   - "Microsoft Script Decoder" -> "微软脚本解码器"
+   - "Decodes Microsoft Encoded Script files that have been encoded with Microsoft's custom encoding. These are often VBS (Visual Basic Script) files that are encoded and renamed with a '.vbe' extention or JS (JScript) files renamed with a '.jse' extention." -> "解码使用微软自定义编码编码的脚本文件。这些通常是VBS（Visual Basic Script）文件，它们被编码并重命名为'.vbe'扩展名，或者是JS（JScript）文件，重命名为'.jse'扩展名。"
+   - "Sample" -> "示例"
+   - "Encoded:" -> "已编码："
+   - "Decoded:" -> "已解码："
+
+4. 将翻译后的文本替换到`i18n`对象中：
+
+   ```json
+   {
+     "i18n": {
+       "微软脚本解码器": "微软脚本解码器",
+       "解码使用微软自定义编码编码的脚本文件。这些通常是VBS（Visual Basic Script）文件，它们被编码并重命名为'.vbe'扩展名，或者是JS（JScript）文件，重命名为'.jse'扩展名。": "解码使用微软自定义编码编码的脚本文件。这些通常是VBS（Visual Basic Script）文件，它们被编码并重命名为'.vbe'扩展名，或者是JS（JScript）文件，重命名为'.jse'扩展名。",
+       "示例": "示例",
+       "已编码：": "已编码：",
+       "已解码：": "已解码："
+     }
+   }
+   ```
+
+请注意，由于JSON对象的键值对必须是字符串，所以即使翻译后的文本也被放在了引号内。以上JSON对象即为最终结果。

@@ -1,0 +1,16 @@
+# .gitattributes
+
+# Ignore all files in the 'prettier' directory for language statistics
+modules/node/src/lib/prettier/* linguist-detectable=false
+modules/node/src/lib/prettier/doc.js linguist-detectable=false
+frontend/wailsjs/runtime/runtime.js linguist-detectable=false
+modules/node/src/lib/prettier/third-party.js linguist-detectable=false
+resources/public/purejs linguist-detectable=false
+modules/web/src/lib/core/**/*  linguist-detectable=false
+modules/web/src/lib/core/**/*.mjs  linguist-detectable=false
+**/*.mjs linguist-detectable=false
+**/*.js linguist-detectable=false
+modules/web/src/lib/core/*.mjs  linguist-detectable=false
+modules/web2/app/[lang]/client/src/lib/core/**/*  linguist-detectable=false
+modules/web2/app/[lang]/client/src/lib/core/**/*.mjs  linguist-detectable=false
+modules/web2/app/[lang]/client/src/lib/core/*.mjs  linguist-detectable=false

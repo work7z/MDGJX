@@ -1,0 +1,11 @@
+{
+    "c6p4n": "제공된 템플릿에서 디코드 부분의 자리 표시자를 실제 Base85로 인코딩된 바이트(접두사 'b')로 바꾼 다음 스크립트를 실행합니다.",
+    "d8w1b": "표준 라이브러리의 일부이므로 추가 설치가 필요하지 않습니다. Python 버전이 이 기능을 포함할 만큼 최신 버전인지 확인하세요.",
+    "f9t2z": "`<dependent> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependent>`를 포함하여 Maven 프로젝트에 종속성을 추가합니다. pom.xml 파일을 최신 버전 번호로 변경하세요.",
+    "q6n1r": "라이브러리를 설치한 후 템플릿 코드를 Java 클래스에 복사하고 코드를 실행하기 전에 자리 표시자를 실제 Base85로 인코딩된 값으로 바꿉니다.",
+    "u9g6t": "JavaScript의 경우 Base85 인코딩 및 디코딩을 위해 'base85' 패키지를 설치해야 합니다.",
+    "v5k3r": "설치가 완료되면 디코드 섹션의 자리 표시자를 실제 Base85로 인코딩된 문자열로 바꾸고 스크립트를 실행합니다. 라이브러리는 버퍼와 Base85 문자열 간의 변환을 처리합니다.",
+    "x2c5e": "Python에는 Base85 인코딩 및 디코딩을 지원하는 'base85' 모듈이 내장되어 있습니다.",
+    "y3m7k": "Java의 경우 Base85 인코딩 및 디코딩 지원이 포함된 'commons-codec' 라이브러리를 사용하세요.",
+    "z7n1m": "`npm install base85` 또는 `yarn add base85`를 실행하여 npm을 사용하여 설치하세요."
+}

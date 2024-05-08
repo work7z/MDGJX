@@ -1,0 +1,27 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的i18n对象，并附上中文翻译：
+
+```json
+{
+  "i18n": {
+    "Image Brightness / Contrast": "图像亮度/对比度",
+    "Adjust the brightness or contrast of an image.": "调整图像的亮度和对比度。",
+    "Invalid file type.": "无效的文件类型。",
+    "Error loading image.": "加载图像出错。",
+    "Changing image brightness...": "正在改变图像亮度...",
+    "Changing image contrast...": "正在改变图像对比度...",
+    "Error adjusting image brightness or contrast.": "调整图像亮度或对比度时出错。"
+  }
+}
+```
+
+以下是每个条目的解释：
+
+- "Image Brightness / Contrast"：类名，用于描述该操作的功能。
+- "Adjust the brightness or contrast of an image."：类的描述，解释了操作的目的。
+- "Invalid file type."：错误信息，当文件类型不是图像时显示。
+- "Error loading image."：错误信息，当图像加载失败时显示。
+- "Changing image brightness..."：状态信息，在调整亮度时显示。
+- "Changing image contrast..."：状态信息，在调整对比度时显示。
+- "Error adjusting image brightness or contrast."：错误信息，当调整亮度或对比度失败时显示。
+
+以上JSON对象中的value值“123”被替换为每个自然文本对应的中文翻译。

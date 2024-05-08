@@ -1,0 +1,23 @@
+根据您的要求，以下是代码中提取的自然文本，并按照指示转换为JSON格式，并翻译成中文。
+
+```json
+{
+  "i18n": {
+    "Performs BLAKE2b hashing on the input. BLAKE2b is a flavour of the BLAKE cryptographic hash function that is optimized for 64-bit platforms and produces digests of any size between 1 and 64 bytes. Supports the use of an optional key.": "对输入执行BLAKE2b散列。BLAKE2b是BLAKE加密散列函数的一种变体，专为64位平台优化，可生成1到64字节之间的任意大小的摘要。支持使用可选的密钥。",
+    "Key cannot be greater than 64 bytes": "密钥不能超过64字节",
+    "It is currently {0} bytes.": "当前为{0}字节。",
+    "Unsupported Output Type": "不支持的输出类型"
+  }
+}
+```
+
+在上述JSON中，我使用了占位符`{0}`来替换动态数据（即密钥的长度），这是因为在实际代码中，这部分是动态插入的。
+
+以下是每个文本的来源和翻译解释：
+
+1. `Performs BLAKE2b hashing on the input...`：这是对BLAKE2b散列操作的解释，我将其翻译为对输入执行BLAKE2b散列的描述。
+2. `Key cannot be greater than 64 bytes`：这是代码中抛出的错误信息，指出密钥长度的限制，直接翻译为中文。
+3. `It is currently {0} bytes.`：这是与上一个错误信息一起显示的句子，说明当前密钥的长度，{0}是一个占位符，用于插入实际的密钥长度。
+4. `Unsupported Output Type`：这是当用户尝试使用未支持的输出格式时抛出的错误。
+
+请注意，错误信息保持简洁以便用户易于理解，并且在翻译时尽量保持了原文的技术准确性。

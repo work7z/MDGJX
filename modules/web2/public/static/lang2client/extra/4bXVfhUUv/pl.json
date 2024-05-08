@@ -1,0 +1,11 @@
+{
+    "c6p4n": "W dostarczonym szablonie zastąp symbol zastępczy w części dekodowanej rzeczywistymi bajtami zakodowanymi w formacie Base85 (z przedrostkiem „b”), a następnie wykonaj skrypt.",
+    "d8w1b": "Nie jest wymagana żadna dodatkowa instalacja, ponieważ jest częścią standardowej biblioteki. Upewnij się, że Twoja wersja języka Python jest na tyle aktualna, że ​​zawiera tę funkcję.",
+    "f9t2z": "Dodaj zależność do swojego projektu Maven, włączając `<dependentency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> <version>...</version> </dependent>` w swoim pom.xml z najnowszym numerem wersji.",
+    "q6n1r": "Po zainstalowaniu biblioteki skopiuj kod szablonu do klasy Java i przed uruchomieniem kodu zastąp symbol zastępczy rzeczywistą wartością zakodowaną w formacie Base85.",
+    "u9g6t": "W przypadku JavaScript należy zainstalować pakiet „base85” do kodowania i dekodowania Base85.",
+    "v5k3r": "Po zainstalowaniu zastąp symbol zastępczy w sekcji dekodowania rzeczywistym ciągiem znaków zakodowanym w formacie Base85 i uruchom skrypt. Biblioteka obsługuje konwersję pomiędzy buforami i ciągami Base85.",
+    "x2c5e": "Python ma wbudowany moduł „base85”, który obsługuje kodowanie i dekodowanie Base85.",
+    "y3m7k": "W przypadku języka Java użyj biblioteki „commons-codec”, która obsługuje kodowanie i dekodowanie Base85.",
+    "z7n1m": "Zainstaluj go za pomocą npm, uruchamiając `npm install base85` lub `yarn add base85`."
+}

@@ -1,0 +1,30 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值设为`123`。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换`123`作为值。
+4. 输出JSON结果。
+
+下面是根据上述步骤生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Bzip2 Decompress": "Bzip2解压缩",
+    "Decompresses data using the Bzip2 algorithm.": "使用Bzip2算法解压缩数据。",
+    "Please provide an input.": "请提供输入数据。",
+    "Loading Bzip2...": "正在加载Bzip2...",
+    "Decompressing data...": "正在解压缩数据..."
+  }
+}
+```
+
+以下是每个键值对的解释：
+
+- `"Bzip2 Decompress"`：这是操作的名字，翻译为“Bzip2解压缩”。
+- `"Decompresses data using the Bzip2 algorithm."`：这是操作的描述，翻译为“使用Bzip2算法解压缩数据”。
+- `"Please provide an input."`：这是错误提示信息，翻译为“请提供输入数据”。
+- `"Loading Bzip2..."`：这是加载提示信息，翻译为“正在加载Bzip2...”。
+- `"Decompressing data..."`：这是操作进度提示信息，翻译为“正在解压缩数据...”。
+
+请注意，我没有包括`infoURL`字段，因为它包含一个URL，根据您的要求，自然文本不包括URL链接。同样，我也排除了代码示例中提到的其他字段。

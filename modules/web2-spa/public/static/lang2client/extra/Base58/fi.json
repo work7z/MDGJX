@@ -1,0 +1,20 @@
+{
+    "c5m1b": "Toinen muunnelma, Base58Flickr, eroaa hieman merkistöistään. Se korvaa '+':lla ',' ja '/':llä '-' mukautuen Flickrin URL-tarpeisiin.",
+    "c6p9b": "Jos syötetietojen pituus ei ole jaollinen 8:lla, täyttöä ei käytetä. sen sijaan jokaista ei-täysi ryhmää käsitellään itsenäisesti.",
+    "d3w2e": "Base58 toimii muuntamalla syötetavut suureksi kokonaisluvuksi ja ilmaisemalla tämän kokonaisluvun merkkien yhdistelmänä sen 58 merkkijoukosta (A-Z, a-z, 1-9).",
+    "f4t7z": "Base58 kehitettiin alun perin Bitcoinille edustamaan julkisia osoitteita ja yksityisiä avaimia ilman epäselvyyttä.",
+    "g7h5k": "Miten Base58 toimii?",
+    "j6s3r": "Kuinka koodaan/dekoodaan Base58:lla JavaScriptissä?",
+    "k1m4e": "Se ei kuitenkaan tarjoa aivan samaa tilatehokkuutta kuin Base64 tai Base32, koska se käyttää vähemmän merkkejä aakkosissaan.",
+    "pq5e9n": "Voit käyttää kirjastoja, kuten 'bs58', suorittaaksesi Base58-koodauksen ja dekoodauksen JavaScriptissä.",
+    "q2x8k": "Sen käyttö on laajentunut muihin kryptovaluuttoihin ja skenaarioihin, joissa halutaan ihmisen luettavia, virheenkestäviä merkkijonoja.",
+    "r2n7v": "Suurin etu on parempi luettavuus, koska saman näköisiä merkkejä ei ole otettu huomioon, mikä vähentää virheitä manuaalisen syöttämisen aikana.",
+    "s1b3m": "Toisin kuin Base64 tai Base32, se jättää pois helposti sekoittuvat 0-, O-, I- ja l-merkit, joten se sopii URL-osoitteisiin ja QR-koodeihin.",
+    "u8i5b": "Mitä etuja Base58:n käytöstä on Base64:een tai Base32:een verrattuna?",
+    "v4n9t": "Base58 on koodausmalli, joka esittää binääridataa aakkosnumeeristen merkkien sarjana.",
+    "w3x7k": "Kyllä, joihinkin suosittuihin versioihin kuuluu Base58Check, joka lisää tarkistussumman virheiden havaitsemiseen, jota käytetään yleisesti Bitcoinissa.",
+    "x2z6r": "Mikä on Base58?",
+    "y9m1n": "Miksi Base58 luotiin?",
+    "z1m2t": "Käyttöesimerkki: `const encoded = bs58.encode('oma-data'); const dekoodattu = bs58.decode(encoded);`",
+    "z9t2p": "Onko Base58:sta tiettyjä muunnelmia?"
+}

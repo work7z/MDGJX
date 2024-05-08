@@ -1,0 +1,34 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作，并进行了适当的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Parses a DateTime string in your specified format and displays it in whichever timezone you choose with the following information:": "以您指定的格式解析日期时间字符串，并显示在您选择时区的以下信息：",
+    "Date": "日期",
+    "Time": "时间",
+    "Period (AM/PM)": "上午/下午",
+    "Timezone": "时区",
+    "UTC offset": "UTC偏移",
+    "Daylight Saving Time": "夏令时",
+    "Leap year": "闰年",
+    "Days in this month": "本月天数",
+    "Day of year": "年内天数",
+    "Week number": "周数",
+    "Quarter": "季度",
+    "Run with no input to see format string examples if required.": "如果不输入内容，可以运行以查看格式字符串示例（如有需要）。",
+    "Invalid format.": "无效格式。",
+    "Date:": "日期：",
+    "Time:": "时间：",
+    "Period:": "时段：",
+    "UTC offset:": "UTC偏移：",
+    "Daylight Saving Time:": "夏令时：",
+    "Leap year:": "闰年：",
+    "Days in this month:": "本月天数：",
+    "Day of year:": "年内天数：",
+    "Week number:": "周数：",
+    "Quarter:": "季度："
+  }
+}
+```
+
+在这个JSON对象中，每个键（key）都是原始代码中的自然文本，而值（value）则是简体中文翻译。请注意，由于代码示例中没有提供具体的自然文本，除了功能描述和输出信息之外，其他部分如错误消息和字段标签也被包含在内。如果需要进一步的调整，请告知。

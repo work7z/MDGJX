@@ -1,0 +1,26 @@
+根据您的要求，以下是提炼代码中自然文本并转换为JSON格式的步骤：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值设置为123。
+3. 根据代码的实际功能，将自然文本翻译为中文，并替换对应的值。
+4. 输出JSON结果。
+
+下面是根据以上步骤生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Compare CTPH hashes": "比较CTPH哈希",
+    "Compares two Context Triggered Piecewise Hashing (CTPH) fuzzy hashes to determine the similarity between them on a scale of 0 to 100.": "比较两个上下文触发分段哈希（CTPH）模糊哈希，以确定它们之间的相似度，范围从0到100。",
+    "Incorrect number of samples.": "样本数量不正确"
+  }
+}
+```
+
+以下是详细的步骤说明：
+
+- 第一个自然文本是类名`Compare CTPH hashes`，翻译为“比较CTPH哈希”。
+- 第二个自然文本是类的描述，翻译为“比较两个上下文触发分段哈希（CTPH）模糊哈希，以确定它们之间的相似度，范围从0到100。”
+- 第三个自然文本是错误信息`Incorrect number of samples`，翻译为“样本数量不正确”。
+
+请注意，我没有包含`infoURL`字段，因为它包含一个HTTP链接，并且根据您的要求，链接不应该被包含在内。同样，我也排除了其他指定的字段。

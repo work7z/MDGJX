@@ -1,0 +1,24 @@
+根据您的要求，以下是提取的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "Converts a UNIX timestamp to a datetime string.": "将UNIX时间戳转换为日期时间字符串。",
+    "A UNIX timestamp is a 32-bit value representing the number of seconds since January 1, 1970 UTC (the UNIX epoch).": "UNIX时间戳是一个32位值，表示自1970年1月1日UTC（UNIX纪元）以来的秒数。",
+    "Unrecognised unit": "未识别的单位"
+  }
+}
+```
+
+以下是详细步骤：
+
+1. 从代码中提取的自然文本如下：
+   - "Converts a UNIX timestamp to a datetime string."
+   - "A UNIX timestamp is a 32-bit value representing the number of seconds since January 1, 1970 UTC (the UNIX epoch)."
+   - "Unrecognised unit"
+
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值是`123`。
+
+3. 根据代码的实际功能，将`i18n`中的值翻译为中文。
+
+4. 输出结果如上所示。

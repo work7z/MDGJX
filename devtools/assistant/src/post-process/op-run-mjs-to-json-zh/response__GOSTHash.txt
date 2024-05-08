@@ -1,0 +1,16 @@
+根据您的要求，以下是代码中显示给用户的自然文本，提炼成JSON格式，并翻译成中文：
+
+```json
+{
+  "i18n": {
+    "GOST Hash": "GOST哈希",
+    "The GOST hash function, defined in the standards GOST R 34.11-94 and GOST 34.311-95 is a 256-bit cryptographic hash function. It was initially defined in the Russian national standard GOST R 34.11-94 <i>Information Technology – Cryptographic Information Security – Hash Function</i>. The equivalent standard used by other member-states of the CIS is GOST 34.311-95.<br><br>This function must not be confused with a different Streebog hash function, which is defined in the new revision of the standard GOST R 34.11-2012.<br><br>The GOST hash function is based on the GOST block cipher.": "GOST哈希函数，在GOST R 34.11-94和GOST 34.311-95标准中定义，是一个256位的加密哈希函数。最初在俄罗斯国家标准GOST R 34.11-94《信息技术 - 密码信息安全 - 哈希函数》中定义。其他CIS成员国使用的等效标准是GOST 34.311-95。<br><br>这个函数不应与在GOST R 34.11-2012标准新修订版中定义的不同Streebog哈希函数混淆。<br><br>GOST哈希函数基于GOST块密码。",
+    "GOST 28147 (1994)": "GOST 28147（1994）",
+    "GOST R 34.11 (Streebog, 2012)": "GOST R 34.11（Streebog, 2012）",
+    "Digest length": "摘要长度",
+    "sBox": "S盒"
+  }
+}
+```
+
+请注意，我已经将原文中的HTML标签 `<i>` 去除，并假设它不会影响文本的展示。同时，我保留了代码中提到的专业术语，如“GOST”和“Streebog”，因为它们是特定于加密领域的术语，可能没有直接的中文对应词汇。如果需要对这些术语进行解释，请告知我以便进一步提供帮助。

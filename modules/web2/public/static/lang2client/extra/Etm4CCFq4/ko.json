@@ -1,0 +1,20 @@
+{
+    "md5-cpp-install-openssl-0002": "시스템에 OpenSSL을 설치하고 C++ 애플리케이션을 빌드할 때 'libssl' 및 'libcrypto' 라이브러리에 연결하세요.",
+    "md5-cpp-openssl-0001": "C++에서는 OpenSSL 라이브러리를 사용하여 MD5 해시를 생성합니다. OpenSSL을 설치하고 프로젝트에 연결해야 합니다.",
+    "md5-cpp-use-openssl-0003": "이 코드 조각은 입력 문자열을 가져와서 OpenSSL의 MD5 API를 사용하여 MD5 해시를 계산하고 해시를 16진수 문자열로 반환하는 'getMD5' 함수를 생성합니다. 이 코드를 C++ 프로그램에 붙여넣고 원하는 입력으로 'getMD5' 함수를 호출하세요.",
+    "md5-csharp-built-in-0001": "C#에서는 'System.Security.Cryptography.MD5' 클래스가 MD5 해시를 생성하는 데 사용됩니다.",
+    "md5-csharp-no-install-0002": ".NET Framework/Core의 일부이므로 외부 라이브러리 설치가 필요하지 않습니다.",
+    "md5-csharp-use-0003": "이 코드 조각은 MD5 인스턴스를 생성하고, 입력 문자열을 바이트로 변환하고, 해시를 계산하고, 마지막으로 해시를 Base64 형식으로 인코딩합니다. 이 코드를 C# 애플리케이션의 진입점에 배치하고 실행하여 Base64로 인코딩된 MD5 해시를 얻습니다.",
+    "md5-java-built-in-0001": "Java는 'java.security.MessageDigest' 클래스를 사용하여 MD5 해시를 생성합니다.",
+    "md5-java-imports-0002": "결과를 해싱하고 인코딩하려면 'java.security.MessageDigest' 및 'java.util.Base64'를 가져와야 합니다.",
+    "md5-java-use-0003": "코드 조각은 MD5 다이제스트 알고리즘의 인스턴스를 가져와 입력 문자열의 바이트로 업데이트한 다음 결과 해시를 Base64 문자열로 인코딩합니다. 이 코드를 Java 클래스에 복사하고 해당 기본 메서드를 실행하여 Base64로 인코딩된 MD5 해시를 가져옵니다.",
+    "md5-nodejs-built-in-0001": "Node.js에서는 MD5 해시를 생성하는 데 내장된 'crypto' 모듈이 사용됩니다.",
+    "md5-nodejs-no-install-0002": "Node.js에는 'crypto'가 사전 설치되어 있으므로 외부 라이브러리 설치가 필요하지 않습니다.",
+    "md5-nodejs-use-0003": "이 코드 조각은 `createHash('md5')`를 사용하여 해시 개체를 생성하고 이를 입력 문자열로 업데이트한 다음 `.digest('hex')`를 통해 다이제스트를 16진수 형식으로 변환합니다. 이 코드를 Node.js 스크립트에 붙여넣고 실행하여 입력 값의 MD5 해시를 가져옵니다.",
+    "md5-php-built-in-0001": "PHP에는 MD5 해시를 생성하기 위한 내장 함수 'md5()'가 있습니다.",
+    "md5-php-no-install-0002": "PHP에는 'md5()'가 미리 설치되어 있으므로 외부 라이브러리 설치가 필요하지 않습니다.",
+    "md5-php-use-0003": "이 간단한 예제는 제공된 입력 문자열에서 PHP 'md5()' 함수를 호출하는 'getMD5' 함수를 정의합니다. 이 코드를 PHP 파일에 복사하고 .php 확장자로 저장한 후 웹 서버에서 실행하거나 명령줄을 통해 입력 값의 MD5 해시를 확인하세요.",
+    "md5-python-built-in-0001": "Python은 MD5 해시를 생성하기 위해 내장된 'hashlib' 라이브러리를 사용합니다.",
+    "md5-python-no-install-0002": "Python에는 'hashlib'이 표준으로 제공되므로 추가 설치가 필요하지 않습니다.",
+    "md5-python-use-0003": "제공된 템플릿은 MD5 해시 개체를 생성하기 전에 입력 문자열을 바이트로 인코딩합니다. 그런 다음 '.hexdigest()' 메서드가 해시 개체에서 호출되어 MD5 해시를 16진수 형식으로 검색합니다. 이 코드를 Python 스크립트에 복사하고 실행하여 MD5 해시를 얻으세요."
+}

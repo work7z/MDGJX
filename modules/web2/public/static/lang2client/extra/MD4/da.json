@@ -1,0 +1,23 @@
+{
+    "MD4-Advantages-011": "Hvad er fordelene ved at bruge MD4?",
+    "MD4-AlgorithmDetails-010": "MD4 Algoritme detaljer",
+    "MD4-Applications-018": "Hvilke applikationer har brugt eller bruger stadig MD4?",
+    "MD4-Breakdown-016": "Algoritmens designfejl har ført til praktiske angreb, der muliggør lette hash-kollisioner og endda delvise preimage-angreb, hvilket gør MD4 uegnet til enhver sikker kryptografisk brug i dag.",
+    "MD4-CollisionSecurity-015": "MD4 har flere kryptografiske svagheder, herunder modtagelighed for kollisionsangreb. Dette betyder, at to forskellige input kan producere det samme hash-output, hvilket gør det usikkert for applikationer, der kræver kollisionsmodstand eller stærk beskedintegritet.",
+    "MD4-Def-002": "MD4 (Message-Digest Algorithm 4) er en kryptografisk hash-funktion designet af Ronald Rivest i 1990. Den producerer en 128-bit hashværdi for enhver given inputmeddelelse.",
+    "MD4-DigitalSignature-Risks-021": "Risici ved brug af MD4 til digitale signaturer",
+    "MD4-Disadvantages-014": "Hvad er ulemperne og sikkerhedsproblemerne med MD4?",
+    "MD4-FAQ-001": "Hvad er MD4?",
+    "MD4-HistoricalUse-019": "Historisk set blev MD4 brugt i digitale signaturer, kontrol af filintegritet og softwareopdateringer. Men på grund af deres sårbarheder er disse applikationer stort set gået over til mere sikre alternativer som SHA-256 og SHA-3.",
+    "MD4-History-004": "Hvordan blev MD4 udviklet, og hvad er dens historiske betydning?",
+    "MD4-Implementation-013": "Det er blevet bredt implementeret og standardiseret på tværs af forskellige platforme og sprog, hvilket giver nem integration i eksisterende systemer, selvom denne fordel opvejes af dens sikkerhedsproblemer i moderne sammenhænge.",
+    "MD4-InsecurityExamples-017": "Eksempler på MD4-sikkerhedsnedbrud",
+    "MD4-LegacySystems-020": "MD4 kan stadig eksistere i ældre systemer, men brugen af ​​det frarådes i alle sammenhænge, ​​hvor sikkerhed er et problem. Moderne standarder anbefaler ikke længere MD4 til kryptografiske formål.",
+    "MD4-Operation-007": "Hvordan fungerer MD4-betjening?",
+    "MD4-Origin-005": "MD4 var en udvikling af MD2 og MD3, beregnet til at give hurtigere ydeevne og samtidig bevare sikkerhedsegenskaberne. Det blev dog tydeligt, at MD4 har flere sikkerhedssvagheder.",
+    "MD4-Process-008": "MD4 behandler inputmeddelelsen ved at udfylde den til et multiplum af 512 bit og opdele den i 16-ordsblokke. Algoritmen opererer derefter på disse blokke ved hjælp af fire behandlingsrunder, der involverer bitvise operationer, modulære tilføjelser og ikke-lineære funktioner.",
+    "MD4-Purpose-003": "MD4s formål er at sikre dataintegritet ved at generere et digitalt fingeraftryk i fast størrelse, der kan bruges til at verificere ægtheden og integriteten af ​​de originale data.",
+    "MD4-Rounds-009": "Efter at alle blokke er behandlet, transformeres den resulterende interne tilstand til den endelige 128-bit hashværdi.",
+    "MD4-Speed-012": "MD4 blev oprindeligt designet til at være hurtigere end sine forgængere, hvilket gjorde den populær til applikationer, der krævede hurtig hashing på tidspunktet for dens introduktion.",
+    "MD4-Successors-006": "På trods af sine mangler lagde MD4 grundlaget for efterfølgende hash-funktioner som MD5 og SHA-1, som forbedrede dets design, men som også har arvet nogle af dets sårbarheder over tid."
+}

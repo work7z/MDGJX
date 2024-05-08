@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提炼英文文本。
+2. 将这些文本放入一个名为`i18n`的对象中，并给每个文本分配一个默认值`123`。
+3. 根据代码的实际功能，给出这些文本的中文翻译。
+4. 输出最终的JSON结果。
+
+【JSON结果】
+
+```json
+{
+  "i18n": {
+    "Derive EVP key": "派生EVP密钥",
+    "This operation performs a password-based key derivation function (PBKDF) used extensively in OpenSSL. In many applications of cryptography, user security is ultimately dependent on a password, and because a password usually can't be used directly as a cryptographic key, some processing is required.": "此操作执行基于密码的密钥派生函数（PBKDF），该函数在OpenSSL中广泛使用。在许多密码学应用中，用户安全最终依赖于密码，因为密码通常不能直接用作加密密钥，所以需要进行一些处理。",
+    "A salt provides a large set of keys for any given password, and an iteration count increases the cost of producing keys from a password, thereby also increasing the difficulty of attack.": "一个盐（salt）为任何给定的密码提供大量密钥，迭代次数增加了从密码生成密钥的成本，从而也增加了攻击的难度。",
+    "If you leave the salt argument empty, a random salt will be generated.": "如果您留空盐（salt）参数，将生成一个随机盐。",
+    "Passphrase": "密码短语",
+    "Key size": "密钥大小",
+    "Iterations": "迭代次数",
+    "Hashing function": "哈希函数",
+    "Salt": "盐"
+  }
+}
+```
+
+请注意，这里没有包括`exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`、`type`字段，因为它们不符合您要求中提到的自然文本的定义。同时，由于代码示例中并没有提供具体的`exampleInput`和`exampleOutput`文本，所以也没有包括这些内容。如果需要，可以进一步添加。

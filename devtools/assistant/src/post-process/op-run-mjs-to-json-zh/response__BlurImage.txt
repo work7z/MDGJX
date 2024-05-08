@@ -1,0 +1,23 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式呈现，其中包含翻译后的中文：
+
+```json
+{
+  "i18n": {
+    "Blur Image": "模糊图像",
+    "Applies a blur effect to the image.": "对图像应用模糊效果。",
+    "Gaussian blur is much slower than fast blur, but produces better results.": "高斯模糊比快速模糊慢，但效果更好。",
+    "Invalid file type.": "无效的文件类型。",
+    "Error loading image.": "加载图像错误。",
+    "Fast blurring image...": "正在快速模糊图像...",
+    "Gaussian blurring image...": "正在应用高斯模糊..."
+  }
+}
+```
+
+以下是提取自然文本的步骤和翻译说明：
+
+1. 提取所有显示给用户的自然文本，不包括链接、示例输入输出、输入输出类型、模块类型等。
+2. 将这些文本放入一个名为`i18n`的对象中，键（key）是原始文本，值（value）我使用了"123"作为占位符，但在这里我直接替换为相应的中文翻译。
+3. 翻译是基于代码的功能和上下文进行的，以确保准确性和贴切性。
+
+输出的JSON格式如上面的示例所示，其中包含了代码中出现的所有自然文本及其中文翻译。

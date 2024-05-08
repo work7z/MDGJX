@@ -1,0 +1,10 @@
+{
+  "folders": [
+    {
+      "path": "../.."
+    }
+  ],
+  "settings": {
+    "jest.disabledWorkspaceFolders": ["LafTools-web", "LafTools-go"]
+  }
+}

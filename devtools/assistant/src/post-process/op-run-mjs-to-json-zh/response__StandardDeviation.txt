@@ -1,0 +1,41 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式，并翻译成中文的过程：
+
+1. 提炼文本到JSON对象：
+
+```json
+{
+  i18n: {
+    "Standard Deviation": 123,
+    "Computes the standard deviation of a number list. If an item in the string is not a number it is excluded from the list.<br><br>e.g. <code>0x0a 8 .5</code> becomes <code>4.089281382128433</code>": 123,
+    "Visit Wikipedia for more information on Standard Deviation": 123
+  }
+}
+```
+
+2. 翻译JSON对象中的文本：
+
+```json
+{
+  i18n: {
+    "Standard Deviation": "标准差",
+    "Computes the standard deviation of a number list. If an item in the string is not a number it is excluded from the list.<br><br>e.g. <code>0x0a 8 .5</code> becomes <code>4.089281382128433</code>": "计算数字列表的标准差。如果字符串中的项不是数字，则将其从列表中排除。<br><br>例如：<code>0x0a 8 .5</code> 变成 <code>4.089281382128433</code>",
+    "Visit Wikipedia for more information on Standard Deviation": "访问维基百科获取有关标准差的更多信息"
+  }
+}
+```
+
+注意：原文中的`infoURL`字段对应的文本没有直接出现在代码中，但根据上下文，我假设它可能是"Visit Wikipedia for more information on Standard Deviation"。如果这不是您想要的，请相应地调整。
+
+3. 输出JSON结果：
+
+```json
+{
+  "i18n": {
+    "Standard Deviation": "标准差",
+    "Computes the standard deviation of a number list. If an item in the string is not a number it is excluded from the list.<br><br>e.g. <code>0x0a 8 .5</code> becomes <code>4.089281382128433</code>": "计算数字列表的标准差。如果字符串中的项不是数字，则将其从列表中排除。<br><br>例如：<code>0x0a 8 .5</code> 变成 <code>4.089281382128433</code>",
+    "Visit Wikipedia for more information on Standard Deviation": "访问维基百科获取有关标准差的更多信息"
+  }
+}
+```
+
+这就是根据您的需求，将代码中的自然文本提炼并翻译成中文的过程。

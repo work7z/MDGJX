@@ -1,0 +1,27 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作，并翻译成中文：
+
+```json
+{
+  "i18n": {
+    "Register": "注册",
+    "Extract data from the input and store it in registers which can then be passed into subsequent operations as arguments. Regular expression capture groups are used to select the data to extract.": "从输入中提取数据并将其存储在寄存器中，然后可以作为后续操作的参数传递。使用正则表达式的捕获组来选择要提取的数据。",
+    "To use registers in arguments, refer to them using the notation $Rn where n is the register number, starting at 0.": "要在参数中使用寄存器，请使用表示法$Rn，其中n是寄存器编号，从0开始。",
+    "Registers can be escaped in arguments using a backslash. e.g. \\$R0 would become $R0 rather than Test.": "可以在参数中使用反斜杠对寄存器进行转义。例如，\\$R0将变成$R0，而不是Test。",
+    "Case insensitive": "不区分大小写",
+    "Multiline matching": "多行匹配",
+    "Dot matches all": "点匹配所有"
+  }
+}
+```
+
+在上述JSON对象中，每个key是原始代码中的自然文本，而value "123" 被替换为了相应的中文翻译。以下是每个条目的解释：
+
+- "Register"：操作的名字，直接翻译为“注册”。
+- "Extract data..."：操作的描述，解释了如何使用正则表达式提取数据并存储在寄存器中。
+- "To use registers..."：描述了如何在参数中引用寄存器。
+- "Registers can be escaped..."：说明了如何在参数中使用转义字符来正确引用寄存器。
+- "Case insensitive"：表示正则表达式匹配时不区分大小写。
+- "Multiline matching"：表示正则表达式可以跨越多行进行匹配。
+- "Dot matches all"：表示正则表达式中的点（.）可以匹配任意字符，包括换行符。
+
+以上翻译尽量保持了原文的技术含义和表述的准确性。

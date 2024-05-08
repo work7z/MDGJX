@@ -1,0 +1,32 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤：
+
+1. 提取自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值是`123`。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换它的值。
+4. 输出JSON结果。
+
+以下是JSON格式的输出：
+
+```json
+{
+  "i18n": {
+    "Extract file paths": "提取文件路径",
+    "Extracts anything that looks like a Windows or UNIX file path.": "提取看起来像Windows或UNIX文件路径的任何内容。",
+    "Note that if UNIX is selected, there will likely be a lot of false positives.": "注意，如果选择了UNIX，可能会有很多误报。",
+    "Windows": "Windows",
+    "UNIX": "UNIX",
+    "Display total": "显示总数",
+    "Sort": "排序",
+    "Unique": "唯一"
+  }
+}
+```
+
+以下是解释：
+
+- "Extract file paths"：此操作的主要功能是提取文件路径，因此翻译为“提取文件路径”。
+- "Extracts anything that looks like a Windows or UNIX file path."：描述了该操作的功能，翻译为“提取看起来像Windows或UNIX文件路径的任何内容。”。
+- "Note that if UNIX is selected, there will likely be a lot of false positives."：警告用户关于UNIX选项可能导致的问题，翻译为“注意，如果选择了UNIX，可能会有很多误报。”。
+- "Windows", "UNIX", "Display total", "Sort", "Unique"：这些是参数名称，直接翻译为“Windows”、“UNIX”、“显示总数”、“排序”和“唯一”。
+
+请注意，由于这些文本是从代码上下文中提取的，翻译可能需要根据实际使用场景进一步调整。

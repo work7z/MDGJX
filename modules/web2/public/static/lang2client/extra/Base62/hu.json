@@ -1,0 +1,20 @@
+{
+    "c5p1b": "A párnázást nem használják; a kódolt kimenet hossza közvetlenül függ a bemeneti adatok méretétől.",
+    "c8me6b": "Az egyéni Base62-szerű sémák adott alkalmazásokhoz szabhatók, de általában ugyanazt az elvet követik, hogy nagyobb karakterkészletet használnak, mint a Base64 vagy Base32.",
+    "d2w4e": "Más alapkonverziós rendszerekhez hasonlóan a Base62 úgy működik, hogy a bemeneti bájtokat nagy egész számokká alakítja, majd a 62 karakteres készletből származó karakterek kombinációjaként fejezi ki.",
+    "f1t2z": "A Base62-t úgy fejlesztették ki, hogy rövidebb, URL-biztos alternatívát nyújtson a Base64-hez képest, különösen egyedi azonosítók és rövid URL-ek esetében.",
+    "g8h7s": "Hogyan működik a Base62?",
+    "j4s6r": "Hogyan kódolhatok/dekódolhatok Base62-vel JavaScriptben?",
+    "k9em5e": "Ez ideálissá teszi olyan helyzetekben, ahol tömör, URL-barát azonosítóra van szükség az olvashatóság feláldozása nélkül.",
+    "p9e1n": "Használhat olyan könyvtárakat, mint a „base-x” vagy a „base62” a Base62 kódolásához és dekódolásához JavaScriptben.",
+    "q7n3r": "Emellett elkerüli az olyan kétértelmű karaktereket, mint az „O” és „0”, „I” és „l”, amelyek emberi átírási hibákhoz vezethetnek.",
+    "r6nq2v": "A Base62 elsődleges előnye a megnövekedett helyhatékonyság a Base32-nél nagyobb karakterkészletnek köszönhetően, de nem tartalmaz nem alfanumerikus karaktereket a Base64-ben.",
+    "u3i8b": "Milyen előnyei vannak a Base62 használatának a Base64-hez vagy a Base32-höz képest?",
+    "v3k5r": "A karakterkészlet tartalmazza az összes kis- és nagybetűt (A-Z, a-z) és számjegyeket (0-9), így a Base64-hez vagy a Base32-hez képest kompaktabb megjelenítést biztosít.",
+    "w2x9qk": "Bár magának a Base62-nek nincsenek jelentős változatai, egyes megvalósítások kissé eltérhetnek a karakterkészlet kiválasztásában, például a Base64-ben általánosan használt „+” vagy „/” kizárása.",
+    "x7n1m": "A Base62 egy olyan kódolási séma, amely a bináris adatokat 62 alfanumerikus karakterből álló sorozatként jeleníti meg.",
+    "y3m9k": "Miért jött létre a Base62?",
+    "z2m7t": "Példa a használatra: `const base62 = request('base62'); const encoded = base62.encode('sajat-adat'); const dekódolva = base62.decode(encoded);`",
+    "z4t9b": "Mi az a Base62?",
+    "z7t1p": "Vannak a Base62-nek konkrét változatai?"
+}

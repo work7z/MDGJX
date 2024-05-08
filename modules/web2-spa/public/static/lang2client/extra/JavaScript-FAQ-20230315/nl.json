@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "Wat is JavaScript?",
+    "JS-DOM-API-007": "Hoe werkt JavaScript samen met de DOM?",
+    "JS-DOM-API-Explanation-008": "JavaScript biedt een Document Object Model (DOM) API om HTML en CSS te manipuleren, waardoor ontwikkelaars inhoud, stijl en gebeurtenislisteners dynamisch kunnen wijzigen.",
+    "JS-DOM-Example-009": "U kunt bijvoorbeeld een element selecteren en de tekstinhoud ervan wijzigen: `document.getElementById('myElement').textContent = 'Nieuwe tekst';`",
+    "JS-Data-Types-010": "Wat zijn de gegevenstypen in JavaScript?",
+    "JS-Data-Types-List-011": "JavaScript ondersteunt verschillende gegevenstypen, waaronder primitieve gegevenstypen zoals string, getal, boolean, null, ongedefinieerd en symbool, evenals complexe typen zoals object en array.",
+    "JS-Def-002": "JavaScript (JS) is een geïnterpreteerde programmeertaal op hoog niveau die veel wordt gebruikt voor het maken van webapplicaties, het verbeteren van gebruikersinterfaces en het bouwen van serverlogica met Node.js.",
+    "JS-Event-Loop-013": "Wat is de gebeurtenislus in JavaScript?",
+    "JS-Event-Loop-Explanation-014": "De gebeurtenislus is een kernonderdeel van het gelijktijdigheidsmodel van JavaScript, dat asynchrone uitvoering mogelijk maakt via callbacks, beloftes en async/await.",
+    "JS-Event-Loop-Process-015": "Het voert eerst het hoofdscript uit en voert vervolgens alle callback-functies uit wanneer de bijbehorende gebeurtenissen (zoals gebruikersinvoer of netwerkreacties) plaatsvinden, en beheert deze via een wachtrijsysteem.",
+    "JS-Function-Syntax-006": "Functies worden gedefinieerd met behulp van het trefwoord 'function', gevolgd door de functienaam en parameters tussen haakjes. De hoofdtekst van de functie staat tussen accolades: `function greet(name) { console.log(`Hallo, ${name}!`); }`",
+    "JS-Purpose-003": "Het werd oorspronkelijk ontwikkeld door Brendan Eich bij Netscape in 1995 en is sindsdien uitgegroeid tot een van de meest populaire talen, ondersteund door alle grote webbrowsers en platforms zoals Electron en React Native.",
+    "JS-Syntax-004": "Wat is de basissyntaxis van JavaScript?",
+    "JS-Type-Checking-012": "Typecontrole kan worden uitgevoerd met behulp van constructors (`typeof value === 'string'`) of de `instanceof` operator voor objecten die overerven van ingebouwde constructors (bijvoorbeeld `value instanceof Array`).",
+    "MDN-DOM-API": "MDN Web Docs - Documenten manipuleren",
+    "MDN-Event-Loop": "MDN-webdocumenten - Gebeurtenislus",
+    "MDN-JS-Guide": "MDN Web Docs - JavaScript-handleiding",
+    "MDN-JS-Types": "MDN Web Docs - Gegevenstypen en gegevensstructuren"
+}

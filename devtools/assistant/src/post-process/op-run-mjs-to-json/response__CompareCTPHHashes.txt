@@ -1,0 +1,31 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将这些文本放入一个名为 `i18n` 的对象中，其键是文本本身，值设置为1。下面是根据您提供的代码片段生成的 JSON 格式的结果：
+
+```json
+{
+  "i18n": {
+    "Compare CTPH hashes": 1,
+    "Compares two Context Triggered Piecewise Hashing (CTPH) fuzzy hashes to determine the similarity between them on a scale of 0 to 100.": 1
+  }
+}
+```
+
+在这个例子中，我们只提取了以下两段自然文本：
+
+1. 类名 `Compare CTPH hashes`
+2. 类描述 "Compares two Context Triggered Piecewise Hashing (CTPH) fuzzy hashes to determine the similarity between them on a scale of 0 to 100."
+
+其他的文本，如 `exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`、`type` 字段以及链接等，根据您的要求，没有被包含在内。 
+
+以下是按照您提供的参考格式，将结果放入 `i18n` 对象中的完整 JSON 示例：
+
+```json
+{
+  "i18n": {
+    "Compare CTPH hashes": 1,
+    "Compares two Context Triggered Piecewise Hashing (CTPH) fuzzy hashes to determine the similarity between them on a scale of 0 to 100.": 1
+    // place any additional i18n keys here
+  }
+}
+```
+
+请注意，这个 JSON 对象可以作为一个配置文件的一部分，用于国际化和本地化应用程序中显示的文本。值 `1` 仅仅表示这个键值对的存在，实际应用中可能需要替换为具体的翻译文本或其他标识符。

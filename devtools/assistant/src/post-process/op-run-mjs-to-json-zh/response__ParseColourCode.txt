@@ -1,0 +1,17 @@
+根据您的要求，以下是代码中显示给用户的自然文本的JSON格式提取，以及相应的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Parse colour code": "解析颜色代码",
+    "Converts a colour code in a standard format to other standard formats and displays the colour itself.": "将标准格式的颜色代码转换为其他标准格式并显示颜色本身。",
+    "Example inputs": "示例输入",
+    "Hex - #d9edf7": "十六进制 - #d9edf7",
+    "RGB or RGBA - rgb(217,237,247) or rgba(217,237,247,1)": "RGB或RGBA - rgb(217,237,247) 或 rgba(217,237,247,1)",
+    "HSL or HSLA - hsl(200, 65%, 91%) or hsla(200, 65%, 91%, 1)": "HSL或HSLA - hsl(200, 65%, 91%) 或 hsla(200, 65%, 91%, 1)",
+    "CMYK - cmyk(0.12, 0.04, 0.00, 0.03)": "CMYK - cmyk(0.12, 0.04, 0.00, 0.03)"
+  }
+}
+```
+
+以上JSON对象中的每个key都是代码中出现的自然文本，而value是相应的中文翻译。请注意，这里没有包含代码示例和链接，因为它们不符合您的要求。

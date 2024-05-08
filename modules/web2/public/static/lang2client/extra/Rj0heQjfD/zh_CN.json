@@ -1,0 +1,17 @@
+{
+    "YAML-Advantages-001": "YAML 的优点是什么？",
+    "YAML-Advantages-002": "YAML 易于人类阅读且易于编写，使其成为配置文件的流行选择。",
+    "YAML-Advantages-003": "它也易于阅读和编写，并且通常与所有编程语言结合使用。",
+    "YAML-Basics-001": "什么是 YAML？",
+    "YAML-Def-002": "YAML（YAML Ain't Markup Language）是一种人类可读的数据序列化标准，可以与所有编程语言结合使用，通常用于编写配置文件。",
+    "YAML-Disadvantages-001": "YAML 的缺点是什么？",
+    "YAML-Disadvantages-002": "YAML 可能难以解析并且容易出错。",
+    "YAML-Disadvantages-003": "它也不像其他数据序列化格式（例如 JSON）那样得到广泛支持。",
+    "YAML-Example-001": "YAML 文件是什么样的？",
+    "YAML-Example-002": "一个简单的 YAML 文件由键值对组成，每对用冒号分隔。",
+    "YAML-Example-003": "例如，YAML 文件可能如下所示：",
+    "YAML-Purpose-003": "它被设计为易于人类阅读，通常用于以易于读写的格式表达数据结构和序列化。",
+    "YAML-Usage-001": "YAML 有何用途？",
+    "YAML-Usage-002": "YAML 通常用于配置文件以及存储或传输数据的应用程序。",
+    "YAML-Usage-003": "它通常用于存储或传输数据的应用程序（例如配置文件）以及存储或传输数据的应用程序。"
+}

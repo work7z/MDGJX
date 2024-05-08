@@ -1,0 +1,25 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是文本本身，值设为123。
+3. 根据代码的实际功能，将键对应的值翻译成中文。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "LZMA Decompress": "LZMA解压缩",
+    "Decompresses data using the Lempel-Ziv-Markov chain Algorithm.": "使用Lempel-Ziv-Markov链算法解压缩数据。",
+    "Failed to decompress input: ${error.message}": "解压缩输入失败：${error.message}",
+    "Decompressing input: ${(percent * 100).toFixed(2)}%": "正在解压缩输入：${(percent * 100).toFixed(2)}%"
+  }
+}
+```
+
+说明：
+- 键值对中的键是代码中显示给用户的自然文本。
+- 键值对中的值是这些文本的中文翻译，其中占位符`${error.message}`和`${(percent * 100).toFixed(2)}`保持原样，以便在实际应用中动态替换。
+
+请注意，由于代码中并没有提供具体的错误信息或百分比数值，我在翻译中保留了相应的占位符。在实际应用中，这些占位符会被实际的错误信息或进度百分比所替换。

@@ -1,0 +1,23 @@
+根据您的要求，以下是提炼出的自然文本并将其转换为JSON格式的i18n对象，以及对应的中文翻译。
+
+```json
+{
+  "i18n": {
+    "CRC-16 Checksum": "CRC-16校验和",
+    "A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data.": "循环冗余校验（CRC）是一种常用的错误检测码，用于数字网络和存储设备中检测原始数据意外的更改。"
+  }
+}
+```
+
+以下是按照您的要求，将上述i18n对象放入到您提供的模板中的结果：
+
+```json
+{
+  "i18n": {
+    "CRC-16 Checksum": "CRC-16校验和",
+    "A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data.": "循环冗余校验（CRC）是一种常用的错误检测码，用于数字网络和存储设备中检测原始数据意外的更改。"
+  }
+}
+```
+
+请注意，这里只包含了显示给用户的自然文本，并且去除了代码中的链接、示例输入输出、输入输出类型、模块类型等信息。同时，我已经根据代码的实际功能，给出了我认为最合适的中文翻译。

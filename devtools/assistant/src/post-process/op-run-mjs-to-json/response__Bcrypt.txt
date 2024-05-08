@@ -1,0 +1,34 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将这些文本放入一个名为 `i18n` 的对象中，其键是文本内容，值设置为1。下面是根据您的代码提取出的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "bcrypt is a password hashing function designed by Niels Provos and David Mazières, based on the Blowfish cipher, and presented at USENIX in 1999. Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function: over time, the iteration count (rounds) can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power.": 1,
+    "Enter the password in the input to generate its hash.": 1,
+    "Progress: %d%%": 1
+  }
+}
+```
+
+以下是详细解释：
+
+1. 在类 `Bcrypt` 的构造函数中，`description` 字段包含的自然文本被提取出来作为键。
+2. `description` 字段中的HTML换行标签 `<br><br>` 被移除，因为这不是显示给用户的文本内容。
+3. `run` 方法中通过 `self.sendStatusMessage` 发送的进度信息也被作为自然文本提取出来，其中的 `%d` 被保留作为占位符。
+
+请注意，我假设进度信息 `Progress: %d%%` 也是一个自然文本，即使它包含一个占位符 `%d`，这是因为它是一个显示给用户的字符串。
+
+这个JSON对象可以放置在您提供的示例1的结构中，如下所示：
+
+```json
+{
+  "i18n": {
+    "bcrypt is a password hashing function designed by Niels Provos and David Mazières, based on the Blowfish cipher, and presented at USENIX in 1999. Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function: over time, the iteration count (rounds) can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power.": 1,
+    "Enter the password in the input to generate its hash.": 1,
+    "Progress: %d%%": 1
+    // place more i18n here if needed
+  }
+}
+```
+
+这样，每个自然文本都作为 `i18n` 对象的键，并且每个键的值都是1，符合您的要求。

@@ -1,0 +1,16 @@
+{
+    "dWbBm": "C# 包含“System.Convert”类，该类具有内置方法 ToBase64String 和 FromBase64String，允许您对 Base64 数据进行编码和解码。输入字符串首先使用 UTF-8 编码转换为字节数组，然后进行相应的编码和解码。",
+    "eN4fM": "在 Rust 中，您可以使用“base64”包进行 Base64 编码和解码。将 'base64 = \\\"1.x\\\"' 添加到 [依赖项] 部分下的 Cargo.toml 文件中，运行 'cargo build'，并在代码中包含必要的导入以利用这些功能。",
+    "fTt2N": "Perl 需要“MIME::Base64”模块来进行 Base64 编码和解码。如果尚未安装，请运行“cpan install MIME::Base64”来安装它。",
+    "gT6re": "C++ 没有本机 Base64 实现。本示例使用OpenSSL库来执行Base64编码和解码。要使用 OpenSSL，请将其安装在您的系统上，并在编译程序时链接相应的库。",
+    "h7rUq": "在 Node.js 中，内置的 Buffer 类可以处理 Base64 编码和解码，而不需要任何外部库。此代码片段将字符串“TEST12345”编码为 Base64，然后将其解码回原始字符串。",
+    "jRzgS": "Swift 的 Foundation 框架包含用于 Base64 编码和解码的内置方法。不需要外部库；只需导入“Foundation”即可使用这些功能。",
+    "jZvLJ": "PHP 带有内置函数“base64_encode()”和“base64_decode()”用于处理 Base64 操作。这些功能随时可用，无需额外设置或安装。",
+    "kZd9G": "Ruby 有一个内置的“base64”库，它提供了 Base64 编码和解码的方法。在脚本中包含带有“require \\”base64\\”的库。",
+    "rLXJN": "在 Kotlin 中，Android 内置的 'android.util.Base64' 类可用于 Base64 编码和解码。本示例假设Android环境；对于非 Android Kotlin 项目，请考虑使用“java.util.Base64”。",
+    "sBxHr": "Scala 使用 Java 的内置“java.util.Base64”类进行 Base64 操作。确保您在 Java 8 或更高版本的 JVM 平台上运行。",
+    "sKx5t": "Java 的内置“java.util.Base64”类自 Java 8 起可用，提供 Base64 编码和解码的方法。使用 UTF-8 编码将输入字符串转换为字节，然后根据需要进行编码和解码。",
+    "tR8pY": "Go 提供了一个标准库包“encoding/base64”，其中包含用于 Base64 编码和解码的函数。不需要外部依赖；只需将此包导入到您的 Go 程序中并调用适当的函数即可。",
+    "uW7eZ": "在 C 中，没有本机 Base64 实现。此示例使用 OpenSSL 库进行 Base64 编码和解码。要使用此代码片段，请在系统上安装 OpenSSL，并在使用类似于“gcc -o base64_example base64_example.c -lssl -lcrypto”的命令编译程序时链接到相应的库。",
+    "z9kVv": "Python 有一个内置的“base64”模块，它提供了 Base64 编码和解码的方法。输入字符串首先使用 UTF-8 编码转换为字节，然后编码为 Base64，然后解码回其原始形式。"
+}

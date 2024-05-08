@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "JavaScript nedir?",
+    "JS-DOM-API-007": "JavaScript DOM ile nasıl etkileşime giriyor?",
+    "JS-DOM-API-Explanation-008": "JavaScript, HTML ve CSS'yi yönetmek için bir Belge Nesne Modeli (DOM) API'si sağlayarak geliştiricilerin içeriği, stili ve olay dinleyicilerini dinamik olarak değiştirmesine olanak tanır.",
+    "JS-DOM-Example-009": "Örneğin, bir öğe seçip metin içeriğini değiştirebilirsiniz: `document.getElementById('myElement').textContent = 'Yeni Metin';`",
+    "JS-Data-Types-010": "JavaScript'teki veri türleri nelerdir?",
+    "JS-Data-Types-List-011": "JavaScript, dize, sayı, boolean, null, tanımsız ve sembol gibi ilkel veri türlerinin yanı sıra nesne ve dizi gibi karmaşık türler de dahil olmak üzere çeşitli veri türlerini destekler.",
+    "JS-Def-002": "JavaScript (JS), Node.js ile web uygulamaları oluşturmak, kullanıcı arayüzlerini geliştirmek ve sunucu tarafı mantığı oluşturmak için yaygın olarak kullanılan, üst düzey, yorumlanmış bir programlama dilidir.",
+    "JS-Event-Loop-013": "JavaScript'teki olay döngüsü nedir?",
+    "JS-Event-Loop-Explanation-014": "Olay döngüsü, JavaScript'in eşzamanlılık modelinin temel bir parçasıdır; geri aramalar, vaatler ve eşzamansız/bekleme yoluyla eşzamansız yürütmeye olanak tanır.",
+    "JS-Event-Loop-Process-015": "Önce ana betiği çalıştırır, ardından ilgili olaylar (kullanıcı girişi veya ağ yanıtları gibi) meydana geldiğinde geri çağırma işlevlerini yürütür ve bunları bir kuyruk sistemi aracılığıyla yönetir.",
+    "JS-Function-Syntax-006": "Fonksiyonlar, 'function' anahtar sözcüğü ve ardından parantez içine alınmış fonksiyon adı ve parametreler kullanılarak tanımlanır. İşlev gövdesi küme parantezleri içine alınmıştır: `function greet(name) { console.log(`Merhaba, ${name}!`); }'",
+    "JS-Purpose-003": "İlk olarak 1995 yılında Netscape'ten Brendan Eich tarafından geliştirildi ve o zamandan beri Electron ve React Native gibi tüm önemli web tarayıcıları ve platformları tarafından desteklenen en popüler dillerden biri haline geldi.",
+    "JS-Syntax-004": "JavaScript'in temel sözdizimi nedir?",
+    "JS-Type-Checking-012": "Tür kontrolü, yapıcılar (`typeof value === 'string'`) veya yerleşik yapıcılardan miras alınan nesneler için `instanceof` operatörü (örneğin, `value Instanceof Array`) kullanılarak yapılabilir.",
+    "MDN-DOM-API": "MDN Web Dokümanları - Belgeleri Düzenleme",
+    "MDN-Event-Loop": "MDN Web Belgeleri - Olay Döngüsü",
+    "MDN-JS-Guide": "MDN Web Dokümanları - JavaScript Kılavuzu",
+    "MDN-JS-Types": "MDN Web Dokümanları - Veri Türleri ve Veri Yapıları"
+}

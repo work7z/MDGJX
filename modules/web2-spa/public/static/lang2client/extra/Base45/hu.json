@@ -1,0 +1,23 @@
+{
+    "a4r9t": "A Base45 dekódolhat bármilyen Base45 kódolású karakterláncot, függetlenül annak eredetétől?",
+    "c2vw9k": "Míg a Base45 nincs olyan széles körben megvalósítva, mint a Base64 vagy a Base32, nyílt forráskódú könyvtárak több nyelven is léteznek.",
+    "c9q7w": "Miért jött létre a Base45?",
+    "d6y9k": "Ha nincs elég bájt az utolsó csoport kitöltéséhez, a kitöltés nem használatos; ehelyett a fennmaradó biteket feldolgozza és leképezi a megfelelő karakter(ek)re.",
+    "e8x2v": "A Base45 úgy működik, hogy a bemeneti adatokat egyenként 5 bájtos csoportokra osztja. Ezután minden csoportot decimális számmá alakít, és leképezi a 45 karakterből álló megfelelő karakterre.",
+    "f8n4m": "Kompaktsága lehetővé teszi a QR-kódok helyének hatékonyabb kihasználását, miközben megőrzi az olvashatóságot a szabványos vonalkód-leolvasókkal.",
+    "g1h5n": "Hogyan működik a Base45?",
+    "g6v3b": "A Base45 nagyobb karakterkészlete azonban növelheti a hibák valószínűségét a nem alfanumerikus karakterek kezelésekor, ami bizonyos környezetekben vagy átviteli csatornákon probléma lehet.",
+    "i7w2m": "Vannak beépített Base45 könyvtárak a népszerű programozási nyelveken?",
+    "j7k2t": "Az adatok Base45 kódolásához olyan könyvtárra vagy függvényre van szükség, amely megvalósítja a Base45 algoritmust.",
+    "m9k1z": "Ha azonban a dekódolandó adatok speciális alkalmazási szemantikát tartalmaznak (például meghatározott QR-kód formátumokat), akkor a dekódolás után további feldolgozásra lehet szükség.",
+    "q5h8n": "A fő előny az azonos mennyiségű kódolt adat esetében a rövidebb karakterlánchossz, így alkalmas olyan alkalmazásokra, ahol kritikus a helyhatékonyság.",
+    "qv1p5n": "Java nyelven például az „org.iso.base45” könyvtárat használhatja az adatok kódolására.",
+    "r9a3t": "A Base45 egy szöveges kódolási séma, amely a bináris adatokat ASCII karakterekké kódolja.",
+    "s3e6r": "Hogyan kódolhatok adatokat a Base45 használatával?",
+    "u2l8s": "Mi az a Base45?",
+    "x5z1b": "A Base45-öt elsősorban QR-kód használatára fejlesztették ki a digitális COVID-tanúsítványokkal összefüggésben.",
+    "y3b6n": "Igen, mindaddig, amíg a kódolt karakterláncot a Base45 specifikációnak megfelelően generálták, bármely kompatibilis dekódolónak képesnek kell lennie dekódolni.",
+    "z1n5qr": "Ilyen például a base45 npm csomag JavaScripthez és a dotnet-base45 a .NET-hez.",
+    "z5b7m": "A Base64-hez vagy Base32-hez képest nagyobb ábécét használ (0-9, A-Z, a-z, -, ., $, /, +, % és *), ami rövidebb kódolt karakterláncokat eredményez ugyanazon bemeneti adatokhoz.",
+    "z8m2t": "Milyen előnyei vannak a Base45 használatának a Base64-hez vagy a Base32-höz képest?"
+}

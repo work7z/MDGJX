@@ -1,0 +1,19 @@
+{
+    "c1p4b": "Hvert desimaltall konverteres deretter til en unik sekvens på fem Base85-tegn. Hvis det er færre enn fire byte igjen på slutten, kan utfylling brukes.",
+    "d7w2e": "Base85 fungerer ved å dele inn dataene i grupper på fire byte og konvertere hver gruppe til et desimaltall mellom 0 og 2^32-1.",
+    "f9t1z": "Base85 ble opprinnelig utviklet for å effektivt representere binære data i PostScript-dokumenter for bedre komprimeringsforhold.",
+    "g3h5s": "Hvordan fungerer Base85?",
+    "j5s7r": "Hvordan koder/dekoder jeg med Base85 i JavaScript?",
+    "k2em5e": "Dette resulterer i kortere utdatastrenger for samme mengde inndata, noe som kan være fordelaktig i scenarier der minimering av størrelse er kritisk.",
+    "p8eq9n": "Du kan bruke biblioteker som 'base85' eller 'ascii85' for Base85-koding og dekoding i JavaScript.",
+    "q2n3r": "I dag brukes den i ulike applikasjoner der plasseffektivitet og lesbarhet er avgjørende, for eksempel PDF-dokumenter og visse nettverksprotokoller.",
+    "r9qn8v": "Den største fordelen med Base85 er dens forbedrede plasseffektivitet på grunn av et større tegnsett (85 vs. 64 i Base64 eller 32 i Base32).",
+    "u1i2b": "Hva er fordelene med å bruke Base85 fremfor Base64 eller Base32?",
+    "v4k6r": "Den koder data til en mer kompakt form sammenlignet med Base64 eller Base32 ved å bruke et større tegnsett.",
+    "w1x4k": "Ja, det finnes flere varianter, inkludert Ascii85 (brukt i PostScript og PDF), Z85 (ZeroMQ) og UUencode (et eldre format). Hver har et litt forskjellig tegnsett og regler.",
+    "x9n1b": "Base85 er et kodingsskjema som representerer binære data ved å bruke et sett med 85 utskrivbare ASCII-tegn.",
+    "y6m8k": "Hvorfor ble Base85 opprettet?",
+    "z2t7m": "Hva er Base85?",
+    "z5m6t": "Eksempelbruk: `const base85 = require('base85'); const encoded = base85.encode('dine-data'); const decoded = base85.decode(encoded);`",
+    "z9t7p": "Finnes det noen spesifikke varianter av Base85?"
+}

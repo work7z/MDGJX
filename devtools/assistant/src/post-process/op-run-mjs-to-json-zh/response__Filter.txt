@@ -1,0 +1,42 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设置为`123`。
+3. 根据代码的实际功能，将`i18n`中的值翻译成中文。
+4. 输出JSON结果。
+
+以下是按照上述步骤创建的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Splits up the input using the specified delimiter and then filters each branch based on a regular expression.": "123",
+    "Invalid regex. Details:": "123"
+  }
+}
+```
+
+然后，将上述的英文自然文本翻译成中文：
+
+```json
+{
+  "i18n": {
+    "Splits up the input using the specified delimiter and then filters each branch based on a regular expression.": "使用指定的分隔符拆分输入，然后基于正则表达式过滤每个分支。",
+    "Invalid regex. Details:": "无效的正则表达式。详情："
+  }
+}
+```
+
+最终输出如下：
+
+```json
+{
+  "i18n": {
+    "Filter operation": "过滤操作",
+    "Splits up the input using the specified delimiter and then filters each branch based on a regular expression.": "使用指定的分隔符拆分输入，并根据正则表达式过滤每个分支。",
+    "Invalid regex. Details:": "无效的正则表达式。详情："
+  }
+}
+```
+
+请注意，在原始代码中并没有直接显示给用户的文本如"Filter operation"，但是根据上下文和类名，我假设这可能是一个描述性文本，因此也包含在翻译中。如果这不是您想要的，可以将其从`i18n`对象中移除。

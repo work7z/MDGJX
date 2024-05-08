@@ -1,0 +1,25 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的i18n对象，并翻译成中文：
+
+```json
+{
+  "i18n": {
+    "GOST Encrypt": "GOST加密",
+    "The GOST block cipher (Magma), defined in the standard GOST 28147-89 (RFC 5830), is a Soviet and Russian government standard symmetric key block cipher with a block size of 64 bits.": "GOST块密码（Magma），在GOST 28147-89（RFC 5830）标准中定义，是苏联和俄罗斯政府标准的对称密钥块密码，块大小为64位。",
+    "The original standard, published in 1989, did not give the cipher any name, but the most recent revision of the standard, GOST R 34.12-2015 (RFC 7801, RFC 8891), specifies that it may be referred to as Magma.": "1989年发布的原始标准没有给密码任何名称，但标准的最新修订版GOST R 34.12-2015（RFC 7801，RFC 8891）规定它可以被称为Magma。",
+    "The GOST hash function is based on this cipher. The new standard also specifies a new 128-bit block cipher called Kuznyechik.": "GOST哈希函数基于此密码。新标准还规定了一种新的128位块密码，称为Kuznyechik。",
+    "Developed in the 1970s, the standard had been marked 'Top Secret' and then downgraded to 'Secret' in 1990. Shortly after the dissolution of the USSR, it was declassified and it was released to the public in 1994. GOST 28147 was a Soviet alternative to the United States standard algorithm, DES. Thus, the two are very similar in structure.": "该标准于20世纪70年代开发，曾被标记为'绝密'，然后在1990年降级为'秘密'。苏联解体后不久，它被解密并于1994年向公众发布。GOST 28147是对美国标准算法DES的苏联替代方案。因此，两者在结构上非常相似。",
+    "Key": "密钥",
+    "IV": "初始向量",
+    "Input type": "输入类型",
+    "Output type": "输出类型",
+    "Algorithm": "算法",
+    "Block length": "块长度",
+    "sBox": "S盒",
+    "Block mode": "块模式",
+    "Key meshing mode": "密钥交织模式",
+    "Padding": "填充"
+  }
+}
+```
+
+在这个JSON对象中，每个key是原始文本，而value是对应的中文翻译。请注意，由于代码中没有提供具体的用户提示文本（比如输入提示或错误消息），这里只包含了描述性的文本。如果需要其他类型的文本，请提供更具体的信息。

@@ -1,0 +1,55 @@
+根据您的要求，我首先提取出代码中所有显示给用户的自然文本，并将它们放入名为`i18n`的对象中，其中键是原始文本，值是`123`作为占位符。然后，我将根据代码的功能对这些文本进行翻译，并替换掉`123`。
+
+以下是提取和翻译的结果：
+
+```json
+{
+  "i18n": {
+    "Parse IPv4 header": "解析IPv4头部",
+    "Given an IPv4 header, this operations parses and displays each field in an easily readable format.": "给定一个IPv4头部，此操作将解析并显示每个字段，以便于阅读。",
+    "Unrecognised input format.": "未识别的输入格式。",
+    "Version": "版本",
+    "Internet Header Length (IHL)": "互联网头部长度（IHL）",
+    "Differentiated Services Code Point (DSCP)": "差异化服务代码点（DSCP）",
+    "Explicit Congestion Notification (ECN)": "显式拥塞通知（ECN）",
+    "Total length": "总长度",
+    "Identification": "标识",
+    "Flags": "标志",
+    "Fragment offset": "分片偏移",
+    "Time-To-Live": "生存时间",
+    "Protocol": "协议",
+    "Header checksum": "头部校验和",
+    "Source IP address": "源IP地址",
+    "Destination IP address": "目标IP地址",
+    "Options": "选项"
+  }
+}
+```
+
+根据这个结果，以下是填充了中文翻译的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Parse IPv4 header": "解析IPv4头部",
+    "Given an IPv4 header, this operations parses and displays each field in an easily readable format.": "给定一个IPv4头部，此操作将解析并显示每个字段，以便于阅读。",
+    "Unrecognised input format.": "未识别的输入格式。",
+    "Version": "版本",
+    "Internet Header Length (IHL)": "互联网头部长度（IHL）",
+    "Differentiated Services Code Point (DSCP)": "差异化服务代码点（DSCP）",
+    "Explicit Congestion Notification (ECN)": "显式拥塞通知（ECN）",
+    "Total length": "总长度",
+    "Identification": "标识",
+    "Flags": "标志",
+    "Fragment offset": "分片偏移",
+    "Time-To-Live": "生存时间",
+    "Protocol": "协议",
+    "Header checksum": "头部校验和",
+    "Source IP address": "源IP地址",
+    "Destination IP address": "目标IP地址",
+    "Options": "选项"
+  }
+}
+```
+
+请注意，由于代码示例中没有具体的用户提示信息或错误消息（除了构造函数和运行方法中的描述），所以这里只包含了与用户界面相关的文本。如果代码中还有其他部分需要提取和翻译，请告知我。

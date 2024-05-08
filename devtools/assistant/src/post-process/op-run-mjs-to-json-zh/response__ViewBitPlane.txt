@@ -1,0 +1,48 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作，以及翻译成中文的过程：
+
+1. 提炼英文自然文本：
+   - "View Bit Plane"
+   - "Extracts and displays a bit plane of any given image. These show only a single bit from each pixel, and can be used to hide messages in Steganography."
+   - "Please enter a valid image file."
+   - "Error: Bit argument must be between 0 and 7"
+
+2. 放入对象 `i18n` 中，并赋予初始值 `123`：
+
+```json
+{
+  "i18n": {
+    "View Bit Plane": 123,
+    "Extracts and displays a bit plane of any given image. These show only a single bit from each pixel, and can be used to hide messages in Steganography.": 123,
+    "Please enter a valid image file.": 123,
+    "Error: Bit argument must be between 0 and 7": 123
+  }
+}
+```
+
+3. 翻译并替换 `value` 值：
+
+```json
+{
+  "i18n": {
+    "View Bit Plane": "查看位平面",
+    "Extracts and displays a bit plane of any given image. These show only a single bit from each pixel, and can be used to hide messages in Steganography.": "提取并显示任意给定图像的位平面。这仅显示每个像素的一个位，可用于在隐写术中隐藏信息。",
+    "Please enter a valid image file.": "请输入有效的图像文件。",
+    "Error: Bit argument must be between 0 and 7": "错误：位参数必须在0到7之间。"
+  }
+}
+```
+
+4. 输出结果：
+
+```json
+{
+  "i18n": {
+    "View Bit Plane": "查看位平面",
+    "Extracts and displays a bit plane of any given image...": "提取并显示任意给定图像的位平面...",
+    "Please enter a valid image file.": "请输入有效的图像文件。",
+    "Error: Bit argument must be between 0 and 7": "错误：位参数必须在0到7之间。"
+  }
+}
+```
+
+请注意，对于较长的描述，我使用了省略号 (`...`) 来表示这是一个简短的摘要。如果需要完整的描述，请确保在翻译中包含整个句子。

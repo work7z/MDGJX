@@ -1,0 +1,41 @@
+根据您的要求，下面是将代码提炼为JSON格式的步骤和结果：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是文本，值设为`123`。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换其值。
+4. 输出JSON结果。
+
+以下是按照这些步骤创建的JSON对象：
+
+```json
+{
+  "i18n": {
+    "HTML To Text": "123",
+    "Converts an HTML output from an operation to a readable string instead of being rendered in the DOM.": "123"
+  }
+}
+```
+
+然后，将上述的英文文本翻译为中文，并替换其值：
+
+```json
+{
+  "i18n": {
+    "HTML To Text": "HTML转文本",
+    "Converts an HTML output from an operation to a readable string instead of being rendered in the DOM.": "将操作生成的HTML输出转换为可读的字符串，而不是在DOM中渲染。"
+  }
+}
+```
+
+最终输出的JSON结果如下：
+
+```json
+{
+  "i18n": {
+    "HTML To Text": "HTML转文本",
+    "Converts an HTML output from an operation to a readable string instead of being rendered in the DOM.": "将操作生成的HTML输出转换为可读的字符串，而不是在DOM中渲染。"
+  }
+}
+```
+
+这个JSON对象包含了所有从代码中提取的、显示给用户的自然文本，以及它们的中文翻译。

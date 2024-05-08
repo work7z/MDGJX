@@ -1,0 +1,20 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式进行组织和翻译：
+
+```json
+{
+  "i18n": {
+    "Adler-32 Checksum": "Adler-32 校验和",
+    "Adler-32 is a checksum algorithm which was invented by Mark Adler in 1995, and is a modification of the Fletcher checksum. Compared to a cyclic redundancy check of the same length, it trades reliability for speed (preferring the latter).": "Adler-32 是由Mark Adler于1995年发明的校验和算法，是Fletcher校验和的改进版本。与相同长度的循环冗余校验相比，它以牺牲可靠性来提高速度（更倾向于后者）。",
+    "Adler-32 is more reliable than Fletcher-16, and slightly less reliable than Fletcher-32.": "Adler-32比Fletcher-16更可靠，但略逊于Fletcher-32。"
+  }
+}
+```
+
+以下是按照您的步骤生成的JSON：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键（key）是自然文本，值（value）最初设置为`123`，但在这里我已经根据上下文翻译成了中文。
+3. 根据代码的实际功能，我给出了最合适的中文翻译。
+4. 输出格式按照【示例1】组织。
+
+请注意，由于代码中没有其他自然文本信息，除了那些已经包含在JSON对象中的，所以这里只列出了那些文本。

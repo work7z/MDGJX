@@ -1,0 +1,28 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为`i18n`的对象中，并给每个文本赋予一个键（key），值为`123`。
+3. 根据代码的实际功能，将值翻译成中文。
+4. 输出JSON结果。
+
+以下是结果：
+
+```json
+{
+  "i18n": {
+    "Contain Image": "包含图像",
+    "Scales an image to the specified width and height, maintaining the aspect ratio. The image may be letterboxed.": "将图像缩放到指定的宽度和高度，保持宽高比。图像可能会被信箱化。",
+    "Width": "宽度",
+    "Height": "高度",
+    "Horizontal align": "水平对齐",
+    "Vertical align": "垂直对齐",
+    "Resizing algorithm": "缩放算法",
+    "Opaque background": "不透明背景",
+    "Invalid file type.": "无效文件类型。",
+    "Error loading image.": "加载图像错误。",
+    "Error containing image.": "包含图像错误。"
+  }
+}
+```
+
+在这个JSON对象中，每个键都是原始代码中的自然文本，而对应的值是中文翻译。这些翻译是根据代码的上下文和功能进行推测的，可能需要根据实际使用情况进行微调。

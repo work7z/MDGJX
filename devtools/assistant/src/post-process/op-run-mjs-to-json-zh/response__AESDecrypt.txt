@@ -1,0 +1,19 @@
+根据您的要求，以下是代码中提取的自然文本，并以JSON格式呈现，其中键为原文，值为中文翻译：
+
+```json
+{
+  "i18n": {
+    "AES Decrypt": "AES解密",
+    "Advanced Encryption Standard (AES) is a U.S. Federal Information Processing Standard (FIPS). It was selected after a 5-year process where 15 competing designs were evaluated.": "高级加密标准（AES）是美国联邦信息处理标准（FIPS）。在经过5年的评估过程后，从15个竞争设计中选出。",
+    "Key: The following algorithms will be used based on the size of the key:": "密钥：以下算法将根据密钥的大小使用：",
+    "IV: The Initialization Vector should be 16 bytes long. If not entered, it will default to 16 null bytes.": "初始化向量（IV）：应为16字节长。如果没有输入，默认为16个空字节。",
+    "Padding: In CBC and ECB mode, PKCS#7 padding will be used as a default.": "填充：在CBC和ECB模式下，默认使用PKCS#7填充。",
+    "GCM Tag: This field is ignored unless 'GCM' mode is used.": "GCM标签：除非使用'GCM'模式，否则此字段将被忽略。",
+    "Invalid key length: ${key.length} bytes": "无效的密钥长度：${key.length}字节",
+    "The following algorithms will be used based on the size of the key:": "以下算法将根据密钥的大小使用：",
+    "Unable to decrypt input with these parameters.": "无法使用这些参数解密输入。"
+  }
+}
+```
+
+请注意，上面的翻译是根据代码的上下文和功能进行的，可能需要根据实际应用场景进一步调整。

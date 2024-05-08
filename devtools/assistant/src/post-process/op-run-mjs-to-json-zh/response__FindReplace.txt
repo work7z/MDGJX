@@ -1,0 +1,24 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取文本。
+2. 放入名为`i18n`的对象中，键是提取的文本，值设置为`123`。
+3. 根据代码的实际功能，将键对应的值翻译成中文。
+4. 输出JSON结果。
+
+下面是结果：
+
+```json
+{
+  "i18n": {
+    "Find / Replace": "查找/替换",
+    "Replaces all occurrences of the first string with the second.": "用第二个字符串替换第一个字符串的所有出现。",
+    "Includes support for regular expressions (regex), simple strings and extended strings (which support \\n, \\t, \\x...).": "包括对正则表达式（regex）、简单字符串和扩展字符串的支持（支持\\n, \\t, \\x...）。",
+    "Global match": "全局匹配",
+    "Case insensitive": "不区分大小写",
+    "Multiline matching": "多行匹配",
+    "Dot matches all": "点匹配所有"
+  }
+}
+```
+
+在这个JSON对象中，每个键值对都代表了一个自然文本和它的中文翻译。这些文本是从代码注释和属性描述中提取的，不包括URL、示例输入、示例输出、输入类型、输出类型、模块类型和类型字段。值`123`被替换为了每个文本对应的中文翻译。

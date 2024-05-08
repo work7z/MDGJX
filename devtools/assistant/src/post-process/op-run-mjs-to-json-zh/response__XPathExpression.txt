@@ -1,0 +1,34 @@
+根据您的要求，以下是提炼代码中自然文本并转换为JSON格式的步骤：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是文本，值设置为`123`作为占位符。
+3. 根据代码的功能，给出合适的中文翻译。
+4. 输出JSON结果。
+
+以下是转换后的结果：
+
+```json
+{
+  "i18n": {
+    "XPath expression": "XPath 表达式",
+    "Extract information from an XML document with an XPath query": "使用XPath查询从XML文档中提取信息",
+    "Invalid input XML.": "无效的输入XML。",
+    "Invalid XPath. Details:": "无效的XPath。详情："
+  }
+}
+```
+
+以下是按照您的示例格式整理的JSON：
+
+```json
+{
+  "i18n": {
+    "XPath expression": "XPath 表达式",
+    "Extract information from an XML document with an XPath query": "使用XPath查询从XML文档中提取信息",
+    "Invalid input XML.": "无效的输入XML。",
+    "Invalid XPath. Details:": "无效的XPath。详情："
+  }
+}
+```
+
+在这个例子中，我提取了所有描述性字符串，并为它们提供了适当的中文翻译。这些翻译尽可能贴切地反映了代码的实际功能。

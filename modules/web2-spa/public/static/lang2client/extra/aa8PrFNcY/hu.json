@@ -1,0 +1,16 @@
+{
+    "CSSNano": "cssnano – GitHub",
+    "HTMLMinifier": "HTMLMinifier – GitHub",
+    "MDN-Minification": "MDN Web Docs – kicsinyítés",
+    "Minify-Basics-001": "Mit jelent a kód vagy fájlok kicsinyítése?",
+    "Minify-CLI-Usage-009": "A legtöbb ilyen eszköz rendelkezik parancssori felülettel (CLI) és API-kkal, amelyek lehetővé teszik a fejlesztők számára, hogy automatizálják a minimalizálási folyamatot a fejlesztés és a telepítés során.",
+    "Minify-Def-002": "A kicsinyítés a kód (HTML, CSS, JavaScript stb.) méretének csökkentését jelenti a szükségtelen karakterek, például szóközök, megjegyzések és sortörések eltávolításával anélkül, hogy ez befolyásolná a funkcionalitást.",
+    "Minify-Example-007k": "Például előfordulhat, hogy a {0} a kicsinyítés után {1} lesz.",
+    "Minify-How-Works-004": "Hogyan működik a kódminimalizálás?",
+    "Minify-Process-005": "A minifikátorok algoritmusokat használnak a forráskód szerkezetének elemzésére, a felesleges elemek kiküszöbölésére, és lehetőség szerint lerövidítik a változóneveket. Ez kisebb fájlméretet eredményez, miközben megőrzi a kód eredeti viselkedését.",
+    "Minify-Purpose-003": "A minimalizálás elsődleges célja a webhely teljesítményének javítása és az oldalak betöltési idejének csökkentése azáltal, hogy csökkenti a szerver és a kliens között továbbítandó adatmennyiséget.",
+    "Minify-Tools-007": "Melyek a népszerű eszközök a kód kicsinyítésére?",
+    "Minify-Tools-List-008": "A kód kicsinyítésének népszerű eszközei közé tartozik az UglifyJS for JavaScript, a Terser, amely az UglifyJS továbbfejlesztése, a HTMLMinifier for HTML és a CSSNano for CSS. Ezek az eszközök gyakran integrálhatók az építési folyamatokba olyan feladatfutók segítségével, mint a Gulp vagy a Webpack.",
+    "Terser": "Terser – GitHub",
+    "UglifyJS": "UglifyJS – GitHub"
+}

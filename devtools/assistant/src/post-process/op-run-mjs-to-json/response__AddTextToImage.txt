@@ -1,0 +1,26 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的结果：
+
+```json
+{
+  "i18n": {
+    "Adds text onto an image.": 1,
+    "Text can be horizontally or vertically aligned, or the position can be manually specified.": 1,
+    "Variants of the Roboto font face are available in any size or colour.": 1,
+    "Invalid file type.": 1,
+    "Error loading image.": 1,
+    "Error adding text to image.": 1
+  },
+  "extra": {
+    "exampleInput": "<>",
+    "exampleOutput": "<>",
+    "editor": {
+      "input": "typescript",
+      "output": "typescript"
+    }
+  }
+}
+```
+
+在这个JSON对象中，`i18n`字段包含了所有从代码中提取的自然文本，并且每个文本的值设置为1。由于代码中没有提供具体的`exampleInput`和`exampleOutput`的值，所以这两个字段被设置为`<>`。同时，根据代码的文件扩展名和内容，`editor.input`和`editor.output`被设置为`typescript`。
+
+注意：由于代码中并没有提供具体的操作示例，所以无法填写`extra.exampleInput`和`extra.exampleOutput`字段的具体值。如果需要具体的输入输出示例，您可能需要根据代码的功能和预期结果来手动添加。

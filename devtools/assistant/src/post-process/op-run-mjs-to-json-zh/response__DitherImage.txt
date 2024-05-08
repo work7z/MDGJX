@@ -1,0 +1,25 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作，并进行了适当的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Dither Image": "图像抖动",
+    "Apply a dither effect to an image.": "对图像应用抖动效果。",
+    "Invalid file type.": "无效的文件类型。",
+    "Error loading image.": "加载图像时出错。",
+    "Error applying dither to image.": "应用抖动到图像时出错。",
+    "Applying dither to image...": "正在对图像应用抖动..."
+  }
+}
+```
+
+以下是每个key的来源和翻译说明：
+
+1. "Dither Image" - 来自类名和操作名称，翻译为“图像抖动”。
+2. "Apply a dither effect to an image." - 来自操作描述，翻译为“对图像应用抖动效果。”。
+3. "Invalid file type." - 当文件类型不是图像时抛出的错误消息，翻译为“无效的文件类型。”。
+4. "Error loading image." - 加载图像出错时的错误消息，翻译为“加载图像时出错。”。
+5. "Error applying dither to image." - 应用抖动效果出错时的错误消息，翻译为“应用抖动到图像时出错。”。
+6. "Applying dither to image..." - 在Web Worker环境中应用抖动效果时发送的状态消息，翻译为“正在对图像应用抖动...”。
+
+以上JSON对象中的value值“123”已经根据文本的含义替换为相应的中文翻译。

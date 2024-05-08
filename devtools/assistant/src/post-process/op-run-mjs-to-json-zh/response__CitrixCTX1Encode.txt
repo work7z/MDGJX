@@ -1,0 +1,28 @@
+根据您的要求，以下是提炼出的JSON格式数据：
+
+```json
+{
+  "i18n": {
+    "Citrix CTX1 Encode": "123",
+    "Encodes strings to Citrix CTX1 password format.": "123"
+  }
+}
+```
+
+根据我的理解，以下是这些自然文本的中文翻译：
+
+- "Citrix CTX1 Encode"：Citrix CTX1 编码
+- "Encodes strings to Citrix CTX1 password format."：将字符串编码为Citrix CTX1密码格式。
+
+将翻译结果替换到JSON中：
+
+```json
+{
+  "i18n": {
+    "Citrix CTX1 Encode": "Citrix CTX1 编码",
+    "Encodes strings to Citrix CTX1 password format.": "将字符串编码为Citrix CTX1密码格式。"
+  }
+}
+```
+
+这就是根据您的需求处理后的结果。

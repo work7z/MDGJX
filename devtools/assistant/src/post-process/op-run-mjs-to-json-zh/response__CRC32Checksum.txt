@@ -1,0 +1,32 @@
+根据您的要求，下面是将代码提炼为JSON格式的步骤和结果：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是自然文本，值设置为`123`。
+3. 根据代码的实际功能，将自然文本翻译成中文，并替换它的值。
+4. 输出JSON结果。
+
+以下是JSON格式化后的结果：
+
+```json
+{
+  "i18n": {
+    "CRC-32 Checksum": "123",
+    "A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data.": "123",
+    "The CRC was invented by W. Wesley Peterson in 1961; the 32-bit CRC function of Ethernet and many other standards is the work of several researchers and was published in 1975.": "123"
+  }
+}
+```
+
+下面是翻译成中文后的`i18n`对象：
+
+```json
+{
+  "i18n": {
+    "CRC-32 Checksum": "CRC-32校验和",
+    "A cyclic redundancy check (CRC) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to raw data.": "循环冗余校验（CRC）是一种常用的错误检测代码，用于数字网络和存储设备中，以检测原始数据意外的更改。",
+    "The CRC was invented by W. Wesley Peterson in 1961; the 32-bit CRC function of Ethernet and many other standards is the work of several researchers and was published in 1975.": "CRC是由W. Wesley Peterson于1961年发明的；以太网和其他许多标准的32位CRC功能是几位研究人员的工作，并于1975年发布。"
+  }
+}
+```
+
+请注意，由于代码中没有其他自然文本信息，除了类名和描述，所以`i18n`对象只包含了这些内容。如果代码中有其他自然文本信息，请提供，以便进行相应的更新。

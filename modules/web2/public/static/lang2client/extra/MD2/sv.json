@@ -1,0 +1,23 @@
+{
+    "MD2-Advantages-011": "Vilka är fördelarna med att använda MD2?",
+    "MD2-AlgorithmDetails-010": "MD2 Algoritm Detaljer",
+    "MD2-Applications-018": "Vilka applikationer har använt eller använder fortfarande MD2?",
+    "MD2-Breakdown-016": "Kryptografiska svagheter har upptäckts i MD2 över tid, och starkare alternativ som SHA-256 och SHA-3 rekommenderas nu för alla applikationer som kräver säker hash.",
+    "MD2-CollisionSecurity-015": "MD2 anses vara svagt mot moderna kryptografiska attacker. Dess hashstorlek (128 bitar) är liten med dagens standarder, vilket gör den sårbar för kollisionsattacker.",
+    "MD2-Def-002": "MD2 (Message-Digest Algorithm 2) är en kryptografisk hashfunktion designad av Ronald Rivest 1989. Den producerar ett 128-bitars hashvärde för ett givet ingångsmeddelande.",
+    "MD2-DigitalSignature-Risks-021": "Risker med att använda MD2 för digitala signaturer",
+    "MD2-Disadvantages-014": "Vilka är nackdelarna och säkerhetsproblemen med MD2?",
+    "MD2-FAQ-001": "Vad är MD2?",
+    "MD2-HistoricalUse-020": "Historiskt sett har MD2 hittats i filintegritetskontroller och programuppdateringar, även om dessa applikationer till stor del har övergått till säkrare hashfunktioner som SHA-256 och SHA-512.)",
+    "MD2-History-004": "Hur utvecklades MD2 och vad är dess historia?",
+    "MD2-Implementation-013": "Det har implementerats i stor utsträckning och standardiserats över olika plattformar och språk, vilket innebär att det kan vara relativt enkelt att integrera MD2 i befintliga system.",
+    "MD2-InsecurityExamples-017": "Exempel på MD2-säkerhetsnedbrytning",
+    "MD2-Operation-007": "Hur fungerar MD2-driften?",
+    "MD2-Origin-005": "MD2 skapades ursprungligen som en förbättring jämfört med MD1, och åtgärdade några svagheter som hittades i den tidigare algoritmen. Det blev populärt på grund av dess relativa enkelhet och snabbhet vid den tiden.",
+    "MD2-PKI-019": "MD2 användes en gång i Public Key Infrastructure (PKI) för digitala signaturer men har sedan dess föråldrats på grund av dess sårbarhet för attacker. Certifikat signerade med MD2 är inte längre betrodda av de flesta system.",
+    "MD2-Process-008": "MD2 fungerar genom att utfylla ingångsmeddelandet till en multipel av 16 byte och sedan bearbeta det genom en serie exklusiva-ELLER-operationer, bitrotationer och tillägg. Den slutliga utmatningen är ett 128-bitars hashvärde.",
+    "MD2-Purpose-003": "Syftet med MD2 är att säkerställa dataintegritet genom att generera ett unikt digitalt fingeravtryck som kan användas för att verifiera datas originalitet och äkthet.",
+    "MD2-Rounds-009": "Algoritmen använder en process i fyra omgångar med specifika operationer utförda på en 128-bitars tillståndsvariabel. Varje omgång tar in block av det vadderade meddelandet och uppdaterar tillståndet tills hela meddelandet har behandlats.",
+    "MD2-Speed-012": "MD2 ansågs vara snabb för sin tid och har fortfarande acceptabel prestanda i vissa scenarier, vilket gör den lämplig för miljöer där beräkningsresurserna är begränsade.",
+    "MD2-Successors-006": "Den har dock ersatts av starkare algoritmer som MD5 och SHA-1, som ingår i samma familj av hashfunktioner men erbjuder förbättrade säkerhetsfunktioner."
+}

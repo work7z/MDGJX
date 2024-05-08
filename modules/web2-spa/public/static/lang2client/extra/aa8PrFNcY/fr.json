@@ -1,0 +1,16 @@
+{
+    "CSSNano": "cssnano - GitHub",
+    "HTMLMinifier": "HTMLMinifier-GitHub",
+    "MDN-Minification": "Documents Web MDN - Minification",
+    "Minify-Basics-001": "Quelle est la signification de la réduction du code ou des fichiers ?",
+    "Minify-CLI-Usage-009": "La plupart de ces outils disposent à la fois d'interfaces de ligne de commande (CLI) et d'API qui permettent aux développeurs d'automatiser le processus de minification pendant le développement et le déploiement.",
+    "Minify-Def-002": "La minification est le processus de réduction de la taille du code (HTML, CSS, JavaScript, etc.) en supprimant les caractères inutiles tels que les espaces blancs, les commentaires et les sauts de ligne sans affecter sa fonctionnalité.",
+    "Minify-Example-007k": "Par exemple, {0} pourrait devenir {1} après la minification.",
+    "Minify-How-Works-004": "Comment fonctionne la minification du code ?",
+    "Minify-Process-005": "Les miniificateurs utilisent des algorithmes pour analyser la structure du code source, éliminer les éléments superflus et raccourcir les noms de variables lorsque cela est possible. Cela se traduit par une taille de fichier plus petite tout en conservant le comportement d'origine du code.",
+    "Minify-Purpose-003": "L'objectif principal de la minification est d'améliorer les performances du site Web et de réduire les temps de chargement des pages en diminuant la quantité de données qui doivent être transférées entre le serveur et le client.",
+    "Minify-Tools-007": "Quels sont les outils populaires pour réduire le code ?",
+    "Minify-Tools-List-008": "Les outils populaires pour réduire le code incluent UglifyJS pour JavaScript, Terser qui est une évolution d'UglifyJS, HTMLMinifier pour HTML et CSSNano pour CSS. Ces outils peuvent souvent être intégrés dans les processus de construction à l'aide d'exécuteurs de tâches comme Gulp ou Webpack.",
+    "Terser": "Terser - GitHub",
+    "UglifyJS": "UglifyJS - GitHub"
+}

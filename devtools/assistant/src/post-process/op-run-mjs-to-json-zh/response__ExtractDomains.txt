@@ -1,0 +1,22 @@
+根据您的要求，以下是自然文本的提取和翻译为中文的JSON格式：
+
+```json
+{
+  "i18n": {
+    "Extracts fully qualified domain names.": "提取完全合格的域名。",
+    "Note that this will not include paths. Use Extract URLs to find entire URLs.": "注意这不会包括路径。使用提取URL功能来查找完整的URL。",
+    "Display total": "显示总数",
+    "Sort": "排序",
+    "Unique": "唯一"
+  }
+}
+```
+
+以下是按照您的步骤进行的操作：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值是`123`（这里我直接替换成了对应的中文翻译）。
+3. 根据代码的实际功能，对这些文本进行翻译。
+4. 输出JSON结果。
+
+请注意，示例中的值`123`被替换成了每个自然文本对应的中文翻译。

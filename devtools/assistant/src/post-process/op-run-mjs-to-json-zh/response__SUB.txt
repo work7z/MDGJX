@@ -1,0 +1,42 @@
+根据您的要求，我们需要提取代码中显示给用户的自然文本，并忽略一些特定的字段如链接、示例输入输出、输入输出类型、模块类型等。以下是按照您的要求进行的操作：
+
+1. 找出所有自然文本。
+2. 将这些文本放入名为 `i18n` 的对象中，键是文本，值设为 `123`。
+3. 根据代码的实际功能，将这些文本翻译成中文，并替换 `123`。
+4. 输出 JSON 结果。
+
+以下是提取的文本和对应的中文翻译：
+
+```json
+{
+  "SUB the input with the given key (e.g. <code>fe023da5</code>), MOD 255": "使用给定的密钥（例如 <code>fe023da5</code>）减去输入，模 255",
+  "SUB operation": "减法操作",
+  "SUB constructor": "减法构造函数"
+}
+```
+
+将它们放入 `i18n` 对象中，并替换值：
+
+```json
+{
+  "i18n": {
+    "SUB the input with the given key (e.g. <code>fe023da5</code>), MOD 255": "使用给定的密钥（例如 <code>fe023da5</code>）减去输入，模 255",
+    "SUB operation": "减法操作",
+    "SUB constructor": "减法构造函数"
+  }
+}
+```
+
+以下是最终的 JSON 输出：
+
+```json
+{
+  "i18n": {
+    "SUB the input with the given key (e.g. <code>fe023da5</code>), MOD 255": "使用给定的密钥（例如 <code>fe023da5</code>）减去输入，模 255",
+    "SUB operation": "减法操作",
+    "SUB constructor": "减法构造函数"
+  }
+}
+```
+
+请注意，这里没有包括类名 `SUB` 和操作名称 `SUB`，因为它们看起来像是代码标识符而不是自然语言文本。如果这些也需要翻译，我们可以将它们也加入到 `i18n` 对象中。

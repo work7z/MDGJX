@@ -1,0 +1,57 @@
+根据您的要求，下面是将代码提炼为JSON格式的步骤和结果：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是文本，值设为`123`作为占位符。
+3. 根据代码的实际功能，将占位符翻译为中文。
+4. 输出JSON结果。
+
+以下是JSON格式化后的结果：
+
+```json
+{
+  "i18n": {
+    "Convert distance": "转换距离",
+    "Converts a unit of distance to another format.": "将一种距离单位转换为另一种格式。",
+    "Input units": "输入单位",
+    "Output units": "输出单位",
+    "[Metric]": "公制",
+    "Nanometres (nm)": "纳米（nm）",
+    "Micrometres (µm)": "微米（µm）",
+    "Millimetres (mm)": "毫米（mm）",
+    "Centimetres (cm)": "厘米（cm）",
+    "Metres (m)": "米（m）",
+    "Kilometers (km)": "千米（km）",
+    "[/Metric]": "公制结束",
+    "[Imperial]": "英制",
+    "Thou (th)": "千分之一英寸（th）",
+    "Inches (in)": "英寸（in）",
+    "Feet (ft)": "英尺（ft）",
+    "Yards (yd)": "码（yd）",
+    "Chains (ch)": "链（ch）",
+    "Furlongs (fur)": "弗隆（fur）",
+    "Miles (mi)": "英里（mi）",
+    "Leagues (lea)": "里格（lea）",
+    "[/Imperial]": "英制结束",
+    "[Maritime]": "海制",
+    "Fathoms (ftm)": "英寻（ftm）",
+    "Cables": "缆（cables）",
+    "Nautical miles": "海里",
+    "[/Maritime]": "海制结束",
+    "[Comparisons]": "比较",
+    "Cars (4m)": "汽车（4m）",
+    "Buses (8.4m)": "公交车（8.4m）",
+    "American football fields (91m)": "美式足球场（91m）",
+    "Football pitches (105m)": "足球场（105m）",
+    "[/Comparisons]": "比较结束",
+    "[Astronomical]": "天文",
+    "Earth-to-Moons": "地球到月球",
+    "Earth's equators": "地球赤道",
+    "Astronomical units (au)": "天文单位（au）",
+    "Light-years (ly)": "光年（ly）",
+    "Parsecs (pc)": "秒差距（pc）",
+    "[/Astronomical]": "天文结束"
+  }
+}
+```
+
+请注意，为了保持一致性和清晰性，部分单位名称我也进行了翻译，但像`Cables`这种没有明确单位的，我就保留了原词。如果需要进一步的翻译或者调整，请告知。

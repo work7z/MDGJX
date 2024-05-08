@@ -1,0 +1,50 @@
+根据您的要求，下面是将代码提炼为JSON格式的步骤和结果：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是自然文本，值设为123。
+3. 根据代码的实际功能，将`i18n`中的文本翻译成中文，并替换其值。
+4. 输出JSON结果。
+
+以下是JSON的格式：
+
+```json
+{
+  "i18n": {
+    "To Braille": "123",
+    "Converts text to six-dot braille symbols.": "123",
+    "To Braille operation": "123",
+    "Highlight To Braille": "123",
+    "Highlight To Braille in reverse": "123"
+  }
+}
+```
+
+下面是翻译后的JSON，将值替换为相应的中文：
+
+```json
+{
+  "i18n": {
+    "To Braille": "转换为盲文",
+    "Converts text to six-dot braille symbols.": "将文本转换为六点盲文符号。",
+    "To Braille operation": "盲文转换操作",
+    "Highlight To Braille": "高亮显示盲文转换",
+    "Highlight To Braille in reverse": "反向高亮显示盲文转换"
+  }
+}
+```
+
+【示例1】的输出：
+
+```json
+{
+  "i18n": {
+    "To Braille": "转换为盲文",
+    "Converts text to six-dot braille symbols.": "将文本转换为六点盲文符号。",
+    "To Braille operation": "盲文转换操作",
+    "Highlight To Braille": "高亮显示盲文转换",
+    "Highlight To Braille in reverse": "反向高亮显示盲文转换"
+  }
+}
+```
+
+请注意，这里假设代码中的所有文本都是显示给用户的自然文本。如果需要进一步筛选，请提供具体要求。

@@ -1,0 +1,19 @@
+{
+    "c1p4b": "Setiap nombor perpuluhan kemudian ditukar kepada urutan unik lima aksara Base85. Jika terdapat kurang daripada empat bait yang tinggal pada penghujung, padding mungkin digunakan.",
+    "d7w2e": "Base85 berfungsi dengan membahagikan data input kepada kumpulan empat bait dan menukar setiap kumpulan kepada nombor perpuluhan antara 0 dan 2^32-1.",
+    "f9t1z": "Base85 pada mulanya dibangunkan untuk mewakili data binari dengan cekap dalam dokumen PostScript untuk nisbah mampatan yang lebih baik.",
+    "g3h5s": "Bagaimanakah Base85 berfungsi?",
+    "j5s7r": "Bagaimanakah saya boleh mengekod/menyahkod dengan Base85 dalam JavaScript?",
+    "k2em5e": "Ini menghasilkan rentetan keluaran yang lebih pendek untuk jumlah data input yang sama, yang boleh memberi manfaat dalam senario yang meminimumkan saiz adalah kritikal.",
+    "p8eq9n": "Anda boleh menggunakan perpustakaan seperti 'base85' atau 'ascii85' untuk pengekodan dan penyahkodan Base85 dalam JavaScript.",
+    "q2n3r": "Hari ini, ia digunakan dalam pelbagai aplikasi di mana kecekapan ruang dan kebolehbacaan adalah penting, seperti dokumen PDF dan protokol rangkaian tertentu.",
+    "r9qn8v": "Kelebihan utama Base85 ialah kecekapan ruang yang dipertingkatkan disebabkan set aksara yang lebih besar (85 berbanding 64 dalam Base64 atau 32 dalam Base32).",
+    "u1i2b": "Apakah kelebihan menggunakan Base85 berbanding Base64 atau Base32?",
+    "v4k6r": "Ia mengekod data ke dalam bentuk yang lebih padat berbanding Base64 atau Base32 dengan menggunakan set aksara yang lebih besar.",
+    "w1x4k": "Ya, beberapa varian wujud, termasuk Ascii85 (digunakan dalam PostScript dan PDF), Z85 (ZeroMQ) dan UUencode (format lama). Setiap satu mempunyai set watak dan peraturan yang sedikit berbeza.",
+    "x9n1b": "Base85 ialah skema pengekodan yang mewakili data binari menggunakan set 85 aksara ASCII yang boleh dicetak.",
+    "y6m8k": "Mengapa Base85 dicipta?",
+    "z2t7m": "Apakah itu Base85?",
+    "z5m6t": "Contoh penggunaan: `const base85 = require('base85'); const dikodkan = base85.encode('data-anda'); const dinyahkod = base85.decode(dikodkan);`",
+    "z9t7p": "Adakah terdapat sebarang varian khusus Base85?"
+}

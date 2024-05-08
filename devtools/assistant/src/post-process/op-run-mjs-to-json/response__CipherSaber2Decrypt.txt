@@ -1,0 +1,22 @@
+根据您的要求，我们需要提取代码中所有显示给用户的自然文本，并将这些文本放入一个名为 `i18n` 的对象中，其中每个文本作为键，对应的值为数字 `1`。
+
+下面是根据您提供的代码提取的自然文本，并按照要求配置的 JSON 对象：
+
+```json
+{
+  "i18n": {
+    "CipherSaber2 Decrypt": 1,
+    "CipherSaber is a simple symmetric encryption protocol based on the RC4 stream cipher. It gives reasonably strong protection of message confidentiality, yet it's designed to be simple enough that even novice programmers can memorize the algorithm and implement it from scratch.": 1,
+    "Key": 1,
+    "Rounds": 1
+  }
+}
+```
+
+在这个 JSON 对象中，我提取了以下自然文本：
+
+- "CipherSaber2 Decrypt"：类名和操作名称。
+- 类描述："CipherSaber is a simple symmetric encryption protocol based on the RC4 stream cipher..."。
+- 参数名称："Key" 和 "Rounds"。
+
+请注意，我没有包括 `exampleInput`、`exampleOutput`、`inputType`、`outputType`、`module`、`type` 字段以及任何 URL 链接，因为您的要求是排除这些内容。

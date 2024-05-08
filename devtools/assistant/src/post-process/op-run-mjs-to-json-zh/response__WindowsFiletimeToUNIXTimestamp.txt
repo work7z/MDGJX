@@ -1,0 +1,25 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式的i18n对象，并进行了适当的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Windows Filetime to UNIX Timestamp": "Windows文件时间转换为UNIX时间戳",
+    "Converts a Windows Filetime value to a UNIX timestamp.": "将Windows文件时间值转换为UNIX时间戳。",
+    "A Windows Filetime is a 64-bit value representing the number of 100-nanosecond intervals since January 1, 1601 UTC.": "Windows文件时间是一个64位值，表示自1601年1月1日UTC以来的100纳秒间隔数。",
+    "A UNIX timestamp is a 32-bit value representing the number of seconds since January 1, 1970 UTC (the UNIX epoch).": "UNIX时间戳是一个32位值，表示自1970年1月1日UTC（UNIX纪元）以来的秒数。",
+    "This operation also supports UNIX timestamps in milliseconds, microseconds and nanoseconds.": "此操作还支持毫秒、微秒和纳秒的UNIX时间戳。",
+    "Output units": "输出单位",
+    "Seconds (s)": "秒(s)",
+    "Milliseconds (ms)": "毫秒(ms)",
+    "Microseconds (μs)": "微秒(μs)",
+    "Nanoseconds (ns)": "纳秒(ns)",
+    "Input format": "输入格式",
+    "Decimal": "十进制",
+    "Hex (big endian)": "十六进制（大端）",
+    "Hex (little endian)": "十六进制（小端）",
+    "Unrecognised unit": "未识别的单位"
+  }
+}
+```
+
+以上JSON对象包含了代码中所有显示给用户的自然文本，并给每条文本赋予了中文翻译。在实际使用时，您可以根据需要将这些翻译值替换到相应的代码位置。

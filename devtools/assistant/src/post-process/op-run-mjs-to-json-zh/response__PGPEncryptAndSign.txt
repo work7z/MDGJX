@@ -1,0 +1,33 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的i18n对象，并附上中文翻译：
+
+```json
+{
+  "i18n": {
+    "PGP Encrypt and Sign": "PGP加密和签名",
+    "Input: the cleartext you want to sign.": "输入：您想要签名的明文。",
+    "Arguments: the ASCII-armoured private key of the signer (plus the private key password if necessary) and the ASCII-armoured PGP public key of the recipient.": "参数：签名者的ASCII编码私钥（如有必要，还包括私钥密码）和接收者的ASCII编码PGP公钥。",
+    "This operation uses PGP to produce an encrypted digital signature.": "此操作使用PGP生成加密数字签名。",
+    "Pretty Good Privacy is an encryption standard (OpenPGP) used for encrypting, decrypting, and signing messages.": "Pretty Good Privacy（优良隐私）是一种加密标准（OpenPGP），用于加密、解密和签名消息。",
+    "This function uses the Keybase implementation of PGP.": "此功能使用Keybase的PGP实现。",
+    "Enter the private key of the signer.": "请输入签名者的私钥。",
+    "Enter the public key of the recipient.": "请输入接收者的公钥。",
+    "Couldn't sign message: ${err}": "无法签名消息：${err}"
+  }
+}
+```
+
+在上述JSON中，每个key对应于代码中的一个自然文本字符串，而value则是相应的中文翻译。注意，错误消息中的`${err}`是一个占位符，用于在实际错误发生时插入具体的错误信息。
+
+【输出示例】
+
+```json
+{
+  "i18n": {
+    "PGP Encrypt and Sign": "PGP加密和签名",
+    "Input: the cleartext you want to sign.": "输入：您想要签名的明文。",
+    // ... 其他翻译
+  }
+}
+```
+
+以上JSON对象即为根据您的需求所提取和翻译的内容。

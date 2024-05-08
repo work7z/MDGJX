@@ -1,0 +1,16 @@
+{
+    "dWbBm": "C# 包含「System.Convert」類，該類別具有內建方法 ToBase64String 和 FromBase64String，可讓您對 Base64 資料進行編碼和解碼。輸入字串首先使用 UTF-8 編碼轉換為位元組數組，然後進行對應的編碼和解碼。",
+    "eN4fM": "在 Rust 中，您可以使用「base64」套件進行 Base64 編碼和解碼。將 'base64 = \\\"1.x\\\"' 新增至 [依賴項] 部分下的 Cargo.toml 檔案中，執行 'cargo build'，並在程式碼中包含必要的導入以利用這些功能。",
+    "fTt2N": "Perl 需要「MIME::Base64」模組來進行 Base64 編碼和解碼。如果尚未安裝，請執行「cpan install MIME::Base64」來安裝它。",
+    "gT6re": "C++ 沒有本機 Base64 實作。本範例使用OpenSSL函式庫來執行Base64編碼和解碼。要使用 OpenSSL，請將其安裝在您的系統上，並在編譯程式時連結相應的程式庫。",
+    "h7rUq": "在 Node.js 中，內建的 Buffer 類別可以處理 Base64 編碼和解碼，而不需要任何外部函式庫。此程式碼片段將字串「TEST12345」編碼為 Base64，然後將其解碼回原始字串。",
+    "jRzgS": "Swift 的 Foundation 框架包含用於 Base64 編碼和解碼的內建方法。不需要外部函式庫；只需導入“Foundation”即可使用這些功能。",
+    "jZvLJ": "PHP 隨附內建函數「base64_encode()」和「base64_decode()」來處理 Base64 操作。這些功能隨時可用，無需額外設定或安裝。",
+    "kZd9G": "Ruby 有一個內建的「base64」函式庫，它提供了 Base64 編碼和解碼的方法。在腳本中包含帶有“require \\”base64\\”的庫。",
+    "rLXJN": "在 Kotlin 中，Android 內建的 'android.util.Base64' 類別可用於 Base64 編碼和解碼。本範例假設Android環境；對於非 Android Kotlin 項目，請考慮使用「java.util.Base64」。",
+    "sBxHr": "Scala 使用 Java 的內建「java.util.Base64」類別進行 Base64 操作。確保您在 Java 8 或更高版本的 JVM 平台上執行。",
+    "sKx5t": "Java 的內建「java.util.Base64」類別自 Java 8 起可用，提供 Base64 編碼和解碼的方法。使用 UTF-8 編碼將輸入字串轉換為字節，然後根據需要進行編碼和解碼。",
+    "tR8pY": "Go 提供了一個標準函式庫包“encoding/base64”，其中包含用於 Base64 編碼和解碼的函數。不需要外部依賴；只需將此套件匯入到您的 Go 程式中並呼叫適當的函數即可。",
+    "uW7eZ": "在 C 中，沒有本機 Base64 實作。此範例使用 OpenSSL 庫進行 Base64 編碼和解碼。若要使用此程式碼片段，請在系統上安裝 OpenSSL，並在使用類似「gcc -o base64_example base64_example.c -lssl -lcrypto」的命令編譯程式時連結到對應的程式庫。",
+    "z9kVv": "Python 有一個內建的「base64」模組，它提供了 Base64 編碼和解碼的方法。輸入字串首先使用 UTF-8 編碼轉換為字節，然後編碼為 Base64，然後解碼回其原始形式。"
+}

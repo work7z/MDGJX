@@ -1,0 +1,32 @@
+根据您的要求，下面是将代码提炼为JSON格式的步骤和结果：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是文本，值设为`123`作为占位符。
+3. 根据代码的实际功能，将占位符翻译为中文。
+4. 输出JSON结果。
+
+以下是JSON格式的输出：
+
+```json
+{
+  "i18n": {
+    "Defang IP Addresses": "123",
+    "Takes a IPv4 or IPv6 address and 'Defangs' it, meaning the IP becomes invalid, removing the risk of accidentally utilising it as an IP address.": "123",
+    "Defang all the things": "123"
+  }
+}
+```
+
+下面是翻译为中文后的JSON格式：
+
+```json
+{
+  "i18n": {
+    "Defang IP Addresses": "IP地址无效化",
+    "Takes a IPv4 or IPv6 address and 'Defangs' it, meaning the IP becomes invalid, removing the risk of accidentally utilising it as an IP address.": "将IPv4或IPv6地址无效化，意味着IP地址变得无效，消除了意外使用它作为IP地址的风险。",
+    "Defang all the things": "无效化所有事物"
+  }
+}
+```
+
+注意：由于代码中没有直接显示给用户的自然文本，我假设了类名、描述和infoURL标题可能对用户可见，因此将它们包含在内。如果这些不是直接显示给用户的，请相应地调整。同时，"Defang all the things"是从infoURL链接中推断出来的，可能是一个相关的描述或标题。如果这个链接的内容不是直接显示给用户的，那么这个条目也应该被移除。

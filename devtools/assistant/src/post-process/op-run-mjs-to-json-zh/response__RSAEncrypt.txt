@@ -1,0 +1,43 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的步骤，以及对应的中文翻译：
+
+1. 提炼文本到JSON对象：
+
+```json
+{
+  i18n: {
+    "RSA Encrypt": "123",
+    "Encrypt a message with a PEM encoded RSA public key.": "123",
+    "RSA Public Key (PEM)": "123",
+    "Encryption Scheme": "123",
+    "RSA-OAEP": "123",
+    "RSAES-PKCS1-V1_5": "123",
+    "RAW": "123",
+    "Message Digest Algorithm": "123",
+    "Please enter a public key.": "123",
+    "RSAES-OAEP input message length is too long.": "123",
+    "RSAES-OAEP input message length (${err.length}) is longer than the maximum allowed length (${err.maxLength}).": "123"
+  }
+}
+```
+
+2. 根据代码的实际功能，进行中文翻译：
+
+```json
+{
+  i18n: {
+    "RSA Encrypt": "RSA加密",
+    "Encrypt a message with a PEM encoded RSA public key.": "使用PEM编码的RSA公钥加密消息。",
+    "RSA Public Key (PEM)": "RSA公钥（PEM）",
+    "Encryption Scheme": "加密方案",
+    "RSA-OAEP": "RSA-OAEP",
+    "RSAES-PKCS1-V1_5": "RSAES-PKCS1-V1_5",
+    "RAW": "原始",
+    "Message Digest Algorithm": "消息摘要算法",
+    "Please enter a public key.": "请输入公钥。",
+    "RSAES-OAEP input message length is too long.": "RSAES-OAEP输入消息长度过长。",
+    "RSAES-OAEP input message length (${err.length}) is longer than the maximum allowed length (${err.maxLength}).": "RSAES-OAEP输入消息长度（${err.length}）超过了允许的最大长度（${err.maxLength}）。"
+  }
+}
+```
+
+请注意，对于加密方案（如RSA-OAEP和RSAES-PKCS1-V1_5）和“RAW”这样的术语，我保留了它们的英文形式，因为它们在加密技术中通常以这些专有名词出现，并且翻译可能会引起混淆。如果需要将这些术语翻译成中文，可以进一步根据上下文进行翻译。

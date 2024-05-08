@@ -1,0 +1,40 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作，并进行了适当的中文翻译。
+
+```json
+{
+  "i18n": {
+    "Convert co-ordinate format": "转换坐标格式",
+    "Converts geographical coordinates between different formats.": "在不同格式之间转换地理坐标。",
+    "Supported formats:": "支持的格式：",
+    "Degrees Minutes Seconds (DMS)": "度分秒（DMS）",
+    "Degrees Decimal Minutes (DDM)": "度小数分（DDM）",
+    "Decimal Degrees (DD)": "十进制度（DD）",
+    "Geohash": "地理哈希",
+    "Military Grid Reference System (MGRS)": "军事网格参考系统（MGRS）",
+    "Ordnance Survey National Grid (OSNG)": "英国测量局国家网格（OSNG）",
+    "Universal Transverse Mercator (UTM)": "通用横轴墨卡托（UTM）",
+    "The operation can try to detect the input co-ordinate format and delimiter automatically, but this may not always work correctly.": "该操作可以尝试自动检测输入坐标格式和分隔符，但可能并不总是正确工作。",
+    "Input Format": "输入格式",
+    "Input Delimiter": "输入分隔符",
+    "Output Format": "输出格式",
+    "Output Delimiter": "输出分隔符",
+    "Include Compass Directions": "包含罗盘方向",
+    "Precision": "精度"
+  }
+}
+```
+
+参考示例1，这是将上述JSON结果输出的格式：
+
+```json
+{
+  "i18n": {
+    "Convert co-ordinate format": "转换坐标格式",
+    "Converts geographical coordinates between different formats.": "在不同格式之间转换地理坐标。",
+    // ... 其他翻译
+    "Precision": "精度"
+  }
+}
+```
+
+请注意，这里没有包括代码中的链接和示例文本，因为它们不符合您要求中定义的自然文本条件。

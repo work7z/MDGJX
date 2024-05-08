@@ -1,0 +1,1275 @@
+[
+    {
+        "Id": "all",
+        "Label": [
+            "cPS6q",
+            "All Tools"
+        ],
+        "SubCategories": [],
+        "TotalCount": 87
+    },
+    {
+        "Id": "codec",
+        "Label": [
+            "ks12d",
+            "Cyber Security"
+        ],
+        "SubCategories": [
+            {
+                "Id": "codec.Digest_Algorithm",
+                "Label": [
+                    "y_BN6",
+                    "Digest Algorithm"
+                ],
+                "Icon": "segmented-control",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "md2",
+                        "Label": [
+                            "x41ev7",
+                            "MD2"
+                        ],
+                        "Description": [
+                            "16wtIW",
+                            "MD2 (Message-Digest Algorithm 2) is a cryptographic hash function that takes an input and produces a 128-bit (16-byte) hash value. \n\nIt was developed by Ronald Rivest in 1989 as a successor to MD1. MD2 is optimized for 8-bit computers and is relatively simple compared to other hash functions. \n\nHowever, MD2 has been shown to be vulnerable to collision attacks, and is no longer considered secure for cryptographic purposes. MD2 is still used in some applications, but is being phased out in favor of more secure hash functions such as SHA-256 and SHA-3."
+                        ]
+                    },
+                    {
+                        "Id": "md4",
+                        "Label": [
+                            "x70PnM",
+                            "MD4"
+                        ],
+                        "Description": [
+                            "s7gKzt",
+                            "MD4 (Message-Digest Algorithm 4) is a cryptographic hash function that takes an input and produces a 128-bit (16-byte) hash value. \n\nIt was developed by Ronald Rivest in 1990 as a successor to MD2 and MD3. \n\nHowever, MD4 has been shown to be vulnerable to collision attacks, and is no longer considered secure for cryptographic purposes. MD4 is still used in some applications, but is being phased out in favor of more secure hash functions such as SHA-256 and SHA-3."
+                        ]
+                    },
+                    {
+                        "Id": "md5",
+                        "Label": [
+                            "xAWqXD",
+                            "MD5"
+                        ],
+                        "Description": [
+                            "1g20QB9",
+                            "The MD5 message-digest algorithm is a widely used hash function producing a 128-bit hash value. \n\nMD5 was designed by Ronald Rivest in 1991 to replace an earlier hash function MD4, and was specified in 1992 as RFC 1321. MD5 can be used as a checksum to verify data integrity against unintentional corruption. Historically it was widely used as a cryptographic hash function; however it has been found to suffer from extensive vulnerabilities. \n\nIt remains suitable for other non-cryptographic purposes, for example for determining the partition for a particular key in a partitioned database, and may be preferred due to lower computational requirements than more recent Secure Hash Algorithms."
+                        ]
+                    },
+                    {
+                        "Id": "sha1",
+                        "Label": [
+                            "xTtyeA",
+                            "SHA1"
+                        ],
+                        "Description": [
+                            "gh9zxxA",
+                            "SHA-1, or Secure Hash Algorithm 1, is a cryptographic hash function that takes an input (or 'message') and returns a fixed-size 160-bit (20-byte) hash value. \n\nThis is typically rendered as a hexadecimal number, 40 digits long. It's commonly used in various security applications and protocols, including TLS and SSL, PGP, SSH, and IPsec. \n\nHowever, SHA-1 is not considered secure against well-funded attackers. As such, it's recommended to use stronger hash functions like SHA-256 or SHA-3."
+                        ]
+                    },
+                    {
+                        "Id": "sha224",
+                        "Label": [
+                            "xTtyeA.sha224",
+                            "SHA224"
+                        ],
+                        "Description": [
+                            "w2j1.sha224",
+                            "SHA-224 is a cryptographic hash function that takes an input and produces a 224-bit (28-byte) hash value. \n\nIt is part of the SHA-2 family of hash functions, which also includes SHA-256, SHA-384, and SHA-512. SHA-224 is designed to be more secure than its predecessor, SHA-1, which has been shown to be vulnerable to collision attacks. \n\nSHA-224 is widely used in digital signatures, message authentication codes, and other applications where data integrity is critical."
+                        ]
+                    },
+                    {
+                        "Id": "sha256",
+                        "Label": [
+                            "xTtyeA.sha256",
+                            "SHA256"
+                        ],
+                        "Description": [
+                            "gh9zs2.sha256",
+                            "SHA-256 is a cryptographic hash function that takes an input and produces a 256-bit (32-byte) hash value. \n\nIt is part of the SHA-2 family of hash functions, which also includes SHA-224, SHA-384, and SHA-512. SHA-256 is designed to be more secure than its predecessor, SHA-1, which has been shown to be vulnerable to collision attacks. \n\nSHA-256 is widely used in digital signatures, message authentication codes, and other applications where data integrity is critical."
+                        ]
+                    },
+                    {
+                        "Id": "sha384",
+                        "Label": [
+                            "xTtyeA.sha384",
+                            "SHA384"
+                        ],
+                        "Description": [
+                            "gh3zA.sha384",
+                            "SHA-384 is a cryptographic hash function that takes an input and produces a 384-bit (48-byte) hash value. \n\nIt is part of the SHA-2 family of hash functions, which also includes SHA-224, SHA-256, SHA-512, SHA-512/224, and SHA-512/256. SHA-384 is designed to be more secure than its predecessor, SHA-1, which has been shown to be vulnerable to collision attacks. \n\nSHA-384 is widely used in digital signatures, message authentication codes, and other applications where data integrity is critical."
+                        ]
+                    },
+                    {
+                        "Id": "sha512",
+                        "Label": [
+                            "xTtyeA.sha512",
+                            "SHA512"
+                        ],
+                        "Description": [
+                            "gh9zwA.sha512",
+                            "SHA-512 is a cryptographic hash function that takes an input and produces a 512-bit (64-byte) hash value. \n\nIt is part of the SHA-2 family of hash functions, which also includes SHA-224, SHA-256, SHA-384, SHA-512/224, and SHA-512/256. SHA-512 is designed to be more secure than its predecessor, SHA-1, which has been shown to be vulnerable to collision attacks. \n\nSHA-512 is widely used in digital signatures, message authentication codes, and other applications where data integrity is critical."
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "codec.Symmetric_Crypto",
+                "Label": [
+                    "y_2Q2",
+                    "Symmetric Crypto"
+                ],
+                "Icon": "rect-width",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "sym_pbe_md5_des",
+                        "Label": [
+                            "x41esym_pbe_md5_des",
+                            "sym_pbe_md5_des"
+                        ],
+                        "Description": [
+                            "6wsym_pbe_md5_des",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "sym_pbe_sha1_rc2",
+                        "Label": [
+                            "x41esym_pbe_sha1_rc2",
+                            "sym_pbe_sha1_rc2"
+                        ],
+                        "Description": [
+                            "6wsym_pbe_sha1_rc2",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "sym_pbe_sha1_des",
+                        "Label": [
+                            "x41esym_pbe_sha1_des",
+                            "sym_pbe_sha1_des"
+                        ],
+                        "Description": [
+                            "6wsym_pbe_sha1_des",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "sym_rc6",
+                        "Label": [
+                            "x41esym_rc6",
+                            "sym_rc6"
+                        ],
+                        "Description": [
+                            "6wsym_rc6",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "sym_rc4",
+                        "Label": [
+                            "x41esym_rc4",
+                            "sym_rc4"
+                        ],
+                        "Description": [
+                            "6wsym_rc4",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "sym_rc5",
+                        "Label": [
+                            "x41esym_rc5",
+                            "sym_rc5"
+                        ],
+                        "Description": [
+                            "6wsym_rc5",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "sym_rc2",
+                        "Label": [
+                            "x41esym_rc2",
+                            "sym_rc2"
+                        ],
+                        "Description": [
+                            "6wsym_rc2",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "sym_triple_des",
+                        "Label": [
+                            "x41esym_triple_des",
+                            "sym_triple_des"
+                        ],
+                        "Description": [
+                            "6wsym_triple_des",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "sym_blowfish",
+                        "Label": [
+                            "x41esym_blowfish",
+                            "sym_blowfish"
+                        ],
+                        "Description": [
+                            "6wsym_blowfish",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "sym_des",
+                        "Label": [
+                            "x41esym_des",
+                            "sym_des"
+                        ],
+                        "Description": [
+                            "6wsym_des",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "sym_aes",
+                        "Label": [
+                            "x41esym_aes",
+                            "sym_aes"
+                        ],
+                        "Description": [
+                            "6wsym_aes",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "sym_arc4",
+                        "Label": [
+                            "x41esym_arc4",
+                            "sym_arc4"
+                        ],
+                        "Description": [
+                            "6wsym_arc4",
+                            "TBC"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "codec.Asymmetric_Crypto",
+                "Label": [
+                    "y_2Q3",
+                    "Asymmetric Crypto"
+                ],
+                "Icon": "inheritance",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "asym_rsa",
+                        "Label": [
+                            "x41easym_rsa",
+                            "asym_rsa"
+                        ],
+                        "Description": [
+                            "6wasym_rsa",
+                            "TBC"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "codec.SM_Algorithm",
+                "Label": [
+                    "y_2Q4",
+                    "China National Algorithms"
+                ],
+                "Icon": "search-around",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "sm2",
+                        "Label": [
+                            "x41esm2",
+                            "sm2"
+                        ],
+                        "Description": [
+                            "6wsm2",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "sm3",
+                        "Label": [
+                            "x41esm3",
+                            "sm3"
+                        ],
+                        "Description": [
+                            "6wsm3",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "sm4",
+                        "Label": [
+                            "x41esm4",
+                            "sm4"
+                        ],
+                        "Description": [
+                            "6wsm4",
+                            "TBC"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "codec.Encode_and_Decode",
+                "Label": [
+                    "y_2Q1",
+                    "Encode and Decode"
+                ],
+                "Icon": "widget-button",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "edc_base64",
+                        "Label": [
+                            "x41eedc_base64",
+                            "edc_base64"
+                        ],
+                        "Description": [
+                            "6wedc_base64",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "edc_url",
+                        "Label": [
+                            "x41eedc_url",
+                            "edc_url"
+                        ],
+                        "Description": [
+                            "6wedc_url",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "edc_base32",
+                        "Label": [
+                            "x41eedc_base32",
+                            "edc_base32"
+                        ],
+                        "Description": [
+                            "6wedc_base32",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "edc_hex",
+                        "Label": [
+                            "x41eedc_hex",
+                            "edc_hex"
+                        ],
+                        "Description": [
+                            "6wedc_hex",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "edc_unicode",
+                        "Label": [
+                            "x41eedc_unicode",
+                            "edc_unicode"
+                        ],
+                        "Description": [
+                            "6wedc_unicode",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "edc_base64-hex",
+                        "Label": [
+                            "x41eedc_base64-hex",
+                            "edc_base64-hex"
+                        ],
+                        "Description": [
+                            "6wedc_base64-hex",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "edc_querystring",
+                        "Label": [
+                            "x41eedc_querystring",
+                            "edc_querystring"
+                        ],
+                        "Description": [
+                            "6wedc_querystring",
+                            "TBC"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "codec.Escape_and_unescape",
+                "Label": [
+                    "z1oFn",
+                    "Escape and Unescape"
+                ],
+                "Icon": "vertical-inbetween",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "esc_xml",
+                        "Label": [
+                            "x41eesc_xml",
+                            "esc_xml"
+                        ],
+                        "Description": [
+                            "6wesc_xml",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "esc_html",
+                        "Label": [
+                            "x41eesc_html",
+                            "esc_html"
+                        ],
+                        "Description": [
+                            "6wesc_html",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "esc_csv",
+                        "Label": [
+                            "x41eesc_csv",
+                            "esc_csv"
+                        ],
+                        "Description": [
+                            "6wesc_csv",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "esc_java_string",
+                        "Label": [
+                            "x41eesc_java_string",
+                            "esc_java_string"
+                        ],
+                        "Description": [
+                            "6wesc_java_string",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "esc_json",
+                        "Label": [
+                            "x41eesc_json",
+                            "esc_json"
+                        ],
+                        "Description": [
+                            "6wesc_json",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "esc_javascript",
+                        "Label": [
+                            "x41eesc_javascript",
+                            "esc_javascript"
+                        ],
+                        "Description": [
+                            "6wesc_javascript",
+                            "TBC"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "codec.Web_Auth",
+                "Label": [
+                    "y_2Q5",
+                    "Web Auth"
+                ],
+                "Icon": "shield",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "jwt_encoder",
+                        "Label": [
+                            "x41ejwt_encoder",
+                            "jwt_encoder"
+                        ],
+                        "Description": [
+                            "6wjwt_encoder",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "jwt_decoder",
+                        "Label": [
+                            "x41ejwt_decoder",
+                            "jwt_decoder"
+                        ],
+                        "Description": [
+                            "6wjwt_decoder",
+                            "TBC"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "TotalCount": 39
+    },
+    {
+        "Id": "converter",
+        "Label": [
+            "m0106",
+            "Converter"
+        ],
+        "SubCategories": [
+            {
+                "Id": "command_parser",
+                "Label": [
+                    "ui5pZ",
+                    "Command Parser"
+                ],
+                "Icon": "hat",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "curl_to_pl",
+                        "Label": [
+                            "x41ecurl_to_pl",
+                            "curl_to_pl"
+                        ],
+                        "Description": [
+                            "6wcurl_to_pl",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "curl_to_api",
+                        "Label": [
+                            "x41ecurl_to_api",
+                            "curl_to_api"
+                        ],
+                        "Description": [
+                            "6wcurl_to_api",
+                            "TBC"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "file_tools",
+                "Label": [
+                    "gQhfS",
+                    "File Tools"
+                ],
+                "Icon": "saved",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "correct_file_path",
+                        "Label": [
+                            "x41ecorrect_file_path",
+                            "correct_file_path"
+                        ],
+                        "Description": [
+                            "6wcorrect_file_path",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "analyze_file_path",
+                        "Label": [
+                            "x41eanalyze_file_path",
+                            "analyze_file_path"
+                        ],
+                        "Description": [
+                            "6wanalyze_file_path",
+                            "TBC"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "TotalCount": 4
+    },
+    {
+        "Id": "generater",
+        "Label": [
+            "m0107",
+            "Generater"
+        ],
+        "SubCategories": [
+            {
+                "Id": "code_converter",
+                "Label": [
+                    "dCFIwC",
+                    "Code Generater"
+                ],
+                "Icon": "array-boolean",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "gen_yaml_to_json",
+                        "Label": [
+                            "x41egen_yaml_to_json",
+                            "gen_yaml_to_json"
+                        ],
+                        "Description": [
+                            "6wgen_yaml_to_json",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "gen_sql_to_json",
+                        "Label": [
+                            "x41egen_sql_to_json",
+                            "gen_sql_to_json"
+                        ],
+                        "Description": [
+                            "6wgen_sql_to_json",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "gen_dml_to_json",
+                        "Label": [
+                            "x41egen_dml_to_json",
+                            "gen_dml_to_json"
+                        ],
+                        "Description": [
+                            "6wgen_dml_to_json",
+                            "TBC"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "data_converter",
+                "Label": [
+                    "aSOpr",
+                    "Data Model Generater"
+                ],
+                "Icon": "array-boolean",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "json_to_model",
+                        "Label": [
+                            "x41ejson_to_model",
+                            "json_to_model"
+                        ],
+                        "Description": [
+                            "6wjson_to_model",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "xml_to_model",
+                        "Label": [
+                            "x41exml_to_model",
+                            "xml_to_model"
+                        ],
+                        "Description": [
+                            "6wxml_to_model",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "sql_to_model",
+                        "Label": [
+                            "x41esql_to_model",
+                            "sql_to_model"
+                        ],
+                        "Description": [
+                            "6wsql_to_model",
+                            "TBC"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "text_random",
+                "Label": [
+                    "unc9E",
+                    "Random Text"
+                ],
+                "Icon": "random",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "rand_uuid",
+                        "Label": [
+                            "x41erand_uuid",
+                            "rand_uuid"
+                        ],
+                        "Description": [
+                            "6wrand_uuid",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "rand_mock",
+                        "Label": [
+                            "x41erand_mock",
+                            "rand_mock"
+                        ],
+                        "Description": [
+                            "6wrand_mock",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "rand_plaintext",
+                        "Label": [
+                            "x41erand_plaintext",
+                            "rand_plaintext"
+                        ],
+                        "Description": [
+                            "6wrand_plaintext",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "rand_sundrytext",
+                        "Label": [
+                            "x41erand_sundrytext",
+                            "rand_sundrytext"
+                        ],
+                        "Description": [
+                            "6wrand_sundrytext",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "rand_loremipsum",
+                        "Label": [
+                            "x41erand_loremipsum",
+                            "rand_loremipsum"
+                        ],
+                        "Description": [
+                            "6wrand_loremipsum",
+                            "TBC"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "TotalCount": 11
+    },
+    {
+        "Id": "formatter",
+        "Label": [
+            "m0108",
+            "Formatter"
+        ],
+        "SubCategories": [
+            {
+                "Id": "code_prettier",
+                "Label": [
+                    "dCFIC",
+                    "Code Prettier"
+                ],
+                "Icon": "array-string",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "fmt_html",
+                        "Label": [
+                            "x41efmt_html",
+                            "fmt_html"
+                        ],
+                        "Description": [
+                            "6wfmt_html",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "fmt_xml",
+                        "Label": [
+                            "x41efmt_xml",
+                            "fmt_xml"
+                        ],
+                        "Description": [
+                            "6wfmt_xml",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "fmt_yaml",
+                        "Label": [
+                            "x41efmt_yaml",
+                            "fmt_yaml"
+                        ],
+                        "Description": [
+                            "6wfmt_yaml",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "fmt_css",
+                        "Label": [
+                            "x41efmt_css",
+                            "fmt_css"
+                        ],
+                        "Description": [
+                            "6wfmt_css",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "fmt_css",
+                        "Label": [
+                            "x41efmt_css",
+                            "fmt_css"
+                        ],
+                        "Description": [
+                            "6wfmt_css",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "fmt_less",
+                        "Label": [
+                            "x41efmt_less",
+                            "fmt_less"
+                        ],
+                        "Description": [
+                            "6wfmt_less",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "fmt_sass",
+                        "Label": [
+                            "x41efmt_sass",
+                            "fmt_sass"
+                        ],
+                        "Description": [
+                            "6wfmt_sass",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "fmt_json",
+                        "Label": [
+                            "x41efmt_json",
+                            "fmt_json"
+                        ],
+                        "Description": [
+                            "6wfmt_json",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "fmt_markdown",
+                        "Label": [
+                            "x41efmt_markdown",
+                            "fmt_markdown"
+                        ],
+                        "Description": [
+                            "6wfmt_markdown",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "fmt_javascript",
+                        "Label": [
+                            "x41efmt_javascript",
+                            "fmt_javascript"
+                        ],
+                        "Description": [
+                            "6wfmt_javascript",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "fmt_typescript",
+                        "Label": [
+                            "x41efmt_typescript",
+                            "fmt_typescript"
+                        ],
+                        "Description": [
+                            "6wfmt_typescript",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "fmt_sql",
+                        "Label": [
+                            "x41efmt_sql",
+                            "fmt_sql"
+                        ],
+                        "Description": [
+                            "6wfmt_sql",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "fmt_graphql",
+                        "Label": [
+                            "x41efmt_graphql",
+                            "fmt_graphql"
+                        ],
+                        "Description": [
+                            "6wfmt_graphql",
+                            "TBC"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "TotalCount": 13
+    },
+    {
+        "Id": "translater",
+        "Label": [
+            "-Yo129I",
+            "Text Tools"
+        ],
+        "SubCategories": [
+            {
+                "Id": "quick_diff",
+                "Label": [
+                    "yfYeg",
+                    "Quick Differenciate"
+                ],
+                "Icon": "search-text",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "text_compare",
+                        "Label": [
+                            "x41etext_compare",
+                            "text_compare"
+                        ],
+                        "Description": [
+                            "6wtext_compare",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "file_compare",
+                        "Label": [
+                            "x41efile_compare",
+                            "file_compare"
+                        ],
+                        "Description": [
+                            "6wfile_compare",
+                            "TBC"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "general",
+                "Label": [
+                    "y_2Q5dqw",
+                    "Translation"
+                ],
+                "Icon": "translate",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "dictionary",
+                        "Label": [
+                            "x41edictionary",
+                            "dictionary"
+                        ],
+                        "Description": [
+                            "6wdictionary",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "translate_json",
+                        "Label": [
+                            "x41etranslate_json",
+                            "translate_json"
+                        ],
+                        "Description": [
+                            "6wtranslate_json",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "translate_text",
+                        "Label": [
+                            "x41etranslate_text",
+                            "translate_text"
+                        ],
+                        "Description": [
+                            "6wtranslate_text",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "translate_properties",
+                        "Label": [
+                            "x41etranslate_properties",
+                            "translate_properties"
+                        ],
+                        "Description": [
+                            "6wtranslate_properties",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "translate_customizer",
+                        "Label": [
+                            "x41etranslate_customizer",
+                            "translate_customizer"
+                        ],
+                        "Description": [
+                            "6wtranslate_customizer",
+                            "TBC"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "ai_posh",
+                "Label": [
+                    "Ot6EP",
+                    "Polish Tools"
+                ],
+                "Icon": "send-to-graph",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "write_by_ai",
+                        "Label": [
+                            "x41ewrite_by_ai",
+                            "write_by_ai"
+                        ],
+                        "Description": [
+                            "6wwrite_by_ai",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "polish_by_ai",
+                        "Label": [
+                            "x41epolish_by_ai",
+                            "polish_by_ai"
+                        ],
+                        "Description": [
+                            "6wpolish_by_ai",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "grammer_check",
+                        "Label": [
+                            "x41egrammer_check",
+                            "grammer_check"
+                        ],
+                        "Description": [
+                            "6wgrammer_check",
+                            "TBC"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "text_matcher",
+                "Label": [
+                    "y_2Q5dqw",
+                    "Text Matcher"
+                ],
+                "Icon": "oil-field",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "regex_tester",
+                        "Label": [
+                            "x41eregex_tester",
+                            "regex_tester"
+                        ],
+                        "Description": [
+                            "6wregex_tester",
+                            "TBC"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "text_template",
+                "Label": [
+                    "yfYeg",
+                    "Text Template"
+                ],
+                "Icon": "oil-field",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "template_dotjs",
+                        "Label": [
+                            "x41etemplate_dotjs",
+                            "template_dotjs"
+                        ],
+                        "Description": [
+                            "6wtemplate_dotjs",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "template_handlebars",
+                        "Label": [
+                            "x41etemplate_handlebars",
+                            "template_handlebars"
+                        ],
+                        "Description": [
+                            "6wtemplate_handlebars",
+                            "TBC"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "TotalCount": 13
+    },
+    {
+        "Id": "network_tools",
+        "Label": [
+            "dGVUB",
+            "Network Tools"
+        ],
+        "SubCategories": [
+            {
+                "Id": "ip_tools",
+                "Label": [
+                    "a3z-3k12",
+                    "IP Address Tools"
+                ],
+                "Icon": "ip-address",
+                "ChildrenIdSet": [
+                    "_"
+                ],
+                "ChildrenSetByInit": [
+                    {
+                        "Id": "ipv4_masker",
+                        "Label": [
+                            "x41eipv4_masker",
+                            "ipv4_masker"
+                        ],
+                        "Description": [
+                            "6wipv4_masker",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "ipv4_to_long",
+                        "Label": [
+                            "x41eipv4_to_long",
+                            "ipv4_to_long"
+                        ],
+                        "Description": [
+                            "6wipv4_to_long",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "ipv4_utility",
+                        "Label": [
+                            "x41eipv4_utility",
+                            "ipv4_utility"
+                        ],
+                        "Description": [
+                            "6wipv4_utility",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "ipv4_network_calculater",
+                        "Label": [
+                            "x41eipv4_network_calculater",
+                            "ipv4_network_calculater"
+                        ],
+                        "Description": [
+                            "6wipv4_network_calculater",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "ipv4_address_converter",
+                        "Label": [
+                            "x41eipv4_address_converter",
+                            "ipv4_address_converter"
+                        ],
+                        "Description": [
+                            "6wipv4_address_converter",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "subnet_mask_tools",
+                        "Label": [
+                            "x41esubnet_mask_tools",
+                            "subnet_mask_tools"
+                        ],
+                        "Description": [
+                            "6wsubnet_mask_tools",
+                            "TBC"
+                        ]
+                    },
+                    {
+                        "Id": "nodes_host_calculater",
+                        "Label": [
+                            "x41enodes_host_calculater",
+                            "nodes_host_calculater"
+                        ],
+                        "Description": [
+                            "6wnodes_host_calculater",
+                            "TBC"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "TotalCount": 7
+    }
+]

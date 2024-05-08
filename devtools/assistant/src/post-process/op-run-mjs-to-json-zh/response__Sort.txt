@@ -1,0 +1,29 @@
+根据您的要求，下面是提炼代码中自然文本并转换为JSON格式的过程：
+
+1. 找出所有显示给用户的自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是文本，值设置为`123`。
+3. 根据代码的实际功能，为每个键提供恰当的中文翻译。
+4. 输出JSON结果。
+
+以下是转换后的结果：
+
+```json
+{
+  "i18n": {
+    "Sort": "排序",
+    "Alphabetically sorts strings separated by the specified delimiter.": "按指定分隔符分隔字符串的字母排序。",
+    "The IP address option supports IPv4 only.": "IP地址选项仅支持IPv4。",
+    "Delimiter": "分隔符",
+    "Reverse": "反转",
+    "Order": "顺序",
+    "Alphabetical (case sensitive)": "字母顺序（区分大小写）",
+    "Alphabetical (case insensitive)": "字母顺序（不区分大小写）",
+    "IP address": "IP地址",
+    "Numeric": "数字",
+    "Numeric (hexadecimal)": "数字（十六进制）",
+    "Length": "长度"
+  }
+}
+```
+
+在这个JSON对象中，每个键值对代表了一个自然文本及其对应的中文翻译。值`123`被替换为了每个文本对应的中文翻译。这个翻译是根据代码的功能和上下文来确定的。

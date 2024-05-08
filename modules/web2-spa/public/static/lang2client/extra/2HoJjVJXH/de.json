@@ -1,0 +1,23 @@
+{
+    "c1p3b": "Kopieren Sie nach der Integration die bereitgestellte Vorlage in Ihr C++-Programm und ersetzen Sie den Platzhalter durch den tatsächlich codierten Wert, bevor Sie das Programm ausführen.",
+    "c6p4n": "Kopieren Sie nach der Installation der Bibliothek die bereitgestellte Vorlage in Ihr Python-Skript und führen Sie es aus. Die Bibliothek bietet integrierte Funktionen zum Konvertieren zwischen Bytes und Base45-codierten Strings.",
+    "d2w6e": "Klonen/laden Sie das Repository herunter und fügen Sie die bereitgestellte Header-Datei in Ihr Projekt ein. Kompilieren und verknüpfen Sie die Quelldateien gemäß der Projektdokumentation.",
+    "d8w1b": "Sie können dies mit pip tun, indem Sie „pip install base45“ oder „python -m pip install base45“ ausführen.",
+    "f7t1z": "Fügen Sie die Bibliothek manuell oder über einen Paketmanager wie Swift Package Manager (SPM) zu Ihrem Xcode-Projekt hinzu.",
+    "f9t2z": "Fügen Sie Ihrer pom.xml-Datei Folgendes hinzu: `<dependency> <groupId>org.iso</groupId> <artifactId>iso-base45</artifactId> <version>...</version> </dependency>` wobei Version ist die neueste Version.",
+    "g4h7s": "Für C++ können Sie die Bibliothek „base45-cpp“ verwenden, die als GitHub-Repository verfügbar ist.",
+    "j8s6r": "Für Kotlin können Sie die „Barcode-Core“-Bibliothek verwenden, die Base45-Funktionalität enthält.",
+    "j9s5r": "Für C# können Sie die auf NuGet verfügbare „Base45“-Bibliothek verwenden.",
+    "p5e9n": "Fügen Sie die Bibliothek als Abhängigkeit in Ihrem Gradle-Build-Skript hinzu. Fügen Sie beispielsweise in der Datei build.gradle auf App-Ebene „implementation 'com.bottlerocketstudios:barcode-core:...“ mit der neuesten Versionsnummer hinzu.",
+    "p6e3n": "Um es zu installieren, führen Sie „Install-Package Base45“ in der Package Manager-Konsole aus oder fügen Sie die Abhängigkeit über den NuGet Package Manager hinzu.",
+    "q2n9r": "Kopieren Sie nach dem Hinzufügen die bereitgestellte Vorlage in eine Swift-Datei. Beachten Sie, dass wir in diesem Beispiel ein hypothetisches Szenario verwenden, in dem Sie über die Base64-Darstellung der Base45-Zeichenfolge verfügen. Ersetzen Sie ihn durch den tatsächlich codierten Wert, bevor Sie den Code ausführen.",
+    "q6n1r": "Die Bibliothek stellt Encoder- und Decoderklassen bereit, die die Base45-Konvertierung durchführen. Sobald die Abhängigkeit hinzugefügt wurde, kopieren Sie den Vorlagencode in eine Java-Klasse und führen Sie ihn aus.",
+    "u9g6t": "Um diesen Code auszuführen, müssen Sie das Paket „@digitalbazaar/base45“ installieren.",
+    "v5k3r": "Diese Bibliothek bietet eine einfache API für die Base45-Kodierung und -Dekodierung in Node.js-Anwendungen. Kopieren Sie nach der Installation die bereitgestellte Vorlage in Ihr Skript und führen Sie es mit dem Node.js-Interpreter aus.",
+    "x2c5e": "Um Base45 in Python verwenden zu können, müssen Sie die Bibliothek „base45“ installieren.",
+    "y3m7k": "Verwenden Sie für Java die Bibliothek „iso-base45“, die als Maven-Abhängigkeit in Ihr Projekt eingebunden werden kann.",
+    "y9m3k": "Für Swift können Sie die auf GitHub verfügbare Bibliothek „Base45“ verwenden.",
+    "z3m1t": "Nachdem Sie die Abhängigkeit hinzugefügt und das Projekt synchronisiert haben, kopieren Sie die bereitgestellte Vorlage in eine Kotlin-Klasse und ersetzen Sie den Platzhalter durch den tatsächlich codierten Wert, bevor Sie den Code ausführen.",
+    "z7n1m": "Verwenden Sie npm oder Yarn, um es zu installieren, indem Sie „npm install @digitalbazaar/base45“ oder „yarn add @digitalbazaar/base45“ ausführen.",
+    "z8qm2t": "Die Bibliothek stellt Encoder- und Decoderklassen für Base45-Operationen bereit. Kopieren Sie den Vorlagencode in eine C#-Konsolenanwendung und führen Sie ihn nach der Installation des Pakets aus."
+}

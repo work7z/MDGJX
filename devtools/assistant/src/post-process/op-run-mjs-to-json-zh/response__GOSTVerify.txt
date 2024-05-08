@@ -1,0 +1,44 @@
+根据您的要求，下面是将代码中的自然文本提炼成JSON格式，并翻译成中文的过程：
+
+1. 提炼英文自然文本：
+   - Verify the signature of a plaintext message using one of the GOST block ciphers. Enter the signature in the MAC field.
+   - The signature matches
+   - The signature does not match
+
+2. 放入JSON对象`i18n`中，并命名：
+
+```json
+{
+  "i18n": {
+    "Verify the signature of a plaintext message using one of the GOST block ciphers. Enter the signature in the MAC field.": "123",
+    "The signature matches": "123",
+    "The signature does not match": "123"
+  }
+}
+```
+
+3. 根据代码的实际功能，翻译文本为中文，并替换`123`：
+
+```json
+{
+  "i18n": {
+    "Verify the signature of a plaintext message using one of the GOST block ciphers. Enter the signature in the MAC field.": "使用GOST块密码之一验证纯文本消息的签名。在MAC字段中输入签名。",
+    "The signature matches": "签名匹配",
+    "The signature does not match": "签名不匹配"
+  }
+}
+```
+
+4. 输出JSON结果：
+
+```json
+{
+  "i18n": {
+    "Verify the signature of a plaintext message using one of the GOST block ciphers. Enter the signature in the MAC field.": "使用GOST块密码之一验证纯文本消息的签名。在MAC字段中输入签名。",
+    "The signature matches": "签名匹配",
+    "The signature does not match": "签名不匹配"
+  }
+}
+```
+
+以上JSON对象包含了代码中显示给用户的自然文本，以及对应的中文翻译。

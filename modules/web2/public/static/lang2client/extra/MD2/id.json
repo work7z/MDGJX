@@ -1,0 +1,23 @@
+{
+    "MD2-Advantages-011": "Apa keuntungan menggunakan MD2?",
+    "MD2-AlgorithmDetails-010": "Detail Algoritma MD2",
+    "MD2-Applications-018": "Aplikasi apa saja yang sudah atau masih menggunakan MD2?",
+    "MD2-Breakdown-016": "Kelemahan kriptografi telah ditemukan di MD2 dari waktu ke waktu, dan alternatif yang lebih kuat seperti SHA-256 dan SHA-3 kini direkomendasikan untuk semua aplikasi yang memerlukan hashing aman.",
+    "MD2-CollisionSecurity-015": "MD2 dianggap lemah terhadap serangan kriptografi modern. Ukuran hashnya (128 bit) kecil menurut standar saat ini, sehingga rentan terhadap serangan tabrakan.",
+    "MD2-Def-002": "MD2 (Message-Digest Algorithm 2) adalah fungsi hash kriptografi yang dirancang oleh Ronald Rivest pada tahun 1989. Fungsi ini menghasilkan nilai hash 128-bit untuk setiap pesan masukan yang diberikan.",
+    "MD2-DigitalSignature-Risks-021": "Resiko Penggunaan MD2 untuk Tanda Tangan Digital",
+    "MD2-Disadvantages-014": "Apa saja kelemahan dan masalah keamanan MD2?",
+    "MD2-FAQ-001": "Apa itu MD2?",
+    "MD2-HistoricalUse-020": "Secara historis, MD2 digunakan dalam pemeriksaan integritas file dan pembaruan perangkat lunak, meskipun sebagian besar aplikasi ini telah beralih ke fungsi hash yang lebih aman seperti SHA-256 dan SHA-512.)",
+    "MD2-History-004": "Bagaimana MD2 dikembangkan dan bagaimana sejarahnya?",
+    "MD2-Implementation-013": "Hal ini telah diterapkan secara luas dan distandarisasi di berbagai platform dan bahasa, yang berarti bahwa mengintegrasikan MD2 ke dalam sistem yang ada relatif mudah.",
+    "MD2-InsecurityExamples-017": "Contoh Kerusakan Keamanan MD2",
+    "MD2-Operation-007": "Bagaimana cara kerja operasi MD2?",
+    "MD2-Origin-005": "MD2 awalnya dibuat sebagai penyempurnaan dari MD1, mengatasi beberapa kelemahan yang ditemukan pada algoritma sebelumnya. Ini mendapatkan popularitas karena kesederhanaan dan kecepatannya pada saat itu.",
+    "MD2-PKI-019": "MD2 pernah digunakan di Infrastruktur Kunci Publik (PKI) untuk tanda tangan digital, namun sudah tidak digunakan lagi karena kerentanannya terhadap serangan. Sertifikat yang ditandatangani dengan MD2 tidak lagi dipercaya oleh sebagian besar sistem.",
+    "MD2-Process-008": "MD2 beroperasi dengan memasukkan pesan masukan ke kelipatan 16 byte dan kemudian memprosesnya melalui serangkaian operasi OR eksklusif, rotasi bit, dan penambahan. Hasil akhirnya adalah nilai hash 128-bit.",
+    "MD2-Purpose-003": "Tujuan MD2 adalah untuk memastikan integritas data dengan menghasilkan sidik jari digital unik yang dapat digunakan untuk memverifikasi keaslian dan keaslian data.",
+    "MD2-Rounds-009": "Algoritme ini menggunakan proses empat putaran dengan operasi spesifik yang dilakukan pada variabel status 128-bit. Setiap putaran mengambil blok pesan berlapis dan memperbarui status hingga seluruh pesan diproses.",
+    "MD2-Speed-012": "MD2 dianggap cepat pada masanya dan masih memiliki kinerja yang dapat diterima dalam beberapa skenario, sehingga cocok untuk lingkungan di mana sumber daya komputasi terbatas.",
+    "MD2-Successors-006": "Namun, hal ini telah digantikan oleh algoritme yang lebih kuat seperti MD5 dan SHA-1, yang merupakan bagian dari rangkaian fungsi hash yang sama tetapi menawarkan fitur keamanan yang lebih baik."
+}

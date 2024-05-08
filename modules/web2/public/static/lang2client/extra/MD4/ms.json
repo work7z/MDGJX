@@ -1,0 +1,23 @@
+{
+    "MD4-Advantages-011": "Apakah kelebihan menggunakan MD4?",
+    "MD4-AlgorithmDetails-010": "Butiran Algoritma MD4",
+    "MD4-Applications-018": "Apakah aplikasi yang telah menggunakan atau masih menggunakan MD4?",
+    "MD4-Breakdown-016": "Kelemahan reka bentuk algoritma telah membawa kepada serangan praktikal yang membolehkan perlanggaran cincang mudah dan juga serangan praimej separa, menjadikan MD4 tidak sesuai untuk sebarang kes penggunaan kriptografi yang selamat hari ini.",
+    "MD4-CollisionSecurity-015": "MD4 mempunyai beberapa kelemahan kriptografi, termasuk kerentanan terhadap serangan perlanggaran. Ini bermakna dua input berbeza boleh menghasilkan output cincang yang sama, menjadikannya tidak selamat untuk aplikasi yang memerlukan rintangan perlanggaran atau integriti mesej yang kuat.",
+    "MD4-Def-002": "MD4 (Message-Digest Algorithm 4) ialah fungsi cincang kriptografi yang direka oleh Ronald Rivest pada tahun 1990. Ia menghasilkan nilai cincang 128-bit untuk sebarang mesej input yang diberikan.",
+    "MD4-DigitalSignature-Risks-021": "Risiko Menggunakan MD4 untuk Tandatangan Digital",
+    "MD4-Disadvantages-014": "Apakah kelemahan dan kebimbangan keselamatan dengan MD4?",
+    "MD4-FAQ-001": "Apakah MD4?",
+    "MD4-HistoricalUse-019": "Dari segi sejarah, MD4 digunakan dalam tandatangan digital, semakan integriti fail dan kemas kini perisian. Walau bagaimanapun, disebabkan kelemahannya, aplikasi ini sebahagian besarnya telah beralih kepada alternatif yang lebih selamat seperti SHA-256 dan SHA-3.",
+    "MD4-History-004": "Bagaimanakah MD4 dibangunkan dan apakah kepentingan sejarahnya?",
+    "MD4-Implementation-013": "Ia telah dilaksanakan secara meluas dan diseragamkan merentas pelbagai platform dan bahasa, memberikan kemudahan penyepaduan ke dalam sistem sedia ada, walaupun kelebihan ini diatasi oleh kebimbangan keselamatannya dalam konteks moden.",
+    "MD4-InsecurityExamples-017": "Contoh Pecahan Keselamatan MD4",
+    "MD4-LegacySystems-020": "MD4 mungkin masih wujud dalam sistem warisan, tetapi penggunaannya tidak digalakkan dalam semua konteks di mana keselamatan menjadi kebimbangan. Piawaian moden tidak lagi mengesyorkan MD4 untuk sebarang tujuan kriptografi.",
+    "MD4-Operation-007": "Bagaimanakah operasi MD4 berfungsi?",
+    "MD4-Origin-005": "MD4 ialah evolusi MD2 dan MD3, bertujuan untuk memberikan prestasi yang lebih pantas sambil mengekalkan sifat keselamatan. Walau bagaimanapun, ternyata MD4 mempunyai beberapa kelemahan keselamatan.",
+    "MD4-Process-008": "MD4 memproses mesej input dengan memasukkannya kepada gandaan 512 bit dan membahagikannya kepada blok 16 perkataan. Algoritma kemudiannya beroperasi pada blok ini menggunakan empat pusingan pemprosesan yang melibatkan operasi bitwise, penambahan modular dan fungsi bukan linear.",
+    "MD4-Purpose-003": "Tujuan MD4 adalah untuk memastikan integriti data dengan menghasilkan cap jari digital bersaiz tetap yang boleh digunakan untuk mengesahkan ketulenan dan integriti data asal.",
+    "MD4-Rounds-009": "Selepas semua blok diproses, keadaan dalaman yang terhasil diubah menjadi nilai cincang akhir 128-bit.",
+    "MD4-Speed-012": "MD4 pada mulanya direka bentuk untuk menjadi lebih pantas daripada pendahulunya, yang menjadikannya popular untuk aplikasi yang memerlukan pencincangan pantas pada masa pengenalannya.",
+    "MD4-Successors-006": "Walaupun kelemahannya, MD4 meletakkan asas untuk fungsi cincang berikutnya seperti MD5 dan SHA-1, yang menambah baik reka bentuknya tetapi juga mewarisi beberapa kelemahannya dari semasa ke semasa."
+}

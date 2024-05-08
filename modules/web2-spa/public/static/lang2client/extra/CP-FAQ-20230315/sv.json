@@ -1,0 +1,20 @@
+{
+    "CP-Advantage-Career-014": "Att lära sig programmera öppnar upp karriärmöjligheter inom olika branscher och låter dig utveckla innovativa lösningar, automatisera uppgifter och förstå komplexa system.",
+    "CP-Advantages-013": "Vilka är fördelarna med att lära sig datorprogrammering?",
+    "CP-Basics-001": "Vad är datorprogrammering?",
+    "CP-Def-002": "Datorprogrammering innebär att skriva instruktioner, eller kod, på ett programmeringsspråk för att instruera datorer om hur de ska utföra specifika uppgifter.",
+    "CP-History-004": "Vad är historien om datorprogrammering?",
+    "CP-History-Origin-005": "De första programmerbara maskinerna går tillbaka till Ada Lovelaces arbete med Charles Babbages Analytical Engine på 1800-talet. Men modern programmering tog fart med uppfinningen av den första elektroniska datorn för allmänt bruk, ENIAC, på 1940-talet.",
+    "CP-Lang-Choice-009": "Valet av språk beror på faktorer som projektkrav, samhällsstöd, enkel inlärning och prestationsbehov.",
+    "CP-Language-Evolution-006": "Sedan dess har programmeringsspråk utvecklats från maskinkod till montering, sedan till högnivåspråk som FORTRAN, COBOL, C och nu till moderna språk som Python, JavaScript och Rust.",
+    "CP-Languages-007": "Vilka är några populära programmeringsspråk?",
+    "CP-Languages-List-008": "Populära programmeringsspråk inkluderar Java, Python, JavaScript, C++, C#, Swift, Go, PHP, Ruby och Kotlin. Var och en har sina egna styrkor och användningsfall, t.ex. Python för datavetenskap, JavaScript för webbutveckling och C++ för systemprogrammering.",
+    "CP-Process-010": "Vad är processen med datorprogrammering?",
+    "CP-Process-Explanation-011": "Programmering innefattar vanligtvis planering (definiering av problemet och design av lösningen), kodning (skriva källkod på ett valt språk), testning (felsökning och verifiering av funktionalitet) och underhåll (uppdatering och förbättring av programmet över tid).",
+    "CP-Purpose-003": "Programmerare skapar algoritmer, löser problem och bygger mjukvaruapplikationer som kan automatisera processer, manipulera data och interagera med användare eller andra system.",
+    "CP-SDLC-012": "Detta är ofta strukturerat inom en Software Development Life Cycle (SDLC) som inkluderar ytterligare faser som kravanalys, design, implementering och testning av användaracceptans.",
+    "CP-Skillset-015": "Det förbättrar också logiskt tänkande, problemlösningsförmåga och anpassningsförmåga till ny teknik, vilket gör en mer mångsidig i den digitala tidsåldern.",
+    "HistOfProg-Wikipedia": "Programmeringsspråkens historia - Wikipedia",
+    "SDLC-Wikipedia": "Livscykel för mjukvaruutveckling - Wikipedia",
+    "TIOBE-Index": "TIOBE Index - The Software Quality Company"
+}

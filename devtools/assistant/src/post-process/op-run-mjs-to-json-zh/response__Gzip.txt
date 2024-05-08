@@ -1,0 +1,47 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的操作步骤：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是文本，值设为`123`。
+3. 根据代码的实际功能，对这些文本进行中文翻译。
+4. 输出JSON结果。
+
+下面是按照这些步骤创建的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Gzip": "123",
+    "Compresses data using the deflate algorithm with gzip headers.": "使用带有gzip头的deflate算法压缩数据。",
+    "Compression type": "压缩类型",
+    "Filename (optional)": "文件名（可选）",
+    "Comment (optional)": "注释（可选）",
+    "Include file checksum": "包含文件校验和"
+  }
+}
+```
+
+以下是每个键值对的解释：
+
+- "Gzip"：类名，这里翻译为“Gzip”本身，因为它是一个专有名词。
+- "Compresses data using the deflate algorithm with gzip headers."：这是对操作的一个描述，我已经给出了一个简洁的中文翻译。
+- "Compression type"：压缩类型的选项，直接翻译为“压缩类型”。
+- "Filename (optional)"：文件名参数的描述，翻译为“文件名（可选）”。
+- "Comment (optional)"：注释参数的描述，翻译为“注释（可选）”。
+- "Include file checksum"：是否包含文件校验和的选项，翻译为“包含文件校验和”。
+
+【输出示例】
+
+```json
+{
+  "i18n": {
+    "Gzip": "Gzip",
+    "Compresses data using the deflate algorithm with gzip headers.": "使用带有gzip头的deflate算法压缩数据。",
+    "Compression type": "压缩类型",
+    "Filename (optional)": "文件名（可选）",
+    "Comment (optional)": "注释（可选）",
+    "Include file checksum": "包含文件校验和"
+  }
+}
+```
+
+请注意，这里的值`123`已经替换成了每个文本的中文翻译。

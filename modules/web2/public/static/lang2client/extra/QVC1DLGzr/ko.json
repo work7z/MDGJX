@@ -1,0 +1,20 @@
+{
+    "c1p3b": "통합되면 제공된 템플릿을 C++ 프로그램에 복사하고 프로그램을 실행하기 전에 자리 표시자를 실제 인코딩된 값으로 바꿉니다.",
+    "c6p4n": "설치 후 제공된 템플릿을 Python 스크립트에 복사하고 디코드 부분의 자리 표시자를 실제 Base62로 인코딩된 바이트(접두사 'b')로 바꾼 다음 스크립트를 실행합니다.",
+    "d2w6e": "소스 코드를 다운로드하고 프로젝트에 base62.h 헤더 파일을 포함하세요. 프로젝트 지침에 따라 소스 파일을 컴파일/링크합니다.",
+    "d8w1b": "`pip install python-base62` 또는 `pip3 install python-base62`를 실행하여 pip를 통해 설치하세요.",
+    "f9t2z": "버전이 있어야 하는 `<dependent> <groupId>com.warrenstrange</groupId> <artifactId>googleauth</artifactId> <version>...</version> </dependent>`를 추가하여 Maven 프로젝트에 종속성을 추가합니다. 최신 릴리스로 교체되었습니다.",
+    "g4h7s": "C++의 경우 Base62 기능을 제공하는 'cpp-base62' 라이브러리를 사용할 수 있습니다.",
+    "j9s5r": "C#의 경우 'WarrenStranger.Base62' 라이브러리를 사용하여 Base62 인코딩 및 디코딩을 처리합니다.",
+    "k3m2e": "제공된 템플릿을 새 Go 파일에 복사하고 자리 표시자를 실제 인코딩된 값으로 바꾼 다음 `go run yourfile.go`를 사용하여 파일을 실행하세요.",
+    "p6e3n": "패키지 관리자 콘솔에서 'Install-Package WarrenStranger.Base62'를 실행하여 NuGet을 통해 패키지를 설치하거나 NuGet 패키지 관리자를 통해 추가하세요.",
+    "q6n1r": "라이브러리를 설치한 후 제공된 템플릿을 Java 클래스에 복사하고 코드를 실행하기 전에 자리 표시자를 실제 인코딩된 값으로 바꿉니다. 이 구현에서는 중간 단계로 정수 배열을 사용합니다.",
+    "r4n6v": "`go get github.com/xyproto/base62`를 실행하여 프로젝트에 종속성을 추가하세요. 그러면 패키지가 다운로드되어 설치됩니다.",
+    "u7i9b": "Go의 경우 GitHub에서 제공되는 'base62' 패키지를 활용하세요.",
+    "u9g6t": "이 코드를 실행하려면 Base62 인코딩 및 디코딩 기능을 제공하는 'base62' 패키지를 설치해야 합니다.",
+    "v5k3r": "설치가 완료되면 디코드 섹션의 자리 표시자를 실제 Base62로 인코딩된 값으로 바꾸고 스크립트를 실행합니다. 라이브러리는 버퍼와 Base62 문자열 간의 변환을 처리합니다.",
+    "x2c5e": "Python의 경우 'base62' 라이브러리를 사용하여 Base62 인코딩 및 디코딩을 처리합니다.",
+    "y3m7k": "Java의 경우 'google-authenticator' 라이브러리의 Base62Converter 클래스를 활용하세요.",
+    "z7n1m": "`npm install base62` 또는 `yarn add base62`를 실행하여 npm을 사용하여 설치할 수 있습니다.",
+    "z8qqm2t": "설치 후 제공된 템플릿을 C# 콘솔 애플리케이션에 복사하고 프로그램을 실행하기 전에 자리 표시자를 실제 인코딩된 값으로 바꿉니다."
+}

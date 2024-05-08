@@ -1,0 +1,24 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式，并翻译成中文的过程：
+
+1. 提炼英文自然文本。
+2. 将这些文本放入名为`i18n`的对象中，键是原始文本，值是`123`作为占位符。
+3. 翻译这些文本为中文，并替换其值。
+4. 输出JSON结果。
+
+下面是结果：
+
+```json
+{
+  "i18n": {
+    "Advanced Encryption Standard (AES) is a U.S. Federal Information Processing Standard (FIPS). It was selected after a 5-year process where 15 competing designs were evaluated.": "高级加密标准（AES）是美国联邦信息处理标准（FIPS）。在经过5年的过程，评估了15个竞争性设计后选定。",
+    "Key: The following algorithms will be used based on the size of the key:": "密钥：将根据密钥的大小使用以下算法：",
+    "IV: The Initialization Vector should be 16 bytes long. If not entered, it will default to 16 null bytes.": "初始化向量（IV）：应为16字节长。如果没有输入，默认为16个空字节。",
+    "Padding: In CBC and ECB mode, PKCS#7 padding will be used.": "填充：在CBC和ECB模式下，将使用PKCS#7填充。",
+    "Invalid key length: ${key.length} bytes": "无效的密钥长度：${key.length}字节",
+    "The following algorithms will be used based on the size of the key:": "将根据密钥大小使用以下算法：",
+    "Tag: ${cipher.mode.tag.toHex()}": "标签：${cipher.mode.tag.toHex()}"
+  }
+}
+```
+
+请注意，在翻译中，我保留了某些技术术语，如AES、CBC、ECB、PKCS#7等，因为它们是加密领域的标准术语，通常不翻译。此外，错误消息中的`${key.length}`和`${cipher.mode.tag.toHex()`是动态替换的变量，所以保留了原始格式。如果需要将这些变量也翻译或替换，请进一步指明。

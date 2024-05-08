@@ -1,0 +1,19 @@
+{
+    "c1p4b": "Každé desetinné číslo je poté převedeno na jedinečnou sekvenci pěti znaků Base85. Pokud na konci zbývají méně než čtyři bajty, může být použito odsazení.",
+    "d7w2e": "Base85 funguje tak, že vstupní data rozdělí do skupin po čtyřech bytech a každou skupinu převede na desítkové číslo mezi 0 a 2^32-1.",
+    "f9t1z": "Base85 byl původně vyvinut pro efektivní reprezentaci binárních dat v PostScriptových dokumentech pro lepší kompresní poměry.",
+    "g3h5s": "Jak Base85 funguje?",
+    "j5s7r": "Jak zakóduji/dekóduji pomocí Base85 v JavaScriptu?",
+    "k2em5e": "Výsledkem jsou kratší výstupní řetězce pro stejné množství vstupních dat, což může být výhodné ve scénářích, kde je minimalizace velikosti kritická.",
+    "p8eq9n": "Pro kódování a dekódování Base85 v JavaScriptu můžete použít knihovny jako 'base85' nebo 'ascii85'.",
+    "q2n3r": "Dnes se používá v různých aplikacích, kde je zásadní prostorová efektivita a čitelnost, jako jsou dokumenty PDF a určité síťové protokoly.",
+    "r9qn8v": "Hlavní výhodou Base85 je zlepšená prostorová efektivita díky větší znakové sadě (85 vs. 64 v Base64 nebo 32 v Base32).",
+    "u1i2b": "Jaké jsou výhody používání Base85 oproti Base64 nebo Base32?",
+    "v4k6r": "Ve srovnání s Base64 nebo Base32 kóduje data do kompaktnější podoby pomocí větší znakové sady.",
+    "w1x4k": "Ano, existuje několik variant, včetně Ascii85 (používá se v PostScriptu a PDF), Z85 (ZeroMQ) a UUencode (starší formát). Každá má trochu jinou znakovou sadu a pravidla.",
+    "x9n1b": "Base85 je schéma kódování, které představuje binární data pomocí sady 85 tisknutelných znaků ASCII.",
+    "y6m8k": "Proč byl vytvořen Base85?",
+    "z2t7m": "Co je Base85?",
+    "z5m6t": "Příklad použití: `const base85 = require('base85'); const encoded = base85.encode('vaše-data'); const decoded = base85.decode(encoded);`",
+    "z9t7p": "Existují nějaké konkrétní varianty Base85?"
+}

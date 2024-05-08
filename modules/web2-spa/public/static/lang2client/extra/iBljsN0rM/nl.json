@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Eenmaal geïntegreerd, kopieert u de meegeleverde sjabloon naar uw C++-programma en vervangt u de tijdelijke aanduiding door de daadwerkelijk gecodeerde waarde voordat u het programma uitvoert.",
+    "c6p4n": "Vervang in de meegeleverde sjabloon de tijdelijke aanduiding in het decoderingsgedeelte door de daadwerkelijke Base58-gecodeerde bytes (voorafgegaan door 'b' voor binaire tekenreeks) en voer vervolgens het script uit.",
+    "d2w6e": "Kloon/download de repository, neem het headerbestand base58.h op in uw project en compileer/link de bronbestanden volgens de instructies van het project.",
+    "d8w1b": "Er is geen extra installatie nodig omdat het wordt geleverd met de standaardbibliotheek. Zorg er echter voor dat uw Python-versie recent genoeg is om deze functionaliteit te bevatten.",
+    "f9t2z": "Voeg de afhankelijkheid toe aan uw Maven-project door `<dependency> <groupId>org.bitcoinj</groupId> <artifactId>bitcoinj-core</artifactId> <version>...</version> </dependency>` toe te voegen waar versie moet worden vervangen door de nieuwste versie.",
+    "g4h7s": "Voor C++ kunt u de 'bitcoin-unlimited-libraries' gebruiken die Base58-functionaliteit biedt.",
+    "j9s5r": "Gebruik voor C# de 'NBitcoin'-bibliotheek om Base58-codering en -decodering af te handelen.",
+    "k3m2e": "Kopieer de meegeleverde sjabloon naar een nieuw Go-bestand, vervang de tijdelijke aanduiding door de daadwerkelijk gecodeerde waarde en voer het bestand vervolgens uit met `go run yourfile.go`",
+    "p6e3n": "Installeer het pakket via NuGet door `Install-Package NBitcoin` uit te voeren in de Package Manager Console of voeg het toe via NuGet Package Manager.",
+    "q6n1r": "Na het installeren van de bibliotheek kopieert u de sjablooncode naar een Java-klasse en vervangt u de tijdelijke aanduiding door de daadwerkelijk gecodeerde waarde voordat u de code uitvoert.",
+    "r4n6v": "Voeg de afhankelijkheid toe aan uw project door `go get github.com/btcsuite/btcutil` uit te voeren. Hiermee wordt het pakket gedownload en geïnstalleerd.",
+    "u7i9b": "Gebruik voor Go het 'btcutil'-pakket dat beschikbaar is op GitHub, met name de base58-module.",
+    "u9g6t": "Om deze code uit te voeren, moet u het 'base-x'-pakket installeren dat Base58-codering en -decodering ondersteunt.",
+    "v5k3r": "Deze bibliotheek biedt een flexibele API voor het maken van basiscoderingen, waaronder Base58. Eenmaal geïnstalleerd, vervangt u de tijdelijke aanduiding in de decoderingssectie door de daadwerkelijk gecodeerde waarde en voert u het script uit.",
+    "x2c5e": "De ingebouwde 'base58'-module van Python kan worden gebruikt voor Base58-codering en decodering.",
+    "y3m7k": "Gebruik voor Java de 'bitcoinj'-bibliotheek die Base58-coderings- en decoderingsfunctionaliteit bevat.",
+    "z7n1m": "Installeer het via npm door `npm install base-x` of `yarn add base-x` uit te voeren.",
+    "z8em2t": "Kopieer na de installatie de meegeleverde sjabloon naar een C#-consoletoepassing en vervang de tijdelijke aanduiding door de daadwerkelijk gecodeerde waarde voordat u het programma uitvoert."
+}

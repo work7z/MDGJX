@@ -1,0 +1,71 @@
+根据您的要求，下面是将代码中的自然文本提炼出来，并按照指示转换为JSON格式的过程：
+
+1. 提炼的自然文本如下：
+
+   - Sign a plaintext message using one of the GOST block ciphers.
+   - GOST Sign
+   - Key
+   - IV
+   - Input type
+   - Output type
+   - Algorithm
+   - Block length
+   - sBox
+   - MAC length
+
+2. 将这些文本放入名为`i18n`的对象中，并给它们赋值为123：
+
+   ```json
+   {
+     "i18n": {
+       "Sign a plaintext message using one of the GOST block ciphers.": 123,
+       "GOST Sign": 123,
+       "Key": 123,
+       "IV": 123,
+       "Input type": 123,
+       "Output type": 123,
+       "Algorithm": 123,
+       "Block length": 123,
+       "sBox": 123,
+       "MAC length": 123
+     }
+   }
+   ```
+
+3. 根据代码的实际功能，将`i18n`中的值翻译为中文：
+
+   ```json
+   {
+     "i18n": {
+       "Sign a plaintext message using one of the GOST block ciphers.": "使用GOST分组密码之一对纯文本消息进行签名。",
+       "GOST Sign": "GOST签名",
+       "Key": "密钥",
+       "IV": "初始向量",
+       "Input type": "输入类型",
+       "Output type": "输出类型",
+       "Algorithm": "算法",
+       "Block length": "块长度",
+       "sBox": "S盒",
+       "MAC length": "MAC长度"
+     }
+   }
+   ```
+
+以下是最终的JSON结果：
+
+```json
+{
+  "i18n": {
+    "Sign a plaintext message using one of the GOST block ciphers.": "使用GOST分组密码之一对纯文本消息进行签名。",
+    "GOST Sign": "GOST签名",
+    "Key": "密钥",
+    "IV": "初始向量",
+    "Input type": "输入类型",
+    "Output type": "输出类型",
+    "Algorithm": "算法",
+    "Block length": "块长度",
+    "sBox": "S盒",
+    "MAC length": "MAC长度"
+  }
+}
+```

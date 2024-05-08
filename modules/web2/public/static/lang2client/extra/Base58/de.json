@@ -1,0 +1,20 @@
+{
+    "c5m1b": "Eine weitere Variante, Base58Flickr, unterscheidet sich geringfügig im Zeichensatz. Es ersetzt „+“ durch „,“ und „/“ durch „-“ und passt sich so den URL-Anforderungen von Flickr an.",
+    "c6p9b": "Wenn die Länge der Eingabedaten nicht durch 8 teilbar ist, wird keine Auffüllung verwendet. Stattdessen wird jede nicht vollständige Gruppe unabhängig behandelt.",
+    "d3w2e": "Base58 funktioniert, indem es Eingabebytes in eine große Ganzzahl umwandelt und diese Ganzzahl dann als Kombination von Zeichen aus seinem 58-Zeichensatz (A-Z, a-z, 1-9) ausdrückt.",
+    "f4t7z": "Base58 wurde ursprünglich für Bitcoin entwickelt, um öffentliche Adressen und private Schlüssel eindeutig darzustellen.",
+    "g7h5k": "Wie funktioniert Base58?",
+    "j6s3r": "Wie kodiere/dekodiere ich mit Base58 in JavaScript?",
+    "k1m4e": "Allerdings bietet es nicht ganz die gleiche Platzeffizienz wie Base64 oder Base32, da es weniger Zeichen in seinem Alphabet verwendet.",
+    "pq5e9n": "Sie können Bibliotheken wie „bs58“ verwenden, um Base58-Kodierung und -Dekodierung in JavaScript durchzuführen.",
+    "q2x8k": "Seine Verwendung hat sich auf andere Kryptowährungen und Szenarien ausgeweitet, in denen für Menschen lesbare, fehlerresistente Zeichenfolgen erforderlich sind.",
+    "r2n7v": "Der Hauptvorteil besteht in einer verbesserten Lesbarkeit durch den Ausschluss ähnlich aussehender Zeichen, wodurch Fehler bei der manuellen Eingabe reduziert werden.",
+    "s1b3m": "Im Gegensatz zu Base64 oder Base32 schließt es die leicht verwechselbaren Zeichen „0“, „O“, „I“ und „l“ aus und eignet sich daher für URLs und QR-Codes.",
+    "u8i5b": "Welche Vorteile bietet die Verwendung von Base58 gegenüber Base64 oder Base32?",
+    "v4n9t": "Base58 ist ein Codierungsschema, das Binärdaten als Folge alphanumerischer Zeichen darstellt.",
+    "w3x7k": "Ja, einige beliebte Varianten umfassen Base58Check, das eine Prüfsumme zur Fehlererkennung hinzufügt, die häufig bei Bitcoin verwendet wird.",
+    "x2z6r": "Was ist Base58?",
+    "y9m1n": "Warum wurde Base58 erstellt?",
+    "z1m2t": "Beispielverwendung: `const encoded = bs58.encode('your-data'); const decoded = bs58.decode(encoded);`",
+    "z9t2p": "Gibt es spezielle Varianten von Base58?"
+}

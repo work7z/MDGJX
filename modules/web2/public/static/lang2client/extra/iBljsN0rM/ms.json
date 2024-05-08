@@ -1,0 +1,20 @@
+{
+    "c1p3b": "Setelah disepadukan, salin templat yang disediakan ke dalam program C++ anda dan gantikan pemegang tempat dengan nilai yang dikodkan sebenar sebelum menjalankan program.",
+    "c6p4n": "Dalam templat yang disediakan, gantikan ruang letak dalam bahagian penyahkod dengan bait yang dikodkan Base58 sebenar (diawali dengan 'b' untuk rentetan binari), kemudian jalankan skrip.",
+    "d2w6e": "Klon/muat turun repositori, sertakan fail pengepala base58.h dalam projek anda dan susun/pautkan terhadap fail sumber mengikut arahan projek.",
+    "d8w1b": "Tiada pemasangan tambahan diperlukan kerana ia disertakan dengan perpustakaan standard. Walau bagaimanapun, pastikan versi Python anda cukup terkini untuk memasukkan fungsi ini.",
+    "f9t2z": "Tambahkan kebergantungan pada projek Maven anda dengan menambahkan `<dependency> <groupId>org.bitcoinj</groupId> <artifactId>bitcoinj-core</artifactId> <version>...</version> </dependency>` di mana versi harus diganti dengan keluaran terbaru.",
+    "g4h7s": "Untuk C++, anda boleh menggunakan 'bitcoin-unlimited-libraries' yang menyediakan fungsi Base58.",
+    "j9s5r": "Untuk C#, gunakan perpustakaan 'NBitcoin' untuk mengendalikan pengekodan dan penyahkodan Base58.",
+    "k3m2e": "Salin templat yang disediakan ke dalam fail Go baharu, gantikan pemegang tempat dengan nilai dikodkan sebenar, kemudian jalankan fail menggunakan `go run yourfile.go`",
+    "p6e3n": "Pasang pakej melalui NuGet dengan menjalankan `Install-Package NBitcoin` dalam Package Manager Console atau tambahkannya melalui NuGet Package Manager.",
+    "q6n1r": "Selepas memasang pustaka, salin kod templat ke dalam kelas Java dan gantikan pemegang tempat dengan nilai yang dikodkan sebenar sebelum menjalankan kod.",
+    "r4n6v": "Tambahkan kebergantungan pada projek anda dengan menjalankan `go get github.com/btcsuite/btcutil`. Ini akan memuat turun dan memasang pakej.",
+    "u7i9b": "Untuk Go, gunakan pakej 'btcutil' yang tersedia di GitHub, khususnya modul base58nya.",
+    "u9g6t": "Untuk menjalankan kod ini, anda perlu memasang pakej 'base-x' yang menyokong pengekodan dan penyahkodan Base58.",
+    "v5k3r": "Pustaka ini menyediakan API yang fleksibel untuk mencipta pengekodan asas, termasuk Base58. Setelah dipasang, gantikan pemegang tempat dalam bahagian penyahkod dengan nilai yang dikodkan sebenar dan laksanakan skrip.",
+    "x2c5e": "Modul 'base58' terbina dalam Python boleh digunakan untuk pengekodan dan penyahkodan Base58.",
+    "y3m7k": "Untuk Java, gunakan perpustakaan 'bitcoinj' yang merangkumi fungsi pengekodan dan penyahkodan Base58.",
+    "z7n1m": "Pasangnya melalui npm dengan menjalankan `npm install base-x` atau `yarn add base-x`.",
+    "z8em2t": "Selepas pemasangan, salin templat yang disediakan ke dalam aplikasi konsol C# dan gantikan pemegang tempat dengan nilai yang dikodkan sebenar sebelum menjalankan program."
+}

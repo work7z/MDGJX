@@ -1,0 +1,17 @@
+{
+    "YAML-Advantages-001": "Mitkä ovat YAML:n edut?",
+    "YAML-Advantages-002": "YAML on ihmisten luettavissa ja helppo kirjoittaa, joten se on suosittu valinta asetustiedostoille.",
+    "YAML-Advantages-003": "Sitä on myös helppo lukea ja kirjoittaa, ja sitä käytetään usein yhdessä kaikkien ohjelmointikielten kanssa.",
+    "YAML-Basics-001": "Mikä on YAML?",
+    "YAML-Def-002": "YAML (YAML Ain't Markup Language) on ihmisen luettavissa oleva tietojen serialisointistandardi, jota voidaan käyttää kaikkien ohjelmointikielten kanssa ja jota käytetään usein konfigurointitiedostojen kirjoittamiseen.",
+    "YAML-Disadvantages-001": "Mitkä ovat YAML:n haitat?",
+    "YAML-Disadvantages-002": "YAML:ää voi olla vaikea jäsentää ja se voi olla altis virheille.",
+    "YAML-Disadvantages-003": "Sitä ei myöskään tueta yhtä laajalti kuin muita tietojen serialisointimuotoja, kuten JSON.",
+    "YAML-Example-001": "Miltä YAML-tiedosto näyttää?",
+    "YAML-Example-002": "Yksinkertainen YAML-tiedosto koostuu avainarvopareista, joista kukin pari on erotettu kaksoispisteellä.",
+    "YAML-Example-003": "Esimerkiksi YAML-tiedosto voi näyttää tältä:",
+    "YAML-Purpose-003": "Se on suunniteltu ihmisten helposti luettavaksi, ja sitä käytetään usein ilmaisemaan tietorakenteita ja sarjoitusta muodossa, jota on helppo lukea ja kirjoittaa.",
+    "YAML-Usage-001": "Mihin YAML:ia käytetään?",
+    "YAML-Usage-002": "YAML:ää käytetään usein asetustiedostoissa ja sovelluksissa, joissa tietoja tallennetaan tai siirretään.",
+    "YAML-Usage-003": "Sitä käytetään yleisesti sovelluksissa, joissa tietoja tallennetaan tai siirretään, kuten määritystiedostoissa, ja sovelluksissa, joissa tietoja tallennetaan tai siirretään."
+}

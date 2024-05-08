@@ -1,0 +1,68 @@
+{
+  "name": "laftools",
+  "version": "2016.2017.2018",
+  "description": "The Next-Gen High Efficiency ToolBox for Developers",
+  "author": "LafTools team",
+  "main": "src-dist/main.js",
+  "scripts": {
+    "dev": "sh ./pipeline/dev-electron.sh",
+    "compileTS": "npx tsc",
+    "build": "sh ./pipeline/build-electron.sh"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  },
+  "build": {
+    "appId": "com.work7z.laftools",
+    "productName": "LafTools",
+    "asar": false,
+    "files": [
+      "src-dist",
+      "package.json",
+      "assets",
+      "build",
+      "node_modules/**/*",
+      "node_modules/*",
+      "package.json"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": true
+    },
+    "directories": {
+      "buildResources": "build"
+    },
+    "publish": null,
+    "electronVersion": "17.1.2"
+  },
+  "devDependencies": {
+    "ts-node": "^10.0.0",
+    "typescript": "~4.5.4",
+    "vite": "^5.0.12",
+    "electron": "^17.1.2",
+    "electron-packager": "^14.2.0"
+  },
+  "dependencies": {
+    "winston": "^3.8.1",
+    "winston-daily-rotate-file": "^4.7.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "axios": "^0.26.0",
+    "core-util-is": "^1.0.3",
+    "electron-store": "^8.0.1",
+    "inherits": "^2.0.4",
+    "jquery": "^3.6.0",
+    "jszip": "^3.10.1",
+    "localforage": "^1.10.0",
+    "lodash": "^4.17.21",
+    "npm-force-resolutions": "0.0.10",
+    "number-to-chinese-words": "^1.0.20",
+    "number-to-words": "^1.2.4",
+    "pinyin-engine": "^1.2.2",
+    "tcp-port-used": "^1.0.2",
+    "shelljs": "^0.8.5",
+    "unzip": "^0.1.11",
+    "util-deprecate": "^1.0.2"
+  }
+}

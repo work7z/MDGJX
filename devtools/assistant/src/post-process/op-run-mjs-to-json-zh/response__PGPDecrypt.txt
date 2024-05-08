@@ -1,0 +1,40 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 提取文本。
+2. 将这些文本放入名为`i18n`的对象中，键是提取的文本，值设置为`123`。
+3. 根据代码的功能，为每个键提供适当的中文翻译。
+4. 输出JSON结果。
+
+下面是转换后的JSON格式：
+
+```json
+{
+  "i18n": {
+    "PGP Decrypt": "PGP解密",
+    "Input: the ASCII-armoured PGP message you want to decrypt.": "输入：您想要解密的ASCII编码的PGP消息。",
+    "Arguments: the ASCII-armoured PGP private key of the recipient, (and the private key password if necessary).": "参数：接收者的ASCII编码的PGP私钥（如果需要，还包括私钥密码）。",
+    "Pretty Good Privacy is an encryption standard (OpenPGP) used for encrypting, decrypting, and signing messages.": "Pretty Good Privacy（PGP）是一种加密标准（OpenPGP），用于加密、解密和签名消息。",
+    "This function uses the Keybase implementation of PGP.": "此功能使用Keybase的PGP实现。",
+    "Enter the private key of the recipient.": "请输入接收者的私钥。",
+    "Couldn't decrypt message with provided private key: ${err}": "无法使用提供的私钥解密消息：${err}"
+  }
+}
+```
+
+请注意，在翻译中，我保留了`${err}`这部分，因为它是一个占位符，用于在实际的错误消息中插入具体的错误信息。
+
+【输出示例】
+
+```json
+{
+  "i18n": {
+    "PGP Decrypt": "PGP解密",
+    "Input: the ASCII-armoured PGP message you want to decrypt.": "输入：您希望解密的ASCII编码PGP消息。",
+    "Arguments: the ASCII-armoured PGP private key of the recipient, (and the private key password if necessary).": "参数：接收者的ASCII编码PGP私钥（如有必要，还包括私钥密码）。",
+    "Pretty Good Privacy is an encryption standard (OpenPGP) used for encrypting, decrypting, and signing messages.": "PGP是一种加密标准（OpenPGP），用于消息的加密、解密和签名。",
+    "This function uses the Keybase implementation of PGP.": "此功能采用Keybase的PGP实现。",
+    "Enter the private key of the recipient.": "请输入接收者的私钥。",
+    "Couldn't decrypt message with provided private key: ${err}": "无法使用提供的私钥解密消息：${err}"
+  }
+}
+```

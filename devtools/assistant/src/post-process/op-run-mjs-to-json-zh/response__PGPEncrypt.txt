@@ -1,0 +1,33 @@
+根据您的要求，以下是代码中显示给用户的自然文本的JSON格式提取，以及它们的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Input: the message you want to encrypt.": "输入：您想要加密的消息。",
+    "Arguments: the ASCII-armoured PGP public key of the recipient.": "参数：接收者的ASCII护甲PGP公钥。",
+    "Pretty Good Privacy is an encryption standard (OpenPGP) used for encrypting, decrypting, and signing messages.": "Pretty Good Privacy（良好隐私）是一种加密标准（OpenPGP），用于加密、解密和签名消息。",
+    "This function uses the Keybase implementation of PGP.": "此功能使用Keybase的PGP实现。",
+    "Enter the public key of the recipient.": "请输入接收者的公钥。",
+    "Couldn't encrypt message with provided public key: ${err}": "无法使用提供的公钥加密消息：${err}"
+  }
+}
+```
+
+在上述JSON对象中，每个key都是原始代码中的自然文本，而对应的value是中文翻译。注意，错误信息中的`${err}`是一个占位符，用于在实际错误发生时插入具体的错误信息。
+
+以下是按照您提供的【示例1】格式输出的结果：
+
+```json
+{
+  "i18n": {
+    "Input: the message you want to encrypt.": "输入：您想要加密的消息。",
+    "Arguments: the ASCII-armoured PGP public key of the recipient.": "参数：接收者的ASCII护甲PGP公钥。",
+    "Pretty Good Privacy is an encryption standard (OpenPGP) used for encrypting, decrypting, and signing messages.": "Pretty Good Privacy（良好隐私）是一种加密标准（OpenPGP），用于加密、解密和签名消息。",
+    "This function uses the Keybase implementation of PGP.": "此功能使用Keybase的PGP实现。",
+    "Enter the public key of the recipient.": "请输入接收者的公钥。",
+    "Couldn't encrypt message with provided public key: ${err}": "无法使用提供的公钥加密消息：${err}"
+  }
+}
+```
+
+请注意，这里的错误信息保留了`${err}`占位符，以便在实际使用时可以插入具体的错误详情。

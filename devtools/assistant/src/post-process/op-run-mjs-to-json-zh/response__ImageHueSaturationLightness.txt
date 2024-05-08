@@ -1,0 +1,29 @@
+根据您的要求，以下是代码中显示给用户的自然文本的JSON格式提取，以及对应的中文翻译：
+
+```json
+{
+  "i18n": {
+    "Image Hue/Saturation/Lightness": "图像色相/饱和度/亮度",
+    "Adjusts the hue / saturation / lightness (HSL) values of an image.": "调整图像的色相/饱和度/亮度（HSL）值。",
+    "Invalid file type.": "无效的文件类型。",
+    "Error loading image.": "加载图像错误。",
+    "Changing image hue...": "正在改变图像色相...",
+    "Changing image saturation...": "正在改变图像饱和度...",
+    "Changing image lightness...": "正在改变图像亮度...",
+    "Error adjusting image hue / saturation / lightness.": "调整图像色相/饱和度/亮度时出错。"
+  }
+}
+```
+
+以下是每个文本的来源和翻译说明：
+
+1. "Image Hue/Saturation/Lightness"：类名，直接翻译为“图像色相/饱和度/亮度”。
+2. "Adjusts the hue / saturation / lightness (HSL) values of an image."：类描述，翻译为“调整图像的色相/饱和度/亮度（HSL）值。”。
+3. "Invalid file type."：错误信息，翻译为“无效的文件类型。”。
+4. "Error loading image."：错误信息，翻译为“加载图像错误。”。
+5. "Changing image hue..."：状态信息，翻译为“正在改变图像色相...”。
+6. "Changing image saturation..."：状态信息，翻译为“正在改变图像饱和度...”。
+7. "Changing image lightness..."：状态信息，翻译为“正在改变图像亮度...”。
+8. "Error adjusting image hue / saturation / lightness."：错误信息，翻译为“调整图像色相/饱和度/亮度时出错。”。
+
+以上翻译均基于代码的上下文和实际功能。

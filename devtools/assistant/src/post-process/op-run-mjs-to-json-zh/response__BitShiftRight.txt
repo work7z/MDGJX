@@ -1,0 +1,27 @@
+根据您的要求，下面是将代码中显示给用户的自然文本提炼成JSON格式的过程：
+
+1. 找出所有自然文本。
+2. 将这些文本放入一个名为`i18n`的对象中，键是文本，值设为123。
+3. 根据代码的实际功能，翻译这些文本为中文，并替换其值。
+4. 输出JSON结果。
+
+以下是按照以上步骤生成的JSON对象：
+
+```json
+{
+  "i18n": {
+    "Bit shift right": "位右移",
+    "Shifts the bits in each byte towards the right by the specified amount.": "将每个字节中的位向右移动指定的数量。",
+    "Logical shifts": "逻辑右移",
+    "replace the leftmost bits with zeros.": "用零替换最左边的位。",
+    "Arithmetic shifts": "算术右移",
+    "preserve the most significant bit (MSB) of the original byte keeping the sign the same (positive or negative).": "保持原始字节的最重要位（MSB），以保持相同的符号（正或负）。",
+    "Amount": "数量",
+    "Type": "类型",
+    "Logical shift": "逻辑移位",
+    "Arithmetic shift": "算术移位"
+  }
+}
+```
+
+在这个JSON对象中，每个键值对代表了一个英文文本和它的中文翻译。这些翻译是根据代码中描述位操作的功能进行的，应该能准确反映原文的含义。

@@ -1,0 +1,23 @@
+{
+    "MD6-AlgorithmDetails-010": "Dettagli dell'algoritmo MD6",
+    "MD6-ComparisonSHA3-020": "Come si confronta MD6 con SHA-3 (Keccak)?",
+    "MD6-Def-002": "MD6 (Message-Digest Algorithm 6) è una funzione hash crittografica progettata da Ronald Rivest nel 2008. È un'evoluzione della famiglia MD, che offre dimensioni di output variabili che vanno da 128 a 512 bit.",
+    "MD6-FAQ-001": "Cos'è l'MD6?",
+    "MD6-FutureDevelopments-028": "Sono previsti sviluppi futuri o miglioramenti per MD6?",
+    "MD6-FutureUnknown-029": "Al momento non sono disponibili informazioni pubbliche sullo sviluppo in corso o sui piani per migliorare l'algoritmo MD6. La ricerca crittografica continua ad evolversi e potrebbero emergere nuovi algoritmi per affrontare minacce o requisiti emergenti.",
+    "MD6-History-004": "Come è stato sviluppato MD6 e cosa ha portato alla sua creazione?",
+    "MD6-Operation-007": "Come funziona il funzionamento MD6?",
+    "MD6-Origin-005": "MD6 è stato creato come risposta alle vulnerabilità riscontrate in MD5 e SHA-1, che all’epoca erano ampiamente utilizzate. L'obiettivo era fornire un'alternativa più sicura con maggiore flessibilità per quanto riguarda le dimensioni dell'output.",
+    "MD6-PKI-Alternatives-027": "Per le applicazioni PKI e di firma digitale vengono comunemente utilizzati standard come RSA/SHA-256 o ECDSA con varianti SHA-2 o SHA-3. Questi sono stati sottoposti ad analisi approfondite e hanno stabilito la fiducia all’interno della comunità crittografica.",
+    "MD6-PKI-Considerations-026": "Sebbene MD6 fosse destinato a fornire una sicurezza più forte rispetto alle precedenti funzioni hash come MD5, non è stato ampiamente adottato per gli schemi PKI o di firma digitale a causa della sua relativa novità e della mancanza di un'ampia accettazione da parte della comunità crittografica.",
+    "MD6-Process-008": "MD6 elabora i messaggi di input attraverso una serie di funzioni di compressione applicate in una struttura ad albero. L'algoritmo può operare in parallelo, il che contribuisce alle sue prestazioni per input più grandi.",
+    "MD6-Purpose-003": "MD6 mira a fornire robuste funzionalità di sicurezza e prestazioni migliorate rispetto ai suoi predecessori, rendendolo adatto a una varietà di applicazioni che richiedono hashing resistente alle collisioni e controlli di integrità dei messaggi.",
+    "MD6-Rounds-009": "Ogni nodo nell'albero MD6 viene sottoposto a più cicli di operazioni di miscelazione che coinvolgono addizioni modulari, XOR bit a bit e permutazioni non lineari. Il valore finale del nodo radice rappresenta l'hash digest del messaggio di input.",
+    "MD6-SecurityUpgrade-006": "Il design di MD6 si basa sul concetto di hashing basato su albero, consentendogli di offrire una migliore protezione contro attacchi di preimmagine e collisione rispetto ai precedenti algoritmi MD, fornendo allo stesso tempo un throughput più elevato per set di dati di grandi dimensioni.",
+    "MD6-StayingCurrent-030": "È essenziale rimanere aggiornati con gli ultimi risultati della ricerca e le raccomandazioni degli esperti di crittografia quando si sceglie una funzione hash per qualsiasi applicazione, soprattutto perché il panorama della sicurezza crittografica si evolve nel tempo.",
+    "MD6-UseInPKI-025": "È possibile utilizzare MD6 per l'infrastruttura a chiave pubblica (PKI) o le firme digitali?",
+    "MD6-vs-SHA3-Adoption-023": "SHA-3 è stato adottato come standard ufficiale NIST e ha ottenuto un utilizzo diffuso grazie alla sua solida sicurezza e prestazioni. MD6, nonostante sia teoricamente sicuro, non ha visto lo stesso livello di adozione o standardizzazione.",
+    "MD6-vs-SHA3-DiffDesign-021": "MD6 e SHA-3 sono entrambi progettati pensando alla sicurezza, ma utilizzano tecniche di hashing diverse. MD6 utilizza un design ad albero per un migliore parallelismo, mentre SHA-3 si basa sulla costruzione a spugna.",
+    "MD6-vs-SHA3-Flexibility-022": "MD6 offre lunghezze di output variabili, che possono essere vantaggiose per le applicazioni che richiedono dimensioni hash personalizzate. SHA-3 supporta anche lunghezze di output variabili, sebbene la sua variante più comune, SHAKE, offra una flessibilità ancora maggiore con output di lunghezza arbitraria.",
+    "SHA3-NISTStandard-024": "Standardizzazione SHA-3"
+}

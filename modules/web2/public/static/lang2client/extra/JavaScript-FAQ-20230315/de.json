@@ -1,0 +1,20 @@
+{
+    "JS-Basics-001": "Was ist JavaScript?",
+    "JS-DOM-API-007": "Wie interagiert JavaScript mit dem DOM?",
+    "JS-DOM-API-Explanation-008": "JavaScript bietet eine Document Object Model (DOM)-API zur Bearbeitung von HTML und CSS, sodass Entwickler Inhalte, Stil und Ereignis-Listener dynamisch ändern können.",
+    "JS-DOM-Example-009": "Sie können beispielsweise ein Element auswählen und seinen Textinhalt ändern: „document.getElementById('myElement').textContent = 'New Text';`",
+    "JS-Data-Types-010": "Welche Datentypen gibt es in JavaScript?",
+    "JS-Data-Types-List-011": "JavaScript unterstützt verschiedene Datentypen, darunter primitive Datentypen wie Zeichenfolge, Zahl, Boolescher Wert, Null, Undefiniert und Symbol sowie komplexe Datentypen wie Objekt und Array.",
+    "JS-Def-002": "JavaScript (JS) ist eine hochentwickelte, interpretierte Programmiersprache, die häufig zum Erstellen von Webanwendungen, zum Verbessern von Benutzeroberflächen und zum Erstellen serverseitiger Logik mit Node.js verwendet wird.",
+    "JS-Event-Loop-013": "Was ist die Ereignisschleife in JavaScript?",
+    "JS-Event-Loop-Explanation-014": "Die Ereignisschleife ist ein zentraler Bestandteil des Parallelitätsmodells von JavaScript, das eine asynchrone Ausführung durch Rückrufe, Versprechen und Async/Await ermöglicht.",
+    "JS-Event-Loop-Process-015": "Es führt zuerst das Hauptskript aus und führt dann alle Rückruffunktionen aus, wenn die damit verbundenen Ereignisse (z. B. Benutzereingaben oder Netzwerkantworten) auftreten, und verwaltet sie über ein Warteschlangensystem.",
+    "JS-Function-Syntax-006": "Funktionen werden mit dem Schlüsselwort „function“ definiert, gefolgt vom Funktionsnamen und den Parametern in Klammern. Der Funktionskörper ist in geschweifte Klammern eingeschlossen: `function Greet(name) { console.log(`Hallo, ${name}!`); }`",
+    "JS-Purpose-003": "Sie wurde ursprünglich 1995 von Brendan Eich bei Netscape entwickelt und hat sich seitdem zu einer der beliebtesten Sprachen entwickelt, die von allen wichtigen Webbrowsern und Plattformen wie Electron und React Native unterstützt wird.",
+    "JS-Syntax-004": "Was ist die grundlegende Syntax von JavaScript?",
+    "JS-Type-Checking-012": "Die Typprüfung kann mithilfe von Konstruktoren (`typeof value === 'string'`) oder dem `instanceof`-Operator für Objekte durchgeführt werden, die von integrierten Konstruktoren erben (z. B. `value instanceof Array`).",
+    "MDN-DOM-API": "MDN-Webdokumente – Bearbeiten von Dokumenten",
+    "MDN-Event-Loop": "MDN-Webdokumente – Ereignisschleife",
+    "MDN-JS-Guide": "MDN-Webdokumente – JavaScript-Leitfaden",
+    "MDN-JS-Types": "MDN-Webdokumente – Datentypen und Datenstrukturen"
+}

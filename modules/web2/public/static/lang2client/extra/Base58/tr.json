@@ -1,0 +1,20 @@
+{
+    "c5m1b": "Başka bir varyant olan Base58Flickr, karakter setinde biraz farklılık gösterir. Flickr'ın URL ihtiyaçlarına uyum sağlamak için '+' yerine ',' ve '/' yerine '-' koyar.",
+    "c6p9b": "Giriş verilerinin uzunluğu 8'e bölünemiyorsa dolgu kullanılmaz; bunun yerine, tam olmayan her grup bağımsız olarak ele alınır.",
+    "d3w2e": "Base58, giriş baytlarını büyük bir tam sayıya dönüştürerek ve ardından bu tam sayıyı 58 karakterlik setteki (A-Z, a-z, 1-9) karakterlerin birleşimi olarak ifade ederek çalışır.",
+    "f4t7z": "Base58 başlangıçta Bitcoin'in genel adresleri ve özel anahtarları belirsizlik olmadan temsil etmesi için geliştirildi.",
+    "g7h5k": "Base58 nasıl çalışır?",
+    "j6s3r": "Base58'i JavaScript'te nasıl kodlayabilirim/kod çözebilirim?",
+    "k1m4e": "Ancak alfabesinde daha az karakter kullandığı için Base64 veya Base32 ile aynı alan verimliliğini sunmuyor.",
+    "pq5e9n": "JavaScript'te Base58 kodlama ve kod çözme işlemini gerçekleştirmek için 'bs58' gibi kitaplıkları kullanabilirsiniz.",
+    "q2x8k": "Kullanımı, insan tarafından okunabilen, hataya dayanıklı dizelerin istendiği diğer kripto para birimlerine ve senaryolara kadar genişledi.",
+    "r2n7v": "Ana avantajı, benzer görünen karakterlerin hariç tutulması ve manuel giriş sırasındaki hataların azaltılması nedeniyle okunabilirliğin artmasıdır.",
+    "s1b3m": "Base64 veya Base32'den farklı olarak, kolayca karıştırılan '0', 'O', 'I' ve 'l' karakterlerini hariç tutarak URL'ler ve QR kodları için uygun hale getirir.",
+    "u8i5b": "Base58'i Base64 veya Base32'ye göre kullanmanın avantajları nelerdir?",
+    "v4n9t": "Base58, ikili verileri alfasayısal karakter dizisi olarak temsil eden bir kodlama şemasıdır.",
+    "w3x7k": "Evet, bazı popüler varyantlar arasında, Bitcoin'de yaygın olarak kullanılan, hata tespiti için bir sağlama toplamı ekleyen Base58Check bulunmaktadır.",
+    "x2z6r": "Base58 nedir?",
+    "y9m1n": "Base58 neden oluşturuldu?",
+    "z1m2t": "Örnek kullanım: `const encoded = bs58.encode('your-data'); const kodu çözülmüş = bs58.decode(kodlanmış);`",
+    "z9t2p": "Base58'in belirli çeşitleri var mı?"
+}
