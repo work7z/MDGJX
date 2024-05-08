@@ -1,11 +1,12 @@
-import { Welcome } from '../components/Welcome/Welcome';
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
+import { Layout } from '@/components/Layout/Layout';
+import { AppShell, Burger } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 
 export function HomePage() {
+
   return (
-    <>
-      <Welcome />
-      <ColorSchemeToggle />
-    </>
+    <Layout body={
+      <div>this is home page</div>
+    } />
   );
 }
