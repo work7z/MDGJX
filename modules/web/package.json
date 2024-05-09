@@ -21,6 +21,7 @@
   "dependencies": {
     "@mantine/core": "7.8.1",
     "@mantine/hooks": "7.8.1",
+    "@mantinex/mantine-logo": "^1.0.1",
     "@tabler/icons-react": "^3.3.0",
     "autoprefixer": "^10.4.19",
     "react": "^18.2.0",
@@ -61,6 +62,7 @@
     "postcss-simple-vars": "^7.0.1",
     "prettier": "^3.2.5",
     "prop-types": "^15.8.1",
+    "sass": "^1.77.0",
     "storybook": "^8.0.0",
     "storybook-dark-mode": "^3.0.3",
     "stylelint": "^16.2.1",

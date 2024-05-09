@@ -4,6 +4,7 @@ import imgFile from '/src/favicon.png'
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import { IconArrowUp, IconBrandGithub, IconBrandGithubFilled, IconSourceCode } from '@tabler/icons-react';
 import SourceCodeLink from '../SourceCodeLink';
+import { DoubleNavbar as AppNavbar } from '@/containers/AppNavbar/navbar';
 export function Layout(props: { body: any }) {
     const [opened, { toggle }] = useDisclosure();
     const [scroll, scrollTo] = useWindowScroll();
@@ -33,13 +34,17 @@ export function Layout(props: { body: any }) {
                     <div className='ml-[-7px] font-bold text-xl block sm:hidden'>索道工具箱</div>
                 </Group>
                 <Group gap={6}>
-
                     <SourceCodeLink />
                     <ColorSchemeToggle />
                 </Group>
             </AppShell.Header>
 
-            <AppShell.Navbar p="md">Navbar</AppShell.Navbar>
+            <AppShell.Navbar p="md" style={{
+                padding: 0,
+                height: '100%',
+            }}>
+                <AppNavbar />
+            </AppShell.Navbar>
 
             <AppShell.Main>
                 <div style={{
