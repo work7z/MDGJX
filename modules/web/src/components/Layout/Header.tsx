@@ -92,7 +92,7 @@ export default (props: {
                 <div className='ml-[-7px] font-bold text-xl block sm:hidden'>{appInfo.name}</div>
             </Group>
 
-            <Group h="100%" gap={0} visibleFrom="sm">
+            {/* <Group h="100%" gap={0} visibleFrom="sm">
                 <a href="#" className={classes.link + ' ' + classes.active}>
                     Chat对话框
                 </a>
@@ -102,11 +102,14 @@ export default (props: {
                 <a href="#" className={classes.link}>
                     我的收藏(0)
                 </a>
-            </Group>
+            </Group> */}
 
             <Group gap={6}>
-                <SourceCodeLink />
                 <ColorSchemeToggle />
+                <SourceCodeLink />
+
+                <Button variant="default" className=' hidden sm:block '>登录账号</Button>
+                <Button className=' hidden sm:block '>免费注册</Button>
             </Group>
         </Group>
     </AppShell.Header>

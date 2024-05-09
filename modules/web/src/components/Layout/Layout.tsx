@@ -40,8 +40,6 @@ export function Layout(props: { body: any }) {
                 }}>
                     Main2
                 </div>
-
-
                 <BackToTop />
             </AppShell.Main>
         </AppShell>
