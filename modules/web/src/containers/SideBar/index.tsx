@@ -2,26 +2,28 @@ import { useState } from 'react';
 import { UnstyledButton, Tooltip, Title, rem } from '@mantine/core';
 import {
     IconHome2,
-    IconGauge,
-    IconDeviceDesktopAnalytics,
-    IconFingerprint,
-    IconCalendarStats,
     IconUser,
     IconSettings,
+    IconNotebook,
+    IconMapSearch,
+    IconBook,
 
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './DoubleNavbar.module.css';
 
-const mainLinksMockdata = [
-    { icon: IconHome2, label: 'Home' },
-    { icon: IconGauge, label: 'Dashboard' },
-    { icon: IconDeviceDesktopAnalytics, label: 'Analytics' },
-    { icon: IconCalendarStats, label: 'Releases' },
-    { icon: IconUser, label: 'Account' },
-    { icon: IconFingerprint, label: 'Security' },
-    { icon: IconSettings, label: 'Settings' },
-];
+const mainLinksMockdata: {
+    icon: React.FC<any>;
+    label: string
+}[] = [
+        { icon: IconHome2, label: '快捷工具', },
+        { icon: IconBook, label: '文档中心' },
+        { icon: IconMapSearch, label: '资源检索' },
+        { icon: IconNotebook, label: '随手札记' },
+        { icon: IconUser, label: '用户中心' },
+        // { icon: IconFingerprint, label: 'Security' },
+        { icon: IconSettings, label: '系统设置' },
+    ];
 
 const linksMockdata = [
     'Security',
@@ -38,8 +40,8 @@ const linksMockdata = [
 ];
 
 export function DoubleNavbar() {
-    const [active, setActive] = useState('Releases');
-    const [activeLink, setActiveLink] = useState('Settings');
+    const [active, setActive] = useState('快捷工具');
+    const [activeLink, setActiveLink] = useState('Security');
 
     const mainLinks = mainLinksMockdata.map((link) => (
         <Tooltip
