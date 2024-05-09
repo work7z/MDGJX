@@ -74,8 +74,28 @@ const mainLinksMockdata: {
         // { icon: IconBook, label: '文档中心' },
         // { icon: IconMapSearch, label: '资源检索' },
         // { icon: IconNotebook, label: '随手札记' },
-        { icon: IconUser, label: '用户中心' },
-        { icon: IconSettings, label: '系统设置' },
+        // { icon: IconUser, label: '用户中心' },
+        {
+            icon: IconSettings, label: '系统设置',
+            children: [
+                {
+                    name: '我的账号',
+                    pathname: 'my-account'
+                },
+                {
+                    name: '使用条款',
+                    pathname: 'terms-of-conditions'
+                },
+                {
+                    name: '隐私保护协议',
+                    pathname: 'privacy-agreement'
+                },
+                {
+                    name: '改进与建议反馈',
+                    pathname: 'feedback'
+                },
+            ]
+        },
     ];
 
 export function DoubleNavbar() {
