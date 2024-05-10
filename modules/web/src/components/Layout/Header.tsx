@@ -20,6 +20,7 @@ import { DoubleNavbar as SideBar } from '@/containers/SideBar';
 import GetAppInfo from '@/AppInfo';
 import BackToTop from './BackToTop';
 import classes from './Header.module.css'
+import { Link } from 'react-router-dom';
 
 export default (props: {
     opened: boolean,
@@ -108,8 +109,10 @@ export default (props: {
                 <ColorSchemeToggle />
                 <SourceCodeLink />
 
-                <Button variant="default" className=' hidden sm:block '>登录账号</Button>
-                <Button className=' hidden sm:block '>免费注册</Button>
+                <Link to={'/settings/my-account?type=signin'}>   <Button variant="default" className=' hidden sm:block '>登录账号</Button></Link>
+                <Link to={'/settings/my-account?type=signup'}>
+                    <Button className=' hidden sm:block '>免费注册</Button>
+                </Link>
             </Group>
         </Group>
     </AppShell.Header>
