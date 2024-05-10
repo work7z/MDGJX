@@ -20,8 +20,9 @@ import {
     useParams,
     useRouteMatch,
 } from "react-router-dom";
+import React from 'react';
 
-export function GeneralLayout(props: { body: any }) {
+export function GeneralLayout(props: { body?: React.FC }) {
     const [opened, { toggle }] = useDisclosure();
     let appInfo = GetAppInfo()
     return (
@@ -47,8 +48,7 @@ export function GeneralLayout(props: { body: any }) {
             </AppShell.Navbar>
 
             { /** app main */}
-            <AppShell.Main>
-
+            <AppShell.Main p={0} >
                 {/* <div className='flex flex-col h-full'>
                     <div className='flex-1'>
                         <div>this is flex content</div>
