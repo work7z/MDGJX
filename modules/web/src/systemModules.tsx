@@ -74,11 +74,11 @@ export const systemModulesList: SystemModuleItem[] = [
                 id: 'client'
             },
             {
-                name: 'Mock API',
+                name: '模拟 API (Mock)',
                 id: 'mock'
             },
             {
-                name: '常用API',
+                name: '常用 API',
                 id: 'common'
             },
         ]
@@ -103,7 +103,8 @@ export const systemModulesList: SystemModuleItem[] = [
         children: [
             {
                 name: '我的账号',
-                id: 'my-account'
+                id: 'my-account',
+                bodyFn: () => import('./loadable/MyAccount/index.tsx')
             },
             {
                 name: '常见问题',
