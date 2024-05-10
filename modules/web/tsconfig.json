@@ -1,21 +1,36 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+
+    /* Linting */
+    "noUnusedLocals": false,
+
+    "allowImportingTsExtensions": true,
+    "noUncheckedIndexedAccess": false,
+    "noUnusedParameters": false,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowUnusedLabels": true,
+    "alwaysStrict": false,
+    "noImplicitUseStrict": false,
+    "noImplicitAny": false,
+
     "types": ["node", "@testing-library/jest-dom", "vitest/globals"],
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
+
     "paths": {
       "@/*": ["./src/*"],
       "@test-utils": ["./test-utils"]

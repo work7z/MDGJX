@@ -8,6 +8,7 @@ import { DoubleNavbar as SideBar } from '@/containers/SideBar';
 import GetAppInfo from '@/AppInfo';
 import BackToTop from './BackToTop';
 import Header from './Header';
+import GenCodeMirror from '../GenCodeMirror';
 export function Layout(props: { body: any }) {
     const [opened, { toggle }] = useDisclosure();
     let appInfo = GetAppInfo()
@@ -34,11 +35,14 @@ export function Layout(props: { body: any }) {
             </AppShell.Navbar>
 
             { /** app main */}
-            <AppShell.Main>
-                <div style={{
-                    height: '200vh',
-                }}>
-                    Main2
+            <AppShell.Main >
+                <div className='flex flex-col h-full'>
+                    <div className='flex-1'>
+                        <div>this is flex content</div>
+                    </div>
+                    <div className='h-[100px]'>
+                        <GenCodeMirror bigTextId='' />
+                    </div>
                 </div>
                 <BackToTop />
             </AppShell.Main>
