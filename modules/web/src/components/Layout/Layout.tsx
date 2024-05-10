@@ -4,7 +4,7 @@ import imgFile from '/src/favicon.png'
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import { IconArrowUp, IconBrandGithub, IconBrandGithubFilled, IconSourceCode } from '@tabler/icons-react';
 import SourceCodeLink from '../SourceCodeLink';
-import { DoubleNavbar as SideBar } from '@/containers/SideBar';
+import { DoubleNavbar as SideBar, useMDParams } from '@/containers/SideBar';
 import GetAppInfo from '@/AppInfo';
 import BackToTop from './BackToTop';
 import Header from './Header';
@@ -22,9 +22,21 @@ import {
 } from "react-router-dom";
 import React from 'react';
 
-export function GeneralLayout(props: { body?: React.FC }) {
+export function GeneralLayout(props) {
+    const mdParams = useMDParams()
+    const { mainModuleItem, mainSubModuleItem } = mdParams
     const [opened, { toggle }] = useDisclosure();
     let appInfo = GetAppInfo()
+    let bodyJSX: JSX.Element = (
+        <div>当前页面正在重构中，敬请期待 </div>
+    );
+    if (mainSubModuleItem.bodyFn) {
+        const JohanComponent: any = React.lazy(mainSubModuleItem.bodyFn);
+
+        bodyJSX = <React.Suspense fallback={<div>loading...</div>}>
+            <JohanComponent />
+        </React.Suspense>
+    }
     return (
         <AppShell
             header={{ height: 60 }}
@@ -44,12 +56,19 @@ export function GeneralLayout(props: { body?: React.FC }) {
             <AppShell.Navbar p="md" px={0} py={0} mb={0} style={{
                 height: '100%',
             }}>
-                <SideBar />
+                <SideBar mdParams={mdParams} />
             </AppShell.Navbar>
 
             { /** app main */}
-            <AppShell.Main p={0} >
-                {/* <div className='flex flex-col h-full'>
+            <AppShell.Main >
+                {bodyJSX}
+                <BackToTop />
+            </AppShell.Main>
+        </AppShell>
+    );
+}
+
+{/* <div className='flex flex-col h-full'>
                     <div className='flex-1'>
                         <div>this is flex content</div>
                     </div>
@@ -57,8 +76,3 @@ export function GeneralLayout(props: { body?: React.FC }) {
                         <GenCodeMirror bigTextId='' />
                     </div>
                 </div> */}
-                {/* <BackToTop /> */}
-            </AppShell.Main>
-        </AppShell>
-    );
-}

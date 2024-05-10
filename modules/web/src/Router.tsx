@@ -1,7 +1,7 @@
 import { HomePage } from './pages/Home.page';
 import { Redirect, Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { NotFoundPage } from './pages/NotFound.page';
-import { redirectLinks, systemModulesList } from './meta/systemModules';
+import { redirectLinks, systemModulesList } from './systemModules';
 
 
 

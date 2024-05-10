@@ -15,11 +15,14 @@ import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './DoubleNavbar.module.css';
 import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
+import { TypeMDParams } from '@/containers/SideBar';
+import loadable from '@loadable/component'
+
 export type SystemSubModuleItem = {
     id: string,
     href?: string,
     name: string,
-    body?: React.FC<any>
+    bodyFn?: () => any
 }
 export type SystemModuleItem = {
     id: string,
@@ -49,9 +52,7 @@ export const systemModulesList: SystemModuleItem[] = [
             {
                 name: 'Chat对话框',
                 id: 'chat',
-                body: () => {
-                    return <div>this is chat</div>
-                }
+                bodyFn: () => import('./loadable/ChatBot/index.tsx')
             },
             {
                 name: "功能总览(233)",
@@ -105,7 +106,11 @@ export const systemModulesList: SystemModuleItem[] = [
                 id: 'my-account'
             },
             {
-                name: '工单提交',
+                name: '常见问题',
+                id: 'faq',
+            },
+            {
+                name: '提交工单',
                 id: 'ticket',
                 href: GetAppInfo().githubRepo + '/issues/new'
             },

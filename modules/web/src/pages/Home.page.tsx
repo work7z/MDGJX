@@ -5,10 +5,6 @@ import { useDisclosure } from '@mantine/hooks';
 export function HomePage() {
 
   return (
-    <GeneralLayout
-      body={() => {
-        return <div> this is home </div>
-      }}
-    />
+    <GeneralLayout />
   );
 }

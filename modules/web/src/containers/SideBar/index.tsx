@@ -15,7 +15,7 @@ import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './DoubleNavbar.module.css';
 import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
-import { SystemModuleItem, SystemSubModuleItem, systemModulesList } from '@/meta/systemModules';
+import { SystemModuleItem, SystemSubModuleItem, systemModulesList } from '@/systemModules';
 import { Link, useHistory } from 'react-router-dom';
 
 const latestReadForEachModule: {
@@ -23,11 +23,11 @@ const latestReadForEachModule: {
 } = {
 
 }
-
-export const useMDParams = (): {
+export type TypeMDParams = {
     mainModuleItem: SystemModuleItem,
     mainSubModuleItem: SystemSubModuleItem
-} => {
+}
+export const useMDParams = (): TypeMDParams => {
     const hist = useHistory()
     const justSysModuleList = systemModulesList
     const splitArr = hist.location.pathname.split('/')
@@ -49,12 +49,12 @@ export const useMDParams = (): {
     }
 }
 
-export function DoubleNavbar() {
+export function DoubleNavbar(props: {
+    mdParams: TypeMDParams
+}) {
+    const { mainModuleItem, mainSubModuleItem } = props.mdParams
     const justSysModuleList = systemModulesList
-    const {
-        mainModuleItem,
-        mainSubModuleItem
-    } = useMDParams()
+
     const mainModule = mainModuleItem.id
     const mainModuleSubItemId = mainSubModuleItem.id
 
