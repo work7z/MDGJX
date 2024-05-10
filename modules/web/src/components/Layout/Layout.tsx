@@ -1,4 +1,4 @@
-import { ActionIcon, Affix, AppShell, Burger, Button, Group, HoverCard, Transition, rem } from '@mantine/core';
+import { ActionIcon, Affix, AppShell, Box, Burger, Button, Group, HoverCard, LoadingOverlay, Transition, rem } from '@mantine/core';
 import { useDisclosure, useWindowScroll } from '@mantine/hooks';
 import imgFile from '/src/favicon.png'
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
@@ -21,6 +21,7 @@ import {
     useRouteMatch,
 } from "react-router-dom";
 import React from 'react';
+import LoadingView from '../LoadingView';
 
 export function GeneralLayout(props) {
     const mdParams = useMDParams()
@@ -33,9 +34,12 @@ export function GeneralLayout(props) {
     if (mainSubModuleItem.bodyFn) {
         const JohanComponent: any = React.lazy(mainSubModuleItem.bodyFn);
 
-        bodyJSX = <React.Suspense fallback={<div>loading...</div>}>
+        bodyJSX = <React.Suspense fallback={
+            <LoadingView />
+        }>
             <JohanComponent />
-        </React.Suspense>
+
+        </ React.Suspense >
     }
     return (
         <AppShell
