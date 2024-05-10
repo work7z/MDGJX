@@ -15,15 +15,15 @@ import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './DoubleNavbar.module.css';
 import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
-
+export type SystemSubModuleItem = {
+    id: string,
+    name: string
+}
 export type SystemModuleItem = {
     id: string,
     icon: React.FC<any>;
     label: string,
-    children?: {
-        id: string,
-        name: string
-    }[]
+    children?: SystemSubModuleItem[]
 }
 export type RedirectLinkItem = {
     path: string
@@ -100,6 +100,10 @@ export const systemModulesList: SystemModuleItem[] = [
                 id: 'my-account'
             },
             {
+                name: '工单提交',
+                id: GetAppInfo().githubRepo + '/issues/new'
+            },
+            {
                 name: '使用条款',
                 id: 'terms-of-conditions'
             },
@@ -110,10 +114,6 @@ export const systemModulesList: SystemModuleItem[] = [
             {
                 name: '建议与反馈',
                 id: 'feedback'
-            },
-            {
-                name: '提交工单',
-                id: GetAppInfo().githubRepo + '/issues/new'
             },
         ]
     },

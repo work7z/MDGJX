@@ -10,18 +10,11 @@ export default () => {
 
   return <Router basename={basename} >
     <Switch>
-      <Route exact path={"/"} component={HomePage} />
+      <Route exact path={""} component={HomePage} />
       {
         systemModulesList.map(x => {
           return <>
-            <Route exact path={`/${x.id}`} component={HomePage} />
-            {
-              (x.children || []).map(xx => {
-                return (
-                  <Route exact path={`/${x.id}/${xx.id}`} component={HomePage} />
-                )
-              })
-            }
+            <Route exact path={`/${x.id}/:subId`} component={HomePage} />
           </>
         })
       }

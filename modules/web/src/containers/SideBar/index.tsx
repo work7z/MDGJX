@@ -15,21 +15,51 @@ import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './DoubleNavbar.module.css';
 import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
-import { systemModulesList } from '@/meta/systemModules';
+import { SystemModuleItem, SystemSubModuleItem, systemModulesList } from '@/meta/systemModules';
+import { Link, useHistory } from 'react-router-dom';
 
+const latestReadForEachModule: {
+    [key: string]: SystemSubModuleItem
+} = {
 
+}
+
+export const useMDParams = (): {
+    mainModuleItem: SystemModuleItem,
+    mainSubModuleItem: SystemSubModuleItem
+} => {
+    const hist = useHistory()
+    const justSysModuleList = systemModulesList
+    const splitArr = hist.location.pathname.split('/')
+    console.log('splitArr', splitArr)
+    const tmp_mainModule = (splitArr && splitArr[1] ? splitArr[1] : justSysModuleList[0].id)
+    const mainModuleItem = justSysModuleList.find(x => x.id == tmp_mainModule) || justSysModuleList[0]
+    const tmp_mainSubModule = (splitArr && splitArr[2] ? splitArr[2] :
+        latestReadForEachModule[mainModuleItem.id] ?
+            latestReadForEachModule[mainModuleItem.id].id
+            :
+            mainModuleItem?.children && mainModuleItem?.children[0].id)
+
+    const mainSubModuleItem = (
+        mainModuleItem?.children && mainModuleItem?.children.find(x => x.id == tmp_mainSubModule) || mainModuleItem?.children && mainModuleItem?.children[0]
+    ) as SystemSubModuleItem // can never be null, so cast it to SystemSubModuleItem
+    return {
+        mainModuleItem,
+        mainSubModuleItem
+    }
+}
 
 export function DoubleNavbar() {
-    const mainLinksMockdata = systemModulesList
+    const justSysModuleList = systemModulesList
+    const {
+        mainModuleItem,
+        mainSubModuleItem
+    } = useMDParams()
+    const [internalMainModule, setInternalMainModule] = useState(mainModuleItem.id)
+    const mainModuleSubItemId = mainSubModuleItem.id
+    const internalViewModule = justSysModuleList.find(x => x.id == internalMainModule) as SystemModuleItem
 
-    const [active, setActive] = useState(mainLinksMockdata[0].label);
-    const activeMainLink = mainLinksMockdata.find(x => x.label == active)
-    let [activeLink, setActiveLink] = useState<string | null>(null);
-    if (!activeLink) {
-        activeLink = activeMainLink?.children && activeMainLink?.children[0].id || null
-    }
-
-    const mainLinks = mainLinksMockdata.map((link) => (
+    const mainLinks = justSysModuleList.map((link) => (
         <Tooltip
             label={link.label}
             position="right"
@@ -38,31 +68,34 @@ export function DoubleNavbar() {
             key={link.label}
         >
             <UnstyledButton
-                onClick={() => setActive(link.label)}
+                onClick={() => {
+                    setInternalMainModule(link.id)
+                }}
                 className={classes.mainLink}
-                data-active={link.label === active || undefined}
+                data-active={link.id === internalMainModule || undefined}
             >
                 <link.icon style={{ width: rem(22), height: rem(22) }} stroke={1.5} />
             </UnstyledButton>
         </Tooltip>
     ));
-
-    const links = (activeMainLink?.children || []).map((item) => {
+    const links = ((
+        internalViewModule?.children || []
+    ) || []).map((item) => {
         let link = item.id
 
         return (
-            <a
+            <Link
                 className={classes.link}
-                data-active={activeLink === link || undefined}
-                href="#"
-                onClick={(event) => {
-                    event.preventDefault();
-                    setActiveLink(link);
-                }}
+                data-active={mainModuleSubItemId === link || undefined}
+                to={`/${internalViewModule.id}/${item.id}`}
                 key={link}
+                onClick={() => {
+                    setInternalMainModule(internalViewModule.id)
+                    latestReadForEachModule[internalViewModule.id] = item
+                }}
             >
                 {item.name}
-            </a>
+            </Link >
         )
     });
 
@@ -77,9 +110,8 @@ export function DoubleNavbar() {
                 </div>
                 <div className={classes.main}>
                     <Title order={4} className={classes.title}>
-                        {active}
+                        {internalViewModule?.label}
                     </Title>
-
                     {links}
                 </div>
             </div>
