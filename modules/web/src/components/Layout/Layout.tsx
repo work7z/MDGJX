@@ -9,7 +9,19 @@ import GetAppInfo from '@/AppInfo';
 import BackToTop from './BackToTop';
 import Header from './Header';
 import GenCodeMirror from '../GenCodeMirror';
-export function Layout(props: { body: any }) {
+import {
+    withRouter,
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useHistory,
+    Redirect,
+    useParams,
+    useRouteMatch,
+} from "react-router-dom";
+
+export function GeneralLayout(props: { body: any }) {
     const [opened, { toggle }] = useDisclosure();
     let appInfo = GetAppInfo()
     return (
@@ -35,16 +47,17 @@ export function Layout(props: { body: any }) {
             </AppShell.Navbar>
 
             { /** app main */}
-            <AppShell.Main >
-                <div className='flex flex-col h-full'>
+            <AppShell.Main>
+
+                {/* <div className='flex flex-col h-full'>
                     <div className='flex-1'>
                         <div>this is flex content</div>
                     </div>
                     <div className='h-[100px]'>
                         <GenCodeMirror bigTextId='' />
                     </div>
-                </div>
-                <BackToTop />
+                </div> */}
+                {/* <BackToTop /> */}
             </AppShell.Main>
         </AppShell>
     );
