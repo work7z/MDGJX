@@ -12,6 +12,7 @@ import { ErrorMiddleware } from '@middlewares/error.middleware';
 import migrateDB from './jobs/background-job';
 import { logger, stream } from '@utils/logger';
 import path from 'path';
+import { isProductionEnv } from './web2share-copy/env';
 const launchTime = new Date();
 export class App {
   public app: express.Application;
@@ -59,13 +60,15 @@ export class App {
     this.app.use(compression());
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
-    let distDir = ''; //TODO: provide this distDir 'C:\\Users\\jerrylai\\hmproject\\suodao-tools\\modules\\web\\dist';
-    // let us build this first
-    this.app.use(express.static(distDir));
-    this.app.get('/*', (req, res) => {
-      res.sendFile(path.resolve(distDir, 'index.html'));
-    });
     this.app.use(cookieParser());
+    if (this.env == 'production') {
+      let distDir = path.join(__dirname, 'dist'); //TODO: provide this distDir 'C:\\Users\\jerrylai\\hmproject\\suodao-tools\\modules\\web\\dist';
+      // let us build this first
+      this.app.use(express.static(distDir));
+      this.app.get('/*', (req, res) => {
+        res.sendFile(path.resolve(distDir, 'index.html'));
+      });
+    }
   }
 
   private initializeRoutes(routes: Routes[]) {
