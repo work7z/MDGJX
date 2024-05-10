@@ -67,6 +67,9 @@ import { EditorView } from "codemirror"
 import { IconName } from "@blueprintjs/icons";
 import { VAL_CSS_TAB_TITLE_PANEL, border_clz_common } from "../../styles";
 import { useMantineColorScheme } from "@mantine/core";
+import { FN_GetDispatch } from "@/store/nocycle";
+import { FN_SetTextValueFromInsideByBigTextId___DONOTUSEIT__EXTERNALLY } from "@/actions/bigtext_action";
+import exportUtils from "@/utils/ExportUtils";
 // import { langs, langNames, loadLanguage } from '@uiw/codemirror-extensions-langs';
 // console.log('langNames', langs.mysql())
 
@@ -108,43 +111,32 @@ export let useForgeObj = () => {
 export default (props: GenCodeMirrorProp) => {
   let hasTitle = props.title;
   let forgeObj = useForgeObj()
-  // exportUtils.useSelector((val) => ({
-  //   dark: val.forge.DarkThemeMode,
-  // }));
   let bigTextId = props.bigTextId;
   let mRef = useRef({
     renderCtn: 0,
     lastSelectResult: null,
   });
   mRef.current.renderCtn++;
-  let verObj = {
-    ver: 1
-  }
-  // TODO: test
-  // exportUtils.useSelector((val) => {
-  //   let valueVer = val.bigtext.textKVStatusMap[bigTextId]?.outsideUpdateVer;
-  //   if (_.isNil(valueVer)) {
-  //     valueVer = 1;
-  //   }
-  //   return {
-  //     ver: valueVer,
-  //   };
-  // });
-  let bt_raw = {
-    bigText: 'this is test'
-  }
-  // TODO: test
-  // exportUtils.useSelector((val) => {
-  //   let crt = mRef.current;
-  //   let m = val.bigtext.textKVStatusMap[bigTextId];
-  //   let finalText = m?.value || "";
-  //   if (!_.isNil(m?.internalValue)) {
-  //     finalText = m?.internalValue || '';
-  //   }
-  //   return {
-  //     bigText: finalText,
-  //   };
-  // });
+  let verObj = exportUtils.useSelector((val) => {
+    let valueVer = val.bigtext.textKVStatusMap[bigTextId]?.outsideUpdateVer;
+    if (_.isNil(valueVer)) {
+      valueVer = 1;
+    }
+    return {
+      ver: valueVer,
+    };
+  });
+  let bt_raw = exportUtils.useSelector((val) => {
+    let crt = mRef.current;
+    let m = val.bigtext.textKVStatusMap[bigTextId];
+    let finalText = m?.value || "";
+    if (!_.isNil(m?.internalValue)) {
+      finalText = m?.internalValue || '';
+    }
+    return {
+      bigText: finalText,
+    };
+  });
   let FN_GetActualTextValueByBigTextId = (bigTextId: string) => {
     return bt_raw.bigText
   }
@@ -170,8 +162,7 @@ export default (props: GenCodeMirrorProp) => {
   let value: string = props.directValue || bt.bigText;
   let isEmpty = !(value && value != '')
   let setValue = (val: string) => {
-    // TODO: test
-    // FN_GetDispatch()(FN_SetTextValueFromInsideByBigTextId___DONOTUSEIT__EXTERNALLY(bigTextId, val));
+    FN_GetDispatch()(FN_SetTextValueFromInsideByBigTextId___DONOTUSEIT__EXTERNALLY(bigTextId, val));
   };
   const onChange = React.useCallback((val, viewUpdate) => {
     console.log("val:", val);

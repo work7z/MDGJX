@@ -31,11 +31,13 @@ import apiSlice from "./reducers/apiSlice";
 import MemorySlice from "./reducers/memorySlice";
 import UsersSlice from "./reducers/userSlice";
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+import BigTextSlice from "./reducers/bigTextSlice";
 
 const rootReducer = combineReducers({
     settings: settingsSlice.reducer,
     memory: MemorySlice.reducer,
-    users: UsersSlice.reducer
+    users: UsersSlice.reducer,
+    bigtext: BigTextSlice.reducer
 })
 
 export const persistedReducer = persistReducer({
