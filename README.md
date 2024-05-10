@@ -1,7 +1,7 @@
 <p align="center">
-<img width="100" src="https://github.com/work7z/LafTools/blob/dev/modules/web2/public/static/icon.png?raw=true"></img>
+<img width="100" src="https://github.com/work7z/MDGJX/blob/master/modules/web/src/favicon.png?raw=true"></img>
 <br>
-<span style="font-size:20px">索道工具箱 -- 下一代专为程序员开发的编程工具箱
+<span style="font-size:20px">秒达工具箱 -- 免费安全的一键式呼出工具箱
 </span>
 <!-- <center>
 <div style="text-align:center;">

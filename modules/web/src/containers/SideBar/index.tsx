@@ -55,9 +55,8 @@ export function DoubleNavbar() {
         mainModuleItem,
         mainSubModuleItem
     } = useMDParams()
-    const [internalMainModule, setInternalMainModule] = useState(mainModuleItem.id)
+    const mainModule = mainModuleItem.id
     const mainModuleSubItemId = mainSubModuleItem.id
-    const internalViewModule = justSysModuleList.find(x => x.id == internalMainModule) as SystemModuleItem
 
     const mainLinks = justSysModuleList.map((link) => (
         <Tooltip
@@ -67,35 +66,43 @@ export function DoubleNavbar() {
             transitionProps={{ duration: 0 }}
             key={link.label}
         >
-            <UnstyledButton
-                onClick={() => {
-                    setInternalMainModule(link.id)
-                }}
-                className={classes.mainLink}
-                data-active={link.id === internalMainModule || undefined}
-            >
-                <link.icon style={{ width: rem(22), height: rem(22) }} stroke={1.5} />
-            </UnstyledButton>
+            <Link to={`/${link.id}`}>
+                <UnstyledButton
+                    className={classes.mainLink}
+                    data-active={link.id === mainModule || undefined}
+                >
+                    <link.icon style={{ width: rem(22), height: rem(22) }} stroke={1.5} />
+                </UnstyledButton>
+            </Link>
         </Tooltip>
     ));
-    const links = ((
-        internalViewModule?.children || []
-    ) || []).map((item) => {
-        let link = item.id
 
+    const links = (mainModuleItem?.children || []).map((item) => {
+        let link = item.id
+        if (item.href) {
+            return (
+                <a
+                    className={classes.link}
+                    data-active={mainModuleSubItemId === link || undefined}
+                    href={item.href}
+                    key={link} target='_blank' rel='noreferrer noopener'
+                >
+                    {item.name}
+                </a>
+            )
+        }
         return (
             <Link
                 className={classes.link}
                 data-active={mainModuleSubItemId === link || undefined}
-                to={`/${internalViewModule.id}/${item.id}`}
+                to={`/${mainModuleItem.id}/${item.id}`}
                 key={link}
                 onClick={() => {
-                    setInternalMainModule(internalViewModule.id)
-                    latestReadForEachModule[internalViewModule.id] = item
+                    latestReadForEachModule[mainModuleItem.id] = item
                 }}
             >
                 {item.name}
-            </Link >
+            </Link>
         )
     });
 
@@ -110,7 +117,7 @@ export function DoubleNavbar() {
                 </div>
                 <div className={classes.main}>
                     <Title order={4} className={classes.title}>
-                        {internalViewModule?.label}
+                        {mainModuleItem?.label}
                     </Title>
                     {links}
                 </div>

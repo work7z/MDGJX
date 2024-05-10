@@ -17,7 +17,9 @@ import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
 export type SystemSubModuleItem = {
     id: string,
-    name: string
+    href?: string,
+    name: string,
+    body?: React.FC<any>
 }
 export type SystemModuleItem = {
     id: string,
@@ -46,7 +48,10 @@ export const systemModulesList: SystemModuleItem[] = [
         icon: IconHome2, label: '快捷工具', children: [
             {
                 name: 'Chat对话框',
-                id: 'chat'
+                id: 'chat',
+                body: () => {
+                    return <div>this is chat</div>
+                }
             },
             {
                 name: "功能总览(233)",
@@ -101,7 +106,8 @@ export const systemModulesList: SystemModuleItem[] = [
             },
             {
                 name: '工单提交',
-                id: GetAppInfo().githubRepo + '/issues/new'
+                id: 'ticket',
+                href: GetAppInfo().githubRepo + '/issues/new'
             },
             {
                 name: '使用条款',
