@@ -19,8 +19,6 @@ import { useTheme } from '@/app/__CORE__/components/LightDarkButton/theme'
 export default () => {
     useEffect(() => {
         if (window) {
-            // let langMap = 
-            // TranslationUtils.LangMap = langMap
         }
     }, [])
     let innerChild = <div className="w-full h-full">

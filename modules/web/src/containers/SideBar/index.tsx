@@ -14,6 +14,7 @@ import {
 import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './DoubleNavbar.module.css';
 import _ from 'lodash';
+import GetAppInfo from '@/AppInfo';
 
 const mainLinksMockdata: {
     icon: React.FC<any>;
@@ -91,8 +92,12 @@ const mainLinksMockdata: {
                     pathname: 'privacy-agreement'
                 },
                 {
-                    name: '改进与建议反馈',
+                    name: '建议与反馈',
                     pathname: 'feedback'
+                },
+                {
+                    name: '提交工单',
+                    pathname: GetAppInfo().githubRepo + '/issues/new'
                 },
             ]
         },
