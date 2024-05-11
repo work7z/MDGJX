@@ -264,6 +264,5 @@
     "vite": "^5.2.10",
     "vite-tsconfig-paths": "^4.3.1",
     "vitest": "^1.5.2"
-  },
-  "packageManager": "yarn@4.1.1"
+  }
 }
