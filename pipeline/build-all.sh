@@ -19,7 +19,6 @@ echo "[I] crtVersion: $crtVersion"
 
 echo "[I] preparing for dev copy files"
 
-
 echo "[I] LafTools is located at $MDGJX_ROOT"
 cd $MDGJX_ROOT
 echo "[I] PWD: $(pwd)"
