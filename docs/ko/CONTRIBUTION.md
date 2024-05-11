@@ -47,7 +47,7 @@ We fully opened the source project of this project, to build this project, you c
 이 프로젝트를 개발하거나 빌드하려는 경우 아래 단계를 먼저 완료해야 합니다. 그렇지 않으면 예외 없는 오류가 발생합니다.
 
 1. 터미널 실행 경로를 Git Bash로 설정하세요.
-2. 시스템에 환경 설정: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. 시스템에 환경 설정: MDGJX_ROOT=${Your Actual Project Root}.
 3. Go 백엔드 서비스를 처음 시작할 때 dlv 및 gopls를 설치하십시오.
 
 ## 기술

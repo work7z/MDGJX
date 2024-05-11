@@ -47,7 +47,7 @@ Si vous envisagez de développer ce projet, voici quelques extensions géniales 
 Si vous envisagez de développer ou de construire ce projet, notez que vous devez d'abord suivre les étapes ci-dessous, sinon vous recevrez des erreurs inattendues.
 
 1. Définissez le chemin d'exécution de votre terminal sur Git Bash
-2. Définir un environnement dans votre système: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Définir un environnement dans votre système: MDGJX_ROOT=${Your Actual Project Root}.
 3. Installez dlv et gopls pour le service backend Go lorsque vous le lancez pour la première fois.
 
 ## Les technologies

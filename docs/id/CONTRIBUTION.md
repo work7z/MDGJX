@@ -47,7 +47,7 @@ Jika Anda akan mengembangkan proyek ini, berikut adalah beberapa ekstensi luar b
 Jika Anda akan mengembangkan atau membangun proyek ini, perhatikan bahwa Anda harus menyelesaikan langkah-langkah di bawah ini terlebih dahulu, jika tidak, Anda akan menerima kesalahan yang tidak terkecuali.
 
 1. Tetapkan jalur eksekusi terminal Anda sebagai Git Bash
-2. Tetapkan env di sistem Anda: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Tetapkan env di sistem Anda: MDGJX_ROOT=${Your Actual Project Root}.
 3. Instal dlv dan gopls untuk layanan backend Go saat Anda meluncurkannya terlebih dahulu.
 
 ## Teknologi

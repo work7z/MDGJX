@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 cd $(dirname $0)
-crtVersion=`cat $LAFTOOLS_ROOT/package.json | jq -r '.version'`
+crtVersion=`cat $MDGJX_ROOT/package.json | jq -r '.version'`
 echo "Current version is $crtVersion"
 rm -rf dist
 mkdir -p dist

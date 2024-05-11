@@ -1,3 +1,3 @@
 #!/bin/bash
-cd $LAFTOOLS_ROOT/modules-wails
+cd $MDGJX_ROOT/modules-wails
 wails dev

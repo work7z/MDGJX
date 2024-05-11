@@ -45,7 +45,7 @@ ${Dot("u83_QqYGL","If you are going to develop this project, here are some aweso
 ${Dot("bTR5eip5g","If you are going to develop or build this project, note that you should complete below steps first, otherwise, you will receive unexcepted errors.")}
 
 1. ${Dot("fHQ6PD-kK","Set your terminal execution path as Git Bash")}
-2. ${Dot("dMrwVkWnW","Set an env in your system")}: LAFTOOLS_ROOT=\${Your Actual Project Root}.
+2. ${Dot("dMrwVkWnW","Set an env in your system")}: MDGJX_ROOT=\${Your Actual Project Root}.
 3. ${Dot("X8s6RyLpu","Install dlv and gopls for Go backend service when you launch it firstly.")}
 
 ## ${Dot("ULh1VwBBF","Technologies")}

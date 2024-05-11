@@ -23,4 +23,4 @@ jobs:
     - name: Test
       run: go test -v ./...
       env:
-        LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools
+        MDGJX_ROOT: /home/runner/work/LafTools/LafTools

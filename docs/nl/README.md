@@ -86,14 +86,14 @@ Als je Windows OS gebruikt, zorg er dan voor dat alle opdrachten worden uitgevoe
 
 ```bash
 git config core.ignorecase false
-export LAFTOOLS_ROOT="C:\users\jerry\project\laftools-repo"
-export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
+export MDGJX_ROOT="C:\users\jerry\project\laftools-repo"
+export PATH=$PATH:$MDGJX_ROOT\dev\source\windows-bin
 ```
 
 **Env for Linux/MacOS:**
 
 ```bash
-export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
+export MDGJX_ROOT=/users/jerry/projects/laftools-repo
 ```
 
 ## 2. Compileren en uitvoeren
@@ -103,9 +103,9 @@ export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 npm i -g pnpm ts-node typescript
 
 # projectdepartementen installeren
-cd $LAFTOOLS_ROOT && npm install -S -D --force
-cd $LAFTOOLS_ROOT/modules/web2 && npm install -S -D --force
-cd $LAFTOOLS_ROOT/devtools/scripts/scan && npm install -S -D --force
+cd $MDGJX_ROOT && npm install -S -D --force
+cd $MDGJX_ROOT/modules/web2 && npm install -S -D --force
+cd $MDGJX_ROOT/devtools/scripts/scan && npm install -S -D --force
 
 # kerndienst uitvoeren
 npm run fe-web

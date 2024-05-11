@@ -6,7 +6,7 @@
 rm -rf dev-dist
 mkdir -p dev-dist
 
-cd $LAFTOOLS_ROOT
+cd $MDGJX_ROOT
 
 destFile=dev-dist/dev-tools.bin
 echo "building $destFile"

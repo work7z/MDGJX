@@ -1,8 +1,8 @@
 #!/bin/bash
 # this script is designated for testing this whole project.
 set -e
-cd $LAFTOOLS_ROOT
-testPkgDir=$LAFTOOLS_ROOT/test-pkg
+cd $MDGJX_ROOT
+testPkgDir=$MDGJX_ROOT/test-pkg
 if [ -d $testPkgDir ]; then
     rm -rf $testPkgDir
 fi
@@ -11,11 +11,11 @@ echo "[TEST-ALL]"
 echo "[I] $(date) Testing at $testPkgDir..."
 
 # /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/
-chmod +x $LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh
-crtVersion=`$LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh`
+chmod +x $MDGJX_ROOT/pipeline/tools/get-web2-version.sh
+crtVersion=`$MDGJX_ROOT/pipeline/tools/get-web2-version.sh`
 echo "[I] crtVersion: $crtVersion"
 
-cp -a $LAFTOOLS_ROOT/dist/pkg/LafTools-$crtVersion-linux-x64-minimal.tar.gz LafTools-pkg.tar.gz
+cp -a $MDGJX_ROOT/dist/pkg/LafTools-$crtVersion-linux-x64-minimal.tar.gz LafTools-pkg.tar.gz
 tar -xzf LafTools-pkg.tar.gz 
 cd `ls | grep LafTools | grep minimal`
 echo "find results"

@@ -11,9 +11,9 @@ cleanAndCopy(){
 # copy item [1]
 copyWeb2Share(){
     echo "Copying files from web to share"
-    srcDir=$LAFTOOLS_ROOT/modules/web2/app/__CORE__/share
-    cleanAndCopy $srcDir/. $LAFTOOLS_ROOT/modules/bootstrap/src/web2share-copy/
-    cleanAndCopy $srcDir/. $LAFTOOLS_ROOT/modules/server2/src/web2share-copy/
+    srcDir=$MDGJX_ROOT/modules/web2/app/__CORE__/share
+    cleanAndCopy $srcDir/. $MDGJX_ROOT/modules/bootstrap/src/web2share-copy/
+    cleanAndCopy $srcDir/. $MDGJX_ROOT/modules/server2/src/web2share-copy/
 }
 
 copyWeb2Share

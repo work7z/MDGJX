@@ -47,7 +47,7 @@ Om du ska utveckla det här projektet, här är några fantastiska tillägg för
 Om du ska utveckla eller bygga det här projektet, notera att du bör slutföra stegen nedan först, annars kommer du att få felmeddelanden utan undantag.
 
 1. Ställ in din terminalexekveringsväg som Git Bash
-2. Ställ in en env i ditt system: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Ställ in en env i ditt system: MDGJX_ROOT=${Your Actual Project Root}.
 3. Installera dlv och gopls för Go backend-tjänsten när du startar den först.
 
 ## Teknologier

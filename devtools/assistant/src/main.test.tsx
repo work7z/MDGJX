@@ -13,7 +13,7 @@ test('run-conversions-ai-fetch-case', async () => {
   let currentFolder = path.join(postProcessFolder, "op-run-mjs-to-ts")
   shelljs.mkdir('-p', currentFolder)
   let sourceMJSFolder = path.join(
-    process.env.LAFTOOLS_ROOT as string,
+    process.env.MDGJX_ROOT as string,
     ...'modules/web2/app/[lang]/client/src/impl/core/operations'.split("/")
   );
   logger.info("sourceMJSFolder: " + sourceMJSFolder)
@@ -116,7 +116,7 @@ test('run-conversions-ai-fetch-tojson', async () => {
   let currentFolder = path.join(postProcessFolder, "op-run-mjs-to-json-zh")
   shelljs.mkdir('-p', currentFolder)
   let sourceMJSFolder = path.join(
-    process.env.LAFTOOLS_ROOT as string,
+    process.env.MDGJX_ROOT as string,
     ...'modules/web2/app/[lang]/client/src/impl/core/operations'.split("/")
   );
   logger.info("sourceMJSFolder: " + sourceMJSFolder)

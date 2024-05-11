@@ -86,14 +86,14 @@ Windows OS를 사용하는 경우 모든 명령이 git-bash에서 실행되는�
 
 ```bash
 git config core.ignorecase false
-export LAFTOOLS_ROOT="C:\users\jerry\project\laftools-repo"
-export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
+export MDGJX_ROOT="C:\users\jerry\project\laftools-repo"
+export PATH=$PATH:$MDGJX_ROOT\dev\source\windows-bin
 ```
 
 **Env for Linux/MacOS:**
 
 ```bash
-export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
+export MDGJX_ROOT=/users/jerry/projects/laftools-repo
 ```
 
 ## 2. 컴파일 및 실행
@@ -103,9 +103,9 @@ export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 npm i -g pnpm ts-node typescript
 
 # 프로젝트 뎁스 설치
-cd $LAFTOOLS_ROOT && npm install -S -D --force
-cd $LAFTOOLS_ROOT/modules/web2 && npm install -S -D --force
-cd $LAFTOOLS_ROOT/devtools/scripts/scan && npm install -S -D --force
+cd $MDGJX_ROOT && npm install -S -D --force
+cd $MDGJX_ROOT/modules/web2 && npm install -S -D --force
+cd $MDGJX_ROOT/devtools/scripts/scan && npm install -S -D --force
 
 # 핵심 서비스 실행
 npm run fe-web

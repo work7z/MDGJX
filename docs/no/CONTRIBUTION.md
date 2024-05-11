@@ -47,7 +47,7 @@ Hvis du skal utvikle dette prosjektet, her er noen fantastiske utvidelser du kan
 Hvis du skal utvikle eller bygge dette prosjektet, vær oppmerksom på at du bør fullføre trinnene nedenfor først, ellers vil du motta uunntatte feil.
 
 1. Angi terminalkjøringsbanen din som Git Bash
-2. Sett en env i systemet ditt: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Sett en env i systemet ditt: MDGJX_ROOT=${Your Actual Project Root}.
 3. Installer dlv og gopls for Go backend-tjenesten når du starter den først.
 
 ## teknologier

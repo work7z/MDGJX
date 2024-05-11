@@ -40,7 +40,7 @@ var ConfigFilePath string
 func HandleExtraAction(cmd *cobra.Command, args []string) {
 	env.ShouldPrintLogAsJSON = false
 	log.Ref().Debug("calling extra action")
-	ConfigFilePath = strings.ReplaceAll(ConfigFilePath, "$LAFTOOLS_ROOT", env.GetEnvValueForLafToolsRoot())
+	ConfigFilePath = strings.ReplaceAll(ConfigFilePath, "$MDGJX_ROOT", env.GetEnvValueForLafToolsRoot())
 	log.Ref().Debug("DefaultConfigFile: ", ConfigFilePath)
 	lckFile := ConfigFilePath + ".lck"
 	log.Ref().Debug("lckFile: ", lckFile)

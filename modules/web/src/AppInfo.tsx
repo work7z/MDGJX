@@ -1,7 +1,9 @@
 export default function GetAppInfo() {
     return {
         name: '秒达工具箱',
-        link: 'MDGJX.com',
+        // link: 'MDGJX.com',
+        link: 'laftools.cn',
+        // link: 'zdgjx.com',
         // name: '秒达工具箱',
         // name: '途方工具箱',
         // name: '途方工具箱',

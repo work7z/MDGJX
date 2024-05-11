@@ -47,7 +47,7 @@ Als u dit project gaat ontwikkelen, zijn hier enkele geweldige extensies die u k
 Als u dit project gaat ontwikkelen of bouwen, houd er dan rekening mee dat u eerst de onderstaande stappen moet voltooien, anders ontvangt u niet-uitgezonderde fouten.
 
 1. Stel uw terminaluitvoeringspad in als Git Bash
-2. Stel een omgeving in uw systeem in: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Stel een omgeving in uw systeem in: MDGJX_ROOT=${Your Actual Project Root}.
 3. Installeer dlv en gopls voor de Go-backend-service wanneer u deze voor het eerst start.
 
 ## Technologieën

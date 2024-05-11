@@ -47,7 +47,7 @@ We fully opened the source project of this project, to build this project, you c
 このプロジェクトを開発またはビルドする場合は、最初に以下の手順を完了する必要があることに注意してください。そうしないと、例外なくエラーが発生します。
 
 1. ターミナルの実行パスを Git Bash として設定します
-2. システムに環境を設定する: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. システムに環境を設定する: MDGJX_ROOT=${Your Actual Project Root}.
 3. Go バックエンド サービスを最初に起動するときに、そのサービス用の dlv と gopls をインストールします。
 
 ## テクノロジー

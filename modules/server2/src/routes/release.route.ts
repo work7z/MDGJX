@@ -19,7 +19,7 @@ let cnHost = usHost;
 
 let isDev = process.env.NODE_ENV === 'development';
 
-let META_DIR = isDev ? path.join(process.env.LAFTOOLS_ROOT, 'modules', 'meta') : '/opt/app/meta';
+let META_DIR = isDev ? path.join(process.env.MDGJX_ROOT, 'modules', 'meta') : '/opt/app/meta';
 
 let getResourceNameByVersion = (crtVersion: string, platform: string) => {
   let ext = platform == 'windows-x64' || platform == 'windows-arm64' ? 'zip' : 'tar.gz';

@@ -56,19 +56,19 @@ export let fn: FnInternalConverter = (content: string, lang: string) => {
   if (allLastObj.length == 0) {
     throw new Error("No release found in CHANGELOG.md");
   }
-  let LAFTOOLS_ROOT = process.env.LAFTOOLS_ROOT;
-  if (!LAFTOOLS_ROOT) {
-    throw new Error("LAFTOOLS_ROOT is not defined");
+  let MDGJX_ROOT = process.env.MDGJX_ROOT;
+  if (!MDGJX_ROOT) {
+    throw new Error("MDGJX_ROOT is not defined");
   }
-  LAFTOOLS_ROOT = "" + LAFTOOLS_ROOT;
-  let subDir = join(LAFTOOLS_ROOT, "modules", "meta", "versions");
-  let releaseJSONFile = join(LAFTOOLS_ROOT, "modules", "meta", "release.json");
+  MDGJX_ROOT = "" + MDGJX_ROOT;
+  let subDir = join(MDGJX_ROOT, "modules", "meta", "versions");
+  let releaseJSONFile = join(MDGJX_ROOT, "modules", "meta", "release.json");
   if (!fs.existsSync(releaseJSONFile)) {
     throw new Error("release.json not found in meta folder");
   }
   let releaseJSON = JSON.parse(fs.readFileSync(releaseJSONFile, "utf-8"));
   let latestVersionJSONFile = join(
-    LAFTOOLS_ROOT,
+    MDGJX_ROOT,
     "modules",
     "meta",
     releaseJSON.latestVersion + ".json",
@@ -117,7 +117,7 @@ export let fn: FnInternalConverter = (content: string, lang: string) => {
       throw new Error("Empty release found in CHANGELOG.md");
     }
     let eachVersionJSONFile = join(
-      LAFTOOLS_ROOT + "",
+      MDGJX_ROOT + "",
       "modules",
       "meta",
       eachLastObj.version + ".json",

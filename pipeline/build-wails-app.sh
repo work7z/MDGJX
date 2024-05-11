@@ -1,5 +1,5 @@
 #!/bin/bash
-cd $LAFTOOLS_ROOT/myproject
+cd $MDGJX_ROOT/myproject
 # wails build -platform=darwin/amd64,darwin/arm64,linux/amd64,linux/arm64,windows/amd64,windows/arm64 -ldflags "-s -w"  
 #  darwin,darwin/amd64,darwin/arm64,darwin/universal,linux,linux/amd64,linux/arm64,linux/arm,windows,windows/amd64,windows/arm64,windows/386
 

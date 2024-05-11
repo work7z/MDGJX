@@ -1,9 +1,9 @@
 {
   "Env": [
-    "LAFTOOLS_ROOT"
+    "MDGJX_ROOT"
   ],
   "LockFile": true,
-  "OutputDir": "$LAFTOOLS_ROOT/var/log",
+  "OutputDir": "$MDGJX_ROOT/var/log",
   "Jobs": [
     {
       "Id": "scan_and_translation",
@@ -11,7 +11,7 @@
       "Type": "RunCommand",
       "Commands": [
         "node",
-        "$LAFTOOLS_ROOT/devtools/scripts/scan/scan-entry.js"
+        "$MDGJX_ROOT/devtools/scripts/scan/scan-entry.js"
       ]
     },
     {
@@ -19,7 +19,7 @@
       "Type": "RunCommand",
       "Commands": [
         "bash",
-        "$LAFTOOLS_ROOT/pipeline/dev-add-license-to-each-file.sh"
+        "$MDGJX_ROOT/pipeline/dev-add-license-to-each-file.sh"
       ]
     }
   ]

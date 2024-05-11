@@ -5,7 +5,7 @@ import path from 'path'
 console.log('idx', idx)
 import i18nItems from './i18n-copy'
 
-let rootDir = process.env.LAFTOOLS_ROOT;
+let rootDir = process.env.MDGJX_ROOT;
 console.log("rootDir", rootDir);
 let markdownFiles = idx;
 let filesDir = path.join(__dirname, '..', 'files')
@@ -105,7 +105,7 @@ _.forEach(i18nItems, eachI18nItem => {
             finalContent = interalConvertor(finalContent, lang)
         }
 
-        let rootDir = process.env.LAFTOOLS_ROOT || '';
+        let rootDir = process.env.MDGJX_ROOT || '';
         eachMarkdownFiles.destinations.forEach((eachDestination) => {
             let parentDir = path.join(rootDir, eachDestination, eachI18nItem.Value)
             if (!fs.existsSync(parentDir)) {

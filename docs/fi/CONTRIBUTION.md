@@ -47,7 +47,7 @@ Jos aiot kehittää tätä projektia, tässä on joitain mahtavia laajennuksia, 
 Jos aiot kehittää tai rakentaa tätä projektia, huomaa, että sinun tulee suorittaa alla olevat vaiheet ensin, muuten saat poikkeuksetta virheitä.
 
 1. Aseta terminaalin suorituspoluksi Git Bash
-2. Aseta env järjestelmääsi: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Aseta env järjestelmääsi: MDGJX_ROOT=${Your Actual Project Root}.
 3. Asenna dlv ja gopls Go-taustapalvelua varten, kun käynnistät sen ensimmäisen kerran.
 
 ## Teknologiat

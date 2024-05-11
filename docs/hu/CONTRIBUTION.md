@@ -47,7 +47,7 @@ Ha fejleszteni kívánja ezt a projektet, itt van néhány nagyszerű bővítmé
 Ha ezt a projektet fejleszti vagy építi, vegye figyelembe, hogy először végre kell hajtania az alábbi lépéseket, ellenkező esetben kivételes hibákat fog kapni.
 
 1. Állítsa be a terminál végrehajtási útvonalát Git Bash-ként
-2. Állítson be egy env-t a rendszerben: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Állítson be egy env-t a rendszerben: MDGJX_ROOT=${Your Actual Project Root}.
 3. Telepítse a dlv-t és a gopls-t a Go háttérszolgáltatáshoz, amikor először indítja el.
 
 ## Technológiák

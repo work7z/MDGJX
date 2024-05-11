@@ -47,7 +47,7 @@ We fully opened the source project of this project, to build this project, you c
 如果您要開發或建置此項目，請註意您應該先完成以下步驟，否則，您將收到異常錯誤。
 
 1. 將終端執行路徑設定為 Git Bash
-2. 在您的系統中設定一個環境: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. 在您的系統中設定一個環境: MDGJX_ROOT=${Your Actual Project Root}.
 3. 首次啟動 Go 後端服務時，請安裝 dlv 和 gopls。
 
 ## 科技

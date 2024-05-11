@@ -3,7 +3,7 @@ cd $(dirname $0)
 crtDIR=$(pwd)
 set -e
 cd dist
-crtVersion=`cat $LAFTOOLS_ROOT/package.json | jq -r '.version'`
+crtVersion=`cat $MDGJX_ROOT/package.json | jq -r '.version'`
 echo "Current version is $crtVersion"
 # CN: PKG_UPLOAD_CN_HOST
 # US: PKG_UPLOAD_US_HOST

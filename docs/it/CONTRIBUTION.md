@@ -47,7 +47,7 @@ Se hai intenzione di sviluppare questo progetto, ecco alcune fantastiche estensi
 Se hai intenzione di sviluppare o costruire questo progetto, tieni presente che dovresti prima completare i passaggi seguenti, altrimenti riceverai errori non esclusi.
 
 1. Imposta il percorso di esecuzione del terminale come Git Bash
-2. Imposta un ambiente nel tuo sistema: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Imposta un ambiente nel tuo sistema: MDGJX_ROOT=${Your Actual Project Root}.
 3. Installa dlv e gopls per il servizio backend Go quando lo avvii per primo.
 
 ## Tecnologie

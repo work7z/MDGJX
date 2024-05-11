@@ -15,7 +15,7 @@ import (
 )
 
 func GetEnvValueForLafToolsRoot() string {
-	a := os.Getenv("LAFTOOLS_ROOT")
+	a := os.Getenv("MDGJX_ROOT")
 	if a != "" {
 		return a
 	}

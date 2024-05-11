@@ -10,7 +10,7 @@ class ScanAllStructs {
  * 3. use regex pattern to match the content of golang struct
  * 4. convert their fields in Go struct like typescript type definition
  */
-        def dir = "$LAFTOOLS_ROOT/core"
+        def dir = "$MDGJX_ROOT/core"
         // compile a regex that can match the body of Go type struct definition
         def regex = /type\s+\w+\s+struct\s+\{[\s\S]*?\}/
         def str = """

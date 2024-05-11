@@ -86,14 +86,14 @@ Om du använder Windows OS, se till att alla kommandon körs i git-bash, läs me
 
 ```bash
 git config core.ignorecase false
-export LAFTOOLS_ROOT="C:\users\jerry\project\laftools-repo"
-export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
+export MDGJX_ROOT="C:\users\jerry\project\laftools-repo"
+export PATH=$PATH:$MDGJX_ROOT\dev\source\windows-bin
 ```
 
 **Env for Linux/MacOS:**
 
 ```bash
-export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
+export MDGJX_ROOT=/users/jerry/projects/laftools-repo
 ```
 
 ## 2. Kompilera och kör
@@ -103,9 +103,9 @@ export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 npm i -g pnpm ts-node typescript
 
 # installera projektdeps
-cd $LAFTOOLS_ROOT && npm install -S -D --force
-cd $LAFTOOLS_ROOT/modules/web2 && npm install -S -D --force
-cd $LAFTOOLS_ROOT/devtools/scripts/scan && npm install -S -D --force
+cd $MDGJX_ROOT && npm install -S -D --force
+cd $MDGJX_ROOT/modules/web2 && npm install -S -D --force
+cd $MDGJX_ROOT/devtools/scripts/scan && npm install -S -D --force
 
 # köra kärntjänst
 npm run fe-web

@@ -47,7 +47,7 @@ Pokud se chystáte vyvinout tento projekt, zde je několik úžasných rozšíř
 Pokud se chystáte vyvíjet nebo stavět tento projekt, mějte na paměti, že byste měli nejprve provést níže uvedené kroky, jinak se zobrazí neočekávané chyby.
 
 1. Nastavte cestu provádění terminálu jako Git Bash
-2. Nastavte env ve vašem systému: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Nastavte env ve vašem systému: MDGJX_ROOT=${Your Actual Project Root}.
 3. Nainstalujte dlv a gopls pro backendovou službu Go při prvním spuštění.
 
 ## Technologie

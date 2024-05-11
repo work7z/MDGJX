@@ -47,7 +47,7 @@ Jeśli zamierzasz rozwijać ten projekt, oto kilka niesamowitych rozszerzeń, kt
 Jeśli zamierzasz opracować lub zbudować ten projekt, pamiętaj, że powinieneś najpierw wykonać poniższe kroki, w przeciwnym razie otrzymasz nieoczekiwane błędy.
 
 1. Ustaw ścieżkę wykonania terminala jako Git Bash
-2. Ustaw env w swoim systemie: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Ustaw env w swoim systemie: MDGJX_ROOT=${Your Actual Project Root}.
 3. Zainstaluj dlv i gopls dla usługi backendu Go, gdy ją uruchomisz.
 
 ## Technologie

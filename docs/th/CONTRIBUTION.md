@@ -47,7 +47,7 @@ We fully opened the source project of this project, to build this project, you c
 หากคุณกำลังจะพัฒนาหรือสร้างโปรเจ็กต์นี้ โปรดทราบว่าคุณควรทำตามขั้นตอนด้านล่างให้เสร็จสิ้นก่อน มิฉะนั้น คุณจะได้รับข้อผิดพลาดที่ยกเว้น
 
 1. ตั้งค่าเส้นทางการดำเนินการเทอร์มินัลของคุณเป็น Git Bash
-2. ตั้งค่า env ในระบบของคุณ: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. ตั้งค่า env ในระบบของคุณ: MDGJX_ROOT=${Your Actual Project Root}.
 3. ติดตั้ง dlv และ gopls สำหรับบริการแบ็กเอนด์ Go เมื่อคุณเปิดใช้งานในตอนแรก
 
 ## เทคโนโลยี

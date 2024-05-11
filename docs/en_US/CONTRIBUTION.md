@@ -47,7 +47,7 @@ If you are going to develop this project, here are some awesome extensions for y
 If you are going to develop or build this project, note that you should complete below steps first, otherwise, you will receive unexcepted errors.
 
 1. Set your terminal execution path as Git Bash
-2. Set an env in your system: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Set an env in your system: MDGJX_ROOT=${Your Actual Project Root}.
 3. Install dlv and gopls for Go backend service when you launch it firstly.
 
 ## Technologies

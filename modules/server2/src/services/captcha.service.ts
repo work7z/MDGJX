@@ -37,7 +37,7 @@ export class CaptchaService {
 }
 
 export let getPreCompiledDir = (): string => {
-  let file = isDevEnv() ? path.join(process.env.LAFTOOLS_ROOT, 'devtools', 'precompiled', 'dev') : '/opt/app/precompiled';
+  let file = isDevEnv() ? path.join(process.env.MDGJX_ROOT, 'devtools', 'precompiled', 'dev') : '/opt/app/precompiled';
   return file;
 };
 

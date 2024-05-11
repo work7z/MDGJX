@@ -47,7 +47,7 @@ Wenn Sie dieses Projekt entwickeln möchten, finden Sie hier einige tolle Erweit
 Wenn Sie dieses Projekt entwickeln oder erstellen möchten, beachten Sie, dass Sie zuerst die folgenden Schritte ausführen sollten, andernfalls erhalten Sie unvorhergesehene Fehler.
 
 1. Legen Sie Ihren Terminal-Ausführungspfad als Git Bash fest
-2. Legen Sie eine Umgebung in Ihrem System fest: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Legen Sie eine Umgebung in Ihrem System fest: MDGJX_ROOT=${Your Actual Project Root}.
 3. Installieren Sie dlv und gopls für den Go-Backend-Dienst, wenn Sie ihn zum ersten Mal starten.
 
 ## Technologien

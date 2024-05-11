@@ -47,7 +47,7 @@ Nếu bạn định phát triển dự án này, đây là một số tiện íc
 Nếu bạn định phát triển hoặc xây dựng dự án này, hãy lưu ý rằng bạn nên hoàn thành các bước dưới đây trước, nếu không, bạn sẽ gặp phải các lỗi không thể loại trừ.
 
 1. Đặt đường dẫn thực thi thiết bị đầu cuối của bạn là Git Bash
-2. Đặt env trong hệ thống của bạn: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Đặt env trong hệ thống của bạn: MDGJX_ROOT=${Your Actual Project Root}.
 3. Cài đặt dlv và gopls cho dịch vụ phụ trợ Go khi bạn khởi chạy nó lần đầu tiên.
 
 ## Công nghệ

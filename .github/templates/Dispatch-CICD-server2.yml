@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools
+      MDGJX_ROOT: /home/runner/work/LafTools/LafTools
       TAG_MODE: true
 
     steps:
@@ -30,8 +30,8 @@ jobs:
       - name: Run build script
         id: runbuildscript
         run: |
-          chmod +x $LAFTOOLS_ROOT/pipeline/build-server2.sh
-          $LAFTOOLS_ROOT/pipeline/build-server2.sh
+          chmod +x $MDGJX_ROOT/pipeline/build-server2.sh
+          $MDGJX_ROOT/pipeline/build-server2.sh
 
       - name: CNS Release 1
         uses: appleboy/ssh-action@master
@@ -54,9 +54,9 @@ jobs:
       - name: CNS Release 3
         run: |
           sftp -o StrictHostKeyChecking=no -P ${{ secrets.MAIN_APP_SSH_PORT }} ${{ secrets.MAIN_APP_SSH_USERNAME }}@${{ secrets.MAIN_APP_SSH_HOST }} <<EOF
-            put $LAFTOOLS_ROOT/modules/server2/docker-dist.tar.gz /home/appuser/Server2App-dist/LafTools-${{steps.get_version.outputs.VERSION}}-dkout.tmp.gz
+            put $MDGJX_ROOT/modules/server2/docker-dist.tar.gz /home/appuser/Server2App-dist/LafTools-${{steps.get_version.outputs.VERSION}}-dkout.tmp.gz
             mkdir /home/appuser/Server2App-meta
-            put -r $LAFTOOLS_ROOT/modules/meta/* /home/appuser/Server2App-meta/
+            put -r $MDGJX_ROOT/modules/meta/* /home/appuser/Server2App-meta/
           exit
           EOF
           rm ~/.ssh/id_rsa -rf

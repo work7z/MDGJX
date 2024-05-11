@@ -2,8 +2,8 @@
 
 
 
-# exit when LAFTOOLS_ROOT has no value
-if [[ "$LAFTOOLS_ROOT" = "" ]]; then
+# exit when MDGJX_ROOT has no value
+if [[ "$MDGJX_ROOT" = "" ]]; then
     exit
 fi
 
@@ -109,7 +109,7 @@ done
 }
 
 
-addLicense "$LAFTOOLS_ROOT" "go"
-addLicense "$LAFTOOLS_ROOT/modules" "scss"
-addLicense "$LAFTOOLS_ROOT/modules" "tsx"
-addLicense "$LAFTOOLS_ROOT/modules" "mjs"
+addLicense "$MDGJX_ROOT" "go"
+addLicense "$MDGJX_ROOT/modules" "scss"
+addLicense "$MDGJX_ROOT/modules" "tsx"
+addLicense "$MDGJX_ROOT/modules" "mjs"

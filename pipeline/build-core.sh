@@ -4,7 +4,7 @@ cd $(dirname $0)
 
 source ./env.sh
 
-cd $LAFTOOLS_ROOT
+cd $MDGJX_ROOT
 
 echo 'deleting dist folder...'
 rm -rf dist/

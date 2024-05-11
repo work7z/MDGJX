@@ -18,7 +18,7 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-var LAFTOOLS_ROOT string = env.GetEnvValueForLafToolsRoot()
+var MDGJX_ROOT string = env.GetEnvValueForLafToolsRoot()
 
 type TranslateConfig struct {
 	Type    string
@@ -29,7 +29,7 @@ type TranslateConfig struct {
 }
 
 func main() {
-	// LAFTOOLS_ROOT =
+	// MDGJX_ROOT =
 	// get argument xxx from --id=xxx
 	// go run ./translate-tools/bulktranslate.go --id=wl
 	id := ""
@@ -56,9 +56,9 @@ func main() {
 		outputJSONMapStr, _ := nocycle.ReadFileAsStr(outputJSONFile)
 		json.Unmarshal([]byte(outputJSONMapStr), &outputJSONMap)
 	}
-	// log.Ref().Info("LAFTOOLS_ROOT", LAFTOOLS_ROOT)
+	// log.Ref().Info("MDGJX_ROOT", MDGJX_ROOT)
 	// zhCN
-	zhCNOverwrittenFile := path.Join(LAFTOOLS_ROOT, "devtools", "lang", "overwrriten", "zh_CN-overwrite.json")
+	zhCNOverwrittenFile := path.Join(MDGJX_ROOT, "devtools", "lang", "overwrriten", "zh_CN-overwrite.json")
 	zhCNOverwrittenFileContent, err := nocycle.ReadFileAsStr(zhCNOverwrittenFile)
 	if err != nil {
 		log.InternalLog.Panic("err", err)
@@ -177,7 +177,7 @@ func main() {
 }
 
 func getTranslateResultDir() string {
-	tmpDir := path.Join(LAFTOOLS_ROOT, "devtools", "scripts", "scan", "tmp-translate-result")
+	tmpDir := path.Join(MDGJX_ROOT, "devtools", "scripts", "scan", "tmp-translate-result")
 	os.MkdirAll(tmpDir, os.ModePerm)
 	return tmpDir
 }

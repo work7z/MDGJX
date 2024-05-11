@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-tag2
+      MDGJX_ROOT: /home/runner/work/LafTools/LafTools-tag2
       TAG_MODE: true
       TXCOSID: ${{ secrets.TXCOSID }}
       TXCOSKEY: ${{ secrets.TXCOSKEY }}

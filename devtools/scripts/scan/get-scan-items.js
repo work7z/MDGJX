@@ -21,10 +21,10 @@ function convertUnixPathToWindowsPath(v) {
 function sub_exp(idx) {
   return "((?<![\\\\])['\"`])((?:.(?!(?<![\\\\])\\1))*.?)\\" + idx;
 }
-// get env LAFTOOLS_ROOT
+// get env MDGJX_ROOT
 let baseDIR = path.join(__dirname, "..", "..", "..");
 if (baseDIR == "") {
-  console.log("LAFTOOLS_ROOT could not be empty");
+  console.log("MDGJX_ROOT could not be empty");
   exit(-1);
 } else {
   console.log("LAFTOOLS: ", baseDIR);

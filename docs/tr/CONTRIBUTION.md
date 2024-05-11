@@ -47,7 +47,7 @@ Bu projeyi geliştirecekseniz, işinize yarayabilecek bazı harika uzantıları 
 Bu projeyi geliştirecek veya inşa edecekseniz öncelikle aşağıdaki adımları tamamlamanız gerektiğini unutmayın, aksi takdirde beklenmedik hatalar alırsınız.
 
 1. Terminal yürütme yolunuzu Git Bash olarak ayarlayın
-2. Sisteminizde bir env ayarlayın: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Sisteminizde bir env ayarlayın: MDGJX_ROOT=${Your Actual Project Root}.
 3. Go arka uç hizmetini ilk başlattığınızda dlv ve gopls'i yükleyin.
 
 ## Teknolojiler

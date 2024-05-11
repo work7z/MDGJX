@@ -5,7 +5,7 @@
 1. check the version field in file `/modules/meta/release.json`
 2. **ENSURE** that you **HAVE NOT** modified the ongoing version(meaning the available version)
 3. **WRITE DOWN** release notes with your new version in `/devtools/docs-generator/files/CHANGELOG.md` (do follow the format, otherwise u will get error in next step)
-4. Execute the command `cd $LAFTOOLS_ROOT && npm run fe-release-docs-full`
+4. Execute the command `cd $MDGJX_ROOT && npm run fe-release-docs-full`
 5. Push latest generated files to Git repo.
 
 ## 2. build and upload the pre-release binary to US machine

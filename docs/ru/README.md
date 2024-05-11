@@ -86,14 +86,14 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 
 ```bash
 git config core.ignorecase false
-export LAFTOOLS_ROOT="C:\users\jerry\project\laftools-repo"
-export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
+export MDGJX_ROOT="C:\users\jerry\project\laftools-repo"
+export PATH=$PATH:$MDGJX_ROOT\dev\source\windows-bin
 ```
 
 **Env for Linux/MacOS:**
 
 ```bash
-export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
+export MDGJX_ROOT=/users/jerry/projects/laftools-repo
 ```
 
 ## 2. Скомпилируйте и запустите
@@ -103,9 +103,9 @@ export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 npm i -g pnpm ts-node typescript
 
 # установить описания проекта
-cd $LAFTOOLS_ROOT && npm install -S -D --force
-cd $LAFTOOLS_ROOT/modules/web2 && npm install -S -D --force
-cd $LAFTOOLS_ROOT/devtools/scripts/scan && npm install -S -D --force
+cd $MDGJX_ROOT && npm install -S -D --force
+cd $MDGJX_ROOT/modules/web2 && npm install -S -D --force
+cd $MDGJX_ROOT/devtools/scripts/scan && npm install -S -D --force
 
 # запустить основной сервис
 npm run fe-web

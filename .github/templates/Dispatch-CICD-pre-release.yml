@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-M-pre
+      MDGJX_ROOT: /home/runner/work/LafTools/LafTools-M-pre
       TAG_MODE: false
       DOCKER_PKG_BUILD_MODE: true
 
@@ -44,7 +44,7 @@ jobs:
         run: |
           cp -a /home/runner/work/LafTools/LafTools /home/runner/work/LafTools/LafTools-M-pre
           chmod +x /home/runner/work/LafTools/LafTools-M-pre/pipeline/tools/get-web2-version.sh
-          export crtVersion=`$LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh`
+          export crtVersion=`$MDGJX_ROOT/pipeline/tools/get-web2-version.sh`
 
       - name: Run build script
         id: runbuildscript

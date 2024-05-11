@@ -9,7 +9,7 @@ var md5 = require("md5");
 const { exit } = require("process");
 let i18njson = require("../../../resources/public/purejs/app-i18n.json");
 
-let laftoolsRoot = process.env.LAFTOOLS_ROOT;
+let laftoolsRoot = process.env.MDGJX_ROOT;
 console.log("i18njson", i18njson);
 // cross platform watch file
 let chokidar = require("chokidar");

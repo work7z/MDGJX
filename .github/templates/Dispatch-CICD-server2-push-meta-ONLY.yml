@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-push-meta
+      MDGJX_ROOT: /home/runner/work/LafTools/LafTools-push-meta
       TAG_MODE: true
 
     steps:
@@ -30,7 +30,7 @@ jobs:
       - name: Run build script
         id: runbuildscript
         run: |
-          chmod +x $LAFTOOLS_ROOT/pipeline/build-server2.sh
+          chmod +x $MDGJX_ROOT/pipeline/build-server2.sh
 
       - name: CNS Release 1
         uses: appleboy/ssh-action@master
@@ -54,7 +54,7 @@ jobs:
         run: |
           sftp -o StrictHostKeyChecking=no -P ${{ secrets.MAIN_APP_SSH_PORT }} ${{ secrets.MAIN_APP_SSH_USERNAME }}@${{ secrets.MAIN_APP_SSH_HOST }} <<EOF
             mkdir /home/appuser/Server2App-meta
-            put -r $LAFTOOLS_ROOT/modules/meta/* /home/appuser/Server2App-meta/
+            put -r $MDGJX_ROOT/modules/meta/* /home/appuser/Server2App-meta/
           exit
           EOF
           rm ~/.ssh/id_rsa -rf

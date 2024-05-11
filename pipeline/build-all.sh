@@ -3,11 +3,11 @@
 # version will be retrieved from the file package.json
 set -e
 if [ "$TAG_MODE" = "true" ]; then
-    cp -a /home/runner/work/LafTools/LafTools $LAFTOOLS_ROOT
+    cp -a /home/runner/work/LafTools/LafTools $MDGJX_ROOT
 fi
 
-chmod +x $LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh
-crtVersion=`$LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh`
+chmod +x $MDGJX_ROOT/pipeline/tools/get-web2-version.sh
+crtVersion=`$MDGJX_ROOT/pipeline/tools/get-web2-version.sh`
 
 if [ -z $crtVersion ]; then
     echo "[E] crtVersion is required."
@@ -19,10 +19,10 @@ echo "[I] crtVersion: $crtVersion"
 echo "[I] preparing for dev copy files"
 
 
-echo "[I] LafTools is located at $LAFTOOLS_ROOT"
-cd $LAFTOOLS_ROOT
+echo "[I] LafTools is located at $MDGJX_ROOT"
+cd $MDGJX_ROOT
 echo "[I] PWD: $(pwd)"
-distDir=$LAFTOOLS_ROOT/dist
+distDir=$MDGJX_ROOT/dist
 
 clean-bundle(){
     echo "[I] $(date) Working..."
@@ -45,14 +45,14 @@ clean-bundle(){
 build-bundle(){
     bundleMode=$1
 
-    targetFile=./modules/web2/app/[lang]/[category]/info.tsx
+    targetFile=./modules/web/src/meta/info.tsx
     if [ ! -f $targetFile ]; then
         echo "[E] $targetFile is not found."
         exit 1
     fi
 
     echo "
-import { AppInfoClz } from \"@/app/__CORE__/meta/ptypes\"
+import { AppInfoClz } from \"./types\"
 
 
     export default {
@@ -71,7 +71,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ptypes\"
     source ./pipeline/env.sh
     mode=$1
 
-    crossPlatformDir=$LAFTOOLS_ROOT/cross-platform
+    crossPlatformDir=$MDGJX_ROOT/cross-platform
     if [ ! -d $crossPlatformDir ]; then
         echo "[I] downloading runtime nodejs"
         ./pipeline/fetch-runtime-nodejs.sh &> /dev/null
@@ -89,15 +89,15 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ptypes\"
 
     build-core(){
 
-        cd $LAFTOOLS_ROOT
+        cd $MDGJX_ROOT
 
         platformName=$1
         platformArch=$2
         platformGoFile=$3
         platformExt=bin
         argGOOS=$4
-        osPatchDir=$LAFTOOLS_ROOT/os-patch/$platformName
-        platformDistDir=$LAFTOOLS_ROOT/dist/os/$platformName/
+        osPatchDir=$MDGJX_ROOT/os-patch/$platformName
+        platformDistDir=$MDGJX_ROOT/dist/os/$platformName/
         echo "--------- CORE $platformName BEGIN ---------"
         echo "[I] building be core"
         osScriptFile=$argGOOS
@@ -123,25 +123,25 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ptypes\"
         echo "[I] copying resources and web..."
 
         # cp -a ./dist/resources $platformDistDir
-        cp -a ./dist/web2 $platformDistDir/core
+        cp -a ./dist/web $platformDistDir/core
 
         cp -a ./pipeline/parcel/scripts/$osScriptFile/* $platformDistDir
 
         preDIR=$(pwd)
         echo "[I] copying bootstrap and scripts..."
-        cd $LAFTOOLS_ROOT/modules/bootstrap
+        cd $MDGJX_ROOT/modules/bootstrap
         npm i -S -D --force
         if [ $? -ne 0 ]; then
             echo "[E] bootstrap install failed."
             exit 1
         fi
-        npm run build 
+        npm run build
         if [ $? -ne 0 ]; then
             echo "[E] bootstrap build failed."
             exit 1
         fi
         mkdir -p $platformDistDir/boot
-        cp -a $LAFTOOLS_ROOT/modules/bootstrap/dist/* $platformDistDir/boot/
+        cp -a $MDGJX_ROOT/modules/bootstrap/dist/* $platformDistDir/boot/
         if [ -d temp ];then 
             rm -rf temp
         fi
@@ -167,13 +167,10 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ptypes\"
     build-fe(){
         echo "[I] building fe"
         (
-            cd $LAFTOOLS_ROOT/modules/web2
+            cd $MDGJX_ROOT/modules/web
             [ -d node_modules ] && rm -rf node_modules
             rm -f *lock*
             [ ! -d node_modules ] && npm install --omit=dev --force 
-            # if [ -e ./vite.config.ts ]; then
-            #     rm ./vite.config.ts
-            # fi
             rm -rf .next
             npm run build
             cd .next
@@ -181,9 +178,9 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ptypes\"
             cp -a ../public/* ./standalone/public/
             cp -a  ./static/ ./standalone/.next/static
             cd ..
-            [ -d $LAFTOOLS_ROOT/dist/web2 ] && rm -rf $LAFTOOLS_ROOT/dist/web2
-            cp -a ./.next/standalone/ $LAFTOOLS_ROOT/dist/web2
-            echo "[I] fe bundle size: $(du -sh $LAFTOOLS_ROOT/dist/web2)"
+            [ -d $MDGJX_ROOT/dist/web ] && rm -rf $MDGJX_ROOT/dist/web
+            cp -a ./.next/standalone/ $MDGJX_ROOT/dist/web
+            echo "[I] fe bundle size: $(du -sh $MDGJX_ROOT/dist/web)"
         )
         echo "[I] built fe"
     }
@@ -218,7 +215,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ptypes\"
     package-for(){
         platformName=$1
         packageType=$2
-        platformDistDir=$LAFTOOLS_ROOT/dist/os/$platformName/
+        platformDistDir=$MDGJX_ROOT/dist/os/$platformName/
         if [ -z $packageType ]; then
             packageType=tar.gz
         fi
@@ -274,7 +271,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ptypes\"
             package-for darwin-arm64
         fi
         (
-            cd $LAFTOOLS_ROOT/dist/pkg
+            cd $MDGJX_ROOT/dist/pkg
             echo "[I] calculating sha256 for $fileName"
             sha256sum * > ./SHA256SUM.txt
         )
@@ -289,7 +286,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ptypes\"
         (
             cd $subDockerDir
             cp ../../pkg/*$platformName-minimal.tar.gz ./linux.tar.gz
-            cp $LAFTOOLS_ROOT/pipeline/parcel/docker/* ./
+            cp $MDGJX_ROOT/pipeline/parcel/docker/* ./
             rm -rf ./node-v20.12.0-$platformName
             curl https://cdn.npmmirror.com/binaries/node/v20.12.0/node-v20.12.0-$platformName.tar.gz -O
             tar -xzf node-v20.12.0-$platformName.tar.gz
@@ -311,7 +308,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ptypes\"
             # if [ $platformName == "linux-x64" ]; then
             #     testImgName=codegentoolbox/laftools-$platformName:devops
             #     echo "testing docker container for $platformName, docker image: $testImgName"
-            #     cd $LAFTOOLS_ROOT/pipeline 
+            #     cd $MDGJX_ROOT/pipeline 
             #     chmod +x ./test-docker.sh $testImgName
             #     ./test-docker.sh 
             # fi
@@ -325,16 +322,16 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ptypes\"
             if [ $platformName == "linux-x64" ]; then
                 echo "[I] building other tag"
                 docker build -t codegentoolbox/laftools-$platformName:$crtVersion -f ./Dockerfile .
-                docker save codegentoolbox/laftools-$platformName:$crtVersion > $LAFTOOLS_ROOT/dkout.tmp 
-                zip -r $LAFTOOLS_ROOT/pipeline-server.zip $LAFTOOLS_ROOT/pipeline/server
-                gzip $LAFTOOLS_ROOT/dkout.tmp
-                echo "[I] docker output file: $LAFTOOLS_ROOT/dkout.tmp.gz, size is $(du -sh $LAFTOOLS_ROOT/dkout.tmp.gz | awk '{print $1}')"
+                docker save codegentoolbox/laftools-$platformName:$crtVersion > $MDGJX_ROOT/dkout.tmp 
+                zip -r $MDGJX_ROOT/pipeline-server.zip $MDGJX_ROOT/pipeline/server
+                gzip $MDGJX_ROOT/dkout.tmp
+                echo "[I] docker output file: $MDGJX_ROOT/dkout.tmp.gz, size is $(du -sh $MDGJX_ROOT/dkout.tmp.gz | awk '{print $1}')"
             fi
         )
     }
 
     run-test-all(){
-        cd $LAFTOOLS_ROOT/pipeline
+        cd $MDGJX_ROOT/pipeline
         chmod +x ./test-all.sh
         ./test-all.sh
         if [ $? -ne 0 ]; then

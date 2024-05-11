@@ -1,6 +1,6 @@
 {
   "name": "laftools-go",
-  "version": "v2.2.42",
+  "version": "v3.1.42",
   "scripts": {
     "add-license": "sh ./pipeline/dev-add-license-to-each-file.sh",
     "fe-handle-CN-pre-release": "sh ./devtools/release/download-and-verify.sh",
@@ -13,7 +13,7 @@
     "win-clean": "taskkill /F /IM bash.exe",
     "fe-web": "(cd ./modules/web2 && npm run dev)",
     "fe-css": "(cd ./modules/web && sh ./job-tailwind.sh)",
-    "fe-extra": "go run ./core/app.go dev-extra --config $LAFTOOLS_ROOT/devtools/config/laft-system-dev.json",
+    "fe-extra": "go run ./core/app.go dev-extra --config $MDGJX_ROOT/devtools/config/laft-system-dev.json",
     "fe-build": "(cd ./modules/web && npm run build)",
     "fe-scan-other": "(cd ./devtools/scripts/scan/ && node ./scan-entry.js --skip-langlist=zh_CN)",
     "fe-scan-zh": "(cd ./devtools/scripts/scan/ && node ./scan-entry.js --langlist=zh_CN )",
@@ -22,7 +22,7 @@
     "build-all": "./pipeline/build-all.sh",
     "test-all": "./pipeline/test-all.sh",
     "build-linux": "./pipeline/build-all.sh linux",
-    "test-linux": "(cd $LAFTOOLS_ROOT/dist/os/linux-x64 && ./run.sh)",
+    "test-linux": "(cd $MDGJX_ROOT/dist/os/linux-x64 && ./run.sh)",
     "push-docker": "./pipeline/push-docker.sh",
     "build-docker": "./pipeline/build-docker.sh",
     "test-docker": "sudo docker run -p 0.0.0.0:39000:39000 codegentoolbox/laftools-linux-x64:insider"

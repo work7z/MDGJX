@@ -7,7 +7,7 @@ if [ $? -eq 0 ]; then
 fi
 
 set -e
-version=`jq '.version' $LAFTOOLS_ROOT/package.json -r` 
+version=`jq '.version' $MDGJX_ROOT/package.json -r` 
 tagName=$version
 git tag $tagName
 echo "ok, tag it"

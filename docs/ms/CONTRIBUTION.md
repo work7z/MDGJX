@@ -47,7 +47,7 @@ Jika anda akan membangunkan projek ini, berikut ialah beberapa sambungan hebat u
 Jika anda akan membangunkan atau membina projek ini, ambil perhatian bahawa anda harus melengkapkan langkah di bawah dahulu, jika tidak, anda akan menerima ralat yang tidak terkecuali.
 
 1. Tetapkan laluan pelaksanaan terminal anda sebagai Git Bash
-2. Tetapkan env dalam sistem anda: LAFTOOLS_ROOT=${Your Actual Project Root}.
+2. Tetapkan env dalam sistem anda: MDGJX_ROOT=${Your Actual Project Root}.
 3. Pasang dlv dan gopls untuk perkhidmatan backend Go apabila anda melancarkannya dahulu.
 
 ## Teknologi
