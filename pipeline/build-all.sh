@@ -1,6 +1,7 @@
 #!/bin/bash 
 # this script is designated for building this whole project.  
 # version will be retrieved from the file package.json
+
 set -e
 if [ "$TAG_MODE" = "true" ]; then
     cp -a /home/runner/work/LafTools/LafTools $MDGJX_ROOT
@@ -178,7 +179,12 @@ import { AppInfoClz } from \"./types\"
             echo "[I] fe bundle size: $(du -sh $MDGJX_ROOT/dist/web)"
         )
         (
-            cd $MDGJX_ROOT/modules/web
+            cd $MDGJX_ROOT/modules/web-server
+            [ -d node_modules ] && rm -rf node_modules
+            rm -f *lock*
+            rm -rf dist
+            [ ! -d node_modules ] && npm i -S -D --force 
+            npm run build
         )
         echo "[I] built fe"
     }
