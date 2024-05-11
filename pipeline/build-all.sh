@@ -71,13 +71,13 @@ import { AppInfoClz } from \"./types\"
     source ./pipeline/env.sh
     mode=$1
 
-    crossPlatformDir=$MDGJX_ROOT/cross-platform
-    if [ ! -d $crossPlatformDir ]; then
-        echo "[I] downloading runtime nodejs"
-        ./pipeline/fetch-runtime-nodejs.sh &> /dev/null
-    else 
-        echo "[I] runtime nodejs already exists in $crossPlatformDir, skip downloading."
-    fi
+    # crossPlatformDir=$MDGJX_ROOT/cross-platform
+    # if [ ! -d $crossPlatformDir ]; then
+    #     echo "[I] downloading runtime nodejs"
+    #     ./pipeline/fetch-runtime-nodejs.sh &> /dev/null
+    # else 
+    #     echo "[I] runtime nodejs already exists in $crossPlatformDir, skip downloading."
+    # fi
 
 
     # building LafTools with dev commands
@@ -170,7 +170,7 @@ import { AppInfoClz } from \"./types\"
             cd $MDGJX_ROOT/modules/web
             [ -d node_modules ] && rm -rf node_modules
             rm -f *lock*
-            [ ! -d node_modules ] && npm install --omit=dev --force 
+            [ ! -d node_modules ] && npm i -S -D --force 
             rm -rf .next
             npm run build
             cd .next

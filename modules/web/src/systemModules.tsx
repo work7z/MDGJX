@@ -16,7 +16,6 @@ import classes from './DoubleNavbar.module.css';
 import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
 import { TypeMDParams } from '@/containers/SideBar';
-import loadable from '@loadable/component'
 
 export type SystemSubModuleItem = {
     id: string,
