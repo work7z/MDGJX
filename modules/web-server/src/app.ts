@@ -62,7 +62,7 @@ export class App {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
     if (this.env == 'production') {
-      let distDir = path.join(__dirname, 'dist'); //TODO: provide this distDir 'C:\\Users\\jerrylai\\hmproject\\suodao-tools\\modules\\web\\dist';
+      let distDir = path.join(__dirname, 'spa'); //TODO: provide this distDir 'C:\\Users\\jerrylai\\hmproject\\suodao-tools\\modules\\web\\dist';
       // let us build this first
       this.app.use(express.static(distDir));
       this.app.get('/*', (req, res) => {

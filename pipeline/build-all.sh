@@ -173,8 +173,6 @@ import { AppInfoClz } from \"./types\"
             [ ! -d node_modules ] && npm i -S -D --force 
             rm -rf .next
             npm run build
-            [ -d $MDGJX_ROOT/dist/web ] && rm -rf $MDGJX_ROOT/dist/web
-            echo "[I] fe bundle size: $(du -sh $MDGJX_ROOT/dist/web)"
         )
         (
             echo "[I] building web-server"
@@ -183,6 +181,10 @@ import { AppInfoClz } from \"./types\"
             rm -rf dist
             [ ! -d node_modules ] && npm i -S -D --force  
             npm run build
+            cp -a $MDGJX_ROOT/modules/web/dist ./dist/spa
+            cp -a dist $MDGJX_ROOT/dist/web
+            [ -d $MDGJX_ROOT/dist/web ] && rm -rf $MDGJX_ROOT/dist/web
+            echo "[I] fe bundle size: $(du -sh $MDGJX_ROOT/dist/web)"
         )
         echo "[I] built fe"
     }
