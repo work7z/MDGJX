@@ -167,22 +167,21 @@ import { AppInfoClz } from \"./types\"
     build-fe(){
         echo "[I] building fe"
         (
+            echo "[I] building web"
             cd $MDGJX_ROOT/modules/web
             [ -d node_modules ] && rm -rf node_modules
-            rm -f *lock*
             [ ! -d node_modules ] && npm i -S -D --force 
             rm -rf .next
             npm run build
             [ -d $MDGJX_ROOT/dist/web ] && rm -rf $MDGJX_ROOT/dist/web
-            cp -a ./.next/standalone/ $MDGJX_ROOT/dist/web
             echo "[I] fe bundle size: $(du -sh $MDGJX_ROOT/dist/web)"
         )
         (
+            echo "[I] building web-server"
             cd $MDGJX_ROOT/modules/web-server
             [ -d node_modules ] && rm -rf node_modules
-            rm -f *lock*
             rm -rf dist
-            [ ! -d node_modules ] && npm i -S -D --force 
+            [ ! -d node_modules ] && npm i -S -D --force  
             npm run build
         )
         echo "[I] built fe"
