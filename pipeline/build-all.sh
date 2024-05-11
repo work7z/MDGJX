@@ -14,7 +14,6 @@ if [ -z $crtVersion ]; then
     echo "[E] crtVersion is required."
     exit 1
 fi
-npm i -g pnpm
 echo "[I] crtVersion: $crtVersion"
 
 echo "[I] preparing for dev copy files"
