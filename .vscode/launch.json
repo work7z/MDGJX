@@ -7,7 +7,7 @@
     {
       "name": "Dev web2",
       "type": "node-terminal",
-      "cwd": "${workspaceFolder}/modules/web2",
+      "cwd": "${workspaceFolder}/modules/web",
       "request": "launch",
       "command": "npm run dev"
     },

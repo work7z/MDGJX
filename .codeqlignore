@@ -15,9 +15,9 @@ modules/web/src/lib/core/_
 modules/web/src/lib/core/_.mjs
 modules/web/src/lib/core/**/_.mjs
 modules/web/src/lib/core/_.mjs
-modules/web2/app/[lang]/client/src/lib/core/**/_
-modules/web2/app/[lang]/client/src/lib/core/\*\*/_.mjs
-modules/web2/app/[lang]/client/src/lib/core/_.mjs
-modules/web2/app/[lang]/\*\*/_.mjs
-modules/web2/app/\*_/_.mjs
+modules/web/app/[lang]/client/src/lib/core/**/_
+modules/web/app/[lang]/client/src/lib/core/\*\*/_.mjs
+modules/web/app/[lang]/client/src/lib/core/_.mjs
+modules/web/app/[lang]/\*\*/_.mjs
+modules/web/app/\*_/_.mjs
 devtools/assistant/reference/userscript.js

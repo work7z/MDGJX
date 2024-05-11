@@ -14,7 +14,7 @@ test('run-conversions-ai-fetch-case', async () => {
   shelljs.mkdir('-p', currentFolder)
   let sourceMJSFolder = path.join(
     process.env.MDGJX_ROOT as string,
-    ...'modules/web2/app/[lang]/client/src/impl/core/operations'.split("/")
+    ...'modules/app/[lang]/client/src/impl/core/operations'.split("/")
   );
   logger.info("sourceMJSFolder: " + sourceMJSFolder)
   let allMJSFiles = shelljs.ls(sourceMJSFolder);
@@ -117,7 +117,7 @@ test('run-conversions-ai-fetch-tojson', async () => {
   shelljs.mkdir('-p', currentFolder)
   let sourceMJSFolder = path.join(
     process.env.MDGJX_ROOT as string,
-    ...'modules/web2/app/[lang]/client/src/impl/core/operations'.split("/")
+    ...'modules/web/app/[lang]/client/src/impl/core/operations'.split("/")
   );
   logger.info("sourceMJSFolder: " + sourceMJSFolder)
   let allMJSFiles = shelljs.ls(sourceMJSFolder);

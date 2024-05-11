@@ -126,7 +126,7 @@
     "./src/**/*.tsx",
     "src/ws-test.js",
     "src/index.ts",
-    "../../../modules/web2/app/__CORE__/config/i18n.tsx"
+    "../../../modules/web/app/__CORE__/config/i18n.tsx"
   ],
   "exclude": ["node_modules"]
 }

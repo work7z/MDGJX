@@ -173,14 +173,12 @@ import { AppInfoClz } from \"./types\"
             [ ! -d node_modules ] && npm i -S -D --force 
             rm -rf .next
             npm run build
-            cd .next
-            mkdir -p ./standalone/public
-            cp -a ../public/* ./standalone/public/
-            cp -a  ./static/ ./standalone/.next/static
-            cd ..
             [ -d $MDGJX_ROOT/dist/web ] && rm -rf $MDGJX_ROOT/dist/web
             cp -a ./.next/standalone/ $MDGJX_ROOT/dist/web
             echo "[I] fe bundle size: $(du -sh $MDGJX_ROOT/dist/web)"
+        )
+        (
+            cd $MDGJX_ROOT/modules/web
         )
         echo "[I] built fe"
     }

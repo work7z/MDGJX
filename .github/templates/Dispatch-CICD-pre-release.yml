@@ -50,7 +50,7 @@ jobs:
         id: runbuildscript
         run: |
           npm i -g typescript
-          cd ./modules/web2
+          cd ./modules/web
           cd ../../
           cd ./pipeline
           chmod +x ./build-all.sh

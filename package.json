@@ -11,7 +11,7 @@
     "do-tag": "sh ./pipeline/do-tag.sh",
     "fe-release-full": "npm run fe-scan-all && npm run fe-release-docs",
     "win-clean": "taskkill /F /IM bash.exe",
-    "fe-web": "(cd ./modules/web2 && npm run dev)",
+    "fe-web": "(cd ./modules/web && npm run dev)",
     "fe-css": "(cd ./modules/web && sh ./job-tailwind.sh)",
     "fe-extra": "go run ./core/app.go dev-extra --config $MDGJX_ROOT/devtools/config/laft-system-dev.json",
     "fe-build": "(cd ./modules/web && npm run build)",
