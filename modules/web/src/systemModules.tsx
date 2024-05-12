@@ -122,11 +122,14 @@ export const systemModulesList: SystemModuleItem[] = [
             },
             {
                 name: '建议与反馈',
-                id: 'feedback' // we can put ticket button in this page -> href: GetAppInfo().githubRepo + '/issues/new'
+                bodyFn: () => import('./loadable/Feedback/index.tsx'),
+                id: 'feedback'
+                // we can put ticket button in this page -> href: GetAppInfo().githubRepo + '/issues/new'
             },
             {
                 name: '关于软件',
                 id: 'about',
+                href: GetAppInfo().githubRepo
             },
         ]
     },

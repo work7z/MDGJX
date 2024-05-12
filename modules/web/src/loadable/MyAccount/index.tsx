@@ -18,6 +18,31 @@ import { useSearchParams } from '@/utils/HistUtils';
 function AuthenticationTitle() {
     let sp = (useSearchParams())
     switch (sp.type) {
+        case 'find-pw':
+            return (
+                <Container size={420} my={40}>
+                    <Title ta="center" className={classes.title}>
+                        找回密码
+                    </Title>
+                    <Text c="dimmed" size="sm" ta="center" mt={5}>
+                        是否需要人工协助？{' '}
+                        <Link to='mailto:work7z@outlook.com'>
+                            <Anchor size="sm" component="button">
+                                联系我们
+                            </Anchor>
+                        </Link>
+                    </Text>
+
+                    <Paper withBorder shadow="md" p={30} mt={30} radius="md">
+                        <TextInput label="注册Email地址" placeholder="请填写当时注册用的Email" />
+                        <PasswordInput label="新密码" placeholder="请让新密码尽可能复杂" required mt="md" />
+                        <PasswordInput label="确认新密码" placeholder="再次确认您的新密码" required mt="md" />
+                        <Button fullWidth mt="xl" color='violet'>
+                            发送重置密码邮件
+                        </Button>
+                    </Paper>
+                </Container>
+            )
         case 'signup':
             return (
                 <Container size={420} my={40}>
@@ -55,7 +80,7 @@ function AuthenticationTitle() {
                                 </Text>
                             } />
                         </Group>
-                        <Button fullWidth mt="xl">
+                        <Button fullWidth mt="xl" color='lime'>
                             免费注册
                         </Button>
                     </Paper>
