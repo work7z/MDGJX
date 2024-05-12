@@ -105,7 +105,7 @@ import { AppInfoClz } from \"./types\"
         fi
         
         mkdir -p $platformDistDir
-        if [ $bundleMode != "no-nodejs" ]; then
+        if [ "$bundleMode" != "no-nodejs" ]; then
             mkdir -p $platformDistDir/bin
         else
             [ -d $platformDistDir/bin ] && rm -rf $platformDistDir/bin
