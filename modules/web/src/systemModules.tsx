@@ -112,11 +112,13 @@ export const systemModulesList: SystemModuleItem[] = [
             },
             {
                 name: '使用条款',
-                id: 'terms-of-conditions'
+                id: 'terms-of-conditions',
+                bodyFn: () => import('./loadable/TermsOfConditions/index.tsx')
             },
             {
                 name: '隐私保护协议',
-                id: 'privacy-agreement'
+                id: 'privacy-agreement',
+                bodyFn: () => import('./loadable/PrivacyAgreement/index.tsx')
             },
             {
                 name: '建议与反馈',
