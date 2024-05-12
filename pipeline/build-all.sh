@@ -122,7 +122,7 @@ import { AppInfoClz } from \"./types\"
         echo "[I] copying resources and web..."
 
         # cp -a ./dist/resources $platformDistDir
-        cp -a ./dist/web $platformDistDir/core
+        cp -a ./dist/web/dist $platformDistDir/core
 
         cp -a ./pipeline/parcel/scripts/$osScriptFile/* $platformDistDir
 
@@ -229,7 +229,7 @@ import { AppInfoClz } from \"./types\"
             cd $platformDistDir
             fileName=
             subDirName=LafTools-${crtVersion}-$platformName-minimal
-            subDir=./$subDirName
+            subDir=$PWD/$subDirName
             if [ -d $subDir ]; then
                 rm -rf $subDir
             fi
