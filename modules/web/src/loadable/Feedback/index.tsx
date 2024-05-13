@@ -75,7 +75,7 @@ export default function GetInTouchSimple() {
                 </Group>
             </form>
             <div className='mt-4'>
-                除了通过邮件反馈，您还可以通过以下方式联系我们：
+                除了通过提交表单反馈，您还可以通过以下方式联系我们：
                 <ul className={
                     `list-disc ml-4 mt-2`
                 }>

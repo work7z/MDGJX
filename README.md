@@ -11,11 +11,9 @@
 <br><br>
 </p>
 
-<i>Note: This page is generated from LafTools internally.</i> <br/> English | [简体中文](/docs/zh_CN/README.md) | [繁體中文](/docs/zh_HK/README.md) | [Deutsch](/docs/de/README.md) | [Español](/docs/es/README.md) | [Français](/docs/fr/README.md) | [日本語](/docs/ja/README.md) | [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
+# 🔮 一句话介绍
 
-# 🔮 Vision
-
-LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.
+秒达工具箱是一款隐私优先，可自部署且完全开源的中文工具箱！
 
 # 💌 Features
 

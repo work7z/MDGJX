@@ -303,6 +303,9 @@ import { AppInfoClz } from \"./types\"
             mv node-v20.12.0-$platformName node
 
             echo "[I] build docker image for $platformName"
+            docker rmi codegentoolbox/laftools-$platformName:$crtVersion
+            docker rmi codegentoolbox/laftools-$platformName:latest
+            docker rmi codegentoolbox/laftools-$platformName:devops
             docker build -t codegentoolbox/laftools-$platformName:$crtVersion -f ./Dockerfile .
             docker build -t codegentoolbox/laftools-$platformName:latest -f ./Dockerfile .
             docker build -t codegentoolbox/laftools-$platformName:devops -f ./Dockerfile .
@@ -329,6 +332,7 @@ import { AppInfoClz } from \"./types\"
             fi
             if [ $platformName == "linux-x64" ]; then
                 echo "[I] building other tag"
+                docker rmi codegentoolbox/laftools-$platformName:$crtVersion
                 docker build -t codegentoolbox/laftools-$platformName:$crtVersion -f ./Dockerfile .
                 docker save codegentoolbox/laftools-$platformName:$crtVersion > $MDGJX_ROOT/dkout.tmp 
                 zip -r $MDGJX_ROOT/pipeline-server.zip $MDGJX_ROOT/pipeline/server
