@@ -58,47 +58,51 @@ export let DotFnDefault = () => {
   };
 };
 export let DotFn = (req: Request): DotType => {
-  let xLafLang = req.headers[HEADER_X_LAF_LANG];
-  let currentLang = LANG_EN_US;
-  i18nItems.find(eachI18nItem => {
-    if (eachI18nItem.Value == xLafLang) {
-      currentLang = eachI18nItem.Value;
-      return true;
-    }
-  });
-  logger.info('xLafLang: ' + xLafLang);
-  logger.info('currentLang: ' + currentLang);
   return (id: string, enText: string, ...args: any[]): string => {
-    let language = currentLang;
-    if (language != 'en_US') {
-      let jsonFilePath = path.join(__dirname, '/lang/' + language + '.json');
-      if (!LANG_INIT_BEFORE_MAP[language]) {
-        LANG_INIT_BEFORE_MAP[language] = true;
-        if (existsSync(jsonFilePath)) {
-          let jsonFile = readFileSync(jsonFilePath, 'utf8');
-          let pmap = JSON.parse(jsonFile);
-          TranslationUtils.LangMap[language] = {
-            ...pmap,
-          };
-        }
-      }
-    }
-    if (language == LANG_EN_US) {
-      // do nothing
-    } else {
-      let langmap = TranslationUtils.LangMap;
-      let o = langmap[language] as LangDefinition;
-      if (_.isNil(o)) {
-        return enText;
-      }
-      let preText = o[id];
-      if (!_.isNil(preText)) {
-        enText = preText;
-      }
-    }
     let finResult = formatResultWithReplacer(enText, ...args);
     return finResult;
   };
+  // let xLafLang = req.headers[HEADER_X_LAF_LANG];
+  // let currentLang = LANG_EN_US;
+  // i18nItems.find(eachI18nItem => {
+  //   if (eachI18nItem.Value == xLafLang) {
+  //     currentLang = eachI18nItem.Value;
+  //     return true;
+  //   }
+  // });
+  // logger.info('xLafLang: ' + xLafLang);
+  // logger.info('currentLang: ' + currentLang);
+  // return (id: string, enText: string, ...args: any[]): string => {
+  //   let language = currentLang;
+  //   if (language != 'en_US') {
+  //     let jsonFilePath = path.join(__dirname, '/lang/' + language + '.json');
+  //     if (!LANG_INIT_BEFORE_MAP[language]) {
+  //       LANG_INIT_BEFORE_MAP[language] = true;
+  //       if (existsSync(jsonFilePath)) {
+  //         let jsonFile = readFileSync(jsonFilePath, 'utf8');
+  //         let pmap = JSON.parse(jsonFile);
+  //         TranslationUtils.LangMap[language] = {
+  //           ...pmap,
+  //         };
+  //       }
+  //     }
+  //   }
+  //   if (language == LANG_EN_US) {
+  //     // do nothing
+  //   } else {
+  //     let langmap = TranslationUtils.LangMap;
+  //     let o = langmap[language] as LangDefinition;
+  //     if (_.isNil(o)) {
+  //       return enText;
+  //     }
+  //     let preText = o[id];
+  //     if (!_.isNil(preText)) {
+  //       enText = preText;
+  //     }
+  //   }
+  //   let finResult = formatResultWithReplacer(enText, ...args);
+  //   return finResult;
+  // };
 };
 
 const TranslationUtils = {

@@ -10,13 +10,14 @@ import _ from "lodash";
 import { PayloadListData, PayloadValueData } from "../../constants";
 import { url } from "inspector";
 import { getHeaders } from "../request";
+import { URL_AUTH_GET_FINDPW, URL_AUTH_GET_SIGNIN, URL_AUTH_GET_SIGNOUT, URL_AUTH_GET_SIGNUP } from "../constants/api_constants";
 
 export let withPrefixOpenAPI = (url: string): string => {
   return "/open" + url;
 };
 
 
-const URL_PREFIX_LOCAL = 'https://api.elb3.com'
+const URL_PREFIX_LOCAL = '/v3'
 
 export const apiSlice = createApi({
   reducerPath: "api",
@@ -41,15 +42,48 @@ export const apiSlice = createApi({
     },
   }),
   endpoints: (build) => ({
-    getToolExtDetail: build.query<
-      PayloadValueData<any>,
-      { extId: string; val_extensionIdRefreshMap_id: number }
-    >({
+    sayHelloWorld: build.query<string, void>({
+      query: () => {
+        return {
+          url: "/hello-world",
+          method: "GET",
+        };
+      },
+    }),
+    // auth
+    signIn: build.query<PayloadValueData<any>, { username: string; password: string }>({
       query: (obj) => {
         return {
-          method: "GET",
-          url: "/tool/exts/getExtDetail",
-          params: obj,
+          method: "POST",
+          url: URL_AUTH_GET_SIGNIN,
+          data: obj,
+        };
+      },
+    }),
+    signUp: build.query<PayloadValueData<any>, { username: string; password: string }>({
+      query: (obj) => {
+        return {
+          method: "POST",
+          url: URL_AUTH_GET_SIGNUP,
+          data: obj,
+        };
+      },
+    }),
+    signOut: build.query<PayloadValueData<any>, { username: string; password: string }>({
+      query: (obj) => {
+        return {
+          method: "POST",
+          url: URL_AUTH_GET_SIGNOUT,
+          data: obj,
+        };
+      },
+    }),
+    findPw: build.query<PayloadValueData<any>, { username: string; password: string }>({
+      query: (obj) => {
+        return {
+          method: "POST",
+          url: URL_AUTH_GET_FINDPW,
+          data: obj,
         };
       },
     }),

@@ -14,9 +14,13 @@ import classes from './AuthenticationTitle.module.css';
 import GetAppInfo from '@/AppInfo';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { useSearchParams } from '@/utils/HistUtils';
+import apiSlice from '@/store/reducers/apiSlice';
 
 function AuthenticationTitle() {
     let sp = (useSearchParams())
+    const [t_findPw] = apiSlice.useLazyFindPwQuery({})
+    const [t_signIn] = apiSlice.useLazySignInQuery({})
+    const [t_signUp] = apiSlice.useLazySignUpQuery({})
     switch (sp.type) {
         case 'find-pw':
             return (

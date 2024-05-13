@@ -29,7 +29,7 @@ export let signInWithUserId = async (userAcctId: string, rememberMe: boolean): P
     }
     let daoRef = await dao()
     // init set
-    await daoRef.redis.sAdd(key_sessionGroup, userAcctId) // add user acct into the set
+    // await daoRef.redis.sAdd(key_sessionGroup, userAcctId) // add user acct into the set
 
     let push: Elb3AuthBody = {
         userAcctId: userInfo.id + '',
@@ -123,8 +123,8 @@ export async function handleSignIn(formData: {
     phoneNumber: string,
     type: string,
     rememberMe: boolean,
-    randomID: string,
-    vcode: string
+    // randomID: string,
+    // vcode: string
 }, p: CommonHandlePass): Promise<AsyncCreateResponse<SignInCredentials | {}>> {
     let daoRef = await dao()
     let { Dot, Info, getCookie, setCookie } = p
@@ -132,6 +132,8 @@ export async function handleSignIn(formData: {
         signed: false,
         signature: null
     };
+
+
     let rules: CheckRules[] = [
         {
             type: "non-empty",
@@ -143,16 +145,16 @@ export async function handleSignIn(formData: {
             name: "password",
             label: Dot("TXdh_K", "Password"),
         },
-        {
-            type: "non-empty",
-            name: "vcode",
-            label: Dot("TqXddh_K", "Verification Code"),
-        },
-        fn_verifyVCode(formData.randomID, p),
+        // {
+        //     type: "non-empty",
+        //     name: "vcode",
+        //     label: Dot("TqXddh_K", "Verification Code"),
+        // },
+        // fn_verifyVCode(formData.randomID, p),
         {
             type: 'check-fn',
             name: 'userAcctId',
-            validateFn: async (val) => {
+            validateFn: async (val: string) => {
                 let user: User | null = null;
                 user = await getUserInfoByUserAcctId(formData.userAcctId)
                 if (!user) {
@@ -165,20 +167,14 @@ export async function handleSignIn(formData: {
                     return Dot("eqwee", "Password is not correct")
                 }
                 // LOGIN SUCCESS
-                await daoRef.db_work7z.transaction(async () => {
+                await daoRef.db_s2.transaction(async () => {
                     if (!user) return;
                     let r = await signInWithUserId(user.id + '', formData.rememberMe)
                     res = r
-                    // TODO: user login log
-                    // await UserLoginLog.create({
-                    //     userId: user.id || -1,
-                    //     loginIp: '',
-                    //     loginTime: new Date(),
-                    // })
                 })
             }
         },
-    ].filter(x => x)
+    ]
 
     let validObj = await validateEachRuleInArr(rules, formData, p);
     if (validObj) {
@@ -209,38 +205,38 @@ export default async function handleSignUp(formData: {
         {
             type: "non-empty",
             name: "userAcctId",
-            label: Dot("oHQNQ4mRw", "User ID"),
+            label: Dot("oHQNQ4mRw", "用户ID"),
         },
         {
             type: "non-empty",
             name: "password",
-            label: Dot("TXdh_K", "Password"),
+            label: Dot("TXdh_K", "密码"),
         },
         {
             type: "non-empty",
             name: "confirmPassword",
-            label: Dot("TqXdh_K", "Confirm Password"),
+            label: Dot("TqXdh_K", "确认新密码"),
         },
         {
             type: 'non-empty',
-            name: 'phoneNumber',
-            label: Dot("TqXdd3h_wK", "Telephone Number"),
+            name: 'email',
+            label: Dot("TqXdd3h_wK", "Email"),
         },
-        {
-            type: "non-empty",
-            name: "invitationCode",
-            label: Dot("Xddh_wK", "Invitation Code"),
-        },
-        {
-            type: "non-empty",
-            name: "vcode",
-            label: Dot("TqXddh_K", "Verification Code"),
-        },
-        {
-            type: "valid-phone",
-            name: "phoneNumber",
-            label: Dot("TdXddh_wK", "Telephone Number"),
-        },
+        // {
+        //     type: "non-empty",
+        //     name: "invitationCode",
+        //     label: Dot("Xddh_wK", "Invitation Code"),
+        // },
+        // {
+        //     type: "non-empty",
+        //     name: "vcode",
+        //     label: Dot("TqXddh_K", "Verification Code"),
+        // },
+        // {
+        //     type: "valid-phone",
+        //     name: "phoneNumber",
+        //     label: Dot("TdXddh_wK", "Telephone Number"),
+        // },
         {
             type: 'check-fn',
             name: 'userAcctId',

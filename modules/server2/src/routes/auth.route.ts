@@ -9,7 +9,7 @@ import { DotFn, DotType } from '@/i18n/TranslationUtils';
 import { InfoFn, RequestInfo } from '@/system/info';
 import { AsyncCreateResponse, SignInCredentials, SysResponse, TypeCaptchaResponse } from './_types';
 import { CaptchaService } from '@/services/captcha.service';
-import { handleSignIn } from './auth/userAction';
+import handleSignUp, { handleSignIn } from './auth/userAction';
 
 export let getCookieGetterSetter = (req: Request, res: Response) => {
   let getCookie = (name: string) => {
@@ -57,22 +57,20 @@ export class AuthRoute implements Routes {
       } satisfies SysResponse<AsyncCreateResponse<SignInCredentials | {}>>);
     });
     this.router.post(URL_AUTH_GET_SIGNUP, async (req, res) => {
-      //
+      let p = getCommonHandlePass(req, res);
+      let signInResult = await handleSignUp(req.body, p);
       res.send({
-        content: 'not yet implemented',
+        content: signInResult,
       } satisfies SysResponse<any>);
     });
-    this.router.post(URL_AUTH_GET_SIGNOUT, async (req, res) => {
-      // can be done in front-end app
-      res.send({
-        content: 'not yet implemented',
-      } satisfies SysResponse<any>);
-    });
-    this.router.get(URL_AUTH_GET_CAPTCHA, async (req, res) => {
-      let p = await this.captcha.generate();
-      res.send({
-        content: p,
-      } satisfies SysResponse<TypeCaptchaResponse>);
-    });
+    // this.router.post(URL_AUTH_GET_SIGNOUT, async (req, res) => {
+    //   // can be done in front-end app
+    // });
+    // this.router.get(URL_AUTH_GET_CAPTCHA, async (req, res) => {
+    //   let p = await this.captcha.generate();
+    //   res.send({
+    //     content: p,
+    //   } satisfies SysResponse<TypeCaptchaResponse>);
+    // });
   }
 }
