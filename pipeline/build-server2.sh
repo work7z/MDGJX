@@ -1,7 +1,6 @@
 #!/bin/bash
 ver=$1 
 source ~/.zshrc
-set +e
 cd $MDGJX_ROOT/modules/server2
 chmod +x ./docker/*.sh
 echo "[I] $(date) Building server2..."
