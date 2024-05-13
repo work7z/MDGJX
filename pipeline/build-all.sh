@@ -124,6 +124,11 @@ import { AppInfoClz } from \"./types\"
         # cp -a ./dist/resources $platformDistDir
         cp -a ./dist/web/dist $platformDistDir/core
 
+        mkdir -p $platformDistDir/info
+        echo "$platformName" > $platformDistDir/info/platform.txt
+        echo "$crtVersion" > $platformDistDir/info/version.txt
+        echo "$(date +%Y-%m-%d)" > $platformDistDir/info/releaseDate.txt
+
         cp -a ./pipeline/parcel/scripts/$osScriptFile/* $platformDistDir
 
         preDIR=$(pwd)
@@ -231,16 +236,14 @@ import { AppInfoClz } from \"./types\"
             fileName=
             subDirName=LafTools-${crtVersion}-$platformName-minimal
             subDir=$PWD/$subDirName
+            echo "subdirname: $subDirName"
+            echo "subdir: $subDir"
             if [ -d $subDir ]; then
                 rm -rf $subDir
             fi
             mkdir -p $subDir
             mkdir -p $subDir/info
             cp -a * $subDir
-            rm -rf $subDir/$subDirName 
-            echo "$platformName" > $subDir/info/platform.txt
-            echo "$crtVersion" > $subDir/info/version.txt
-            echo "$(date +%Y-%m-%d)" > $subDir/info/releaseDate.txt
             if [ $packageType == "zip" ]; then
                 fileName=LafTools-${crtVersion}-$platformName-minimal.zip
                 zip -q -r $fileName $subDir/* &> /dev/null
