@@ -1,13 +1,12 @@
 {
   "name": "typescript-express-starter",
-  "version": "server2-v10.0.5",
+  "version": "server2-v10.0.6",
   "description": "TypeScript + Sequelize + MySQL + Express API Server",
   "author": "",
   "license": "AGPL-3.0-only",
   "scripts": {
     "start": "npm run build && cross-env NODE_ENV=production node dist/server.js",
-    "dev": "npm run build && cross-env NODE_ENV=development node dist/server.js",
-    "dev2": "cross-env NODE_ENV=development nodemon",
+    "dev": "npm run build && cross-env NODE_ENV=development PORT=3055 node dist/server.js",
     "build": "swc src -d dist --source-maps --copy-files",
     "build:tsc": "tsc && tsc-alias",
     "test": "jest --forceExit --detectOpenHandles",

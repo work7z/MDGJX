@@ -342,12 +342,12 @@ export default async (daoRef: DaoRef) => {
 
     // version check
     let S2_KEY_SAVE_VALUE = 's2_version'
-    let [_s2_version_rows] = await daoRef.db_work7z.query(`select * from g_system_config gsc where KEYNAME='${S2_KEY_SAVE_VALUE}' `)
+    let [_s2_version_rows] = await daoRef.db_work7z.query(`select * from G_SYSTEM_CONFIG gsc where KEYNAME='${S2_KEY_SAVE_VALUE}' `)
     let s2_version_rows = _s2_version_rows as any
     let default_version = '0'
     let s2_version = default_version;
     if (_.isEmpty(s2_version_rows)) {
-        await daoRef.db_work7z.query(`insert into g_system_config (KEYNAME, KEYVALUE) values ('${S2_KEY_SAVE_VALUE}', '${default_version}')`)
+        await daoRef.db_work7z.query(`insert into G_SYSTEM_CONFIG (KEYNAME, KEYVALUE) values ('${S2_KEY_SAVE_VALUE}', '${default_version}')`)
         s2_version = default_version
     } else {
         s2_version = s2_version_rows[0].KEYVALUE as any
@@ -356,7 +356,7 @@ export default async (daoRef: DaoRef) => {
     if (s2_version < UPDATE_TIME_VERSION) {
         await daoRef.db_s2.sync({ alter: true, force: false })
         // update it
-        await daoRef.db_work7z.query(`update g_system_config set KEYVALUE='${UPDATE_TIME_VERSION}' where KEYNAME='${S2_KEY_SAVE_VALUE}'`)
+        await daoRef.db_work7z.query(`update G_SYSTEM_CONFIG set KEYVALUE='${UPDATE_TIME_VERSION}' where KEYNAME='${S2_KEY_SAVE_VALUE}'`)
     }
 
 }
