@@ -25,22 +25,5 @@
       "name": "Dev desktop2",
       "command": "npm run dev"
     },
-    {
-      "name": "Scan all",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/devtools/scripts/scan/scan-entry.js",
-      "console": "integratedTerminal",
-      "args": ["server"],
-      "internalConsoleOptions": "neverOpen"
-    },
-    // npm run fe-extra
-    {
-      "name": "Extra Jobs",
-      "type": "node-terminal",
-      "cwd": "${workspaceFolder}",
-      "request": "launch",
-      "command": "npm run fe-extra"
-    }
   ]
 }

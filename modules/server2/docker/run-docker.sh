@@ -44,8 +44,8 @@ if [ $? -ne 0 ]; then
     echo "Failed to start container $containerName"
     exit 1
 fi
-timeout 60 docker logs -f $containerName
+timeout 20 docker logs -f $containerName
 
-docker stop $preContainerName
+# docker stop $preContainerName
 
 exit 0

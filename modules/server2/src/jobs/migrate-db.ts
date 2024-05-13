@@ -34,7 +34,7 @@ export default async () => {
       });
     };
     // handling users
-    let [allUsers] = await daoRef.db_work7z.query('select * from user');
+    let [allUsers] = await daoRef.db_work7z.query('select * from USER');
     for (let eachUser of allUsers) {
       let userID = eachUser['ID'];
       let USER_NAME = eachUser['USER_NAME'];
@@ -84,7 +84,7 @@ select a.* from (
       }
     }
     // assigning premium membership according to the current table
-    let [allMemberships] = await daoRef.db_work7z.query(`select * from user_premium_rights upr where REASON != 'USER_PAYMENT'`);
+    let [allMemberships] = await daoRef.db_work7z.query(`select * from USER_PREMIUM_RIGHTS upr where REASON != 'USER_PAYMENT'`);
     for (let eachMembership of allMemberships) {
       let { USER_ID, CREATE_TIME } = eachMembership as any;
       let HELP_DATE = moment(CREATE_TIME).format('YYYY-MM-DD');
