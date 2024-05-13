@@ -16,5 +16,5 @@ if [ "$SERVER_2H4G" == "" ]; then
     exit 1
 fi
 ssh $SERVER_2H4G -p 26609 "mkdir -p /home/appuser/dkplace"
-sftp -P 26609  $SERVER_2H4G "put server2-linux-x64-$ver.TMPOUT.gz /home/appuser/dkplace"
-sftp -P 26609  $SERVER_2H4G "put docker/run-docker.sh /home/appuser/dkplace/run-docker-$ver.sh"
+sftp -P 26609  $SERVER_2H4G <<< "put server2-linux-x64-$ver.TMPOUT.gz /home/appuser/dkplace"
+sftp -P 26609  $SERVER_2H4G <<< "put docker/run-docker.sh /home/appuser/dkplace/run-docker-$ver.sh"
