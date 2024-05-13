@@ -1,3 +1,8 @@
+import { useEffect } from "react"
+
 export default () => {
-    return <div>this is chat bot</div>
+    useEffect(() => {
+        fetch('/v3/hello-world')
+    })
+    return <div>this is chat 2</div>
 }

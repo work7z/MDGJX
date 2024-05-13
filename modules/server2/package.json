@@ -6,7 +6,7 @@
   "license": "AGPL-3.0-only",
   "scripts": {
     "start": "npm run build && cross-env NODE_ENV=production node dist/server.js",
-    "dev": "npm run build && cross-env NODE_ENV=development PORT=3055 node dist/server.js",
+    "dev": "sh ./scripts/dev.sh",
     "build": "swc src -d dist --source-maps --copy-files",
     "build:tsc": "tsc && tsc-alias",
     "test": "jest --forceExit --detectOpenHandles",

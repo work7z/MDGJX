@@ -48,6 +48,15 @@ export default defineConfig({
   //     plugins: [tailwindcss],
   //   },
   // },
+  server: {
+    proxy: {
+      '/v3': {
+        target: 'http://127.0.0.1:2016',
+        changeOrigin: true,
+        rewrite: (path) => path,
+      },
+    },
+  },
   test: {
     globals: true,
     environment: 'jsdom',
