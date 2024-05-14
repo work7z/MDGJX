@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import _ from 'lodash';
 import { FN_GetDispatch } from './store/nocycle';
 import apiSlice from './store/reducers/apiSlice';
+import UsersSlice from './store/reducers/userSlice';
 
 
 
@@ -14,7 +15,13 @@ export default () => {
   const [t_userInfo] = apiSlice.useLazyGetUserInfoQuery()
   useEffect(() => {
     t_userInfo({}).then(x => {
-      //
+      if (x.data && x.data.data) {
+        FN_GetDispatch()(
+          UsersSlice.actions.updateOneOfParamState({
+            userInfo: x.data.data
+          })
+        )
+      }
     })
   }, [t_userInfo])
 

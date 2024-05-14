@@ -9,10 +9,25 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import _ from 'lodash'
 import { SignInCredentials } from "./apiSlice";
 
+export class S2UserMembership {
+  declare id?: number;
+  declare userId: number;
+  declare lifelong: number; // 1->lifelong, 0->not lifelong
+  declare totalDays: number;
+  declare whenToStart: Date;
+  declare whenToExpire: Date;
+  declare systemRemark: string;
+  declare sourceType: string;
+  declare createdAt: Date | null;
+  declare updatedAt: Date | null;
+  declare deleteAt: Date | null;
+}
+
 export type DisplayUserInfo = {
   name: string,
   email: string,
-  createdAt: Date
+  createdAt: Date,
+  proUserList: S2UserMembership[]
 }
 
 type UsersState = {

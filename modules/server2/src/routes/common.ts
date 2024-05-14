@@ -11,11 +11,12 @@ import { AsyncCreateResponse, HEADER_X_LAF_LANG, HEADER_X_LAF_TOKEN, SignInCrede
 import { CaptchaService } from '@/services/captcha.service';
 import handleSignUp, { Elb3AuthBody, getUserInfoByUserAcctId, handleSignIn } from './auth/userAction';
 import { asyncHandler } from './AsyncHandler';
-import { S2User } from '@/dao/model';
+import { S2User, S2UserHasGiftCardList, S2UserMembership } from '@/dao/model';
 import { getSignatureFromStr } from './auth/auth';
 import { logger } from '@/utils/logger';
 import { fn_add_user_into_active } from './auth/user-types';
 import _ from 'lodash';
+import dao from '@/dao';
 
 export let getCookieGetterSetter = (req: Request, res: Response) => {
   let getCookie = (name: string) => {
@@ -26,13 +27,19 @@ export let getCookieGetterSetter = (req: Request, res: Response) => {
   };
   return { getCookie, setCookie };
 };
-export type UserInfo = Partial<S2User>;
 export type CommonHandlePass = {
-  verifyAuth(): Promise<[UserInfo | undefined, () => void]>;
+  verifyAuth(): Promise<[DisplayUserInfo | undefined, () => void]>;
   Dot: DotType;
   Info: RequestInfo;
   getCookie: (name: string) => string;
   setCookie: (name: string, value: string) => void;
+};
+
+export type DisplayUserInfo = {
+  name: string;
+  email: string;
+  createdAt: Date;
+  proUserList: S2UserMembership[];
 };
 export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass => {
   let Dot = DotFn(req);
@@ -44,8 +51,9 @@ export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass
     getCookie,
     setCookie,
     verifyAuth: async function () {
-      let userInfo: UserInfo | undefined = undefined;
+      let userInfo: DisplayUserInfo | undefined = undefined;
       const elb3AuthStr = req.header(HEADER_X_LAF_TOKEN);
+      const daoRef = await dao();
       if (!_.isEmpty(elb3AuthStr)) {
         try {
           let [expiredTS, body, singature, version] = elb3AuthStr?.split('.') as string[];
@@ -59,12 +67,18 @@ export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass
               // do nothing, of course you won't get the auth info
             } else {
               let push: Elb3AuthBody = JSON.parse(atob(body));
-              let tmpUserInfo = await getUserInfoByUserAcctId(push.userAcctId);
-              if (tmpUserInfo && push.userName == tmpUserInfo.name) {
+              let tmpUserInfo = await getUserInfoByUserAcctId(push.userAcctId + '');
+              const proUserList = await S2UserMembership.findAll({
+                where: {
+                  userId: push.userAcctId,
+                },
+              });
+              if (tmpUserInfo && push.createTimestamp == tmpUserInfo.createdAt.getTime()) {
                 userInfo = {
                   name: tmpUserInfo.name,
                   email: tmpUserInfo.email,
                   createdAt: tmpUserInfo.createdAt,
+                  proUserList,
                 };
               }
             }

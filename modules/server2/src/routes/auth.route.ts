@@ -56,8 +56,8 @@ export class AuthRoute implements Routes {
           errFn();
           return;
         } else {
-          res.send({
-            helloWorld: 1234,
+          sendRes(res, {
+            data: user,
           });
         }
       }),

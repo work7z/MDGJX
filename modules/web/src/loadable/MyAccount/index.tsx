@@ -9,6 +9,8 @@ import {
     Container,
     Group,
     Button,
+    Avatar,
+    Badge,
 } from '@mantine/core';
 import classes from './AuthenticationTitle.module.css';
 import GetAppInfo from '@/AppInfo';
@@ -17,13 +19,63 @@ import { useSearchParams } from '@/utils/HistUtils';
 import apiSlice, { SignInCredentials, verifyResponse } from '@/store/reducers/apiSlice';
 import AlertUtils from '@/utils/AlertUtils';
 import { ACTION_doSignInByInfo } from '@/store/actions/auth-actions';
+import exportUtils from '@/utils/ExportUtils';
+import { IconAt, IconCalendarBolt, IconPhoneCall, IconUserBolt } from '@tabler/icons-react';
+import _ from 'lodash';
 
 function AuthenticationTitle() {
     let sp = (useSearchParams())
     const [t_findPw] = apiSlice.useLazyFindPwQuery({})
     const [t_signIn] = apiSlice.useLazySignInQuery({})
     const [t_signUp] = apiSlice.useLazySignUpQuery({})
+    const uObj = exportUtils.useSelector(v => v.users)
+    if (uObj.hasSignIn) {
+        return (
+            <Container size={420} my={40}>
+                <Paper withBorder shadow="md" p={30} mt={30} radius="md">
+                    <Group wrap="nowrap">
+                        <div>
+
+                            <Text fz="lg" fw={500} className={classes.name}>
+                                {uObj.userInfo?.name || "N/A"}     {
+                                    _.isEmpty(uObj.userInfo?.proUserList) ?
+                                        <Badge size='sm' color={"green"} variant="light">
+                                            开源版用户
+                                        </Badge> : <Badge size='sm' color={"pink"} variant="light">
+                                            专业版用户
+                                        </Badge>
+                                }
+                            </Text>
+
+                            <Group wrap="nowrap" gap={10} mt={3}>
+                                <IconAt stroke={1.5} size="1rem" className={classes.icon} />
+                                <Text fz="xs" c="dimmed">
+                                    {uObj.userInfo?.email}
+                                </Text>
+                            </Group>
+
+                            <Group wrap="nowrap" gap={10} mt={5}>
+                                <IconCalendarBolt stroke={1.5} size="1rem" className={classes.icon} />
+                                <Text fz="xs" c="dimmed">
+                                    加入于 {_.toString(uObj.userInfo?.createdAt) || "N/A"}
+                                </Text>
+                            </Group>
+
+
+                            <Group wrap="nowrap" gap={10} mt={5}>
+                                <IconUserBolt stroke={1.5} size="1rem" className={classes.icon} />
+                                <Text fz="xs" c="dimmed">
+                                    更多用户管理功能，敬请期待
+                                </Text>
+                            </Group>
+                        </div>
+                    </Group>
+                </Paper>
+            </Container>
+        )
+    }
     switch (sp.type) {
+
         case 'find-pw':
             return (
                 <Container size={420} my={40}>

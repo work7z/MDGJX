@@ -14,8 +14,8 @@ import { S2User, S2User as User } from "@/dao/model";
 import { CommonHandlePass } from "../common";
 
 export type Elb3AuthBody = {
-    userAcctId: string,
-    userName: string,
+    userAcctId: number,
+    createTimestamp: number,
     userRole: any
 }
 
@@ -32,8 +32,8 @@ export let signInWithUserId = async (userName: string, rememberMe: boolean): Pro
     // init set
     // await daoRef.redis.sAdd(key_sessionGroup, userAcctId) // add user acct into the set
     let push: Elb3AuthBody = {
-        userAcctId: userInfo.id + '',
-        userName: userInfo.name,
+        userAcctId: userInfo.id,
+        createTimestamp: userInfo.createdAt.getTime(),
         userRole: 'user', //userInfo.role
     }
     let elb3AuthBody = btoa(JSON.stringify(push))
@@ -54,7 +54,7 @@ export let getUserInfoByUserAcctId = async (userAcctId: string): Promise<User | 
     await dao()
     let user = await S2User.findOne({
         where: {
-            name: userAcctId
+            id: userAcctId
         }
     })
     return user;
