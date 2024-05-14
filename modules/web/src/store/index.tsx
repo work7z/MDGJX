@@ -34,6 +34,7 @@ import storage from 'redux-persist/lib/storage' // defaults to localStorage for 
 import BigTextSlice from "./reducers/bigTextSlice";
 
 const rootReducer = combineReducers({
+    api: apiSlice.reducer,
     settings: settingsSlice.reducer,
     memory: MemorySlice.reducer,
     users: UsersSlice.reducer,

@@ -65,7 +65,12 @@ export type PromiseAction = PayloadAction<{
 }>;
 
 export type PayloadListData<T> = { payload: { list: T[] } };
-export type PayloadValueData<T> = { payload: { value: T } };
+export type SysResponse<T> = {
+  content: T;
+  errors?: string[];
+  warnings?: string[];
+};
+export type PayloadValueData<T> = SysResponse<T>;
 
 export type LocalResponse = {};
 

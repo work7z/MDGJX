@@ -187,6 +187,7 @@
     "semver": "7.5.2",
     "sequelize": "^6.36.0",
     "snackbarjs": "^1.1.0",
+    "sonner": "^1.4.41",
     "sortablejs": "^1.15.0",
     "source-map-loader": "3.0.0",
     "split.js": "^1.6.5",

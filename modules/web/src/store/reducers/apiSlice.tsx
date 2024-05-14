@@ -11,6 +11,7 @@ import { PayloadListData, PayloadValueData } from "../../constants";
 import { url } from "inspector";
 import { getHeaders } from "../request";
 import { URL_AUTH_GET_FINDPW, URL_AUTH_GET_SIGNIN, URL_AUTH_GET_SIGNOUT, URL_AUTH_GET_SIGNUP } from "../constants/api_constants";
+import AlertUtils from "@/utils/AlertUtils";
 
 export let withPrefixOpenAPI = (url: string): string => {
   return "/open" + url;
@@ -18,6 +19,28 @@ export let withPrefixOpenAPI = (url: string): string => {
 
 
 const URL_PREFIX_LOCAL = '/v3'
+export type SignInCredentials = {
+  signed: boolean;
+  signature: string | null;
+};
+export type AsyncCreateResponse<T> = {
+  message?: string; // normal message
+  error?: string; // error
+  data?: T;
+};
+
+export let verifyResponse = (response: AsyncCreateResponse<any> | undefined): boolean => {
+  if (!response || response.error) {
+    if (response) {
+      AlertUtils.alertErr(response.error)
+    }
+    return false;
+  } else {
+    return true;
+  }
+}
+
+
 
 export const apiSlice = createApi({
   reducerPath: "api",
@@ -34,11 +57,19 @@ export const apiSlice = createApi({
       return headers;
     },
     validateStatus: (response, result) => {
+      let errorHandler = () => {
+        AlertUtils.alertErr("抱歉，网络不稳定，请稍后重试")
+      }
       let errors = _.get(result, "errors");
       if (!_.isEmpty(errors)) {
+        errorHandler()
         return false;
       }
-      return response && response.status === 200 && result && !result.isError;
+      let shouldOk = response && response.status === 200
+      if (!shouldOk) {
+        errorHandler()
+      }
+      return shouldOk;
     },
   }),
   endpoints: (build) => ({
@@ -51,7 +82,7 @@ export const apiSlice = createApi({
       },
     }),
     // auth
-    signIn: build.query<PayloadValueData<any>, { username: string; password: string }>({
+    signIn: build.query<AsyncCreateResponse<SignInCredentials>, { username: string; password: string }>({
       query: (obj) => {
         return {
           method: "POST",
@@ -60,25 +91,32 @@ export const apiSlice = createApi({
         };
       },
     }),
-    signUp: build.query<PayloadValueData<any>, { username: string; password: string }>({
+    signUp: build.query<AsyncCreateResponse<SignInCredentials>, {
+      preview: boolean,
+      userAcctId: string,
+      password: string,
+      email: string,
+      confirmPassword: string,
+      rememberMe: boolean,
+    }>({
       query: (obj) => {
         return {
           method: "POST",
           url: URL_AUTH_GET_SIGNUP,
-          data: obj,
+          body: obj
         };
       },
     }),
-    signOut: build.query<PayloadValueData<any>, { username: string; password: string }>({
+    signOut: build.query<AsyncCreateResponse<any>, { username: string; password: string }>({
       query: (obj) => {
         return {
           method: "POST",
           url: URL_AUTH_GET_SIGNOUT,
-          data: obj,
+          body: obj
         };
       },
     }),
-    findPw: build.query<PayloadValueData<any>, { username: string; password: string }>({
+    findPw: build.query<AsyncCreateResponse<any>, { username: string; password: string }>({
       query: (obj) => {
         return {
           method: "POST",

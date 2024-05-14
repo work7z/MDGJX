@@ -73,22 +73,22 @@ export type ValOrError<T> = {
     value?: T
 }
 
-
-
 export let validateEachRuleInArr = async (rules: CheckRules[], formData: any, p: CommonHandlePass): Promise<AsyncCreateResponse<{}> | null> => {
     let { Dot } = p
     let valid = true;
     let lastMsg = ''
     for (let rule of rules) {
         if (rule.type === "non-empty") {
-            lastMsg = Dot("wCctGPJZK", "{0} should not be empty", rule.label)
+            // lastMsg = Dot("wCctGPJZK", "{0} should not be empty", rule.label)
+            lastMsg = `${rule.label}不能为空`
             if (!formData[rule.name]) {
                 valid = false;
                 break;
             }
         }
         if (rule.type === "valid-email") {
-            lastMsg = Dot("wCcPJZK", "{0} is not a valid email", rule.label)
+            // lastMsg = Dot("wCcPJZK", "{0} is not a valid email", rule.label)
+            lastMsg = `${rule.label}不是一个有效的邮箱`
             if (!formData[rule.name].includes("@")) {
                 valid = false;
                 break;
@@ -243,54 +243,60 @@ export default async function handleSignUp(formData: {
             validateFn: async (val) => {
                 let user = await getUserInfoByUserAcctId(val)
                 if (user) {
-                    return Dot("8sVG1RdXhx", "User ID already exists")
+                    return "用户名已存在"
+                    // return Dot("8sVG1RdXhx", "用戶名已存在")
                 }
                 let ok = checkIfStrOnlyHasAlphanumeric(val)
                 if (!ok) {
+                    return "用户名只能包含字母和数字"
                     return Dot("8sVGdXhx", "User ID should only contain letters and numbers")
                 }
-                if (val.length < 2) {
-                    return Dot("8sVG1kqXhx", "User ID should be at least 2 characters")
-                }
-                let prohibittedArr = [
-                    "admin",
-                    "administrator",
-                    "root",
-                    "superuser",
-                    "system",
-                    "systemadmin",
-                    "sysadmin",
-                    "user",
-                    "username",
-                    "useracctid",
-                    "undefined",
-                    "null",
-                    "fuck",
-                    "suck"
-                ]
-                // check if contains in prohibiteedArr
-                let lVal = _.toLower(val)
-                for (let item of prohibittedArr) {
-                    if (lVal.indexOf(_.toLower(item)) != -1) {
-                        return Dot("K2UEY4ddl", "The user ID contains invalid words, please avoid using {0}", item)
-                    }
-                }
+                // if (val.length < 2) {
+                //     return "用户名至少为2个字符"
+                //     return Dot("8sVG1kqXhx", "User ID should be at least 2 characters")
+                // }
+                // let prohibittedArr = [
+                //     "admin",
+                //     "administrator",
+                //     "root",
+                //     "superuser",
+                //     "system",
+                //     "systemadmin",
+                //     "sysadmin",
+                //     "user",
+                //     "username",
+                //     "useracctid",
+                //     "undefined",
+                //     "null",
+                //     "fuck",
+                //     "suck"
+                // ]
+                // // check if contains in prohibiteedArr
+                // let lVal = _.toLower(val)
+                // for (let item of prohibittedArr) {
+                //     if (lVal.indexOf(_.toLower(item)) != -1) {
+                //         return "用户名存在非法字符，请避免使用" + item
+                //         return Dot("K2UEY4ddl", "The user ID contains invalid words, please avoid using {0}", item)
+                //     }
+                // }
             }
         },
-        {
-            type: "check-fn",
-            name: "password",
-            validateFn: async (val) => {
-                if (val.length < 6) {
-                    return Dot("8sVG1RXhx", "password should be at least 6 characters")
-                }
-            }
-        },
+        // {
+        //     type: "check-fn",
+        //     name: "password",
+        //     validateFn: async (val) => {
+        //         if (val.length < 6) {
+        //             return "密码应该至少6位"
+        //             return Dot("8sVG1RXhx", "password should be at least 6 characters")
+        //         }
+        //     }
+        // },
         {
             type: "check-fn",
             name: "confirmPassword",
             validateFn: async (val) => {
                 if (val !== formData.password) {
+                    return "密码两次输入不一致"
                     return Dot("Y-svpKvUz", "two passwords do not match")
                 }
             }
@@ -316,7 +322,7 @@ export default async function handleSignUp(formData: {
         //         }
         //     }
         // },
-        formData.preview ? null : fn_verifyVCode(formData.randomID, p)
+        // formData.preview ? null : fn_verifyVCode(formData.randomID, p)
     ].filter(x => x)
 
     let validObj = await validateEachRuleInArr(rules, formData, p);
@@ -330,6 +336,7 @@ export default async function handleSignUp(formData: {
         };
     }
 
+    let res = null;
     let newUser = await daoRef.db_work7z.transaction(async () => {
         let newUser = await User.create({
             id: parseInt(formData.userAcctId),
@@ -340,7 +347,7 @@ export default async function handleSignUp(formData: {
         })
 
 
-        await signInWithUserId(formData.userAcctId + '', formData.rememberMe)
+        res = await signInWithUserId(formData.userAcctId + '', formData.rememberMe)
 
         await fn_refresh_system_info_from_redis()
 
@@ -353,9 +360,5 @@ export default async function handleSignUp(formData: {
             error: "create user failed"
         }
     }
-    return {
-        data: {
-            newUser: newUser
-        },
-    }
+    return res
 }

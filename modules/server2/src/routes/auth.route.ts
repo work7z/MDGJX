@@ -52,16 +52,14 @@ export class AuthRoute implements Routes {
     this.router.post(URL_AUTH_GET_SIGNIN, async (req, res) => {
       let p = getCommonHandlePass(req, res);
       let signInResult = await handleSignIn(req.body, p);
-      res.send({
-        content: signInResult,
-      } satisfies SysResponse<AsyncCreateResponse<SignInCredentials | {}>>);
+      res.send(signInResult satisfies AsyncCreateResponse<SignInCredentials | {}>);
     });
     this.router.post(URL_AUTH_GET_SIGNUP, async (req, res) => {
       let p = getCommonHandlePass(req, res);
       let signInResult = await handleSignUp(req.body, p);
-      res.send({
-        content: signInResult,
-      } satisfies SysResponse<any>);
+      if (signInResult.error) {
+      }
+      res.send(signInResult satisfies AsyncCreateResponse<SignInCredentials | {}>);
     });
     // this.router.post(URL_AUTH_GET_SIGNOUT, async (req, res) => {
     //   // can be done in front-end app
