@@ -83,10 +83,16 @@ function AuthenticationTitle() {
                         找回密码
                     </Title>
                     <Text c="dimmed" size="sm" ta="center" mt={5}>
-                        是否需要人工协助？{' '}
-                        <Link to='mailto:work7z@outlook.com'>
+                        如需申诉请写信至邮箱{' '}
+                        <Anchor size="sm" component="button">
+                            work7z@outlook.com
+                        </Anchor>
+                    </Text>
+                    <Text c="dimmed" size="sm" ta="center" mt={5}>
+                        想起密码了？{' '}
+                        <Link to="/settings/my-account?type=signin">
                             <Anchor size="sm" component="button">
-                                联系我们
+                                返回登录
                             </Anchor>
                         </Link>
                     </Text>

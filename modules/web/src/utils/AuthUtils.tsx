@@ -13,7 +13,7 @@ const AuthUtils = {
         )
         setTimeout(() => {
             location.reload()
-        }, 800)
+        }, 100)
     },
     signOut() {
         AlertUtils.alertSuccess("登出成功，您的登录信息已被清除！1秒后刷新界面")
@@ -26,7 +26,7 @@ const AuthUtils = {
         )
         setTimeout(() => {
             location.reload()
-        }, 800)
+        }, 100)
     }
 }
 

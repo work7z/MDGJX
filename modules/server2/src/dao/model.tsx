@@ -6,7 +6,6 @@ import { isDevEnv } from '../hooks/env';
 import _ from 'lodash';
 
 
-
 // provide user model, including user id, name, email, phoneNumber, password, createdAt, updatedAt, deleteAt
 export class S2User extends Model<InferAttributes<S2User>, InferCreationAttributes<S2User>> {
     declare id?: number;
@@ -32,6 +31,17 @@ export class S2UserPurchaseItem extends Model<InferAttributes<S2UserPurchaseItem
     declare userRemark: string;
     declare systemRemark: string;
     declare orderCode: string;
+    declare createdAt: CreationOptional<Date> | null;
+    declare updatedAt: CreationOptional<Date> | null;
+    declare deleteAt: CreationOptional<Date> | null;
+}
+
+export class S2Feedback extends Model<InferAttributes<S2Feedback>, InferCreationAttributes<S2Feedback>> {
+    // email, subject(TEXT), content(TEXT), createdAt, updatedAt, deleteAt
+    declare id?: number;
+    declare email: string;
+    declare subject: string;
+    declare content: string;
     declare createdAt: CreationOptional<Date> | null;
     declare updatedAt: CreationOptional<Date> | null;
     declare deleteAt: CreationOptional<Date> | null;
@@ -194,7 +204,43 @@ export default async (daoRef: DaoRef) => {
         paranoid: true,
         underscored: true
     })
-
+    await S2Feedback.init({
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        subject: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        content: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        deleteAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        }
+    }, {
+        sequelize: db_s2,
+        modelName: 's2_feedback',
+        timestamps: true,
+        paranoid: true,
+        underscored: true
+    })
     await S2UserMembership.init({
         id: {
             type: DataTypes.INTEGER,
