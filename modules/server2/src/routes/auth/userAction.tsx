@@ -138,12 +138,12 @@ export async function handleSignIn(formData: {
         {
             type: "non-empty",
             name: "userAcctId",
-            label: Dot("wTBJ2pxX7", "Username or Email"),
+            label: Dot("wTBJ2pxX7", "用户名或邮箱"),
         },
         {
             type: "non-empty",
             name: "password",
-            label: Dot("TXdh_K", "Password"),
+            label: Dot("TXdh_K", "密码"),
         },
         // {
         //     type: "non-empty",
@@ -169,7 +169,7 @@ export async function handleSignIn(formData: {
                 // LOGIN SUCCESS
                 await daoRef.db_s2.transaction(async () => {
                     if (!user) return;
-                    let r = await signInWithUserId(user.id + '', formData.rememberMe)
+                    let r = await signInWithUserId(user.name, formData.rememberMe)
                     res = r
                 })
             }
@@ -245,6 +245,10 @@ export default async function handleSignUp(formData: {
                 if (user) {
                     return "用户名已存在"
                     // return Dot("8sVG1RdXhx", "用戶名已存在")
+                }
+                let user2 = await getUserInfoByEmail(formData.email)
+                if (user2) {
+                    return "邮箱已存在"
                 }
                 let ok = checkIfStrOnlyHasAlphanumeric(val)
                 if (!ok) {

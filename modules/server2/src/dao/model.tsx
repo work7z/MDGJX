@@ -13,6 +13,7 @@ export class S2User extends Model<InferAttributes<S2User>, InferCreationAttribut
     declare name: string;
     declare email: string;
     declare phoneNumber: string;
+    declare verified: number; // 1->verified, 0->not verified
     declare password: string; // md5 + salt
     declare createdAt: CreationOptional<Date> | null;
     declare updatedAt: CreationOptional<Date> | null;
@@ -75,7 +76,7 @@ export class S2UserHasGiftCardList extends Model<InferAttributes<S2UserHasGiftCa
 }
 
 
-export let UPDATE_TIME_VERSION = '5'
+export let UPDATE_TIME_VERSION = '6'
 
 export default async (daoRef: DaoRef) => {
 
@@ -90,6 +91,10 @@ export default async (daoRef: DaoRef) => {
         },
         name: {
             type: DataTypes.STRING,
+            allowNull: false
+        },
+        verified: {
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         email: {

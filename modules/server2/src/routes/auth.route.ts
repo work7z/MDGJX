@@ -10,6 +10,7 @@ import { InfoFn, RequestInfo } from '@/system/info';
 import { AsyncCreateResponse, SignInCredentials, SysResponse, TypeCaptchaResponse } from './_types';
 import { CaptchaService } from '@/services/captcha.service';
 import handleSignUp, { handleSignIn } from './auth/userAction';
+import { asyncHandler } from './AsyncHandler';
 
 export let getCookieGetterSetter = (req: Request, res: Response) => {
   let getCookie = (name: string) => {
@@ -49,26 +50,21 @@ export class AuthRoute implements Routes {
 
   private initializeRoutes() {
     // TODO: using JWT token for authentication
-    this.router.post(URL_AUTH_GET_SIGNIN, async (req, res) => {
-      let p = getCommonHandlePass(req, res);
-      let signInResult = await handleSignIn(req.body, p);
-      res.send(signInResult);
-    });
-    this.router.post(URL_AUTH_GET_SIGNUP, async (req, res) => {
-      let p = getCommonHandlePass(req, res);
-      let signUpResult = await handleSignUp(req.body, p);
-      if (signUpResult.error) {
-      }
-      res.send(signUpResult);
-    });
-    // this.router.post(URL_AUTH_GET_SIGNOUT, async (req, res) => {
-    //   // can be done in front-end app
-    // });
-    // this.router.get(URL_AUTH_GET_CAPTCHA, async (req, res) => {
-    //   let p = await this.captcha.generate();
-    //   res.send({
-    //     content: p,
-    //   } satisfies SysResponse<TypeCaptchaResponse>);
-    // });
+    this.router.post(
+      URL_AUTH_GET_SIGNIN,
+      asyncHandler(async (req, res) => {
+        let p = getCommonHandlePass(req, res);
+        let signInResult = await handleSignIn(req.body, p);
+        res.send(signInResult);
+      }),
+    );
+    this.router.post(
+      URL_AUTH_GET_SIGNUP,
+      asyncHandler(async (req, res) => {
+        let p = getCommonHandlePass(req, res);
+        let signUpResult = await handleSignUp(req.body, p);
+        res.send(signUpResult);
+      }),
+    );
   }
 }
