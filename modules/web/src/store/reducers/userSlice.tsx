@@ -28,6 +28,7 @@ export type DisplayUserInfo = {
   email: string,
   createdAt: Date,
   proUserList: S2UserMembership[]
+  isProUser: boolean
 }
 
 type UsersState = {

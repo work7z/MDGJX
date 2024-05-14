@@ -38,7 +38,7 @@ function AuthenticationTitle() {
 
                             <Text fz="lg" fw={500} className={classes.name}>
                                 {uObj.userInfo?.name || "N/A"}     {
-                                    _.isEmpty(uObj.userInfo?.proUserList) ?
+                                    !(uObj.userInfo?.isProUser) ?
                                         <Badge size='sm' color={"green"} variant="light">
                                             开源版用户
                                         </Badge> : <Badge size='sm' color={"pink"} variant="light">

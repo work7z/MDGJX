@@ -353,6 +353,7 @@ export default async function handleSignUp(formData: {
     let newUser = await daoRef.db_s2.transaction(async () => {
         let newUser = await S2User.create({
             name: formData.userName,
+            verified: 0,
             phoneNumber: '',
             password: hashPW(formData.password + ''),
             email: formData.email,

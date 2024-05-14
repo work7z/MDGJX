@@ -39,6 +39,7 @@ export type DisplayUserInfo = {
   name: string;
   email: string;
   createdAt: Date;
+  isProUser: boolean;
   proUserList: S2UserMembership[];
 };
 export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass => {
@@ -73,12 +74,18 @@ export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass
                   userId: push.userAcctId,
                 },
               });
+              const proCardList = await S2UserHasGiftCardList.count({
+                where: {
+                  userId: push.userAcctId,
+                },
+              });
               if (tmpUserInfo && push.createTimestamp == tmpUserInfo.createdAt.getTime()) {
                 userInfo = {
                   name: tmpUserInfo.name,
                   email: tmpUserInfo.email,
                   createdAt: tmpUserInfo.createdAt,
                   proUserList,
+                  isProUser: proCardList != 0,
                 };
               }
             }
