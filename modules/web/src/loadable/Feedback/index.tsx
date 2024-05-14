@@ -1,4 +1,6 @@
 import GetAppInfo from '@/AppInfo';
+import apiSlice from '@/store/reducers/apiSlice';
+import AlertUtils from '@/utils/AlertUtils';
 import { TextInput, Textarea, SimpleGrid, Group, Title, Button, Container, Anchor } from '@mantine/core';
 import { useForm } from '@mantine/form';
 
@@ -8,18 +10,24 @@ export default function GetInTouchSimple() {
             name: '',
             email: '',
             subject: '',
-            message: '',
+            content: '',
         },
         validate: {
-            name: (value) => value.trim().length < 2,
-            email: (value) => !/^\S+@\S+$/.test(value),
-            subject: (value) => value.trim().length === 0,
+            // name: (value) => value.trim().length < 2,
+            // email: (value) => !/^\S+@\S+$/.test(value),
+            content: (value) => value.trim().length == 0,
         },
     });
+    const [t] = apiSlice.useLazySendFeedbackQuery({})
 
     return (
         <Container size="sm">
-            <form onSubmit={form.onSubmit(() => { })}>
+            <form onSubmit={form.onSubmit((e) => {
+                console.log('err', e)
+                t(e).then(() => {
+                    AlertUtils.alertSuccess("感谢您的反馈！我们会尽快回复您！")
+                })
+            })}>
                 <Title
                     order={2}
                     size="h1"
@@ -64,8 +72,8 @@ export default function GetInTouchSimple() {
                     maxRows={10}
                     minRows={5}
                     autosize
-                    name="message"
-                    {...form.getInputProps('message')}
+                    name="content"
+                    {...form.getInputProps('content')}
                 />
 
                 <Group justify="center" mt="xl">

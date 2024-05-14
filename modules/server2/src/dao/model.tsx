@@ -4,6 +4,7 @@ import {
 import { DaoRef } from './index'
 import { isDevEnv } from '../hooks/env';
 import _ from 'lodash';
+import { UPDATE_TIME_VERSION } from './constants';
 
 
 // provide user model, including user id, name, email, phoneNumber, password, createdAt, updatedAt, deleteAt
@@ -86,7 +87,6 @@ export class S2UserHasGiftCardList extends Model<InferAttributes<S2UserHasGiftCa
 }
 
 
-export let UPDATE_TIME_VERSION = '6'
 
 export default async (daoRef: DaoRef) => {
 

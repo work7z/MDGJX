@@ -128,6 +128,20 @@ export const apiSlice = createApi({
         };
       },
     }),
+    sendFeedback: build.query<AsyncCreateResponse<any>, {
+      email: string,
+      subject: string,
+      content: string,
+    }>({
+      query: (obj) => {
+        return {
+          method: "POST",
+          url: "/help/sendFeedback",
+          body: obj
+        };
+      },
+    }),
+    // 
     getUserInfo: build.query<AsyncCreateResponse<DisplayUserInfo>, {}>({
       query: (obj) => {
         return {
