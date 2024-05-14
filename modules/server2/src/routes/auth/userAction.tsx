@@ -129,7 +129,7 @@ export let validateEachRuleInArr = async (rules: CheckRules[], formData: any, p:
 
 
 export async function handleSignIn(formData: {
-    userAcctId: string,
+    userName: string,
     password: string,
     email: string,
     type: string,
@@ -148,7 +148,7 @@ export async function handleSignIn(formData: {
     let rules: CheckRules[] = [
         {
             type: "non-empty",
-            name: "userAcctId",
+            name: "userName",
             label: Dot("wTBJ2pxX7", "用户名或邮箱"),
         },
         {
@@ -164,12 +164,12 @@ export async function handleSignIn(formData: {
         // fn_verifyVCode(formData.randomID, p),
         {
             type: 'check-fn',
-            name: 'userAcctId',
+            name: 'userName',
             validateFn: async (val: string) => {
                 let user: User | null = null;
-                user = await getUserInfoByUserAcctId(formData.userAcctId)
+                user = await getUserInfoByUserName(formData.userName)
                 if (!user) {
-                    user = await getUserInfoByEmail(formData.userAcctId)
+                    user = await getUserInfoByEmail(formData.userName)
                 }
                 if (!user) {
                     return Dot("dsdfqw", "用户或邮箱名不存在")
@@ -213,7 +213,7 @@ export default async function handleSignUp(formData: {
     let rules: CheckRules[] = [
         {
             type: "non-empty",
-            name: "userAcctId",
+            name: "userName",
             label: Dot("oHQNQ4mRw", "用户ID"),
         },
         {
@@ -248,7 +248,7 @@ export default async function handleSignUp(formData: {
         // },
         {
             type: 'check-fn',
-            name: 'userAcctId',
+            name: 'userName',
             validateFn: async (val) => {
                 let user = await getUserInfoByUserName(val)
                 if (user) {
@@ -259,11 +259,11 @@ export default async function handleSignUp(formData: {
                 if (user2) {
                     return "邮箱已存在"
                 }
-                let ok = checkIfStrOnlyHasAlphanumeric(val)
-                if (!ok) {
-                    return "用户名只能包含字母和数字"
-                    return Dot("8sVGdXhx", "User ID should only contain letters and numbers")
-                }
+                // let ok = checkIfStrOnlyHasAlphanumeric(val)
+                // if (!ok) {
+                //     return "用户名只能包含字母和数字"
+                //     return Dot("8sVGdXhx", "User ID should only contain letters and numbers")
+                // }
                 // if (val.length < 2) {
                 //     return "用户名至少为2个字符"
                 //     return Dot("8sVG1kqXhx", "User ID should be at least 2 characters")

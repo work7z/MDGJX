@@ -63,17 +63,13 @@ export const apiSlice = createApi({
         AlertUtils.alertErr("抱歉，网络不稳定，请稍后重试")
       }
       if (result) {
-        let errors = result.error;
-        if (errors == '401') {
+        let error = result.error;
+        if (error == '401') {
           FN_GetDispatch()(
             UsersSlice.actions.updateOneOfParamState({
               hasSignIn: false,
             })
           )
-          return false;
-        }
-        if (!_.isEmpty(errors)) {
-          errorHandler()
           return false;
         }
       }
@@ -95,7 +91,7 @@ export const apiSlice = createApi({
     }),
     // auth
     signIn: build.query<AsyncCreateResponse<SignInCredentials>, {
-      userAcctId: string,
+      userName: string,
       password: string,
       rememberMe: boolean,
     }>({
@@ -109,7 +105,7 @@ export const apiSlice = createApi({
     }),
     signUp: build.query<AsyncCreateResponse<SignInCredentials>, {
       preview: boolean,
-      userAcctId: string,
+      userName: string,
       password: string,
       email: string,
       confirmPassword: string,
