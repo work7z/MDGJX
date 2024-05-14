@@ -6,7 +6,7 @@ export const HEADER_X_LAF_VERSION = 'x-laf-version';
 export type AsyncCreateResponse<T> = {
   message?: string; // normal message
   error?: string; // error
-  data?: T;
+  data: T;
 };
 export type SignInCredentials = {
   signed: boolean;

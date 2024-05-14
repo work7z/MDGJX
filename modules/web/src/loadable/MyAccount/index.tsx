@@ -16,6 +16,7 @@ import { Link, useHistory, useParams } from 'react-router-dom';
 import { useSearchParams } from '@/utils/HistUtils';
 import apiSlice, { SignInCredentials, verifyResponse } from '@/store/reducers/apiSlice';
 import AlertUtils from '@/utils/AlertUtils';
+import { ACTION_doSignInByInfo } from '@/store/actions/auth-actions';
 
 function AuthenticationTitle() {
     let sp = (useSearchParams())
@@ -53,7 +54,6 @@ function AuthenticationTitle() {
                 <Container size={420} my={40} >
                     <form onSubmit={async e => {
                         try {
-                            debugger;
                             e.preventDefault()
                             let form = e.target as HTMLFormElement
                             let data = new FormData(form)
@@ -65,13 +65,12 @@ function AuthenticationTitle() {
                                 password: data.get('password') as string,
                                 confirmPassword: data.get('confirmPassword') as string,
                             })
-                            console.log('r', r)
                             // r.data.content.signed
                             if (verifyResponse(r.data)) {
                                 AlertUtils.alertSuccess('注册成功！')
+                                ACTION_doSignInByInfo(r.data?.data)
                             }
                         } catch (e) {
-                            debugger;
                             AlertUtils.alertErr(e)
                         }
                     }}>
@@ -119,33 +118,57 @@ function AuthenticationTitle() {
         default:
             return (
                 <Container size={420} my={40}>
-                    <Title ta="center" className={classes.title}>
-                        登录系统
-                    </Title>
-                    <Text c="dimmed" size="sm" ta="center" mt={5}>
-                        还没有建立新用户？{' '}
-                        <Link to='/settings/my-account?type=signup'>
-                            <Anchor size="sm" component="button">
-                                免费注册
-                            </Anchor>
-                        </Link>
-                    </Text>
+                    <form onSubmit={async e => {
+                        try {
+                            e.preventDefault()
+                            let form = e.target as HTMLFormElement
+                            let data = new FormData(form)
+                            let rm = data.get("rememberMe") === 'on'
+                            debugger;
+                            let r = await t_signIn({
+                                rememberMe: rm ? true : false,
+                                userAcctId: data.get('userAcctId') as string,
+                                password: data.get('password') as string,
+                            })
+                            // r.data.content.signed
+                            if (verifyResponse(r.data)) {
+                                AlertUtils.alertSuccess('注册成功！')
+                                ACTION_doSignInByInfo(r.data?.data)
+                            }
+                        } catch (e) {
+                            AlertUtils.alertErr(e)
+                        }
+                    }}>
 
-                    <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-                        <TextInput label="用户名/Email地址" placeholder="hello@gmail.com" />
-                        <PasswordInput label="密码" placeholder="Your password" mt="md" />
-                        <Group justify="space-between" mt="lg">
-                            <Checkbox defaultChecked label="记住这台设备" />
-                            <Link to={'/settings/my-account?type=find-pw'}>
-                                <Anchor component="button" size="sm">
-                                    忘记密码?
+                        <Title ta="center" className={classes.title}>
+                            登录系统
+                        </Title>
+                        <Text c="dimmed" size="sm" ta="center" mt={5}>
+                            还没有建立新用户？{' '}
+                            <Link to='/settings/my-account?type=signup'>
+                                <Anchor size="sm" component="button">
+                                    免费注册
                                 </Anchor>
                             </Link>
-                        </Group>
-                        <Button fullWidth mt="xl">
-                            登录
-                        </Button>
-                    </Paper>
+                        </Text>
+
+                        <Paper withBorder shadow="md" p={30} mt={30} radius="md">
+                            <TextInput name='userAcctId' label="用户名/Email地址" placeholder="mina 或 mina@gmail.com" />
+                            <PasswordInput name='password' label="密码" placeholder="用户密码" mt="md" />
+                            <Group justify="space-between" mt="lg">
+                                <Checkbox name='rememberMe' defaultChecked label="记住这台设备" />
+                                <Link to={'/settings/my-account?type=find-pw'}>
+                                    <Anchor component="button" size="sm">
+                                        忘记密码?
+                                    </Anchor>
+                                </Link>
+                            </Group>
+                            <Button type='submit' fullWidth mt="xl">
+                                登录
+                            </Button>
+                        </Paper>
+                    </form>
+
                 </Container>
             );
     }

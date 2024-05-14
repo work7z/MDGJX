@@ -7,20 +7,23 @@
 
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import _ from 'lodash'
+import { SignInCredentials } from "./apiSlice";
 
-export type UserCredential = {
-  avatar: string;
-  name: string
+export type UserInfo = {
+  name: string,
+  email: string,
+  createAt: Date
 }
 
 type UsersState = {
-  signIn: boolean,
-  m: boolean,
-  credential?: UserCredential
+  hasSignIn: boolean;
+  credentials: SignInCredentials | null
+  userInfo: UserInfo | null
 };
 const initialState: UsersState = {
-  m: false,
-  signIn: false,
+  hasSignIn: false,
+  credentials: null,
+  userInfo: null
 };
 
 export type PUserState = Partial<UsersState>

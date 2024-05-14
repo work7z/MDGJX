@@ -41,7 +41,6 @@ export let verifyResponse = (response: AsyncCreateResponse<any> | undefined): bo
 }
 
 
-
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
@@ -82,12 +81,16 @@ export const apiSlice = createApi({
       },
     }),
     // auth
-    signIn: build.query<AsyncCreateResponse<SignInCredentials>, { username: string; password: string }>({
+    signIn: build.query<AsyncCreateResponse<SignInCredentials>, {
+      userAcctId: string,
+      password: string,
+      rememberMe: boolean,
+    }>({
       query: (obj) => {
         return {
           method: "POST",
           url: URL_AUTH_GET_SIGNIN,
-          data: obj,
+          body: obj,
         };
       },
     }),

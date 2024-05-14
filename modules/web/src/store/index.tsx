@@ -32,6 +32,7 @@ import MemorySlice from "./reducers/memorySlice";
 import UsersSlice from "./reducers/userSlice";
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import BigTextSlice from "./reducers/bigTextSlice";
+import ALL_NOCYCLE from "./nocycle";
 
 const rootReducer = combineReducers({
     api: apiSlice.reducer,
@@ -46,7 +47,7 @@ export const persistedReducer = persistReducer({
     storage,
     stateReconciler: autoMergeLevel2,
     // whitelist: ['settings', 'users']
-    whitelist: ['settings',]
+    whitelist: ['settings', 'users']
 }, rootReducer as any)
 
 
@@ -61,6 +62,8 @@ export const store = configureStore(({
     },
     enhancers: [],
 }));
+
+ALL_NOCYCLE.store = store as any
 
 export let persistor = persistStore(store)
 

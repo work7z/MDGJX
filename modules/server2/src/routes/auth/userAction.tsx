@@ -5,7 +5,7 @@ import { getMD5, getSignatureFromStr } from "./auth";
 import handleAuthInfo, { fn_getCookie } from "./handleAuthInfo";
 import { checkIfStrOnlyHasAlphanumeric } from "./utils";
 import { CommonHandlePass } from "../auth.route";
-import { AsyncCreateResponse, CheckRules, fn_verifyVCode } from "./action-types";
+import { AsyncCreateResponse, CheckRules, } from "./action-types";
 import { fn_refresh_system_info_from_redis } from "./user-types";
 import _ from "lodash";
 import { key_sessionGroup } from "./constants";
@@ -53,7 +53,7 @@ export let getUserInfoByUserAcctId = async (userAcctId: string): Promise<User | 
     await dao()
     let user = await S2User.findOne({
         where: {
-            id: userAcctId
+            name: userAcctId
         }
     })
     return user;
@@ -161,10 +161,10 @@ export async function handleSignIn(formData: {
                     user = await getUserInfoByEmail(formData.phoneNumber)
                 }
                 if (!user) {
-                    return Dot("dsdfqw", "User does not exist")
+                    return Dot("dsdfqw", "用户或邮箱名不存在")
                 }
                 if (user.password != hashPW(formData.password)) {
-                    return Dot("eqwee", "Password is not correct")
+                    return Dot("eqwee", "密码不正确，请重试")
                 }
                 // LOGIN SUCCESS
                 await daoRef.db_s2.transaction(async () => {
@@ -197,7 +197,7 @@ export default async function handleSignUp(formData: {
     rememberMe: boolean,
     confirmPassword: string,
     vcode: string
-}, p: CommonHandlePass): Promise<AsyncCreateResponse<{ newUser?: User }>> {
+}, p: CommonHandlePass): Promise<AsyncCreateResponse<SignInCredentials | {}>> {
     let { Dot } = p
     console.log('formData', formData)
     let daoRef = await dao()
@@ -323,7 +323,7 @@ export default async function handleSignUp(formData: {
         //     }
         // },
         // formData.preview ? null : fn_verifyVCode(formData.randomID, p)
-    ].filter(x => x)
+    ]
 
     let validObj = await validateEachRuleInArr(rules, formData, p);
     if (validObj) {
@@ -360,5 +360,7 @@ export default async function handleSignUp(formData: {
             error: "create user failed"
         }
     }
-    return res
+    return {
+        data: res
+    }
 }
