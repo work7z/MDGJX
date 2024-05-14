@@ -5,7 +5,7 @@ let msgCtn = 1
 export default {
     alertSuccess(msg: any) {
         // alert("" + _.toString(msg))
-        toast(`[${msgCtn++}] ` + _.toString(msg))
+        toast.success(`[${msgCtn++}] ` + _.toString(msg))
     },
     alertInfo(msg: any) {
         toast.info(`[${msgCtn++}] ` + _.toString(msg))

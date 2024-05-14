@@ -13,7 +13,9 @@ import {
     IconChartPie3,
     IconFingerprint,
     IconCoin,
-    IconArrowUp, IconBrandGithub, IconBrandGithubFilled, IconChevronDown, IconCode, IconSourceCode
+    IconArrowUp, IconBrandGithub, IconBrandGithubFilled, IconChevronDown, IconCode, IconSourceCode,
+    IconUser,
+    IconUserCircle
 } from '@tabler/icons-react';
 import SourceCodeLink from '../SourceCodeLink';
 import { DoubleNavbar as SideBar } from '@/containers/SideBar';
@@ -21,6 +23,8 @@ import GetAppInfo from '@/AppInfo';
 import BackToTop from './BackToTop';
 import classes from './Header.module.css'
 import { Link } from 'react-router-dom';
+import exportUtils from '@/utils/ExportUtils';
+import AuthUtils from '@/utils/AuthUtils';
 
 export default (props: {
     opened: boolean,
@@ -62,6 +66,9 @@ export default (props: {
             description: 'Combusken battles with the intensely hot flames it spews',
         },
     ];
+    const userObj = exportUtils.useSelector(v => {
+        return v.users
+    })
     const links = mockdata.map((item) => (
         <UnstyledButton className={classes.subLink} key={item.title}>
             <Group wrap="nowrap" align="flex-start">
@@ -108,14 +115,27 @@ export default (props: {
             <Group gap={6}>
                 <ColorSchemeToggle />
                 <SourceCodeLink />
-
-                <Link to={'/settings/my-account?type=signin'}>   <Button variant="default" className=' hidden sm:block '>登录账号</Button></Link>
-                <Link to={'/settings/my-account?type=signup'}>
-                    <Button className=' hidden sm:block '>免费注册</Button>
-                </Link>
+                {
+                    userObj.hasSignIn ? [
+                        <Link to={'/settings/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
+                            <IconUserCircle stroke={1.5} />
+                        }</ActionIcon></Link>,
+                        < Button variant="default" onClick={() => {
+                            AuthUtils.signOut()
+                        }} className=' hidden sm:block ' > {
+                                "登出"
+                            }</Button>
+                        // <Link to={'/settings/my-account?type=signin'}>   <Button variant="default" className=' hidden sm:block '>登出</Button></Link>,
+                    ] : [
+                        <Link to={'/settings/my-account?type=signin'}>   <Button variant="default" className=' hidden sm:block '>登录账号</Button></Link>,
+                        <Link to={'/settings/my-account?type=signup'}>
+                            <Button className=' hidden sm:block '>免费注册</Button>
+                        </Link>
+                    ]
+                }
             </Group>
-        </Group>
-    </AppShell.Header>
+        </Group >
+    </AppShell.Header >
 }
 
 

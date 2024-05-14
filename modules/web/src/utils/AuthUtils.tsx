@@ -11,7 +11,6 @@ const AuthUtils = {
                 credentials: credentials
             })
         )
-        AlertUtils.alertSuccess("登录成功，1秒后刷新界面")
         setTimeout(() => {
             location.reload()
         }, 800)

@@ -9,16 +9,16 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import _ from 'lodash'
 import { SignInCredentials } from "./apiSlice";
 
-export type UserInfo = {
+export type DisplayUserInfo = {
   name: string,
   email: string,
-  createAt: Date
+  createdAt: Date
 }
 
 type UsersState = {
   hasSignIn: boolean;
   credentials: SignInCredentials | null
-  userInfo: UserInfo | null
+  userInfo: DisplayUserInfo | null
 };
 const initialState: UsersState = {
   hasSignIn: false,

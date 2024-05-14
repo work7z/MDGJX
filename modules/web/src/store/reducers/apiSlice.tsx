@@ -10,8 +10,10 @@ import _ from "lodash";
 import { PayloadListData, PayloadValueData } from "../../constants";
 import { url } from "inspector";
 import { getHeaders } from "../request";
-import { URL_AUTH_GET_FINDPW, URL_AUTH_GET_SIGNIN, URL_AUTH_GET_SIGNOUT, URL_AUTH_GET_SIGNUP } from "../constants/api_constants";
+import { HEADER_X_LAF_TOKEN, URL_AUTH_GET_FINDPW, URL_AUTH_GET_SIGNIN, URL_AUTH_GET_SIGNOUT, URL_AUTH_GET_SIGNUP } from "../constants/api_constants";
 import AlertUtils from "@/utils/AlertUtils";
+import { FN_GetDispatch, FN_GetState } from "../nocycle";
+import UsersSlice, { DisplayUserInfo } from "./userSlice";
 
 export let withPrefixOpenAPI = (url: string): string => {
   return "/open" + url;
@@ -53,16 +55,27 @@ export const apiSlice = createApi({
           headers.set(d, x);
         }
       });
+      headers.set(HEADER_X_LAF_TOKEN, FN_GetState().users.credentials?.signature || "")
       return headers;
     },
-    validateStatus: (response, result) => {
+    validateStatus: (response, result: AsyncCreateResponse<any> | null) => {
       let errorHandler = () => {
         AlertUtils.alertErr("抱歉，网络不稳定，请稍后重试")
       }
-      let errors = _.get(result, "errors");
-      if (!_.isEmpty(errors)) {
-        errorHandler()
-        return false;
+      if (result) {
+        let errors = result.error;
+        if (errors == '401') {
+          FN_GetDispatch()(
+            UsersSlice.actions.updateOneOfParamState({
+              hasSignIn: false,
+            })
+          )
+          return false;
+        }
+        if (!_.isEmpty(errors)) {
+          errorHandler()
+          return false;
+        }
       }
       let shouldOk = response && response.status === 200
       if (!shouldOk) {
@@ -116,6 +129,14 @@ export const apiSlice = createApi({
           method: "POST",
           url: URL_AUTH_GET_SIGNOUT,
           body: obj
+        };
+      },
+    }),
+    getUserInfo: build.query<AsyncCreateResponse<DisplayUserInfo>, {}>({
+      query: (obj) => {
+        return {
+          method: "GET",
+          url: "/auth/getUserInfo",
         };
       },
     }),

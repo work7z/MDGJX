@@ -7,3 +7,5 @@ export const URL_AUTH_GET_SIGNIN = '/auth/sign-in';
 export const URL_AUTH_GET_SIGNUP = '/auth/sign-up';
 export const URL_AUTH_GET_SIGNOUT = '/auth/sign-out';
 export const URL_AUTH_GET_FINDPW = '/auth/find-pw';
+
+export const HEADER_X_LAF_TOKEN = 'x-mdgjx-token';

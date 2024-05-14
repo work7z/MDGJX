@@ -4,7 +4,6 @@ import dao from "@/dao";
 import { getMD5, getSignatureFromStr } from "./auth";
 import handleAuthInfo, { fn_getCookie } from "./handleAuthInfo";
 import { checkIfStrOnlyHasAlphanumeric } from "./utils";
-import { CommonHandlePass } from "../auth.route";
 import { AsyncCreateResponse, CheckRules, } from "./action-types";
 import { fn_refresh_system_info_from_redis } from "./user-types";
 import _ from "lodash";
@@ -12,15 +11,17 @@ import { key_sessionGroup } from "./constants";
 import { hashPW } from "./op";
 import { SignInCredentials } from "../_types";
 import { S2User, S2User as User } from "@/dao/model";
+import { CommonHandlePass } from "../common";
 
 export type Elb3AuthBody = {
     userAcctId: string,
+    userName: string,
     userRole: any
 }
 
 export type fn_setCookie = (name: string, value: string,) => void
-export let signInWithUserId = async (userAcctId: string, rememberMe: boolean): Promise<SignInCredentials> => {
-    let userInfo = await getUserInfoByUserAcctId(userAcctId)
+export let signInWithUserId = async (userName: string, rememberMe: boolean): Promise<SignInCredentials> => {
+    let userInfo = await getUserInfoByUserName(userName)
     if (!userInfo) {
         throw new Error('user not found')
     }
@@ -30,9 +31,9 @@ export let signInWithUserId = async (userAcctId: string, rememberMe: boolean): P
     let daoRef = await dao()
     // init set
     // await daoRef.redis.sAdd(key_sessionGroup, userAcctId) // add user acct into the set
-
     let push: Elb3AuthBody = {
         userAcctId: userInfo.id + '',
+        userName: userInfo.name,
         userRole: 'user', //userInfo.role
     }
     let elb3AuthBody = btoa(JSON.stringify(push))
@@ -50,6 +51,16 @@ export let signInWithUserId = async (userAcctId: string, rememberMe: boolean): P
 }
 
 export let getUserInfoByUserAcctId = async (userAcctId: string): Promise<User | null> => {
+    await dao()
+    let user = await S2User.findOne({
+        where: {
+            name: userAcctId
+        }
+    })
+    return user;
+}
+
+export let getUserInfoByUserName = async (userAcctId: string): Promise<User | null> => {
     await dao()
     let user = await S2User.findOne({
         where: {
@@ -120,7 +131,7 @@ export let validateEachRuleInArr = async (rules: CheckRules[], formData: any, p:
 export async function handleSignIn(formData: {
     userAcctId: string,
     password: string,
-    phoneNumber: string,
+    email: string,
     type: string,
     rememberMe: boolean,
     // randomID: string,
@@ -158,7 +169,7 @@ export async function handleSignIn(formData: {
                 let user: User | null = null;
                 user = await getUserInfoByUserAcctId(formData.userAcctId)
                 if (!user) {
-                    user = await getUserInfoByEmail(formData.phoneNumber)
+                    user = await getUserInfoByEmail(formData.userAcctId)
                 }
                 if (!user) {
                     return Dot("dsdfqw", "用户或邮箱名不存在")
@@ -166,12 +177,10 @@ export async function handleSignIn(formData: {
                 if (user.password != hashPW(formData.password)) {
                     return Dot("eqwee", "密码不正确，请重试")
                 }
-                // LOGIN SUCCESS
-                await daoRef.db_s2.transaction(async () => {
-                    if (!user) return;
-                    let r = await signInWithUserId(user.name, formData.rememberMe)
-                    res = r
-                })
+                res = await signInWithUserId(user.name, formData.rememberMe)
+                if (!res.signed) {
+                    return "登录失败，请重试或检查表单内容"
+                }
             }
         },
     ]
@@ -189,7 +198,7 @@ export async function handleSignIn(formData: {
 
 export default async function handleSignUp(formData: {
     preview: boolean,
-    userAcctId: string,
+    userName: string,
     password: string,
     email: string,
     randomID: string,
@@ -241,7 +250,7 @@ export default async function handleSignUp(formData: {
             type: 'check-fn',
             name: 'userAcctId',
             validateFn: async (val) => {
-                let user = await getUserInfoByUserAcctId(val)
+                let user = await getUserInfoByUserName(val)
                 if (user) {
                     return "用户名已存在"
                     // return Dot("8sVG1RdXhx", "用戶名已存在")
@@ -341,17 +350,16 @@ export default async function handleSignUp(formData: {
     }
 
     let res = null;
-    let newUser = await daoRef.db_work7z.transaction(async () => {
-        let newUser = await User.create({
-            id: parseInt(formData.userAcctId),
-            name: formData.userAcctId,
+    let newUser = await daoRef.db_s2.transaction(async () => {
+        let newUser = await S2User.create({
+            name: formData.userName,
             phoneNumber: '',
             password: hashPW(formData.password + ''),
             email: formData.email,
         })
 
 
-        res = await signInWithUserId(formData.userAcctId + '', formData.rememberMe)
+        res = await signInWithUserId(formData.userName + '', formData.rememberMe)
 
         await fn_refresh_system_info_from_redis()
 

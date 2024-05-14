@@ -60,14 +60,14 @@ function AuthenticationTitle() {
                             let r = await t_signUp({
                                 preview: false,
                                 rememberMe: true,
-                                userAcctId: data.get('userAcctId') as string,
+                                userName: data.get('userName') as string,
                                 email: data.get('email') as string,
                                 password: data.get('password') as string,
                                 confirmPassword: data.get('confirmPassword') as string,
                             })
                             // r.data.content.signed
                             if (verifyResponse(r.data)) {
-                                AlertUtils.alertSuccess('注册成功！')
+                                AlertUtils.alertSuccess('恭喜，注册成功！1秒后刷新界面')
                                 ACTION_doSignInByInfo(r.data?.data)
                             }
                         } catch (e) {
@@ -88,7 +88,7 @@ function AuthenticationTitle() {
 
 
                         <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-                            <TextInput label="用户名" name='userAcctId' placeholder="mina" />
+                            <TextInput label="用户名" name='userName' placeholder="mina" />
                             <TextInput label="Email" name='email' placeholder="mina@gmail.com" mt="md" />
                             <PasswordInput label="密码" name='password' placeholder="请让密码尽可能复杂" mt="md" />
                             <PasswordInput label="确认密码" name='confirmPassword' placeholder="再次确认您本次设定的密码" mt="md" />
@@ -127,12 +127,12 @@ function AuthenticationTitle() {
                             debugger;
                             let r = await t_signIn({
                                 rememberMe: rm ? true : false,
-                                userAcctId: data.get('userAcctId') as string,
+                                userName: data.get('userName') as string,
                                 password: data.get('password') as string,
                             })
                             // r.data.content.signed
                             if (verifyResponse(r.data)) {
-                                AlertUtils.alertSuccess('注册成功！')
+                                AlertUtils.alertSuccess("登录成功，欢迎回来，1秒后刷新界面")
                                 ACTION_doSignInByInfo(r.data?.data)
                             }
                         } catch (e) {
@@ -153,7 +153,7 @@ function AuthenticationTitle() {
                         </Text>
 
                         <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-                            <TextInput name='userAcctId' label="用户名/Email地址" placeholder="mina 或 mina@gmail.com" />
+                            <TextInput name='userName' label="用户名/Email地址" placeholder="mina 或 mina@gmail.com" />
                             <PasswordInput name='password' label="密码" placeholder="用户密码" mt="md" />
                             <Group justify="space-between" mt="lg">
                                 <Checkbox name='rememberMe' defaultChecked label="记住这台设备" />

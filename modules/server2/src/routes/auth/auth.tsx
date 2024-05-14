@@ -8,7 +8,9 @@ import { isDevEnv } from "@/web2share-copy/env";
 let dir = '' // getPreCompiledDir()
 let privateKey = process.env.PRIVATE_KEY
 if (isDevEnv()) {
-    privateKey = 'jr_E9PUkV'
+    privateKey = 'jr_E9PUkV' // it's a fake key, do NOT directly use it in production
+} else {
+    throw new Error('private key not set')
 }
 
 export let getSignatureFromStr = (str: string) => {

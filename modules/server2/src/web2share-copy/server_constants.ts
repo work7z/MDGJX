@@ -1,7 +1,8 @@
-export const HEADER_X_LAF_LANG = 'x-laf-lang';
-export const HEADER_X_LAF_REGION = 'x-laf-region'; // CN or US
-export const HEADER_X_LAF_PLATFORM = 'x-laf-platform';
-export const HEADER_X_LAF_VERSION = 'x-laf-version';
+export const HEADER_X_LAF_LANG = 'x-mdgjx-lang';
+export const HEADER_X_LAF_REGION = 'x-mdgjx-region'; // CN or US
+export const HEADER_X_LAF_PLATFORM = 'x-mdgjx-platform';
+export const HEADER_X_LAF_VERSION = 'x-mdgjx-version';
+export const HEADER_X_LAF_TOKEN = 'x-mdgjx-token';
 
 export type AsyncCreateResponse<T> = {
   message?: string; // normal message
