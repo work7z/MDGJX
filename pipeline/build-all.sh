@@ -1,6 +1,7 @@
 #!/bin/bash 
 # this script is designated for building this whole project.  
 # version will be retrieved from the file package.json
+source ~/.zshrc
 
 set -e
 if [ "$TAG_MODE" = "true" ]; then
@@ -183,7 +184,7 @@ import { AppInfoClz } from \"./types\"
             rm -rf dist
             [ ! -d node_modules ] && npm i -S -D --force  
         )
-        $MDGJX_ROOT/pipeline/build-all.sh
+        $MDGJX_ROOT/pipeline/build-fe.sh
         echo "[I] built fe"
     }
 
@@ -358,7 +359,6 @@ import { AppInfoClz } from \"./types\"
         docker images
     }
 
-
     # [BEGIN]
     # build core and fe
     build-cmd
@@ -380,7 +380,7 @@ import { AppInfoClz } from \"./types\"
 
     # build docker images
     docker-all
-    
+
     # [END]
 
     echo "[I] location: `pwd` and dist dir: $distDir"

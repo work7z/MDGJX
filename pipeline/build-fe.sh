@@ -4,7 +4,6 @@ echo "[I] building fe"
 (
     echo "[I] building web"
     cd $MDGJX_ROOT/modules/web
-    rm -rf .next
     npm run build
 )
 (

@@ -5,6 +5,7 @@ source /home/appuser/Server2App-dist/env.sh
 
 containerName=$1
 crtVersion=$2
+listenPort=$3
 
 # TODO: health check before replacing container in case any error
 
@@ -35,7 +36,7 @@ runCP(){
 # fi
 
 # run current
-port=2016
+port=$listenPort
 killCP $containerName $port
 runCP $containerName $port
 sleep 15
