@@ -5,10 +5,12 @@ import { Card, Group, Text, Menu, ActionIcon, Image, SimpleGrid, rem } from '@ma
 import { IconDots, IconEye, IconFileZip, IconTrash } from '@tabler/icons-react';
 import ControlBar from "@/components/ControlBar";
 import PanelWithSideBar from "@/components/PanelWithSideBar";
+import { useGetI18nLangList } from "@/resources/i18n";
 
 
 export default () => {
     const maxRows = 10
+    const langData = useGetI18nLangList()
     return <Container >
         <Card withBorder shadow="sm" radius="md">
 
@@ -68,12 +70,12 @@ export default () => {
                     <Select
                         label="源语言"
                         placeholder="请选择源语言"
-                        data={['React', 'Angular', 'Vue', 'Svelte']}
+                        data={langData}
                     />
                     <Select
                         label="目标语言"
                         placeholder="请选择目标语言"
-                        data={['React', 'Angular', 'Vue', 'Svelte']}
+                        data={langData}
                     />
                 </Group>
             } />
