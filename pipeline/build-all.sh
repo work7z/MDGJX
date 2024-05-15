@@ -184,6 +184,7 @@ import { AppInfoClz } from \"./types\"
             rm -rf dist
             [ ! -d node_modules ] && npm i -S -D --force  
         )
+        chmod +x $MDGJX_ROOT/pipeline/build-fe.sh
         $MDGJX_ROOT/pipeline/build-fe.sh
         echo "[I] built fe"
     }
