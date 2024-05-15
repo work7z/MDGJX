@@ -1,8 +1,6 @@
 #!/bin/bash
 source ~/.zshrc
 
-set -e
-
 if [ "$SERVER_2H4G" == "" ]; then
     echo "[E] SERVER_2H4G is not set"
     exit 1
