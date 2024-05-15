@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import express from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import helmet from 'helmet';
 import hpp from 'hpp';
 import morgan from 'morgan';
@@ -13,6 +13,14 @@ import migrateDB from './jobs/background-job';
 import { logger, stream } from '@utils/logger';
 import path from 'path';
 import { isProductionEnv } from './web2share-copy/env';
+import { API_SERVER_URL } from './web2share-copy/api_constants';
+import { HttpException } from './exceptions/httpException';
+import proxy from 'express-http-proxy';
+
+export const asyncHandler = (fn: (req: Request, res: Response, next) => void) => (req: Request, res: Response, next) => {
+  return Promise.resolve(fn(req, res, next)).catch(next);
+};
+
 const launchTime = new Date();
 export class App {
   public app: express.Application;
@@ -53,6 +61,7 @@ export class App {
   }
 
   private initializeMiddlewares() {
+    const app = this.app;
     this.app.use(morgan(LOG_FORMAT, { stream }));
     this.app.use(cors({ origin: ORIGIN, credentials: CREDENTIALS }));
     this.app.use(hpp());
@@ -61,6 +70,32 @@ export class App {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
+    const prefix = '/v3';
+    app.use(
+      prefix,
+      proxy('https://api.laftools.cn', {
+        proxyReqPathResolver: function (req) {
+          var parts = req.url.split('?');
+          var queryString = parts[1];
+          var updatedPath = parts[0];
+          return prefix + updatedPath + (queryString ? '?' + queryString : '');
+        },
+      }),
+    );
+    // app.use(
+    //   val_prefix,
+    //   asyncHandler(async function (req, res) {
+    //     // API_SERVER_URL;
+    //     var url = 'https://api.laftools.cn' + val_prefix + req.url;
+    //     var r = null;
+    //     if (req.method === 'POST') {
+    //       r = request.post({ uri: url, json: req.body });
+    //     } else {
+    //       r = request(url);
+    //     }
+    //     await req.pipe(r).pipe(res);
+    //   }),
+    // );
     if (this.env == 'production') {
       let distDir = path.join(__dirname, 'spa'); //TODO: provide this distDir 'C:\\Users\\jerrylai\\hmproject\\suodao-tools\\modules\\web\\dist';
       // let us build this first
@@ -69,6 +104,29 @@ export class App {
         res.sendFile(path.resolve(distDir, 'index.html'));
       });
     }
+
+    const ErrorMiddleware = (error: HttpException, req: Request, res: Response, next: NextFunction) => {
+      try {
+        const status: number = error.status || 500;
+        const message: string = error.message || 'Something went wrong';
+
+        logger.error(`[${req.method}] ${req.path} >> StatusCode:: ${status}, Message:: ${message}`);
+        res.status(status).json({ message });
+      } catch (error) {
+        next(error);
+      }
+    };
+
+    this.app.use(ErrorMiddleware);
+
+    // // error handler
+    // this.app.use(function (err, req, res, next) {
+    //   if (err.name === 'UnauthorizedError') {
+    //     res.status(401).send('invalid token...');
+    //   } else {
+    //     next();
+    //   }
+    // });
   }
 
   private initializeRoutes(routes: Routes[]) {

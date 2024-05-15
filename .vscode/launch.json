@@ -23,7 +23,7 @@
       "type": "node-terminal",
       "cwd": "${workspaceFolder}/modules/web-server",
       "request": "launch",
-      "command": "npm run dev"
+      "command": "npm run start"
     },
     {
       "name": "Dev desktop2 桌面端",
