@@ -71,9 +71,11 @@ export class App {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
     const prefix = '/v3';
+    let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
+    logger.info('DIRECT_PROXY_SERVER: ' + DIRECT_PROXY_SERVER);
     app.use(
       prefix,
-      proxy('https://api.laftools.cn', {
+      proxy(DIRECT_PROXY_SERVER, {
         proxyReqPathResolver: function (req) {
           var parts = req.url.split('?');
           var queryString = parts[1];
