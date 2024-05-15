@@ -1,14 +1,16 @@
 import GetAppInfo from '@/AppInfo';
 import apiSlice from '@/store/reducers/apiSlice';
 import AlertUtils from '@/utils/AlertUtils';
+import exportUtils from '@/utils/ExportUtils';
 import { TextInput, Textarea, SimpleGrid, Group, Title, Button, Container, Anchor } from '@mantine/core';
 import { useForm } from '@mantine/form';
 
 export default function GetInTouchSimple() {
+    const userObj = exportUtils.useSelector(v => v.users.userInfo)
     const form = useForm({
         initialValues: {
             name: '',
-            email: '',
+            email: userObj?.email || '',
             subject: '',
             content: '',
         },

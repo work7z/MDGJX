@@ -20,6 +20,21 @@ export class S2User extends Model<InferAttributes<S2User>, InferCreationAttribut
     declare deleteAt: CreationOptional<Date> | null;
 }
 
+export class S2TranslationRecord extends Model<InferAttributes<S2TranslationRecord>, InferCreationAttributes<S2TranslationRecord>> {
+    // sourceLang, targetLang, textCount, userId
+    declare id?: number;
+    declare status: number; // 0 -> not translated, 1 -> translated
+    declare sourceLang: string;
+    declare targetLang: string;
+    declare handleType: string; // json or text
+    declare cachedText: string; // it will be cleaned regualry in the background
+    declare textCount: number;
+    declare userId: number;
+    declare createdAt: CreationOptional<Date> | null;
+    declare updatedAt: CreationOptional<Date> | null;
+    declare deleteAt: CreationOptional<Date> | null;
+}
+
 export class S2UserPurchaseItem extends Model<InferAttributes<S2UserPurchaseItem>, InferCreationAttributes<S2UserPurchaseItem>> {
     declare id?: number;
     declare userId: number;
@@ -92,6 +107,60 @@ export default async (daoRef: DaoRef) => {
 
     // define model for s2
     let db_s2 = daoRef.db_s2
+
+    await S2TranslationRecord.init({
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        status: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        handleType: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        cachedText: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        sourceLang: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        targetLang: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        textCount: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        deleteAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        }
+    }, {
+        sequelize: db_s2,
+        modelName: 's2_translation_record',
+        timestamps: true,
+        paranoid: true,
+        underscored: true
+    })
 
     await S2User.init({
         id: {

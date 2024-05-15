@@ -14,6 +14,7 @@ import { Routes } from '@interfaces/routes.interface';
 import { ErrorMiddleware } from '@middlewares/error.middleware';
 import migrateDB from './jobs/migrate-db';
 import { logger, stream } from '@utils/logger';
+import consumeTln from './jobs/consume-tln';
 const launchTime = new Date();
 
 export class App {
@@ -33,6 +34,7 @@ export class App {
     this.initializeErrorHandling();
 
     migrateDB();
+    consumeTln();
   }
 
   public listen() {

@@ -14,6 +14,7 @@ import { HEADER_X_LAF_TOKEN, URL_AUTH_GET_FINDPW, URL_AUTH_GET_SIGNIN, URL_AUTH_
 import AlertUtils from "@/utils/AlertUtils";
 import { FN_GetDispatch, FN_GetState } from "../nocycle";
 import UsersSlice, { DisplayUserInfo } from "./userSlice";
+import AuthUtils from "@/utils/AuthUtils";
 
 export let withPrefixOpenAPI = (url: string): string => {
   return "/open" + url;
@@ -30,6 +31,16 @@ export type AsyncCreateResponse<T> = {
   error?: string; // error
   data?: T;
 };
+
+
+export type TLNRequest = {
+  text: string;
+  sourceLang: string;
+  targetLang: string;
+};
+export type TLNResponse = {
+  result: string
+}
 
 export let verifyResponse = (response: AsyncCreateResponse<any> | undefined): boolean => {
   if (!response || response.error) {
@@ -55,7 +66,7 @@ export const apiSlice = createApi({
           headers.set(d, x);
         }
       });
-      headers.set(HEADER_X_LAF_TOKEN, FN_GetState().users.credentials?.signature || "")
+      headers.set(HEADER_X_LAF_TOKEN, AuthUtils.token || '')
       return headers;
     },
     validateStatus: (response, result: AsyncCreateResponse<any> | null) => {
@@ -159,6 +170,25 @@ export const apiSlice = createApi({
         };
       },
     }),
+    tlnHandleText: build.query<AsyncCreateResponse<TLNResponse>, TLNRequest>({
+      query: (obj) => {
+        return {
+          method: "POST",
+          url: "/tln/handleText",
+          data: obj,
+        };
+      },
+    }),
+    tlnHandleJSON: build.query<AsyncCreateResponse<TLNResponse>, TLNRequest>({
+      query: (obj) => {
+        return {
+          method: "POST",
+          url: "/tln/handleJSON",
+          data: obj,
+        };
+      },
+    }),
+
   }),
 });
 

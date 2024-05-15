@@ -22,6 +22,7 @@ import { ACTION_doSignInByInfo } from '@/store/actions/auth-actions';
 import exportUtils from '@/utils/ExportUtils';
 import { IconAt, IconCalendarBolt, IconPhoneCall, IconUserBolt } from '@tabler/icons-react';
 import _ from 'lodash';
+import AuthUtils from '@/utils/AuthUtils';
 
 function AuthenticationTitle() {
     let sp = (useSearchParams())
@@ -29,7 +30,7 @@ function AuthenticationTitle() {
     const [t_signIn] = apiSlice.useLazySignInQuery({})
     const [t_signUp] = apiSlice.useLazySignUpQuery({})
     const uObj = exportUtils.useSelector(v => v.users)
-    if (uObj.hasSignIn) {
+    if (uObj.hasSignIn && sp.type != 'find-pw') {
         return (
             <Container size={420} my={40}>
                 <Paper withBorder shadow="md" p={30} mt={30} radius="md">
@@ -69,6 +70,27 @@ function AuthenticationTitle() {
                                 </Text>
                             </Group>
                         </div>
+                    </Group>
+                </Paper>
+                <Paper withBorder shadow="md" p={10} mt={10} radius="md">
+                    <Group wrap="nowrap">
+                        <Button color='violet' onClick={() => {
+                            AuthUtils.signOut()
+                        }}>
+                            用户登出
+                        </Button>
+                        <Link to='/settings/my-account?type=find-pw'>
+                            <Button color='indigo' onClick={() => {
+                            }}>
+                                修改密码
+                            </Button>
+                        </Link>
+                        <Link to='/settings/feedback'>
+                            <Button color='blue' onClick={() => {
+                            }}>
+                                建议与反馈
+                            </Button>
+                        </Link>
                     </Group>
                 </Paper>
             </Container>
