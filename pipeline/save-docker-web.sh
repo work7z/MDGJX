@@ -10,7 +10,7 @@ ver=$1
 
 echo "[I] $(date) Building server2..."
 docker images | grep  codegentoolbox/laftools-linux-x64:$ver | xargs -I {} docker rmi {} 
-docker build -t codegentoolbox/laftools-linux-x64:$ver -f ./Dockerfile .
+# docker build -t codegentoolbox/laftools-linux-x64:$ver -f ./Dockerfile .
 docker save codegentoolbox/laftools-linux-x64:$ver > web-linux-x64-$ver.TMPOUT
 gzip web-linux-x64-$ver.TMPOUT
 
