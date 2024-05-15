@@ -88,11 +88,13 @@ export const systemModulesList: SystemModuleItem[] = [
         children: [
             {
                 name: '文本翻译',
-                id: 'text'
+                id: 'text',
+                bodyFn: () => import('./loadable/TLNText/index.tsx')
             },
             {
                 name: 'JSON 翻译',
-                id: 'json'
+                id: 'json',
+                bodyFn: () => import('./loadable/TLNJSON/index.tsx')
             }
         ]
     },
