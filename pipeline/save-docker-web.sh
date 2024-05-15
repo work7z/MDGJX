@@ -6,6 +6,8 @@ if [ "$SERVER_2H4G" == "" ]; then
     exit 1
 fi
 
+ver=$1
+
 echo "[I] $(date) Building server2..."
 docker images | grep  codegentoolbox/laftools-linux-x64:$ver | xargs -I {} docker rmi {} 
 docker build -t codegentoolbox/laftools-linux-x64:$ver -f ./Dockerfile .

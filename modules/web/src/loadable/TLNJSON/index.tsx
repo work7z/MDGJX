@@ -47,6 +47,10 @@ export default () => {
                                     color: 'green',
                                     text: '复制结果'
                                 },
+                                {
+                                    color: 'gray',
+                                    text: '示例JSON'
+                                },
                             ]}
                             />
                         </Group>
@@ -71,11 +75,13 @@ export default () => {
                         label="源语言"
                         placeholder="请选择源语言"
                         data={langData}
+                        searchable
                     />
                     <Select
                         label="目标语言"
                         placeholder="请选择目标语言"
                         data={langData}
+                        searchable
                     />
                 </Group>
             } />
