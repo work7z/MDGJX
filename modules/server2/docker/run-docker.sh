@@ -42,9 +42,9 @@ sleep 15
 curl 127.0.0.1:$port/v3/release/latest -I | grep "200 OK"
 if [ $? -ne 0 ]; then
     echo "Failed to start container $containerName"
-    exit 1
+    exit 1  
 fi
-timeout 20 docker logs -f $containerName
+timeout 60 docker logs -f $containerName
 
 # docker stop $preContainerName
 
