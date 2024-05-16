@@ -4,6 +4,7 @@ import _ from "lodash";
 
 import crypto from 'crypto'
 import { isDevEnv } from "@/web2share-copy/env";
+import { isTestEnv } from "@/hooks/env";
 
 let dir = '' // getPreCompiledDir()
 let privateKey = process.env.PRIVATE_KEY
@@ -11,8 +12,9 @@ if (isDevEnv()) {
     privateKey = 'jr_E9PUkV' // it's a fake key, do NOT directly use it in production
 } else {
     if (_.isEmpty(privateKey)) {
-        throw new Error('private key not set')
-
+        if (!isTestEnv()) {
+            throw new Error('private key not set')
+        }
     }
 }
 

@@ -2,7 +2,7 @@ import { existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import winston from 'winston';
 import winstonDaily from 'winston-daily-rotate-file';
-import { LOG_DIR as tmp } from '@config';
+import { LOG_DIR as tmp } from '@/config';
 import { Console } from 'winston/lib/winston/transports';
 let LOG_DIR = tmp;
 

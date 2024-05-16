@@ -1,16 +1,12 @@
-import bcrypt from 'bcrypt';
-import { Sequelize } from 'sequelize';
-import request from 'supertest';
-import { App } from '@/app';
-import { CreateUserDto } from '@dtos/users.dto';
-import { UserRoute } from '@routes/users.route';
-import { DotFn, DotFnDefault } from '@/i18n/TranslationUtils';
-import { GetTLNConfigArr } from './translation.route';
-let configArr = GetTLNConfigArr();
+import { expect, test } from 'vitest';
+import { DataTypes, Model } from 'sequelize';
+import path from 'path';
+import fs from 'fs';
+import _ from 'lodash';
+import translateTools from './translation/translateTools';
+import { logger } from '@/utils/logger';
 
-// describe('Test-send-translation', () => {
-//   it('do-translation', async () => {
-//     console.log('configarr', configArr);
-//     // ok, good
-//   });
-// });
+test('run-translation-route', async () => {
+  const res = await translateTools.translateText('你好这个是测试', 'zh', 'en');
+  logger.info('res: ' + JSON.stringify(res));
+});

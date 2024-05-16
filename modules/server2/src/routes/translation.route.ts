@@ -13,28 +13,7 @@ import handleSignUp, { handleSignIn } from './auth/userAction';
 import { asyncHandler } from './AsyncHandler';
 import { S2Feedback, S2User } from '@/dao/model';
 import { getCommonHandlePass, sendRes } from './common';
-
-export type TLNRequest = {
-  text: string;
-  sourceLang: string;
-  targetLang: string;
-};
-export type TLNResponse = {
-  result: string;
-};
-export type InternalTLNConfig = {
-  secretId: string;
-  secretKey: string;
-};
-
-export let GetTLNConfigArr = (): InternalTLNConfig[] => {
-  let TLNConfigArr: InternalTLNConfig[] = [];
-  if (process.env.TLNKEY) {
-    TLNConfigArr = JSON.parse(Buffer.from(process.env.TLNKEY, 'base64').toString());
-  }
-  return TLNConfigArr;
-};
-let TLNConfigArr = GetTLNConfigArr();
+import { TLNResponse } from './translation/translateTools';
 
 export class TranslationRoute implements Routes {
   public router = Router();
