@@ -55,18 +55,25 @@ export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass
       let userInfo: DisplayUserInfo | undefined = undefined;
       const elb3AuthStr = req.header(HEADER_X_LAF_TOKEN);
       const daoRef = await dao();
+      let verifySteps = [];
       if (!_.isEmpty(elb3AuthStr)) {
+        verifySteps.push('authstr:' + elb3AuthStr);
         try {
           let [expiredTS, body, singature, version] = elb3AuthStr?.split('.') as string[];
+          verifySteps.push('expiredTS:' + expiredTS);
           let crtTime = new Date();
           if (crtTime.getTime() > parseInt(expiredTS)) {
+            verifySteps.push('expired. ' + crtTime.getTime() + '>' + parseInt(expiredTS));
             // do nothing
           } else {
+            verifySteps.push('got-body:' + body);
             let c_sig = getSignatureFromStr(body);
             if (c_sig != singature) {
+              verifySteps.push('signature not match');
               //   throw new Error('signature not match');
               // do nothing, of course you won't get the auth info
             } else {
+              verifySteps.push('signature match');
               let push: Elb3AuthBody = JSON.parse(atob(body));
               let tmpUserInfo = await getUserInfoByUserAcctId(push.userAcctId + '');
               const proUserList = await S2UserMembership.findAll({
@@ -80,6 +87,7 @@ export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass
                 },
               });
               if (tmpUserInfo && push.createTimestamp == tmpUserInfo.createdAt.getTime()) {
+                verifySteps.push('user-info-match');
                 userInfo = {
                   name: tmpUserInfo.name,
                   email: tmpUserInfo.email,
@@ -87,12 +95,16 @@ export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass
                   proUserList,
                   isProUser: proCardList != 0,
                 };
+              } else {
+                verifySteps.push('user-info-not-match: ' + push.createTimestamp + '.' + tmpUserInfo.createdAt.getTime());
+                verifySteps.push(JSON.stringify(push));
               }
             }
           }
         } catch (e) {
           // unable to decode, meaning it is not a valid elb3-auth
           logger.error('decode error' + e);
+          verifySteps.push('decode error' + e);
           // if they have elb3-auth, but it is not valid, then we should remove it and redirect the user to /login
         }
       } else {
@@ -103,7 +115,9 @@ export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass
         () => {
           sendRes(res, {
             error: '401',
-            data: {},
+            data: {
+              verifySteps,
+            },
           });
         },
       ];
