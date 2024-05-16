@@ -1,265 +1,160 @@
 export type I18nItem = {
-    LangInHttpLocaleCode?: string[];
-    LangInExplicitURL?: string;
-    Label: string[];
-    LabelByLang: string;
-    Value: string;
-    LabelInEnglish: string;
-}
+  langInHttpLocaleCode?: string[];
+  label: string[];
+  labelByLang: string;
+  value: string;
+  labelInEnglish: string;
+  LangInExplicitURL?: string;
+};
 
 let i18nItems: I18nItem[] = [
-    {
-        LangInHttpLocaleCode: ["en-US", "en-GB", "en-AU", "en-CA", "en-NZ", "en-ZA"],
-        "Label": [
-            "f7akol",
-            "English"
-        ],
-        "LabelByLang": "English",
-        "Value": "en_US",
-        LangInExplicitURL: "en",
-        "LabelInEnglish": "English"
-    },
-    {
-        LangInHttpLocaleCode: ["zh-cn", "zh-sg", "zh-hans"],
-        "Label": [
-            "spdh98",
-            "Simplified Chinese"
-        ],
-        "LabelByLang": "简体中文",
-        "Value": "zh_CN",
-        LangInExplicitURL: "cn",
-        "LabelInEnglish": "Simplified Chinese"
-    },
-    {
-        LangInHttpLocaleCode: ["zh-hk", "zh-tw", "zh-mo", "zh-my"],
-        "Label": [
-            "7dm0d8",
-            "Traditional Chinese"
-        ],
-        "LabelByLang": "繁體中文",
-        "Value": "zh_HK",
-        LangInExplicitURL: "hk",
-        "LabelInEnglish": "Traditional Chinese"
-    },
-    {
-        "Label": [
-            "aj3nhd",
-            "German"
-        ],
-        "LabelByLang": "Deutsch",
-        "Value": "de",
-        "LabelInEnglish": "German",
-        LangInHttpLocaleCode: ["de-DE", "de-AT", "de-CH", "de-LU", "de-LI"]
-    },
-    {
-        "Label": [
-            "d5x1rl",
-            "Spanish"
-        ],
-        "Value": "es",
-        "LabelByLang": "Español",
-        "LabelInEnglish": "Spanish",
-        LangInHttpLocaleCode: ["es-ES", "es-AR", "es-BO", "es-CL", "es-CO", "es-CR", "es-DO", "es-EC", "es-GT", "es-HN", "es-MX", "es-NI", "es-PA", "es-PE", "es-PR", "es-PY", "es-SV", "es-UY", "es-VE"]
-    },
-    {
-        "Label": [
-            "o1umzi",
-            "French"
-        ],
-        "Value": "fr",
-        "LabelByLang": "Français",
-        "LabelInEnglish": "French",
-        LangInHttpLocaleCode: ["fr-FR", "fr-BE", "fr-CA", "fr-CH", "fr-LU"]
-    },
-    {
-        "Label": [
-            "1jj0ri",
-            "Japanese"
-        ],
-        "Value": "ja",
-        "LabelByLang": "日本語",
-        "LabelInEnglish": "Japanese",
-        LangInHttpLocaleCode: ["ja-JP"]
-    },
-    {
-        "Label": [
-            "5ggegx",
-            "Korean"
-        ],
-        "Value": "ko",
-        "LabelByLang": "한국어",
-        "LabelInEnglish": "Korean",
-        LangInHttpLocaleCode: ["ko-KR"]
-    },
-    {
-        "Label": [
-            "vci8rd",
-            "Dutch"
-        ],
-        "Value": "nl",
-        "LabelByLang": "Nederlands",
-        "LabelInEnglish": "Dutch",
-        LangInHttpLocaleCode: ["nl-NL", "nl-BE"]
-    },
-    {
-        "Label": [
-            "2ybu7j",
-            "Norwegian"
-        ],
-        "Value": "no",
-        "LabelByLang": "Norsk",
-        "LabelInEnglish": "Norwegian",
-        LangInHttpLocaleCode: ["nb-NO", "nn-NO"]
-    },
-    {
-        "Label": [
-            "w92j07",
-            "Russian"
-        ],
-        "Value": "ru",
-        "LabelByLang": "Русский",
-        "LabelInEnglish": "Russian",
-        LangInHttpLocaleCode: ["ru-RU"]
-    },
-    {
-        "Label": [
-            "2tib5m",
-            "Swedish"
-        ],
-        "Value": "sv",
-        "LabelByLang": "Svenska",
-        "LabelInEnglish": "Swedish",
-        LangInHttpLocaleCode: ["sv-SE", "sv-FI"]
-    },
-    {
-        "Label": [
-            "ykganl",
-            "Danish"
-        ],
-        "Value": "da",
-        "LabelByLang": "Dansk",
-        "LabelInEnglish": "Danish",
-        LangInHttpLocaleCode: ["da-DK"]
-    },
-    {
-        "Label": [
-            "9tbbkt",
-            "Finnish"
-        ],
-        "Value": "fi",
-        "LabelByLang": "Suomi",
-        "LabelInEnglish": "Finnish",
-        LangInHttpLocaleCode: ["fi-FI"]
-    },
-    {
-        "Label": [
-            "vrfjnf",
-            "Italian"
-        ],
-        "Value": "it",
-        "LabelByLang": "Italiano",
-        "LabelInEnglish": "Italian",
-        LangInHttpLocaleCode: ["it-IT", "it-CH"]
-    },
-    {
-        "Label": [
-            "n94an4",
-            "Polish"
-        ],
-        "Value": "pl",
-        "LabelByLang": "Polski",
-        "LabelInEnglish": "Polish",
-        LangInHttpLocaleCode: ["pl-PL"]
-    },
-    {
-        "Label": [
-            "n24tes",
-            "Portuguese (Brazil)"
-        ],
-        "Value": "pt",
-        "LabelByLang": "Português (Brasil)",
-        "LabelInEnglish": "Portuguese (Brazil)",
-        LangInHttpLocaleCode: ["pt-BR"]
-    },
-    {
-        "Label": [
-            "a4jbpq",
-            "Czech"
-        ],
-        "Value": "cs",
-        "LabelByLang": "Čeština",
-        "LabelInEnglish": "Czech",
-        LangInHttpLocaleCode: ["cs-CZ"]
-    },
-    {
-        "Label": [
-            "ediql2",
-            "Hungarian"
-        ],
-        "Value": "hu",
-        "LabelByLang": "Magyar",
-        "LabelInEnglish": "Hungarian",
-        LangInHttpLocaleCode: ["hu-HU"]
-    },
-    {
-        "Label": [
-            "2lhcqwp",
-            "Turkish"
-        ],
-        "Value": "tr",
-        "LabelByLang": "Türkçe",
-        "LabelInEnglish": "Turkish",
-        LangInHttpLocaleCode: ["tr-TR"]
-    },
-    {
-        "Label": [
-            "2lhqqwp",
-            "Indonesian"
-        ],
-        "Value": "id",
-        "LabelByLang": "Bahasa Indonesia",
-        "LabelInEnglish": "Indonesian",
-        LangInHttpLocaleCode: ["id-ID"]
-    },
-    {
-        "Label": [
-            "2lehqwp",
-            "Vietnamese"
-        ],
-        "Value": "vi",
-        "LabelByLang": "Tiếng Việt",
-        "LabelInEnglish": "Vietnamese",
-        LangInHttpLocaleCode: ["vi-VN"]
-    },
-    {
-        "Label": [
-            "2lhqwwp",
-            "Thai"
-        ],
-        "Value": "th",
-        "LabelByLang": "ภาษาไทย",
-        "LabelInEnglish": "Thai",
-        LangInHttpLocaleCode: ["th-TH"]
-    },
-    {
-        "Label": [
-            "2lhqqwqp",
-            "Malay"
-        ],
-        "Value": "ms",
-        "LabelByLang": "Bahasa Melayu",
-        "LabelInEnglish": "Malay",
-        LangInHttpLocaleCode: ["ms-MY"]
-    }
-].map(x => {
-    if (!x.LangInExplicitURL) {
-        x.LangInExplicitURL = x.Value;
-    }
-    return x;
-})
+  {
+    langInHttpLocaleCode: ['en-US', 'en-GB', 'en-AU', 'en-CA', 'en-NZ', 'en-ZA'],
+    label: ['f7akol', '英语'],
+    labelByLang: 'English',
+    value: 'en',
+    LangInExplicitURL: 'en',
+    labelInEnglish: 'English',
+  },
+  {
+    langInHttpLocaleCode: ['zh-cn', 'zh-sg', 'zh-hans'],
+    label: ['spdh98', '简体中文'],
+    labelByLang: '简体中文',
+    value: 'zh',
+    LangInExplicitURL: 'cn',
+    labelInEnglish: 'Simplified Chinese',
+  },
+  {
+    langInHttpLocaleCode: ['zh-hk', 'zh-tw', 'zh-mo', 'zh-my'],
+    label: ['7dm0d8', '繁体中文'],
+    labelByLang: '繁體中文',
+    value: 'zh-TW',
+    LangInExplicitURL: 'hk',
+    labelInEnglish: 'Traditional Chinese',
+  },
+  {
+    label: ['aj3nhd', '德语'],
+    labelByLang: 'Deutsch',
+    value: 'de',
+    labelInEnglish: 'German',
+    langInHttpLocaleCode: ['de-DE', 'de-AT', 'de-CH', 'de-LU', 'de-LI'],
+  },
+  {
+    label: ['d5x1rl', '西班牙语'],
+    value: 'es',
+    labelByLang: 'Español',
+    labelInEnglish: 'Spanish',
+    langInHttpLocaleCode: [
+      'es-ES',
+      'es-AR',
+      'es-BO',
+      'es-CL',
+      'es-CO',
+      'es-CR',
+      'es-DO',
+      'es-EC',
+      'es-GT',
+      'es-HN',
+      'es-MX',
+      'es-NI',
+      'es-PA',
+      'es-PE',
+      'es-PR',
+      'es-PY',
+      'es-SV',
+      'es-UY',
+      'es-VE',
+    ],
+  },
+  {
+    label: ['o1umzi', '法语'],
+    value: 'fr',
+    labelByLang: 'Français',
+    labelInEnglish: 'French',
+    langInHttpLocaleCode: ['fr-FR', 'fr-BE', 'fr-CA', 'fr-CH', 'fr-LU'],
+  },
+  {
+    label: ['1jj0ri', '日语'],
+    value: 'ja',
+    labelByLang: '日本語',
+    labelInEnglish: 'Japanese',
+    langInHttpLocaleCode: ['ja-JP'],
+  },
+  {
+    label: ['5ggegx', '韩语'],
+    value: 'ko',
+    labelByLang: '한국어',
+    labelInEnglish: 'Korean',
+    langInHttpLocaleCode: ['ko-KR'],
+  },
+  {
+    label: ['vci8rd', '马来西亚语'],
+    value: 'ms',
+    labelByLang: 'Nederlands',
+    labelInEnglish: 'Dutch',
+    langInHttpLocaleCode: ['nl-NL', 'nl-BE'],
+  },
+  {
+    label: ['w92j07', '俄语'],
+    value: 'ru',
+    labelByLang: 'Русский',
+    labelInEnglish: 'Russian',
+    langInHttpLocaleCode: ['ru-RU'],
+  },
+
+  {
+    label: ['vrfjnf', '意大利语'],
+    value: 'it',
+    labelByLang: 'Italiano',
+    labelInEnglish: 'Italian',
+    langInHttpLocaleCode: ['it-IT', 'it-CH'],
+  },
+  {
+    label: ['a4jbpq', '葡萄牙语'],
+    value: 'pt',
+    labelByLang: 'Čeština',
+    labelInEnglish: 'Czech',
+    langInHttpLocaleCode: ['cs-CZ'],
+  },
+  {
+    label: ['2lhcqwp', '土耳其语'],
+    value: 'tr',
+    labelByLang: 'Türkçe',
+    labelInEnglish: 'Turkish',
+    langInHttpLocaleCode: ['tr-TR'],
+  },
+  {
+    label: ['2lhqqwp', '印尼语'],
+    value: 'id',
+    labelByLang: 'Bahasa Indonesia',
+    labelInEnglish: 'Indonesian',
+    langInHttpLocaleCode: ['id-ID'],
+  },
+  {
+    label: ['2lehqwp', '越南语'],
+    value: 'vi',
+    labelByLang: 'Tiếng Việt',
+    labelInEnglish: 'Vietnamese',
+    langInHttpLocaleCode: ['vi-VN'],
+  },
+  {
+    label: ['2lhqwwp', '泰语'],
+    value: 'th',
+    labelByLang: 'ภาษาไทย',
+    labelInEnglish: 'Thai',
+    langInHttpLocaleCode: ['th-TH'],
+  },
+  {
+    label: ['2lhqqwqp', '马来西亚'],
+    value: 'ms',
+    labelByLang: 'Bahasa Melayu',
+    labelInEnglish: 'Malay',
+    langInHttpLocaleCode: ['ms-MY'],
+  },
+];
 
 export let useGetI18nLangList = () => {
-    return i18nItems;
-}
+  return i18nItems;
+};
 
 export default i18nItems;

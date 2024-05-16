@@ -17,13 +17,13 @@ export let InfoFn = (req: Request): RequestInfo => {
   let lang = req.headers[HEADER_X_LAF_LANG] as string;
   // get i18n item
   let findItem = i18nItems.find(item => {
-    if (item.Value === lang) {
+    if (item.value === lang) {
       return true;
     }
   });
   if (!findItem) {
     findItem = i18nItems[0];
-    lang = findItem.Value;
+    lang = findItem.value;
   }
   return {
     langItem: findItem,

@@ -10,10 +10,10 @@ import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import { NODE_ENV, PORT, LOG_FORMAT, ORIGIN, CREDENTIALS } from '@/config';
 import moment from 'moment';
-import { Routes } from '@interfaces/routes.interface';
-import { ErrorMiddleware } from '@middlewares/error.middleware';
+import { Routes } from '@/interfaces/routes.interface';
+import { ErrorMiddleware } from '@/middlewares/error.middleware';
 import migrateDB from './jobs/migrate-db';
-import { logger, stream } from '@utils/logger';
+import { logger, stream } from '@/utils/logger';
 import consumeTln from './jobs/consume-tln';
 const launchTime = new Date();
 

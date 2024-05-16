@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize';
 import { NODE_ENV, DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_DATABASE } from '@/config';
 import UserModelGenerator from '@/models/test.model';
-import { logger } from '@utils/logger';
+import { logger } from '@/utils/logger';
 
 export let newSeq = (databaseName: string): Sequelize.Sequelize => {
   return new Sequelize.Sequelize(databaseName, DB_USER, DB_PASSWORD, {
