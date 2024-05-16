@@ -242,8 +242,9 @@ import { AppInfoClz } from \"./types\"
                 fileName=LafTools-${crtVersion}-$platformName-minimal.zip
                 zip -q -r $fileName $subDir/* &> /dev/null
             else
+                cd $subDir
                 fileName=LafTools-${crtVersion}-$platformName-minimal.tar.gz
-                tar -zcf $fileName $subDir &> /dev/null
+                tar -zcf $fileName ./$subDirName &> /dev/null
             fi
             rm -rf $subDir
             mv $fileName ../../pkg
