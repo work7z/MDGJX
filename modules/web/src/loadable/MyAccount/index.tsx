@@ -224,10 +224,10 @@ function AuthenticationTitle() {
                             登录系统
                         </Title>
                         <Text c="dimmed" size="sm" ta="center" mt={5}>
-                            还没有建立新用户？{' '}
-                            <Link to='/settings/my-account?type=signup'>
-                                <Anchor size="sm" component="button">
-                                    免费注册
+                            提示密码不正确？{' '}
+                            <Link to={'/settings/my-account?type=find-pw'}>
+                                <Anchor component="button" size="sm">
+                                    找回密码
                                 </Anchor>
                             </Link>
                         </Text>
@@ -237,9 +237,9 @@ function AuthenticationTitle() {
                             <PasswordInput name='password' label="密码" placeholder="用户密码" mt="md" />
                             <Group justify="space-between" mt="lg">
                                 <Checkbox name='rememberMe' defaultChecked label="记住这台设备" />
-                                <Link to={'/settings/my-account?type=find-pw'}>
-                                    <Anchor component="button" size="sm">
-                                        忘记密码?
+                                <Link to='/settings/my-account?type=signup'>
+                                    <Anchor size="sm" component="button">
+                                        免费注册
                                     </Anchor>
                                 </Link>
                             </Group>

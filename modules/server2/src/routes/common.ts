@@ -55,7 +55,7 @@ export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass
       let userInfo: DisplayUserInfo | undefined = undefined;
       const elb3AuthStr = req.header(HEADER_X_LAF_TOKEN);
       const daoRef = await dao();
-      let verifySteps = [];
+      let verifySteps = ['1'];
       if (!_.isEmpty(elb3AuthStr)) {
         verifySteps.push('authstr:' + elb3AuthStr);
         try {
