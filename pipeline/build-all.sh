@@ -229,27 +229,32 @@ import { AppInfoClz } from \"./types\"
             cd $platformDistDir
             fileName=
             subDirName=LafTools-${crtVersion}-$platformName-minimal
-            subDir=$PWD/$subDirName
+            osPkgDir=$MDGJX_ROOT/dist/os-pkg
+            if [ ! -d $osPkgDir ]; then
+                mkdir -p $osPkgDir
+            fi
+            subDir=$osPkgDir/$subDirName
             echo "subdirname: $subDirName"
             echo "subdir: $subDir"
             if [ -d $subDir ]; then
                 rm -rf $subDir
             fi
+            pkgDir=$MDGJX_ROOT/dist/pkg
             mkdir -p $subDir
             mkdir -p $subDir/info
             cp -a * $subDir
+            cd $osPkgDir
             if [ $packageType == "zip" ]; then
                 fileName=LafTools-${crtVersion}-$platformName-minimal.zip
-                zip -q -r $fileName $subDir/* &> /dev/null
+                zip -q -r $fileName ./$subDirName &> /dev/null
             else
-                cd $subDir
                 fileName=LafTools-${crtVersion}-$platformName-minimal.tar.gz
                 tar -zcf $fileName ./$subDirName &> /dev/null
             fi
             rm -rf $subDir
-            mv $fileName ../../pkg
+            mv $fileName $pkgDir
             # do verify 
-            cd ../../pkg
+            cd $pkgDir
             echo "[I] verifying $fileName"
             if [ $packageType == "zip" ]; then
                 unzip -l $fileName &> /dev/null
