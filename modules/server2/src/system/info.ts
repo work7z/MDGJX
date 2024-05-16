@@ -1,5 +1,5 @@
 import { HEADER_X_LAF_LANG, HEADER_X_LAF_PLATFORM, HEADER_X_LAF_REGION, HEADER_X_LAF_VERSION } from '@/web2share-copy/server_constants';
-import i18nItems, { I18nItem } from '@/i18n/i18n-copy';
+import i18nItems, { I18nItem } from '@/i18n/i18n';
 import { Request } from 'express';
 
 export type RequestInfo = {

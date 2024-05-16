@@ -14,6 +14,7 @@ import { asyncHandler } from './AsyncHandler';
 import { S2Feedback, S2User } from '@/dao/model';
 import { getCommonHandlePass, sendRes } from './common';
 import { TLNResponse } from './translation/translateTools';
+import i18nItems from '@/i18n/i18n';
 
 export class TranslationRoute implements Routes {
   public router = Router();
@@ -42,6 +43,14 @@ export class TranslationRoute implements Routes {
           data: {
             result: 'hello, world',
           } satisfies TLNResponse,
+        });
+      }),
+    );
+    this.router.get(
+      '/tln/getI18nItems',
+      asyncHandler(async (req, res) => {
+        sendRes(res, {
+          data: i18nItems,
         });
       }),
     );

@@ -11,7 +11,7 @@ import { URL_RELEASE_GET_ALL, URL_RELEASE_GET_INFO, URL_RELEASE_GET_LATEST, URL_
 import path from 'path';
 import fs from 'fs';
 import { logger } from '@/utils/logger';
-import i18nItems from '@/i18n/i18n-copy';
+import i18nItems from '@/i18n/i18n';
 
 let usHost = 'http://betalaftools.codegen.cc:8080';
 let cnHost = usHost;

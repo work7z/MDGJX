@@ -5,7 +5,7 @@ import fs from 'fs';
 import _ from 'lodash';
 import translateTools from './translation/translateTools';
 import { logger } from '@/utils/logger';
-import i18nItems from '@/i18n/i18n-copy';
+import i18nItems from '@/i18n/i18n';
 
 test('run-translation-route', async () => {
   const res = await translateTools.translateText('你好这个是测试', 'zh', 'en');

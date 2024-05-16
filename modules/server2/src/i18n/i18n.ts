@@ -144,13 +144,6 @@ let i18nItems: I18nItem[] = [
     labelInEnglish: 'Thai',
     langInHttpLocaleCode: ['th-TH'],
   },
-  {
-    label: ['2lhqqwqp', '马来西亚'],
-    value: 'ms',
-    labelByLang: 'Bahasa Melayu',
-    labelInEnglish: 'Malay',
-    langInHttpLocaleCode: ['ms-MY'],
-  },
 ];
 
 export let useGetI18nLangList = () => {

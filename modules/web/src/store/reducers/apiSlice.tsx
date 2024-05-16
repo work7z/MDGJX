@@ -41,6 +41,14 @@ export type TLNRequest = {
 export type TLNResponse = {
   result: string
 }
+export type I18nItem = {
+  langInHttpLocaleCode?: string[];
+  label: string[];
+  labelByLang: string;
+  value: string;
+  labelInEnglish: string;
+  LangInExplicitURL?: string;
+};
 
 export let verifyResponse = (response: AsyncCreateResponse<any> | undefined): boolean => {
   if (!response || response.error) {
@@ -188,6 +196,19 @@ export const apiSlice = createApi({
         };
       },
     }),
+    tlnGetI18nItems: build.query<AsyncCreateResponse<I18nItem[]>, {}>({
+      query: (obj) => {
+        return {
+          method: "GET",
+          url: (
+            "/tln/getI18nItems"
+          ),
+          data: obj,
+        };
+      },
+    }),
+
+
 
   }),
 });

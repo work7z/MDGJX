@@ -15,6 +15,7 @@ import { TypeCaptchaResponse } from '@/web2share-copy/server_constants';
 import nodemailer from 'nodemailer';
 import { CommonHandlePass } from '@/routes/auth.route';
 import { logger } from '@/utils/logger';
+import { API_SERVER_URL } from '@/web2share-copy/api_constants';
 
 @Service()
 export class MailService {
@@ -27,7 +28,7 @@ export let sendVerificationCode = async (obj: { mailToAddr: string; sendToWho: s
   let { Dot } = p;
   let crtVerifCode = obj.verificationCode;
   let crtUserName = obj.sendToWho;
-  let crtMailTitle = `[LafTools] ${Dot('m1932', '{0} is Your Verification Code', crtVerifCode)}`;
+  let crtMailTitle = `[秒达|MDGJX] ${crtVerifCode + '是您的验证码' || Dot('m1932', '{0} is Your Verification Code', crtVerifCode)}`;
   let content =
     '<!DOCTYPE html>\n' +
     '<html>\n' +
@@ -35,20 +36,24 @@ export let sendVerificationCode = async (obj: { mailToAddr: string; sendToWho: s
     '  <meta charset="utf-8" />  \n' +
     '</head>\n' +
     '<body>\n' +
-    `    <p>Dear ${crtUserName},</p><br/>\n` +
+    `    <p>尊敬的用户 ${crtUserName},</p><br/>\n` +
     '\n' +
-    `    <p>${Dot(
-      'm23091',
-      'Thank you for using LafTools. To complete your request, please enter the following verification code in the application:',
-    )}</p>\n` +
+    `    <p>${
+      '感谢您使用秒达工具箱！本次请求所需填写的验证码如下：' ||
+      Dot('m23091', 'Thank you for using LafTools. To complete your request, please enter the following verification code in the application:')
+    }</p>\n` +
     '\n' +
     `      <div style=" font-size: 20px; color: #2672ec; margin: 27px 27px; ">${crtVerifCode}</div>\n  \n` +
     '\n' +
-    `    <p>${Dot('m2308', 'If you did not request this code, you can safely ignore this email.')}</p>\n` +
+    `    <p>${
+      '如果你没有请求此验证码，你可以安全地忽略这封邮件。' || Dot('m2308', 'If you did not request this code, you can safely ignore this email.')
+    }</p>\n` +
     '\n<p></p>' +
     '<div style="color:gray;font-size:12px;"><p></p>    ' +
-    '<p>Thanks and Regards,</p>\n' +
-    '    <p>LafTools Team (https://laftools.cn)</p></div>\n' +
+    '<p>此致敬礼</p>\n' +
+    '    <p>秒达工具箱 团队 (https://' +
+    API_SERVER_URL +
+    ')</p></div>\n' +
     '\n' +
     '</body>\n' +
     '</html>';

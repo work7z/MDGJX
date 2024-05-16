@@ -33,8 +33,10 @@ import UsersSlice from "./reducers/userSlice";
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import BigTextSlice from "./reducers/bigTextSlice";
 import ALL_NOCYCLE from "./nocycle";
+import StateSlice from "./reducers/stateSlice";
 
 const rootReducer = combineReducers({
+    state: StateSlice.reducer,
     api: apiSlice.reducer,
     settings: settingsSlice.reducer,
     memory: MemorySlice.reducer,

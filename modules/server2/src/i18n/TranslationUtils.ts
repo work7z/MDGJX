@@ -10,7 +10,7 @@ import { Request } from 'express';
 import path from 'path';
 import _ from 'lodash';
 import Qs from 'query-string';
-import i18nItems from './i18n-copy';
+import i18nItems from './i18n';
 import { existsSync, readFileSync } from 'fs';
 import { logger } from '@/utils/logger';
 export const LANG_EN_US = 'en_US';
