@@ -6,7 +6,7 @@ import { isDevEnv } from '../hooks/env';
 import _ from 'lodash';
 import { logger } from '@/utils/logger';
 
-const UPDATE_TIME_VERSION = '13'
+const UPDATE_TIME_VERSION = '14'
 
 // provide user model, including user id, name, email, phoneNumber, password, createdAt, updatedAt, deleteAt
 export class S2User extends Model<InferAttributes<S2User>, InferCreationAttributes<S2User>> {
