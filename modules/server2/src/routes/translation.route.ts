@@ -39,6 +39,7 @@ export class TranslationRoute implements Routes {
         }
         const r = await S2TranslationRecord.create({
           userId: user.id,
+          fromIP: req.ip,
           textCount: text.length,
           sourceLang: sourceLang,
           targetLang: targetLang,

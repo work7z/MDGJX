@@ -6,7 +6,7 @@ import { isDevEnv } from '../hooks/env';
 import _ from 'lodash';
 import { logger } from '@/utils/logger';
 
-const UPDATE_TIME_VERSION = '14'
+const UPDATE_TIME_VERSION = '15'
 
 // provide user model, including user id, name, email, phoneNumber, password, createdAt, updatedAt, deleteAt
 export class S2User extends Model<InferAttributes<S2User>, InferCreationAttributes<S2User>> {
@@ -33,6 +33,7 @@ export class S2TranslationRecord extends Model<InferAttributes<S2TranslationReco
     declare errorText: string; // it will be cleaned regualry in the background
     declare textCount: number;
     declare userId: number;
+    declare fromIP: string;
     declare createdAt: CreationOptional<Date> | null;
     declare updatedAt: CreationOptional<Date> | null;
     declare deleteAt: CreationOptional<Date> | null;
@@ -136,6 +137,10 @@ export default async (daoRef: DaoRef) => {
         cachedText: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        fromIP: {
+            type: DataTypes.STRING,
+            allowNull: true
         },
         sourceLang: {
             type: DataTypes.STRING,
