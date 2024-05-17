@@ -5,7 +5,8 @@ export default (props: { fn: any }) => {
     const JohanComponent: any = React.lazy(props.fn);
 
     return <React.Suspense fallback={
-        <LoadingView />
+        // <LoadingView />
+        ''
     } >
         <JohanComponent />
     </ React.Suspense >

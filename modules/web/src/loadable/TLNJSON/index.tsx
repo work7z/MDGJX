@@ -15,153 +15,93 @@ import { useClipboard } from "@mantine/hooks";
 import AlertUtils from "@/utils/AlertUtils";
 import Blink from "@/components/Blink";
 import { sleep } from "@/utils/CommonUtils";
+import CommonTLNBody, { TLNState } from "@/containers/CommonTLNBody";
 
 
 export default () => {
-    const rh = exportUtils.register('tlnjson', {
-        getDefaultStateFn: () => {
-            return {
-                sourceLang: 'zh',
-                targetLang: 'en',
-                inputJSON: '',
-                outputJSON: ''
-            }
-        },
-    })
-    const maxRows = 10
-    const clipboard = useClipboard({ timeout: 500 });
-    const [t_getResult] = apiSlice.useLazyTlnGetResultQuery({})
     const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})
-    const [translating, setTranslating] = useState(false)
-    if (!rh) return ''
-    return <Container  >
-        <form onSubmit={e => {
-            e.preventDefault()
-        }}>
-            <Card withBorder shadow="sm" radius="md" >
-                <Card.Section withBorder inheritPadding py="xs">
-                    <Group justify="center">
-                        <Text fw={500}>
-                            {translating ? <>正在翻译JSON中<Blink min={3} max={6} /></> : 'JSON格式翻译工具'}
-                        </Text>
-                    </Group>
-                </Card.Section>
 
-                <PanelWithSideBar main={
-                    <>
-                        <Group wrap='nowrap'>
-                            <Textarea
-                                w={'100%'}
-                                placeholder="请将需要翻译的JSON文本粘贴到这里"
-                                label="JSON输入"
-                                autosize
-                                resize='both'
-                                minRows={maxRows}
-                                maxRows={maxRows}
-                                {...rh.bindOnChange('inputJSON')}
-                                className="overflow-auto"
-                            />
-                        </Group>
+    return (
+        <CommonTLNBody
+            handleTranslate={async (state: TLNState) => {
+                const waitArr: Promise<any>[] = []
+                // modify source
+                function beforeTranslate(value) {
+                    return value;
+                }
 
-                        <Group mt={10} wrap='nowrap' justify="space-between">
-                            <Group gap={7}>
-                                <ControlBar actions={[
-                                    {
-                                        type: 'submit',
-                                        text: translating ? "取消翻译" : "开始翻译",
-                                        // loading: translating,
-                                        color: translating ? 'red' : undefined,
-                                        onClick: async () => {
-                                            if (translating) {
-                                                AlertUtils.alertWarn("已取消本次翻译操作")
-                                                setTranslating(false)
-                                                return;
-                                            }
-                                            setTranslating(true)
-                                            try {
-                                                await rh.checkLoginStatus()
-                                                const r = await t_sendReq({
-                                                    text: rh.state?.inputJSON || '',
-                                                    type: 'json',
-                                                    sourceLang: rh.state?.sourceLang + "",
-                                                    targetLang: rh.state?.targetLang + ""
-                                                })
-                                                const reqId = r.data?.data?.requestId
-                                                if (reqId) {
-                                                    for (; ;) {
-                                                        const r2 = await t_getResult({ requestId: reqId + '' })
-                                                        r2.data?.data?.result
-                                                        await sleep(1000)
-                                                    }
-                                                }
-                                            } catch (e) { throw e } finally {
-                                                setTranslating(false)
-                                            }
-                                        }
-                                    },
-                                    {
-                                        color: 'green',
-                                        text: '复制结果',
-                                        onClick: () => {
-                                            clipboard.copy(rh.state?.outputJSON || '无结果')
-                                            AlertUtils.alertSuccess('已复制到剪贴板')
-                                        }
-                                    },
-                                    {
-                                        color: 'gray',
-                                        text: '示例JSON',
-                                        onClick: () => {
-                                            rh.updateValue({
-                                                inputJSON: `{
+                // modify target
+                function afterTranslate(value) {
+                    return value;
+                }
+
+                // the entire translate logic created for the JSON that you passed
+                function translateEntireLogic(passedJSON, fn_translate) {
+                    // iterating the variable of which the type is array or object
+                    let fn_tran = (value, key, obj) => {
+                        if (_.isObject(value) || _.isArray(value)) {
+                            _.forEach(value, fn_tran)
+                            return;
+                        }
+                        waitArr.push((async () => {
+                            // fn_translate, that function is used as sending requests to CodeGen server
+                            let result = await fn_translate(
+                                beforeTranslate(value)
+                            )
+                            obj[key] = afterTranslate(result);
+
+                            if (_.isObjectLike(obj[key]) || _.isArray(obj[key])) {
+                            }
+                        })())
+
+                    }
+                    _.forEach(passedJSON, fn_tran)
+                }
+                let currentJSONVal = {}
+                const tmpKeyJson = 'TMP_KEY_JSON'
+                if (!window[tmpKeyJson]) {
+                    window[tmpKeyJson] = {}
+                }
+                try {
+                    eval(`window['${tmpKeyJson}']  = (${state?.inputJSON})`)
+                    currentJSONVal = window[tmpKeyJson]
+                } catch (e) {
+                    AlertUtils.alertErr('JSON格式错误，请检查您的输入是否正确')
+                    throw new Error('JSON格式错误')
+                }
+                translateEntireLogic(currentJSONVal, async (value) => {
+                    const r = await t_sendReq({
+                        text: value || '',
+                        type: 'text',
+                        sourceLang: state?.sourceLang + "",
+                        targetLang: state?.targetLang + ""
+                    })
+                    const result = r.data?.data?.result
+                    return result || '';
+                })
+                debugger;
+
+                for (let i = 0; i < waitArr.length; i++) {
+                    await waitArr[i]
+                }
+                return JSON.stringify(currentJSONVal, null, 4)
+            }}
+            id='json'
+            label='JSON'
+            example={
+
+                `{
     "hello": "你好",
     "world": "世界",
     "internal" : {
         "key": "深层次的key值",
-        "key2": "深层次的key值"
+        "key2": "深层次的key值",
+key3: {
+"a":"更多ceshimina123"
+}
     }
-}`})
-                                        }
-                                    },
-                                    {
-                                        color: 'gray',
-                                        text: '交换语言',
-                                        onClick: () => {
-                                            rh.updateValue({
-                                                sourceLang: rh.state?.targetLang,
-                                                targetLang: rh.state?.sourceLang
-                                            })
-                                        }
-                                    }
-                                ]}
-                                />
-                            </Group>
-                        </Group>
-
-                        <Group mt={10} wrap='nowrap'>
-                            <Textarea
-                                w={'100%'}
-                                label="JSON输出"
-                                placeholder="翻译后的文本将会显示在这里"
-                                autosize
-                                resize="both"
-                                minRows={maxRows}
-                                {...rh.bindOnChange('outputJSON')}
-                                maxRows={maxRows}
-                                name='outputJSON'
-                            />
-                        </Group>
-                    </>
-                } sidebar={
-                    <Group gap={7}>
-                        <I18nSelect
-                            {...rh.bindOnChange('sourceLang')}
-                            label={'源语言'} name='sourceLang' />
-                        <I18nSelect label="目标语言"
-                            {...rh.bindOnChange('targetLang')}
-                        />
-                    </Group>
-                } />
-            </Card>
-        </form>
-    </Container>
+}`
+            }
+        />
+    )
 }

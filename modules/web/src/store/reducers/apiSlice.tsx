@@ -186,22 +186,11 @@ export const apiSlice = createApi({
         };
       },
     }),
-    tlnSendRequest: build.query<AsyncCreateResponse<TLNRequestIdRes>, TLNRequest>({
+    tlnSendRequest: build.query<AsyncCreateResponse<TLNResponse>, TLNRequest>({
       query: (obj) => {
         return {
           method: "POST",
           url: "/tln/sendTLNRequest",
-          body: obj,
-        };
-      },
-    }),
-    tlnGetResult: build.query<AsyncCreateResponse<TLNResponse>, {
-      requestId: string
-    }>({
-      query: (obj) => {
-        return {
-          method: "POST",
-          url: "/tln/getTLNResult",
           body: obj,
         };
       },
