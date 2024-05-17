@@ -12,6 +12,9 @@ export type TLNRequest = {
   sourceLang: string;
   targetLang: string;
 };
+export type TLNRequestIdRes = {
+  requestId: string;
+};
 export type TLNResponse = {
   result: string;
 };

@@ -36,6 +36,7 @@ export type CommonHandlePass = {
 };
 
 export type DisplayUserInfo = {
+  id: number;
   name: string;
   email: string;
   createdAt: Date;
@@ -89,6 +90,7 @@ export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass
               if (tmpUserInfo && push.createTimestamp == tmpUserInfo.createdAt.getTime()) {
                 verifySteps.push('user-info-match');
                 userInfo = {
+                  id: tmpUserInfo.id,
                   name: tmpUserInfo.name,
                   email: tmpUserInfo.email,
                   createdAt: tmpUserInfo.createdAt,

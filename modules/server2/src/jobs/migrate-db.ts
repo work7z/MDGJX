@@ -55,6 +55,10 @@ export default async () => {
           createdAt: eachUser['CREATE_DATE'],
         });
       } else {
+        await S2User.upsert({
+          id: userID,
+          createdAt: eachUser['CREATE_DATE'],
+        });
         logger.debug('User already exists: ' + USER_NAME);
       }
     }

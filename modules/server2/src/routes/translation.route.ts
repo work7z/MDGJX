@@ -11,10 +11,11 @@ import { AsyncCreateResponse, HEADER_X_LAF_LANG, SignInCredentials, SysResponse,
 import { CaptchaService } from '@/services/captcha.service';
 import handleSignUp, { handleSignIn } from './auth/userAction';
 import { asyncHandler } from './AsyncHandler';
-import { S2Feedback, S2User } from '@/dao/model';
+import { S2Feedback, S2TranslationRecord, S2User } from '@/dao/model';
 import { getCommonHandlePass, sendRes } from './common';
-import { TLNResponse } from './translation/translateTools';
+import { TLNRequestIdRes, TLNResponse } from './translation/translateTools';
 import i18nItems from '@/i18n/i18n';
+import { randomUUID } from 'crypto';
 
 export class TranslationRoute implements Routes {
   public router = Router();
@@ -26,24 +27,38 @@ export class TranslationRoute implements Routes {
   }
 
   private initializeRoutes() {
-    this.router.post(
-      '/tln/handleText',
+    this.router.get(
+      '/tln/getTLNResultByReqID',
       asyncHandler(async (req, res) => {
+        let p = getCommonHandlePass(req, res);
+        const [user, errFn] = await p.verifyAuth();
+        if (!user) return errFn();
+        const requestId = 'id'; // TODO: get requestId from req
         sendRes(res, {
           data: {
-            result: 'hello, world',
-          } satisfies TLNResponse,
+            requestId: requestId,
+          } satisfies TLNRequestIdRes,
         });
       }),
     );
-    this.router.post(
-      '/tln/handleJSON',
+
+    this.router.get(
+      '/tln/getTLNResult',
       asyncHandler(async (req, res) => {
-        sendRes(res, {
-          data: {
-            result: 'hello, world',
-          } satisfies TLNResponse,
-        });
+        let p = getCommonHandlePass(req, res);
+        const [user, errFn] = await p.verifyAuth();
+        if (!user) return errFn();
+        let requestId = req.body.requestId;
+        const record = await S2TranslationRecord.findByPk(requestId);
+        if (record && record.userId === user.id) {
+          sendRes(res, {
+            data: {
+              result: record.processedText,
+            } satisfies TLNResponse,
+          });
+        } else {
+          throw new Error('invalid request');
+        }
       }),
     );
     this.router.get(
