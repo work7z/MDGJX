@@ -31,6 +31,7 @@ export type CommonHandlePass = {
   verifyAuth(): Promise<[DisplayUserInfo | undefined, () => void]>;
   Dot: DotType;
   Info: RequestInfo;
+  fromIP: string;
   getCookie: (name: string) => string;
   setCookie: (name: string, value: string) => void;
 };
@@ -50,6 +51,7 @@ export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass
   return {
     Dot,
     Info: info,
+    fromIP: req.ip,
     getCookie,
     setCookie,
     verifyAuth: async function () {

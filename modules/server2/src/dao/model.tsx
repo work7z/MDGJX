@@ -6,7 +6,20 @@ import { isDevEnv } from '../hooks/env';
 import _ from 'lodash';
 import { logger } from '@/utils/logger';
 
-const UPDATE_TIME_VERSION = '15'
+const UPDATE_TIME_VERSION = '18'
+
+export class S2SendMailVerifyCodeRecord extends Model<InferAttributes<S2SendMailVerifyCodeRecord>, InferCreationAttributes<S2SendMailVerifyCodeRecord>> {
+    declare id?: number;
+    declare randomID: string;
+    declare mailaddr: string;
+    declare verifyCode: string;
+    declare newPassword?: string
+    declare fromIP: string;
+    declare status: number;
+    declare createdAt: CreationOptional<Date> | null;
+    declare updatedAt: CreationOptional<Date> | null;
+    declare deleteAt: CreationOptional<Date> | null;
+}
 
 // provide user model, including user id, name, email, phoneNumber, password, createdAt, updatedAt, deleteAt
 export class S2User extends Model<InferAttributes<S2User>, InferCreationAttributes<S2User>> {
@@ -16,6 +29,7 @@ export class S2User extends Model<InferAttributes<S2User>, InferCreationAttribut
     declare phoneNumber: string;
     declare verified: number; // 1->verified, 0->not verified
     declare password: string; // md5 + salt
+    declare fromIP: string;
     declare createdAt: CreationOptional<Date> | null;
     declare updatedAt: CreationOptional<Date> | null;
     declare deleteAt: CreationOptional<Date> | null;
@@ -112,6 +126,57 @@ export default async (daoRef: DaoRef) => {
     // define model for s2
     let db_s2 = daoRef.db_s2
 
+    await S2SendMailVerifyCodeRecord.init({
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        randomID: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
+        newPassword: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        status: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        mailaddr: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        verifyCode: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        fromIP: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        deleteAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        }
+    }, {
+        sequelize: db_s2,
+        modelName: 's2_send_mail_verify_code_record',
+        timestamps: true,
+        paranoid: true,
+        underscored: true
+    })
+
     await S2TranslationRecord.init({
         id: {
             type: DataTypes.INTEGER,
@@ -183,6 +248,10 @@ export default async (daoRef: DaoRef) => {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
+        },
+        fromIP: {
+            type: DataTypes.STRING,
+            allowNull: true
         },
         name: {
             type: DataTypes.STRING,

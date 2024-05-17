@@ -13,9 +13,9 @@ import { readFileSync } from 'fs';
 import dao from '@/dao';
 import { TypeCaptchaResponse } from '@/web2share-copy/server_constants';
 import nodemailer from 'nodemailer';
-import { CommonHandlePass } from '@/routes/auth.route';
 import { logger } from '@/utils/logger';
 import { API_SERVER_URL } from '@/web2share-copy/api_constants';
+import { CommonHandlePass } from '@/routes/common';
 
 @Service()
 export class MailService {
