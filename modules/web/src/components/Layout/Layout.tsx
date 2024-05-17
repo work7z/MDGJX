@@ -22,6 +22,7 @@ import {
 } from "react-router-dom";
 import React from 'react';
 import LoadingView from '../LoadingView';
+import { FooterCentered } from './Footer';
 
 export function GeneralLayout(props) {
     const mdParams = useMDParams()
@@ -36,7 +37,7 @@ export function GeneralLayout(props) {
 
         bodyJSX = <React.Suspense fallback={
             <LoadingView />
-        }>
+        } >
             <JohanComponent />
 
         </ React.Suspense >
@@ -67,7 +68,9 @@ export function GeneralLayout(props) {
             <AppShell.Main >
                 {bodyJSX}
                 <BackToTop />
+
             </AppShell.Main>
+            <FooterCentered />
         </AppShell>
     );
 }

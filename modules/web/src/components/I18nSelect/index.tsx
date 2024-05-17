@@ -9,7 +9,6 @@ export default (props: Partial<SelectProps> & {
     return (
         <Select
             name={props.name}
-            label={props.label}
             placeholder={"请选择" + props.label}
             data={langData.map(x => {
                 return {
@@ -17,8 +16,9 @@ export default (props: Partial<SelectProps> & {
                     value: x.value
                 }
             }) || []}
-            searchable
+            // searchable
             defaultValue={props.defaultValue}
+            {...props}
         />
     )
 }

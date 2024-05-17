@@ -24,6 +24,7 @@ export default function GetAppInfo() {
         // link: 'solinux.com',
         // link: '1sGET.com',
         // link: 'tofunc.com',
-        githubRepo: 'https://github.com/work7z/MDGJX'
+        githubRepo: 'https://github.com/work7z/MDGJX',
+        needDoBeiAn: true
     }
 }
