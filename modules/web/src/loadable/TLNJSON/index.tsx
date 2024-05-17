@@ -12,57 +12,9 @@ import _ from "lodash";
 import { FN_GetDispatch } from "@/store/nocycle";
 import StateSlice from "@/store/reducers/stateSlice";
 
-export type ActionFn<T> = (state: T, helpers: {
-    updateState: (newState: Partial<T>) => void
-}) => void
-export type ActionMap<T> = {
-    [key: string]: ActionFn<T>
-}
-export type ROptions<T> = {
-    getDefaultStateFn: () => T,
-    actions: ActionMap<T>
-}
-export class RHelper<T> {
-    keyname: string = ''
-    state: T | null = null
-    constructor(keyname: string, state: T) {
-        this.keyname = keyname
-        this.state = state
-    }
-    bindOnChange = (key: keyof T) => {
-        return {
-            name: key,
-            value: this.state ? this.state[key] : '',
-            onChange: (e: any) => {
-                FN_GetDispatch()(StateSlice.actions.updateKvSessionMap({
-                    keyname: this.keyname,
-                    keystate: {
-                        [key]: e
-                    }
-                }))
-            }
-        }
-    }
-}
-function register<T>(name: string, options: ROptions<T>): RHelper<T> | null {
-    let crtMap = exportUtils.useSelector(v => v.state.kvSessionMap[name])
-    useEffect(() => {
-        const emptyOrNot = _.isEmpty(crtMap)
-        if (emptyOrNot) {
-            FN_GetDispatch()(StateSlice.actions.updateKvSessionMap({
-                keyname: name,
-                keystate: options.getDefaultStateFn()
-            }))
-        }
-    }, [_.isEmpty(crtMap)])
-    if (_.isEmpty(crtMap)) {
-        return null;
-    }
-    return new RHelper<T>(name, crtMap as T)
-}
 
 export default () => {
-    const rh = register('tlnjson', {
+    const rh = exportUtils.register('tlnjson', {
         getDefaultStateFn: () => {
             return {
                 sourceLang: 'zh',
@@ -102,7 +54,7 @@ export default () => {
                                 resize='both'
                                 minRows={maxRows}
                                 maxRows={maxRows}
-                                name='inputJSON'
+                                {...rh.bindOnChange('inputJSON')}
                                 className="overflow-auto"
                             />
                         </Group>
@@ -120,8 +72,25 @@ export default () => {
                                     },
                                     {
                                         color: 'gray',
-                                        text: '示例JSON'
+                                        text: '示例JSON',
+                                        onClick: () => {
+                                            rh.updateValue({
+                                                inputJSON: `{
+    "hello": "你好",
+    "world": "世界"
+}`})
+                                        }
                                     },
+                                    {
+                                        color: 'gray',
+                                        text: '交换语言',
+                                        onClick: () => {
+                                            rh.updateValue({
+                                                sourceLang: rh.state?.targetLang,
+                                                targetLang: rh.state?.sourceLang
+                                            })
+                                        }
+                                    }
                                 ]}
                                 />
                             </Group>
@@ -136,6 +105,7 @@ export default () => {
                                 autosize
                                 resize="both"
                                 minRows={maxRows}
+                                {...rh.bindOnChange('outputJSON')}
                                 maxRows={maxRows}
                                 name='outputJSON'
                             />
