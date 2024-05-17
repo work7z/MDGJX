@@ -1,6 +1,7 @@
 import dao from '@/dao';
 import { S2GiftCard, S2User, S2UserHasGiftCardList, S2UserPurchaseItem } from '@/dao/model';
 import { logger } from '@/utils/logger';
+import { match } from 'assert';
 import _ from 'lodash';
 import moment from 'moment';
 
@@ -52,13 +53,19 @@ export default async () => {
           email: eachUser['EMAIL'],
           password: USER_PW_MD5,
           phoneNumber: '', // TODO: provide phoneNumber verification method
-          createdAt: eachUser['CREATE_DATE'],
+          createdAt: eachUser['CREATE_TIME'],
         });
       } else {
-        await S2User.upsert({
-          id: userID,
-          createdAt: eachUser['CREATE_DATE'],
-        });
+        await S2User.update(
+          {
+            createdAt: eachUser['CREATE_TIME'],
+          },
+          {
+            where: {
+              name: USER_NAME,
+            },
+          },
+        );
         logger.debug('User already exists: ' + USER_NAME);
       }
     }
