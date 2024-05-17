@@ -105,10 +105,7 @@ function AuthenticationTitle() {
                         找回密码
                     </Title>
                     <Text c="dimmed" size="sm" ta="center" mt={5}>
-                        如需申诉请写信至邮箱{' '}
-                        <Anchor size="sm" component="button">
-                            work7z@outlook.com
-                        </Anchor>
+                        人工协助请写信至邮箱 work7z@outlook.com
                     </Text>
                     <Text c="dimmed" size="sm" ta="center" mt={5}>
                         想起密码了？{' '}
@@ -204,7 +201,6 @@ function AuthenticationTitle() {
                             let form = e.target as HTMLFormElement
                             let data = new FormData(form)
                             let rm = data.get("rememberMe") === 'on'
-                            debugger;
                             let r = await t_signIn({
                                 rememberMe: rm ? true : false,
                                 userName: data.get('userName') as string,

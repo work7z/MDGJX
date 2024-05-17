@@ -35,12 +35,16 @@ export type AsyncCreateResponse<T> = {
 
 export type TLNRequest = {
   text: string;
+  type: string;
   sourceLang: string;
   targetLang: string;
 };
 export type TLNResponse = {
   result: string
 }
+export type TLNRequestIdRes = {
+  requestId: string;
+};
 export type I18nItem = {
   langInHttpLocaleCode?: string[];
   label: string[];
@@ -84,11 +88,19 @@ export const apiSlice = createApi({
       if (result) {
         let error = result.error;
         if (error == '401') {
+          const pre_hasSignIn = FN_GetState().users.hasSignIn
           FN_GetDispatch()(
             UsersSlice.actions.updateOneOfParamState({
               hasSignIn: false,
             })
           )
+          if (pre_hasSignIn) {
+            AlertUtils.alertErr("登录已过期，请重新登录")
+          }
+          // const goTo = '/settings/my-account'
+          // if (location.href !== goTo) {
+          //   location.href = goTo
+          // }
           return false;
         }
       }
@@ -178,20 +190,22 @@ export const apiSlice = createApi({
         };
       },
     }),
-    tlnHandleText: build.query<AsyncCreateResponse<TLNResponse>, TLNRequest>({
+    tlnSendRequest: build.query<AsyncCreateResponse<TLNResponse>, TLNRequest>({
       query: (obj) => {
         return {
           method: "POST",
-          url: "/tln/handleText",
+          url: "/tln/sendTLNRequest",
           data: obj,
         };
       },
     }),
-    tlnHandleJSON: build.query<AsyncCreateResponse<TLNResponse>, TLNRequest>({
+    tlnGetResult: build.query<AsyncCreateResponse<TLNRequestIdRes>, {
+      requestId: string
+    }>({
       query: (obj) => {
         return {
-          method: "POST",
-          url: "/tln/handleJSON",
+          method: "GET",
+          url: "/tln/getTLNResult",
           data: obj,
         };
       },
@@ -207,9 +221,6 @@ export const apiSlice = createApi({
         };
       },
     }),
-
-
-
   }),
 });
 

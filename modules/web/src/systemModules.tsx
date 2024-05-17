@@ -44,6 +44,8 @@ export const redirectLinks: RedirectLinkItem[] = [
     },
 ]
 
+export const Fn_MyAccount = () => import('./loadable/MyAccount/index.tsx')
+
 export const systemModulesList: SystemModuleItem[] = [
     {
         id: 'tools',
@@ -105,7 +107,7 @@ export const systemModulesList: SystemModuleItem[] = [
             {
                 name: '我的账号',
                 id: 'my-account',
-                bodyFn: () => import('./loadable/MyAccount/index.tsx')
+                bodyFn: Fn_MyAccount
             },
             {
                 name: '常见问题',

@@ -9,24 +9,8 @@ export const TLN_STATUS_OBJ: {
 };
 
 export default async () => {
-  // keep consuming the tln in DB
-  // logger.info('Consume TLN job started');
-  // let lastCtn = -1;
+  logger.info('Consume TLN job started');
   // while (true) {
-  //   let currentCtn = TLN_STATUS_OBJ.CTN;
-  //   if (lastCtn == currentCtn) {
-  //     await sleep(50);
-  //   }
-  //   try {
-  //     const allUnprocessedRecord = await S2TranslationRecord.findAll({
-  //       where: {
-  //         status: 0,
-  //       },
-  //     });
-  //     lastCtn = TLN_STATUS_OBJ.CTN;
-  //   } catch (e) {
-  //     logger.error(e);
-  //   }
-  //   await sleep(50);
+  //   //
   // }
 };

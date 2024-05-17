@@ -1,11 +1,10 @@
 import { Anchor, Group, ActionIcon, rem } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
-import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './Footer.module.css';
 import GetAppInfo from '@/AppInfo';
 
 const links = [
-    { link: GetAppInfo().githubRepo, label: '关于软件' },
+    { link: GetAppInfo().githubRepo, label: '关于' + GetAppInfo().name },
     { link: 'https://beian.miit.gov.cn/', label: '粤ICP备2022042390号' },
     { link: '/settings/feedback', label: '联系我们' },
     { link: '/settings/terms-of-conditions', label: '使用协议' },
@@ -30,11 +29,8 @@ export function FooterCentered() {
 
     return (
         <div className={classes.footer}>
-            <div className={classes.inner}>
-                <MantineLogo size={28} />
-
+            <div className={classes.inner} >
                 <Group className={classes.links}>{items}</Group>
-                <Group></Group>
             </div>
         </div>
     );

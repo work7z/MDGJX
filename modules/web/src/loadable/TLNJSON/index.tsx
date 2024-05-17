@@ -11,6 +11,8 @@ import { stat } from "fs";
 import _ from "lodash";
 import { FN_GetDispatch } from "@/store/nocycle";
 import StateSlice from "@/store/reducers/stateSlice";
+import { useClipboard } from "@mantine/hooks";
+import AlertUtils from "@/utils/AlertUtils";
 
 
 export default () => {
@@ -23,13 +25,11 @@ export default () => {
                 outputJSON: ''
             }
         },
-        actions: {
-            k: (state, helpers) => {
-                console.log(state)
-            }
-        }
     })
     const maxRows = 10
+    const clipboard = useClipboard({ timeout: 500 });
+    const [t_getResult] = apiSlice.useLazyTlnGetResultQuery({})
+    const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})
     if (!rh) return ''
     return <Container >
         <form onSubmit={e => {
@@ -64,11 +64,24 @@ export default () => {
                                 <ControlBar actions={[
                                     {
                                         type: 'submit',
-                                        text: "开始翻译"
+                                        text: "开始翻译",
+                                        onClick: async () => {
+                                            await rh.checkLoginStatus()
+                                            t_sendReq({
+                                                text: rh.state?.inputJSON || '',
+                                                type: 'json',
+                                                sourceLang: rh.state?.sourceLang + "",
+                                                targetLang: rh.state?.targetLang + ""
+                                            })
+                                        }
                                     },
                                     {
                                         color: 'green',
-                                        text: '复制结果'
+                                        text: '复制结果',
+                                        onClick: () => {
+                                            clipboard.copy(rh.state?.outputJSON || '无结果')
+                                            AlertUtils.alertSuccess('已复制到剪贴板')
+                                        }
                                     },
                                     {
                                         color: 'gray',
@@ -77,7 +90,11 @@ export default () => {
                                             rh.updateValue({
                                                 inputJSON: `{
     "hello": "你好",
-    "world": "世界"
+    "world": "世界",
+    "internal" : {
+        "key": "深层次的key值",
+        "key2": "深层次的key值"
+    }
 }`})
                                         }
                                     },

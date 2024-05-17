@@ -13,7 +13,7 @@ import handleSignUp, { handleSignIn } from './auth/userAction';
 import { asyncHandler } from './AsyncHandler';
 import { S2Feedback, S2TranslationRecord, S2User } from '@/dao/model';
 import { getCommonHandlePass, sendRes } from './common';
-import { TLNRequestIdRes, TLNResponse } from './translation/translateTools';
+import { TLNRequest, TLNRequestIdRes, TLNResponse } from './translation/translateTools';
 import i18nItems from '@/i18n/i18n';
 import { randomUUID } from 'crypto';
 
@@ -27,13 +27,22 @@ export class TranslationRoute implements Routes {
   }
 
   private initializeRoutes() {
-    this.router.get(
-      '/tln/getTLNResultByReqID',
+    this.router.post(
+      '/tln/sendTLNRequest',
       asyncHandler(async (req, res) => {
         let p = getCommonHandlePass(req, res);
         const [user, errFn] = await p.verifyAuth();
         if (!user) return errFn();
-        const requestId = 'id'; // TODO: get requestId from req
+        const { text = '', type, sourceLang, targetLang } = req.body as TLNRequest;
+        const r = await S2TranslationRecord.create({
+          userId: user.id,
+          cachedText: text,
+          textCount: text.length,
+          sourceLang: sourceLang,
+          targetLang: targetLang,
+          processedText: '',
+        });
+        const requestId = r.id + '';
         sendRes(res, {
           data: {
             requestId: requestId,
