@@ -16,6 +16,8 @@ import { getCommonHandlePass, sendRes } from './common';
 import { randomUUID } from 'crypto';
 import { logger } from '@/utils/logger';
 import { MailService, sendVerificationCode } from '@/services/mail.service';
+import { hashPW } from './auth/op';
+import { Op } from 'sequelize';
 
 export type DisplayUserInfo = {
   name: string;
@@ -27,6 +29,13 @@ export type FindPwReq = {
   email: string;
   password: string;
   confirmPassword: string;
+};
+export type TellMeVCode4FindPwReq = {
+  email: string;
+  vcode: string;
+};
+export type TellMeVCodeRes = {
+  verified: boolean;
 };
 export type FindPwRes = {
   data: {};
@@ -59,10 +68,52 @@ export class AuthRoute implements Routes {
       }),
     );
     this.router.post(
-      '/auth/findpw',
+      '/auth/tellMeVCode4FindPw',
       asyncHandler(async (req, res) => {
         let p = getCommonHandlePass(req, res);
-        let { email, password, confirmPassword } = req.body;
+        let { email, vcode } = req.body as TellMeVCode4FindPwReq;
+        let r = await S2SendMailVerifyCodeRecord.findAll({
+          where: {
+            mailaddr: email,
+            status: 1,
+            createdAt: { [Op.gt]: new Date(new Date().getTime() - 30 * 60 * 1000) },
+          },
+        });
+        let resVal: TellMeVCodeRes = { verified: false };
+        if (r) {
+          for (let eachR of r) {
+            if (eachR.verifyCode === vcode && eachR.triedTimes < 10) {
+              resVal.verified = true;
+              await S2User.update(
+                {
+                  password: hashPW(eachR.newPassword),
+                },
+                {
+                  where: {
+                    email: email,
+                  },
+                },
+              );
+              break;
+            } else {
+              eachR.triedTimes++;
+              await eachR.save();
+            }
+          }
+
+          sendRes(res, {
+            data: resVal,
+          });
+        } else {
+          throw new Error('验证码不匹配，请重试或者重新获取验证码');
+        }
+      }),
+    );
+    this.router.post(
+      '/auth/mailFindPw',
+      asyncHandler(async (req, res) => {
+        let p = getCommonHandlePass(req, res);
+        let { email, password, confirmPassword } = req.body as FindPwReq;
         const result = {
           sentAt: new Date().getTime(),
         };
@@ -74,64 +125,71 @@ export class AuthRoute implements Routes {
           });
           return;
         }
-        if (userInfo) {
-          let randomID = randomUUID().toString();
-          // check if this email has created more than 5 times in 1 day
-          let count = await S2SendMailVerifyCodeRecord.count({
-            where: {
-              mailaddr: email,
-              createdAt: {
-                $gt: new Date(new Date().getTime() - 24 * 60 * 60 * 1000),
+        try {
+          if (userInfo) {
+            let randomID = randomUUID().toString();
+            // check if this email has created more than 5 times in 1 day
+            let count = await S2SendMailVerifyCodeRecord.count({
+              where: {
+                mailaddr: email,
+                createdAt: {
+                  [Op.gt]: new Date(new Date().getTime() - 24 * 60 * 60 * 1000),
+                },
               },
-            },
-          });
-          if (count > 5) {
-            logger.error(email + 'has created more than 5 times in 1 day');
-            sendRes(res, {
-              data: result,
             });
-            return;
-          }
-          // check if this fromIP has created more than 5 times in 1 day
-          count = await S2SendMailVerifyCodeRecord.count({
-            where: {
+            if (count > 5) {
+              logger.error(email + 'has created more than 5 times in 1 day');
+              sendRes(res, {
+                data: result,
+              });
+              return;
+            }
+            // check if this fromIP has created more than 5 times in 1 day
+            count = await S2SendMailVerifyCodeRecord.count({
+              where: {
+                fromIP: p.fromIP,
+                createdAt: {
+                  [Op.gt]: new Date(new Date().getTime() - 24 * 60 * 60 * 1000),
+                },
+              },
+            });
+            if (count > 20) {
+              logger.error(email + ' / ' + p.fromIP + 'has created more than 20 times in 1 day');
+              sendRes(res, {
+                data: result,
+              });
+              return;
+            }
+            // 随机6位数字
+            let vCode = Math.floor(Math.random() * 1000000 + 123456)
+              .toString()
+              .substring(0, 6);
+            await S2SendMailVerifyCodeRecord.create({
+              randomID: randomUUID().toString(),
               fromIP: p.fromIP,
-              createdAt: {
-                $gt: new Date(new Date().getTime() - 24 * 60 * 60 * 1000),
-              },
-            },
-          });
-          if (count > 20) {
-            logger.error(email + ' / ' + p.fromIP + 'has created more than 20 times in 1 day');
-            sendRes(res, {
-              data: result,
+              mailaddr: email,
+              verifyCode: vCode,
+              status: 1,
+              newPassword: password,
+              triedTimes: 0,
             });
-            return;
+            sendVerificationCode(
+              {
+                mailToAddr: email,
+                sendToWho: userInfo.name,
+                verificationCode: vCode,
+              },
+              {
+                Dot: DotFnDefault(),
+              },
+            );
           }
-          // 随机6位数字
-          let vCode = Math.floor(Math.random() * 1000000).toString();
-          await S2SendMailVerifyCodeRecord.create({
-            randomID: '',
-            fromIP: p.fromIP,
-            mailaddr: email,
-            verifyCode: randomID,
-            status: 1,
-            newPassword: password,
+          sendRes(res, {
+            data: result,
           });
-          sendVerificationCode(
-            {
-              mailToAddr: 'work7z@outlook.com',
-              sendToWho: userInfo.name,
-              verificationCode: vCode,
-            },
-            {
-              Dot: DotFnDefault(),
-            },
-          );
+        } catch (e) {
+          logger.error(e);
         }
-        sendRes(res, {
-          data: result,
-        });
       }),
     );
     this.router.get(

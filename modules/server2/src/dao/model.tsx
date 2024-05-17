@@ -6,7 +6,7 @@ import { isDevEnv } from '../hooks/env';
 import _ from 'lodash';
 import { logger } from '@/utils/logger';
 
-const UPDATE_TIME_VERSION = '18'
+const UPDATE_TIME_VERSION = '19'
 
 export class S2SendMailVerifyCodeRecord extends Model<InferAttributes<S2SendMailVerifyCodeRecord>, InferCreationAttributes<S2SendMailVerifyCodeRecord>> {
     declare id?: number;
@@ -16,6 +16,7 @@ export class S2SendMailVerifyCodeRecord extends Model<InferAttributes<S2SendMail
     declare newPassword?: string
     declare fromIP: string;
     declare status: number;
+    declare triedTimes: number;
     declare createdAt: CreationOptional<Date> | null;
     declare updatedAt: CreationOptional<Date> | null;
     declare deleteAt: CreationOptional<Date> | null;
@@ -127,6 +128,10 @@ export default async (daoRef: DaoRef) => {
     let db_s2 = daoRef.db_s2
 
     await S2SendMailVerifyCodeRecord.init({
+        triedTimes: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,

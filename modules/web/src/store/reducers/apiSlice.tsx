@@ -20,6 +20,21 @@ export let withPrefixOpenAPI = (url: string): string => {
   return "/open" + url;
 };
 
+export type FindPwReq = {
+  email: string;
+  password: string;
+  confirmPassword: string;
+};
+export type TellMeVCode4FindPwReq = {
+  email: string;
+  vcode: string;
+};
+export type TellMeVCodeRes = {
+  verified: boolean;
+};
+export type FindPwRes = {
+  data: {};
+};
 
 const URL_PREFIX_LOCAL = '/v3'
 export type SignInCredentials = {
@@ -177,11 +192,20 @@ export const apiSlice = createApi({
         };
       },
     }),
-    findPw: build.query<AsyncCreateResponse<any>, { username: string; password: string }>({
+    mailFindPw: build.query<AsyncCreateResponse<FindPwRes>, FindPwReq>({
       query: (obj) => {
         return {
           method: "POST",
-          url: URL_AUTH_GET_FINDPW,
+          url: "/auth/mailFindPw",
+          body: obj,
+        };
+      },
+    }),
+    tellMeVCode4FindPw: build.query<AsyncCreateResponse<TellMeVCodeRes>, TellMeVCode4FindPwReq>({
+      query: (obj) => {
+        return {
+          method: "POST",
+          url: "/auth/tellMeVCode4FindPw",
           body: obj,
         };
       },
