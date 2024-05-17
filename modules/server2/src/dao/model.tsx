@@ -4,8 +4,23 @@ import {
 import { DaoRef } from './index'
 import { isDevEnv } from '../hooks/env';
 import _ from 'lodash';
-import { UPDATE_TIME_VERSION } from './constants';
+import { logger } from '@/utils/logger';
 
+const UPDATE_TIME_VERSION = '19'
+
+export class S2SendMailVerifyCodeRecord extends Model<InferAttributes<S2SendMailVerifyCodeRecord>, InferCreationAttributes<S2SendMailVerifyCodeRecord>> {
+    declare id?: number;
+    declare randomID: string;
+    declare mailaddr: string;
+    declare verifyCode: string;
+    declare newPassword?: string
+    declare fromIP: string;
+    declare status: number;
+    declare triedTimes: number;
+    declare createdAt: CreationOptional<Date> | null;
+    declare updatedAt: CreationOptional<Date> | null;
+    declare deleteAt: CreationOptional<Date> | null;
+}
 
 // provide user model, including user id, name, email, phoneNumber, password, createdAt, updatedAt, deleteAt
 export class S2User extends Model<InferAttributes<S2User>, InferCreationAttributes<S2User>> {
@@ -15,6 +30,7 @@ export class S2User extends Model<InferAttributes<S2User>, InferCreationAttribut
     declare phoneNumber: string;
     declare verified: number; // 1->verified, 0->not verified
     declare password: string; // md5 + salt
+    declare fromIP: string;
     declare createdAt: CreationOptional<Date> | null;
     declare updatedAt: CreationOptional<Date> | null;
     declare deleteAt: CreationOptional<Date> | null;
@@ -29,8 +45,10 @@ export class S2TranslationRecord extends Model<InferAttributes<S2TranslationReco
     declare handleType: string; // json or text
     declare cachedText: string; // it will be cleaned regualry in the background
     declare processedText: string; // it will be cleaned regualry in the background
+    declare errorText: string; // it will be cleaned regualry in the background
     declare textCount: number;
     declare userId: number;
+    declare fromIP: string;
     declare createdAt: CreationOptional<Date> | null;
     declare updatedAt: CreationOptional<Date> | null;
     declare deleteAt: CreationOptional<Date> | null;
@@ -109,6 +127,61 @@ export default async (daoRef: DaoRef) => {
     // define model for s2
     let db_s2 = daoRef.db_s2
 
+    await S2SendMailVerifyCodeRecord.init({
+        triedTimes: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        randomID: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
+        newPassword: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        status: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        mailaddr: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        verifyCode: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        fromIP: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        deleteAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        }
+    }, {
+        sequelize: db_s2,
+        modelName: 's2_send_mail_verify_code_record',
+        timestamps: true,
+        paranoid: true,
+        underscored: true
+    })
+
     await S2TranslationRecord.init({
         id: {
             type: DataTypes.INTEGER,
@@ -127,9 +200,17 @@ export default async (daoRef: DaoRef) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        errorText: {
+            allowNull: true,
+            type: DataTypes.STRING
+        },
         cachedText: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        fromIP: {
+            type: DataTypes.STRING,
+            allowNull: true
         },
         sourceLang: {
             type: DataTypes.STRING,
@@ -172,6 +253,10 @@ export default async (daoRef: DaoRef) => {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
+        },
+        fromIP: {
+            type: DataTypes.STRING,
+            allowNull: true
         },
         name: {
             type: DataTypes.STRING,
@@ -478,10 +563,13 @@ export default async (daoRef: DaoRef) => {
         s2_version = s2_version_rows[0].KEYVALUE as any
     }
 
-    if (s2_version < UPDATE_TIME_VERSION) {
+    if (parseInt(s2_version) < parseInt(UPDATE_TIME_VERSION)) {
+        logger.info("s2 version will be updated")
         await daoRef.db_s2.sync({ alter: true, force: false })
         // update it
         await daoRef.db_work7z.query(`update G_SYSTEM_CONFIG set KEYVALUE='${UPDATE_TIME_VERSION}' where KEYNAME='${S2_KEY_SAVE_VALUE}'`)
+    } else {
+        logger.info("s2 version is up to date")
     }
 
 }

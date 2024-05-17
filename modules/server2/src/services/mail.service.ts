@@ -13,9 +13,9 @@ import { readFileSync } from 'fs';
 import dao from '@/dao';
 import { TypeCaptchaResponse } from '@/web2share-copy/server_constants';
 import nodemailer from 'nodemailer';
-import { CommonHandlePass } from '@/routes/auth.route';
 import { logger } from '@/utils/logger';
 import { API_SERVER_URL } from '@/web2share-copy/api_constants';
+import { CommonHandlePass } from '@/routes/common';
 
 @Service()
 export class MailService {
@@ -50,7 +50,7 @@ export let sendVerificationCode = async (obj: { mailToAddr: string; sendToWho: s
     }</p>\n` +
     '\n<p></p>' +
     '<div style="color:gray;font-size:12px;"><p></p>    ' +
-    '<p>此致敬礼</p>\n' +
+    '<p>祝您生活愉快！</p>\n' +
     '    <p>秒达工具箱 团队 (https://' +
     API_SERVER_URL +
     ')</p></div>\n' +

@@ -34,58 +34,9 @@ export default (props: {
     let appInfo = GetAppInfo()
     const theme = useMantineTheme();
 
-    const mockdata = [
-        {
-            icon: IconCode,
-            title: 'Open source',
-            description: 'This Pokémon’s cry is very loud and distracting',
-        },
-        {
-            icon: IconCoin,
-            title: 'Free for everyone',
-            description: 'The fluid of Smeargle’s tail secretions changes',
-        },
-        {
-            icon: IconBook,
-            title: 'Documentation',
-            description: 'Yanma is capable of seeing 360 degrees without',
-        },
-        {
-            icon: IconFingerprint,
-            title: 'Security',
-            description: 'The shell’s rounded shape and the grooves on its.',
-        },
-        {
-            icon: IconChartPie3,
-            title: 'Analytics',
-            description: 'This Pokémon uses its flying ability to quickly chase',
-        },
-        {
-            icon: IconNotification,
-            title: 'Notifications',
-            description: 'Combusken battles with the intensely hot flames it spews',
-        },
-    ];
     const userObj = exportUtils.useSelector(v => {
         return v.users
     })
-    const links = mockdata.map((item) => (
-        <UnstyledButton className={classes.subLink} key={item.title}>
-            <Group wrap="nowrap" align="flex-start">
-                <ThemeIcon size={34} variant="default" radius="md">
-                    <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
-                </ThemeIcon>
-                <div>
-                    <Text size="sm" fw={500}>
-                        {item.title}
-                    </Text>
-                    <Text size="xs" c="dimmed">
-                        {item.description}
-                    </Text>
-                </div>
-            </Group>
-        </UnstyledButton>
-    ));
     return <AppShell.Header className='flex flex-row justify-between px-2 sm:px-5 ' >
         <Group justify='space-between' className='w-full'>
             <Group>
@@ -120,14 +71,14 @@ export default (props: {
                         <Link to={'/settings/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
                             <IconUserCircle stroke={1.5} />
                         }</ActionIcon></Link>,
-                        < Button variant="default" onClick={() => {
+                        <Button variant="default" onClick={() => {
                             AuthUtils.signOut()
                         }} className=' hidden sm:block ' > {
                                 "登出"
                             }</Button>
                         // <Link to={'/settings/my-account?type=signin'}>   <Button variant="default" className=' hidden sm:block '>登出</Button></Link>,
                     ] : [
-                        <Link to={'/settings/my-account?type=signin'}>   <Button variant="default" className=' hidden sm:block '>登录账号</Button></Link>,
+                        <Link to={'/settings/my-account?type=signin'}> <Button variant="default" className=' hidden sm:block '>登录账号</Button></Link>,
                         <Link to={'/settings/my-account?type=signup'}>
                             <Button className=' hidden sm:block '>免费注册</Button>
                         </Link>

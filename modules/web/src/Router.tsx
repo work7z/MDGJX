@@ -7,6 +7,7 @@ import _ from 'lodash';
 import { FN_GetDispatch } from './store/nocycle';
 import apiSlice from './store/reducers/apiSlice';
 import UsersSlice from './store/reducers/userSlice';
+import SystemAlertOrPrompt from './containers/SystemAlertOrPrompt';
 
 
 
@@ -45,5 +46,6 @@ export default () => {
       }
       <Redirect to="/not-found" />
     </Switch>
+    <SystemAlertOrPrompt />
   </Router>
 }

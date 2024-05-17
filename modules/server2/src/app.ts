@@ -15,6 +15,7 @@ import { ErrorMiddleware } from '@/middlewares/error.middleware';
 import migrateDB from './jobs/migrate-db';
 import { logger, stream } from '@/utils/logger';
 import consumeTln from './jobs/consume-tln';
+import dao from './dao';
 const launchTime = new Date();
 
 export class App {
@@ -26,15 +27,16 @@ export class App {
     this.app = express();
     this.env = NODE_ENV || 'development';
     this.port = 2016;
+    (async () => {
+      await this.connectToDatabase();
+      this.initializeMiddlewares();
+      this.initializeRoutes(routes);
+      this.initializeSwagger();
+      this.initializeErrorHandling();
 
-    this.connectToDatabase();
-    this.initializeMiddlewares();
-    this.initializeRoutes(routes);
-    this.initializeSwagger();
-    this.initializeErrorHandling();
-
-    migrateDB();
-    consumeTln();
+      migrateDB();
+      consumeTln();
+    })();
   }
 
   public listen() {
@@ -51,7 +53,7 @@ export class App {
   }
 
   private async connectToDatabase() {
-    // connect
+    await dao();
   }
 
   private initializeMiddlewares() {

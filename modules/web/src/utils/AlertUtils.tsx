@@ -3,6 +3,9 @@ import { Toaster, toast } from 'sonner'
 
 let msgCtn = 1
 export default {
+    confirm(msg: string) {
+        //
+    },
     alertSuccess(msg: any) {
         // alert("" + _.toString(msg))
         toast.success(`[${msgCtn++}] ` + _.toString(msg))

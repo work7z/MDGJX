@@ -8,13 +8,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import _ from 'lodash'
 
-const initialState = {
-  darkMode: false,
+export type MemoryState = {
+  showLoginModal: boolean
+};
+const initialState: MemoryState = {
+  showLoginModal: false,
 };
 
-export type MemoryState = {
-  darkMode: boolean;
-};
 
 const MemorySlice = createSlice({
   name: "memory",

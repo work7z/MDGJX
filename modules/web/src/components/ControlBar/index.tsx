@@ -1,6 +1,6 @@
 import { Button, ButtonProps, Group } from "@mantine/core"
 
-export type ActionItem = ButtonProps & { onClick?: () => void, text: string, type?: "submit" }
+export type ActionItem = ButtonProps & { icon?: any, onClick?: () => void, text?: string, type?: "submit" }
 export default (props: {
     actions: ActionItem[]
 }) => {
@@ -8,7 +8,7 @@ export default (props: {
         props.actions.map(x => {
             return <Button onClick={() => {
                 x.onClick && x.onClick()
-            }} type={x.type} {...x}>{x.text}</Button>
+            }} type={x.type} {...x}>{x.icon}{x.text}</Button>
         })
     }
     </>

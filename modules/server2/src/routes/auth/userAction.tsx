@@ -356,6 +356,7 @@ export default async function handleSignUp(formData: {
             verified: 0,
             phoneNumber: '',
             password: hashPW(formData.password + ''),
+            fromIP: p.fromIP,
             email: formData.email,
         })
 

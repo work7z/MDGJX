@@ -23,6 +23,7 @@ import {
 import React from 'react';
 import LoadingView from '../LoadingView';
 import { FooterCentered } from './Footer';
+import LoadableWrapper from '../LoadableWrapper';
 
 export function GeneralLayout(props) {
     const mdParams = useMDParams()
@@ -33,14 +34,9 @@ export function GeneralLayout(props) {
         <div>当前页面正在重构中，敬请期待 </div>
     );
     if (mainSubModuleItem.bodyFn) {
-        const JohanComponent: any = React.lazy(mainSubModuleItem.bodyFn);
-
-        bodyJSX = <React.Suspense fallback={
-            <LoadingView />
-        } >
-            <JohanComponent />
-
-        </ React.Suspense >
+        bodyJSX = (
+            <LoadableWrapper fn={mainSubModuleItem.bodyFn} />
+        )
     }
     return (
         <AppShell
@@ -67,7 +63,6 @@ export function GeneralLayout(props) {
             { /** app main */}
             <AppShell.Main >
                 {bodyJSX}
-                <BackToTop />
 
             </AppShell.Main>
             <FooterCentered />

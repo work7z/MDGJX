@@ -9,8 +9,10 @@ import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { RootState } from "../store";
 import { useEffect, useMemo } from "react";
 import _ from "lodash";
-import { FN_GetDispatch } from "@/store/nocycle";
+import { FN_GetDispatch, FN_GetState } from "@/store/nocycle";
 import StateSlice from "@/store/reducers/stateSlice";
+import AlertUtils from "./AlertUtils";
+import MemorySlice from "@/store/reducers/memorySlice";
 
 
 export type ActionFn<T> = (state: T, helpers: {
@@ -21,7 +23,7 @@ export type ActionMap<T> = {
 }
 export type ROptions<T> = {
   getDefaultStateFn: () => T,
-  actions: ActionMap<T>
+  actions?: ActionMap<T>
 }
 export class RHelper<T> {
   keyname: string = ''
@@ -29,6 +31,17 @@ export class RHelper<T> {
   constructor(keyname: string, state: T) {
     this.keyname = keyname
     this.state = state
+  }
+  checkLoginStatus = async () => {
+    const signIn = FN_GetState().users.hasSignIn
+    if (!signIn) {
+      FN_GetDispatch()(
+        MemorySlice.actions.updateOneOfParamState({
+          showLoginModal: true
+        })
+      )
+      throw new Error("not login")
+    }
   }
   bindOnChange = (key: keyof T) => {
     return {

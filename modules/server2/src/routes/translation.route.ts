@@ -13,7 +13,7 @@ import handleSignUp, { handleSignIn } from './auth/userAction';
 import { asyncHandler } from './AsyncHandler';
 import { S2Feedback, S2TranslationRecord, S2User } from '@/dao/model';
 import { getCommonHandlePass, sendRes } from './common';
-import { TLNRequestIdRes, TLNResponse } from './translation/translateTools';
+import TranslateTools, { TLNRequest, TLNRequestIdRes, TLNResponse } from './translation/translateTools';
 import i18nItems from '@/i18n/i18n';
 import { randomUUID } from 'crypto';
 
@@ -27,40 +27,40 @@ export class TranslationRoute implements Routes {
   }
 
   private initializeRoutes() {
-    this.router.get(
-      '/tln/getTLNResultByReqID',
+    this.router.post(
+      '/tln/sendTLNRequest',
       asyncHandler(async (req, res) => {
         let p = getCommonHandlePass(req, res);
         const [user, errFn] = await p.verifyAuth();
         if (!user) return errFn();
-        const requestId = 'id'; // TODO: get requestId from req
+        const { text = '', type, sourceLang, targetLang } = req.body as TLNRequest;
+        if (text === '') {
+          throw new Error('输入内容不能为空');
+        }
+        const r = await S2TranslationRecord.create({
+          userId: user.id,
+          fromIP: req.ip,
+          textCount: text.length,
+          sourceLang: sourceLang,
+          targetLang: targetLang,
+          status: 0,
+          handleType: type,
+          // DO NOT CACHE SENSITIVE TRANSLATION RESULT HERE
+          cachedText: '',
+          processedText: '',
+        });
+        let obj = await TranslateTools.translateText(text, sourceLang, targetLang);
+        if (!obj.isOK) {
+          throw new Error('翻译失败: ' + obj.errorCode);
+        }
         sendRes(res, {
           data: {
-            requestId: requestId,
-          } satisfies TLNRequestIdRes,
+            result: obj.result,
+          } satisfies TLNResponse,
         });
       }),
     );
 
-    this.router.get(
-      '/tln/getTLNResult',
-      asyncHandler(async (req, res) => {
-        let p = getCommonHandlePass(req, res);
-        const [user, errFn] = await p.verifyAuth();
-        if (!user) return errFn();
-        let requestId = req.body.requestId;
-        const record = await S2TranslationRecord.findByPk(requestId);
-        if (record && record.userId === user.id) {
-          sendRes(res, {
-            data: {
-              result: record.processedText,
-            } satisfies TLNResponse,
-          });
-        } else {
-          throw new Error('invalid request');
-        }
-      }),
-    );
     this.router.get(
       '/tln/getI18nItems',
       asyncHandler(async (req, res) => {

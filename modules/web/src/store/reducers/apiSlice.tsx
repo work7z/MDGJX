@@ -20,6 +20,21 @@ export let withPrefixOpenAPI = (url: string): string => {
   return "/open" + url;
 };
 
+export type FindPwReq = {
+  email: string;
+  password: string;
+  confirmPassword: string;
+};
+export type TellMeVCode4FindPwReq = {
+  email: string;
+  vcode: string;
+};
+export type TellMeVCodeRes = {
+  verified: boolean;
+};
+export type FindPwRes = {
+  data: {};
+};
 
 const URL_PREFIX_LOCAL = '/v3'
 export type SignInCredentials = {
@@ -35,12 +50,16 @@ export type AsyncCreateResponse<T> = {
 
 export type TLNRequest = {
   text: string;
+  type: string;
   sourceLang: string;
   targetLang: string;
 };
 export type TLNResponse = {
   result: string
 }
+export type TLNRequestIdRes = {
+  requestId: string;
+};
 export type I18nItem = {
   langInHttpLocaleCode?: string[];
   label: string[];
@@ -79,16 +98,20 @@ export const apiSlice = createApi({
     },
     validateStatus: (response, result: AsyncCreateResponse<any> | null) => {
       let errorHandler = () => {
-        AlertUtils.alertErr("抱歉，网络不稳定，请稍后重试")
+        AlertUtils.alertErr(result && result.message ? result.message : "抱歉，网络不稳定，请稍后重试")
       }
       if (result) {
         let error = result.error;
         if (error == '401') {
+          const pre_hasSignIn = FN_GetState().users.hasSignIn
           FN_GetDispatch()(
             UsersSlice.actions.updateOneOfParamState({
               hasSignIn: false,
             })
           )
+          if (pre_hasSignIn) {
+            AlertUtils.alertErr("登录已过期，请重新登录")
+          }
           return false;
         }
       }
@@ -169,30 +192,30 @@ export const apiSlice = createApi({
         };
       },
     }),
-    findPw: build.query<AsyncCreateResponse<any>, { username: string; password: string }>({
+    mailFindPw: build.query<AsyncCreateResponse<FindPwRes>, FindPwReq>({
       query: (obj) => {
         return {
           method: "POST",
-          url: URL_AUTH_GET_FINDPW,
-          data: obj,
+          url: "/auth/mailFindPw",
+          body: obj,
         };
       },
     }),
-    tlnHandleText: build.query<AsyncCreateResponse<TLNResponse>, TLNRequest>({
+    tellMeVCode4FindPw: build.query<AsyncCreateResponse<TellMeVCodeRes>, TellMeVCode4FindPwReq>({
       query: (obj) => {
         return {
           method: "POST",
-          url: "/tln/handleText",
-          data: obj,
+          url: "/auth/tellMeVCode4FindPw",
+          body: obj,
         };
       },
     }),
-    tlnHandleJSON: build.query<AsyncCreateResponse<TLNResponse>, TLNRequest>({
+    tlnSendRequest: build.query<AsyncCreateResponse<TLNResponse>, TLNRequest>({
       query: (obj) => {
         return {
           method: "POST",
-          url: "/tln/handleJSON",
-          data: obj,
+          url: "/tln/sendTLNRequest",
+          body: obj,
         };
       },
     }),
@@ -203,13 +226,9 @@ export const apiSlice = createApi({
           url: (
             "/tln/getI18nItems"
           ),
-          data: obj,
         };
       },
     }),
-
-
-
   }),
 });
 

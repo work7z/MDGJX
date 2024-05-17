@@ -9,6 +9,7 @@ const TmtClient = tencentcloud.tmt.v20180321.Client;
 
 export type TLNRequest = {
   text: string;
+  type: 'json' | 'text';
   sourceLang: string;
   targetLang: string;
 };
