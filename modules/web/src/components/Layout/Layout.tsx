@@ -63,7 +63,6 @@ export function GeneralLayout(props) {
             { /** app main */}
             <AppShell.Main >
                 {bodyJSX}
-                <BackToTop />
 
             </AppShell.Main>
             <FooterCentered />

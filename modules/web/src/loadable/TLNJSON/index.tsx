@@ -91,7 +91,7 @@ export default () => {
                                                     for (; ;) {
                                                         const r2 = await t_getResult({ requestId: reqId + '' })
                                                         r2.data?.data?.result
-                                                        await sleep(500)
+                                                        await sleep(1000)
                                                     }
                                                 }
                                             } catch (e) { throw e } finally {

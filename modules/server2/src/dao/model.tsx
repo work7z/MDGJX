@@ -4,8 +4,9 @@ import {
 import { DaoRef } from './index'
 import { isDevEnv } from '../hooks/env';
 import _ from 'lodash';
-import { UPDATE_TIME_VERSION } from './constants';
+import { logger } from '@/utils/logger';
 
+const UPDATE_TIME_VERSION = '13'
 
 // provide user model, including user id, name, email, phoneNumber, password, createdAt, updatedAt, deleteAt
 export class S2User extends Model<InferAttributes<S2User>, InferCreationAttributes<S2User>> {
@@ -483,10 +484,13 @@ export default async (daoRef: DaoRef) => {
         s2_version = s2_version_rows[0].KEYVALUE as any
     }
 
-    if (s2_version < UPDATE_TIME_VERSION) {
+    if (parseInt(s2_version) < parseInt(UPDATE_TIME_VERSION)) {
+        logger.info("s2 version will be updated")
         await daoRef.db_s2.sync({ alter: true, force: false })
         // update it
         await daoRef.db_work7z.query(`update G_SYSTEM_CONFIG set KEYVALUE='${UPDATE_TIME_VERSION}' where KEYNAME='${S2_KEY_SAVE_VALUE}'`)
+    } else {
+        logger.info("s2 version is up to date")
     }
 
 }
