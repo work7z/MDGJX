@@ -97,10 +97,6 @@ export const apiSlice = createApi({
           if (pre_hasSignIn) {
             AlertUtils.alertErr("登录已过期，请重新登录")
           }
-          // const goTo = '/settings/my-account'
-          // if (location.href !== goTo) {
-          //   location.href = goTo
-          // }
           return false;
         }
       }
@@ -186,7 +182,7 @@ export const apiSlice = createApi({
         return {
           method: "POST",
           url: URL_AUTH_GET_FINDPW,
-          data: obj,
+          body: obj,
         };
       },
     }),
@@ -195,7 +191,7 @@ export const apiSlice = createApi({
         return {
           method: "POST",
           url: "/tln/sendTLNRequest",
-          data: obj,
+          body: obj,
         };
       },
     }),
@@ -206,7 +202,7 @@ export const apiSlice = createApi({
         return {
           method: "GET",
           url: "/tln/getTLNResult",
-          data: obj,
+          body: obj,
         };
       },
     }),
@@ -217,7 +213,7 @@ export const apiSlice = createApi({
           url: (
             "/tln/getI18nItems"
           ),
-          data: obj,
+          body: obj,
         };
       },
     }),

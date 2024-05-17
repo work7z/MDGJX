@@ -29,8 +29,10 @@ export function FooterCentered() {
 
     return (
         <div className={classes.footer}>
-            <div className={classes.inner} >
+            <div className={classes.inner + ' flex justify-center items-center flex-row '} >
+                <Group></Group>
                 <Group className={classes.links}>{items}</Group>
+                <Group></Group>
             </div>
         </div>
     );

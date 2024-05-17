@@ -40,6 +40,8 @@ export class TranslationRoute implements Routes {
           textCount: text.length,
           sourceLang: sourceLang,
           targetLang: targetLang,
+          status: 0,
+          handleType: type,
           processedText: '',
         });
         const requestId = r.id + '';

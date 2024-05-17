@@ -1,6 +1,6 @@
 import apiSlice from "@/store/reducers/apiSlice"
 import { Container, Select, Textarea } from "@mantine/core"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Card, Group, Text, Menu, ActionIcon, Image, SimpleGrid, rem } from '@mantine/core';
 import { IconDots, IconEye, IconFileZip, IconTrash } from '@tabler/icons-react';
 import ControlBar from "@/components/ControlBar";
@@ -30,13 +30,13 @@ export default () => {
     const clipboard = useClipboard({ timeout: 500 });
     const [t_getResult] = apiSlice.useLazyTlnGetResultQuery({})
     const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})
+    const [translating, setTranslating] = useState(false)
     if (!rh) return ''
-    return <Container >
+    return <Container  >
         <form onSubmit={e => {
             e.preventDefault()
         }}>
-            <Card withBorder shadow="sm" radius="md">
-
+            <Card withBorder shadow="sm" radius="md" >
                 <Card.Section withBorder inheritPadding py="xs">
                     <Group justify="center">
                         <Text fw={500}>JSON格式翻译工具</Text>
@@ -65,14 +65,20 @@ export default () => {
                                     {
                                         type: 'submit',
                                         text: "开始翻译",
+                                        loading: translating,
                                         onClick: async () => {
-                                            await rh.checkLoginStatus()
-                                            t_sendReq({
-                                                text: rh.state?.inputJSON || '',
-                                                type: 'json',
-                                                sourceLang: rh.state?.sourceLang + "",
-                                                targetLang: rh.state?.targetLang + ""
-                                            })
+                                            setTranslating(true)
+                                            try {
+                                                await rh.checkLoginStatus()
+                                                await t_sendReq({
+                                                    text: rh.state?.inputJSON || '',
+                                                    type: 'json',
+                                                    sourceLang: rh.state?.sourceLang + "",
+                                                    targetLang: rh.state?.targetLang + ""
+                                                })
+                                            } catch (e) { throw e } finally {
+                                                setTranslating(false)
+                                            }
                                         }
                                     },
                                     {
@@ -111,7 +117,6 @@ export default () => {
                                 ]}
                                 />
                             </Group>
-
                         </Group>
 
                         <Group mt={10} wrap='nowrap'>
