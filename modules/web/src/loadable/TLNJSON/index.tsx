@@ -13,6 +13,8 @@ import { FN_GetDispatch } from "@/store/nocycle";
 import StateSlice from "@/store/reducers/stateSlice";
 import { useClipboard } from "@mantine/hooks";
 import AlertUtils from "@/utils/AlertUtils";
+import Blink from "@/components/Blink";
+import { sleep } from "@/utils/CommonUtils";
 
 
 export default () => {
@@ -39,7 +41,9 @@ export default () => {
             <Card withBorder shadow="sm" radius="md" >
                 <Card.Section withBorder inheritPadding py="xs">
                     <Group justify="center">
-                        <Text fw={500}>JSON格式翻译工具</Text>
+                        <Text fw={500}>
+                            {translating ? <>正在翻译JSON中<Blink min={3} max={6} /></> : 'JSON格式翻译工具'}
+                        </Text>
                     </Group>
                 </Card.Section>
 
@@ -64,18 +68,32 @@ export default () => {
                                 <ControlBar actions={[
                                     {
                                         type: 'submit',
-                                        text: "开始翻译",
-                                        loading: translating,
+                                        text: translating ? "取消翻译" : "开始翻译",
+                                        // loading: translating,
+                                        color: translating ? 'red' : undefined,
                                         onClick: async () => {
+                                            if (translating) {
+                                                AlertUtils.alertWarn("已取消本次翻译操作")
+                                                setTranslating(false)
+                                                return;
+                                            }
                                             setTranslating(true)
                                             try {
                                                 await rh.checkLoginStatus()
-                                                await t_sendReq({
+                                                const r = await t_sendReq({
                                                     text: rh.state?.inputJSON || '',
                                                     type: 'json',
                                                     sourceLang: rh.state?.sourceLang + "",
                                                     targetLang: rh.state?.targetLang + ""
                                                 })
+                                                const reqId = r.data?.data?.requestId
+                                                if (reqId) {
+                                                    for (; ;) {
+                                                        const r2 = await t_getResult({ requestId: reqId + '' })
+                                                        r2.data?.data?.result
+                                                        await sleep(500)
+                                                    }
+                                                }
                                             } catch (e) { throw e } finally {
                                                 setTranslating(false)
                                             }

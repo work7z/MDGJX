@@ -34,6 +34,9 @@ export class TranslationRoute implements Routes {
         const [user, errFn] = await p.verifyAuth();
         if (!user) return errFn();
         const { text = '', type, sourceLang, targetLang } = req.body as TLNRequest;
+        if (text === '') {
+          throw new Error('输入内容不能为空');
+        }
         const r = await S2TranslationRecord.create({
           userId: user.id,
           cachedText: text,
@@ -53,7 +56,7 @@ export class TranslationRoute implements Routes {
       }),
     );
 
-    this.router.get(
+    this.router.post(
       '/tln/getTLNResult',
       asyncHandler(async (req, res) => {
         let p = getCommonHandlePass(req, res);

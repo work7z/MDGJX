@@ -29,6 +29,7 @@ export class S2TranslationRecord extends Model<InferAttributes<S2TranslationReco
     declare handleType: string; // json or text
     declare cachedText: string; // it will be cleaned regualry in the background
     declare processedText: string; // it will be cleaned regualry in the background
+    declare errorText: string; // it will be cleaned regualry in the background
     declare textCount: number;
     declare userId: number;
     declare createdAt: CreationOptional<Date> | null;
@@ -126,6 +127,10 @@ export default async (daoRef: DaoRef) => {
         processedText: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        errorText: {
+            allowNull: true,
+            type: DataTypes.STRING
         },
         cachedText: {
             type: DataTypes.STRING,

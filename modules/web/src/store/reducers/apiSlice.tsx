@@ -83,7 +83,7 @@ export const apiSlice = createApi({
     },
     validateStatus: (response, result: AsyncCreateResponse<any> | null) => {
       let errorHandler = () => {
-        AlertUtils.alertErr("抱歉，网络不稳定，请稍后重试")
+        AlertUtils.alertErr(result && result.message ? result.message : "抱歉，网络不稳定，请稍后重试")
       }
       if (result) {
         let error = result.error;
@@ -186,7 +186,7 @@ export const apiSlice = createApi({
         };
       },
     }),
-    tlnSendRequest: build.query<AsyncCreateResponse<TLNResponse>, TLNRequest>({
+    tlnSendRequest: build.query<AsyncCreateResponse<TLNRequestIdRes>, TLNRequest>({
       query: (obj) => {
         return {
           method: "POST",
@@ -195,12 +195,12 @@ export const apiSlice = createApi({
         };
       },
     }),
-    tlnGetResult: build.query<AsyncCreateResponse<TLNRequestIdRes>, {
+    tlnGetResult: build.query<AsyncCreateResponse<TLNResponse>, {
       requestId: string
     }>({
       query: (obj) => {
         return {
-          method: "GET",
+          method: "POST",
           url: "/tln/getTLNResult",
           body: obj,
         };
@@ -213,7 +213,6 @@ export const apiSlice = createApi({
           url: (
             "/tln/getI18nItems"
           ),
-          body: obj,
         };
       },
     }),
