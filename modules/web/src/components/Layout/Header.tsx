@@ -37,7 +37,7 @@ export default (props: {
     const userObj = exportUtils.useSelector(v => {
         return v.users
     })
-    const userAcctJSX = <Link className=' block sm:hidden ' to={'/settings/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
+    const userAcctJSX = <Link to={'/settings/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
         <IconUserCircle stroke={1.5} />
     }</ActionIcon></Link>
     return <AppShell.Header className='flex flex-row justify-between px-2 sm:px-5 ' >
