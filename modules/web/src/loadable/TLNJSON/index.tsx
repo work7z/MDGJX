@@ -24,38 +24,152 @@ export type TranslateArg = {
 export type TypeJSONTranslateMethods = {
     label: string;
     value: string;
-    func: (p: TranslateArg) => {
-        //
-    };
+    func: (text: string, fn_translate) => Promise<string>
 };
 
-const JSONTranslateMethods: TypeJSONTranslateMethods[] = [
+const fn_translate_for_only_value = async (text: string, fn_translate): Promise<string> => {
+    const waitArr: Promise<any>[] = []
+    // modify source
+    function beforeTranslate(value) {
+        return value;
+    }
+
+    // modify target
+    function afterTranslate(value) {
+        return value;
+    }
+
+    // the entire translate logic created for the JSON that you passed
+    function translateEntireLogic(passedJSON, fn_translate) {
+        // iterating the variable of which the type is array or object
+        let fn_tran = (value, key, obj) => {
+            if (_.isObject(value) || _.isArray(value)) {
+                _.forEach(value, fn_tran)
+                return;
+            }
+            waitArr.push((async () => {
+                // fn_translate, that function is used as sending requests to CodeGen server
+                let result = await fn_translate(
+                    beforeTranslate(value)
+                )
+                obj[key] = afterTranslate(result);
+
+                if (_.isObjectLike(obj[key]) || _.isArray(obj[key])) {
+                }
+            })())
+
+        }
+        _.forEach(passedJSON, fn_tran)
+    }
+    let currentJSONVal = {}
+    const tmpKeyJson = 'TMP_KEY_JSON'
+    if (!window[tmpKeyJson]) {
+        window[tmpKeyJson] = {}
+    }
+    try {
+        eval(`window['${tmpKeyJson}']  = ${text}`)
+        currentJSONVal = window[tmpKeyJson]
+    } catch (e) {
+        AlertUtils.alertErr('JSON格式错误，请检查您的输入是否正确')
+        throw new Error('JSON格式错误')
+    }
+    translateEntireLogic(currentJSONVal, fn_translate)
+
+    for (let i = 0; i < waitArr.length; i++) {
+        await waitArr[i]
+    }
+    return JSON.stringify(currentJSONVal, null, 4)
+}
+
+
+const fn_translate_for_only_key = async (text: string, fn_translate): Promise<string> => {
+    let afterAllGoodsArr: any[] = []
+
+    const waitArr: Promise<any>[] = []
+    // modify source
+    function beforeTranslate(value) {
+        return value;
+    }
+
+    // modify target
+    function afterTranslate(value) {
+        return value;
+    }
+
+    // the entire translate logic created for the JSON that you passed
+    function translateEntireLogic(passedJSON, fn_translate) {
+        // iterating the variable of which the type is array or object
+        let fn_tran = (value, key, obj) => {
+
+            waitArr.push((async () => {
+                let prevKey = key;
+                // fn_translate, that function is used as sending requests to CodeGen server
+                let formattedKey = _.kebabCase(key).replace(/_/g, ' ').trim()
+                let result = await fn_translate(
+                    beforeTranslate(formattedKey)
+                )
+                obj[result + ` | ${prevKey}`] = value
+                afterAllGoodsArr.push(() => {
+                    delete obj[prevKey]
+                })
+
+                if (_.isArray(value)) {
+                } else if (_.isObject(value)) {
+                    _.forEach(value, fn_tran)
+                    return;
+                }
+            })())
+
+
+        }
+        _.forEach(passedJSON, fn_tran)
+    }
+    let currentJSONVal = {}
+    const tmpKeyJson = 'TMP_KEY_JSON2'
+    if (!window[tmpKeyJson]) {
+        window[tmpKeyJson] = {}
+    }
+    try {
+        eval(`window['${tmpKeyJson}']  = ${text}`)
+        currentJSONVal = window[tmpKeyJson]
+    } catch (e) {
+        AlertUtils.alertErr('JSON格式错误，请检查您的输入是否正确')
+        throw new Error('JSON格式错误')
+    }
+    translateEntireLogic(currentJSONVal, fn_translate)
+
+    for (let i = 0; i < waitArr.length; i++) {
+        await waitArr[i]
+    }
+    for (let i = 0; i < afterAllGoodsArr.length; i++) {
+        afterAllGoodsArr[i]()
+    }
+    return JSON.stringify(currentJSONVal, null, 4)
+}
+
+
+export const JSONTranslateMethods: TypeJSONTranslateMethods[] = [
     {
-        label: "仅转换[键值对]中的值",
+        label: "仅转换Value值",
         value: "ValueOnly",
-        func: async (p) => {
-            //
-            return 'handle result'
-        }
+        func: fn_translate_for_only_value
     },
     {
-        label: "仅转换[键值对]中的键",
+        label: "仅转换Key值",
         value: "KeyOnly",
-        func: async (p) => {
-            //
-            return 'handle result'
-        }
+        func: fn_translate_for_only_key,
     },
     {
-        label: "同时转换键值对所有数据",
+        label: "同时转换Key和Value值",
         value: "KeyAndValue",
-        func: async (p) => {
-            //
-            return 'handle result'
+        func: async (text: string, fn_translate): Promise<string> => {
+            let result = await fn_translate_for_only_value(text, fn_translate)
+            result = await fn_translate_for_only_key(result, fn_translate)
+            return result
         }
     },
 ].map(x => {
-    x.label = x.label + `(${x.value})`
+    x.label = x.label
     return x;
 })
 
@@ -64,84 +178,37 @@ export default () => {
 
     return (
         <CommonTLNBody
-            handleTranslate={async (state: TLNState) => {
-                const waitArr: Promise<any>[] = []
-                // modify source
-                function beforeTranslate(value) {
-                    return value;
+            handleTranslate={async (state, fn_translate) => {
+                if (!state.translateMethod) {
+                    throw new Error('请选择翻译方法')
                 }
-
-                // modify target
-                function afterTranslate(value) {
-                    return value;
+                const fn_translate_impl = JSONTranslateMethods.find(x => x.value === state.translateMethod)?.func
+                if (!fn_translate_impl) {
+                    throw new Error('未找到对应的翻译方法')
                 }
-
-                // the entire translate logic created for the JSON that you passed
-                function translateEntireLogic(passedJSON, fn_translate) {
-                    // iterating the variable of which the type is array or object
-                    let fn_tran = (value, key, obj) => {
-                        if (_.isObject(value) || _.isArray(value)) {
-                            _.forEach(value, fn_tran)
-                            return;
-                        }
-                        waitArr.push((async () => {
-                            // fn_translate, that function is used as sending requests to CodeGen server
-                            let result = await fn_translate(
-                                beforeTranslate(value)
-                            )
-                            obj[key] = afterTranslate(result);
-
-                            if (_.isObjectLike(obj[key]) || _.isArray(obj[key])) {
-                            }
-                        })())
-
-                    }
-                    _.forEach(passedJSON, fn_tran)
-                }
-                let currentJSONVal = {}
-                const tmpKeyJson = 'TMP_KEY_JSON'
-                if (!window[tmpKeyJson]) {
-                    window[tmpKeyJson] = {}
-                }
-                try {
-                    eval(`window['${tmpKeyJson}']  = ${state?.inputJSON}`)
-                    currentJSONVal = window[tmpKeyJson]
-                } catch (e) {
-                    AlertUtils.alertErr('JSON格式错误，请检查您的输入是否正确')
-                    throw new Error('JSON格式错误')
-                }
-                translateEntireLogic(currentJSONVal, async (value) => {
-                    const r = await t_sendReq({
-                        text: value || '',
-                        type: 'text',
-                        sourceLang: state?.sourceLang + "",
-                        targetLang: state?.targetLang + ""
-                    })
-                    const result = r.data?.data?.result
-                    return result || '';
-                })
-                debugger;
-
-                for (let i = 0; i < waitArr.length; i++) {
-                    await waitArr[i]
-                }
-                return JSON.stringify(currentJSONVal, null, 4)
+                const result = await fn_translate_impl(state.inputJSON, fn_translate)
+                return result;
             }}
             id='json'
             label='JSON'
             example={
 
                 `{
-    "hello": "你好",
-    "world": "世界",
-    "internal" : {
-        "key": "深层次的key值",
-        "key2": "深层次的key值",
-key3: {
-"a":"更多ceshimina123"
+    "timeLimitedAmount": "30010",
+    "ruleId": "世界",
+    "promotion-price": [12345,100,300],
+    "discount_rate_limits": [12345,100,300],
+    "apply_time_limits" : {
+        "presentTitle": "仅转换Value值是在这里",
+        "presentDetails": "仅转换Value值是在这里2",
+salesRemarkMap: {
+"subProductName":"minacz"
 }
     }
 }`
+            }
+            extraOptionsJSX={
+                <div>extra options</div>
             }
         />
     )

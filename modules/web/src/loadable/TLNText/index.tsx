@@ -5,15 +5,8 @@ export default () => {
     const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})
 
     return <CommonTLNBody
-        handleTranslate={async (state: TLNState) => {
-
-            const r = await t_sendReq({
-                text: state?.inputJSON || '',
-                type: 'text',
-                sourceLang: state?.sourceLang + "",
-                targetLang: state?.targetLang + ""
-            })
-            const result = r.data?.data?.result
+        handleTranslate={async (state: TLNState, fn_translate) => {
+            const result = await fn_translate(state.inputJSON)
             return result || '';
         }}
         id='text'

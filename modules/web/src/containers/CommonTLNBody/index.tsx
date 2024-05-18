@@ -1,5 +1,5 @@
 import apiSlice from "@/store/reducers/apiSlice"
-import { Button, Container, Select, Textarea } from "@mantine/core"
+import { Button, Container, Divider, Select, Textarea } from "@mantine/core"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { Card, Group, Text, Menu, ActionIcon, Image, SimpleGrid, rem } from '@mantine/core';
 import { IconArrowsUpDown, IconDots, IconEraser, IconEye, IconFileZip, IconTrash } from '@tabler/icons-react';
@@ -15,9 +15,12 @@ import { useClipboard, useDebouncedCallback } from "@mantine/hooks";
 import AlertUtils from "@/utils/AlertUtils";
 import Blink from "@/components/Blink";
 import { sleep } from "@/utils/CommonUtils";
+import { JSONTranslateMethods } from "@/loadable/TLNJSON";
+import SimpleSelect from "@/components/SimpleSelect";
 export type TLNPState = {
     sourceLang: string;
     targetLang: string;
+    translateMethod?: string;
 }
 export type TLNNPState = {
     inputJSON: string;
@@ -25,22 +28,22 @@ export type TLNNPState = {
 }
 export type TLNState = TLNPState & TLNNPState
 
-const debounceFn = _.throttle((fn: () => void) => {
-    fn()
-}, 1300);
 
 export default (props: {
-    id: string,
+    id: "text" | "json",
     label: string,
     realtime?: boolean,
     example: string,
-    handleTranslate: (val: TLNState) => Promise<string>
+    extraOptionsJSX?: JSX.Element,
+    handleTranslate: (val: TLNState, fn_translate) => Promise<string>
 }) => {
+    const isJSONType = props.id == 'json'
     const rh = exportUtils.register('tln' + props.id, {
         getPersistedStateFn: () => {
             return {
                 sourceLang: 'zh',
                 targetLang: 'en',
+                translateMethod: JSONTranslateMethods[0].value
             } satisfies TLNPState
         },
         getNotPersistedStateFn: () => {
@@ -87,7 +90,16 @@ export default (props: {
                         outputJSON: ''
                     })
                 } else {
-                    result = await props.handleTranslate(tState)
+                    result = await props.handleTranslate(tState, async (value) => {
+                        const r = await t_sendReq({
+                            text: (value + "") || '',
+                            type: 'text',
+                            sourceLang: tState?.sourceLang + "",
+                            targetLang: tState?.targetLang + ""
+                        })
+                        const result = r.data?.data?.result
+                        return result || '';
+                    })
                     rh.updateNonPState({
                         outputJSON: result
                     })
@@ -122,6 +134,7 @@ export default (props: {
                     <>
                         <Group wrap='nowrap'>
                             <Textarea
+                                spellCheck={false}
                                 w={'100%'}
                                 placeholder={"请将需要翻译的" + props.label + "粘贴到这里"}
                                 label={props.label + "输入"}
@@ -202,6 +215,7 @@ export default (props: {
 
                         <Group mt={10} wrap='nowrap'>
                             <Textarea
+                                spellCheck={false}
                                 w={'100%'}
                                 label="文本输出"
                                 placeholder="翻译后的文本将会显示在这里"
@@ -238,6 +252,17 @@ export default (props: {
                                 pStateKey: 'targetLang'
                             })}
                         />
+                        {
+                            isJSONType ? <>
+                                <SimpleSelect label="JSON翻译方式"
+                                    dataArr={JSONTranslateMethods}
+                                    {...rh.bindOnChange({
+                                        pStateKey: 'translateMethod'
+                                    })}
+                                />
+                            </>
+                                : ''
+                        }
                     </Group>
                 } />
             </Card>
