@@ -1,5 +1,8 @@
+import info from "./meta/info";
+
 export default function GetAppInfo() {
     return {
+        ...info,
         qqGroup: '106038310',
         name: '秒达工具箱',
         // link: 'MDGJX.com',

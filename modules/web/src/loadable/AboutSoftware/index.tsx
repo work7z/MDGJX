@@ -21,7 +21,7 @@ export default function GetInTouchSimple() {
         },
     });
     const [t] = apiSlice.useLazySendFeedbackQuery({})
-
+    const appInfo = GetAppInfo()
     return (
         <Container size="sm">
             <form onSubmit={form.onSubmit((e) => {
@@ -37,7 +37,7 @@ export default function GetInTouchSimple() {
                     fw={900}
                     ta="center"
                 >
-                    关于{GetAppInfo().name}
+                    {appInfo.name}({appInfo.version})
                 </Title>
                 <Title
                     order={3}
@@ -49,6 +49,7 @@ export default function GetInTouchSimple() {
                 >
                     如果您喜欢我们的开源软件，请考虑参与开源建设或者升级到专业版以支持我们！
                 </Title>
+
 
                 <div className='mt-10' >
                     <Title order={5}>软件迭代历程</Title>
@@ -62,13 +63,17 @@ export default function GetInTouchSimple() {
                 </div>
 
                 <div className='mt-10' >
-                    <Title order={5}>更多信息</Title>
+                    <Title order={5}>联系方式</Title>
                     <ul className='list-disc'>
                         <li>
-                            官方QQ群：{GetAppInfo().qqGroup}
+                            官方QQ群：{appInfo.qqGroup}
                         </li>
                         <li>
                             联系邮箱：work7z@outlook.com
+                        </li>
+
+                        <li>
+                            所有源代码: {appInfo.githubRepo}
                         </li>
                         <li>
                             开发者Ryan的微信：lafting755
@@ -76,6 +81,15 @@ export default function GetInTouchSimple() {
                         <li>
                             哔哩哔哩账号：<a href='https://space.bilibili.com/1343908691?spm_id_from=333.1007.0.0'>CodeGen工具箱(未来可能更名)</a>
                         </li>
+                    </ul>
+                </div>
+
+                <div className='mt-10' >
+                    <Title order={5}>编译信息</Title>
+                    <ul className='list-disc'>
+                        <li>版本号: {appInfo.version}</li>
+                        <li>编译日期: {appInfo.releaseDate}</li>
+                        <li>编译时间: {new Date(parseInt(appInfo.timestamp)).toString()}(自动化部署)</li>
                     </ul>
                 </div>
 

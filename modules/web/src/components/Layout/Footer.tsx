@@ -3,8 +3,10 @@ import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/
 import classes from './Footer.module.css';
 import GetAppInfo from '@/AppInfo';
 
+const appInfo = GetAppInfo()
+
 const links = [
-    { link: GetAppInfo().githubRepo, label: '关于' + GetAppInfo().name },
+    { link: GetAppInfo().githubRepo, label: '关于' + GetAppInfo().name + `(${appInfo.version})` },
     { link: 'https://beian.miit.gov.cn/', label: '粤ICP备2022042390号' },
     { link: '/settings/feedback', label: '联系我们' },
     { link: '/settings/terms-of-conditions', label: '使用协议' },
