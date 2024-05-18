@@ -63,7 +63,7 @@ export default () => {
                     window[tmpKeyJson] = {}
                 }
                 try {
-                    eval(`window['${tmpKeyJson}']  = (${state?.inputJSON})`)
+                    eval(`window['${tmpKeyJson}']  = ${state?.inputJSON}`)
                     currentJSONVal = window[tmpKeyJson]
                 } catch (e) {
                     AlertUtils.alertErr('JSON格式错误，请检查您的输入是否正确')
