@@ -51,7 +51,7 @@ export let sendVerificationCode = async (obj: { mailToAddr: string; sendToWho: s
     '\n<p></p>' +
     '<div style="color:gray;font-size:12px;"><p></p>    ' +
     '<p>祝您生活愉快！</p>\n' +
-    '    <p>秒达工具箱 团队 (https://' +
+    '    <p>秒达工具箱 团队 (' +
     API_SERVER_URL +
     ')</p></div>\n' +
     '\n' +
@@ -78,6 +78,11 @@ export async function sendMailTo(
     user: process.env.MAIL_USER,
     pass: process.env.MAIL_PASS,
   };
+
+  if (!account.user || !account.pass) {
+    logger.error('no mail account found');
+    return;
+  }
 
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({

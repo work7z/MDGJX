@@ -127,7 +127,6 @@ export class AuthRoute implements Routes {
         }
         try {
           if (userInfo) {
-            let randomID = randomUUID().toString();
             // check if this email has created more than 5 times in 1 day
             let count = await S2SendMailVerifyCodeRecord.count({
               where: {
@@ -173,7 +172,7 @@ export class AuthRoute implements Routes {
               newPassword: password,
               triedTimes: 0,
             });
-            sendVerificationCode(
+            await sendVerificationCode(
               {
                 mailToAddr: email,
                 sendToWho: userInfo.name,
@@ -189,6 +188,7 @@ export class AuthRoute implements Routes {
           });
         } catch (e) {
           logger.error(e);
+          logger.error(JSON.stringify(e));
         }
       }),
     );
