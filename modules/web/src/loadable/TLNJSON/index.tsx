@@ -15,15 +15,56 @@ import { useClipboard } from "@mantine/hooks";
 import AlertUtils from "@/utils/AlertUtils";
 import Blink from "@/components/Blink";
 import { sleep } from "@/utils/CommonUtils";
-import CommonTLNBody, { TLNPState } from "@/containers/CommonTLNBody";
+import CommonTLNBody, { TLNPState, TLNState } from "@/containers/CommonTLNBody";
 
+
+export type TranslateArg = {
+    fn_translate: (text) => Promise<string>;
+}
+export type TypeJSONTranslateMethods = {
+    label: string;
+    value: string;
+    func: (p: TranslateArg) => {
+        //
+    };
+};
+
+const JSONTranslateMethods: TypeJSONTranslateMethods[] = [
+    {
+        label: "仅转换[键值对]中的值",
+        value: "ValueOnly",
+        func: async (p) => {
+            //
+            return 'handle result'
+        }
+    },
+    {
+        label: "仅转换[键值对]中的键",
+        value: "KeyOnly",
+        func: async (p) => {
+            //
+            return 'handle result'
+        }
+    },
+    {
+        label: "同时转换键值对所有数据",
+        value: "KeyAndValue",
+        func: async (p) => {
+            //
+            return 'handle result'
+        }
+    },
+].map(x => {
+    x.label = x.label + `(${x.value})`
+    return x;
+})
 
 export default () => {
     const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})
 
     return (
         <CommonTLNBody
-            handleTranslate={async (state: TLNPState) => {
+            handleTranslate={async (state: TLNState) => {
                 const waitArr: Promise<any>[] = []
                 // modify source
                 function beforeTranslate(value) {
