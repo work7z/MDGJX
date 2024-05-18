@@ -1,0 +1,5 @@
+.iptbox{
+    &>*,textarea{
+        height: '100%';
+    }
+}
