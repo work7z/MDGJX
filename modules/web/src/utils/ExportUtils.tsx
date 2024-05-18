@@ -32,6 +32,9 @@ export class RHelper<T> {
     this.keyname = keyname
     this.state = state
   }
+  getActualValueInState = () => {
+    return FN_GetState().state.kvSessionMap[this.keyname] as T
+  }
   checkLoginStatus = async () => {
     const signIn = FN_GetState().users.hasSignIn
     if (!signIn) {
@@ -43,7 +46,7 @@ export class RHelper<T> {
       throw new Error("not login")
     }
   }
-  bindOnChange = (key: keyof T) => {
+  bindOnChange = (key: keyof T, optionalFn?: () => void) => {
     return {
       name: key,
       value: this.state ? _.toString(this.state[key]) : '',
@@ -54,6 +57,7 @@ export class RHelper<T> {
             [key]: _.isString(e) ? e : e.target.value
           }
         }))
+        optionalFn && optionalFn()
       }
     }
   }

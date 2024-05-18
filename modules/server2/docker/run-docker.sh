@@ -35,6 +35,12 @@ runCP(){
 #     echo "[PREINST SUCCESS] Container $preContainerName is running"
 # fi
 
+docker images | grep $containerName | grep $crtVersion
+if [ $? -ne 0 ]; then
+    echo "Failed to find image $containerName:$crtVersion"
+    exit 1
+fi
+
 # run current
 port=$listenPort
 killCP $containerName $port

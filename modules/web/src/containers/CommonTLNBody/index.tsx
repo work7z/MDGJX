@@ -1,6 +1,6 @@
 import apiSlice from "@/store/reducers/apiSlice"
 import { Button, Container, Select, Textarea } from "@mantine/core"
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import { Card, Group, Text, Menu, ActionIcon, Image, SimpleGrid, rem } from '@mantine/core';
 import { IconArrowsUpDown, IconDots, IconEraser, IconEye, IconFileZip, IconTrash } from '@tabler/icons-react';
 import ControlBar from "@/components/ControlBar";
@@ -22,9 +22,14 @@ export type TLNState = {
     outputJSON: string;
 }
 
+const debounceFn = _.throttle((fn: () => void) => {
+    fn()
+}, 1300);
+
 export default (props: {
     id: string,
     label: string,
+    realtime?: boolean,
     example: string,
     handleTranslate: (val: TLNState) => Promise<string>
 }) => {
@@ -42,7 +47,56 @@ export default (props: {
     const clipboard = useClipboard({ timeout: 500 });
     const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})
     const [translating, setTranslating] = useState(false)
+    let throtltted_fn_submit_create = () => {
+        if (!props.realtime) return;
+        setTimeout(() => {
+            debounceFn(() => {
+                fn_submit_create({ eventSource: 'input' })()
+            })
+        }, 0)
+    }
     if (!rh) return ''
+    let fn_submit_create = (options: { eventSource: 'submit' | 'input' }) => {
+        let tState = rh.getActualValueInState()
+
+        let fn = async () => {
+            if (translating && options.eventSource == 'submit') {
+                AlertUtils.alertWarn("已取消本次翻译操作")
+                setTranslating(false)
+                return;
+            }
+            setTranslating(true)
+            try {
+                await rh.checkLoginStatus()
+                let before = Date.now()
+                if (!tState) {
+                    AlertUtils.alertWarn("未知错误NIKQMINA")
+                    return;
+                }
+                let result = ''
+                if (tState.inputJSON.length == 0) {
+                    rh.updateValue({
+                        outputJSON: ''
+                    })
+                } else {
+                    result = await props.handleTranslate(tState)
+                    rh.updateValue({
+                        outputJSON: result
+                    })
+                }
+                if (options.eventSource == 'input') {
+
+                } else {
+                    AlertUtils.alertSuccess("翻译完毕，总计" + result.length + "个字符，耗时" + (
+                        (Date.now() - before) / 1000
+                    ).toFixed(2) + "s")
+                }
+            } catch (e) { throw e } finally {
+                setTranslating(false)
+            }
+        }
+        return fn
+    }
     return <Container  >
         <form onSubmit={e => {
             e.preventDefault()
@@ -67,7 +121,9 @@ export default (props: {
                                 resize='both'
                                 minRows={maxRows}
                                 maxRows={maxRows}
-                                {...rh.bindOnChange('inputJSON')}
+                                {...rh.bindOnChange('inputJSON', () => {
+                                    throtltted_fn_submit_create()
+                                })}
                                 className="overflow-auto"
                             />
                         </Group>
@@ -80,32 +136,9 @@ export default (props: {
                                         text: translating ? "取消翻译" : "开始翻译",
                                         // loading: translating,
                                         color: translating ? 'red' : undefined,
-                                        onClick: async () => {
-                                            if (translating) {
-                                                AlertUtils.alertWarn("已取消本次翻译操作")
-                                                setTranslating(false)
-                                                return;
-                                            }
-                                            setTranslating(true)
-                                            try {
-                                                await rh.checkLoginStatus()
-                                                let before = Date.now()
-                                                if (!rh.state) {
-                                                    AlertUtils.alertWarn("未知错误NIKQMINA")
-                                                    return;
-                                                }
-                                                const result = await props.handleTranslate(rh.state)
-                                                rh.updateValue({
-                                                    outputJSON: result
-                                                })
-                                                AlertUtils.alertSuccess("翻译完毕，总计" + result.length + "个字符，耗时" +
-                                                    (
-                                                        (Date.now() - before) / 1000
-                                                    ).toFixed(2) + "s")
-                                            } catch (e) { throw e } finally {
-                                                setTranslating(false)
-                                            }
-                                        }
+                                        onClick: fn_submit_create({
+                                            eventSource: 'submit'
+                                        })
                                     },
                                     {
                                         color: 'green',
@@ -122,6 +155,7 @@ export default (props: {
                                             rh.updateValue({
                                                 inputJSON: props.example
                                             })
+                                            throtltted_fn_submit_create()
                                         }
                                     },
                                     {
@@ -148,6 +182,7 @@ export default (props: {
                                                 inputJSON: '',
                                                 outputJSON: ''
                                             })
+
                                         }
                                     },
                                 ]}

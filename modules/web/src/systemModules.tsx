@@ -56,13 +56,21 @@ export const systemModulesList: SystemModuleItem[] = [
                 bodyFn: () => import('./loadable/ChatBot/index.tsx')
             },
             {
-                name: "功能总览(233)",
+                name: "常用格式转换(233)",
+                id: 'geshi'
+            },
+            {
+                name: "计算机编程类(233)",
                 id: 'overview'
             },
             {
-                name: '我的收藏(0)',
-                id: 'collection'
-            }
+                name: "金融银行证券类(233)",
+                id: 'other'
+            },
+            // {
+            //     name: '我的收藏(0)',
+            //     id: 'collection'
+            // }
         ]
     },
     {
