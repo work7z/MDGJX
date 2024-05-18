@@ -1,12 +1,11 @@
-import CommonTLNBody, { TLNPState } from "@/containers/CommonTLNBody"
+import CommonTLNBody, { TLNPState, TLNState } from "@/containers/CommonTLNBody"
 import apiSlice from "@/store/reducers/apiSlice"
 
 export default () => {
     const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})
 
     return <CommonTLNBody
-        handleTranslate={async (state: TLNPState) => {
-
+        handleTranslate={async (state: TLNState) => {
 
             const r = await t_sendReq({
                 text: state?.inputJSON || '',
