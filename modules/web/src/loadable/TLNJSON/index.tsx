@@ -15,7 +15,7 @@ import { useClipboard } from "@mantine/hooks";
 import AlertUtils from "@/utils/AlertUtils";
 import Blink from "@/components/Blink";
 import { sleep } from "@/utils/CommonUtils";
-import CommonTLNBody, { TLNState } from "@/containers/CommonTLNBody";
+import CommonTLNBody, { TLNPState } from "@/containers/CommonTLNBody";
 
 
 export default () => {
@@ -23,7 +23,7 @@ export default () => {
 
     return (
         <CommonTLNBody
-            handleTranslate={async (state: TLNState) => {
+            handleTranslate={async (state: TLNPState) => {
                 const waitArr: Promise<any>[] = []
                 // modify source
                 function beforeTranslate(value) {

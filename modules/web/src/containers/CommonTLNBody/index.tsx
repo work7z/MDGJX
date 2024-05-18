@@ -11,16 +11,19 @@ import { stat } from "fs";
 import _ from "lodash";
 import { FN_GetDispatch } from "@/store/nocycle";
 import StateSlice from "@/store/reducers/stateSlice";
-import { useClipboard } from "@mantine/hooks";
+import { useClipboard, useDebouncedCallback } from "@mantine/hooks";
 import AlertUtils from "@/utils/AlertUtils";
 import Blink from "@/components/Blink";
 import { sleep } from "@/utils/CommonUtils";
-export type TLNState = {
+export type TLNPState = {
     sourceLang: string;
     targetLang: string;
+}
+export type TLNNPState = {
     inputJSON: string;
     outputJSON: string;
 }
+export type TLNState = TLNPState & TLNNPState
 
 const debounceFn = _.throttle((fn: () => void) => {
     fn()
@@ -34,25 +37,30 @@ export default (props: {
     handleTranslate: (val: TLNState) => Promise<string>
 }) => {
     const rh = exportUtils.register('tln' + props.id, {
-        getDefaultStateFn: () => {
+        getPersistedStateFn: () => {
             return {
                 sourceLang: 'zh',
                 targetLang: 'en',
+            } satisfies TLNPState
+        },
+        getNotPersistedStateFn: () => {
+            return {
                 inputJSON: '',
                 outputJSON: ''
-            } satisfies TLNState
-        },
+            }
+        }
     })
     const maxRows = 10
     const clipboard = useClipboard({ timeout: 500 });
     const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})
     const [translating, setTranslating] = useState(false)
+    const internalThrottledFnSubmitCreate = useDebouncedCallback(async () => {
+        fn_submit_create({ eventSource: 'input' })()
+    }, 200)
     let throtltted_fn_submit_create = () => {
         if (!props.realtime) return;
         setTimeout(() => {
-            debounceFn(() => {
-                fn_submit_create({ eventSource: 'input' })()
-            })
+            internalThrottledFnSubmitCreate()
         }, 0)
     }
     if (!rh) return ''
@@ -75,17 +83,17 @@ export default (props: {
                 }
                 let result = ''
                 if (tState.inputJSON.length == 0) {
-                    rh.updateValue({
+                    rh.updateNonPState({
                         outputJSON: ''
                     })
                 } else {
                     result = await props.handleTranslate(tState)
-                    rh.updateValue({
+                    rh.updateNonPState({
                         outputJSON: result
                     })
                 }
                 if (options.eventSource == 'input') {
-
+                    // do nothing la, no need to alert in this condition
                 } else {
                     AlertUtils.alertSuccess("翻译完毕，总计" + result.length + "个字符，耗时" + (
                         (Date.now() - before) / 1000
@@ -121,7 +129,9 @@ export default (props: {
                                 resize='both'
                                 minRows={maxRows}
                                 maxRows={maxRows}
-                                {...rh.bindOnChange('inputJSON', () => {
+                                {...rh.bindOnChange({
+                                    npStateKey: 'inputJSON'
+                                }, () => {
                                     throtltted_fn_submit_create()
                                 })}
                                 className="overflow-auto"
@@ -144,7 +154,7 @@ export default (props: {
                                         color: 'green',
                                         text: '复制结果',
                                         onClick: () => {
-                                            clipboard.copy(rh.state?.outputJSON || '无结果')
+                                            clipboard.copy(rh.npState?.outputJSON || '无结果')
                                             AlertUtils.alertSuccess('已复制到剪贴板')
                                         }
                                     },
@@ -152,7 +162,7 @@ export default (props: {
                                         color: 'gray',
                                         text: '示例' + props.label,
                                         onClick: () => {
-                                            rh.updateValue({
+                                            rh.updateNonPState({
                                                 inputJSON: props.example
                                             })
                                             throtltted_fn_submit_create()
@@ -165,9 +175,9 @@ export default (props: {
                                         pr: 12,
                                         icon: <IconArrowsUpDown size='15' />,
                                         onClick: () => {
-                                            rh.updateValue({
-                                                inputJSON: rh.state?.outputJSON,
-                                                outputJSON: rh.state?.inputJSON
+                                            rh.updateNonPState({
+                                                inputJSON: rh.npState?.outputJSON,
+                                                outputJSON: rh.npState?.inputJSON
                                             })
                                         }
                                     },
@@ -178,7 +188,7 @@ export default (props: {
                                         pr: 12,
                                         icon: <IconEraser size='15' />,
                                         onClick: () => {
-                                            rh.updateValue({
+                                            rh.updateNonPState({
                                                 inputJSON: '',
                                                 outputJSON: ''
                                             })
@@ -198,7 +208,9 @@ export default (props: {
                                 autosize
                                 resize="both"
                                 minRows={maxRows}
-                                {...rh.bindOnChange('outputJSON')}
+                                {...rh.bindOnChange({
+                                    npStateKey: 'outputJSON'
+                                })}
                                 maxRows={maxRows}
                                 name='outputJSON'
                             />
@@ -207,20 +219,24 @@ export default (props: {
                 } sidebar={
                     <Group gap={7}>
                         <I18nSelect
-                            {...rh.bindOnChange('sourceLang')}
+                            {...rh.bindOnChange({
+                                pStateKey: 'sourceLang'
+                            })}
                             label={'源语言'} name='sourceLang' />
                         <Group justify="center" className="ml-[-15px] w-full text-center" >
                             <Button size='compact-xs' variant="default" onClick={() => {
-                                rh.updateValue({
-                                    sourceLang: rh.state?.targetLang,
-                                    targetLang: rh.state?.sourceLang
+                                rh.updatePState({
+                                    sourceLang: rh.pState?.targetLang,
+                                    targetLang: rh.pState?.sourceLang
                                 })
                             }}>
                                 <IconArrowsUpDown size={15} />
                             </Button>
                         </Group>
                         <I18nSelect label="目标语言"
-                            {...rh.bindOnChange('targetLang')}
+                            {...rh.bindOnChange({
+                                pStateKey: 'targetLang'
+                            })}
                         />
                     </Group>
                 } />
