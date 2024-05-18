@@ -89,7 +89,7 @@ export default function GetInTouchSimple() {
                     <ul className='list-disc'>
                         <li>版本号: {appInfo.version}</li>
                         <li>编译日期: {appInfo.releaseDate}</li>
-                        <li>编译时间: {new Date(parseInt(appInfo.timestamp)).toString()}(自动化部署)</li>
+                        <li>编译时间: {new Date(parseInt(appInfo.timestamp) * 1000).toString()}(自动化部署)</li>
                     </ul>
                 </div>
 

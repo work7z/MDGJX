@@ -179,12 +179,9 @@ export default () => {
     return (
         <CommonTLNBody
             handleTranslate={async (state, fn_translate) => {
-                if (!state.translateMethod) {
-                    throw new Error('请选择翻译方法')
-                }
-                const fn_translate_impl = JSONTranslateMethods.find(x => x.value === state.translateMethod)?.func
+                let fn_translate_impl = JSONTranslateMethods.find(x => x.value === state.translateMethod)?.func
                 if (!fn_translate_impl) {
-                    throw new Error('未找到对应的翻译方法')
+                    fn_translate_impl = JSONTranslateMethods[0].func
                 }
                 const result = await fn_translate_impl(state.inputJSON, fn_translate)
                 return result;
