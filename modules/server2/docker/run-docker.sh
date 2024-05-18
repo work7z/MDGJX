@@ -35,7 +35,7 @@ runCP(){
 #     echo "[PREINST SUCCESS] Container $preContainerName is running"
 # fi
 
-docker images | grep $containerName | grep $crtVersion
+docker images | grep localbuild/server2-linux-x64 | grep $crtVersion
 if [ $? -ne 0 ]; then
     echo "Failed to find image $containerName:$crtVersion"
     exit 1

@@ -1,5 +1,6 @@
 export default function GetAppInfo() {
     return {
+        qqGroup: '106038310',
         name: '秒达工具箱',
         // link: 'MDGJX.com',
         link: 'laftools.cn',

@@ -141,7 +141,7 @@ export const systemModulesList: SystemModuleItem[] = [
             {
                 name: '关于软件',
                 id: 'about',
-                href: GetAppInfo().githubRepo
+                bodyFn: () => import('./loadable/AboutSoftware/index.tsx'),
             },
         ]
     },

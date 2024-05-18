@@ -5,5 +5,5 @@ source ~/.zshrc
 cd $MDGJX_ROOT/modules/server2
 ssh $SERVER_2H4G -p 26609 "echo 'hello, production'"
 pwd
-echo "Deploying Server2 to production"
+echo "Deploying Server2 to production with version $ver..."
 ssh $SERVER_2H4G -p 26609 "/home/appuser/dkplace/run-docker-$ver.sh server2-inst $ver 2016"
