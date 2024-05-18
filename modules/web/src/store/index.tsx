@@ -35,22 +35,29 @@ import BigTextSlice from "./reducers/bigTextSlice";
 import ALL_NOCYCLE from "./nocycle";
 import StateSlice from "./reducers/stateSlice";
 
+export type StReducer = ReturnType<typeof StateSlice.reducer>;
 const rootReducer = combineReducers({
-    state: StateSlice.reducer,
+    state: persistReducer<StReducer>({
+        key: 'state',
+        storage: storage,
+        stateReconciler: autoMergeLevel2,
+        whitelist: ['kvSessionMap']
+    }, StateSlice.reducer),
     api: apiSlice.reducer,
     settings: settingsSlice.reducer,
     memory: MemorySlice.reducer,
     users: UsersSlice.reducer,
     bigtext: BigTextSlice.reducer
 })
+export type RootState = ReturnType<typeof rootReducer>;
 
-export const persistedReducer = persistReducer({
+
+export const persistedReducer = persistReducer<RootState>({
     key: 'root',
     storage,
     stateReconciler: autoMergeLevel2,
-    // whitelist: ['settings', 'users']
-    whitelist: ['settings', 'users']
-}, rootReducer as any)
+    whitelist: ['settings', 'users',]
+}, rootReducer)
 
 
 export const store = configureStore(({
@@ -69,5 +76,4 @@ ALL_NOCYCLE.store = store as any
 
 export let persistor = persistStore(store)
 
-export type RootState = ReturnType<typeof rootReducer>;
 

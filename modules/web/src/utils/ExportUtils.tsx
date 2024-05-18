@@ -60,7 +60,8 @@ export class RHelper<T, K> {
     let npStateKey = bindKey.npStateKey
     let finalKey: any = pStateKey || npStateKey
     let isItPState = finalKey == pStateKey
-    let finalKeyValue: string | null = (!this.pState || !this.npState) ? null : isItPState ? _.toString(this.pState[pStateKey]) : _.toString(this.npState[npStateKey])
+    const { pState, npState } = this;
+    let finalKeyValue: string | null = (!this.pState || !this.npState) ? null : pState == null || npState == null ? null : isItPState ? _.toString(pState[pStateKey as keyof T]) : _.toString(npState[npStateKey as keyof K])
     return {
       name: finalKey,
       value: finalKeyValue || '',
@@ -104,14 +105,21 @@ function register<T, K>(name: string, options: ROptions<T, K>): RHelper<T, K> | 
         state: options.getPersistedStateFn(),
         isItPState: true
       }))
+    }
+  }, [_.isEmpty(crtPState)])
+  useEffect(() => {
+    const emptyOrNot = _.isEmpty(crtNPState)
+    if (emptyOrNot) {
       FN_GetDispatch()(StateSlice.actions.updateSessionMapValue({
         keyname: name,
         state: options.getNotPersistedStateFn(),
         isItPState: false
       }))
     }
-  }, [_.isEmpty(crtPState)])
-  if (_.isEmpty(crtPState)) {
+  }, [_.isEmpty(crtNPState)])
+
+
+  if (_.isEmpty(crtPState) || _.isEmpty(crtNPState)) {
     return null;
   }
   return new RHelper<T, K>(name, crtPState as T, crtNPState as K)
