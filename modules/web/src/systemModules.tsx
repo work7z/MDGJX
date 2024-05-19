@@ -116,6 +116,12 @@ export const systemModulesList: SystemModuleItem[] = [
                 id: 'json-cn-en',
                 bodyFn: () => import('./loadable/TLNJSONComparison/index.tsx')
             },
+
+            {
+                name: 'Markdown 文档翻译',
+                id: 'md',
+                bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
+            },
         ]
     },
     {
