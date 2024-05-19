@@ -80,11 +80,11 @@ function AuthenticationTitle() {
                 </Paper>
                 <Paper withBorder shadow="md" p={10} mt={10} radius="md">
                     <Group wrap="nowrap">
-                        <Button color='violet' onClick={() => {
+                        {/* <Button color='violet' onClick={() => {
                             AuthUtils.signOut()
                         }}>
                             用户登出
-                        </Button>
+                        </Button> */}
                         <Link to='/settings/my-account?type=find-pw'>
                             <Button color='indigo' onClick={() => {
                             }}>
@@ -93,8 +93,10 @@ function AuthenticationTitle() {
                         </Link>
                         <Link to='/settings/feedback'>
                             <Button color='blue' onClick={() => {
+                                AlertUtils.alertInfo("很抱歉让您来到账号申诉板块，如果您在账号使用过程中，发现用户权益与预期不一致，或者数据不一致，请随时联系我们，我们将为您排查并尽快处理。")
+
                             }}>
-                                建议与反馈
+                                账号申诉
                             </Button>
                         </Link>
                     </Group>

@@ -118,6 +118,103 @@ export default (props: {
         }
         return fn
     }
+    const jsx_inputTextarea = <Group wrap='nowrap'>
+        <Textarea
+            spellCheck={false}
+            w={'100%'}
+            placeholder={"请将需要翻译的" + props.label + "粘贴到这里"}
+            label={props.label + "输入"}
+            autosize
+            resize='both'
+            minRows={maxRows}
+            maxRows={maxRows}
+            {...rh.bindOnChange({
+                npStateKey: 'inputJSON'
+            }, () => {
+                throtltted_fn_submit_create()
+            })}
+            className="overflow-auto"
+        />
+    </Group>
+    const jsx_controlBar = <Group mt={10} wrap='nowrap' justify="space-between">
+        <Group gap={7}>
+            <ControlBar actions={[
+                {
+                    type: 'submit',
+                    text: translating ? "取消翻译" : "开始翻译",
+                    // loading: translating,
+                    color: translating ? 'red' : undefined,
+                    onClick: fn_submit_create({
+                        eventSource: 'submit'
+                    })
+                },
+                {
+                    color: 'green',
+                    text: '复制结果',
+                    onClick: () => {
+                        clipboard.copy(rh.npState?.outputJSON || '无结果')
+                        AlertUtils.alertSuccess('已复制到剪贴板')
+                    }
+                },
+                {
+                    color: 'gray',
+                    text: '示例' + props.label,
+                    onClick: () => {
+                        rh.updateNonPState({
+                            inputJSON: props.example
+                        })
+                        throtltted_fn_submit_create()
+                    }
+                },
+                {
+                    color: 'gray',
+                    variant: 'outline',
+                    pl: 12,
+                    pr: 12,
+                    icon: <IconArrowsUpDown size='15' />,
+                    onClick: () => {
+                        rh.updateNonPState({
+                            inputJSON: rh.npState?.outputJSON,
+                            outputJSON: rh.npState?.inputJSON
+                        })
+                    }
+                },
+                {
+                    color: 'gray',
+                    variant: 'outline',
+                    pl: 12,
+                    pr: 12,
+                    icon: <IconEraser size='15' />,
+                    onClick: () => {
+                        rh.updateNonPState({
+                            inputJSON: '',
+                            outputJSON: ''
+                        })
+
+                    }
+                },
+            ]}
+            />
+        </Group>
+    </Group>
+    const jsx_outputTextarea = (
+        <Group mt={10} wrap='nowrap'>
+            <Textarea
+                spellCheck={false}
+                w={'100%'}
+                label="文本输出"
+                placeholder="翻译后的文本将会显示在这里"
+                autosize
+                resize="both"
+                minRows={maxRows}
+                {...rh.bindOnChange({
+                    npStateKey: 'outputJSON'
+                })}
+                maxRows={maxRows}
+                name='outputJSON'
+            />
+        </Group>
+    )
     return <Container  >
         <form onSubmit={e => {
             e.preventDefault()
@@ -133,103 +230,11 @@ export default (props: {
 
                 <PanelWithSideBar main={
                     <>
-                        <Group wrap='nowrap'>
-                            <Textarea
-                                spellCheck={false}
-                                w={'100%'}
-                                placeholder={"请将需要翻译的" + props.label + "粘贴到这里"}
-                                label={props.label + "输入"}
-                                autosize
-                                resize='both'
-                                minRows={maxRows}
-                                maxRows={maxRows}
-                                {...rh.bindOnChange({
-                                    npStateKey: 'inputJSON'
-                                }, () => {
-                                    throtltted_fn_submit_create()
-                                })}
-                                className="overflow-auto"
-                            />
-                        </Group>
+                        {jsx_inputTextarea}
 
-                        <Group mt={10} wrap='nowrap' justify="space-between">
-                            <Group gap={7}>
-                                <ControlBar actions={[
-                                    {
-                                        type: 'submit',
-                                        text: translating ? "取消翻译" : "开始翻译",
-                                        // loading: translating,
-                                        color: translating ? 'red' : undefined,
-                                        onClick: fn_submit_create({
-                                            eventSource: 'submit'
-                                        })
-                                    },
-                                    {
-                                        color: 'green',
-                                        text: '复制结果',
-                                        onClick: () => {
-                                            clipboard.copy(rh.npState?.outputJSON || '无结果')
-                                            AlertUtils.alertSuccess('已复制到剪贴板')
-                                        }
-                                    },
-                                    {
-                                        color: 'gray',
-                                        text: '示例' + props.label,
-                                        onClick: () => {
-                                            rh.updateNonPState({
-                                                inputJSON: props.example
-                                            })
-                                            throtltted_fn_submit_create()
-                                        }
-                                    },
-                                    {
-                                        color: 'gray',
-                                        variant: 'outline',
-                                        pl: 12,
-                                        pr: 12,
-                                        icon: <IconArrowsUpDown size='15' />,
-                                        onClick: () => {
-                                            rh.updateNonPState({
-                                                inputJSON: rh.npState?.outputJSON,
-                                                outputJSON: rh.npState?.inputJSON
-                                            })
-                                        }
-                                    },
-                                    {
-                                        color: 'gray',
-                                        variant: 'outline',
-                                        pl: 12,
-                                        pr: 12,
-                                        icon: <IconEraser size='15' />,
-                                        onClick: () => {
-                                            rh.updateNonPState({
-                                                inputJSON: '',
-                                                outputJSON: ''
-                                            })
+                        {jsx_controlBar}
 
-                                        }
-                                    },
-                                ]}
-                                />
-                            </Group>
-                        </Group>
-
-                        <Group mt={10} wrap='nowrap'>
-                            <Textarea
-                                spellCheck={false}
-                                w={'100%'}
-                                label="文本输出"
-                                placeholder="翻译后的文本将会显示在这里"
-                                autosize
-                                resize="both"
-                                minRows={maxRows}
-                                {...rh.bindOnChange({
-                                    npStateKey: 'outputJSON'
-                                })}
-                                maxRows={maxRows}
-                                name='outputJSON'
-                            />
-                        </Group>
+                        {jsx_outputTextarea}
                     </>
                 } sidebar={
                     <Group gap={7}>
