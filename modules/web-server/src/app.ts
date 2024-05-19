@@ -20,6 +20,7 @@ import proxy from 'express-http-proxy';
 export const asyncHandler = (fn: (req: Request, res: Response, next) => void) => (req: Request, res: Response, next) => {
   return Promise.resolve(fn(req, res, next)).catch(next);
 };
+let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
 
 const launchTime = new Date();
 export class App {
@@ -47,6 +48,7 @@ export class App {
       logger.info(`=================================`);
       logger.info(`======= ENV: ${this.env} =======`);
       logger.info(`======= HOST: ${this.host} =======`);
+      logger.info(`======= DIRECT_PROXY_SERVER: ${DIRECT_PROXY_SERVER} =======`);
       logger.info(`🚀 App listening on the port ${this.port}`);
       logger.info(`=================================`);
     });
@@ -75,7 +77,6 @@ export class App {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
     const prefix = '/v3';
-    let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
     logger.info('DIRECT_PROXY_SERVER: ' + DIRECT_PROXY_SERVER);
     app.use(
       prefix,

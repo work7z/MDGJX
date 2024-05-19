@@ -37,6 +37,8 @@ export class TranslationRoute implements Routes {
         if (text === '') {
           throw new Error('输入内容不能为空');
         }
+
+        let obj = await TranslateTools.translateText(text, sourceLang, targetLang);
         const r = await S2TranslationRecord.create({
           userId: user.id,
           fromIP: req.ip,
@@ -48,8 +50,8 @@ export class TranslationRoute implements Routes {
           // DO NOT CACHE SENSITIVE TRANSLATION RESULT HERE
           cachedText: '',
           processedText: '',
+          secretId: obj.secretId || 'N/A ',
         });
-        let obj = await TranslateTools.translateText(text, sourceLang, targetLang);
         if (!obj.isOK) {
           throw new Error('翻译失败: ' + obj.errorCode);
         }

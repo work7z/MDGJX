@@ -6,7 +6,7 @@ import { isDevEnv } from '../hooks/env';
 import _ from 'lodash';
 import { logger } from '@/utils/logger';
 
-const UPDATE_TIME_VERSION = '19'
+const UPDATE_TIME_VERSION = '20'
 
 export class S2SendMailVerifyCodeRecord extends Model<InferAttributes<S2SendMailVerifyCodeRecord>, InferCreationAttributes<S2SendMailVerifyCodeRecord>> {
     declare id?: number;
@@ -43,6 +43,7 @@ export class S2TranslationRecord extends Model<InferAttributes<S2TranslationReco
     declare sourceLang: string;
     declare targetLang: string;
     declare handleType: string; // json or text
+    declare secretId: string; // show which secretId is used
     declare cachedText: string; // it will be cleaned regualry in the background
     declare processedText: string; // it will be cleaned regualry in the background
     declare errorText: string; // it will be cleaned regualry in the background
@@ -187,6 +188,10 @@ export default async (daoRef: DaoRef) => {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
+        },
+        secretId: {
+            type: DataTypes.STRING,
+            allowNull: true
         },
         status: {
             type: DataTypes.INTEGER,
