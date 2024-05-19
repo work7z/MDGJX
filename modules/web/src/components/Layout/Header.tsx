@@ -37,6 +37,9 @@ export default (props: {
     const userObj = exportUtils.useSelector(v => {
         return v.users
     })
+    const userAcctJSX = <Link to={'/settings/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
+        <IconUserCircle stroke={1.5} />
+    }</ActionIcon></Link>
     return <AppShell.Header className='flex flex-row justify-between px-2 sm:px-5 ' >
         <Group justify='space-between' className='w-full'>
             <Group>
@@ -68,9 +71,7 @@ export default (props: {
                 <SourceCodeLink />
                 {
                     userObj.hasSignIn ? [
-                        <Link to={'/settings/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
-                            <IconUserCircle stroke={1.5} />
-                        }</ActionIcon></Link>,
+                        userAcctJSX,
                         <Button variant="default" onClick={() => {
                             AuthUtils.signOut()
                         }} className=' hidden sm:block ' > {
@@ -78,7 +79,10 @@ export default (props: {
                             }</Button>
                         // <Link to={'/settings/my-account?type=signin'}>   <Button variant="default" className=' hidden sm:block '>登出</Button></Link>,
                     ] : [
-                        <Link to={'/settings/my-account?type=signin'}> <Button variant="default" className=' hidden sm:block '>登录账号</Button></Link>,
+                        <Link className=' block sm:hidden ' to={'/settings/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
+                            <IconUserCircle stroke={1.5} />
+                        }</ActionIcon></Link>,
+                        < Link to={'/settings/my-account?type=signin'} > <Button variant="default" className=' hidden sm:block '>登录账号</Button></Link>,
                         <Link to={'/settings/my-account?type=signup'}>
                             <Button className=' hidden sm:block '>免费注册</Button>
                         </Link>

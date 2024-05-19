@@ -114,6 +114,7 @@ export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass
       } else {
         // pass through
       }
+
       return [
         userInfo,
         () => {

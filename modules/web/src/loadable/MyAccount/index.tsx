@@ -11,6 +11,8 @@ import {
     Button,
     Avatar,
     Badge,
+    Flex,
+    Alert,
 } from '@mantine/core';
 import classes from './AuthenticationTitle.module.css';
 import GetAppInfo from '@/AppInfo';
@@ -20,10 +22,13 @@ import apiSlice, { SignInCredentials, verifyResponse } from '@/store/reducers/ap
 import AlertUtils from '@/utils/AlertUtils';
 import { ACTION_doSignInByInfo } from '@/store/actions/auth-actions';
 import exportUtils from '@/utils/ExportUtils';
-import { IconAt, IconCalendarBolt, IconPhoneCall, IconUserBolt } from '@tabler/icons-react';
+import { IconAt, IconCalendarBolt, IconInfoCircle, IconPhoneCall, IconUserBolt } from '@tabler/icons-react';
 import _ from 'lodash';
 import AuthUtils from '@/utils/AuthUtils';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { CardListTableView } from './CardListTableView';
+import { formatToYYYYMMDD } from '@/utils/DateUtils';
+import OldUserRemark from '../FAQ/OldUserRemark';
 
 function AuthenticationTitle() {
     let sp = (useSearchParams())
@@ -33,72 +38,109 @@ function AuthenticationTitle() {
     const [t_tellmevcode_findpw] = apiSlice.useLazyTellMeVCode4FindPwQuery({})
     const [t_mailsend_findpw] = apiSlice.useLazyMailFindPwQuery({})
     const [enterVCodeMode, setEnterVCodeMode] = useState(false)
+
     const [loading_sendmail, setLoading_sendmail] = useState(false)
     const [preEMail, setPreEMail] = useState('')
     const uObj = exportUtils.useSelector(v => v.users)
-    if (uObj.hasSignIn && sp.type != 'find-pw') {
+    const hasSignIn = uObj.hasSignIn
+    const [t_getCardList, st_cardList] = apiSlice.useLazyGetGiftCardListQuery({})
+    useEffect(() => {
+        if (hasSignIn) {
+            t_getCardList({})
+        }
+    }, [hasSignIn])
+    if (hasSignIn && sp.type != 'find-pw') {
+        const cardList = st_cardList.data?.data || []
         return (
-            <Container size={420} my={40}>
-                <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-                    <Group wrap="nowrap">
-                        <div>
+            <Container my={10} size={'xl'} className='block sm:flex flex-row justify-start items-start sm:space-x-4'>
+                <div className='flex-1 mb-5'>
+                    <Paper withBorder shadow="md" p={10} radius="md">
+                        <Title
+                            size='xl'
+                            mb={3}
+                        >
+                            礼品卡列表
+                        </Title>
+                        <CardListTableView cardList={cardList} />
+                        <Alert mb={10} variant="light" color="green" title="关于礼品卡兑换、赠与功能的说明" icon={
+                            <IconInfoCircle />
+                        }>
+                            我们已经自动发放礼品卡到每个老用户的账号里，具体数据如上，您可以查看您的礼品卡信息，如您有任何问题，请随时联系我们。
 
-                            <Text fz="lg" fw={500} className={classes.name}>
-                                {uObj.userInfo?.name || "N/A"}     {
-                                    !(uObj.userInfo?.isProUser) ?
-                                        <Badge size='sm' color={"green"} variant="light">
-                                            开源版用户
-                                        </Badge> : <Badge size='sm' color={"pink"} variant="light">
-                                            专业版用户
-                                        </Badge>
-                                }
-                            </Text>
-
-                            <Group wrap="nowrap" gap={10} mt={3}>
-                                <IconAt stroke={1.5} size="1rem" className={classes.icon} />
-                                <Text fz="xs" c="dimmed">
-                                    {uObj.userInfo?.email}
+                            但目前来说，系统还没有开放兑换礼品卡的接口，此功能还在内测中，此功能将在测试通过后上线。等到该功能上线成功后，您可以将此礼品卡自己兑换、赠与给他人等操作。
+                        </Alert>
+                        <Alert variant="light" color="blue" title="关于会员礼品卡权益的说明" icon={
+                            <IconInfoCircle />
+                        }>
+                            <OldUserRemark />
+                        </Alert>
+                    </Paper>
+                </div>
+                <Flex dir='col' className='flex flex-col sm:w-[400px]'>
+                    <Paper withBorder shadow="md" p={30} radius="md">
+                        <Group wrap="nowrap">
+                            <div>
+                                <Text fz="lg" fw={500} className={classes.name}>
+                                    {uObj.userInfo?.name || "N/A"}     {
+                                        !(uObj.userInfo?.isProUser) ?
+                                            <Badge size='sm' color={"green"} variant="light">
+                                                开源版用户
+                                            </Badge> : <Badge size='sm' color={"pink"} variant="light">
+                                                专业版用户
+                                            </Badge>
+                                    }
                                 </Text>
-                            </Group>
 
-                            <Group wrap="nowrap" gap={10} mt={5}>
-                                <IconCalendarBolt stroke={1.5} size="1rem" className={classes.icon} />
-                                <Text fz="xs" c="dimmed">
-                                    加入于 {_.toString(uObj.userInfo?.createdAt) || "N/A"}
-                                </Text>
-                            </Group>
+                                <Group wrap="nowrap" gap={10} mt={3}>
+                                    <IconAt stroke={1.5} size="1rem" className={classes.icon} />
+                                    <Text fz="xs" c="dimmed">
+                                        {uObj.userInfo?.email}
+                                    </Text>
+                                </Group>
+
+                                <Group wrap="nowrap" gap={10} mt={5}>
+                                    <IconCalendarBolt stroke={1.5} size="1rem" className={classes.icon} />
+                                    <Text fz="xs" c="dimmed">
+                                        加入于 {
+                                            formatToYYYYMMDD(new Date(uObj.userInfo?.createdAt as any))
+                                        }
+                                    </Text>
+                                </Group>
 
 
-                            <Group wrap="nowrap" gap={10} mt={5}>
-                                <IconUserBolt stroke={1.5} size="1rem" className={classes.icon} />
-                                <Text fz="xs" c="dimmed">
-                                    更多用户管理功能，敬请期待
-                                </Text>
-                            </Group>
-                        </div>
-                    </Group>
-                </Paper>
-                <Paper withBorder shadow="md" p={10} mt={10} radius="md">
-                    <Group wrap="nowrap">
-                        <Button color='violet' onClick={() => {
+                                {/* <Group wrap="nowrap" gap={10} mt={5}>
+                                    <IconUserBolt stroke={1.5} size="1rem" className={classes.icon} />
+                                    <Text fz="xs" c="dimmed">
+                                        更多用户管理功能，敬请期待
+                                    </Text>
+                                </Group> */}
+                            </div>
+                        </Group>
+                    </Paper>
+                    <Paper withBorder shadow="md" p={10} mt={10} radius="md">
+                        <Group flex='flex-col space-y-3'>
+                            {/* <Button color='violet' onClick={() => {
                             AuthUtils.signOut()
                         }}>
                             用户登出
-                        </Button>
-                        <Link to='/settings/my-account?type=find-pw'>
-                            <Button color='indigo' onClick={() => {
-                            }}>
-                                修改密码
-                            </Button>
-                        </Link>
-                        <Link to='/settings/feedback'>
-                            <Button color='blue' onClick={() => {
-                            }}>
-                                建议与反馈
-                            </Button>
-                        </Link>
-                    </Group>
-                </Paper>
+                        </Button> */}
+                            <Link className='w-full' to='/settings/my-account?type=find-pw'>
+                                <Button fullWidth color='indigo' onClick={() => {
+                                }}>
+                                    修改密码
+                                </Button>
+                            </Link>
+                            <Link className='w-full' to='/settings/feedback'>
+                                <Button fullWidth color='blue' onClick={() => {
+                                    AlertUtils.alertInfo("很抱歉让您来到账号申诉板块，如果您在账号使用过程中，发现用户权益与预期不一致，或者数据不一致，请随时联系我们，我们将为您排查并尽快处理。")
+
+                                }}>
+                                    账号申诉
+                                </Button>
+                            </Link>
+                        </Group>
+                    </Paper>
+                </Flex>
             </Container>
         )
     }

@@ -50,7 +50,8 @@ export const useMDParams = (): TypeMDParams => {
 }
 
 export function DoubleNavbar(props: {
-    mdParams: TypeMDParams
+    mdParams: TypeMDParams,
+    toggle: () => void
 }) {
     const { mainModuleItem, mainSubModuleItem } = props.mdParams
     const justSysModuleList = systemModulesList
@@ -99,6 +100,7 @@ export function DoubleNavbar(props: {
                 key={link}
                 onClick={() => {
                     latestReadForEachModule[mainModuleItem.id] = item
+                    props.toggle()
                 }}
             >
                 {item.name}

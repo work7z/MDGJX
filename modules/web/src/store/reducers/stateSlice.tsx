@@ -13,9 +13,13 @@ type StateState = {
     kvSessionMap: {
         [key: string]: object | null
     }
+    npKVSessionMap: {
+        [key: string]: object | null
+    }
 };
 const initialState: StateState = {
-    kvSessionMap: {}
+    kvSessionMap: {},
+    npKVSessionMap: {}
 };
 
 export type PStatetate = Partial<StateState>
@@ -23,14 +27,22 @@ const StateSlice = createSlice({
     name: "state",
     initialState,
     reducers: {
-        updateKvSessionMap: function (state: StateState, action: PayloadAction<{
+        updateSessionMapValue: function (state: StateState, action: PayloadAction<{
             keyname: string,
-            keystate: any
+            state: any,
+            isItPState: boolean
         }>) {
-            if (!state.kvSessionMap[action.payload.keyname]) {
-                state.kvSessionMap[action.payload.keyname] = {}
+            if (action.payload.isItPState) {
+                if (!state.kvSessionMap[action.payload.keyname]) {
+                    state.kvSessionMap[action.payload.keyname] = {}
+                }
+                _.merge(state.kvSessionMap[action.payload.keyname], action.payload.state)
+            } else {
+                if (!state.npKVSessionMap[action.payload.keyname]) {
+                    state.npKVSessionMap[action.payload.keyname] = {}
+                }
+                _.merge(state.npKVSessionMap[action.payload.keyname], action.payload.state)
             }
-            _.merge(state.kvSessionMap[action.payload.keyname], action.payload.keystate)
         },
     },
 });

@@ -225,7 +225,6 @@ import { AppInfoClz } from \"./types\"
         fi
         echo "[I] packaging for $platformName"
         (
-            set +e
             cd $platformDistDir
             fileName=
             subDirName=LafTools-${crtVersion}-$platformName-minimal
@@ -262,7 +261,6 @@ import { AppInfoClz } from \"./types\"
                 tar -ztf $fileName &> /dev/null
             fi
             echo "[I] file size: $(du -sh $fileName | awk '{print $1}')"
-            set -e
         )
     }
     package-all(){

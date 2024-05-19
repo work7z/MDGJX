@@ -18,7 +18,7 @@ killCP(){
 runCP(){
     pContainerName=$1
     pListenPort=$2
-    docker run -e APP_VERSION=$crtVersion -e TLNKEY=$TLNKEY -e DB_USER=$DB_USER -e PRIVATE_KEY=$PRIVATE_KEY -e DB_PASSWORD=$DB_PASSWORD -e DB_HOST=$DB_HOST -e DB_PORT=$DB_PORT -e DB_DATABASE=$DB_DATABASE -e TYKEY=$TYKEY --name $pContainerName -d -p 0.0.0.0:$pListenPort:2016 -v /home/appuser/Server2App-dist/logs:/opt/logs:rw -v /home/appuser/Server2PreCompile:/opt/app/precompiled:rw -v /home/appuser/Server2App-meta/:/opt/app/meta:rw localbuild/server2-linux-x64:$crtVersion
+    docker run -e MAIL_USER=$MAIL_USER -e MAIL_PASS=$MAIL_PASS -e APP_VERSION=$crtVersion -e TLNKEY=$TLNKEY -e DB_USER=$DB_USER -e PRIVATE_KEY=$PRIVATE_KEY -e DB_PASSWORD=$DB_PASSWORD -e DB_HOST=$DB_HOST -e DB_PORT=$DB_PORT -e DB_DATABASE=$DB_DATABASE -e TYKEY=$TYKEY --name $pContainerName -d -p 0.0.0.0:$pListenPort:2016 -v /home/appuser/Server2App-dist/logs:/opt/logs:rw -v /home/appuser/Server2PreCompile:/opt/app/precompiled:rw -v /home/appuser/Server2App-meta/:/opt/app/meta:rw localbuild/server2-linux-x64:$crtVersion
 }
 # test pre (should not be running like this)
 # preContainerName=${containerName}preinst
@@ -34,6 +34,12 @@ runCP(){
 # else 
 #     echo "[PREINST SUCCESS] Container $preContainerName is running"
 # fi
+
+docker images | grep localbuild/server2-linux-x64 | grep $crtVersion
+if [ $? -ne 0 ]; then
+    echo "Failed to find image $containerName:$crtVersion"
+    exit 1
+fi
 
 # run current
 port=$listenPort

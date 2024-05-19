@@ -56,13 +56,21 @@ export const systemModulesList: SystemModuleItem[] = [
                 bodyFn: () => import('./loadable/ChatBot/index.tsx')
             },
             {
-                name: "功能总览(233)",
+                name: "常用格式转换(233)",
+                id: 'geshi'
+            },
+            {
+                name: "计算机编程类(233)",
                 id: 'overview'
             },
             {
-                name: '我的收藏(0)',
-                id: 'collection'
-            }
+                name: "金融银行证券类(233)",
+                id: 'other'
+            },
+            // {
+            //     name: '我的收藏(0)',
+            //     id: 'collection'
+            // }
         ]
     },
     {
@@ -94,10 +102,15 @@ export const systemModulesList: SystemModuleItem[] = [
                 bodyFn: () => import('./loadable/TLNText/index.tsx')
             },
             {
-                name: 'JSON 翻译',
+                name: 'JSON 格式翻译',
                 id: 'json',
                 bodyFn: () => import('./loadable/TLNJSON/index.tsx')
-            }
+            },
+            {
+                name: 'JSON 中英文对照',
+                id: 'json-cn-en',
+                bodyFn: () => import('./loadable/TLNJSONComparison/index.tsx')
+            },
         ]
     },
     {
@@ -133,7 +146,7 @@ export const systemModulesList: SystemModuleItem[] = [
             {
                 name: '关于软件',
                 id: 'about',
-                href: GetAppInfo().githubRepo
+                bodyFn: () => import('./loadable/AboutSoftware/index.tsx'),
             },
         ]
     },

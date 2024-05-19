@@ -11,7 +11,7 @@ import { AsyncCreateResponse, HEADER_X_LAF_LANG, SignInCredentials, SysResponse,
 import { CaptchaService } from '@/services/captcha.service';
 import handleSignUp, { getUserInfoByEmail, handleSignIn } from './auth/userAction';
 import { asyncHandler } from './AsyncHandler';
-import { S2SendMailVerifyCodeRecord, S2User } from '@/dao/model';
+import { S2GiftCard, S2SendMailVerifyCodeRecord, S2User, S2UserHasGiftCardList } from '@/dao/model';
 import { getCommonHandlePass, sendRes } from './common';
 import { randomUUID } from 'crypto';
 import { logger } from '@/utils/logger';
@@ -127,7 +127,6 @@ export class AuthRoute implements Routes {
         }
         try {
           if (userInfo) {
-            let randomID = randomUUID().toString();
             // check if this email has created more than 5 times in 1 day
             let count = await S2SendMailVerifyCodeRecord.count({
               where: {
@@ -173,7 +172,7 @@ export class AuthRoute implements Routes {
               newPassword: password,
               triedTimes: 0,
             });
-            sendVerificationCode(
+            await sendVerificationCode(
               {
                 mailToAddr: email,
                 sendToWho: userInfo.name,
@@ -189,6 +188,7 @@ export class AuthRoute implements Routes {
           });
         } catch (e) {
           logger.error(e);
+          logger.error(JSON.stringify(e));
         }
       }),
     );

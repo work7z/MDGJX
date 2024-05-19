@@ -57,7 +57,7 @@ export function GeneralLayout(props) {
             <AppShell.Navbar p="md" px={0} py={0} mb={0} style={{
                 height: '100%',
             }}>
-                <SideBar mdParams={mdParams} />
+                <SideBar mdParams={mdParams} toggle={toggle} />
             </AppShell.Navbar>
 
             { /** app main */}

@@ -2,21 +2,25 @@ import _ from "lodash"
 import { Toaster, toast } from 'sonner'
 
 let msgCtn = 1
+const fn_getMsgCount = () => {
+    return ''
+    // return `[${msgCtn++}] `
+}
 export default {
     confirm(msg: string) {
         //
     },
     alertSuccess(msg: any) {
         // alert("" + _.toString(msg))
-        toast.success(`[${msgCtn++}] ` + _.toString(msg))
+        toast.success(fn_getMsgCount() + _.toString(msg))
     },
     alertInfo(msg: any) {
-        toast.info(`[${msgCtn++}] ` + _.toString(msg))
+        toast.info(fn_getMsgCount() + _.toString(msg))
     },
     alertWarn(msg: any) {
-        toast.warning(`[${msgCtn++}] ` + _.toString(msg))
+        toast.warning(fn_getMsgCount() + _.toString(msg))
     },
     alertErr(msg: any) {
-        toast.error(`[${msgCtn++}] ` + _.toString(msg))
+        toast.error(fn_getMsgCount() + _.toString(msg))
     },
 }
