@@ -30,9 +30,10 @@ export type TLNState = TLNPState & TLNNPState
 
 
 export default (props: {
-    id: "text" | "json",
+    id: "text" | "json" | "json-comparison",
     label: string,
     realtime?: boolean,
+    verticalSideBySide?: boolean,
     example: string,
     extraOptionsJSX?: JSX.Element,
     handleTranslate: (val: TLNState, fn_translate) => Promise<string>

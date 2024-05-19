@@ -34,15 +34,19 @@ import storage from 'redux-persist/lib/storage' // defaults to localStorage for 
 import BigTextSlice from "./reducers/bigTextSlice";
 import ALL_NOCYCLE from "./nocycle";
 import StateSlice from "./reducers/stateSlice";
+import ChatSlice from "./reducers/chatSlice";
 
 export type StReducer = ReturnType<typeof StateSlice.reducer>;
 const rootReducer = combineReducers({
+    // exclude some fields in below reducers
     state: persistReducer<StReducer>({
         key: 'state',
         storage: storage,
         stateReconciler: autoMergeLevel2,
         whitelist: ['kvSessionMap']
     }, StateSlice.reducer),
+    // other are regular reducers
+    chat: ChatSlice.reducer,
     api: apiSlice.reducer,
     settings: settingsSlice.reducer,
     memory: MemorySlice.reducer,

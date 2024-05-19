@@ -81,7 +81,6 @@ const fn_translate_for_only_value = async (text: string, fn_translate): Promise<
     return JSON.stringify(currentJSONVal, null, 4)
 }
 
-
 const fn_translate_for_only_key = async (text: string, fn_translate): Promise<string> => {
     let afterAllGoodsArr: any[] = []
 
@@ -172,7 +171,20 @@ export const JSONTranslateMethods: TypeJSONTranslateMethods[] = [
     x.label = x.label
     return x;
 })
-
+export const jsonExample =
+    `{
+    "timeLimitedAmount": "30010",
+    "ruleId": "世界",
+    "promotion-price": [12345,100,300],
+    "discount_rate_limits": [12345,100,300],
+    "apply_time_limits" : {
+        "presentTitle": "仅转换Value值是在这里",
+        "presentDetails": "仅转换Value值是在这里2",
+salesRemarkMap: {
+"subProductName":"minacz"
+}
+    }
+}`
 export default () => {
     const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})
 
@@ -189,20 +201,7 @@ export default () => {
             id='json'
             label='JSON'
             example={
-
-                `{
-    "timeLimitedAmount": "30010",
-    "ruleId": "世界",
-    "promotion-price": [12345,100,300],
-    "discount_rate_limits": [12345,100,300],
-    "apply_time_limits" : {
-        "presentTitle": "仅转换Value值是在这里",
-        "presentDetails": "仅转换Value值是在这里2",
-salesRemarkMap: {
-"subProductName":"minacz"
-}
-    }
-}`
+                jsonExample
             }
             extraOptionsJSX={
                 <div>extra options</div>

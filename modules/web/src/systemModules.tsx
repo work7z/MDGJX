@@ -102,10 +102,15 @@ export const systemModulesList: SystemModuleItem[] = [
                 bodyFn: () => import('./loadable/TLNText/index.tsx')
             },
             {
-                name: 'JSON 翻译',
+                name: 'JSON 格式翻译',
                 id: 'json',
                 bodyFn: () => import('./loadable/TLNJSON/index.tsx')
-            }
+            },
+            {
+                name: 'JSON 中英文对照',
+                id: 'json-cn-en',
+                bodyFn: () => import('./loadable/TLNJSONComparison/index.tsx')
+            },
         ]
     },
     {
