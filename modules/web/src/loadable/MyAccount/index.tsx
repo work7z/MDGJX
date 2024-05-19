@@ -150,7 +150,11 @@ function AuthenticationTitle() {
             if (enterVCodeMode) {
                 return (
                     <Container size={420} my={40}>
-                        <form onSubmit={async e => {
+                        <form onKeyDown={e => {
+                            if (e.key == 'Enter') {
+                                e.preventDefault()
+                            }
+                        }} onSubmit={async e => {
                             try {
                                 e.preventDefault()
                                 let form = e.target as HTMLFormElement
@@ -195,7 +199,11 @@ function AuthenticationTitle() {
             }
             return (
                 <Container size={420} my={40}>
-                    <form onSubmit={async e => {
+                    <form onKeyDown={e => {
+                        if (e.key == 'Enter') {
+                            e.preventDefault()
+                        }
+                    }} onSubmit={async e => {
                         try {
                             setLoading_sendmail(true)
                             e.preventDefault()
@@ -256,7 +264,11 @@ function AuthenticationTitle() {
         case 'signup':
             return (
                 <Container size={420} my={40} >
-                    <form onSubmit={async e => {
+                    <form onKeyDown={e => {
+                        if (e.key == 'Enter') {
+                            e.preventDefault()
+                        }
+                    }} onSubmit={async e => {
                         try {
                             e.preventDefault()
                             let form = e.target as HTMLFormElement
@@ -322,7 +334,11 @@ function AuthenticationTitle() {
         default:
             return (
                 <Container size={420} my={40}>
-                    <form onSubmit={async e => {
+                    <form onKeyDown={e => {
+                        if (e.key == 'Enter') {
+                            e.preventDefault()
+                        }
+                    }} onSubmit={async e => {
                         try {
                             e.preventDefault()
                             let form = e.target as HTMLFormElement
