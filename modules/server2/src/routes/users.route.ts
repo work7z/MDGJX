@@ -3,6 +3,9 @@ import { UserController } from '@controllers/users.controller';
 import { CreateUserDto } from '@dtos/users.dto';
 import { Routes } from '@interfaces/routes.interface';
 import { ValidationMiddleware } from '@middlewares/validation.middleware';
+import { S2GiftCard, S2UserHasGiftCardList } from '@/dao/model';
+import { getCommonHandlePass, sendRes } from './common';
+import { asyncHandler } from './AsyncHandler';
 
 export class UserRoute implements Routes {
   public path = '/users';
@@ -14,10 +17,30 @@ export class UserRoute implements Routes {
   }
 
   private initializeRoutes() {
-    this.router.get(`${this.path}`, this.user.getUsers);
-    this.router.get(`${this.path}/:id(\\d+)`, this.user.getUserById);
-    this.router.post(`${this.path}`, ValidationMiddleware(CreateUserDto), this.user.createUser);
-    this.router.put(`${this.path}/:id(\\d+)`, ValidationMiddleware(CreateUserDto, true), this.user.updateUser);
-    this.router.delete(`${this.path}/:id(\\d+)`, this.user.deleteUser);
+    this.router.get(
+      '/user/getGiftCardList',
+      asyncHandler(async (req, res) => {
+        let p = getCommonHandlePass(req, res);
+        const [user, errFn] = await p.verifyAuth();
+        if (!user) {
+          errFn();
+          return;
+        } else {
+          const allCardListIHave = await S2UserHasGiftCardList.findAll({
+            where: {
+              userId: user.id,
+            },
+          });
+          let cardList: S2GiftCard[] = await S2GiftCard.findAll({
+            where: {
+              giftCardCode: allCardListIHave.map(x => x.giftCardCode),
+            },
+          });
+          sendRes(res, {
+            data: cardList,
+          });
+        }
+      }),
+    );
   }
 }

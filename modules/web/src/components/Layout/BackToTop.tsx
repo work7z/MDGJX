@@ -6,7 +6,7 @@ export default () => {
     const [scroll, scrollTo] = useWindowScroll();
 
     return (
-        <Affix position={{ bottom: 30, right: 30 }}>
+        <Affix position={{ bottom: 45, right: 45 }}>
             <Transition transition="slide-up" mounted={scroll.y > 0}>
                 {(transitionStyles) => (
                     <Button

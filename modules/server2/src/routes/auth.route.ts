@@ -11,7 +11,7 @@ import { AsyncCreateResponse, HEADER_X_LAF_LANG, SignInCredentials, SysResponse,
 import { CaptchaService } from '@/services/captcha.service';
 import handleSignUp, { getUserInfoByEmail, handleSignIn } from './auth/userAction';
 import { asyncHandler } from './AsyncHandler';
-import { S2SendMailVerifyCodeRecord, S2User } from '@/dao/model';
+import { S2GiftCard, S2SendMailVerifyCodeRecord, S2User, S2UserHasGiftCardList } from '@/dao/model';
 import { getCommonHandlePass, sendRes } from './common';
 import { randomUUID } from 'crypto';
 import { logger } from '@/utils/logger';

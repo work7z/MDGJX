@@ -16,9 +16,6 @@ import { FN_GetDispatch, FN_GetState } from "../nocycle";
 import UsersSlice, { DisplayUserInfo } from "./userSlice";
 import AuthUtils from "@/utils/AuthUtils";
 
-export let withPrefixOpenAPI = (url: string): string => {
-  return "/open" + url;
-};
 
 export type FindPwReq = {
   email: string;
@@ -68,6 +65,21 @@ export type I18nItem = {
   labelInEnglish: string;
   LangInExplicitURL?: string;
 };
+
+
+export class S2GiftCard {
+  declare id?: number;
+  declare giftCardCode: string;
+  declare giftCardType: string;
+  declare totalDays: number;
+  declare remarks: string;
+  declare usedByWho: number; // userId
+  declare sourceType: string;
+  declare createdAt: Date | null;
+  declare updatedAt: Date | null;
+  declare deleteAt: Date | null;
+}
+
 
 export let verifyResponse = (response: AsyncCreateResponse<any> | undefined): boolean => {
   if (!response || response.error) {
@@ -201,6 +213,16 @@ export const apiSlice = createApi({
         };
       },
     }),
+    getGiftCardList: build.query<AsyncCreateResponse<S2GiftCard[]>, {}>({
+      query: (obj) => {
+        return {
+          method: "GET",
+          url: (
+            "/user/getGiftCardList"
+          ),
+        };
+      },
+    }),
     tellMeVCode4FindPw: build.query<AsyncCreateResponse<TellMeVCodeRes>, TellMeVCode4FindPwReq>({
       query: (obj) => {
         return {
@@ -229,6 +251,7 @@ export const apiSlice = createApi({
         };
       },
     }),
+
   }),
 });
 

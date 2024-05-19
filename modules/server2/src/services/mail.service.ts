@@ -97,7 +97,7 @@ export async function sendMailTo(
 
   // setup email data with unicode symbols
   let mailOptions = {
-    from: 'LafTools Team(NoReply)' + ' <noreply@noreply.codegen.cc>', // sender address
+    from: 'MDGJX team(NoReply)' + ' <noreply@noreply.codegen.cc>', // sender address
     to: mailTo, // list of receivers
     subject: mailContent.subject, // Subject line
     html: mailContent.html, // html body

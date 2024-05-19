@@ -1,6 +1,7 @@
 import { Container, Title, Accordion } from '@mantine/core';
 import classes from './FaqWithBg.module.css';
 import GetAppInfo from '@/AppInfo';
+import OldUserRemark from './OldUserRemark';
 
 export default function FaqSimple() {
     return (
@@ -46,22 +47,7 @@ export default function FaqSimple() {
                 <Accordion.Item className={classes.item} value="payment2" >
                     <Accordion.Control>我是CodeGen老用户，原来的付费计划是怎么安排的？（权益依旧，附赠永久）</Accordion.Control>
                     <Accordion.Panel>
-                        对于CodeGen老用户：<br />
-                        由于旧系统和新系统的计费算法迁移过于复杂，和团队里其他小伙伴商量了一下，也为了感谢大家一直以来的支持，老用户会按情况获取单份或多份永久会员<br />
-                        具体规则如下：<br />
-                        1. 在2024年5月1日之前，凡是在CodeGen工具箱官网购买过月度会员，我们会认为是老用户<br />
-                        2. 我们会对每个用户的总付费金额进行统计，以每6元为单位，赠送一份或者多份永久会员礼品卡<br />
-                        3. 永久会员礼品卡可自用、赠送他人，并且永不过期，不会撤销，相当于是买断制。<br />
-                        例子：<br />
-                        用户A有曾购买3元的订单，则自动获得1份永久会员礼品卡<br />
-                        用户B有曾购买11元的订单，则自动获取2份永久会员礼品卡<br />
-                        用户C有曾购买15元的订单，则自动获取3份永久会员礼品卡<br />
-                        我们知道距离上一次CodeGen工具箱已经有一段时间了，我们深感愧疚，并会全力推进LafTools工具箱的开发，新工具箱不会辜负各位的期待， 也不会损害老用户的权益，敬请期待。<br />
-                        到时候关于用户付费功能，我们考虑会从以下几点出发：<br />
-                        1. 每人有8g的云盘空间，可同步上传下载<br />
-                        2. 每人可以无限制使用AI对话功能和扩展功能<br />
-                        3. OCR识图、翻译等功能都将完全开放<br />
-                        4. 其他一些会员付费功能<br />
+                        <OldUserRemark />
                     </Accordion.Panel>
                 </Accordion.Item>
 
