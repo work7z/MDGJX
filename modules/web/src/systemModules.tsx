@@ -50,7 +50,11 @@ export const systemModulesList: SystemModuleItem[] = [
     {
         id: 'tools',
         icon: IconHome2, label: '快捷工具', children: [
-
+            {
+                name: 'Chat对话框',
+                id: 'chat',
+                bodyFn: () => import('./loadable/ChatBot/index.tsx')
+            },
             {
                 name: "通用数据格式化",
                 id: 'geshi'
@@ -67,11 +71,6 @@ export const systemModulesList: SystemModuleItem[] = [
             //     name: "金融银行证券类(233)",
             //     id: 'other'
             // },
-            {
-                name: 'Chat对话框',
-                id: 'chat',
-                bodyFn: () => import('./loadable/ChatBot/index.tsx')
-            },
             // {
             //     name: '我的收藏(0)',
             //     id: 'collection'
