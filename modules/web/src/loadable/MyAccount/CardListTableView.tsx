@@ -69,7 +69,7 @@ export function CardListTableView(props: {
                     <Table.Tr>
                         <Table.Th>类型</Table.Th>
                         <Table.Th>礼品卡ID</Table.Th>
-                        <Table.Th>生效时间</Table.Th>
+                        <Table.Th>有效期</Table.Th>
                         <Table.Th>开始时间</Table.Th>
                         <Table.Th>结束时间</Table.Th>
                         <Table.Th>是否已使用</Table.Th>

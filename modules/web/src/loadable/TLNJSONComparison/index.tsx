@@ -1,19 +1,35 @@
 import CommonTLNBody, { TLNPState, TLNState } from "@/containers/CommonTLNBody"
 import apiSlice from "@/store/reducers/apiSlice"
-import { jsonExample } from "../TLNJSON"
+import { JSONTranslateMethods, jsonExample } from "../TLNJSON"
 
 export default () => {
     const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})
 
     return <CommonTLNBody
-        handleTranslate={async (state: TLNState, fn_translate) => {
-            const result = await fn_translate(state.inputJSON)
-            return result || '';
-        }}
-        id='text'
         verticalSideBySide
         label='JSON中英文对照'
         realtime
-        example={jsonExample}
+        defaultTLNPState={
+            {
+                sourceLang: 'en',
+                targetLang: 'zh',
+                translateMethod: 'KeyOnly'
+            }
+        }
+        handleTranslate={async (state, fn_translate) => {
+            let fn_translate_impl = JSONTranslateMethods.find(x => x.value === state.translateMethod)?.func
+            if (!fn_translate_impl) {
+                fn_translate_impl = JSONTranslateMethods[0].func
+            }
+            const result = await fn_translate_impl(state.inputJSON, fn_translate)
+            return result;
+        }}
+        id='json'
+        example={
+            jsonExample
+        }
+        extraOptionsJSX={
+            <div>extra options</div>
+        }
     />
 }

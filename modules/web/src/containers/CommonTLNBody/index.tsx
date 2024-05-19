@@ -35,13 +35,14 @@ export default (props: {
     realtime?: boolean,
     verticalSideBySide?: boolean,
     example: string,
+    defaultTLNPState?: TLNPState,
     extraOptionsJSX?: JSX.Element,
     handleTranslate: (val: TLNState, fn_translate) => Promise<string>
 }) => {
-    const isJSONType = props.id == 'json'
+    const isJSONType = props.id == 'json' || props.id == 'json-comparison'
     const rh = exportUtils.register('tln' + props.id, {
         getPersistedStateFn: () => {
-            return {
+            return props.defaultTLNPState || {
                 sourceLang: 'zh',
                 targetLang: 'en',
                 translateMethod: JSONTranslateMethods[0].value
