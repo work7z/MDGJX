@@ -90,6 +90,16 @@ export class App {
         },
       }),
     );
+
+    // setup xtools
+    let xToolsDir = path.join(__dirname, 'xtools');
+    if (existsSync(xToolsDir)) {
+      this.app.use('/xtools', express.static(xToolsDir));
+      this.app.get('/xtools/*', (req, res) => {
+        res.sendFile(path.resolve(xToolsDir, 'index.html'));
+      });
+    }
+
     // setup spa
     let distDir = path.join(__dirname, 'spa');
     if (existsSync(distDir)) {
@@ -99,16 +109,6 @@ export class App {
         res.sendFile(path.resolve(distDir, 'index.html'));
       });
     }
-    // setup xtools
-    let xToolsDir = path.join(__dirname, 'xtools');
-    xToolsDir = 'C:\\Users\\jerrylai\\hmproject\\suodao-tools\\addons\\it-tools\\dist';
-    if (existsSync(xToolsDir)) {
-      this.app.use('/xtools', express.static(xToolsDir));
-      this.app.get('/xtools/*', (req, res) => {
-        res.sendFile(path.resolve(xToolsDir, 'index.html'));
-      });
-    }
-
     const ErrorMiddleware = (error: HttpException, req: Request, res: Response, next: NextFunction) => {
       try {
         const status: number = error.status || 500;
