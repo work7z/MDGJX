@@ -2,15 +2,26 @@ import { FN_GetDispatch } from "@/store/nocycle"
 import { SignInCredentials } from "@/store/reducers/apiSlice"
 import UsersSlice from "@/store/reducers/userSlice"
 import AlertUtils from "./AlertUtils"
+import settingsSlice from "@/store/reducers/settingsSlice"
 
 const tokenKey = 'rWKT3MNUJ'
 const userTokenValue = localStorage.getItem(tokenKey)
+
+export const fn_reload = () => {
+    FN_GetDispatch()(
+        settingsSlice.actions.updateOneOfParamState({
+            initCount: (new Date()).getTime()
+        })
+    )
+}
 
 const AuthUtils = {
     token: userTokenValue,
     saveCredentialToken(credentials: SignInCredentials) {
         if (!credentials) { return }
-        localStorage.setItem(tokenKey, credentials.signature + '')
+        const finval = credentials.signature + ''
+        AuthUtils.token = finval
+        localStorage.setItem(tokenKey, finval)
         FN_GetDispatch()(
             UsersSlice.actions.updateOneOfParamState({
                 hasSignIn: true,
@@ -18,12 +29,12 @@ const AuthUtils = {
             })
         )
         setTimeout(() => {
-            location.reload()
-        }, 1000)
+            fn_reload()
+        }, 10)
     },
     signOut() {
         localStorage.setItem(tokenKey, '')
-        AlertUtils.alertSuccess("登出成功，您的登录信息已被清除！1秒后刷新界面")
+        AlertUtils.alertSuccess("登出成功，您的登录信息已被清除！")
         FN_GetDispatch()(
             UsersSlice.actions.updateOneOfParamState({
                 hasSignIn: false,
@@ -32,8 +43,8 @@ const AuthUtils = {
             })
         )
         setTimeout(() => {
-            location.reload()
-        }, 1000)
+            fn_reload()
+        }, 10)
     }
 }
 

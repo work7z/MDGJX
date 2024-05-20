@@ -44,7 +44,9 @@ export type AsyncCreateResponse<T> = {
   data?: T;
 };
 
-
+export type SystemRefresh = {
+  initCount: number
+}
 export type TLNRequest = {
   text: string;
   type: string;
@@ -196,7 +198,7 @@ export const apiSlice = createApi({
       },
     }),
     // 
-    getUserInfo: build.query<AsyncCreateResponse<DisplayUserInfo>, {}>({
+    getUserInfo: build.query<AsyncCreateResponse<DisplayUserInfo>, {} & SystemRefresh>({
       query: (obj) => {
         return {
           method: "GET",

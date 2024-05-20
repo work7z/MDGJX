@@ -5,19 +5,19 @@ import './global.css'
 import { Provider, useDispatch } from "react-redux";
 import { store, RootState } from "./store/index";
 import { Toaster, toast } from 'sonner'
-import Router from './Router';
+import AppRouter from './Router';
 import { useDocumentTitle } from '@mantine/hooks';
 import GetAppInfo from './AppInfo';
 
 
 export default function App() {
   if (GetAppInfo().needDoBeiAn) {
-    useDocumentTitle(location.href.indexOf('laftools.cn')!=-1 ? 'LafTools在线工具箱' :'LafTools程序员工具箱')
+    useDocumentTitle(location.href.indexOf('laftools.cn') != -1 ? 'LafTools在线工具箱' : 'LafTools程序员工具箱')
   }
   return (
     <Provider store={store}>
       <MantineProvider theme={theme}>
-        <Router />
+        <AppRouter />
       </MantineProvider>
     </Provider>
   );

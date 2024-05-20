@@ -29,6 +29,7 @@ import { useEffect, useState } from 'react';
 import { CardListTableView } from './CardListTableView';
 import { formatToYYYYMMDD } from '@/utils/DateUtils';
 import OldUserRemark from '../FAQ/OldUserRemark';
+import { formAttrs, form_onSubmit } from '@/utils/FormUtils';
 
 function AuthenticationTitle() {
     let sp = (useSearchParams())
@@ -52,7 +53,7 @@ function AuthenticationTitle() {
     if (hasSignIn && sp.type != 'find-pw') {
         const cardList = st_cardList.data?.data || []
         return (
-            <Container my={10} size={'xl'} className='block sm:flex flex-row justify-start items-start sm:space-x-4'>
+            <Container my={10} size={'xl'} className='block sm:flex flex-row justify-start items-start sm:space-x-4 '>
                 <div className='flex-1 mb-5'>
                     <Paper withBorder shadow="md" p={10} radius="md">
                         <Title
@@ -150,11 +151,7 @@ function AuthenticationTitle() {
             if (enterVCodeMode) {
                 return (
                     <Container size={420} my={40}>
-                        <form onKeyDown={e => {
-                            if (e.key == 'Enter') {
-                                e.preventDefault()
-                            }
-                        }} onSubmit={async e => {
+                        <form   {...form_onSubmit(async e => {
                             try {
                                 e.preventDefault()
                                 let form = e.target as HTMLFormElement
@@ -174,7 +171,7 @@ function AuthenticationTitle() {
                             } catch (e) {
                                 AlertUtils.alertErr(e)
                             }
-                        }}>
+                        })} >
                             <Title ta="center" className={classes.title}>
                                 确认邮箱验证码
                             </Title>
@@ -199,11 +196,7 @@ function AuthenticationTitle() {
             }
             return (
                 <Container size={420} my={40}>
-                    <form onKeyDown={e => {
-                        if (e.key == 'Enter') {
-                            e.preventDefault()
-                        }
-                    }} onSubmit={async e => {
+                    <form   {...form_onSubmit(async e => {
                         try {
                             setLoading_sendmail(true)
                             e.preventDefault()
@@ -234,7 +227,7 @@ function AuthenticationTitle() {
                         } finally {
                             setLoading_sendmail(false)
                         }
-                    }}>
+                    })}>
                         <Title ta="center" className={classes.title}>
                             找回密码
                         </Title>
@@ -264,32 +257,30 @@ function AuthenticationTitle() {
         case 'signup':
             return (
                 <Container size={420} my={40} >
-                    <form onKeyDown={e => {
-                        if (e.key == 'Enter') {
-                            e.preventDefault()
-                        }
-                    }} onSubmit={async e => {
-                        try {
-                            e.preventDefault()
-                            let form = e.target as HTMLFormElement
-                            let data = new FormData(form)
-                            let r = await t_signUp({
-                                preview: false,
-                                rememberMe: true,
-                                userName: data.get('userName') as string,
-                                email: data.get('email') as string,
-                                password: data.get('password') as string,
-                                confirmPassword: data.get('confirmPassword') as string,
-                            })
-                            // r.data.content.signed
-                            if (verifyResponse(r.data)) {
-                                AlertUtils.alertSuccess('恭喜，注册成功！1秒后刷新界面')
-                                ACTION_doSignInByInfo(r.data?.data)
+                    <form  {
+                        ...form_onSubmit(async e => {
+                            try {
+                                e.preventDefault()
+                                let form = e.target as HTMLFormElement
+                                let data = new FormData(form)
+                                let r = await t_signUp({
+                                    preview: false,
+                                    rememberMe: true,
+                                    userName: data.get('userName') as string,
+                                    email: data.get('email') as string,
+                                    password: data.get('password') as string,
+                                    confirmPassword: data.get('confirmPassword') as string,
+                                })
+                                // r.data.content.signed
+                                if (verifyResponse(r.data)) {
+                                    AlertUtils.alertSuccess('恭喜，注册成功！1秒后刷新界面')
+                                    ACTION_doSignInByInfo(r.data?.data)
+                                }
+                            } catch (e) {
+                                AlertUtils.alertErr(e)
                             }
-                        } catch (e) {
-                            AlertUtils.alertErr(e)
-                        }
-                    }}>
+                        })
+                    }>
                         <Title ta="center" className={classes.title}>
                             注册新用户
                         </Title>
@@ -301,7 +292,6 @@ function AuthenticationTitle() {
                                 </Anchor>
                             </Link>
                         </Text>
-
 
                         <Paper withBorder shadow="md" p={30} mt={30} radius="md">
                             <TextInput label="用户名" name='userName' placeholder="mina" />
@@ -334,11 +324,7 @@ function AuthenticationTitle() {
         default:
             return (
                 <Container size={420} my={40}>
-                    <form onKeyDown={e => {
-                        if (e.key == 'Enter') {
-                            e.preventDefault()
-                        }
-                    }} onSubmit={async e => {
+                    <form {...form_onSubmit(async e => {
                         try {
                             e.preventDefault()
                             let form = e.target as HTMLFormElement
@@ -357,7 +343,7 @@ function AuthenticationTitle() {
                         } catch (e) {
                             AlertUtils.alertErr(e)
                         }
-                    }}>
+                    })}>
 
                         <Title ta="center" className={classes.title}>
                             登录系统
