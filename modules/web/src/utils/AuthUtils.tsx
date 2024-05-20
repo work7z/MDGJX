@@ -3,6 +3,7 @@ import { SignInCredentials } from "@/store/reducers/apiSlice"
 import UsersSlice from "@/store/reducers/userSlice"
 import AlertUtils from "./AlertUtils"
 import settingsSlice from "@/store/reducers/settingsSlice"
+import exportUtils from "./ExportUtils"
 
 const tokenKey = 'rWKT3MNUJ'
 const userTokenValue = localStorage.getItem(tokenKey)
@@ -15,8 +16,16 @@ export const fn_reload = () => {
     )
 }
 
+export const useHasUserSignIn = () => {
+    const uObj = exportUtils.useSelector(v => v.users)
+    return uObj.hasSignIn && AuthUtils.isActualHasToken()
+}
+
 const AuthUtils = {
     token: userTokenValue,
+    isActualHasToken() {
+        return AuthUtils.token && AuthUtils.token.length > 0
+    },
     saveCredentialToken(credentials: SignInCredentials) {
         if (!credentials) { return }
         const finval = credentials.signature + ''

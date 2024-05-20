@@ -50,14 +50,14 @@ export const systemModulesList: SystemModuleItem[] = [
     {
         id: 'tools',
         icon: IconHome2, label: '快捷工具', children: [
-            {
+            GetAppInfo().isInLafToolsCOM ? {
                 name: 'Chat对话框',
                 id: 'chat',
                 bodyFn: () => import('./loadable/ChatBot/index.tsx')
-            },
-            {
+            } : {
                 name: "通用数据格式化",
-                id: 'geshi'
+                id: 'geshi',
+                bodyFn: () => import('./loadable/GeneralDataFormat/index.tsx')
             },
             {
                 name: "加解密与格式解析",
@@ -115,12 +115,11 @@ export const systemModulesList: SystemModuleItem[] = [
                 id: 'json-cn-en',
                 bodyFn: () => import('./loadable/TLNJSONComparison/index.tsx')
             },
-
-            {
-                name: 'Markdown 文档翻译',
-                id: 'md',
-                bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
-            },
+            // {
+            //     name: 'Markdown 文档翻译',
+            //     id: 'md',
+            //     bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
+            // },
         ]
     },
     {

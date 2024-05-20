@@ -24,12 +24,12 @@ import { ACTION_doSignInByInfo } from '@/store/actions/auth-actions';
 import exportUtils from '@/utils/ExportUtils';
 import { IconAt, IconCalendarBolt, IconInfoCircle, IconPhoneCall, IconUserBolt } from '@tabler/icons-react';
 import _ from 'lodash';
-import AuthUtils from '@/utils/AuthUtils';
+import AuthUtils, { useHasUserSignIn } from '@/utils/AuthUtils';
 import { useEffect, useState } from 'react';
 import { CardListTableView } from './CardListTableView';
 import { formatToYYYYMMDD } from '@/utils/DateUtils';
 import OldUserRemark from '../FAQ/OldUserRemark';
-import { formAttrs, form_onSubmit } from '@/utils/FormUtils';
+import { form_onSubmit } from '@/utils/FormUtils';
 
 function AuthenticationTitle() {
     let sp = (useSearchParams())
@@ -43,7 +43,7 @@ function AuthenticationTitle() {
     const [loading_sendmail, setLoading_sendmail] = useState(false)
     const [preEMail, setPreEMail] = useState('')
     const uObj = exportUtils.useSelector(v => v.users)
-    const hasSignIn = uObj.hasSignIn
+    const hasSignIn = useHasUserSignIn()
     const [t_getCardList, st_cardList] = apiSlice.useLazyGetGiftCardListQuery({})
     useEffect(() => {
         if (hasSignIn) {
