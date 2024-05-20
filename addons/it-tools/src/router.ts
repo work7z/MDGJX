@@ -15,11 +15,11 @@ const toolsRoutes = tools.map(({ path, name, component, ...config }) => ({
 const toolsRedirectRoutes = tools
   .filter(({ redirectFrom }) => redirectFrom && redirectFrom.length > 0)
   .flatMap(
-    ({ path, redirectFrom }) => redirectFrom?.map(redirectSource => ({ path: redirectSource, redirect: path })) ?? [],
+    ({ path, redirectFrom }) => redirectFrom?.map((redirectSource) => ({ path: redirectSource, redirect: path })) ?? [],
   );
 
 const router = createRouter({
-  history: createWebHistory(config.app.baseUrl),
+  history: createWebHistory('/xtools'),
   routes: [
     {
       path: '/',

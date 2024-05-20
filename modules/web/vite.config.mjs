@@ -55,6 +55,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path,
       },
+      // '/xtools': {
+      //   target: 'http://localhost:5174/',
+      //   changeOrigin: true,
+      //   rewrite: (path) => path,
+      // },
     },
   },
   test: {

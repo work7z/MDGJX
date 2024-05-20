@@ -24,7 +24,7 @@ import { ACTION_doSignInByInfo } from '@/store/actions/auth-actions';
 import exportUtils from '@/utils/ExportUtils';
 import { IconAt, IconCalendarBolt, IconInfoCircle, IconPhoneCall, IconUserBolt } from '@tabler/icons-react';
 import _ from 'lodash';
-import AuthUtils, { useHasUserSignIn } from '@/utils/AuthUtils';
+import AuthUtils, { fn_reload, useHasUserSignIn } from '@/utils/AuthUtils';
 import { useEffect, useState } from 'react';
 import { CardListTableView } from './CardListTableView';
 import { formatToYYYYMMDD } from '@/utils/DateUtils';
@@ -162,9 +162,8 @@ function AuthenticationTitle() {
                                 })
                                 if (r.data?.data?.verified) {
                                     AlertUtils.alertSuccess('重置成功，将跳转到登录界面')
-                                    setTimeout(() => {
-                                        history.push('/')
-                                    }, 1000)
+                                    history.push('/settings/my-account?type=signin')
+                                    fn_reload()
                                 } else {
                                     throw new Error('验证码错误，请重新输入')
                                 }

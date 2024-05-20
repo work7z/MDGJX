@@ -16,6 +16,7 @@ import { isProductionEnv } from './web2share-copy/env';
 import { API_SERVER_URL } from './web2share-copy/api_constants';
 import { HttpException } from './exceptions/httpException';
 import proxy from 'express-http-proxy';
+import { existsSync } from 'fs';
 
 export const asyncHandler = (fn: (req: Request, res: Response, next) => void) => (req: Request, res: Response, next) => {
   return Promise.resolve(fn(req, res, next)).catch(next);
@@ -89,26 +90,22 @@ export class App {
         },
       }),
     );
-    // app.use(
-    //   val_prefix,
-    //   asyncHandler(async function (req, res) {
-    //     // API_SERVER_URL;
-    //     var url = 'https://api.laftools.cn' + val_prefix + req.url;
-    //     var r = null;
-    //     if (req.method === 'POST') {
-    //       r = request.post({ uri: url, json: req.body });
-    //     } else {
-    //       r = request(url);
-    //     }
-    //     await req.pipe(r).pipe(res);
-    //   }),
-    // );
-    if (this.env == 'production') {
-      let distDir = path.join(__dirname, 'spa'); //TODO: provide this distDir 'C:\\Users\\jerrylai\\hmproject\\suodao-tools\\modules\\web\\dist';
+    // setup spa
+    let distDir = path.join(__dirname, 'spa');
+    if (existsSync(distDir)) {
       // let us build this first
       this.app.use(express.static(distDir));
       this.app.get('/*', (req, res) => {
         res.sendFile(path.resolve(distDir, 'index.html'));
+      });
+    }
+    // setup xtools
+    let xToolsDir = path.join(__dirname, 'xtools');
+    xToolsDir = 'C:\\Users\\jerrylai\\hmproject\\suodao-tools\\addons\\it-tools\\dist';
+    if (existsSync(xToolsDir)) {
+      this.app.use('/xtools', express.static(xToolsDir));
+      this.app.get('/xtools/*', (req, res) => {
+        res.sendFile(path.resolve(xToolsDir, 'index.html'));
       });
     }
 
