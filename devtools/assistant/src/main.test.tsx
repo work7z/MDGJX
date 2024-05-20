@@ -8,6 +8,51 @@ import fs from 'fs'
 import _ from 'lodash';
 let postProcessFolder = path.join(__dirname, 'post-process');
 shelljs.mkdir('-p', postProcessFolder);
+import puppeteer from 'puppeteer';
+
+test('run-screenshot', async () => {
+    // Launch the browser and open a new blank page
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+  
+    // Navigate the page to a URL
+    await page.goto('https://laftools.cn/');
+  
+const generalDeviceANdSizes: {width:number,height:number,name:string}[] = [
+  {
+    name: 'desktop',
+    width: 1980,
+    height: 1300
+  },
+  {
+    name: 'tablet',
+    width: 1024,
+    height: 768
+  },
+  {
+    name: 'mobile',
+    width: 375,
+    height: 667
+  }
+]
+
+
+for(let device of generalDeviceANdSizes) {
+    // Set screen size
+    await page.setViewport({width: device.width, height: device.height});
+  
+    // sleep
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    // get screenshot and flush to file
+    let screenshotFile = path.join(postProcessFolder, "index-"+device.name+".png")
+    await page.screenshot({path: screenshotFile});
+
+}
+
+    
+},0)
+
 
 test('run-conversions-ai-fetch-case', async () => {
   let currentFolder = path.join(postProcessFolder, "op-run-mjs-to-ts")

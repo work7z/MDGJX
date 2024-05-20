@@ -3,7 +3,7 @@ import { ActionIcon } from "@mantine/core"
 
 
 export default () => {
-    return <a href={GetAppInfo().githubRepo} target="_blank" className="mantine-focus-auto m_18a11a80 m_87cf2631 mantine-UnstyledButton-root" aria-label="Source code"><ActionIcon variant="default" size='lg' aria-label="Theme">
+    return <a href={GetAppInfo().githubRepo} target="_blank" className=" hidden sm:block mantine-focus-auto m_18a11a80 m_87cf2631 mantine-UnstyledButton-root" aria-label="Source code"><ActionIcon variant="default" size='lg' aria-label="Theme">
         <svg style={{
             width: 'calc(1.375rem * var(--mantine-scale))',
             height: 'calc(1.375rem * var(--mantine-scale))'

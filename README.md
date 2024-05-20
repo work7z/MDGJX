@@ -15,7 +15,7 @@
 
 秒达工具箱是一款隐私优先，可自部署且完全开源的中文工具箱！
 
-# 💌 Features
+# 💌 
 
 - FOSS Forever
 - Lightweight Runtime
