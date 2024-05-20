@@ -19,7 +19,7 @@ const AuthUtils = {
         )
         setTimeout(() => {
             location.reload()
-        }, 100)
+        }, 1000)
     },
     signOut() {
         localStorage.setItem(tokenKey, '')
@@ -33,7 +33,7 @@ const AuthUtils = {
         )
         setTimeout(() => {
             location.reload()
-        }, 100)
+        }, 1000)
     }
 }
 
