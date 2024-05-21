@@ -10,7 +10,8 @@ export function HeroText() {
     const history = useHistory()
     return (
         <Container className={classes.wrapper} size={1400} style={{
-            paddingBottom: '48px'
+            paddingBottom: '59px',
+            paddingTop: '54px'
         }}>
             <Dots className={classes.dots} style={{ left: 0, top: 0 }} />
             <Dots className={classes.dots} style={{ left: 60, top: 0 }} />

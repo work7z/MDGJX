@@ -1,7 +1,7 @@
 import { ActionIcon, Affix, AppShell, Box, Burger, Button, Group, HoverCard, LoadingOverlay, Transition, rem } from '@mantine/core';
 import { useDisclosure, useWindowScroll } from '@mantine/hooks';
 import imgFile from '/src/favicon.png'
-import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
+import { ColorSchemeToggle, useDarkModeOrNot } from '../ColorSchemeToggle/ColorSchemeToggle';
 import { IconArrowUp, IconBrandGithub, IconBrandGithubFilled, IconSourceCode } from '@tabler/icons-react';
 import SourceCodeLink from '../SourceCodeLink';
 import { DoubleNavbar as SideBar, useMDParams } from '@/containers/SideBar';
@@ -28,6 +28,7 @@ import LoadableWrapper from '../LoadableWrapper';
 export function GeneralLayout(props) {
     const mdParams = useMDParams()
     const { mainModuleItem, mainSubModuleItem } = mdParams
+    const darkOrNot = useDarkModeOrNot()
     const [opened, { toggle }] = useDisclosure();
     let appInfo = GetAppInfo()
     let bodyJSX: JSX.Element = (
@@ -49,6 +50,7 @@ export function GeneralLayout(props) {
             transitionDuration={500}
             transitionTimingFunction="ease"
             padding="sm"
+            className={darkOrNot ? 'dark' : ''}
         >
             { /** app header */}
             <Header opened={opened} toggle={toggle} />

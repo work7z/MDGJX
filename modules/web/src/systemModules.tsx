@@ -71,25 +71,25 @@ export const systemModulesList: SystemModuleItem[] = [
             })
         ]
     },
-    {
-        id: 'api',
-        icon: IconApiApp,
-        label: 'API联调联试',
-        children: [
-            // {
-            //     name: 'API 客户端',
-            //     id: 'client'
-            // },
-            {
-                name: '常用 API',
-                id: 'common'
-            },
-            {
-                name: '模拟 API (Mock)',
-                id: 'mock'
-            },
-        ]
-    },
+    // {
+    //     id: 'api',
+    //     icon: IconApiApp,
+    //     label: 'API联调联试',
+    //     children: [
+    //         // {
+    //         //     name: 'API 客户端',
+    //         //     id: 'client'
+    //         // },
+    //         {
+    //             name: '常用 API',
+    //             id: 'common'
+    //         },
+    //         {
+    //             name: '模拟 API (Mock)',
+    //             id: 'mock'
+    //         },
+    //     ]
+    // },   
     {
         id: 'i18n',
         icon: IconLanguage, label: '翻译助手',

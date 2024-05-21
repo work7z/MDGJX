@@ -144,11 +144,7 @@ function AuthenticationTitle() {
                     </Paper>
                     <Paper withBorder shadow="md" p={10} mt={10} radius="md">
                         <Group flex='flex-col space-y-3'>
-                            {/* <Button color='violet' onClick={() => {
-                            AuthUtils.signOut()
-                        }}>
-                            用户登出
-                        </Button> */}
+
                             <Link className='w-full' to='/settings/my-account?type=find-pw'>
                                 <Button fullWidth color='indigo' onClick={() => {
                                 }}>
@@ -163,6 +159,11 @@ function AuthenticationTitle() {
                                     账号申诉
                                 </Button>
                             </Link>
+                            <Button className='w-full' color='pink' onClick={() => {
+                                AuthUtils.signOut()
+                            }}>
+                                用户登出
+                            </Button>
                         </Group>
                     </Paper>
                 </Flex>
@@ -378,7 +379,7 @@ function AuthenticationTitle() {
                                     })
                                     // r.data.content.signed
                                     if (verifyResponse(r.data)) {
-                                        AlertUtils.alertSuccess('恭喜，注册成功！1秒后刷新界面')
+                                        AlertUtils.alertSuccess('恭喜，注册成功！')
                                         ACTION_doSignInByInfo(r.data?.data)
                                     }
                                 } catch (e) {
@@ -449,7 +450,7 @@ function AuthenticationTitle() {
                                     })
                                     // r.data.content.signed
                                     if (verifyResponse(r.data)) {
-                                        AlertUtils.alertSuccess("登录成功，欢迎回来，1秒后刷新界面")
+                                        AlertUtils.alertSuccess("登录成功，欢迎回来")
                                         ACTION_doSignInByInfo(r.data?.data)
                                     }
                                 } catch (e) {

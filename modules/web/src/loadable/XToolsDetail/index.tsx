@@ -18,7 +18,7 @@ const InnerXToolsDetail = () => {
     const setIdx = (x: string) => {
         history.push(`/tools/${mainSubModuleItem.id}/${x}`)
     }
-    return <div key={mainModuleItem.id} className="flex flex-col" style={{
+    return <div key={mainSubModuleItem.id} className="flex flex-col" style={{
         height: `calc(${AppConstants.calcMainBodyHeight})`,
     }}>
         <Tabs className="py-2" variant="pills" value={idx} onChange={e => {
@@ -36,7 +36,7 @@ const InnerXToolsDetail = () => {
                 }
             </Tabs.List>
         </Tabs>
-        <XToolsViewer toolId={idx} />
+        <XToolsViewer key={mainSubModuleItem.id} toolId={idx} />
     </div>
 }
 

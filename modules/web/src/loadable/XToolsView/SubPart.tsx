@@ -60,12 +60,12 @@ export default () => {
                 setIdx(e + "")
             }}>
                 <Tabs.List>
-                    <Tabs.Tab value={'all'} >全部</Tabs.Tab>
+                    <Tabs.Tab value={'all'} >全部({finalSubToolsArr.length})</Tabs.Tab>
                     {
                         toolsNavInfo.map(x => {
                             return (
                                 <Tabs.Tab value={x.id} >
-                                    {x.name}
+                                    {x.name}({x.subTools?.length || 0})
                                 </Tabs.Tab>
                             )
                         })
@@ -91,7 +91,7 @@ export default () => {
                                             <Text truncate>{x.name}</Text>
                                         </Title>
                                     </div>
-                                    <Text title={x.description} truncate className="text-slate-600" size={"sm"}>{x.description}</Text>
+                                    <Text title={x.description} truncate className="text-slate-600 dark:text-slate-400" size={"sm"}>{x.description}</Text>
                                 </Card>
                             </Link>
                         )
