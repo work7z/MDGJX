@@ -5,6 +5,7 @@ import { toolsNavInfo } from "@/toolsNavInfo"
 import { Tabs } from "@mantine/core"
 import React from "react"
 import { useHistory } from "react-router"
+import { Link } from "react-router-dom"
 
 const InnerXToolsDetail = () => {
     const {
@@ -22,15 +23,17 @@ const InnerXToolsDetail = () => {
         height: `calc(${AppConstants.calcMainBodyHeight})`,
     }}>
         <Tabs className="py-2" variant="pills" value={idx} onChange={e => {
-            setIdx(e + "")
+            // setIdx(e + "")
         }}>
             <Tabs.List >
                 {
                     (subTools || []).map(x => {
                         return (
-                            <Tabs.Tab value={x.id + ''} >
-                                {x.name}
-                            </Tabs.Tab>
+                            <Link to={`/tools/${mainSubModuleItem.id}/${x.id}`}>
+                                <Tabs.Tab value={x.id + ''} >
+                                    {x.name}
+                                </Tabs.Tab>
+                            </Link>
                         )
                     })
                 }
