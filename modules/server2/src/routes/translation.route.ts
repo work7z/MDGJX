@@ -13,9 +13,10 @@ import handleSignUp, { handleSignIn } from './auth/userAction';
 import { asyncHandler } from './AsyncHandler';
 import { S2Feedback, S2TranslationRecord, S2User } from '@/dao/model';
 import { getCommonHandlePass, sendRes } from './common';
-import TranslateTools, { TLNRequest, TLNRequestIdRes, TLNResponse } from './translation/translateTools';
+import TranslateTools, { TLNAIRequest, TLNRequest, TLNRequestIdRes, TLNResponse } from './translation/translateTools';
 import i18nItems from '@/i18n/i18n';
 import { randomUUID } from 'crypto';
+import dao from '@/dao';
 
 export class TranslationRoute implements Routes {
   public router = Router();
@@ -27,6 +28,52 @@ export class TranslationRoute implements Routes {
   }
 
   private initializeRoutes() {
+    this.router.post(
+      '/tln/sendAITranslation',
+      asyncHandler(async (req, res) => {
+        let p = getCommonHandlePass(req, res);
+        const [user, errFn] = await p.verifyAuth();
+        if (!user) return errFn();
+        const { text = '', type, sourceLang, targetLang } = req.body as TLNAIRequest;
+        if (text === '') {
+          throw new Error('输入内容不能为空');
+        }
+
+        // let obj = await TranslateTools.translateText(text, sourceLang, targetLang);
+        let obj = {
+          isOK: true,
+          result: 'OKLa' + text,
+          errorCode: '',
+        };
+        const d = await dao();
+        await d.db_s2.transaction(async () => {
+          const r = await S2TranslationRecord.create({
+            userId: user.id,
+            fromIP: req.ip,
+            textCount: text.length,
+            sourceLang: sourceLang,
+            targetLang: targetLang,
+            status: 0,
+            handleType: type,
+            // DO NOT CACHE SENSITIVE TRANSLATION RESULT HERE
+            cachedText: '',
+            processedText: '',
+            usingAI: 1,
+            secretId: 'AI',
+          });
+        });
+
+        if (!obj.isOK) {
+          throw new Error('翻译失败: ' + obj.errorCode);
+        }
+        sendRes(res, {
+          data: {
+            result: obj.result,
+          } satisfies TLNResponse,
+        });
+      }),
+    );
+
     this.router.post(
       '/tln/sendTLNRequest',
       asyncHandler(async (req, res) => {

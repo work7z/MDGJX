@@ -9,10 +9,15 @@ const TmtClient = tencentcloud.tmt.v20180321.Client;
 
 export type TLNRequest = {
   text: string;
-  type: 'json' | 'text';
+  type: 'json' | 'text' | 'markdown';
   sourceLang: string;
   targetLang: string;
 };
+export type TLNAIRequest = {
+  aiType: string;
+  prohibit: string;
+  userRemark: string;
+} & TLNRequest;
 export type TLNRequestIdRes = {
   requestId: string;
 };

@@ -50,6 +50,7 @@ export class S2TranslationRecord extends Model<InferAttributes<S2TranslationReco
     declare textCount: number;
     declare userId: number;
     declare fromIP: string;
+    declare usingAI: number; // 1->using AI, 0->not using AI
     declare createdAt: CreationOptional<Date> | null;
     declare updatedAt: CreationOptional<Date> | null;
     declare deleteAt: CreationOptional<Date> | null;
@@ -196,6 +197,10 @@ export default async (daoRef: DaoRef) => {
         status: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        usingAI: {
+            type: DataTypes.INTEGER,
+            allowNull: true
         },
         handleType: {
             type: DataTypes.STRING,
