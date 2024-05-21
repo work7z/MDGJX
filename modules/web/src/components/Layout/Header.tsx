@@ -25,6 +25,7 @@ import classes from './Header.module.css'
 import { Link } from 'react-router-dom';
 import exportUtils from '@/utils/ExportUtils';
 import AuthUtils from '@/utils/AuthUtils';
+import info from '@/meta/info';
 
 export default (props: {
     opened: boolean,
@@ -51,7 +52,8 @@ export default (props: {
                         size="sm"
                     />
                     <img src={imgFile} className='w-[30px]' />
-                    <div className='ml-[-7px] font-bold text-xl hidden sm:block'>{appInfo.name}({appInfo.link})</div>
+                    <div className='ml-[-7px] font-bold text-xl hidden sm:block'>{appInfo.name}({info.version})</div>
+                    {/* appInfo.link */}
                     <div className='ml-[-7px] font-bold text-xl block sm:hidden'>{appInfo.name}</div>
                 </Group>
             </Link>

@@ -12,7 +12,7 @@ export default () => {
     }
     return <div>
         <Card className=" flex flex-col " withBorder style={{
-            height: AppConstants.calcMainBodyHeight
+            height: `calc(${AppConstants.calcMainBodyHeight})`,
         }}>
             <div className="flex-1">chat history</div>
             <div className={" " + classes.iptbox}>

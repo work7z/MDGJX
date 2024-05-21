@@ -5,19 +5,21 @@ import AppConstants from "@/AppConstants"
 import { Card } from "@mantine/core"
 import queryString from "query-string"
 
-export default () => {
+export default (props: {
+    toolId: string
+}) => {
     const isDark = useDarkModeOrNot()
     const baseURL_for_ITTools = '/xtools/'
     const itToolsBaseURL = (
         isDevEnv() ? 'http://localhost:5174' : ''
-    ) + baseURL_for_ITTools + 'uuid-generator'
+    ) + baseURL_for_ITTools + props.toolId //'uuid-generator'
     const itToolsFullURL = itToolsBaseURL + '?' + queryString.stringify({
         sysdarkmode: isDark
     })
-    return <div>
+    return <div className="flex-1">
         <Card className=" flex flex-col " withBorder style={{
-            height: AppConstants.calcMainBodyHeight,
-            padding: 0
+            padding: 0,
+            height: '100%'
         }}>
             <FrameWrapper src={
                 itToolsFullURL

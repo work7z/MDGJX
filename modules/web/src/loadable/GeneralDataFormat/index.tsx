@@ -16,7 +16,7 @@ export default () => {
     })
     return <div>
         <Card className=" flex flex-col " withBorder style={{
-            height: AppConstants.calcMainBodyHeight,
+            height: `calc(${AppConstants.calcMainBodyHeight})`,
             padding: 0
         }}>
             <FrameWrapper src={

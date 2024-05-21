@@ -25,7 +25,8 @@ const latestReadForEachModule: {
 }
 export type TypeMDParams = {
     mainModuleItem: SystemModuleItem,
-    mainSubModuleItem: SystemSubModuleItem
+    mainSubModuleItem: SystemSubModuleItem,
+    mainSubToolID?: string
 }
 export const useMDParams = (): TypeMDParams => {
     const hist = useHistory()
@@ -39,13 +40,14 @@ export const useMDParams = (): TypeMDParams => {
             latestReadForEachModule[mainModuleItem.id].id
             :
             mainModuleItem?.children && mainModuleItem?.children[0].id)
-
     const mainSubModuleItem = (
         mainModuleItem?.children && mainModuleItem?.children.find(x => x.id == tmp_mainSubModule) || mainModuleItem?.children && mainModuleItem?.children[0]
     ) as SystemSubModuleItem // can never be null, so cast it to SystemSubModuleItem
+    const tmp_mainSubToolsID = (splitArr && splitArr[3] ? splitArr[3] : '')
     return {
         mainModuleItem,
-        mainSubModuleItem
+        mainSubModuleItem,
+        mainSubToolID: tmp_mainSubToolsID
     }
 }
 

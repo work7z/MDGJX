@@ -1,13 +1,14 @@
 import XToolsViewer from "@/containers/XToolsViewer"
 import { HeroText } from "./HeroText"
-import { Button, Card, HoverCard, Tabs, Text, Title } from "@mantine/core"
-import { toolsNavInfo } from "@/toolsNavInfo"
+import { Button, Card, HoverCard, Tabs, Text, TextInput, Title } from "@mantine/core"
+import { SubToolItem, toolsNavInfo } from "@/toolsNavInfo"
 import React, { useMemo } from "react"
 import {
     IconAperture,
     IconArrowsShuffle, IconLockSquare, IconFingerprint, IconSortDescendingNumbers, IconLock, IconCertificate, IconCalendar, IconArrowsLeftRight, IconLetterX, IconPalette, IconLetterCaseToggle, IconSpeakerphone, IconTextWrap, IconLink, IconUnlink, IconDeviceDesktop, IconTags, IconDeviceMobile, IconWorld, IconKey, IconKeyboard, IconEdit, IconBrowser, IconMailbox, IconBrandGit, IconServer, IconAlarm, IconList, IconDatabase, IconFileInvoice, IconBrandDocker, IconCode, IconBinary, IconBuildingFactory, IconMath, IconHourglass, IconPercentage, IconTemperature, IconPhone, IconAlignJustified, IconFileText, IconMoodSmile, IconEyeOff, IconFileDiff, IconArtboard, IconCamera,
     IconTools,
-    IconExchange
+    IconExchange,
+    IconSearch
 } from "@tabler/icons-react"
 import _ from "lodash"
 import { Link } from "react-router-dom"
@@ -24,13 +25,35 @@ export default () => {
     // toolsNavInfo[0].id
     const [idx, setIdx] = React.useState('all')
     const currentToolItem = toolsNavInfo.find(x => x.id === idx) || toolsNavInfo[0]
-    let subToolsArr = currentToolItem.subTools || []
+    let finalSubToolsArr: SubToolItem[] = []
     const allSubToolsArr = useMemo(() => {
         return _.flatten(toolsNavInfo.map(x => x.subTools || [])).sort((a, b) => a.name.localeCompare(b.name))
     }, [])
+    const [searchIpt, setSearchIpt] = React.useState('')
     if (idx === 'all') {
-        subToolsArr = allSubToolsArr
+        finalSubToolsArr = allSubToolsArr
+    } else {
+        finalSubToolsArr = currentToolItem.subTools || []
     }
+    const calcFinalSubToolsArr: (
+        SubToolItem
+    )[] = useMemo(() => {
+        const lowerIpt = searchIpt.toLowerCase()
+        return finalSubToolsArr.filter(x => {
+            let existOrNot = false;
+            if (x.keywords) {
+                x.keywords.forEach(y => {
+                    if (y.includes(lowerIpt)) {
+                        existOrNot = true
+                    }
+                })
+            }
+            if (existOrNot) {
+                return true
+            }
+            return _.toLower(x.name).includes(lowerIpt) || _.toLower(x.description).includes(lowerIpt)
+        })
+    }, [searchIpt, idx])
     return (
         <div>
             <Tabs value={idx} onChange={e => {
@@ -49,27 +72,38 @@ export default () => {
                     }
                 </Tabs.List>
             </Tabs>
-            <div className="  p-2 mt-3">
+            <div className="p-2 mt-1">
+                <TextInput placeholder="快速检索需要使用的工具名"
+                    leftSection={<IconSearch />}
+                    value={searchIpt}
+                    onChange={(e) => setSearchIpt(e.currentTarget.value)}
+                />
+            </div>
+            <div className="  p-2 pt-1 mt-0">
                 {
-                    (subToolsArr).map(x => {
-                        return <HoverCard width={280} openDelay={500} shadow="md">
-                            <HoverCard.Target>
-                                <Link to='/ksjd'>
-                                    <Card shadow="xs" withBorder className="w-[100%] sm:w-[29%] 2xl:w-[24%]  hover:border-blue-300   box-border mb-2 mr-2 inline-block  " >
-                                        <div className="flex items-center mb-2  space-x-2">
-                                            {x.icon && x.icon.name && iconMapping[x.icon.name] && iconMapping[x.icon.name]() || <IconExchange />}
-                                            <Title order={4} className="font-normal">{x.name}</Title>
-                                        </div>
-                                        <Text truncate className="text-slate-600" size={"sm"}>{x.description}</Text>
-                                    </Card>
-                                </Link>
-                            </HoverCard.Target>
-                            <HoverCard.Dropdown >
-                                <Text size="sm">
-                                    功能介绍: {x.description}
-                                </Text>
-                            </HoverCard.Dropdown>
-                        </HoverCard>
+                    (calcFinalSubToolsArr).map(x => {
+                        return (
+                            <Link to={x.path}>
+                                <Card shadow="xs" withBorder className="w-[100%] sm:w-[29%] 2xl:w-[24%]  hover:border-blue-300   box-border mb-2 mr-2 inline-block  " >
+                                    <div className="flex items-center mb-2  space-x-2">
+                                        {x.icon && x.icon.name && iconMapping[x.icon.name] && iconMapping[x.icon.name]() || <IconExchange />}
+                                        <Title order={4} className="font-normal">
+                                            <Text truncate>{x.name}</Text>
+                                        </Title>
+                                    </div>
+                                    <Text title={x.description} truncate className="text-slate-600" size={"sm"}>{x.description}</Text>
+                                </Card>
+                            </Link>
+                        )
+                        // return <HoverCard width={280} closeDelay={0} openDelay={300} shadow="md">
+                        //     <HoverCard.Target>
+                        //     </HoverCard.Target>
+                        //     <HoverCard.Dropdown className="fixed right-0 top-0">
+                        //         <Text size="sm">
+                        //             {x.description}
+                        //         </Text>
+                        //     </HoverCard.Dropdown>
+                        // </HoverCard>
                     })
                 }
             </div>
