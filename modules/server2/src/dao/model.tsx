@@ -73,6 +73,17 @@ export class S2UserPurchaseItem extends Model<InferAttributes<S2UserPurchaseItem
     declare deleteAt: CreationOptional<Date> | null;
 }
 
+export class S2UserAITokenUsage extends Model<InferAttributes<S2UserAITokenUsage>, InferCreationAttributes<S2UserAITokenUsage>> {
+    declare id?: number;
+    declare userId: number;
+    declare tokenCount: number;
+    declare sourceType: string
+    declare remarks: string;
+    declare createdAt: CreationOptional<Date> | null;
+    declare updatedAt: CreationOptional<Date> | null;
+    declare deleteAt: CreationOptional<Date> | null;
+}
+
 export class S2Feedback extends Model<InferAttributes<S2Feedback>, InferCreationAttributes<S2Feedback>> {
     // email, subject(TEXT), content(TEXT), createdAt, updatedAt, deleteAt
     declare id?: number;
@@ -257,7 +268,47 @@ export default async (daoRef: DaoRef) => {
         paranoid: true,
         underscored: true
     })
-
+    await S2UserAITokenUsage.init({
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        tokenCount: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        sourceType: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        remarks: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        deleteAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        }
+    }, {
+        sequelize: db_s2,
+        modelName: 's2_user_ai_token_usage',
+        timestamps: true,
+        paranoid: true,
+        underscored: true
+    })
     await S2User.init({
         id: {
             type: DataTypes.INTEGER,

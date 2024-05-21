@@ -17,7 +17,6 @@ export type DaoRef = {
 }
 
 
-
 let lock = false
 let loadDAO = async (): Promise<DaoRef> => {
     console.log('initializing DAO Ref...')
