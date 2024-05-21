@@ -1,5 +1,5 @@
 import apiSlice from "@/store/reducers/apiSlice"
-import { Button, Container, Divider, Select, Textarea } from "@mantine/core"
+import { Button, Container, Divider, Select, TextInput, Textarea } from "@mantine/core"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { Card, Group, Text, Menu, ActionIcon, Image, SimpleGrid, rem } from '@mantine/core';
 import { IconArrowsUpDown, IconDots, IconEraser, IconEye, IconFileZip, IconTrash } from '@tabler/icons-react';
@@ -30,7 +30,7 @@ export type TLNState = TLNPState & TLNNPState
 
 
 export default (props: {
-    id: "text" | "json" | "json-comparison",
+    id: "text" | "json" | "json-comparison" | 'markdown',
     label: string,
     realtime?: boolean,
     verticalSideBySide?: boolean,
@@ -40,6 +40,7 @@ export default (props: {
     handleTranslate: (val: TLNState, fn_translate) => Promise<string>
 }) => {
     const isJSONType = props.id == 'json' || props.id == 'json-comparison'
+    const isMarkdownType = props.id == 'markdown'
     const rh = exportUtils.register('tln' + props.id, {
         getPersistedStateFn: () => {
             return props.defaultTLNPState || {
@@ -269,6 +270,25 @@ export default (props: {
                                 />
                             </>
                                 : ''
+                        }
+                        {
+                            isMarkdownType ? <>
+                                <Textarea
+                                    label="保留词列表(可选)"
+                                    className="w-full"
+                                    rows={5}
+                                    placeholder="如果您的文档中有一些词汇不希望被翻译，可以在这里填写，以逗号分隔"
+                                />
+                            </> : ''
+                        } {
+                            isMarkdownType ? <>
+                                <Textarea
+                                    label="额外要求(可选)"
+                                    className="w-full"
+                                    rows={5}
+                                    placeholder="如果您有额外的翻译要求，请在这里填写，以便我们更好地为您服务"
+                                />
+                            </> : ''
                         }
                         {props.extraOptionsJSX}
                     </Group>
