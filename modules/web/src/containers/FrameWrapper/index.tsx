@@ -20,7 +20,9 @@ export const FrameWrapper = ({ src }) => {
                 ref.current = e;
             }}
             onLoad={onLoad}
-            className='w-full'
+            className='w-full '
+            style={{
+            }}
             id='iframe'
             src={src}
             // height={height}

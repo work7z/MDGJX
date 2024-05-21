@@ -55,13 +55,41 @@ export const systemModulesList: SystemModuleItem[] = [
                 id: 'chat',
                 bodyFn: () => import('./loadable/ChatBot/index.tsx')
             } : {
-                name: "通用数据格式化",
-                id: 'geshi',
-                bodyFn: () => import('./loadable/GeneralDataFormat/index.tsx')
+                name: "网络安全助手",
+                id: 'cyber',
+                bodyFn: () => import('./loadable/CyberSecurity/index.tsx')
             },
             {
-                name: "加解密与格式解析",
-                id: 'codec'
+                name: "通用格式转换",
+                id: 'converter'
+            },
+            {
+                name: "Web开发工具",
+                id: 'web'
+            },
+            {
+                name: "图像视频处理",
+                id: 'video'
+            },
+            {
+                name: "运维开发专用工具",
+                id: 'devops'
+            },
+            {
+                name: "网络通信协议",
+                id: 'network'
+            },
+            {
+                name: "数学运算工具",
+                id: 'math'
+            },
+            {
+                name: "快速测量工具",
+                id: 'measure'
+            },
+            {
+                name: "文本处理工具",
+                id: 'text'
             },
             // {
             //     name: "计算机编程类(233)",
