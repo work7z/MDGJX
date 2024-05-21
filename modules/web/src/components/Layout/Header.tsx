@@ -42,17 +42,19 @@ export default (props: {
     }</ActionIcon></Link>
     return <AppShell.Header className='flex flex-row justify-between px-2 sm:px-5 ' >
         <Group justify='space-between' className='w-full'>
-            <Group>
-                <Burger
-                    opened={opened}
-                    onClick={toggle}
-                    hiddenFrom="sm"
-                    size="sm"
-                />
-                <img src={imgFile} className='w-[30px]' />
-                <div className='ml-[-7px] font-bold text-xl hidden sm:block'>{appInfo.name}({appInfo.link})</div>
-                <div className='ml-[-7px] font-bold text-xl block sm:hidden'>{appInfo.name}</div>
-            </Group>
+            <Link to={'/tools/index'}>
+                <Group>
+                    <Burger
+                        opened={opened}
+                        onClick={toggle}
+                        hiddenFrom="sm"
+                        size="sm"
+                    />
+                    <img src={imgFile} className='w-[30px]' />
+                    <div className='ml-[-7px] font-bold text-xl hidden sm:block'>{appInfo.name}({appInfo.link})</div>
+                    <div className='ml-[-7px] font-bold text-xl block sm:hidden'>{appInfo.name}</div>
+                </Group>
+            </Link>
 
             {/* <Group h="100%" gap={0} visibleFrom="sm">
                 <a href="#" className={classes.link + ' ' + classes.active}>

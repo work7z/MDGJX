@@ -4,7 +4,6 @@ import { Tabs } from "@mantine/core"
 import SubPart from "./SubPart"
 
 export default () => {
-
     return <div>
         <HeroText />
         <SubPart />

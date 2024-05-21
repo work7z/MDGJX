@@ -198,7 +198,7 @@ export const toolsByCategory: ToolCategory[] = [
     components: [],
   },
 ];
-
+// debugger;
 export const tools = toolsByCategory.flatMap(({ components }) => components);
 export const toolsWithCategory = toolsByCategory.flatMap(({ components, name }) =>
   components.map((tool) => ({ category: name, ...tool })),
