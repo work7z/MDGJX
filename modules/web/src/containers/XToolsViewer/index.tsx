@@ -1,8 +1,8 @@
-import AppConstants from "@/AppConstants"
 import { useDarkModeOrNot } from "@/components/ColorSchemeToggle/ColorSchemeToggle"
-import { FrameWrapper } from "@/containers/FrameWrapper"
+import { FrameWrapper } from "../FrameWrapper"
 import { isDevEnv } from "@/env"
-import { Card, useMantineTheme } from "@mantine/core"
+import AppConstants from "@/AppConstants"
+import { Card } from "@mantine/core"
 import queryString from "query-string"
 
 export default () => {
@@ -10,7 +10,7 @@ export default () => {
     const baseURL_for_ITTools = '/xtools/'
     const itToolsBaseURL = (
         isDevEnv() ? 'http://localhost:5174' : ''
-    ) + baseURL_for_ITTools
+    ) + baseURL_for_ITTools + 'uuid-generator'
     const itToolsFullURL = itToolsBaseURL + '?' + queryString.stringify({
         sysdarkmode: isDark
     })
@@ -23,5 +23,5 @@ export default () => {
                 itToolsFullURL
             } />
         </Card >
-    </div >
-}   
+    </div>
+}

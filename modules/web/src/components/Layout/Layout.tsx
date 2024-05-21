@@ -63,9 +63,10 @@ export function GeneralLayout(props) {
             { /** app main */}
             <AppShell.Main >
                 {bodyJSX}
-
             </AppShell.Main>
-            <FooterCentered />
+            {
+                mainSubModuleItem.disableFooter ? '' : <FooterCentered />
+            }
         </AppShell>
     );
 }

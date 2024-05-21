@@ -180,7 +180,7 @@ function AuthenticationTitle() {
                             </Title>
                             <Text c="dimmed" size="sm" ta="center" mt={5}>
                                 我们已发送邮箱 到 {preEMail}，请查收并输入验证码。  如若没有收到邮件，请先 检查垃圾箱 或者{' '}
-                                <Anchor size="sm" component="button" onClick={() => {
+                                <Anchor type='button' size="sm" component="button" onClick={() => {
                                     setEnterVCodeMode(false)
                                 }}>
                                     重新发送
@@ -233,7 +233,7 @@ function AuthenticationTitle() {
                         <Text c="dimmed" size="sm" ta="center" mt={5}>
                             想起密码了？{' '}
                             <Link to="/settings/my-account?type=signin">
-                                <Anchor size="sm" component="button">
+                                <Anchor type='button' size="sm" component="button">
                                     返回登录
                                 </Anchor>
                             </Link>
@@ -306,7 +306,7 @@ function AuthenticationTitle() {
                         <Text c="dimmed" size="sm" ta="center" mt={5}>
                             已经有账户了？{' '}
                             <Link to='/settings/my-account?type=signin'>
-                                <Anchor size="sm" component="button">
+                                <Anchor type='button' size="sm" component="button">
                                     立即登录
                                 </Anchor>
                             </Link>
@@ -349,12 +349,12 @@ function AuthenticationTitle() {
                                     name='agreeOrNot' label={
                                         <Text size="sm" className='text-xs'>
                                             我已经阅读并同意 <Link to='/settings/terms-of-conditions' target='_blank'>
-                                                <Anchor size='xs'>
+                                                <Anchor type='button' size='xs'>
                                                     《服务条款》
                                                 </Anchor>
                                             </Link> 和
                                             <Link to='/settings/privacy-agreement' target='_blank'>
-                                                <Anchor size='xs'>
+                                                <Anchor type='button' size='xs'>
                                                     《隐私保护协议》
                                                 </Anchor>
                                             </Link>
@@ -395,14 +395,13 @@ function AuthenticationTitle() {
             return (
                 <Container size={420} my={40}>
                     <div >
-
                         <Title ta="center" className={classes.title}>
                             登录系统
                         </Title>
                         <Text c="dimmed" size="sm" ta="center" mt={5}>
                             提示密码不正确？{' '}
                             <Link to={'/settings/my-account?type=find-pw'}>
-                                <Anchor component="button" size="sm">
+                                <Anchor type='button' component="button" size="sm">
                                     找回密码
                                 </Anchor>
                             </Link>
@@ -434,7 +433,7 @@ function AuthenticationTitle() {
 
                                     name='rememberMe' defaultChecked label="记住这台设备" />
                                 <Link to='/settings/my-account?type=signup' >
-                                    <Anchor size="sm" component="button" >
+                                    <Anchor type='button' size="sm" component="button" >
                                         免费注册
                                     </Anchor>
                                 </Link>

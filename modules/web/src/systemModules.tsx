@@ -16,11 +16,13 @@ import classes from './DoubleNavbar.module.css';
 import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
 import { TypeMDParams } from '@/containers/SideBar';
+import { toolsNavInfo } from './toolsNavInfo.tsx';
 
 export type SystemSubModuleItem = {
     id: string,
     href?: string,
     name: string,
+    disableFooter?: boolean,
     bodyFn?: () => any
 }
 export type SystemModuleItem = {
@@ -55,54 +57,18 @@ export const systemModulesList: SystemModuleItem[] = [
                 id: 'chat',
                 bodyFn: () => import('./loadable/ChatBot/index.tsx')
             } : {
-                name: "网络安全助手",
-                id: 'cyber',
-                bodyFn: () => import('./loadable/CyberSecurity/index.tsx')
+                name: "首页",
+                id: 'index',
+                bodyFn: () => import('./loadable/XToolsView/index.tsx')
             },
-            {
-                name: "通用格式转换",
-                id: 'converter'
-            },
-            {
-                name: "Web开发工具",
-                id: 'web'
-            },
-            {
-                name: "图像视频处理",
-                id: 'video'
-            },
-            {
-                name: "运维开发专用工具",
-                id: 'devops'
-            },
-            {
-                name: "网络通信协议",
-                id: 'network'
-            },
-            {
-                name: "数学运算工具",
-                id: 'math'
-            },
-            {
-                name: "快速测量工具",
-                id: 'measure'
-            },
-            {
-                name: "文本处理工具",
-                id: 'text'
-            },
-            // {
-            //     name: "计算机编程类(233)",
-            //     id: 'overview'
-            // },
-            // {
-            //     name: "金融银行证券类(233)",
-            //     id: 'other'
-            // },
-            // {
-            //     name: '我的收藏(0)',
-            //     id: 'collection'
-            // }
+            ...toolsNavInfo.map(x => {
+                return {
+                    name: x.name,
+                    id: x.id,
+                    disableFooter: true,
+                    bodyFn: () => import('./loadable/XToolsDetail/index.tsx')
+                } satisfies SystemSubModuleItem
+            })
         ]
     },
     {
