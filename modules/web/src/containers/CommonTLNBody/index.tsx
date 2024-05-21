@@ -270,6 +270,7 @@ export default (props: {
                             </>
                                 : ''
                         }
+                        {props.extraOptionsJSX}
                     </Group>
                 } />
             </Card>

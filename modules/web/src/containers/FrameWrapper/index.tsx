@@ -1,3 +1,4 @@
+import AppConstants from "@/AppConstants";
 import { useEffect, useRef, useState } from "react";
 
 export const FrameWrapper = ({ src }) => {
@@ -25,7 +26,6 @@ export const FrameWrapper = ({ src }) => {
             }}
             id='iframe'
             src={src}
-            // height={height}
             height={height}
             scrolling='no'
             frameBorder='0'

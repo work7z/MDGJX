@@ -17,6 +17,7 @@ import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
 import { TypeMDParams } from '@/containers/SideBar';
 import { toolsNavInfo } from './toolsNavInfo.tsx';
+import AppConstants from './AppConstants.tsx';
 
 export type SystemSubModuleItem = {
     id: string,
@@ -109,11 +110,11 @@ export const systemModulesList: SystemModuleItem[] = [
                 id: 'json-cn-en',
                 bodyFn: () => import('./loadable/TLNJSONComparison/index.tsx')
             },
-            // {
-            //     name: 'Markdown 文档翻译',
-            //     id: 'md',
-            //     bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
-            // },
+            {
+                name: 'Markdown 文档翻译',
+                id: 'md',
+                bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
+            },
         ]
     },
     {
