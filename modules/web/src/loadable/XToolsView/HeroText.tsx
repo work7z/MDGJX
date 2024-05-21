@@ -9,7 +9,9 @@ import { Link } from 'react-router-dom';
 export function HeroText() {
     const history = useHistory()
     return (
-        <Container className={classes.wrapper} size={1400}>
+        <Container className={classes.wrapper} size={1400} style={{
+            paddingBottom: '48px'
+        }}>
             <Dots className={classes.dots} style={{ left: 0, top: 0 }} />
             <Dots className={classes.dots} style={{ left: 60, top: 0 }} />
             <Dots className={classes.dots} style={{ left: 0, top: 140 }} />
@@ -39,11 +41,12 @@ export function HeroText() {
                     <Button
                         onClick={() => {
                             // AlertUtils.alertInfo("抱歉，专业版暂未开放，敬请期待！感兴趣可加QQ群" + GetAppInfo().qqGroup)
-                            history.push("/settings/faq")
-                            AlertUtils.alertInfo("抱歉，更多功能页暂不可能，暂时为您跳转到常见问题页")
+                            // history.push("/settings/faq")
+                            // AlertUtils.alertInfo("抱歉，更多功能页暂不可用，暂时为您跳转到常见问题页")
+                            AlertUtils.alertInfo("抱歉，IDE插件暂未开放下载，敬请期待！感兴趣可加QQ群" + GetAppInfo().qqGroup)
                         }}
                         className={classes.control} size="lg">
-                        了解更多功能
+                        安装IDE插件
                     </Button>
                 </div>
             </div>
