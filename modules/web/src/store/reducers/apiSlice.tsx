@@ -118,7 +118,7 @@ export const apiSlice = createApi({
     },
     validateStatus: (response, result: AsyncCreateResponse<any> | null) => {
       let errorHandler = () => {
-        AlertUtils.alertErr(result && result.message ? result.message : "抱歉，网络不稳定，请稍后重试")
+        AlertUtils.alertErr(result && result.message ? result.message : result && result.error ? result.error : "抱歉，网络不稳定，请稍后重试")
       }
       if (result) {
         let error = result.error;

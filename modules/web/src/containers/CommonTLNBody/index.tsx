@@ -18,6 +18,8 @@ import { sleep } from "@/utils/CommonUtils";
 import { JSONTranslateMethods } from "@/loadable/TLNJSON";
 import SimpleSelect from "@/components/SimpleSelect";
 import FileChoosePanel from "@/components/FileChoosePanel";
+import { readStrFromFile } from "@/AppFn";
+import { js_export_trigger } from "@/utils/FileExportUtils";
 export type TLNPState = {
     fillFileMode: boolean
     sourceLang: string;
@@ -33,7 +35,8 @@ export type TLNNPState = {
 export type TLNState = TLNPState & TLNNPState
 
 export type UploadDetail = {
-    status: "pending" | "normal" | "success" | "error",
+    status: "pending" | "none" | "OK" | "error",
+    result?: string
 }
 export default (props: {
     showExampleLabel?: string,
@@ -61,6 +64,7 @@ export default (props: {
         },
         getNotPersistedStateFn: () => {
             return {
+                fileProcessLabel: '当前任务处于闲置状态',
                 inputJSON: '',
                 outputJSON: '',
                 selectedUploadFiles: [] as File[],
@@ -101,37 +105,127 @@ export default (props: {
                     return;
                 }
                 let result = ''
-                if (tState.inputJSON.length == 0) {
-                    rh.updateNonPState({
-                        outputJSON: ''
+                rh.updateNonPState({
+                    fileProcessLabel: `正在处理文件中`
+                })
+                let lastErrMsg: string = ''
+                const fn_fanyi = async (value) => {
+                    const r = await t_sendReq({
+                        text: (value + "") || '',
+                        type: props.id + '',
+                        sourceLang: tState?.sourceLang + "",
+                        targetLang: tState?.targetLang + "",
+                        reservedWords: tState?.reservedWords as string,
+                        extraRequests: tState?.extraRequests as string,
                     })
-                } else {
-                    result = await props.handleTranslate(tState, async (value) => {
-                        const r = await t_sendReq({
-                            text: (value + "") || '',
-                            type: props.id + '',
-                            sourceLang: tState?.sourceLang + "",
-                            targetLang: tState?.targetLang + "",
-                            reservedWords: tState?.reservedWords as string,
-                            extraRequests: tState?.extraRequests as string,
-                        })
-                        const result = r.data?.data?.result
-                        return result || '';
-                    })
-                    rh.updateNonPState({
-                        outputJSON: result
-                    })
+                    if (r.isError) {
+                        const errObj: any = r.error
+                        lastErrMsg = errObj?.data?.error + ''
+                        throw new Error(lastErrMsg)
+                    }
+                    const result = r.data?.data?.result
+                    return result || '';
                 }
-                if (options.eventSource == 'input') {
-                    // do nothing la, no need to alert in this condition
+
+                if (tState.fillFileMode) {
+                    let allLen = 0
+                    const files = tState.selectedUploadFiles
+                    if (_.isEmpty(files)) {
+                        AlertUtils.alertWarn("无文件可处理，请先选择文件")
+                        return;
+                    }
+                    rh.updateNonPState({
+                        fileProcessLabel: `开始处理本次翻译`,
+                        detailForHandlingUploadFiles: {}
+                    })
+                    let idx = 0
+                    for (let eachFile of files) {
+                        try {
+                            idx++
+                            AlertUtils.alertInfo(`正在翻译${eachFile.name}中...`)
+                            let tState2 = rh.getActualValueInState()
+                            rh.updateNonPState({
+                                fileProcessLabel: `处理中: ${idx}/${files.length}`,
+                                detailForHandlingUploadFiles: {
+                                    ...tState2.detailForHandlingUploadFiles,
+                                    [eachFile.name]: {
+                                        status: "pending"
+                                    }
+                                }
+                            })
+                            const processFielStr = await readStrFromFile(eachFile)
+                            allLen += processFielStr.length
+                            const alert_str = `正在翻译中，预估字符${processFielStr.length}，请稍候`
+                            AlertUtils.alertInfo(alert_str)
+                            rh.updateNonPState({
+                                fileProcessLabel: alert_str
+                            })
+
+                            const crtResult = await props.handleTranslate({
+                                ...tState,
+                                inputJSON: processFielStr
+                            }, fn_fanyi)
+                            tState2 = rh.getActualValueInState()
+                            rh.updateNonPState({
+                                fileProcessLabel: `完成翻译处理: ${idx}/${files.length}`,
+                                detailForHandlingUploadFiles: {
+                                    ...tState2.detailForHandlingUploadFiles,
+                                    [eachFile.name]: {
+                                        status: "OK",
+                                        result: crtResult
+                                    }
+                                }
+                            })
+                        } catch (e: any) {
+                            const tState2 = rh.getActualValueInState()
+                            rh.updateNonPState({
+                                fileProcessLabel: lastErrMsg,
+                                detailForHandlingUploadFiles: {
+                                    ...tState2.detailForHandlingUploadFiles,
+                                    [eachFile.name]: {
+                                        status: "error",
+                                        result: lastErrMsg
+                                    }
+                                }
+                            })
+                            throw e
+                        }
+                    }
+                    const waitStr = ("翻译" + files.length + "个文件完毕，总计" + allLen + "个字符，耗时" + (
+                        (Date.now() - before) / 1000
+                    ).toFixed(2) + "s")
+                    AlertUtils.alertSuccess(waitStr)
+                    rh.updateNonPState({
+                        fileProcessLabel: waitStr
+                    })
                 } else {
-                    if (result && result.length !== 0) {
-                        AlertUtils.alertSuccess("翻译完毕，总计" + result.length + "个字符，耗时" + (
-                            (Date.now() - before) / 1000
-                        ).toFixed(2) + "s")
+                    if (tState.inputJSON.length == 0) {
+                        rh.updateNonPState({
+                            outputJSON: ''
+                        })
+                        AlertUtils.alertWarn("输入为空，请输入内容后重试")
+                        return;
+                    } else {
+                        result = await props.handleTranslate(tState, fn_fanyi)
+                        rh.updateNonPState({
+                            outputJSON: result
+                        })
+                    }
+                    if (options.eventSource == 'input') {
+                        // do nothing la, no need to alert in this condition
+                    } else {
+                        if (result && result.length !== 0) {
+                            AlertUtils.alertSuccess("翻译完毕，总计" + result.length + "个字符，耗时" + (
+                                (Date.now() - before) / 1000
+                            ).toFixed(2) + "s")
+                        }
                     }
                 }
-            } catch (e) { throw e } finally {
+            } catch (e) {
+                // AlertUtils.alertErr(e)
+                throw e
+            } finally {
+
                 setTranslating(false)
             }
         }
@@ -168,7 +262,18 @@ export default (props: {
                         eventSource: 'submit'
                     })
                 },
-                {
+                fillFileMode ? {
+                    color: 'grape',
+                    text: '导出结果',
+                    onClick: () => {
+                        _.forEach(rh?.npState?.detailForHandlingUploadFiles, (x, d, n) => {
+                            js_export_trigger({
+                                saveValue: x?.result,
+                                filename: d
+                            })
+                        })
+                    }
+                } : {
                     color: 'green',
                     text: '复制结果',
                     onClick: () => {
@@ -200,7 +305,7 @@ export default (props: {
                         })
                     }
                 } : {
-                    title: '添加文件/文件夹',
+                    title: '文件批处理模式',
                     color: 'gray',
                     variant: 'outline',
                     pl: 12,
@@ -288,9 +393,9 @@ export default (props: {
                             <FileChoosePanel
                                 value={rh?.npState?.selectedUploadFiles || []}
                                 onChange={e => {
-                                    debugger;
                                     rh.updateNonPState({
-                                        selectedUploadFiles: e
+                                        selectedUploadFiles: e,
+                                        detailForHandlingUploadFiles: {}
                                     })
                                 }}
                             />
@@ -299,6 +404,7 @@ export default (props: {
                             `flex-start `
                         }>
                             <Text>翻译结果</Text>
+                            <Text size={'xs'}>{rh?.npState?.fileProcessLabel}</Text>
                             <Card withBorder className="w-full">
                                 <Table>
                                     <Table.Thead>
@@ -306,6 +412,8 @@ export default (props: {
                                             <Table.Th>名称</Table.Th>
                                             <Table.Th>类型/体积</Table.Th>
                                             <Table.Th>状态</Table.Th>
+                                            <Table.Th>预览结果</Table.Th>
+                                            <Table.Th>操作</Table.Th>
                                         </Table.Tr>
                                     </Table.Thead>
                                     <Table.Tbody>{
@@ -314,10 +422,27 @@ export default (props: {
                                             return (
                                                 <Table.Tr key={element.name}>
                                                     <Table.Td>{element.name}</Table.Td>
-                                                    <Table.Td>{element.type}/{element.size}</Table.Td>
+                                                    <Table.Td>{element.size}</Table.Td>
                                                     <Table.Td>{
                                                         fileDetail?.status || '无'
                                                     }</Table.Td>
+                                                    <Table.Td>{
+                                                        _.truncate(fileDetail?.result || '无', {
+                                                            length: 100
+                                                        })
+                                                    }</Table.Td>
+                                                    <Table.Td>
+                                                        <Button size='xs' color="green" onClick={() => {
+                                                            clipboard.copy(fileDetail?.result || '无结果')
+                                                            AlertUtils.alertSuccess('已复制此结果到剪贴板，文件名是' + element.name)
+                                                        }}>复制</Button>
+                                                        <Button size='xs' color='grape' onClick={() => {
+                                                            js_export_trigger({
+                                                                saveValue: fileDetail?.result,
+                                                                filename: element.name
+                                                            })
+                                                        }}>导出</Button>
+                                                    </Table.Td>
                                                 </Table.Tr>
                                             )
                                         })}</Table.Tbody>
