@@ -11,7 +11,8 @@ export default () => {
         realtime
         defaultTLNPState={
             {
-                sourceLang: 'en',
+                fillFileMode: false,
+                sourceLang: 'auto',
                 targetLang: 'zh',
                 translateMethod: 'KeyOnly'
             }

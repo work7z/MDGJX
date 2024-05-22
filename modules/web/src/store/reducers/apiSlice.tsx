@@ -221,7 +221,7 @@ export const apiSlice = createApi({
         };
       },
     }),
-    getFurtherAcctDetail: build.query<AsyncCreateResponse<DisplayUserAcctDetail>, {}>({
+    getFurtherAcctDetail: build.query<AsyncCreateResponse<DisplayUserAcctDetail>, {} & SystemRefresh>({
       query: (obj) => {
         return {
           method: "GET",

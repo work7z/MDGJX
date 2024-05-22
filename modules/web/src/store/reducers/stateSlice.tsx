@@ -8,6 +8,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import _ from 'lodash'
 import { SignInCredentials } from "./apiSlice";
+import { mergeWithNoArr } from "@/AppFn";
 
 type StateState = {
     kvSessionMap: {
@@ -36,12 +37,12 @@ const StateSlice = createSlice({
                 if (!state.kvSessionMap[action.payload.keyname]) {
                     state.kvSessionMap[action.payload.keyname] = {}
                 }
-                _.merge(state.kvSessionMap[action.payload.keyname], action.payload.state)
+                mergeWithNoArr(state.kvSessionMap[action.payload.keyname], action.payload.state)
             } else {
                 if (!state.npKVSessionMap[action.payload.keyname]) {
                     state.npKVSessionMap[action.payload.keyname] = {}
                 }
-                _.merge(state.npKVSessionMap[action.payload.keyname], action.payload.state)
+                mergeWithNoArr(state.npKVSessionMap[action.payload.keyname], action.payload.state)
             }
         },
     },
