@@ -4,6 +4,13 @@ import { S2User, S2UserAITokenUsage } from "@/dao/model";
 import { getScopeID } from "../common/biz-func";
 import { DisplayUserInfo } from "../common";
 
+export const MAX_TOKEN_PER_MONTH = 10000 * 20
+
+export const fn_getUsedTokenCountForUserId = async (userId: number): Promise<number> => {
+    const r = await S2UserAITokenUsage.sum('tokenCount', { where: { userId: userId, scopeID: getScopeID() } })
+    return r;
+}
+
 export default {
     userSendAIReqAndRes: async (userInfo: DisplayUserInfo, sourceType: "markdown" | "other", iptArr: QwenIpt[]): Promise<string> => {
         const userId = userInfo.id;
@@ -11,8 +18,8 @@ export default {
 
         console.log('handle gpt translation');
         // check token count
-        const tokenCount = await S2UserAITokenUsage.sum('tokenCount', { where: { userId: userId, scopeID: getScopeID() } })
-        if (tokenCount > 10000 * 20) { // 大于20万则提醒无法更多信息
+        const tokenCount = await fn_getUsedTokenCountForUserId(userId)
+        if (tokenCount > MAX_TOKEN_PER_MONTH) { // 大于20万则提醒无法更多信息
             return `本月AI使用次数已经超过20万token，请等待下个月或购买额外资源包`
         }
         const res = await AIUtils.askQwen(iptArr);

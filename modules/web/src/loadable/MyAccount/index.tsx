@@ -13,6 +13,7 @@ import {
     Badge,
     Flex,
     Alert,
+    Progress,
 } from '@mantine/core';
 import classes from './AuthenticationTitle.module.css';
 import GetAppInfo from '@/AppInfo';
@@ -22,7 +23,7 @@ import apiSlice, { SignInCredentials, verifyResponse } from '@/store/reducers/ap
 import AlertUtils from '@/utils/AlertUtils';
 import { ACTION_doSignInByInfo } from '@/store/actions/auth-actions';
 import exportUtils from '@/utils/ExportUtils';
-import { IconAt, IconCalendarBolt, IconInfoCircle, IconPhoneCall, IconUserBolt } from '@tabler/icons-react';
+import { IconAt, IconCalendarBolt, IconInfoCircle, IconMessageBolt, IconPhoneCall, IconShoppingCartDiscount, IconUserBolt } from '@tabler/icons-react';
 import _ from 'lodash';
 import AuthUtils, { fn_reload, useHasUserSignIn } from '@/utils/AuthUtils';
 import { useEffect, useState } from 'react';
@@ -30,6 +31,7 @@ import { CardListTableView } from './CardListTableView';
 import { formatToYYYYMMDD } from '@/utils/DateUtils';
 import OldUserRemark from '../FAQ/OldUserRemark';
 import { form_onSubmit } from '@/utils/FormUtils';
+import TokenUsage from './TokenUsage';
 
 function AuthenticationTitle() {
     let sp = (useSearchParams())
@@ -132,6 +134,8 @@ function AuthenticationTitle() {
                                     </Text>
                                 </Group>
 
+                                <TokenUsage />
+
 
                                 {/* <Group wrap="nowrap" gap={10} mt={5}>
                                     <IconUserBolt stroke={1.5} size="1rem" className={classes.icon} />
@@ -144,7 +148,6 @@ function AuthenticationTitle() {
                     </Paper>
                     <Paper withBorder shadow="md" p={10} mt={10} radius="md">
                         <Group flex='flex-col space-y-3'>
-
                             <Link className='w-full' to='/settings/my-account?type=find-pw'>
                                 <Button fullWidth color='indigo' onClick={() => {
                                 }}>

@@ -84,6 +84,10 @@ export class S2GiftCard {
   declare deleteAt: Date | null;
 }
 
+export type DisplayUserAcctDetail = {
+  usedTokenCount: number;
+  totalTokenCount: number;
+};
 
 export let verifyResponse = (response: AsyncCreateResponse<any> | undefined): boolean => {
   if (!response || response.error) {
@@ -214,6 +218,16 @@ export const apiSlice = createApi({
           method: "POST",
           url: "/auth/mailFindPw",
           body: obj,
+        };
+      },
+    }),
+    getFurtherAcctDetail: build.query<AsyncCreateResponse<DisplayUserAcctDetail>, {}>({
+      query: (obj) => {
+        return {
+          method: "GET",
+          url: (
+            "/user/getFurtherAcctDetail"
+          ),
         };
       },
     }),
