@@ -13,7 +13,6 @@ export default () => {
         }}
         id='markdown'
         label='Markdown文档'
-        realtime
         extraOptionsJSX={
             <div className="mt-3 space-x-1">
                 {JSX_AI_polish}

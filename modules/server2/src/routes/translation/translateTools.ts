@@ -12,6 +12,10 @@ export type TLNRequest = {
   type: 'json' | 'text' | 'markdown';
   sourceLang: string;
   targetLang: string;
+  //   reservedWords: tState?.reservedWords + "",
+  reservedWords: string;
+  // extraRequests: tState?.extraRequests + "",
+  extraRequests: string;
 };
 export type TLNAIRequest = {
   aiType: string;

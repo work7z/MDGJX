@@ -15,7 +15,10 @@ export type DaoRef = {
     db_s2: Sequelize,
     redis: RedisClientType
 }
-
+export const getS2DBRef = async () => {
+    const d = await loadDAO()
+    return d.db_s2
+}
 
 let lock = false
 let loadDAO = async (): Promise<DaoRef> => {

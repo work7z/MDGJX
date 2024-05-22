@@ -14,7 +14,7 @@ test('run-gpt-content', async () => {
     {
       role: 'user',
       content: `
-你是精通Markdown格式的翻译大师，并且可以跳过代码和专用名词，请你直接翻译下面Markdown为英文并直接输出：
+你是精通Markdown格式的翻译大师，并能熟练跳过代码和专用名词，请你直接翻译下面Markdown为英文并直接输出：
 \`\`\`markdown
 # 这是一个标题
 这是一个段落

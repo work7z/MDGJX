@@ -52,6 +52,8 @@ export type TLNRequest = {
   type: string;
   sourceLang: string;
   targetLang: string;
+  reservedWords: string;
+  extraRequests: string;
 };
 export type TLNResponse = {
   result: string

@@ -17,6 +17,8 @@ import TranslateTools, { TLNAIRequest, TLNRequest, TLNRequestIdRes, TLNResponse 
 import i18nItems from '@/i18n/i18n';
 import { randomUUID } from 'crypto';
 import dao from '@/dao';
+import AIUtils from './gpt/ai-utils';
+import userAiUtils from './gpt/user-ai-utils';
 
 export class TranslationRoute implements Routes {
   public router = Router();
@@ -29,64 +31,48 @@ export class TranslationRoute implements Routes {
 
   private initializeRoutes() {
     this.router.post(
-      '/tln/sendAITranslation',
-      asyncHandler(async (req, res) => {
-        let p = getCommonHandlePass(req, res);
-        const [user, errFn] = await p.verifyAuth();
-        if (!user) return errFn();
-        const { text = '', type, sourceLang, targetLang } = req.body as TLNAIRequest;
-        if (text === '') {
-          throw new Error('输入内容不能为空');
-        }
-
-        // let obj = await TranslateTools.translateText(text, sourceLang, targetLang);
-        let obj = {
-          isOK: true,
-          result: 'OKLa' + text,
-          errorCode: '',
-        };
-        const d = await dao();
-        await d.db_s2.transaction(async () => {
-          const r = await S2TranslationRecord.create({
-            userId: user.id,
-            fromIP: req.ip,
-            textCount: text.length,
-            sourceLang: sourceLang,
-            targetLang: targetLang,
-            status: 0,
-            handleType: type,
-            // DO NOT CACHE SENSITIVE TRANSLATION RESULT HERE
-            cachedText: '',
-            processedText: '',
-            usingAI: 1,
-            secretId: 'AI',
-          });
-        });
-
-        if (!obj.isOK) {
-          throw new Error('翻译失败: ' + obj.errorCode);
-        }
-        sendRes(res, {
-          data: {
-            result: obj.result,
-          } satisfies TLNResponse,
-        });
-      }),
-    );
-
-    this.router.post(
       '/tln/sendTLNRequest',
       asyncHandler(async (req, res) => {
         let p = getCommonHandlePass(req, res);
         const [user, errFn] = await p.verifyAuth();
         if (!user) return errFn();
-        const { text = '', type, sourceLang, targetLang } = req.body as TLNRequest;
+        const { text = '', type, sourceLang, targetLang, extraRequests, reservedWords } = req.body as TLNRequest;
         if (text === '') {
           throw new Error('输入内容不能为空');
         }
+        const usingAIMode = type == 'markdown';
+        let resultText = '';
+        let secretId = '';
+        if (usingAIMode) {
+          const resText = await userAiUtils.userSendAIReqAndRes(user, 'markdown', [
+            {
+              role: 'user',
+              content: `
+你是精通Markdown格式的翻译大师，并能熟练跳过代码和专用名词，你只做翻译的事情别的不要做，牢记！
 
-        let obj = await TranslateTools.translateText(text, sourceLang, targetLang);
-        const r = await S2TranslationRecord.create({
+这是从${sourceLang}转为${targetLang}的翻译请求：
+${reservedWords ? `保留词列表(逗号隔开): ${reservedWords}` : '' || ''}
+额外要求：${extraRequests || '无'}
+
+根据上面要求，请你翻译以下Markdown并直接输出：
+\`\`\`markdown
+${text}
+\`\`\`
+      
+      `,
+            },
+          ]);
+          resultText = resText;
+          secretId = 'qwen';
+        } else {
+          let obj = await TranslateTools.translateText(text, sourceLang, targetLang);
+          if (!obj.isOK) {
+            throw new Error('翻译失败: ' + obj.errorCode);
+          }
+          resultText = obj.result;
+          secretId = obj.secretId || 'N/A ';
+        }
+        await S2TranslationRecord.create({
           userId: user.id,
           fromIP: req.ip,
           textCount: text.length,
@@ -97,14 +83,12 @@ export class TranslationRoute implements Routes {
           // DO NOT CACHE SENSITIVE TRANSLATION RESULT HERE
           cachedText: '',
           processedText: '',
-          secretId: obj.secretId || 'N/A ',
+          secretId: secretId,
         });
-        if (!obj.isOK) {
-          throw new Error('翻译失败: ' + obj.errorCode);
-        }
+
         sendRes(res, {
           data: {
-            result: obj.result,
+            result: resultText,
           } satisfies TLNResponse,
         });
       }),

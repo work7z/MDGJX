@@ -21,6 +21,8 @@ export type TLNPState = {
     sourceLang: string;
     targetLang: string;
     translateMethod?: string;
+    reservedWords?: string;
+    extraRequests?: string;
 }
 export type TLNNPState = {
     inputJSON: string;
@@ -46,7 +48,9 @@ export default (props: {
             return props.defaultTLNPState || {
                 sourceLang: 'zh',
                 targetLang: 'en',
-                translateMethod: JSONTranslateMethods[0].value
+                translateMethod: JSONTranslateMethods[0].value,
+                reservedWords: '',
+                extraRequests: ''
             } satisfies TLNPState
         },
         getNotPersistedStateFn: () => {
@@ -96,9 +100,11 @@ export default (props: {
                     result = await props.handleTranslate(tState, async (value) => {
                         const r = await t_sendReq({
                             text: (value + "") || '',
-                            type: 'text',
+                            type: props.id + '',
                             sourceLang: tState?.sourceLang + "",
-                            targetLang: tState?.targetLang + ""
+                            targetLang: tState?.targetLang + "",
+                            reservedWords: tState?.reservedWords as string,
+                            extraRequests: tState?.extraRequests as string,
                         })
                         const result = r.data?.data?.result
                         return result || '';
@@ -278,6 +284,9 @@ export default (props: {
                                     className="w-full"
                                     rows={5}
                                     placeholder="如果您的文档中有一些词汇不希望被翻译，可以在这里填写，以逗号分隔"
+                                    {...rh.bindOnChange({
+                                        pStateKey: 'reservedWords'
+                                    })}
                                 />
                             </> : ''
                         } {
@@ -287,6 +296,9 @@ export default (props: {
                                     className="w-full"
                                     rows={5}
                                     placeholder="如果您有额外的翻译要求，请在这里填写，以便我们更好地为您服务"
+                                    {...rh.bindOnChange({
+                                        pStateKey: 'extraRequests'
+                                    })}
                                 />
                             </> : ''
                         }

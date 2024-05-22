@@ -6,7 +6,7 @@ import { isDevEnv } from '../hooks/env';
 import _ from 'lodash';
 import { logger } from '@/utils/logger';
 
-const UPDATE_TIME_VERSION = '20'
+const UPDATE_TIME_VERSION = '21'
 
 export class S2SendMailVerifyCodeRecord extends Model<InferAttributes<S2SendMailVerifyCodeRecord>, InferCreationAttributes<S2SendMailVerifyCodeRecord>> {
     declare id?: number;
@@ -88,6 +88,8 @@ export class S2UserAITokenUsage extends Model<InferAttributes<S2UserAITokenUsage
     declare userId: number;
     declare scopeID: string; // like 2024-05 or 2024-06, is to check 2024-05 quota or 2024-06 quota
     declare tokenCount: number;
+    declare inputTokenCount: number;
+    declare outputTokenCount: number;
     declare sourceType: string
     declare remarks: string;
     declare createdAt: CreationOptional<Date> | null;
@@ -321,6 +323,14 @@ export default async (daoRef: DaoRef) => {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
+        },
+        inputTokenCount: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        outputTokenCount: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
         scopeID: {
             type: DataTypes.STRING,

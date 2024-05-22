@@ -14,6 +14,11 @@ export type AIResponse = {
   };
   request_id: string;
 };
+export type QwenIpt = {
+  role: 'system' | 'user' | 'assistant';
+  content: string;
+};
+
 let AIUtils = {
   askZhipu: async function (
     input: {
@@ -56,12 +61,7 @@ let AIUtils = {
       response: rdata,
     };
   },
-  askQwen: async function (
-    input: {
-      role: 'system' | 'user' | 'assistant';
-      content: string;
-    }[],
-  ): Promise<AIResponse | null> {
+  askQwen: async function (input: QwenIpt[]): Promise<AIResponse | null> {
     let token = process.env.TYKEY;
     let option = 'qwen-max-longcontext';
     if (!token) {

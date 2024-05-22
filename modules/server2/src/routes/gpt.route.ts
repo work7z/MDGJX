@@ -14,6 +14,10 @@ import { asyncHandler } from './AsyncHandler';
 import { S2Feedback, S2User } from '@/dao/model';
 import { getCommonHandlePass, sendRes } from './common';
 
+export const ai_translateMarkdown = async () => {
+  //
+};
+
 export class GPTRoute implements Routes {
   public router = Router();
   public auth = new AuthController();

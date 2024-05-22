@@ -22,7 +22,7 @@ import { DoubleNavbar as SideBar } from '@/containers/SideBar';
 import GetAppInfo from '@/AppInfo';
 import BackToTop from './BackToTop';
 import classes from './Header.module.css'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import exportUtils from '@/utils/ExportUtils';
 import AuthUtils from '@/utils/AuthUtils';
 import info from '@/meta/info';
@@ -34,7 +34,7 @@ export default (props: {
     let { opened, toggle } = props
     let appInfo = GetAppInfo()
     const theme = useMantineTheme();
-
+    const hist = useHistory()
     const userObj = exportUtils.useSelector(v => {
         return v.users
     })
@@ -43,20 +43,19 @@ export default (props: {
     }</ActionIcon></Link>
     return <AppShell.Header className='flex flex-row justify-between px-2 sm:px-5 ' >
         <Group justify='space-between' className='w-full'>
-            <Link to={'/tools/index'}>
-                <Group>
-                    <Burger
-                        opened={opened}
-                        onClick={toggle}
-                        hiddenFrom="sm"
-                        size="sm"
-                    />
-                    <img src={imgFile} className='w-[30px]' />
-                    <div className='ml-[-7px] font-bold text-xl hidden sm:block'>{appInfo.name}({info.version})</div>
-                    {/* appInfo.link */}
-                    <div className='ml-[-7px] font-bold text-xl block sm:hidden'>{appInfo.name}</div>
-                </Group>
-            </Link>
+            <Group className='flex flex-row' flex='1' >
+                <Burger
+                    opened={opened}
+                    onClick={toggle}
+                    hiddenFrom="sm"
+                    size="sm"
+                />
+                <img src={imgFile} className='w-[30px]' />
+                <div className='ml-[-7px] cursor-pointer font-bold text-xl hidden sm:block' onClick={() => {
+                    hist.push('/tools/index')
+                }}>{appInfo.name}({info.version})</div>
+                <div className='ml-[-7px] font-bold text-xl block sm:hidden'>{appInfo.name}</div>
+            </Group>
 
             {/* <Group h="100%" gap={0} visibleFrom="sm">
                 <a href="#" className={classes.link + ' ' + classes.active}>
