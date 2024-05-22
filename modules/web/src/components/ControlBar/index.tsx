@@ -1,6 +1,6 @@
 import { Button, ButtonProps, Group } from "@mantine/core"
 
-export type ActionItem = ButtonProps & { icon?: any, onClick?: () => void, text?: string, type?: "submit" }
+export type ActionItem = ButtonProps & { icon?: any, onClick?: () => void, text?: string, type?: "submit", title?: string }
 export default (props: {
     actions: ActionItem[]
 }) => {

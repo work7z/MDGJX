@@ -28,7 +28,7 @@ export let getCookieGetterSetter = (req: Request, res: Response) => {
   return { getCookie, setCookie };
 };
 export type CommonHandlePass = {
-  verifyAuth(): Promise<[DisplayUserInfo | undefined, () => void]>;
+  verifyAuth(): Promise<[DisplayUserInfo | undefined, () => void, () => Promise<DisplayUserAcctDetail>]>;
   Dot: DotType;
   Info: RequestInfo;
   fromIP: string;
@@ -43,6 +43,10 @@ export type DisplayUserInfo = {
   createdAt: Date;
   isProUser: boolean;
   proUserList: S2UserMembership[];
+};
+export type DisplayUserAcctDetail = {
+  usedTokenCount: number;
+  totalTokenCount: number;
 };
 export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass => {
   let Dot = DotFn(req);
@@ -124,6 +128,13 @@ export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass
               verifySteps,
             },
           });
+        },
+        async (): Promise<DisplayUserAcctDetail> => {
+          const acctDetail = {
+            totalTokenCount: 0,
+            usedTokenCount: 0,
+          };
+          return acctDetail;
         },
       ];
     },

@@ -2,7 +2,7 @@ import apiSlice from "@/store/reducers/apiSlice"
 import { Button, Container, Divider, Select, TextInput, Textarea } from "@mantine/core"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { Card, Group, Text, Menu, ActionIcon, Image, SimpleGrid, rem } from '@mantine/core';
-import { IconArrowsUpDown, IconDots, IconEraser, IconEye, IconFileZip, IconTrash } from '@tabler/icons-react';
+import { IconArrowsUpDown, IconDots, IconEraser, IconEye, IconFileUpload, IconFileZip, IconTrash } from '@tabler/icons-react';
 import ControlBar from "@/components/ControlBar";
 import PanelWithSideBar from "@/components/PanelWithSideBar";
 import I18nSelect from "@/components/I18nSelect";
@@ -175,6 +175,20 @@ export default (props: {
                             inputJSON: props.example
                         })
                         throtltted_fn_submit_create()
+                    },
+                },
+
+                {
+                    color: 'gray',
+                    variant: 'outline',
+                    pl: 12,
+                    pr: 12,
+                    icon: <IconFileUpload size='15' />,
+                    onClick: () => {
+                        rh.updateNonPState({
+                            inputJSON: rh.npState?.outputJSON,
+                            outputJSON: rh.npState?.inputJSON
+                        })
                     }
                 },
                 {
