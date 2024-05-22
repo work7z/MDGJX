@@ -116,9 +116,11 @@ export default (props: {
                 if (options.eventSource == 'input') {
                     // do nothing la, no need to alert in this condition
                 } else {
-                    AlertUtils.alertSuccess("翻译完毕，总计" + result.length + "个字符，耗时" + (
-                        (Date.now() - before) / 1000
-                    ).toFixed(2) + "s")
+                    if (result && result.length !== 0) {
+                        AlertUtils.alertSuccess("翻译完毕，总计" + result.length + "个字符，耗时" + (
+                            (Date.now() - before) / 1000
+                        ).toFixed(2) + "s")
+                    }
                 }
             } catch (e) { throw e } finally {
                 setTranslating(false)

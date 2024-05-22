@@ -1,6 +1,6 @@
 {
   "name": "laftools-go",
-  "version": "v3.1.98",
+  "version": "v3.1.99",
   "scripts": {
     "add-license": "sh ./pipeline/dev-add-license-to-each-file.sh",
     "fe-handle-CN-pre-release": "sh ./devtools/release/download-and-verify.sh",
