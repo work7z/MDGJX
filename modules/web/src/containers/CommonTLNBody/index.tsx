@@ -32,6 +32,7 @@ export type TLNState = TLNPState & TLNNPState
 
 
 export default (props: {
+    showExampleLabel?: string,
     id: "text" | "json" | "json-comparison" | 'markdown',
     label: string,
     realtime?: boolean,
@@ -168,7 +169,7 @@ export default (props: {
                 },
                 {
                     color: 'gray',
-                    text: '示例' + props.label,
+                    text: props.showExampleLabel ? props.showExampleLabel : '示例' + props.label,
                     onClick: () => {
                         rh.updateNonPState({
                             inputJSON: props.example

@@ -13,6 +13,7 @@ export default () => {
         }}
         id='markdown'
         label='Markdown文档'
+        showExampleLabel='示例文档'
         extraOptionsJSX={
             <div className="mt-3 space-x-1">
                 {JSX_AI_polish}
