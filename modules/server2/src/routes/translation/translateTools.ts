@@ -9,10 +9,19 @@ const TmtClient = tencentcloud.tmt.v20180321.Client;
 
 export type TLNRequest = {
   text: string;
-  type: 'json' | 'text';
+  type: 'json' | 'text' | 'markdown';
   sourceLang: string;
   targetLang: string;
+  //   reservedWords: tState?.reservedWords + "",
+  reservedWords: string;
+  // extraRequests: tState?.extraRequests + "",
+  extraRequests: string;
 };
+export type TLNAIRequest = {
+  aiType: string;
+  prohibit: string;
+  userRemark: string;
+} & TLNRequest;
 export type TLNRequestIdRes = {
   requestId: string;
 };
@@ -72,17 +81,11 @@ let getTLNClient = async (): Promise<[any, InternalTLNConfig]> => {
 export type TranslateResult = {
   result: string;
   errorCode?: string;
+  secretId?: string;
   isOK: boolean; // 1 ok 0 fail
 };
 
 const TranslateTools = {
-  translateJSON: async (val: string, sourceLang: string, targetLang: string): Promise<TranslateResult> => {
-    //
-    return {
-      result: '',
-      isOK: true,
-    };
-  },
   translateText: async (val: string, sourceLang: string, targetLang: string): Promise<TranslateResult> => {
     const ATTEMPT_TIMES = _.size(TLNConfigArr) * 2;
     let crtTried = 0;
@@ -128,6 +131,7 @@ const TranslateTools = {
             isOK: false,
             result: '',
             errorCode: code,
+            secretId: tlnConfig.secretId,
           };
         }
       }

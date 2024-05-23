@@ -17,6 +17,7 @@ import { logger } from '@/utils/logger';
 import { fn_add_user_into_active } from './auth/user-types';
 import _ from 'lodash';
 import dao from '@/dao';
+import { MAX_TOKEN_PER_MONTH, fn_getUsedTokenCountForUserId } from './gpt/user-ai-utils';
 
 export let getCookieGetterSetter = (req: Request, res: Response) => {
   let getCookie = (name: string) => {
@@ -28,7 +29,7 @@ export let getCookieGetterSetter = (req: Request, res: Response) => {
   return { getCookie, setCookie };
 };
 export type CommonHandlePass = {
-  verifyAuth(): Promise<[DisplayUserInfo | undefined, () => void]>;
+  verifyAuth(): Promise<[DisplayUserInfo | undefined, () => void, () => Promise<DisplayUserAcctDetail>]>;
   Dot: DotType;
   Info: RequestInfo;
   fromIP: string;
@@ -43,6 +44,10 @@ export type DisplayUserInfo = {
   createdAt: Date;
   isProUser: boolean;
   proUserList: S2UserMembership[];
+};
+export type DisplayUserAcctDetail = {
+  usedTokenCount: number;
+  totalTokenCount: number;
 };
 export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass => {
   let Dot = DotFn(req);
@@ -124,6 +129,17 @@ export let getCommonHandlePass = (req: Request, res: Response): CommonHandlePass
               verifySteps,
             },
           });
+        },
+        async (): Promise<DisplayUserAcctDetail> => {
+          const acctDetail = {
+            totalTokenCount: MAX_TOKEN_PER_MONTH,
+            usedTokenCount: 0,
+          };
+          if (userInfo) {
+            const tokenCount = await fn_getUsedTokenCountForUserId(userInfo.id);
+            acctDetail.usedTokenCount = tokenCount;
+          }
+          return acctDetail;
         },
       ];
     },

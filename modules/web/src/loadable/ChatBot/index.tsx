@@ -3,12 +3,16 @@ import { Card, Flex, Group, Textarea } from "@mantine/core"
 import { useEffect } from "react"
 import classes from './index.module.css'
 import GetAppInfo from "@/AppInfo"
+import BeianJSX from "./BeianJSX"
+import AppConstants from "@/AppConstants"
 
 export default () => {
-    const calcMainBodyHeight = `calc(100vh - 59.2px - 26px)`
+    if (GetAppInfo().isInLafToolsCOM) {
+        return <BeianJSX />
+    }
     return <div>
         <Card className=" flex flex-col " withBorder style={{
-            height: calcMainBodyHeight
+            height: `calc(${AppConstants.calcMainBodyHeight})`,
         }}>
             <div className="flex-1">chat history</div>
             <div className={" " + classes.iptbox}>

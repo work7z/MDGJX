@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Converter",
+        "components": []
+    },
+    {
+        "name": "Web",
+        "components": []
+    },
+    {
+        "name": "Images and videos",
+        "components": []
+    },
+    {
+        "name": "Development",
+        "components": []
+    },
+    {
+        "name": "Network",
+        "components": []
+    },
+    {
+        "name": "Math",
+        "components": []
+    },
+    {
+        "name": "Measurement",
+        "components": []
+    },
+    {
+        "name": "Text",
+        "components": []
+    },
+    {
+        "name": "Data",
+        "components": []
+    }
+]

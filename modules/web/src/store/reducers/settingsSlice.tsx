@@ -9,6 +9,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import _ from 'lodash'
 
 const initialState = {
+  initCount: 0,
   testContent: 'yes',
   darkMode: false,
   currentNavTabId: "Home",

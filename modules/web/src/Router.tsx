@@ -8,23 +8,27 @@ import { FN_GetDispatch } from './store/nocycle';
 import apiSlice from './store/reducers/apiSlice';
 import UsersSlice from './store/reducers/userSlice';
 import SystemAlertOrPrompt from './containers/SystemAlertOrPrompt';
+import exportUtils from './utils/ExportUtils';
 
 
 
 export default () => {
   let basename = '/'
-  const [t_userInfo] = apiSlice.useLazyGetUserInfoQuery()
+  const userInfoMeta = apiSlice.useGetUserInfoQuery({
+    initCount: exportUtils.useSelector(v => v.settings.initCount)
+  }, {
+    refetchOnMountOrArgChange: true
+  })
   useEffect(() => {
-    t_userInfo({}).then(x => {
-      if (x.data && x.data.data) {
-        FN_GetDispatch()(
-          UsersSlice.actions.updateOneOfParamState({
-            userInfo: x.data.data
-          })
-        )
-      }
-    })
-  }, [t_userInfo])
+    const userInfoData = userInfoMeta.data?.data
+    if (userInfoData) {
+      FN_GetDispatch()(
+        UsersSlice.actions.updateOneOfParamState({
+          userInfo: userInfoData
+        })
+      )
+    }
+  }, [userInfoMeta.status])
 
   return <Router basename={basename} >
     <Switch>

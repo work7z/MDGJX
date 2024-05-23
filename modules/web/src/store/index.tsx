@@ -78,6 +78,8 @@ export const store = configureStore(({
 
 ALL_NOCYCLE.store = store as any
 
+_.set(window, 'ALL_NOCYCLE', ALL_NOCYCLE)
+
 export let persistor = persistStore(store)
 
 

@@ -53,12 +53,6 @@ export default () => {
         ProgressBarValue: val.system.SysInitStatus.ProgressBarValue,
     }));
 
-    // let statusList = [
-    //     sysObj.SysInitStatus.IsLangPacksOK,
-    //     sysObj.SysInitStatus.IsSystemPrefOK,
-    //     sysObj.SysInitStatus.IsSystemUpdatesOK,
-    // ]
-    // let okStatusListSize = _.filter(statusList, (val) => val).length;
     useEffect(() => {
         if (!sysObj.HasError) {
             return;

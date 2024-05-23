@@ -10,12 +10,18 @@ export default (props: Partial<SelectProps> & {
         <Select
             name={props.name}
             placeholder={"请选择" + props.label}
-            data={langData.map(x => {
-                return {
-                    label: x.label[1],
-                    value: x.value
-                }
-            }) || []}
+            data={[
+                {
+                    label: '自动识别',
+                    value: 'auto'
+                },
+                ...(langData.map(x => {
+                    return {
+                        label: x.label[1],
+                        value: x.value
+                    }
+                }) || [])
+            ] || []}
             // searchable
             defaultValue={props.defaultValue}
             {...props}

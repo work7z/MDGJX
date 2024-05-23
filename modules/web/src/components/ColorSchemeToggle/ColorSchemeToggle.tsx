@@ -1,6 +1,11 @@
 import { ActionIcon, Button, Group, useMantineColorScheme } from '@mantine/core';
 import { IconAdjustments, IconMoon, IconSun } from '@tabler/icons-react';
 
+export const useDarkModeOrNot = (): boolean => {
+  const { setColorScheme, colorScheme } = useMantineColorScheme();
+  return colorScheme === 'dark';
+}
+
 export function ColorSchemeToggle() {
   const { setColorScheme, colorScheme } = useMantineColorScheme();
 

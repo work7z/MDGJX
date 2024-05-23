@@ -6,7 +6,7 @@ import { isDevEnv } from '../hooks/env';
 import _ from 'lodash';
 import { logger } from '@/utils/logger';
 
-const UPDATE_TIME_VERSION = '19'
+const UPDATE_TIME_VERSION = '21'
 
 export class S2SendMailVerifyCodeRecord extends Model<InferAttributes<S2SendMailVerifyCodeRecord>, InferCreationAttributes<S2SendMailVerifyCodeRecord>> {
     declare id?: number;
@@ -43,12 +43,14 @@ export class S2TranslationRecord extends Model<InferAttributes<S2TranslationReco
     declare sourceLang: string;
     declare targetLang: string;
     declare handleType: string; // json or text
+    declare secretId: string; // show which secretId is used
     declare cachedText: string; // it will be cleaned regualry in the background
     declare processedText: string; // it will be cleaned regualry in the background
     declare errorText: string; // it will be cleaned regualry in the background
     declare textCount: number;
     declare userId: number;
     declare fromIP: string;
+    declare usingAI: number; // 1->using AI, 0->not using AI
     declare createdAt: CreationOptional<Date> | null;
     declare updatedAt: CreationOptional<Date> | null;
     declare deleteAt: CreationOptional<Date> | null;
@@ -66,6 +68,30 @@ export class S2UserPurchaseItem extends Model<InferAttributes<S2UserPurchaseItem
     declare userRemark: string;
     declare systemRemark: string;
     declare orderCode: string;
+    declare createdAt: CreationOptional<Date> | null;
+    declare updatedAt: CreationOptional<Date> | null;
+    declare deleteAt: CreationOptional<Date> | null;
+}
+
+export class S2UserAssets extends Model<InferAttributes<S2UserAssets>, InferCreationAttributes<S2UserAssets>> {
+    declare id?: number;
+    declare userId: number;
+    declare tokenInThisMonth: number;
+    declare scopeID: string; // like 2024-05 or 2024-06, is to check 2024-05 quota or 2024-06 quota
+    declare createdAt: CreationOptional<Date> | null;
+    declare updatedAt: CreationOptional<Date> | null;
+    declare deleteAt: CreationOptional<Date> | null;
+}
+
+export class S2UserAITokenUsage extends Model<InferAttributes<S2UserAITokenUsage>, InferCreationAttributes<S2UserAITokenUsage>> {
+    declare id?: number;
+    declare userId: number;
+    declare scopeID: string; // like 2024-05 or 2024-06, is to check 2024-05 quota or 2024-06 quota
+    declare tokenCount: number;
+    declare inputTokenCount: number;
+    declare outputTokenCount: number;
+    declare sourceType: string
+    declare remarks: string;
     declare createdAt: CreationOptional<Date> | null;
     declare updatedAt: CreationOptional<Date> | null;
     declare deleteAt: CreationOptional<Date> | null;
@@ -188,9 +214,17 @@ export default async (daoRef: DaoRef) => {
             autoIncrement: true,
             primaryKey: true
         },
+        secretId: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         status: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        usingAI: {
+            type: DataTypes.INTEGER,
+            allowNull: true
         },
         handleType: {
             type: DataTypes.STRING,
@@ -247,7 +281,96 @@ export default async (daoRef: DaoRef) => {
         paranoid: true,
         underscored: true
     })
-
+    await S2UserAssets.init({
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        tokenInThisMonth: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        scopeID: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        deleteAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        }
+    }, {
+        sequelize: db_s2,
+        modelName: 's2_user_assets',
+        timestamps: true,
+        paranoid: true,
+        underscored: true
+    })
+    await S2UserAITokenUsage.init({
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        inputTokenCount: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        outputTokenCount: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        scopeID: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        tokenCount: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        sourceType: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        remarks: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        deleteAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        }
+    }, {
+        sequelize: db_s2,
+        modelName: 's2_user_ai_token_usage',
+        timestamps: true,
+        paranoid: true,
+        underscored: true
+    })
     await S2User.init({
         id: {
             type: DataTypes.INTEGER,

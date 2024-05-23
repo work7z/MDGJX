@@ -18,8 +18,9 @@ export let getSysEnv = () => {
   return envObj.env;
 };
 
+const isDevEnvVal = location.href.indexOf('http://localhost:5173/') != -1;
 export let isDevEnv = () => {
-  return envObj.env === 'development';
+  return isDevEnvVal;
 };
 
 export let isTestEnv = () => {

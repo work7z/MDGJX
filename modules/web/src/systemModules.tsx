@@ -16,11 +16,14 @@ import classes from './DoubleNavbar.module.css';
 import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
 import { TypeMDParams } from '@/containers/SideBar';
+import { toolsNavInfo } from './toolsNavInfo.tsx';
+import AppConstants from './AppConstants.tsx';
 
 export type SystemSubModuleItem = {
     id: string,
     href?: string,
     name: string,
+    disableFooter?: boolean,
     bodyFn?: () => any
 }
 export type SystemModuleItem = {
@@ -50,48 +53,44 @@ export const systemModulesList: SystemModuleItem[] = [
     {
         id: 'tools',
         icon: IconHome2, label: '快捷工具', children: [
-            {
+            GetAppInfo().isInLafToolsCOM ? {
                 name: 'Chat对话框',
                 id: 'chat',
                 bodyFn: () => import('./loadable/ChatBot/index.tsx')
+            } : {
+                name: "首页",
+                id: 'index',
+                bodyFn: () => import('./loadable/XToolsView/index.tsx')
             },
-            {
-                name: "常用格式转换(233)",
-                id: 'geshi'
-            },
-            {
-                name: "计算机编程类(233)",
-                id: 'overview'
-            },
-            {
-                name: "金融银行证券类(233)",
-                id: 'other'
-            },
-            // {
-            //     name: '我的收藏(0)',
-            //     id: 'collection'
-            // }
+            ...toolsNavInfo.map(x => {
+                return {
+                    name: x.name,
+                    id: x.id,
+                    disableFooter: true,
+                    bodyFn: () => import('./loadable/XToolsDetail/index.tsx')
+                } satisfies SystemSubModuleItem
+            })
         ]
     },
-    {
-        id: 'api',
-        icon: IconApiApp,
-        label: 'API联调联试',
-        children: [
-            {
-                name: 'API 客户端',
-                id: 'client'
-            },
-            {
-                name: '模拟 API (Mock)',
-                id: 'mock'
-            },
-            {
-                name: '常用 API',
-                id: 'common'
-            },
-        ]
-    },
+    // {
+    //     id: 'api',
+    //     icon: IconApiApp,
+    //     label: 'API联调联试',
+    //     children: [
+    //         // {
+    //         //     name: 'API 客户端',
+    //         //     id: 'client'
+    //         // },
+    //         {
+    //             name: '常用 API',
+    //             id: 'common'
+    //         },
+    //         {
+    //             name: '模拟 API (Mock)',
+    //             id: 'mock'
+    //         },
+    //     ]
+    // },   
     {
         id: 'i18n',
         icon: IconLanguage, label: '翻译助手',
@@ -110,6 +109,11 @@ export const systemModulesList: SystemModuleItem[] = [
                 name: 'JSON 中英文对照',
                 id: 'json-cn-en',
                 bodyFn: () => import('./loadable/TLNJSONComparison/index.tsx')
+            },
+            {
+                name: 'Markdown 文档翻译',
+                id: 'md',
+                bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
             },
         ]
     },

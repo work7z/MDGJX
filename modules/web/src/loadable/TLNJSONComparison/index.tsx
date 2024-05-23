@@ -11,7 +11,8 @@ export default () => {
         realtime
         defaultTLNPState={
             {
-                sourceLang: 'en',
+                fillFileMode: false,
+                sourceLang: 'auto',
                 targetLang: 'zh',
                 translateMethod: 'KeyOnly'
             }
@@ -27,9 +28,6 @@ export default () => {
         id='json'
         example={
             jsonExample
-        }
-        extraOptionsJSX={
-            <div>extra options</div>
         }
     />
 }

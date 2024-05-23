@@ -16,10 +16,12 @@ import { isProductionEnv } from './web2share-copy/env';
 import { API_SERVER_URL } from './web2share-copy/api_constants';
 import { HttpException } from './exceptions/httpException';
 import proxy from 'express-http-proxy';
+import { existsSync } from 'fs';
 
 export const asyncHandler = (fn: (req: Request, res: Response, next) => void) => (req: Request, res: Response, next) => {
   return Promise.resolve(fn(req, res, next)).catch(next);
 };
+let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
 
 const launchTime = new Date();
 export class App {
@@ -47,6 +49,7 @@ export class App {
       logger.info(`=================================`);
       logger.info(`======= ENV: ${this.env} =======`);
       logger.info(`======= HOST: ${this.host} =======`);
+      logger.info(`======= DIRECT_PROXY_SERVER: ${DIRECT_PROXY_SERVER} =======`);
       logger.info(`🚀 App listening on the port ${this.port}`);
       logger.info(`=================================`);
     });
@@ -75,7 +78,6 @@ export class App {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
     const prefix = '/v3';
-    let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
     logger.info('DIRECT_PROXY_SERVER: ' + DIRECT_PROXY_SERVER);
     app.use(
       prefix,
@@ -88,29 +90,25 @@ export class App {
         },
       }),
     );
-    // app.use(
-    //   val_prefix,
-    //   asyncHandler(async function (req, res) {
-    //     // API_SERVER_URL;
-    //     var url = 'https://api.laftools.cn' + val_prefix + req.url;
-    //     var r = null;
-    //     if (req.method === 'POST') {
-    //       r = request.post({ uri: url, json: req.body });
-    //     } else {
-    //       r = request(url);
-    //     }
-    //     await req.pipe(r).pipe(res);
-    //   }),
-    // );
-    if (this.env == 'production') {
-      let distDir = path.join(__dirname, 'spa'); //TODO: provide this distDir 'C:\\Users\\jerrylai\\hmproject\\suodao-tools\\modules\\web\\dist';
+
+    // setup xtools
+    let xToolsDir = path.join(__dirname, 'xtools');
+    if (existsSync(xToolsDir)) {
+      this.app.use('/xtools', express.static(xToolsDir));
+      this.app.get('/xtools/*', (req, res) => {
+        res.sendFile(path.resolve(xToolsDir, 'index.html'));
+      });
+    }
+
+    // setup spa
+    let distDir = path.join(__dirname, 'spa');
+    if (existsSync(distDir)) {
       // let us build this first
       this.app.use(express.static(distDir));
       this.app.get('/*', (req, res) => {
         res.sendFile(path.resolve(distDir, 'index.html'));
       });
     }
-
     const ErrorMiddleware = (error: HttpException, req: Request, res: Response, next: NextFunction) => {
       try {
         const status: number = error.status || 500;

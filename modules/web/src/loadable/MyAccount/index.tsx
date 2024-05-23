@@ -13,6 +13,7 @@ import {
     Badge,
     Flex,
     Alert,
+    Progress,
 } from '@mantine/core';
 import classes from './AuthenticationTitle.module.css';
 import GetAppInfo from '@/AppInfo';
@@ -22,37 +23,63 @@ import apiSlice, { SignInCredentials, verifyResponse } from '@/store/reducers/ap
 import AlertUtils from '@/utils/AlertUtils';
 import { ACTION_doSignInByInfo } from '@/store/actions/auth-actions';
 import exportUtils from '@/utils/ExportUtils';
-import { IconAt, IconCalendarBolt, IconInfoCircle, IconPhoneCall, IconUserBolt } from '@tabler/icons-react';
+import { IconAt, IconCalendarBolt, IconInfoCircle, IconMessageBolt, IconPhoneCall, IconShoppingCartDiscount, IconUserBolt } from '@tabler/icons-react';
 import _ from 'lodash';
-import AuthUtils from '@/utils/AuthUtils';
+import AuthUtils, { fn_reload, useHasUserSignIn } from '@/utils/AuthUtils';
 import { useEffect, useState } from 'react';
 import { CardListTableView } from './CardListTableView';
 import { formatToYYYYMMDD } from '@/utils/DateUtils';
 import OldUserRemark from '../FAQ/OldUserRemark';
+import { form_onSubmit } from '@/utils/FormUtils';
+import TokenUsage from './TokenUsage';
 
 function AuthenticationTitle() {
     let sp = (useSearchParams())
     const history = useHistory()
+
+    const rh = exportUtils.register('myaccount', {
+        getPersistedStateFn: () => {
+            return {
+                temp: 1
+            }
+        },
+        getNotPersistedStateFn: () => {
+            return {
+                vcode: '',
+                userName: '',
+                email: '',
+                password: '',
+                confirmPassword: '',
+                rememberMe: 'on',
+                agreeOrNot: 'on',
+            }
+        }
+    })
+
+
+    // actions
     const [t_signIn] = apiSlice.useLazySignInQuery({})
     const [t_signUp] = apiSlice.useLazySignUpQuery({})
     const [t_tellmevcode_findpw] = apiSlice.useLazyTellMeVCode4FindPwQuery({})
     const [t_mailsend_findpw] = apiSlice.useLazyMailFindPwQuery({})
     const [enterVCodeMode, setEnterVCodeMode] = useState(false)
-
     const [loading_sendmail, setLoading_sendmail] = useState(false)
     const [preEMail, setPreEMail] = useState('')
     const uObj = exportUtils.useSelector(v => v.users)
-    const hasSignIn = uObj.hasSignIn
+    const hasSignIn = useHasUserSignIn()
     const [t_getCardList, st_cardList] = apiSlice.useLazyGetGiftCardListQuery({})
     useEffect(() => {
         if (hasSignIn) {
             t_getCardList({})
         }
     }, [hasSignIn])
+    if (!rh) {
+        return ''
+    }
     if (hasSignIn && sp.type != 'find-pw') {
         const cardList = st_cardList.data?.data || []
         return (
-            <Container my={10} size={'xl'} className='block sm:flex flex-row justify-start items-start sm:space-x-4'>
+            <Container my={10} size={'xl'} className='block sm:flex flex-row justify-start items-start sm:space-x-4 '>
                 <div className='flex-1 mb-5'>
                     <Paper withBorder shadow="md" p={10} radius="md">
                         <Title
@@ -107,6 +134,8 @@ function AuthenticationTitle() {
                                     </Text>
                                 </Group>
 
+                                <TokenUsage />
+
 
                                 {/* <Group wrap="nowrap" gap={10} mt={5}>
                                     <IconUserBolt stroke={1.5} size="1rem" className={classes.icon} />
@@ -119,11 +148,6 @@ function AuthenticationTitle() {
                     </Paper>
                     <Paper withBorder shadow="md" p={10} mt={10} radius="md">
                         <Group flex='flex-col space-y-3'>
-                            {/* <Button color='violet' onClick={() => {
-                            AuthUtils.signOut()
-                        }}>
-                            用户登出
-                        </Button> */}
                             <Link className='w-full' to='/settings/my-account?type=find-pw'>
                                 <Button fullWidth color='indigo' onClick={() => {
                                 }}>
@@ -138,6 +162,11 @@ function AuthenticationTitle() {
                                     账号申诉
                                 </Button>
                             </Link>
+                            <Button className='w-full' color='pink' onClick={() => {
+                                AuthUtils.signOut()
+                            }}>
+                                用户登出
+                            </Button>
                         </Group>
                     </Paper>
                 </Flex>
@@ -145,38 +174,17 @@ function AuthenticationTitle() {
         )
     }
     switch (sp.type) {
-
         case 'find-pw':
             if (enterVCodeMode) {
                 return (
                     <Container size={420} my={40}>
-                        <form onSubmit={async e => {
-                            try {
-                                e.preventDefault()
-                                let form = e.target as HTMLFormElement
-                                let data = new FormData(form)
-                                let r = await t_tellmevcode_findpw({
-                                    email: preEMail,
-                                    vcode: data.get('vcode') as string,
-                                })
-                                if (r.data?.data?.verified) {
-                                    AlertUtils.alertSuccess('重置成功，将跳转到登录界面')
-                                    setTimeout(() => {
-                                        history.push('/')
-                                    }, 1000)
-                                } else {
-                                    throw new Error('验证码错误，请重新输入')
-                                }
-                            } catch (e) {
-                                AlertUtils.alertErr(e)
-                            }
-                        }}>
+                        <div   {...form_onSubmit(() => { })} >
                             <Title ta="center" className={classes.title}>
                                 确认邮箱验证码
                             </Title>
                             <Text c="dimmed" size="sm" ta="center" mt={5}>
                                 我们已发送邮箱 到 {preEMail}，请查收并输入验证码。  如若没有收到邮件，请先 检查垃圾箱 或者{' '}
-                                <Anchor size="sm" component="button" onClick={() => {
+                                <Anchor type='button' size="sm" component="button" onClick={() => {
                                     setEnterVCodeMode(false)
                                 }}>
                                     重新发送
@@ -184,49 +192,42 @@ function AuthenticationTitle() {
                             </Text>
 
                             <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-                                <TextInput type='number' name='vcode' label="6位数字验证码" placeholder="输入以确认本次重置操作" mt="md" />
-                                <Button type='submit' fullWidth mt="xl" color='violet'>
+                                <TextInput
+
+
+                                    type='number'
+                                    {...rh?.bindOnChange({
+                                        npStateKey: 'vcode'
+                                    })}
+                                    name='vcode' label="6位数字验证码" placeholder="输入以确认本次重置操作" mt="md" />
+                                <Button onClick={async e => {
+                                    try {
+                                        e.preventDefault()
+                                        let r = await t_tellmevcode_findpw({
+                                            email: preEMail,
+                                            vcode: rh?.npState?.vcode as string,
+                                        })
+                                        if (r.data?.data?.verified) {
+                                            AlertUtils.alertSuccess('重置成功，将跳转到登录界面')
+                                            history.push('/settings/my-account?type=signin')
+                                            fn_reload()
+                                        } else {
+                                            throw new Error('验证码错误，请重新输入')
+                                        }
+                                    } catch (e) {
+                                        AlertUtils.alertErr(e)
+                                    }
+                                }} fullWidth mt="xl" color='violet'>
                                     确认重置
                                 </Button>
                             </Paper>
-                        </form>
+                        </div>
                     </Container>
                 )
             }
             return (
                 <Container size={420} my={40}>
-                    <form onSubmit={async e => {
-                        try {
-                            setLoading_sendmail(true)
-                            e.preventDefault()
-                            let form = e.target as HTMLFormElement
-                            let data = new FormData(form)
-                            let p1 = data.get('password') as string
-                            let p2 = data.get('confirmPassword') as string
-                            if (p1 != p2) {
-                                throw new Error('两次密码不一致，请重新输入')
-                            }
-                            if (!p1 || !p2) {
-                                throw new Error('密码不能为空')
-                            }
-                            let emailval = data.get('email')
-                            if (!emailval) {
-                                throw new Error('邮箱不能为空')
-                            }
-                            let r = await t_mailsend_findpw({
-                                email: emailval as string,
-                                password: p1,
-                                confirmPassword: p2,
-                            })
-                            AlertUtils.alertSuccess('重置密码邮件已发送，请查收，有效期30分钟')
-                            setPreEMail(data.get('email') as string)
-                            setEnterVCodeMode(true)
-                        } catch (e) {
-                            AlertUtils.alertErr(e)
-                        } finally {
-                            setLoading_sendmail(false)
-                        }
-                    }}>
+                    <div   {...form_onSubmit(() => { })}>
                         <Title ta="center" className={classes.title}>
                             找回密码
                         </Title>
@@ -236,141 +237,233 @@ function AuthenticationTitle() {
                         <Text c="dimmed" size="sm" ta="center" mt={5}>
                             想起密码了？{' '}
                             <Link to="/settings/my-account?type=signin">
-                                <Anchor size="sm" component="button">
+                                <Anchor type='button' size="sm" component="button">
                                     返回登录
                                 </Anchor>
                             </Link>
                         </Text>
 
                         <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-                            <TextInput name='email' label="注册Email地址" placeholder="请填写当时注册用的Email" />
-                            <PasswordInput name='password' label="新密码" placeholder="请让新密码尽可能复杂" mt="md" />
-                            <PasswordInput name='confirmPassword' label="确认新密码" placeholder="再次确认您的新密码" mt="md" />
-                            <Button type='submit' loading={loading_sendmail} fullWidth mt="xl" color='violet'>
+                            <TextInput
+
+                                {...rh?.bindOnChange({
+                                    npStateKey: 'email'
+                                })}
+
+                                name='email' label="注册Email地址" placeholder="请填写当时注册用的Email" />
+                            <PasswordInput
+                                {...rh?.bindOnChange({
+                                    npStateKey: 'password'
+                                })}
+
+                                name='password' label="新密码" placeholder="请让新密码尽可能复杂" mt="md" />
+                            <PasswordInput
+                                {...rh?.bindOnChange({
+                                    npStateKey: 'confirmPassword'
+                                })}
+                                name='confirmPassword' label="确认新密码" placeholder="再次确认您的新密码" mt="md" />
+                            <Button onClick={async e => {
+                                try {
+                                    setLoading_sendmail(true)
+                                    e.preventDefault()
+                                    let p1 = rh?.npState?.password as string
+                                    let p2 = rh?.npState?.confirmPassword as string
+                                    if (p1 != p2) {
+                                        throw new Error('两次密码不一致，请重新输入')
+                                    }
+                                    if (!p1 || !p2) {
+                                        throw new Error('密码不能为空')
+                                    }
+                                    let emailval = rh?.npState?.email
+                                    if (!emailval) {
+                                        throw new Error('邮箱不能为空')
+                                    }
+                                    let r = await t_mailsend_findpw({
+                                        email: emailval as string,
+                                        password: p1,
+                                        confirmPassword: p2,
+                                    })
+                                    AlertUtils.alertSuccess('重置密码邮件已发送，请查收，有效期30分钟')
+                                    setPreEMail(rh?.npState?.email as string)
+                                    setEnterVCodeMode(true)
+                                } catch (e) {
+                                    AlertUtils.alertErr(e)
+                                } finally {
+                                    setLoading_sendmail(false)
+                                }
+                            }} loading={loading_sendmail} fullWidth mt="xl" color='violet'>
                                 发送重置密码邮件
                             </Button>
                         </Paper>
-                    </form>
+                    </div>
                 </Container >
             )
         case 'signup':
             return (
                 <Container size={420} my={40} >
-                    <form onSubmit={async e => {
-                        try {
-                            e.preventDefault()
-                            let form = e.target as HTMLFormElement
-                            let data = new FormData(form)
-                            let r = await t_signUp({
-                                preview: false,
-                                rememberMe: true,
-                                userName: data.get('userName') as string,
-                                email: data.get('email') as string,
-                                password: data.get('password') as string,
-                                confirmPassword: data.get('confirmPassword') as string,
-                            })
-                            // r.data.content.signed
-                            if (verifyResponse(r.data)) {
-                                AlertUtils.alertSuccess('恭喜，注册成功！1秒后刷新界面')
-                                ACTION_doSignInByInfo(r.data?.data)
-                            }
-                        } catch (e) {
-                            AlertUtils.alertErr(e)
-                        }
-                    }}>
+                    <div  {
+                        ...form_onSubmit(() => { })
+                    }>
                         <Title ta="center" className={classes.title}>
                             注册新用户
                         </Title>
                         <Text c="dimmed" size="sm" ta="center" mt={5}>
                             已经有账户了？{' '}
                             <Link to='/settings/my-account?type=signin'>
-                                <Anchor size="sm" component="button">
+                                <Anchor type='button' size="sm" component="button">
                                     立即登录
                                 </Anchor>
                             </Link>
                         </Text>
 
-
                         <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-                            <TextInput label="用户名" name='userName' placeholder="mina" />
-                            <TextInput label="Email" name='email' placeholder="mina@gmail.com" mt="md" />
-                            <PasswordInput label="密码" name='password' placeholder="请让密码尽可能复杂" mt="md" />
-                            <PasswordInput label="确认密码" name='confirmPassword' placeholder="再次确认您本次设定的密码" mt="md" />
+                            <TextInput
+                                {...rh?.bindOnChange({
+                                    npStateKey: 'userName'
+                                })}
+                                label="用户名" placeholder="mina" />
+                            <TextInput label="Email"
+                                {...rh?.bindOnChange({
+                                    npStateKey: 'email'
+                                })}
+
+                                name='email' placeholder="mina@gmail.com" mt="md" />
+                            <PasswordInput
+                                {...rh?.bindOnChange({
+                                    npStateKey: 'password'
+                                })}
+
+                                label="密码" name='password' placeholder="请让密码尽可能复杂" mt="md" />
+                            <PasswordInput
+                                {...rh?.bindOnChange({
+                                    npStateKey: 'confirmPassword'
+                                })}
+                                label="确认密码" name='confirmPassword' placeholder="再次确认您本次设定的密码" mt="md" />
                             <Group justify="space-between" mt="lg">
-                                <Checkbox defaultChecked name='agreeOrNot' label={
-                                    <Text size="sm" className='text-xs'>
-                                        我已经阅读并同意 <Link to='/settings/terms-of-conditions' target='_blank'>
-                                            <Anchor size='xs'>
-                                                《服务条款》
-                                            </Anchor>
-                                        </Link> 和
-                                        <Link to='/settings/privacy-agreement' target='_blank'>
-                                            <Anchor size='xs'>
-                                                《隐私保护协议》
-                                            </Anchor>
-                                        </Link>
-                                    </Text>
-                                } />
+                                <Checkbox
+                                    {...rh?.bindOnChange({
+                                        npStateKey: 'agreeOrNot'
+                                    })}
+                                    defaultChecked
+                                    onChange={e => {
+                                        rh.updateNonPState({
+                                            agreeOrNot: !e.target.checked ? 'off' : 'on'
+                                        })
+                                    }}
+                                    name='agreeOrNot' label={
+                                        <Text size="sm" className='text-xs'>
+                                            我已经阅读并同意 <Link to='/settings/terms-of-conditions' target='_blank'>
+                                                <Anchor type='button' size='xs'>
+                                                    《服务条款》
+                                                </Anchor>
+                                            </Link> 和
+                                            <Link to='/settings/privacy-agreement' target='_blank'>
+                                                <Anchor type='button' size='xs'>
+                                                    《隐私保护协议》
+                                                </Anchor>
+                                            </Link>
+                                        </Text>
+                                    } />
                             </Group>
-                            <Button fullWidth mt="xl" color='lime' type='submit'>
+                            <Button onClick={async e => {
+                                try {
+                                    e.preventDefault()
+                                    if ('on' != rh.npState?.agreeOrNot) {
+                                        AlertUtils.alertErr('请先同意服务条款和隐私保护协议')
+                                        return;
+                                    }
+                                    let r = await t_signUp({
+                                        preview: false,
+                                        rememberMe: true,
+                                        userName: rh?.npState?.userName as string,
+                                        email: rh?.npState?.email as string,
+                                        password: rh?.npState?.password as string,
+                                        confirmPassword: rh?.npState?.confirmPassword as string,
+                                    })
+                                    // r.data.content.signed
+                                    if (verifyResponse(r.data)) {
+                                        AlertUtils.alertSuccess('恭喜，注册成功！')
+                                        ACTION_doSignInByInfo(r.data?.data)
+                                    }
+                                } catch (e) {
+                                    AlertUtils.alertErr(e)
+                                }
+                            }} fullWidth mt="xl" color='lime' >
                                 免费注册
                             </Button>
                         </Paper>
-                    </form>
+                    </div>
                 </Container>
             );
         default:
             return (
                 <Container size={420} my={40}>
-                    <form onSubmit={async e => {
-                        try {
-                            e.preventDefault()
-                            let form = e.target as HTMLFormElement
-                            let data = new FormData(form)
-                            let rm = data.get("rememberMe") === 'on'
-                            let r = await t_signIn({
-                                rememberMe: rm ? true : false,
-                                userName: data.get('userName') as string,
-                                password: data.get('password') as string,
-                            })
-                            // r.data.content.signed
-                            if (verifyResponse(r.data)) {
-                                AlertUtils.alertSuccess("登录成功，欢迎回来，1秒后刷新界面")
-                                ACTION_doSignInByInfo(r.data?.data)
-                            }
-                        } catch (e) {
-                            AlertUtils.alertErr(e)
-                        }
-                    }}>
-
+                    <div >
                         <Title ta="center" className={classes.title}>
                             登录系统
                         </Title>
                         <Text c="dimmed" size="sm" ta="center" mt={5}>
                             提示密码不正确？{' '}
                             <Link to={'/settings/my-account?type=find-pw'}>
-                                <Anchor component="button" size="sm">
+                                <Anchor type='button' component="button" size="sm">
                                     找回密码
                                 </Anchor>
                             </Link>
                         </Text>
 
                         <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-                            <TextInput name='userName' label="用户名/Email地址" placeholder="mina 或 mina@gmail.com" />
-                            <PasswordInput name='password' label="密码" placeholder="用户密码" mt="md" />
+                            <TextInput
+                                {...rh?.bindOnChange({
+                                    npStateKey: 'userName'
+                                })}
+
+                                name='userName' label="用户名/Email地址" placeholder="mina 或 mina@gmail.com" />
+                            <PasswordInput
+                                {...rh?.bindOnChange({
+                                    npStateKey: 'password'
+                                })}
+
+                                name='password' label="密码" placeholder="用户密码" mt="md" />
                             <Group justify="space-between" mt="lg">
-                                <Checkbox name='rememberMe' defaultChecked label="记住这台设备" />
-                                <Link to='/settings/my-account?type=signup'>
-                                    <Anchor size="sm" component="button">
+                                <Checkbox
+                                    {...rh?.bindOnChange({
+                                        npStateKey: 'rememberMe'
+                                    })}
+                                    onChange={e => {
+                                        rh.updateNonPState({
+                                            rememberMe: !e.target.checked ? 'off' : 'on'
+                                        })
+                                    }}
+
+                                    name='rememberMe' defaultChecked label="记住这台设备" />
+                                <Link to='/settings/my-account?type=signup' >
+                                    <Anchor type='button' size="sm" component="button" >
                                         免费注册
                                     </Anchor>
                                 </Link>
                             </Group>
-                            <Button type='submit' fullWidth mt="xl">
+                            <Button fullWidth mt="xl" onClick={async e => {
+                                try {
+                                    e.preventDefault()
+                                    let rm = rh?.npState?.rememberMe == 'on'
+                                    let r = await t_signIn({
+                                        rememberMe: rm ? true : false,
+                                        userName: rh?.npState?.userName as string,
+                                        password: rh?.npState?.password as string,
+                                    })
+                                    // r.data.content.signed
+                                    if (verifyResponse(r.data)) {
+                                        AlertUtils.alertSuccess("登录成功，欢迎回来")
+                                        ACTION_doSignInByInfo(r.data?.data)
+                                    }
+                                } catch (e) {
+                                    AlertUtils.alertErr(e)
+                                }
+                            }}>
                                 登录
                             </Button>
                         </Paper>
-                    </form>
+                    </div>
 
                 </Container>
             );

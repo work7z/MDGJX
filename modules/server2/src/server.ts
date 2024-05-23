@@ -6,11 +6,13 @@ import { MainRoute } from './routes/main.route';
 import { ReleaseRoute } from './routes/release.route';
 import { HelpRoute } from './routes/help.route';
 import { TranslationRoute } from './routes/translation.route';
+import { GPTRoute } from './routes/gpt.route';
 
 ValidateEnv();
 
 const app = new App([
   //
+  new GPTRoute(),
   new TranslationRoute(),
   new HelpRoute(),
   new AuthRoute(),

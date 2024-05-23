@@ -44,12 +44,16 @@ export type AsyncCreateResponse<T> = {
   data?: T;
 };
 
-
+export type SystemRefresh = {
+  initCount: number
+}
 export type TLNRequest = {
   text: string;
   type: string;
   sourceLang: string;
   targetLang: string;
+  reservedWords: string;
+  extraRequests: string;
 };
 export type TLNResponse = {
   result: string
@@ -80,6 +84,10 @@ export class S2GiftCard {
   declare deleteAt: Date | null;
 }
 
+export type DisplayUserAcctDetail = {
+  usedTokenCount: number;
+  totalTokenCount: number;
+};
 
 export let verifyResponse = (response: AsyncCreateResponse<any> | undefined): boolean => {
   if (!response || response.error) {
@@ -110,7 +118,7 @@ export const apiSlice = createApi({
     },
     validateStatus: (response, result: AsyncCreateResponse<any> | null) => {
       let errorHandler = () => {
-        AlertUtils.alertErr(result && result.message ? result.message : "抱歉，网络不稳定，请稍后重试")
+        AlertUtils.alertErr(result && result.message ? result.message : result && result.error ? result.error : "抱歉，网络不稳定，请稍后重试")
       }
       if (result) {
         let error = result.error;
@@ -196,7 +204,7 @@ export const apiSlice = createApi({
       },
     }),
     // 
-    getUserInfo: build.query<AsyncCreateResponse<DisplayUserInfo>, {}>({
+    getUserInfo: build.query<AsyncCreateResponse<DisplayUserInfo>, {} & SystemRefresh>({
       query: (obj) => {
         return {
           method: "GET",
@@ -210,6 +218,16 @@ export const apiSlice = createApi({
           method: "POST",
           url: "/auth/mailFindPw",
           body: obj,
+        };
+      },
+    }),
+    getFurtherAcctDetail: build.query<AsyncCreateResponse<DisplayUserAcctDetail>, {} & SystemRefresh>({
+      query: (obj) => {
+        return {
+          method: "GET",
+          url: (
+            "/user/getFurtherAcctDetail"
+          ),
         };
       },
     }),

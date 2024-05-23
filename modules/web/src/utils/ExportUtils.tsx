@@ -66,10 +66,11 @@ export class RHelper<T, K> {
       name: finalKey,
       value: finalKeyValue || '',
       onChange: (e: any) => {
+        const finalValue = _.isString(e) ? e : e.target.value
         FN_GetDispatch()(StateSlice.actions.updateSessionMapValue({
           keyname: this.keyname,
           state: {
-            [finalKey]: _.isString(e) ? e : e.target.value
+            [finalKey]: finalValue
           },
           isItPState: isItPState
         }))

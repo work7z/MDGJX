@@ -322,12 +322,12 @@ import { AppInfoClz } from \"./types\"
             #     ./test-docker.sh 
             # fi
 
-            if [ "$DOCKER_PKG_BUILD_MODE" = "true" ]; then
-                echo "[I] will test and push docker container for $platformName"
-                echo "[I] pushing docker image for $platformName"
-                docker push codegentoolbox/laftools-$platformName:$crtVersion
-                docker push codegentoolbox/laftools-$platformName:latest
-            fi
+            # if [ "$DOCKER_PKG_BUILD_MODE" = "true" ]; then
+            #     echo "[I] will test and push docker container for $platformName"
+            #     echo "[I] pushing docker image for $platformName"
+            #     docker push codegentoolbox/laftools-$platformName:$crtVersion
+            #     docker push codegentoolbox/laftools-$platformName:latest
+            # fi
             if [ $platformName == "linux-x64" ]; then
                 echo "[I] building other tag"
                 docker build -t codegentoolbox/laftools-$platformName:$crtVersion -f ./Dockerfile .

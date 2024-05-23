@@ -203,9 +203,6 @@ export default () => {
             example={
                 jsonExample
             }
-            extraOptionsJSX={
-                <div>extra options</div>
-            }
         />
     )
 }

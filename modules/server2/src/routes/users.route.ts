@@ -42,5 +42,22 @@ export class UserRoute implements Routes {
         }
       }),
     );
+
+    this.router.get(
+      '/user/getFurtherAcctDetail',
+      asyncHandler(async (req, res) => {
+        let p = getCommonHandlePass(req, res);
+        const [user, errFn, fn_furtherDetail] = await p.verifyAuth();
+        if (!user) {
+          errFn();
+          return;
+        } else {
+          const detail = await fn_furtherDetail();
+          sendRes(res, {
+            data: detail,
+          });
+        }
+      }),
+    );
   }
 }
