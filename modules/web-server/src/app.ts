@@ -21,6 +21,8 @@ import { existsSync } from 'fs';
 export const asyncHandler = (fn: (req: Request, res: Response, next) => void) => (req: Request, res: Response, next) => {
   return Promise.resolve(fn(req, res, next)).catch(next);
 };
+const env = NODE_ENV || 'development';
+const port = process.env.PORT || (env == 'development' ? 3050 : 39899);
 let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
 
 const launchTime = new Date();
@@ -32,8 +34,8 @@ export class App {
 
   constructor(routes: Routes[]) {
     this.app = express();
-    this.env = NODE_ENV || 'development';
-    this.port = process.env.PORT || (this.env == 'development' ? 3050 : 39899);
+    this.env = env;
+    this.port = port;
 
     this.connectToDatabase();
     this.initializeMiddlewares();
