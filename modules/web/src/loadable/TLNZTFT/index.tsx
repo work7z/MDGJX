@@ -14,14 +14,14 @@ export default () => {
             {
                 fillFileMode: false,
                 sourceLang: 'auto',
-                targetLang: 'zh-TW',
+                targetLang: 'zh',
                 translateMethod: 'KeyOnly'
             }
         }
         id='tlnztft'
         label='文章'
         realtime
-        example={`漫步在潮州的大街小巷，各式美食摊贩琳琅满目，空气中弥漫着诱人的香气。潮州的美食最具代表性的当属潮汕牛肉火锅。新鲜的牛肉经过精心挑选、切片，搭配特制的沙茶酱，肉质鲜嫩，口感十足。而潮汕砂锅粥更是不容错过，米粒饱满，汤汁浓郁，入口即化，让人回味无穷。`}
+        example={`心中不用掛念著 GNU 也可以編寫出優秀的自由軟體；以 Linux 為名也誕生了很多優秀的作品。但從第一次被創造出來開始，“Linux” 一詞就代表了一種哲學，它並沒有特別承諾自由合作。隨著企業愈來愈常使用這個名字，我們就愈來愈難將其與社群精神連結起來。 摘选自《名稱的重要性》`}
         extraOptionsJSX={<>
             <div className="mt-3 space-x-1">
                 <Badge color="teal">中文简繁体互转</Badge>
