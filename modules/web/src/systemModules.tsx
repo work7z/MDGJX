@@ -115,6 +115,11 @@ export const systemModulesList: SystemModuleItem[] = [
                 id: 'md',
                 bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
             },
+            {
+                name: '简繁中文对照翻译',
+                id: 'ftzt',
+                bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
+            },
         ]
     },
     {

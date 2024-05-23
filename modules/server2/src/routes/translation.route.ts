@@ -19,6 +19,8 @@ import { randomUUID } from 'crypto';
 import dao from '@/dao';
 import AIUtils from './gpt/ai-utils';
 import userAiUtils from './gpt/user-ai-utils';
+import { RouterWs } from '@/app';
+import expressWs from 'express-ws';
 
 export class TranslationRoute implements Routes {
   public router = Router();
@@ -30,6 +32,8 @@ export class TranslationRoute implements Routes {
   }
 
   private initializeRoutes() {
+    const routerWs = expressWs(this.router).app as RouterWs;
+
     this.router.post(
       '/tln/sendTLNRequest',
       asyncHandler(async (req, res) => {

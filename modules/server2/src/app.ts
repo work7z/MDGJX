@@ -17,6 +17,14 @@ import { logger, stream } from '@/utils/logger';
 import consumeTln from './jobs/consume-tln';
 import dao from './dao';
 const launchTime = new Date();
+import expressWs from 'express-ws';
+import { initWS } from './routes/ws/ws.route';
+
+export interface RouterWs extends express.Router {
+  ws(route: string, ...cb): RouterWs;
+}
+
+const MAIN_PREFIX = '/v3';
 
 export class App {
   public app: express.Application;
@@ -24,7 +32,11 @@ export class App {
   public port: string | number;
 
   constructor(routes: Routes[]) {
-    this.app = express();
+    this.app = expressWs(express()).app as express.Application;
+
+    const anyApp = this.app as any;
+    initWS(anyApp);
+
     this.env = NODE_ENV || 'development';
     this.port = 2016;
     (async () => {
@@ -69,7 +81,7 @@ export class App {
 
   private initializeRoutes(routes: Routes[]) {
     routes.forEach(route => {
-      this.app.use('/v3', route.router);
+      this.app.use(MAIN_PREFIX, route.router);
     });
     this.app.use('/', (req, res) => {
       if (req.url == '/') {

@@ -1,9 +1,9 @@
 import apiSlice from "@/store/reducers/apiSlice"
 import { Button, Container, Divider, Select, Table, TextInput, Textarea } from "@mantine/core"
-import { useCallback, useEffect, useMemo, useState } from "react"
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
 import { Card, Group, Text, Menu, ActionIcon, Image, SimpleGrid, rem } from '@mantine/core';
 import { IconArrowsUpDown, IconDots, IconEraser, IconEye, IconFileUpload, IconFileZip, IconTextWrap, IconTrash } from '@tabler/icons-react';
-import ControlBar from "@/components/ControlBar";
+import ControlBar, { ActionItem } from "@/components/ControlBar";
 import PanelWithSideBar from "@/components/PanelWithSideBar";
 import I18nSelect from "@/components/I18nSelect";
 import exportUtils from "@/utils/ExportUtils";
@@ -49,6 +49,30 @@ export default (props: {
     extraOptionsJSX?: JSX.Element,
     handleTranslate: (val: TLNState, fn_translate) => Promise<string>
 }) => {
+
+
+
+    // websocket
+    const ws = useRef<WebSocket | null>(null);
+    const [message, setMessage] = useState('');
+    //启动
+    useLayoutEffect(() => {
+        ws.current = new WebSocket('ws://localhost:5173/ws/test123');
+        ws.current.onmessage = e => {
+            setMessage(e.data);
+        };
+        setTimeout(() => {
+            ws.current?.send("hello, there")
+        })
+        return () => {
+            ws.current?.close();
+        };
+    }, [ws]);
+
+
+    // other
+
+
     const isJSONType = props.id == 'json' || props.id == 'json-comparison'
     const isMarkdownType = props.id == 'markdown'
     const rh = exportUtils.register('tln' + props.id, {
@@ -283,6 +307,7 @@ export default (props: {
                 },
                 {
                     color: 'gray',
+                    hideIt: fillFileMode,
                     text: props.showExampleLabel ? props.showExampleLabel : '示例' + props.label,
                     onClick: () => {
                         rh.updateNonPState({
@@ -321,6 +346,7 @@ export default (props: {
                     color: 'gray',
                     variant: 'outline',
                     pl: 12,
+                    hideIt: fillFileMode,
                     title: '交换上下文本框值',
                     pr: 12,
                     icon: <IconArrowsUpDown size='15' />,
@@ -335,6 +361,7 @@ export default (props: {
                     color: 'gray',
                     variant: 'outline',
                     pl: 12,
+                    hideIt: fillFileMode,
                     title: '清空上下文本框值',
                     pr: 12,
                     icon: <IconEraser size='15' />,
@@ -343,8 +370,7 @@ export default (props: {
                             inputJSON: '',
                             outputJSON: ''
                         })
-
-                    }
+                    },
                 },
             ]}
             />

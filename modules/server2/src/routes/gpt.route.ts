@@ -29,7 +29,6 @@ export class GPTRoute implements Routes {
 
   private initializeRoutes() {
     // TODO: using JWT token for authentication
-
     this.router.post(
       '/gpt/translateContent',
       asyncHandler(async (req, res) => {
