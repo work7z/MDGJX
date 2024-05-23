@@ -6,7 +6,7 @@ export default (props: { fn: any }) => {
 
     return <React.Suspense fallback={
         // <LoadingView />
-        ''
+        'loading...'
     } >
         <JohanComponent />
     </ React.Suspense >

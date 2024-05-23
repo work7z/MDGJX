@@ -9,6 +9,7 @@ import {
     IconBook,
     IconLanguage,
     IconApiApp,
+    IconNetwork,
 
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
@@ -90,10 +91,11 @@ export const systemModulesList: SystemModuleItem[] = [
     //             id: 'mock'
     //         },
     //     ]
-    // },   
+    // },
     {
         id: 'i18n',
-        icon: IconLanguage, label: '翻译助手',
+        icon: IconLanguage,
+        label: '翻译助手',
         children: [
             {
                 name: '文本翻译',
@@ -119,6 +121,18 @@ export const systemModulesList: SystemModuleItem[] = [
                 name: '简繁中文对照翻译',
                 id: 'ftzt',
                 bodyFn: () => import('./loadable/TLNZTFT/index.tsx')
+            },
+        ]
+    },
+    {
+        id: 'network',
+        icon: IconNetwork,
+        label: '网络运维',
+        children: [
+            {
+                name: 'IP/域名质量监测',
+                id: 'text',
+                bodyFn: () => import('./loadable/TLNText/index.tsx')
             },
         ]
     },
