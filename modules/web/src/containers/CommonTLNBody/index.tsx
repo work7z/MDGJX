@@ -399,7 +399,7 @@ export default (props: {
             />
         </Group>
     )
-    const acceptableValues = isZTFT ? ['zh', 'zh-HK', 'zh-TW'] : []
+    const acceptableValues = isZTFT ? ['zh', 'zh-HK', 'zh-TW', 'zh'] : []
     return <Container  >
         <form onSubmit={e => {
             e.preventDefault()
