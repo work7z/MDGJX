@@ -69,16 +69,12 @@ ${text}
           resultText = resText;
           secretId = 'qwen';
         } else {
-          if (text.length > 6000) {
-            throw new Error(`翻译失败：请控制输入在6000字符以内`);
-          } else {
-            let obj = await TranslateTools.translateText(text, sourceLang, targetLang);
-            if (!obj.isOK) {
-              throw new Error('翻译失败: ' + obj.errorCode);
-            }
-            resultText = obj.result;
-            secretId = obj.secretId || 'N/A ';
+          let obj = await TranslateTools.translateText(text, sourceLang, targetLang);
+          if (!obj.isOK) {
+            throw new Error('翻译失败: ' + obj.errorCode);
           }
+          resultText = obj.result;
+          secretId = obj.secretId || 'N/A ';
         }
         await S2TranslationRecord.create({
           userId: user.id,

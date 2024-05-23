@@ -118,7 +118,7 @@ export const systemModulesList: SystemModuleItem[] = [
             {
                 name: '简繁中文对照翻译',
                 id: 'ftzt',
-                bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
+                bodyFn: () => import('./loadable/TLNZTFT/index.tsx')
             },
         ]
     },
