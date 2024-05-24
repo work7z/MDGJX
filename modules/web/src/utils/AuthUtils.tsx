@@ -42,6 +42,7 @@ const AuthUtils = {
         }, 10)
     },
     signOut() {
+        localStorage.clear()
         localStorage.setItem(tokenKey, '')
         AlertUtils.alertSuccess("登出成功，您的登录信息已被清除！")
         FN_GetDispatch()(

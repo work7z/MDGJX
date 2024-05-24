@@ -132,7 +132,7 @@ export const systemModulesList: SystemModuleItem[] = [
             {
                 name: 'IP/域名质量监测',
                 id: 'text',
-                bodyFn: () => import('./loadable/TLNText/index.tsx')
+                bodyFn: () => import('./loadable/IPDomainQualityStat/index.tsx')
             },
         ]
     },

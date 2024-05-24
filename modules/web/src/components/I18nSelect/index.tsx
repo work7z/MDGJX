@@ -23,10 +23,10 @@ export default (props: Partial<SelectProps> & {
             name={props.name}
             placeholder={"请选择" + props.label}
             data={[
-                {
-                    label: '自动识别',
-                    value: 'auto'
-                },
+                // {
+                //     label: '自动识别',
+                //     value: 'auto'
+                // },
                 ...(i18nItems)
             ] || []}
             defaultValue={props.defaultValue}

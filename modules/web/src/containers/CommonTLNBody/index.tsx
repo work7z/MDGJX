@@ -39,6 +39,7 @@ export type UploadDetail = {
     result?: string
 }
 export default (props: {
+    saveDataId: string,
     showExampleLabel?: string,
     id: "text" | "json" | "json-comparison" | 'markdown' | "tlnztft",
     label: string,
@@ -73,10 +74,11 @@ export default (props: {
     const isZTFT = props.id == 'tlnztft'
     const isJSONType = props.id == 'json' || props.id == 'json-comparison'
     const isMarkdownType = props.id == 'markdown'
-    const rh = exportUtils.register('tln' + props.id, {
+    const rh = exportUtils.register('tln' + props.saveDataId, {
         getPersistedStateFn: () => {
             return props.defaultTLNPState || {
-                sourceLang: 'auto',
+                // sourceLang: 'auto',
+                sourceLang: 'zh',
                 targetLang: 'en',
                 translateMethod: JSONTranslateMethods[0].value,
                 reservedWords: '',

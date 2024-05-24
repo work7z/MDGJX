@@ -20,6 +20,7 @@ export default () => {
                 {JSX_Pro_Only}
             </div>
         }
+        saveDataId='markdown'
         example={
             `## 简介
 潮州广济桥，又名湘子桥，坐落在广东省潮州市韩江之上，是中国古代四大名桥之一。

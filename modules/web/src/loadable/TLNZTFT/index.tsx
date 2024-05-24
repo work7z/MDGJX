@@ -19,6 +19,7 @@ export default () => {
             }
         }
         id='tlnztft'
+        saveDataId='ztft'
         label='汉语'
         showExampleLabel="示例片段"
         realtime
