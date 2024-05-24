@@ -25,7 +25,9 @@ const env = NODE_ENV || 'development';
 const port = process.env.PORT || (env == 'development' ? 3050 : 39899);
 let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
 var httpProxy = require('http-proxy');
-var proxyWS = httpProxy.createProxyServer({ target: DIRECT_PROXY_SERVER, ws: true });
+var proxyWS = httpProxy.createProxyServer({ target: DIRECT_PROXY_SERVER, ws: true }).on('error', e => {
+  logger.error('proxyWS error' + e);
+});
 const launchTime = new Date();
 export class App {
   public app: express.Application;

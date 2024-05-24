@@ -27,260 +27,6 @@ export const toolsNavInfo: ToolNavInfoType[] = [
         subTools: []
     },
     {
-        name: "网络安全工具",
-        id: 'cyber',
-        subTools: [
-            {
-                "isNew": false,
-                "name": "Token 生成器",
-                "path": "/token-generator",
-                "description": "使用您想要的字符、大写或小写字母、数字和/或符号生成随机字符串。",
-                "keywords": [
-                    "token",
-                    "random",
-                    "string",
-                    "alphanumeric",
-                    "symbols",
-                    "number",
-                    "letters",
-                    "lowercase",
-                    "uppercase",
-                    "password"
-                ],
-                "icon": {
-                    "name": "ArrowsShuffle"
-                }
-            },
-            {
-                "isNew": false,
-                "name": "Hash 文本",
-                "path": "/hash-text",
-                "description": "使用所需的函数哈希文本字符串：MD5、SHA1、SHA256、SHA224、SHA512、SHA384、SHA3或RIPEMD160",
-                "keywords": [
-                    "hash",
-                    "digest",
-                    "crypto",
-                    "security",
-                    "text",
-                    "MD5",
-                    "SHA1",
-                    "SHA256",
-                    "SHA224",
-                    "SHA512",
-                    "SHA384",
-                    "SHA3",
-                    "RIPEMD160"
-                ],
-                "icon": {
-                    "name": "EyeOff"
-                },
-                "redirectFrom": [
-                    "/hash"
-                ]
-            },
-            {
-                "isNew": false,
-                "name": "加密",
-                "path": "/bcrypt",
-                "description": "使用bcrypt对文本字符串进行哈希和比较。Bcrypt是一个基于Blowfish密码的密码哈希函数。",
-                "keywords": [
-                    "bcrypt",
-                    "hash",
-                    "compare",
-                    "password",
-                    "salt",
-                    "round",
-                    "storage",
-                    "crypto"
-                ],
-                "icon": {
-                    "name": "LockSquare"
-                }
-            },
-            {
-                "isNew": false,
-                "name": "UUIDs 生成器",
-                "path": "/uuid-generator",
-                "description": "通用唯一标识符（UUID）是一个128位数字，用于标识计算机系统中的信息。可能的UUID数量为16^32，即2^128或约3.4x10^38（这是一个很大的数字！）。",
-                "keywords": [
-                    "uuid",
-                    "v4",
-                    "random",
-                    "id",
-                    "alphanumeric",
-                    "identity",
-                    "token",
-                    "string",
-                    "identifier",
-                    "unique",
-                    "v1",
-                    "v3",
-                    "v5",
-                    "nil"
-                ],
-                "icon": {
-                    "name": "Fingerprint"
-                }
-            },
-            {
-                "isNew": false,
-                "name": "ULID 生成器",
-                "path": "/ulid-generator",
-                "description": "生成随机的通用唯一词典可排序标识符（ULID）。",
-                "keywords": [
-                    "ulid",
-                    "generator",
-                    "random",
-                    "id",
-                    "alphanumeric",
-                    "identity",
-                    "token",
-                    "string",
-                    "identifier",
-                    "unique"
-                ],
-                "icon": {
-                    "name": "SortDescendingNumbers"
-                },
-                "createdAt": "2023-09-11T00:00:00.000Z"
-            },
-            {
-                "isNew": false,
-                "name": "加密/解密文本",
-                "path": "/encryption",
-                "description": "使用加密算法（如AES、TripleDES、Rabbit或RC4）加密和解密文本明文。",
-                "keywords": [
-                    "cypher",
-                    "encipher",
-                    "text",
-                    "AES",
-                    "TripleDES",
-                    "Rabbit",
-                    "RC4"
-                ],
-                "icon": {
-                    "name": "Lock"
-                },
-                "redirectFrom": [
-                    "/cypher"
-                ]
-            },
-            {
-                "isNew": false,
-                "name": "BIP39密码生成器",
-                "path": "/bip39-generator",
-                "description": "从现有或随机助记符生成BIP39密码短语，或从密码短语获取助记符。",
-                "keywords": [
-                    "BIP39",
-                    "passphrase",
-                    "generator",
-                    "mnemonic",
-                    "entropy"
-                ],
-                "icon": {
-                    "name": "AlignJustified"
-                }
-            },
-            {
-                "isNew": false,
-                "name": "Hmac 生成器",
-                "path": "/hmac-generator",
-                "description": "使用密钥和您喜欢的哈希函数计算基于哈希的消息身份验证代码（HMAC）。",
-                "keywords": [
-                    "hmac",
-                    "generator",
-                    "MD5",
-                    "SHA1",
-                    "SHA256",
-                    "SHA224",
-                    "SHA512",
-                    "SHA384",
-                    "SHA3",
-                    "RIPEMD160"
-                ],
-                "icon": {
-                    "name": "ShortTextRound"
-                }
-            },
-            {
-                "isNew": false,
-                "name": "RSA密钥对生成器",
-                "path": "/rsa-key-pair-generator",
-                "description": "生成新的随机RSA私钥和公钥pem证书。",
-                "keywords": [
-                    "rsa",
-                    "key",
-                    "pair",
-                    "generator",
-                    "public",
-                    "private",
-                    "secret",
-                    "ssh",
-                    "pem"
-                ],
-                "icon": {
-                    "name": "Certificate"
-                }
-            },
-            {
-                "isNew": false,
-                "name": "密码强度分析仪",
-                "path": "/password-strength-analyser",
-                "description": "使用此密码强度分析器和破解时间估计工具来发现密码的强度。",
-                "keywords": [
-                    "password",
-                    "strength",
-                    "analyser",
-                    "and",
-                    "crack",
-                    "time",
-                    "estimation",
-                    "brute",
-                    "force",
-                    "attack",
-                    "entropy",
-                    "cracking",
-                    "hash",
-                    "hashing",
-                    "algorithm",
-                    "algorithms",
-                    "md5",
-                    "sha1",
-                    "sha256",
-                    "sha512",
-                    "bcrypt",
-                    "scrypt",
-                    "argon2",
-                    "argon2id",
-                    "argon2i",
-                    "argon2d"
-                ],
-                "icon": {
-                    "name": "mdi-form-textbox-password"
-                },
-                "createdAt": "2023-06-24T00:00:00.000Z"
-            },
-            {
-                "isNew": false,
-                "name": "PDF签名检查器",
-                "path": "/pdf-signature-checker",
-                "description": "验证PDF文件的签名。签名的PDF文件包含一个或多个签名，可用于确定文件的内容在签名后是否已被更改。",
-                "keywords": [
-                    "pdf",
-                    "signature",
-                    "checker",
-                    "verify",
-                    "validate",
-                    "sign"
-                ],
-                "icon": {
-                    "name": "mdi-file-certificate-outline"
-                },
-                "createdAt": "2023-12-09T00:00:00.000Z"
-            }
-        ]
-    },
-    {
         name: "通用格式转换",
         id: 'converter',
         subTools: [
@@ -603,6 +349,261 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             }
         ]
     },
+    {
+        name: "网络安全工具",
+        id: 'cyber',
+        subTools: [
+            {
+                "isNew": false,
+                "name": "Token 生成器",
+                "path": "/token-generator",
+                "description": "使用您想要的字符、大写或小写字母、数字和/或符号生成随机字符串。",
+                "keywords": [
+                    "token",
+                    "random",
+                    "string",
+                    "alphanumeric",
+                    "symbols",
+                    "number",
+                    "letters",
+                    "lowercase",
+                    "uppercase",
+                    "password"
+                ],
+                "icon": {
+                    "name": "ArrowsShuffle"
+                }
+            },
+            {
+                "isNew": false,
+                "name": "Hash 文本",
+                "path": "/hash-text",
+                "description": "使用所需的函数哈希文本字符串：MD5、SHA1、SHA256、SHA224、SHA512、SHA384、SHA3或RIPEMD160",
+                "keywords": [
+                    "hash",
+                    "digest",
+                    "crypto",
+                    "security",
+                    "text",
+                    "MD5",
+                    "SHA1",
+                    "SHA256",
+                    "SHA224",
+                    "SHA512",
+                    "SHA384",
+                    "SHA3",
+                    "RIPEMD160"
+                ],
+                "icon": {
+                    "name": "EyeOff"
+                },
+                "redirectFrom": [
+                    "/hash"
+                ]
+            },
+            {
+                "isNew": false,
+                "name": "加密",
+                "path": "/bcrypt",
+                "description": "使用bcrypt对文本字符串进行哈希和比较。Bcrypt是一个基于Blowfish密码的密码哈希函数。",
+                "keywords": [
+                    "bcrypt",
+                    "hash",
+                    "compare",
+                    "password",
+                    "salt",
+                    "round",
+                    "storage",
+                    "crypto"
+                ],
+                "icon": {
+                    "name": "LockSquare"
+                }
+            },
+            {
+                "isNew": false,
+                "name": "UUIDs 生成器",
+                "path": "/uuid-generator",
+                "description": "通用唯一标识符（UUID）是一个128位数字，用于标识计算机系统中的信息。可能的UUID数量为16^32，即2^128或约3.4x10^38（这是一个很大的数字！）。",
+                "keywords": [
+                    "uuid",
+                    "v4",
+                    "random",
+                    "id",
+                    "alphanumeric",
+                    "identity",
+                    "token",
+                    "string",
+                    "identifier",
+                    "unique",
+                    "v1",
+                    "v3",
+                    "v5",
+                    "nil"
+                ],
+                "icon": {
+                    "name": "Fingerprint"
+                }
+            },
+            {
+                "isNew": false,
+                "name": "ULID 生成器",
+                "path": "/ulid-generator",
+                "description": "生成随机的通用唯一词典可排序标识符（ULID）。",
+                "keywords": [
+                    "ulid",
+                    "generator",
+                    "random",
+                    "id",
+                    "alphanumeric",
+                    "identity",
+                    "token",
+                    "string",
+                    "identifier",
+                    "unique"
+                ],
+                "icon": {
+                    "name": "SortDescendingNumbers"
+                },
+                "createdAt": "2023-09-11T00:00:00.000Z"
+            },
+            {
+                "isNew": false,
+                "name": "加密/解密文本",
+                "path": "/encryption",
+                "description": "使用加密算法（如AES、TripleDES、Rabbit或RC4）加密和解密文本明文。",
+                "keywords": [
+                    "cypher",
+                    "encipher",
+                    "text",
+                    "AES",
+                    "TripleDES",
+                    "Rabbit",
+                    "RC4"
+                ],
+                "icon": {
+                    "name": "Lock"
+                },
+                "redirectFrom": [
+                    "/cypher"
+                ]
+            },
+            {
+                "isNew": false,
+                "name": "BIP39密码生成器",
+                "path": "/bip39-generator",
+                "description": "从现有或随机助记符生成BIP39密码短语，或从密码短语获取助记符。",
+                "keywords": [
+                    "BIP39",
+                    "passphrase",
+                    "generator",
+                    "mnemonic",
+                    "entropy"
+                ],
+                "icon": {
+                    "name": "AlignJustified"
+                }
+            },
+            {
+                "isNew": false,
+                "name": "Hmac 生成器",
+                "path": "/hmac-generator",
+                "description": "使用密钥和您喜欢的哈希函数计算基于哈希的消息身份验证代码（HMAC）。",
+                "keywords": [
+                    "hmac",
+                    "generator",
+                    "MD5",
+                    "SHA1",
+                    "SHA256",
+                    "SHA224",
+                    "SHA512",
+                    "SHA384",
+                    "SHA3",
+                    "RIPEMD160"
+                ],
+                "icon": {
+                    "name": "ShortTextRound"
+                }
+            },
+            {
+                "isNew": false,
+                "name": "RSA密钥对生成器",
+                "path": "/rsa-key-pair-generator",
+                "description": "生成新的随机RSA私钥和公钥pem证书。",
+                "keywords": [
+                    "rsa",
+                    "key",
+                    "pair",
+                    "generator",
+                    "public",
+                    "private",
+                    "secret",
+                    "ssh",
+                    "pem"
+                ],
+                "icon": {
+                    "name": "Certificate"
+                }
+            },
+            {
+                "isNew": false,
+                "name": "密码强度分析仪",
+                "path": "/password-strength-analyser",
+                "description": "使用此密码强度分析器和破解时间估计工具来发现密码的强度。",
+                "keywords": [
+                    "password",
+                    "strength",
+                    "analyser",
+                    "and",
+                    "crack",
+                    "time",
+                    "estimation",
+                    "brute",
+                    "force",
+                    "attack",
+                    "entropy",
+                    "cracking",
+                    "hash",
+                    "hashing",
+                    "algorithm",
+                    "algorithms",
+                    "md5",
+                    "sha1",
+                    "sha256",
+                    "sha512",
+                    "bcrypt",
+                    "scrypt",
+                    "argon2",
+                    "argon2id",
+                    "argon2i",
+                    "argon2d"
+                ],
+                "icon": {
+                    "name": "mdi-form-textbox-password"
+                },
+                "createdAt": "2023-06-24T00:00:00.000Z"
+            },
+            {
+                "isNew": false,
+                "name": "PDF签名检查器",
+                "path": "/pdf-signature-checker",
+                "description": "验证PDF文件的签名。签名的PDF文件包含一个或多个签名，可用于确定文件的内容在签名后是否已被更改。",
+                "keywords": [
+                    "pdf",
+                    "signature",
+                    "checker",
+                    "verify",
+                    "validate",
+                    "sign"
+                ],
+                "icon": {
+                    "name": "mdi-file-certificate-outline"
+                },
+                "createdAt": "2023-12-09T00:00:00.000Z"
+            }
+        ]
+    },
+
     {
         name: "Web开发类",
         id: 'web',

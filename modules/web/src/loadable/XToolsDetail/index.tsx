@@ -1,4 +1,5 @@
 import AppConstants from "@/AppConstants"
+import LoadableWrapper from "@/components/LoadableWrapper"
 import { useMDParams } from "@/containers/SideBar"
 import XToolsViewer from "@/containers/XToolsViewer"
 import { toolsNavInfo } from "@/toolsNavInfo"
@@ -13,11 +14,15 @@ const InnerXToolsDetail = () => {
         mainSubModuleItem,
         mainSubToolID: tmp_mainSubToolID
     } = useMDParams()
-    const subTools = toolsNavInfo.find(x => x.id === mainSubModuleItem.id)?.subTools || []
+    const findItem = toolsNavInfo.find(x => x.id === mainSubModuleItem.id)
+    const subTools = findItem?.subTools || []
     const idx = tmp_mainSubToolID ? tmp_mainSubToolID : (subTools && subTools[0] && subTools[0].id || "")
     const history = useHistory()
     const setIdx = (x: string) => {
         history.push(`/tools/${mainSubModuleItem.id}/${x}`)
+    }
+    if (findItem?.bodyFnIfHave) {
+        return <LoadableWrapper fn={findItem.bodyFnIfHave} key={'meandu' + findItem.id} />
     }
     return <div key={mainSubModuleItem.id} className="flex flex-col" style={{
         height: `calc(${AppConstants.calcMainBodyHeight})`,
