@@ -1,3 +1,5 @@
+import { LoadModuleType } from "./systemModules"
+
 export type SubToolItem = {
     name: string,
     isNew: boolean,
@@ -14,9 +16,16 @@ export type SubToolItem = {
 export type ToolNavInfoType = {
     name: string,
     id: string,
+    bodyFnIfHave?: LoadModuleType,
     subTools?: SubToolItem[]
 }
 export const toolsNavInfo: ToolNavInfoType[] = [
+    {
+        name: 'JSON超级工具',
+        id: 'json',
+        bodyFnIfHave: () => import('./loadable/JSONSuperTools/index.tsx'),
+        subTools: []
+    },
     {
         name: "网络安全工具",
         id: 'cyber',

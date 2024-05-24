@@ -62,7 +62,7 @@ export default () => {
                 <Tabs.List>
                     <Tabs.Tab value={'all'} >全部({finalSubToolsArr.length})</Tabs.Tab>
                     {
-                        toolsNavInfo.map(x => {
+                        toolsNavInfo.filter(x => !x.bodyFnIfHave).map(x => {
                             return (
                                 <Tabs.Tab value={x.id} >
                                     {x.name}({x.subTools?.length || 0})

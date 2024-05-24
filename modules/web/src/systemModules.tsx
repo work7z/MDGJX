@@ -20,12 +20,13 @@ import { TypeMDParams } from '@/containers/SideBar';
 import { toolsNavInfo } from './toolsNavInfo.tsx';
 import AppConstants from './AppConstants.tsx';
 
+export type LoadModuleType = () => any
 export type SystemSubModuleItem = {
     id: string,
     href?: string,
     name: string,
     disableFooter?: boolean,
-    bodyFn?: () => any
+    bodyFn?: LoadModuleType
 }
 export type SystemModuleItem = {
     id: string,

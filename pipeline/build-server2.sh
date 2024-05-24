@@ -14,6 +14,7 @@ if [ "$SERVER_2H4G" == "" ]; then
 fi
 set -e
 ssh $SERVER_2H4G -p 26609 "mkdir -p /home/appuser/dkplace"
+ssh $SERVER_2H4G -p 26609 "rm -rf /home/appuser/dkplace/server2-linux-x64-$ver.TMPOUT.gz"
 sftp -P 26609  $SERVER_2H4G <<< "put server2-linux-x64-$ver.TMPOUT.gz /home/appuser/dkplace"
 sftp -P 26609  $SERVER_2H4G <<< "put docker/run-docker.sh /home/appuser/dkplace/run-docker-$ver.sh"
 ssh $SERVER_2H4G -p 26609 "gunzip /home/appuser/dkplace/server2-linux-x64-$ver.TMPOUT.gz"

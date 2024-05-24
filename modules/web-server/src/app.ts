@@ -24,7 +24,8 @@ export const asyncHandler = (fn: (req: Request, res: Response, next) => void) =>
 const env = NODE_ENV || 'development';
 const port = process.env.PORT || (env == 'development' ? 3050 : 39899);
 let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
-
+var httpProxy = require('http-proxy');
+var proxyWS = httpProxy.createProxyServer({ target: DIRECT_PROXY_SERVER, ws: true });
 const launchTime = new Date();
 export class App {
   public app: express.Application;
@@ -42,19 +43,27 @@ export class App {
     this.initializeRoutes(routes);
     this.initializeSwagger();
     this.initializeErrorHandling();
-
-    migrateDB();
   }
 
   public listen() {
-    this.app.listen(this.port, () => {
-      logger.info(`=================================`);
-      logger.info(`======= ENV: ${this.env} =======`);
-      logger.info(`======= HOST: ${this.host} =======`);
-      logger.info(`======= DIRECT_PROXY_SERVER: ${DIRECT_PROXY_SERVER} =======`);
-      logger.info(`🚀 App listening on the port ${this.port}`);
-      logger.info(`=================================`);
+    var server = require('http').createServer(this.app);
+
+    // Proxy websockets
+    server.on('upgrade', function (req, socket, head) {
+      console.log('proxying upgrade request', req.url);
+      proxyWS.ws(req, socket, head);
     });
+
+    logger.info(`=================================`);
+    logger.info(`======= ENV: ${this.env} =======`);
+    logger.info(`======= HOST: ${this.host} =======`);
+    logger.info(`======= DIRECT_PROXY_SERVER: ${DIRECT_PROXY_SERVER} =======`);
+    logger.info(`🚀 App listening on the port ${this.port}`);
+    logger.info(`=================================`);
+    server.listen(this.port);
+
+    // this.app.listen(this.port, () => {
+    // });
   }
 
   public getServer() {
