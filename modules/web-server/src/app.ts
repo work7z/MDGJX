@@ -61,9 +61,6 @@ export class App {
     logger.info(`🚀 App listening on the port ${this.port}`);
     logger.info(`=================================`);
     server.listen(this.port);
-
-    // this.app.listen(this.port, () => {
-    // });
   }
 
   public getServer() {
@@ -88,19 +85,22 @@ export class App {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
-    const prefix = '/v3';
-    logger.info('DIRECT_PROXY_SERVER: ' + DIRECT_PROXY_SERVER);
-    app.use(
-      prefix,
-      proxy(DIRECT_PROXY_SERVER, {
-        proxyReqPathResolver: function (req) {
-          var parts = req.url.split('?');
-          var queryString = parts[1];
-          var updatedPath = parts[0];
-          return prefix + updatedPath + (queryString ? '?' + queryString : '');
-        },
-      }),
-    );
+    const proxyPrefixArr = ['/v3', '/ws'];
+    for (let i = 0; i < proxyPrefixArr.length; i++) {
+      const prefix = proxyPrefixArr[i];
+      logger.info('DIRECT_PROXY_SERVER: ' + DIRECT_PROXY_SERVER);
+      app.use(
+        prefix,
+        proxy(DIRECT_PROXY_SERVER, {
+          proxyReqPathResolver: function (req) {
+            var parts = req.url.split('?');
+            var queryString = parts[1];
+            var updatedPath = parts[0];
+            return prefix + updatedPath + (queryString ? '?' + queryString : '');
+          },
+        }),
+      );
+    }
 
     // setup xtools
     let xToolsDir = path.join(__dirname, 'xtools');
