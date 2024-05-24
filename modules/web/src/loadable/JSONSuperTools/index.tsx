@@ -31,16 +31,18 @@ export default () => {
             loadFN: () => import('./JSONDiff.tsx')
         },
     ]
+    const hVal = 'calc(100vh - 85px)'
     return (
         <Card p={0} withBorder style={{
-            minHeight: 'calc(100vh - 85px)'
+            minHeight: hVal,
+            height: hVal
         }}>
-            <Tabs defaultValue="conversion">
+            <Tabs defaultValue={items[0].id} className="h-full flex flex-col">
                 <Tabs.List>
                     {
                         items.map(x => {
                             return (
-                                <Tabs.Tab value={x.id} leftSection={<x.icon style={iconStyle} />}>
+                                <Tabs.Tab className="h-[35px]" value={x.id} leftSection={<x.icon style={iconStyle} />}>
                                     {x.name}
                                 </Tabs.Tab>
                             )
@@ -51,7 +53,7 @@ export default () => {
                 {
                     items.map(x => {
                         return (
-                            <Tabs.Panel value={x.id}>
+                            <Tabs.Panel value={x.id} className="flex-1 overflow-auto">
                                 <LoadableWrapper fn={x.loadFN} />
                             </Tabs.Panel>
                         )
