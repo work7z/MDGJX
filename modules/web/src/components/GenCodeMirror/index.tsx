@@ -232,7 +232,8 @@ export default (props: GenCodeMirrorProp) => {
     </div> */}
     <div className={
       'flex-1  scrollbar-hide  ' + (
-        !clicked ? ' editor-noscroll ' : '  overflow-auto '
+        // !clicked ? ' editor-noscroll ' : '  overflow-auto '
+        '  overflow-auto '
       )
     } style={{
       height: `calc(100% - ${VAL_CSS_TAB_TITLE_PANEL}px)`,

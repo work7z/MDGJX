@@ -1,7 +1,9 @@
 import LoadableWrapper from "@/components/LoadableWrapper";
 import { Card, Tabs, rem } from "@mantine/core"
 import { IconDatabaseExport, IconFileInfinity, IconGitCompare, IconInfinity, IconLayersIntersect, IconMessageCircle, IconOutlet, IconPhoto, IconSettings, IconTransform, IconTransformFilled } from "@tabler/icons-react"
-import { Switch } from "react-router";
+import { Route, Switch } from "react-router";
+import { Link } from "react-router-dom";
+
 export type JSONTypeItem = {
     name: string,
     id: string,
@@ -13,19 +15,19 @@ export default () => {
     const iconStyle = { width: rem(12), height: rem(12) };
     const items: JSONTypeItem[] = [
         {
-            name: '格式转换',
+            name: 'JSON格式转换',
             id: 'conversion',
             icon: IconTransformFilled,
             loadFN: () => import('./JSONConversion.tsx')
         },
+        // {
+        //     name: 'JSON格式提取',
+        //     id: 'export',
+        //     icon: IconOutlet,
+        //     loadFN: () => import('./JSONExport.tsx')
+        // },
         {
-            name: '格式提取',
-            id: 'export',
-            icon: IconOutlet,
-            loadFN: () => import('./JSONExport.tsx')
-        },
-        {
-            name: '差异对比',
+            name: 'JSON差异对比',
             id: 'comparison',
             icon: IconFileInfinity,
             loadFN: () => import('./JSONDiff.tsx')
@@ -49,7 +51,6 @@ export default () => {
                         })
                     }
                 </Tabs.List>
-
                 {
                     items.map(x => {
                         return (

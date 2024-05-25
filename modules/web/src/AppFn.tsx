@@ -2,7 +2,9 @@ import _ from "lodash";
 
 export const mergeWithNoArr = (objValue: any, srcValue: any) => {
     return _.mergeWith(objValue, srcValue, (objValue, srcValue) => {
-        if (_.isArray(objValue) || _.isPlainObject(objValue)) {
+        if (_.isArray(objValue) || (
+            _.isPlainObject(objValue) && _.isEmpty(objValue)
+        )) {
             return srcValue;
         }
     })
