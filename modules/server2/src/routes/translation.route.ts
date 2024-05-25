@@ -19,6 +19,8 @@ import { randomUUID } from 'crypto';
 import dao from '@/dao';
 import AIUtils from './gpt/ai-utils';
 import userAiUtils from './gpt/user-ai-utils';
+import { RouterWs } from '@/app';
+import expressWs from 'express-ws';
 
 export class TranslationRoute implements Routes {
   public router = Router();
@@ -30,6 +32,8 @@ export class TranslationRoute implements Routes {
   }
 
   private initializeRoutes() {
+    const routerWs = expressWs(this.router).app as RouterWs;
+
     this.router.post(
       '/tln/sendTLNRequest',
       asyncHandler(async (req, res) => {
@@ -65,16 +69,12 @@ ${text}
           resultText = resText;
           secretId = 'qwen';
         } else {
-          if (text.length > 6000) {
-            throw new Error(`翻译失败：请控制输入在6000字符以内`);
-          } else {
-            let obj = await TranslateTools.translateText(text, sourceLang, targetLang);
-            if (!obj.isOK) {
-              throw new Error('翻译失败: ' + obj.errorCode);
-            }
-            resultText = obj.result;
-            secretId = obj.secretId || 'N/A ';
+          let obj = await TranslateTools.translateText(text, sourceLang, targetLang);
+          if (!obj.isOK) {
+            throw new Error('翻译失败: ' + obj.errorCode);
           }
+          resultText = obj.result;
+          secretId = obj.secretId || 'N/A ';
         }
         await S2TranslationRecord.create({
           userId: user.id,

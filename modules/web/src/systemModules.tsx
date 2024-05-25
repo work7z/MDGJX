@@ -9,6 +9,7 @@ import {
     IconBook,
     IconLanguage,
     IconApiApp,
+    IconNetwork,
 
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
@@ -19,12 +20,13 @@ import { TypeMDParams } from '@/containers/SideBar';
 import { toolsNavInfo } from './toolsNavInfo.tsx';
 import AppConstants from './AppConstants.tsx';
 
+export type LoadModuleType = () => any
 export type SystemSubModuleItem = {
     id: string,
     href?: string,
     name: string,
     disableFooter?: boolean,
-    bodyFn?: () => any
+    bodyFn?: LoadModuleType
 }
 export type SystemModuleItem = {
     id: string,
@@ -90,10 +92,11 @@ export const systemModulesList: SystemModuleItem[] = [
     //             id: 'mock'
     //         },
     //     ]
-    // },   
+    // },
     {
         id: 'i18n',
-        icon: IconLanguage, label: '翻译助手',
+        icon: IconLanguage,
+        label: '翻译助手',
         children: [
             {
                 name: '文本翻译',
@@ -114,6 +117,23 @@ export const systemModulesList: SystemModuleItem[] = [
                 name: 'Markdown 文档翻译',
                 id: 'md',
                 bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
+            },
+            {
+                name: '简繁中文对照翻译',
+                id: 'ftzt',
+                bodyFn: () => import('./loadable/TLNZTFT/index.tsx')
+            },
+        ]
+    },
+    {
+        id: 'network',
+        icon: IconNetwork,
+        label: '网络运维',
+        children: [
+            {
+                name: 'IP/域名质量监测',
+                id: 'text',
+                bodyFn: () => import('./loadable/IPDomainQualityStat/index.tsx')
             },
         ]
     },

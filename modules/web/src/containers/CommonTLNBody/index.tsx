@@ -1,9 +1,9 @@
 import apiSlice from "@/store/reducers/apiSlice"
-import { Button, Container, Divider, Select, Table, TextInput, Textarea } from "@mantine/core"
-import { useCallback, useEffect, useMemo, useState } from "react"
+import { Badge, Button, Container, Divider, Select, Table, TextInput, Textarea } from "@mantine/core"
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
 import { Card, Group, Text, Menu, ActionIcon, Image, SimpleGrid, rem } from '@mantine/core';
 import { IconArrowsUpDown, IconDots, IconEraser, IconEye, IconFileUpload, IconFileZip, IconTextWrap, IconTrash } from '@tabler/icons-react';
-import ControlBar from "@/components/ControlBar";
+import ControlBar, { ActionItem } from "@/components/ControlBar";
 import PanelWithSideBar from "@/components/PanelWithSideBar";
 import I18nSelect from "@/components/I18nSelect";
 import exportUtils from "@/utils/ExportUtils";
@@ -39,22 +39,46 @@ export type UploadDetail = {
     result?: string
 }
 export default (props: {
+    saveDataId: string,
     showExampleLabel?: string,
-    id: "text" | "json" | "json-comparison" | 'markdown',
+    id: "text" | "json" | "json-comparison" | 'markdown' | "tlnztft",
     label: string,
     realtime?: boolean,
     verticalSideBySide?: boolean,
     example: string,
     defaultTLNPState?: TLNPState,
     extraOptionsJSX?: JSX.Element,
+    translateActionItems?: ActionItem[],
     handleTranslate: (val: TLNState, fn_translate) => Promise<string>
 }) => {
+
+
+
+    // websocket
+    const ws = useRef<WebSocket | null>(null);
+    const [message, setMessage] = useState('');
+    //启动
+    useLayoutEffect(() => {
+        ws.current = new WebSocket('ws://localhost:5173/ws/test123');
+        ws.current.onmessage = e => {
+            setMessage(e.data);
+        };
+        setTimeout(() => {
+            ws.current?.send("hello, there")
+        })
+        return () => {
+            ws.current?.close();
+        };
+    }, [ws]);
+
+    const isZTFT = props.id == 'tlnztft'
     const isJSONType = props.id == 'json' || props.id == 'json-comparison'
     const isMarkdownType = props.id == 'markdown'
-    const rh = exportUtils.register('tln' + props.id, {
+    const rh = exportUtils.register('tln' + props.saveDataId, {
         getPersistedStateFn: () => {
             return props.defaultTLNPState || {
-                sourceLang: 'auto',
+                // sourceLang: 'auto',
+                sourceLang: 'zh',
                 targetLang: 'en',
                 translateMethod: JSONTranslateMethods[0].value,
                 reservedWords: '',
@@ -231,6 +255,21 @@ export default (props: {
         }
         return fn
     }
+    const translateActionItems: ActionItem[] = props.translateActionItems ?
+        props.translateActionItems.map(x => {
+            return {
+                ...x,
+            }
+        }) : [
+            {
+                type: 'submit',
+                text: translating ? "取消翻译" : "开始翻译",
+                color: translating ? 'red' : undefined,
+                onClick: fn_submit_create({
+                    eventSource: 'submit'
+                })
+            }
+        ]
     const jsx_inputTextarea = <Group wrap='nowrap'>
         <Textarea
             spellCheck={false}
@@ -253,15 +292,7 @@ export default (props: {
     const jsx_controlBar = <Group mt={10} wrap='nowrap' justify="space-between">
         <Group gap={7}>
             <ControlBar actions={[
-                {
-                    type: 'submit',
-                    text: translating ? "取消翻译" : "开始翻译",
-                    // loading: translating,
-                    color: translating ? 'red' : undefined,
-                    onClick: fn_submit_create({
-                        eventSource: 'submit'
-                    })
-                },
+                ...translateActionItems,
                 fillFileMode ? {
                     color: 'grape',
                     text: '导出结果',
@@ -283,6 +314,7 @@ export default (props: {
                 },
                 {
                     color: 'gray',
+                    hideIt: fillFileMode,
                     text: props.showExampleLabel ? props.showExampleLabel : '示例' + props.label,
                     onClick: () => {
                         rh.updateNonPState({
@@ -321,6 +353,7 @@ export default (props: {
                     color: 'gray',
                     variant: 'outline',
                     pl: 12,
+                    hideIt: fillFileMode,
                     title: '交换上下文本框值',
                     pr: 12,
                     icon: <IconArrowsUpDown size='15' />,
@@ -335,6 +368,7 @@ export default (props: {
                     color: 'gray',
                     variant: 'outline',
                     pl: 12,
+                    hideIt: fillFileMode,
                     title: '清空上下文本框值',
                     pr: 12,
                     icon: <IconEraser size='15' />,
@@ -343,8 +377,7 @@ export default (props: {
                             inputJSON: '',
                             outputJSON: ''
                         })
-
-                    }
+                    },
                 },
             ]}
             />
@@ -368,6 +401,7 @@ export default (props: {
             />
         </Group>
     )
+    const acceptableValues = isZTFT ? ['zh', 'zh-HK', 'zh-TW', 'zh'] : []
     return <Container  >
         <form onSubmit={e => {
             e.preventDefault()
@@ -462,6 +496,7 @@ export default (props: {
                             {...rh.bindOnChange({
                                 pStateKey: 'sourceLang'
                             })}
+                            acceptValues={acceptableValues}
                             label={'源语言'} name='sourceLang' />
                         <Group justify="center" className="ml-[-15px] w-full text-center" >
                             <Button size='compact-xs' variant="default" onClick={() => {
@@ -474,6 +509,7 @@ export default (props: {
                             </Button>
                         </Group>
                         <I18nSelect label="目标语言"
+                            acceptValues={acceptableValues}
                             {...rh.bindOnChange({
                                 pStateKey: 'targetLang'
                             })}

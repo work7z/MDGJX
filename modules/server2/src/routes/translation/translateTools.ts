@@ -1,5 +1,6 @@
 import { sleep } from '@/jobs/migrate-db';
 import { logger } from '@/utils/logger';
+import { chunkForStr } from '@/utils/str-utils';
 import { NothingFn } from '@/utils/unused_rateUtils';
 import _ from 'lodash';
 
@@ -87,6 +88,20 @@ export type TranslateResult = {
 
 const TranslateTools = {
   translateText: async (val: string, sourceLang: string, targetLang: string): Promise<TranslateResult> => {
+    let fullTextResult = ``;
+    const allChunks = chunkForStr(val, 5900); // TODO: can split it smartly in other way, like 。，
+    let r: TranslateResult | null = null;
+    for (let i = 0; i < allChunks.length; i++) {
+      r = await TranslateTools.translateTextInner(allChunks[i], sourceLang, targetLang);
+      if (!r.isOK) {
+        return r;
+      }
+      fullTextResult += r.result;
+    }
+    return r;
+  },
+
+  translateTextInner: async (val: string, sourceLang: string, targetLang: string): Promise<TranslateResult> => {
     const ATTEMPT_TIMES = _.size(TLNConfigArr) * 2;
     let crtTried = 0;
     while (crtTried++ < ATTEMPT_TIMES) {

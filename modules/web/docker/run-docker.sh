@@ -18,7 +18,11 @@ runCP(){
     pContainerName=$1
     pListenPort=$2
     # 2016 is release, 2017 is beta
-    docker run -e DIRECT_PROXY_SERVER='http://172.17.0.1:2016' -e ONLINEMODE=true -e LAFREGION=CN -e APPLANG=zh_CN --name $pContainerName -d -p 0.0.0.0:$pListenPort:39899 codegentoolbox/laftools-linux-x64:$crtVersion
+    THAT_SVR='http://172.17.0.1:2016'
+    if [ "$pContainerName" == "web-beta-inst" ]; then
+        THAT_SVR='http://172.17.0.1:2017'
+    fi
+    docker run -e DIRECT_PROXY_SERVER=$THAT_SVR -e ONLINEMODE=true -e LAFREGION=CN -e APPLANG=zh_CN --name $pContainerName -d -p 0.0.0.0:$pListenPort:39899 codegentoolbox/laftools-linux-x64:$crtVersion
 }
 
 # run current

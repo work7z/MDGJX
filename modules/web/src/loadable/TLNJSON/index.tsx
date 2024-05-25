@@ -190,6 +190,7 @@ export default () => {
 
     return (
         <CommonTLNBody
+            saveDataId='json'
             handleTranslate={async (state, fn_translate) => {
                 let fn_translate_impl = JSONTranslateMethods.find(x => x.value === state.translateMethod)?.func
                 if (!fn_translate_impl) {

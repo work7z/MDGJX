@@ -50,6 +50,12 @@ export default defineConfig({
   // },
   server: {
     proxy: {
+      '/ws': {
+        target: 'ws://127.0.0.1:2016', //这里是后台ws访问地址
+        changeOrigin: true, //允许跨域设置
+        ws: true, //websocket代理设置
+        rewrite: (path) => path, //拦截路径去除
+      },
       '/v3': {
         target: 'http://127.0.0.1:2016',
         changeOrigin: true,

@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+.sub-mr-2{
+    &>div{
+        margin-right: 2rem;
+    }
+}

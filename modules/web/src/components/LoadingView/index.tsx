@@ -22,7 +22,7 @@ import {
 import React from 'react';
 export default () => {
     return (
-        <Box pos="relative" className='h-[100px]'>
+        <Box pos="relative" className='h-[70vh]'>
             <LoadingOverlay visible={true} zIndex={1000} overlayProps={{ radius: "sm", blur: 2 }} />
             loading...
         </Box>

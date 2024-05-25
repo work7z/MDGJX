@@ -6,13 +6,15 @@ export default () => {
     const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})
 
     return <CommonTLNBody
+        saveDataId='jsoncomparison'
         verticalSideBySide
         label='JSON中英文对照'
         realtime
         defaultTLNPState={
             {
+                // sourceLang: 'auto',
                 fillFileMode: false,
-                sourceLang: 'auto',
+                sourceLang: 'en',
                 targetLang: 'zh',
                 translateMethod: 'KeyOnly'
             }

@@ -21,8 +21,13 @@ import { existsSync } from 'fs';
 export const asyncHandler = (fn: (req: Request, res: Response, next) => void) => (req: Request, res: Response, next) => {
   return Promise.resolve(fn(req, res, next)).catch(next);
 };
+const env = NODE_ENV || 'development';
+const port = process.env.PORT || (env == 'development' ? 3050 : 39899);
 let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
-
+var httpProxy = require('http-proxy');
+var proxyWS = httpProxy.createProxyServer({ target: DIRECT_PROXY_SERVER, ws: true }).on('error', e => {
+  logger.error('proxyWS error' + e);
+});
 const launchTime = new Date();
 export class App {
   public app: express.Application;
@@ -32,27 +37,32 @@ export class App {
 
   constructor(routes: Routes[]) {
     this.app = express();
-    this.env = NODE_ENV || 'development';
-    this.port = process.env.PORT || (this.env == 'development' ? 3050 : 39899);
+    this.env = env;
+    this.port = port;
 
     this.connectToDatabase();
     this.initializeMiddlewares();
     this.initializeRoutes(routes);
     this.initializeSwagger();
     this.initializeErrorHandling();
-
-    migrateDB();
   }
 
   public listen() {
-    this.app.listen(this.port, () => {
-      logger.info(`=================================`);
-      logger.info(`======= ENV: ${this.env} =======`);
-      logger.info(`======= HOST: ${this.host} =======`);
-      logger.info(`======= DIRECT_PROXY_SERVER: ${DIRECT_PROXY_SERVER} =======`);
-      logger.info(`🚀 App listening on the port ${this.port}`);
-      logger.info(`=================================`);
+    var server = require('http').createServer(this.app);
+
+    // Proxy websockets
+    server.on('upgrade', function (req, socket, head) {
+      console.log('proxying upgrade request', req.url);
+      proxyWS.ws(req, socket, head);
     });
+
+    logger.info(`=================================`);
+    logger.info(`======= ENV: ${this.env} =======`);
+    logger.info(`======= HOST: ${this.host} =======`);
+    logger.info(`======= DIRECT_PROXY_SERVER: ${DIRECT_PROXY_SERVER} =======`);
+    logger.info(`🚀 App listening on the port ${this.port}`);
+    logger.info(`=================================`);
+    server.listen(this.port);
   }
 
   public getServer() {
@@ -77,19 +87,22 @@ export class App {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
-    const prefix = '/v3';
-    logger.info('DIRECT_PROXY_SERVER: ' + DIRECT_PROXY_SERVER);
-    app.use(
-      prefix,
-      proxy(DIRECT_PROXY_SERVER, {
-        proxyReqPathResolver: function (req) {
-          var parts = req.url.split('?');
-          var queryString = parts[1];
-          var updatedPath = parts[0];
-          return prefix + updatedPath + (queryString ? '?' + queryString : '');
-        },
-      }),
-    );
+    const proxyPrefixArr = ['/v3', '/ws'];
+    for (let i = 0; i < proxyPrefixArr.length; i++) {
+      const prefix = proxyPrefixArr[i];
+      logger.info('DIRECT_PROXY_SERVER: ' + DIRECT_PROXY_SERVER);
+      app.use(
+        prefix,
+        proxy(DIRECT_PROXY_SERVER, {
+          proxyReqPathResolver: function (req) {
+            var parts = req.url.split('?');
+            var queryString = parts[1];
+            var updatedPath = parts[0];
+            return prefix + updatedPath + (queryString ? '?' + queryString : '');
+          },
+        }),
+      );
+    }
 
     // setup xtools
     let xToolsDir = path.join(__dirname, 'xtools');

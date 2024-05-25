@@ -10,6 +10,7 @@ export default () => {
             return result || '';
         }}
         id='text'
+        saveDataId='text'
         label='文本'
         realtime
         example={

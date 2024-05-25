@@ -1,6 +1,6 @@
 {
   "name": "typescript-express-starter",
-  "version": "server2-v10.0.20",
+  "version": "server2-v10.0.23",
   "description": "TypeScript + Sequelize + MySQL + Express API Server",
   "author": "",
   "license": "AGPL-3.0-only",
@@ -28,6 +28,7 @@
     "dotenv": "^16.0.1",
     "envalid": "^7.3.1",
     "express": "^4.18.1",
+    "express-ws": "^5.0.2",
     "helmet": "^5.1.1",
     "hpp": "^0.2.3",
     "jsonwebtoken": "^9.0.0",
