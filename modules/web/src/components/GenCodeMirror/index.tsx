@@ -48,7 +48,10 @@ import {
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./index.scss";
 import CodeMirror from "@uiw/react-codemirror";
-import { githubLight, githubDark } from "@uiw/codemirror-theme-github";
+// import { githubLight, githubDark } from "@uiw/codemirror-theme-github";
+// import { bbedit } from "@uiw/codemirror-theme-bbedit";
+// import { githubLight, githubDark } from "@uiw/codemirror-theme-document";
+import { monokai } from "@uiw/codemirror-theme-monokai";
 import { javascript, jsxLanguage } from "@codemirror/lang-javascript";
 // import { FN_GetActualTextValueByBigTextId, FN_SetTextValueFromInsideByBigTextId___DONOTUSEIT__EXTERNALLY } from "../../actions/bigtext_action";
 import { go } from '@codemirror/legacy-modes/mode/go';
@@ -72,7 +75,39 @@ import { FN_SetTextValueFromInsideByBigTextId___DONOTUSEIT__EXTERNALLY } from "@
 import exportUtils from "@/utils/ExportUtils";
 // import { langs, langNames, loadLanguage } from '@uiw/codemirror-extensions-langs';
 // console.log('langNames', langs.mysql())
+import { createTheme } from '@uiw/codemirror-themes';
+import { tags as t } from '@lezer/highlight';
 
+const myTheme = createTheme({
+  theme: 'light',
+  settings: {
+    background: '#ffffff',
+    backgroundImage: '',
+    foreground: '#75baff',
+    caret: '#5d00ff',
+    selection: '#036dd626',
+    selectionMatch: '#036dd626',
+    lineHighlight: '#8a91991a',
+    gutterBackground: '#fff',
+    gutterForeground: '#8a919966',
+  },
+  styles: [
+    { tag: t.comment, color: '#787b8099' },
+    { tag: t.variableName, color: '#0080ff' },
+    { tag: [t.string, t.special(t.brace)], color: '#5c6166' },
+    { tag: t.number, color: '#5c6166' },
+    { tag: t.bool, color: '#5c6166' },
+    { tag: t.null, color: '#5c6166' },
+    { tag: t.keyword, color: '#5c6166' },
+    { tag: t.operator, color: '#5c6166' },
+    { tag: t.className, color: '#5c6166' },
+    { tag: t.definition(t.typeName), color: '#5c6166' },
+    { tag: t.typeName, color: '#5c6166' },
+    { tag: t.angleBracket, color: '#5c6166' },
+    { tag: t.tagName, color: '#5c6166' },
+    { tag: t.attributeName, color: '#5c6166' },
+  ],
+});
 type GenCodeMirrorProp = {
   title?: string;
   icon?: IconName;
@@ -224,7 +259,7 @@ export default (props: GenCodeMirrorProp) => {
           langPack,
           props.lineWrap ? EditorView.lineWrapping : null
         ].filter(x => x != null) as any}
-        theme={forgeObj.dark ? githubDark : githubLight}
+        theme={forgeObj.dark ? monokai : undefined} // githubLight
       />
     </div>
   </div>;
