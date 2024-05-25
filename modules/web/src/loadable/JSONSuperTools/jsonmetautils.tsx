@@ -1,6 +1,16 @@
 import JSON5 from 'json5'
 
 const jsonmetautils = {
+    unicodeToChinese: (input: string): string => {
+        return input.replace(/\\u[\dA-F]{4}/gi, function (match) {
+            return String.fromCharCode(parseInt(match.replace(/\\u/g, ''), 16));
+        });
+    },
+    chineseToUnicode: (input: string): string => {
+        return input.replace(/[\u4E00-\u9FA5]/g, function (match) {
+            return '\\u' + match.charCodeAt(0).toString(16);
+        });
+    },
     beautify: (input: string, compact?: boolean): string => {
         if (!input) return "";
 

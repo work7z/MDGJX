@@ -194,7 +194,7 @@ export default (props: GenCodeMirrorProp) => {
       propRef.current.fn_onTextChange && propRef.current.fn_onTextChange(actualText)
     }
   }, [verObj.ver])
-  let value: string = props.directValue || bt.bigText;
+  let value: string = props.directValue + '' // || bt.bigText;
   let isEmpty = !(value && value != '')
   let setValue = (val: string) => {
     FN_GetDispatch()(FN_SetTextValueFromInsideByBigTextId___DONOTUSEIT__EXTERNALLY(bigTextId, val));

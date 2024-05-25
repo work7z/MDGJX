@@ -1,11 +1,14 @@
 import GenCodeMirror from "@/components/GenCodeMirror"
 import exportUtils from "@/utils/ExportUtils"
-import { Alert, Badge, Button, Card, Select, Title } from "@mantine/core"
+import { ActionIcon, Alert, Badge, Button, Card, Select, Title } from "@mantine/core"
 import JSON5 from "json5";
 import jsonmetautils from "./jsonmetautils";
 import AlertUtils from "@/utils/AlertUtils";
 import _ from "lodash";
-import { IconInfoCircle } from "@tabler/icons-react";
+import { IconCopy, IconInfoCircle } from "@tabler/icons-react";
+import { useClipboard } from "@mantine/hooks";
+import FileExportUtils, { js_export_trigger } from "@/utils/FileExportUtils";
+import base64metautils from "./base64metautils";
 
 export type JSONConversionState = {
     //
@@ -37,6 +40,8 @@ export default () => {
             } satisfies JSONConversionState
         }
     })
+    const clipboard = useClipboard({ timeout: 500 });
+
     if (!rh) {
         return ''
     }
@@ -59,6 +64,7 @@ export default () => {
                     rh.updateNonPState({
                         inputJSON: newval
                     })
+                    AlertUtils.alertSuccess('格式化成功，JSON格式校验通过')
                 }
             },
 
@@ -109,12 +115,68 @@ export default () => {
                 }
             },
             {
-                name: '解码Base64'
+                name: '编码Base64',
+                onClick: () => {
+                    const jState = rh.getActualValueInState()
+                    const rawVal = jState.inputJSON
+                    if (_.isEmpty(rawVal)) {
+                        AlertUtils.alertErr('输入内容为空，请先提供JSON数据')
+                        return;
+                    }
+                    const newval = base64metautils.encodeBase64(rawVal)
+                    rh.updateNonPState({
+                        inputJSON: newval
+                    })
+                }
             },
             {
-                name: '编码Base64'
-            }
+                name: '解码Base64',
+                onClick: () => {
+                    const jState = rh.getActualValueInState()
+                    const rawVal = jState.inputJSON
+                    if (_.isEmpty(rawVal)) {
+                        AlertUtils.alertErr('输入内容为空，请先提供JSON数据')
+                        return;
+                    }
+                    const newval = base64metautils.decodeBase64(rawVal)
+                    rh.updateNonPState({
+                        inputJSON: newval
+                    })
+                }
+            },
+            {
+                name: '中文转Unicode',
+                onClick: () => {
+                    const jState = rh.getActualValueInState()
+                    const rawVal = jState.inputJSON
+                    if (_.isEmpty(rawVal)) {
+                        AlertUtils.alertErr('输入内容为空，请先提供JSON数据')
+                        return;
+                    }
+                    const newval = jsonmetautils.chineseToUnicode(rawVal)
+                    rh.updateNonPState({
+                        inputJSON: newval
+                    })
+                }
+            },
+            {
+                name: 'Unicode转中文',
+                onClick: () => {
+                    const jState = rh.getActualValueInState()
+                    const rawVal = jState.inputJSON
+                    if (_.isEmpty(rawVal)) {
+                        AlertUtils.alertErr('输入内容为空，请先提供JSON数据')
+                        return;
+                    }
+                    const newval = jsonmetautils.unicodeToChinese(rawVal)
+                    rh.updateNonPState({
+                        inputJSON: newval
+                    })
+                }
+            },
+
         ]
+
     return <div className="w-full h-full flex flex-row">
         <div className="w-full h-full overflow-auto flex-1">
             <GenCodeMirror
@@ -135,6 +197,12 @@ export default () => {
                 {jsonOperations.map(x => {
                     return <Button className="mb-1 mr-1" size='xs' variant="outline" onClick={() => {
                         try {
+                            rh.updateNonPState({
+                                errorReason: {
+                                    title: '',
+                                    content: ''
+                                }
+                            })
                             x.onClick && x.onClick()
                         } catch (e: any) {
                             let errMsg = e.message || e
@@ -145,8 +213,18 @@ export default () => {
                                     const errorBlock = errMsg.split('at')[1].trim().split(':')
                                     const line = errorBlock[0]
                                     const column = errorBlock[1]
-                                    errorTitle = `第 ${line} 行 ${column} 列解析错误`
-                                    errMsg = `具体错误`
+                                    errorTitle = `解析错误于第${line}行`
+                                    const inputJSONVal = rh.getActualValueInState().inputJSON
+                                    const inputLines = inputJSONVal.split('\n')
+                                    if (inputLines.length > line) {
+                                        const thatLine = inputLines[line - 1]
+                                        let noteStr: string[] = []
+                                        for (let i = 0; i < column - 1; i++) {
+                                            noteStr.push('-')
+                                        }
+                                        noteStr.push('^')
+                                        errMsg = thatLine.replaceAll('\t', '-') + '\n' + noteStr.join("") // + '\n' + `${line}:${column}`
+                                    }
                                 } catch (e) {
                                     // ignore
                                     debugger;
@@ -164,24 +242,13 @@ export default () => {
                     }} key={x.name}>{x.name}</Button>
                 })}
             </div>
-            <div className="mt-2">
-                <div className="">
-                    <Title order={6}>工具特色</Title>
-                </div>
-                <div className="space-x-2">
-                    <Badge color="green" className="mt-2" >中文字符修复</Badge>
-                    <Badge color="cyan" className="mt-2" >JSON5支持</Badge>
-                </div>
-            </div>
+
             <div className="mt-4">
                 <div className="">
-                    <Title order={6}>关于本工具</Title>
+                    <Title order={6}>更多操作</Title>
                 </div>
-                <div className="text-xs">
-                    JSON超级工具涵盖JSON格式化、压缩、校验、转义、去转义、Base64编解码等实用功能，且兼容JSON5格式，可以帮助您快速处理JSON数据。
-                </div>
-                <div>
-                    <Button size='xs' className="mt-2" onClick={() => {
+                <div className="mt-2  " >
+                    <Button size='xs' onClick={() => {
                         const str = `{
     "name": "秒达工具箱",
       "link": "https://mdgjx.com",
@@ -204,7 +271,42 @@ export default () => {
                         rh.updateNonPState({
                             inputJSON: str
                         })
-                    }}>使用JSON示例</Button>
+                    }} className="mr-1 mt-1">使用JSON示例</Button>
+                    <Button className="mr-1 mt-1" size='xs' color='gray' onClick={() => {
+                        rh.updateNonPState({
+                            inputJSON: ''
+                        })
+                    }} variant="outline" >清空文本框</Button>
+                    <Button className="mr-1 mt-1" size='xs' color='green' onClick={() => {
+                        clipboard.copy(rh.npState?.inputJSON)
+                        AlertUtils.alertSuccess('JSON数据已复制到剪贴板')
+                    }}>复制结果</Button>
+                    <Button className="mr-1 mt-1" size='xs' onClick={() => {
+                        js_export_trigger({
+                            saveValue: rh.npState?.inputJSON,
+                            filename: `mdgjx.json`
+                        })
+                    }} color='violet'>导出结果</Button>
+                </div>
+                <div className="mt-2 space-x-1">
+                </div>
+            </div >
+
+            <div className="mt-4">
+                <div className="">
+                    <Title order={6}>关于本工具</Title>
+                </div>
+                <div className="text-xs">
+                    JSON超级工具涵盖JSON格式化、压缩、校验、转义、去转义、Base64编解码等实用功能，且兼容JSON5格式，可以帮助您快速处理JSON数据。
+                </div>
+            </div>
+            <div className="mt-4">
+                <div className="">
+                    <Title order={6}>工具特色</Title>
+                </div>
+                <div className="space-x-2">
+                    <Badge color="indigo" className="mt-2" >中文字符修复</Badge>
+                    <Badge color="cyan" className="mt-2" >JSON5支持</Badge>
                 </div>
             </div>
             {
@@ -215,7 +317,7 @@ export default () => {
                         } icon={
                             <IconInfoCircle />
                         }>
-                            <p>{rh.npState?.errorReason.content}</p>
+                            <p className="font-mono ">{_.split(rh.npState?.errorReason.content, '\n').map(x => <div>{x}</div>)}</p>
                             <p className="mt-2 space-x-2">
                                 <Button size='compact-xs' color='green' onClick={() => {
                                     rh.updateNonPState({
@@ -239,6 +341,6 @@ export default () => {
                 </> : ''
             }
 
-        </Card>
-    </div>
+        </Card >
+    </div >
 }
