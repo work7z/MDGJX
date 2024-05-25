@@ -174,6 +174,22 @@ export default () => {
                     })
                 }
             },
+            {
+                name: '中文字符替换修复',
+                onClick: () => {
+                    const jState = rh.getActualValueInState()
+                    const rawVal = jState.inputJSON
+                    if (_.isEmpty(rawVal)) {
+                        AlertUtils.alertErr('输入内容为空，请先提供JSON数据')
+                        return;
+                    }
+                    const newval = jsonmetautils.noChinese(rawVal)
+                    AlertUtils.alertSuccess('中文字符修复成功，已替换了若干中文字符')
+                    rh.updateNonPState({
+                        inputJSON: newval
+                    })
+                }
+            },
 
         ]
 
@@ -319,14 +335,14 @@ export default () => {
                         }>
                             <p className="font-mono ">{_.split(rh.npState?.errorReason.content, '\n').map(x => <div>{x}</div>)}</p>
                             <p className="mt-2 space-x-2">
-                                <Button size='compact-xs' color='green' onClick={() => {
+                                {/* <Button size='compact-xs' color='green' onClick={() => {
                                     rh.updateNonPState({
                                         errorReason: {
                                             title: '',
                                             content: ''
                                         }
                                     })
-                                }}>修复</Button>
+                                }}>修复</Button> */}
                                 <Button size='compact-xs' variant="outline" color='gray' onClick={() => {
                                     rh.updateNonPState({
                                         errorReason: {

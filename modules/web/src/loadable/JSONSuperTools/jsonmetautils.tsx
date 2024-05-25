@@ -1,6 +1,9 @@
 import JSON5 from 'json5'
 
 const jsonmetautils = {
+    noChinese: (input: string): string => {
+        return input.replace(/’/g, "'").replace(/‘/g, "'").replace(/“/g, '"').replace(/”/g, '"').replace(/—/g, '-').replace(/，/g, ',')
+    },
     unicodeToChinese: (input: string): string => {
         return input.replace(/\\u[\dA-F]{4}/gi, function (match) {
             return String.fromCharCode(parseInt(match.replace(/\\u/g, ''), 16));
