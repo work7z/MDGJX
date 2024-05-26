@@ -24,7 +24,7 @@ export default () => {
                 })
             )
         }} title="请先登录">
-            <LoadableWrapper fn={Fn_MyAccount} />
+            <LoadableWrapper id={'myacct'} fn={Fn_MyAccount} />
         </Modal>
     </>
 }

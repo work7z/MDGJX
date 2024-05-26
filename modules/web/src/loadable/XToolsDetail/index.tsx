@@ -22,7 +22,7 @@ const InnerXToolsDetail = () => {
         history.push(`/tools/${mainSubModuleItem.id}/${x}`)
     }
     if (findItem?.bodyFnIfHave) {
-        return <LoadableWrapper fn={findItem.bodyFnIfHave} key={'meandu' + findItem.id} />
+        return <LoadableWrapper id={'meandu' + findItem.id} fn={findItem.bodyFnIfHave} key={'meandu' + findItem.id} />
     }
     return <div key={mainSubModuleItem.id} className="flex flex-col" style={{
         height: `calc(${AppConstants.calcMainBodyHeight})`,

@@ -10,6 +10,7 @@ import {
     IconLanguage,
     IconApiApp,
     IconNetwork,
+    IconSuperscript,
 
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';

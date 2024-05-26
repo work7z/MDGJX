@@ -35,7 +35,7 @@ export function GeneralLayout(props) {
     let bodyJSX: JSX.Element = useMemo(() => {
         if (bodyFn) {
             return (
-                <LoadableWrapper fn={mainSubModuleItem.bodyFn} />
+                <LoadableWrapper id={`${mainModuleItem.id}-${mainSubModuleItem.id}`} fn={mainSubModuleItem.bodyFn} />
             )
         } else {
             return <div>当前页面正在重构中，敬请期待 </div>

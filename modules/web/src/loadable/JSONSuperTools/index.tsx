@@ -28,12 +28,12 @@ export default () => {
         //     icon: IconOutlet,
         //     loadFN: () => import('./JSONExport.tsx')
         // },
-        {
-            name: 'JSON差异对比',
-            id: 'diff',
-            icon: IconFileInfinity,
-            loadFN: () => import('./JSONDiff.tsx')
-        },
+        // {
+        //     name: 'JSON差异对比',
+        //     id: 'diff',
+        //     icon: IconFileInfinity,
+        //     loadFN: () => import('./JSONDiff.tsx')
+        // },
     ]
     const activeId = mdp.mainSubToolID || items[0].id
     const hVal = 'calc(100vh - 85px)'
@@ -61,7 +61,7 @@ export default () => {
                         return (
                             <Tabs.Panel value={x.id} className="flex-1 overflow-auto">
                                 <Switch>
-                                    <LoadableWrapper fn={x.loadFN} />
+                                    <LoadableWrapper id={`jsonsuper-${x.id}`} fn={x.loadFN} />
                                 </Switch>
                             </Tabs.Panel>
                         )
