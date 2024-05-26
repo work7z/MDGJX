@@ -26,6 +26,7 @@ export type SystemSubModuleItem = {
     href?: string,
     name: string,
     disableFooter?: boolean,
+    defaultSubToolId?: string,
     bodyFn?: LoadModuleType
 }
 export type SystemModuleItem = {
@@ -69,6 +70,7 @@ export const systemModulesList: SystemModuleItem[] = [
                     name: x.name,
                     id: x.id,
                     disableFooter: true,
+                    defaultSubToolId: x.defaultSubToolId,
                     bodyFn: () => import('./loadable/XToolsDetail/index.tsx')
                 } satisfies SystemSubModuleItem
             })

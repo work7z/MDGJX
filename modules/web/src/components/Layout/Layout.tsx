@@ -20,7 +20,7 @@ import {
     useParams,
     useRouteMatch,
 } from "react-router-dom";
-import React from 'react';
+import React, { useMemo } from 'react';
 import LoadingView from '../LoadingView';
 import { FooterCentered } from './Footer';
 import LoadableWrapper from '../LoadableWrapper';
@@ -31,14 +31,16 @@ export function GeneralLayout(props) {
     const darkOrNot = useDarkModeOrNot()
     const [opened, { toggle }] = useDisclosure();
     let appInfo = GetAppInfo()
-    let bodyJSX: JSX.Element = (
-        <div>当前页面正在重构中，敬请期待 </div>
-    );
-    if (mainSubModuleItem.bodyFn) {
-        bodyJSX = (
-            <LoadableWrapper fn={mainSubModuleItem.bodyFn} />
-        )
-    }
+    let bodyFn = mainSubModuleItem.bodyFn
+    let bodyJSX: JSX.Element = useMemo(() => {
+        if (bodyFn) {
+            return (
+                <LoadableWrapper fn={mainSubModuleItem.bodyFn} />
+            )
+        } else {
+            return <div>当前页面正在重构中，敬请期待 </div>
+        }
+    }, [bodyFn])
     return (
         <AppShell
             header={{ height: 60 }}

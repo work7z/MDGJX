@@ -98,7 +98,9 @@ export function DoubleNavbar(props: {
             <Link
                 className={classes.link}
                 data-active={mainModuleSubItemId === link || undefined}
-                to={`/${mainModuleItem.id}/${item.id}`}
+                to={
+
+                    `/${mainModuleItem.id}/${item.id}${item.defaultSubToolId ? `/${item.defaultSubToolId}` : ''}`}
                 key={link}
                 onClick={() => {
                     latestReadForEachModule[mainModuleItem.id] = item

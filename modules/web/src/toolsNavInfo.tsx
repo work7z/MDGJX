@@ -16,6 +16,7 @@ export type SubToolItem = {
 export type ToolNavInfoType = {
     name: string,
     id: string,
+    defaultSubToolId?: string,
     bodyFnIfHave?: LoadModuleType,
     subTools?: SubToolItem[]
 }
@@ -23,6 +24,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
     {
         name: 'JSON超级工具',
         id: 'json',
+        defaultSubToolId: 'convert',
         bodyFnIfHave: () => import('./loadable/JSONSuperTools/index.tsx'),
         subTools: []
     },
