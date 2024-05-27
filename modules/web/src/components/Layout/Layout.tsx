@@ -26,7 +26,8 @@ import { FooterCentered } from './Footer';
 import LoadableWrapper from '../LoadableWrapper';
 
 export let useWrapWithTitle = (title: string) => {
-    useDocumentTitle(`${title} - 秒达工具箱`)
+    useDocumentTitle(`${title}`)
+    // - 秒达工具箱
 }
 
 export function GeneralLayout(props) {
@@ -36,7 +37,7 @@ export function GeneralLayout(props) {
     const [opened, { toggle }] = useDisclosure();
     let appInfo = GetAppInfo()
     let bodyFn = mainSubModuleItem.bodyFn
-    useWrapWithTitle(mainSubModuleItem.name)
+    useWrapWithTitle(mainSubModuleItem.name + ` - ${mainModuleItem.label}`)
     let bodyJSX: JSX.Element = useMemo(() => {
         if (bodyFn) {
             return (

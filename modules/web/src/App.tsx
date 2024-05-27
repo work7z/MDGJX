@@ -11,7 +11,7 @@ import GetAppInfo from './AppInfo';
 
 
 export default function App() {
-  if (GetAppInfo().needDoBeiAn) {
+  if (GetAppInfo().needDoBeiAn && !GetAppInfo().isInMdgjxCOM) {
     useDocumentTitle(location.href.indexOf('laftools.cn') != -1 ? 'LafTools在线工具箱' : 'LafTools程序员工具箱')
   }
   return (

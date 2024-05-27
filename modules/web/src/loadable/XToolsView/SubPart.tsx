@@ -60,7 +60,7 @@ export default () => {
                 setIdx(e + "")
             }}>
                 <Tabs.List>
-                    <Tabs.Tab value={'all'} >全部({finalSubToolsArr.length})</Tabs.Tab>
+                    <Tabs.Tab value={'all'} >全部({allSubToolsArr.length})</Tabs.Tab>
                     {
                         toolsNavInfo.filter(x => !x.bodyFnIfHave).map(x => {
                             return (
