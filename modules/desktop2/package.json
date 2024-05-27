@@ -1,8 +1,8 @@
 {
-  "name": "laftools",
+  "name": "MDGJX",
   "version": "2016.2017.2018",
   "description": "The Next-Gen High Efficiency ToolBox for Developers",
-  "author": "LafTools team",
+  "author": "MDGJX team",
   "main": "src-dist/main.js",
   "scripts": {
     "dev": "sh ./pipeline/dev-electron.sh",
@@ -14,8 +14,8 @@
     "allowToChangeInstallationDirectory": true
   },
   "build": {
-    "appId": "com.work7z.laftools",
-    "productName": "LafTools",
+    "appId": "com.work7z.mdgjx",
+    "productName": "秒达工具箱",
     "asar": false,
     "files": [
       "src-dist",
