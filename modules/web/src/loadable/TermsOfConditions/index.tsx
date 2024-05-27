@@ -3,6 +3,7 @@ import { Container } from "@mantine/core"
 
 export default () => {
     let name = GetAppInfo().name
+    
     return <Container size="sm" >
 
 

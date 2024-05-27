@@ -24,11 +24,14 @@ export const asyncHandler = (fn: (req: Request, res: Response, next) => void) =>
 const env = NODE_ENV || 'development';
 const port = process.env.PORT || (env == 'development' ? 3050 : 39899);
 let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
-var httpProxy = require('http-proxy');
+import httpProxy from 'http-proxy';
 var proxyWS = httpProxy.createProxyServer({ target: DIRECT_PROXY_SERVER, ws: true }).on('error', e => {
   logger.error('proxyWS error' + e);
 });
 const launchTime = new Date();
+
+console.log('DIRECT_PROXY_SERVER: ' + DIRECT_PROXY_SERVER);
+
 export class App {
   public app: express.Application;
   public env: string;

@@ -36,7 +36,9 @@ export default () => {
       {
         systemModulesList.map(x => {
           return <>
-            <Route exact path={`/${x.id}/:subId`} component={HomePage} />
+            {x.children?.map(y => {
+              return <Route key={x.id + '-' + y.id} exact path={`/${x.id}/${y.id}`} component={HomePage} />
+            })}
           </>
         })
       }

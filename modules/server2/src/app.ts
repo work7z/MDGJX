@@ -43,7 +43,6 @@ export class App {
       await this.connectToDatabase();
       this.initializeMiddlewares();
       this.initializeRoutes(routes);
-      this.initializeSwagger();
       this.initializeErrorHandling();
 
       migrateDB();
@@ -94,21 +93,6 @@ export class App {
         req.next();
       }
     });
-  }
-
-  private initializeSwagger() {
-    // const options = {
-    //   swaggerDefinition: {
-    //     info: {
-    //       title: 'REST API',
-    //       version: '1.0.0',
-    //       description: 'Example docs',
-    //     },
-    //   },
-    //   apis: ['swagger.yaml'],
-    // };
-    // const specs = swaggerJSDoc(options);
-    // this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
   }
 
   private initializeErrorHandling() {

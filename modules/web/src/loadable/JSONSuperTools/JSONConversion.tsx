@@ -9,6 +9,8 @@ import { IconCopy, IconInfoCircle } from "@tabler/icons-react";
 import { useClipboard } from "@mantine/hooks";
 import FileExportUtils, { js_export_trigger } from "@/utils/FileExportUtils";
 import base64metautils from "./base64metautils";
+import { useHistory } from "react-router";
+import { useMDParams } from "@/containers/SideBar";
 
 export type JSONConversionState = {
     //
@@ -23,10 +25,12 @@ export type JSONConversionNPState = {
 }
 
 export default () => {
-    const rh = exportUtils.register('jsonconversion', {
+    const hist = useHistory()
+    const mdp = useMDParams()
+    const rh = exportUtils.register('jsonsuper', {
         getPersistedStateFn: () => {
             return {
-                //
+                anyFields: true,
             } satisfies JSONConversionState
         },
         getNotPersistedStateFn: () => {
@@ -174,11 +178,27 @@ export default () => {
                     })
                 }
             },
+            {
+                name: '中文字符替换修复',
+                onClick: () => {
+                    const jState = rh.getActualValueInState()
+                    const rawVal = jState.inputJSON
+                    if (_.isEmpty(rawVal)) {
+                        AlertUtils.alertErr('输入内容为空，请先提供JSON数据')
+                        return;
+                    }
+                    const newval = jsonmetautils.noChinese(rawVal)
+                    AlertUtils.alertSuccess('中文字符修复成功，已替换了若干中文字符')
+                    rh.updateNonPState({
+                        inputJSON: newval
+                    })
+                }
+            },
 
         ]
 
-    return <div className="w-full h-full flex flex-row">
-        <div className="w-full h-full overflow-auto flex-1">
+    return <div className="w-full h-full flex flex-col sm:flex-row">
+        <div className="w-full sm:h-full overflow-auto h-[500px] flex-1">
             <GenCodeMirror
                 language="javascript"
                 placeholder="请在此处输入JSON格式数据，在右侧面板轻击相关操作进行处理"
@@ -189,7 +209,7 @@ export default () => {
                 }}
                 directValue={rh.npState?.inputJSON} bigTextId={"thatisok"} />
         </div>
-        <Card withBorder className="border-r-0 border-t-0 border-b-0 w-[300px]">
+        <Card withBorder className="border-r-0 border-t-0 border-b-0 w-full sm:w-[300px]">
             <div className="mb-2">
                 <div className="mb-1">
                     <Title order={6}>快速操作</Title>
@@ -252,7 +272,7 @@ export default () => {
                         const str = `{
     "name": "秒达工具箱",
       "link": "https://mdgjx.com",
-  "description": "如果喜欢秒达工具箱，请收藏和分享本网址MDGJX.COM(首拼缩写)",
+  "description": "☘️ 如果喜欢秒达工具箱，请收藏和分享本网址MDGJX.COM(首拼缩写)",
   "count": 7800,
       "dates": [
       "2016-09","2018-06","2019-07","2020-01","2022-03","2024-05"
@@ -319,14 +339,14 @@ export default () => {
                         }>
                             <p className="font-mono ">{_.split(rh.npState?.errorReason.content, '\n').map(x => <div>{x}</div>)}</p>
                             <p className="mt-2 space-x-2">
-                                <Button size='compact-xs' color='green' onClick={() => {
+                                {/* <Button size='compact-xs' color='green' onClick={() => {
                                     rh.updateNonPState({
                                         errorReason: {
                                             title: '',
                                             content: ''
                                         }
                                     })
-                                }}>修复</Button>
+                                }}>修复</Button> */}
                                 <Button size='compact-xs' variant="outline" color='gray' onClick={() => {
                                     rh.updateNonPState({
                                         errorReason: {

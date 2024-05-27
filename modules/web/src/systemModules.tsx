@@ -10,6 +10,7 @@ import {
     IconLanguage,
     IconApiApp,
     IconNetwork,
+    IconSuperscript,
 
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
@@ -26,6 +27,7 @@ export type SystemSubModuleItem = {
     href?: string,
     name: string,
     disableFooter?: boolean,
+    defaultSubToolId?: string,
     bodyFn?: LoadModuleType
 }
 export type SystemModuleItem = {
@@ -69,6 +71,7 @@ export const systemModulesList: SystemModuleItem[] = [
                     name: x.name,
                     id: x.id,
                     disableFooter: true,
+                    defaultSubToolId: x.defaultSubToolId,
                     bodyFn: () => import('./loadable/XToolsDetail/index.tsx')
                 } satisfies SystemSubModuleItem
             })
@@ -132,7 +135,8 @@ export const systemModulesList: SystemModuleItem[] = [
         children: [
             {
                 name: 'IP/域名质量监测',
-                id: 'text',
+                id: 'ipstats',
+                disableFooter: true,
                 bodyFn: () => import('./loadable/IPDomainQualityStat/index.tsx')
             },
         ]

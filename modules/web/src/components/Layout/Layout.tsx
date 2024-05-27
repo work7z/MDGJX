@@ -1,5 +1,5 @@
 import { ActionIcon, Affix, AppShell, Box, Burger, Button, Group, HoverCard, LoadingOverlay, Transition, rem } from '@mantine/core';
-import { useDisclosure, useWindowScroll } from '@mantine/hooks';
+import { useDisclosure, useDocumentTitle, useWindowScroll } from '@mantine/hooks';
 import imgFile from '/src/favicon.png'
 import { ColorSchemeToggle, useDarkModeOrNot } from '../ColorSchemeToggle/ColorSchemeToggle';
 import { IconArrowUp, IconBrandGithub, IconBrandGithubFilled, IconSourceCode } from '@tabler/icons-react';
@@ -20,10 +20,15 @@ import {
     useParams,
     useRouteMatch,
 } from "react-router-dom";
-import React from 'react';
+import React, { useMemo } from 'react';
 import LoadingView from '../LoadingView';
 import { FooterCentered } from './Footer';
 import LoadableWrapper from '../LoadableWrapper';
+
+export let useWrapWithTitle = (title: string) => {
+    useDocumentTitle(`${title}`)
+    // - 秒达工具箱
+}
 
 export function GeneralLayout(props) {
     const mdParams = useMDParams()
@@ -31,14 +36,17 @@ export function GeneralLayout(props) {
     const darkOrNot = useDarkModeOrNot()
     const [opened, { toggle }] = useDisclosure();
     let appInfo = GetAppInfo()
-    let bodyJSX: JSX.Element = (
-        <div>当前页面正在重构中，敬请期待 </div>
-    );
-    if (mainSubModuleItem.bodyFn) {
-        bodyJSX = (
-            <LoadableWrapper fn={mainSubModuleItem.bodyFn} />
-        )
-    }
+    let bodyFn = mainSubModuleItem.bodyFn
+    useWrapWithTitle(mainSubModuleItem.name + ` - ${mainModuleItem.label}`)
+    let bodyJSX: JSX.Element = useMemo(() => {
+        if (bodyFn) {
+            return (
+                <LoadableWrapper id={`${mainModuleItem.id}-${mainSubModuleItem.id}`} fn={mainSubModuleItem.bodyFn} />
+            )
+        } else {
+            return <div>当前页面正在重构中，敬请期待 </div>
+        }
+    }, [bodyFn])
     return (
         <AppShell
             header={{ height: 60 }}
