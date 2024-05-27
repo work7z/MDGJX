@@ -23,7 +23,7 @@ const InnerXToolsDetail = () => {
     const setIdx = (x: string) => {
         history.push(`/tools/${mainSubModuleItem.id}/${x}`)
     }
-    useWrapWithTitle(`${subToolItem?.name} - ${mainSubModuleItem.name}`)
+    // useWrapWithTitle(`${subToolItem?.name} - ${mainSubModuleItem.name}`)
     if (findItem?.bodyFnIfHave) {
         return <LoadableWrapper id={'meandu' + findItem.id} fn={findItem.bodyFnIfHave} key={'meandu' + findItem.id} />
     }
