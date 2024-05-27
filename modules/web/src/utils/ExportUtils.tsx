@@ -109,7 +109,7 @@ function register<T, K>(name: string, options: ROptions<T, K>): RHelper<T, K> | 
     }
   }, [_.isEmpty(crtPState)])
   useEffect(() => {
-    const emptyOrNot = _.isEmpty(crtNPState)
+    const emptyOrNot = _.isNil(crtNPState)
     if (emptyOrNot) {
       FN_GetDispatch()(StateSlice.actions.updateSessionMapValue({
         keyname: name,

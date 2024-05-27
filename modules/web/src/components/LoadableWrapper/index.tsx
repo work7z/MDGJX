@@ -24,12 +24,12 @@ export default (props: { id: string, fn: any }) => {
         return <ExistCpt />
     }
 
-    const JohanComponent: any = React.lazy(props.fn);
+    // const JohanComponent: any = React.lazy(props.fn);
 
-    return <React.Suspense fallback={
-        // <LoadingView />
-        'loading...'
-    } >
-        <JohanComponent />
-    </ React.Suspense >
+    // return <React.Suspense fallback={
+    //     // <LoadingView />
+    //     'loading...'
+    // } >
+    //     <JohanComponent />
+    // </ React.Suspense >
 }

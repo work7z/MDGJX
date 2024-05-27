@@ -27,10 +27,10 @@ export type JSONConversionNPState = {
 export default () => {
     const hist = useHistory()
     const mdp = useMDParams()
-    const rh = exportUtils.register('jsonconversion', {
+    const rh = exportUtils.register('jsonsuper', {
         getPersistedStateFn: () => {
             return {
-                //
+                anyFields: true,
             } satisfies JSONConversionState
         },
         getNotPersistedStateFn: () => {
