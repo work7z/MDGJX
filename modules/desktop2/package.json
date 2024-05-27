@@ -38,18 +38,18 @@
     "electronVersion": "17.1.2"
   },
   "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "electron": "^17.1.2",
+    "electron-packager": "^14.2.0",
     "ts-node": "^10.0.0",
     "typescript": "~4.5.4",
-    "vite": "^5.0.12",
-    "electron": "^17.1.2",
-    "electron-packager": "^14.2.0"
+    "vite": "^5.0.12"
   },
   "dependencies": {
-    "winston": "^3.8.1",
-    "winston-daily-rotate-file": "^4.7.1",
-    "electron-squirrel-startup": "^1.0.0",
     "axios": "^0.26.0",
     "core-util-is": "^1.0.3",
+    "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^8.0.1",
     "inherits": "^2.0.4",
     "jquery": "^3.6.0",
@@ -60,9 +60,11 @@
     "number-to-chinese-words": "^1.0.20",
     "number-to-words": "^1.2.4",
     "pinyin-engine": "^1.2.2",
-    "tcp-port-used": "^1.0.2",
     "shelljs": "^0.8.5",
+    "tcp-port-used": "^1.0.2",
     "unzip": "^0.1.11",
-    "util-deprecate": "^1.0.2"
+    "util-deprecate": "^1.0.2",
+    "winston": "^3.8.1",
+    "winston-daily-rotate-file": "^4.7.1"
   }
 }
