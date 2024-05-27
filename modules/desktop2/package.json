@@ -1,6 +1,6 @@
 {
   "name": "秒达工具箱",
-  "version": "2016.2017.2018",
+  "version": "v5.3.28",
   "description": "The Next-Gen High Efficiency ToolBox for Developers",
   "author": "MDGJX team",
   "main": "src-dist/main.js",

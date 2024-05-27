@@ -30,21 +30,14 @@ export default (props: DMainPassProps) => {
 
     // and load the index.html of the app.
     if (process.env.NODE_ENV === "development") {
-      // mainWindow.loadURL("http://localhost:5173/");
-      mainWindow.loadFile(
-        path.join(rootFolder, "webapp", "dist", "index.html"),
-      );
+      mainWindow.loadURL("http://localhost:5173/");
     } else {
       mainWindow.loadFile(path.join(webappFolder, `index.html`));
     }
-    mainWindow.loadFile(path.join(rootFolder, "webapp", "dist", "index.html"));
 
     // Open the DevTools.
     if (process.env.NODE_ENV === "development") {
       mainWindow.webContents.openDevTools({ mode: "detach" });
-      mainWindow.webContents.executeJavaScript(
-        'document.getElementsByClassName("long-click-glyph")[0].click()',
-      );
     }
   };
 
