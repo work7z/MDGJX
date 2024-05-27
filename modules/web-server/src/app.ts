@@ -29,6 +29,9 @@ var proxyWS = httpProxy.createProxyServer({ target: DIRECT_PROXY_SERVER, ws: tru
   logger.error('proxyWS error' + e);
 });
 const launchTime = new Date();
+
+console.log('DIRECT_PROXY_SERVER: ' + DIRECT_PROXY_SERVER);
+
 export class App {
   public app: express.Application;
   public env: string;
