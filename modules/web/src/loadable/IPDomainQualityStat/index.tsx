@@ -100,7 +100,7 @@ export default () => {
                     <Tabs defaultValue="1" variant="pills" className="w-full">
                         <Tabs.List>
                             <Tabs.Tab value="1">时延监测</Tabs.Tab>
-                            <Tabs.Tab value="2">数据来源</Tabs.Tab>
+                            <Tabs.Tab value="2">定期更新</Tabs.Tab>
                             <Tabs.Tab value="3">监测设置</Tabs.Tab>
                         </Tabs.List>
                         <Card className=" ">

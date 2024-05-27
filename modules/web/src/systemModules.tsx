@@ -136,6 +136,7 @@ export const systemModulesList: SystemModuleItem[] = [
             {
                 name: 'IP/域名质量监测',
                 id: 'ipstats',
+                disableFooter: true,
                 bodyFn: () => import('./loadable/IPDomainQualityStat/index.tsx')
             },
         ]
