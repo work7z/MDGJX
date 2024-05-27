@@ -20,6 +20,7 @@ import SimpleSelect from "@/components/SimpleSelect";
 import FileChoosePanel from "@/components/FileChoosePanel";
 import { readStrFromFile } from "@/AppFn";
 import { js_export_trigger } from "@/utils/FileExportUtils";
+import { useWebsocket } from "@/utils/WsUtils";
 export type TLNPState = {
     fillFileMode: boolean
     sourceLang: string;
@@ -51,26 +52,8 @@ export default (props: {
     translateActionItems?: ActionItem[],
     handleTranslate: (val: TLNState, fn_translate) => Promise<string>
 }) => {
-
-
-
-    // websocket
-    const ws = useRef<WebSocket | null>(null);
+    useWebsocket("/ws/testwsnow")
     const [message, setMessage] = useState('');
-    //启动
-    useLayoutEffect(() => {
-        ws.current = new WebSocket('ws://localhost:5173/ws/test123');
-        ws.current.onmessage = e => {
-            setMessage(e.data);
-        };
-        setTimeout(() => {
-            ws.current?.send("hello, there")
-        })
-        return () => {
-            ws.current?.close();
-        };
-    }, [ws]);
-
     const isZTFT = props.id == 'tlnztft'
     const isJSONType = props.id == 'json' || props.id == 'json-comparison'
     const isMarkdownType = props.id == 'markdown'
