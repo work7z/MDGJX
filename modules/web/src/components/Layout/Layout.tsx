@@ -1,5 +1,5 @@
 import { ActionIcon, Affix, AppShell, Box, Burger, Button, Group, HoverCard, LoadingOverlay, Transition, rem } from '@mantine/core';
-import { useDisclosure, useWindowScroll } from '@mantine/hooks';
+import { useDisclosure, useDocumentTitle, useWindowScroll } from '@mantine/hooks';
 import imgFile from '/src/favicon.png'
 import { ColorSchemeToggle, useDarkModeOrNot } from '../ColorSchemeToggle/ColorSchemeToggle';
 import { IconArrowUp, IconBrandGithub, IconBrandGithubFilled, IconSourceCode } from '@tabler/icons-react';
@@ -25,6 +25,10 @@ import LoadingView from '../LoadingView';
 import { FooterCentered } from './Footer';
 import LoadableWrapper from '../LoadableWrapper';
 
+export let useWrapWithTitle = (title: string) => {
+    useDocumentTitle(`${title} - 秒达工具箱`)
+}
+
 export function GeneralLayout(props) {
     const mdParams = useMDParams()
     const { mainModuleItem, mainSubModuleItem } = mdParams
@@ -32,6 +36,7 @@ export function GeneralLayout(props) {
     const [opened, { toggle }] = useDisclosure();
     let appInfo = GetAppInfo()
     let bodyFn = mainSubModuleItem.bodyFn
+    useWrapWithTitle(mainSubModuleItem.name)
     let bodyJSX: JSX.Element = useMemo(() => {
         if (bodyFn) {
             return (
