@@ -7,7 +7,7 @@ set -e
 npm config set registry http://mirrors.cloud.tencent.com/npm/
 
 chmod +x $MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh
-crtVersion=`$MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh`
+crtVersion=v`$MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh`
 
 if [ -z $crtVersion ]; then
     echo "[E] crtVersion is required."
@@ -49,9 +49,10 @@ npx electron-builder -m
 npx electron-builder --arm64
 pkgDir=$PWD/pkg-dist
 [ -d $pkgDir ] || mkdir -p $pkgDir
-mv dist/*.exe $pkgDir/MDGJX-$crtVersion-windows-x64.exe
-mv dist/*.dmg $pkgDir/MDGJX-$crtVersion-macos-x64.dmg
-mv dist/*.AppImage $pkgDir/MDGJX-$crtVersion-linux-x64.AppImage
+mv dist/* $pkgDir
+cp dist/*.exe $pkgDir/MDGJX-$crtVersion-windows-x64.exe
+cp dist/*.dmg $pkgDir/MDGJX-$crtVersion-macos-x64.dmg
+cp dist/*.AppImage $pkgDir/MDGJX-$crtVersion-linux-x64.AppImage
 # rm -rf dist
 
 # echo "[I] building electron app for arm64..."
