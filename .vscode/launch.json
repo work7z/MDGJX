@@ -12,20 +12,6 @@
       "command": "npm run dev"
     },
     {
-      "name": "server2 主服务端",
-      "type": "node-terminal",
-      "request": "launch",
-      "cwd": "${workspaceFolder}/modules/server2",
-      "command": "npm run dev"
-    },
-    {
-      "name": "it-tools dev server",
-      "type": "node-terminal",
-      "request": "launch",
-      "cwd": "${workspaceFolder}/addons/it-tools",
-      "command": "npm run dev"
-    },
-    {
       "name": "web2-server 应用前端服务器",
       "type": "node-terminal",
       "cwd": "${workspaceFolder}/modules/web-server",
@@ -33,10 +19,17 @@
       "command": "npm run start"
     },
     {
-      "name": "Dev desktop2 桌面端",
+      "name": "desktop2 桌面端",
       "type": "node-terminal",
       "request": "launch",
       "cwd": "${workspaceFolder}/modules/desktop2",
+      "command": "npm run dev"
+    },
+    {
+      "name": "it-tools dev server",
+      "type": "node-terminal",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/addons/it-tools",
       "command": "npm run dev"
     },
   ]

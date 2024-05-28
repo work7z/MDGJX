@@ -49,10 +49,10 @@ npx electron-builder -m
 npx electron-builder --arm64
 pkgDir=$PWD/pkg-dist
 [ -d $pkgDir ] || mkdir -p $pkgDir
-mv dist/* $pkgDir
-cp dist/*.exe $pkgDir/MDGJX-$crtVersion-windows-x64.exe
-cp dist/*.dmg $pkgDir/MDGJX-$crtVersion-macos-x64.dmg
-cp dist/*.AppImage $pkgDir/MDGJX-$crtVersion-linux-x64.AppImage
+mv ./dist/* $pkgDir
+# cp dist/*.exe $pkgDir/MDGJX-$crtVersion-windows-x64.exe
+# cp dist/*.dmg $pkgDir/MDGJX-$crtVersion-macos-x64.dmg
+# cp dist/*.AppImage $pkgDir/MDGJX-$crtVersion-linux-x64.AppImage
 # rm -rf dist
 
 # echo "[I] building electron app for arm64..."
