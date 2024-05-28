@@ -1,3 +1,4 @@
+import { isDevEnv } from "@/env";
 import { useLayoutEffect, useRef, useState } from "react";
 export type WsMsgBody = {
     whoami: 'client' | 'server';
@@ -20,14 +21,15 @@ export const havingMsgBody = (status: number, msg: string, value: any): string =
 };
 export type WsStatus = "connecting" | "connected" | "closed" | "error" | "initial";
 export const useWebsocket = (url: string): [WebSocket | null, WsStatus] => {
-    return [null, 'initial']
     // websocket
     const ws = useRef<WebSocket | null>(null);
     const [status, setStatus] = useState<WsStatus>("initial");
     //启动
     useLayoutEffect(() => {
         // '/ws/testwsnow'
-        ws.current = new WebSocket(url);
+        ws.current = new WebSocket((
+            !isDevEnv() ? 'wss' : 'ws'
+        ) + `://${location.host}` + url);
         ws.current.onopen = () => {
             setTimeout(() => {
                 ws.current?.send(havingMsgBody(200, 'Open Connection', 'hey there'))
