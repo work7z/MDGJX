@@ -1,7 +1,7 @@
 #!/bin/bash
 
-chmod +x $MDGJX_ROOT/pipeline/tools/get-web2-version.sh
-crtVersion=`$MDGJX_ROOT/pipeline/tools/get-web2-version.sh`
+chmod +x $MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh
+crtVersion=`$MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh`
 
 if [ -z $crtVersion ]; then
     echo "[E] crtVersion is required."
@@ -36,12 +36,13 @@ cp -a ./src-dist dist/src-dist
 
 
 function build-electron(){
+    echo "[I] building electron app for $1 and $2..."
     type=$1
     name=$2
     npx electron-builder $type
+    npx electron-builder $type --arm64 
 }
 
-build-electron "-l" linux-x64
 build-electron "-w" windows-x64
+build-electron "-l" linux-x64
 build-electron "m" darwin-x64
-build-electron "--arm64" darwin-arm64

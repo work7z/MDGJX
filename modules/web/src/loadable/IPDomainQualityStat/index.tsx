@@ -12,6 +12,9 @@ import { useHistory } from "react-router";
 import { useMDParams } from "@/containers/SideBar";
 import { Link } from "react-router-dom";
 import { JSX_Pro_Only } from "@/AppJSX";
+import TimeDelayTable from "./TimeDelayTable";
+import AutoUpdated from "./AutoUpdated";
+import StatSetting from "./StatSetting";
 
 export default () => {
     const rh = exportUtils.register('ipdomainqualitystat', {
@@ -93,31 +96,26 @@ export default () => {
                 directValue={rh.npState?.inputJSON} bigTextId={"thatisok"} /> */}
             <div className="flex flex-col space-y-2">
                 <div>
-                    <Alert p={5} variant="light" color="green" title="当前服务正常运行中" icon={<IconClock24 />}>
+                    <Alert p={5} variant="light" color="green" title="当前服务正常运行中(本页面仍在开发中)" icon={<IconClock24 />}>
                     </Alert>
                 </div>
                 <div >
-                    <Tabs defaultValue="1" variant="pills" className="w-full">
+                    <Tabs defaultValue="main" variant="pills" className="w-full">
                         <Tabs.List>
-                            <Tabs.Tab value="1">时延监测</Tabs.Tab>
-                            <Tabs.Tab value="2">定期更新</Tabs.Tab>
-                            <Tabs.Tab value="3">监测设置</Tabs.Tab>
+                            <Tabs.Tab value="main">时延监测</Tabs.Tab>
+                            <Tabs.Tab value="autoupdated">定期更新</Tabs.Tab>
+                            <Tabs.Tab value="optlist">操作列表</Tabs.Tab>
+                            <Tabs.Tab value="stat">监测设置</Tabs.Tab>
                         </Tabs.List>
                         <Card className=" ">
-                            <Tabs.Panel value="1">
-                                <div className="flex flex-col space-y-2">
-                                    <div>时延监测表</div>
-                                </div>
+                            <Tabs.Panel value="main">
+                                <TimeDelayTable />
                             </Tabs.Panel>
-                            <Tabs.Panel value="2">
-                                <div className="flex flex-col space-y-2">
-                                    <div>来源与设置</div>
-                                </div>
+                            <Tabs.Panel value="autoupdated">
+                                <AutoUpdated />
                             </Tabs.Panel>
-                            <Tabs.Panel value="3">
-                                <div className="flex flex-col space-y-2">
-                                    <div>来源与设置</div>
-                                </div>
+                            <Tabs.Panel value="stat">
+                                <StatSetting />
                             </Tabs.Panel>
                         </Card>
                     </Tabs>
@@ -199,42 +197,16 @@ export default () => {
 185.199.108.133               avatars5.mdgjx.com
 185.199.111.133               camo.mdgjx.com
 140.82.114.22                 central.mdgjx.com
-185.199.111.133               cloud.mdgjx.com
-140.82.114.10                 codeload.mdgjx.com
-140.82.114.21                 collector.mdgjx.com
-185.199.111.133               desktop.mdgjx.com
-185.199.108.133               favicons.mdgjx.com
-140.82.114.3                  gist.mdgjx.com
-52.217.165.41                 mdgjx-cloud.s3.amazonaws.com
-54.231.136.9                  mdgjx-com.s3.amazonaws.com
-52.217.232.113                mdgjx-production-release-asset-2e65be.s3.amazonaws.com
-52.217.18.52                  mdgjx-production-repository-file-5c1aeb.s3.amazonaws.com
-16.182.71.209                 mdgjx-production-user-asset-6210df.s3.amazonaws.com
-192.0.66.2                    mdgjx.blog
-140.82.112.3                  mdgjx.com
-140.82.112.17                 mdgjx.community
-185.199.109.154               mdgjx.mdgjxassets.com
-151.101.193.194               mdgjx.global.ssl.fastly.net
-185.199.109.153               mdgjx.io
-185.199.111.133               mdgjx.map.fastly.net
-185.199.109.153               mdgjxstatus.com
-140.82.114.25                 live.mdgjx.com
-185.199.108.133               media.mdgjx.com
-185.199.111.133               objects.mdgjx.com
-13.107.42.16                  pipelines.actions.mdgjx.com
-185.199.111.133               raw.mdgjx.com
-185.199.111.133               user-images.mdgjx.com
-13.107.213.51                 vscode.dev
-140.82.112.22                 education.mdgjx.com`
+185.199.111.133               cloud.mdgjx.com`
                         rh.updateNonPState({
                             inputJSON: str
                         })
                     }} className="mr-1 mt-1">使用测试示例</Button>
-                    <Button className="mr-1 mt-1" size='xs' color='gray' onClick={() => {
+                    <Button className="mr-1 mt-1" size='xs' color='cyan' onClick={() => {
                         rh.updateNonPState({
                             inputJSON: ''
                         })
-                    }} variant="outline" >清空时延值</Button>
+                    }} >更新来源</Button>
                     <Button className="mr-1 mt-1" size='xs' color='green' onClick={() => {
                         clipboard.copy(rh.npState?.inputJSON)
                         AlertUtils.alertSuccess('JSON数据已复制到剪贴板')

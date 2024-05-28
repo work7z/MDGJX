@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow,screen } from "electron";
 import path from "path";
 import { DMainPassProps } from "./d-types";
 
@@ -14,11 +14,14 @@ export default (props: DMainPassProps) => {
     let rootFolder = path.join(__dirname, "..", "..");
     let iconImg = path.join(rootFolder, "assets", "images", "icon.png");
     let webappFolder = path.join(rootFolder, "webapp");
-
+    
+    const display  = screen.getPrimaryDisplay()
+    const appScreenWidth = display.bounds.width
+    const appScreenHeight = display.bounds.height
     // Create the browser window.
     const mainWindow = new BrowserWindow({
-      width: 800,
-      height: 600,
+      width: appScreenWidth,
+      height: appScreenHeight,
       autoHideMenuBar: true,
       icon: iconImg,
       webPreferences: {
@@ -30,21 +33,14 @@ export default (props: DMainPassProps) => {
 
     // and load the index.html of the app.
     if (process.env.NODE_ENV === "development") {
-      // mainWindow.loadURL("http://localhost:5173/");
-      mainWindow.loadFile(
-        path.join(rootFolder, "webapp", "dist", "index.html"),
-      );
+      mainWindow.loadURL("http://localhost:5173/");
     } else {
       mainWindow.loadFile(path.join(webappFolder, `index.html`));
     }
-    mainWindow.loadFile(path.join(rootFolder, "webapp", "dist", "index.html"));
 
     // Open the DevTools.
     if (process.env.NODE_ENV === "development") {
       mainWindow.webContents.openDevTools({ mode: "detach" });
-      mainWindow.webContents.executeJavaScript(
-        'document.getElementsByClassName("long-click-glyph")[0].click()',
-      );
     }
   };
 

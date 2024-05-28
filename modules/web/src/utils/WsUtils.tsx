@@ -1,3 +1,4 @@
+import { isDevEnv } from "@/env";
 import { useLayoutEffect, useRef, useState } from "react";
 export type WsMsgBody = {
     whoami: 'client' | 'server';
@@ -26,7 +27,9 @@ export const useWebsocket = (url: string): [WebSocket | null, WsStatus] => {
     //启动
     useLayoutEffect(() => {
         // '/ws/testwsnow'
-        ws.current = new WebSocket(url);
+        ws.current = new WebSocket((
+            !isDevEnv() ? 'wss' : 'ws'
+        ) + `://${location.host}` + url);
         ws.current.onopen = () => {
             setTimeout(() => {
                 ws.current?.send(havingMsgBody(200, 'Open Connection', 'hey there'))

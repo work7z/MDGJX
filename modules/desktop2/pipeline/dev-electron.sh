@@ -7,7 +7,7 @@ if [ -z $crtVersion ]; then
     echo "[E] crtVersion is required."
     exit 1
 fi
-
+export NODE_ENV=development
 echo "Current version: $crtVersion"
 
 cd $(dirname $0)/..

@@ -1,7 +1,8 @@
 import { isDevEnv, isTestEnv } from './env';
 
 // for test env, it's still using the local server
-export const API_SERVER_URL = isTestEnv() ? 'https://api.laftools.cn' : isDevEnv() ? 'http://127.0.0.1:2016' : 'https://api.laftools.cn';
+export const API_SERVER_URL =
+  process.env.TEST_API_SERVER_URL || isTestEnv() ? 'https://api.laftools.cn' : isDevEnv() ? 'https://api.laftools.cn' : 'https://api.laftools.cn';
 
 export type APITypeInfo = {
   lang: string;
