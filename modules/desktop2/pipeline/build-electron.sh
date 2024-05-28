@@ -43,7 +43,9 @@ cp -a ./src-dist dist/src-dist
 
 echo "[I] building electron app for x64..."
 
-npx electron-builder -wlm
+npx electron-builder -w
+npx electron-builder -l
+npx electron-builder -m
 pkgDir=$PWD/pkg-dist
 [ -d $pkgDir ] || mkdir -p $pkgDir
 mv dist/*.exe $pkgDir/MDGJX-$crtVersion-windows-x64.exe
@@ -52,7 +54,9 @@ mv dist/*.AppImage $pkgDir/MDGJX-$crtVersion-linux-x64.AppImage
 rm -rf dist
 
 echo "[I] building electron app for arm64..."
-npx electron-builder -wlm --arm64
+npx electron-builder -w --arm64
+npx electron-builder -l --arm64
+npx electron-builder -m --arm64
 pkgDir=$PWD/pkg-dist
 [ -d $pkgDir ] || mkdir -p $pkgDir
 mv dist/*.exe $pkgDir/MDGJX-$crtVersion-windows-arm64.exe
