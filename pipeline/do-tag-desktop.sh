@@ -7,7 +7,7 @@ if [ $? -eq 0 ]; then
 fi
 
 set -e
-version=`jq '.version' $MDGJX_ROOT/modules/desktop2/package.json -r` 
+version=desktop2-`jq '.version' $MDGJX_ROOT/modules/desktop2/package.json -r` 
 tagName=$version
 git tag $tagName
 git push origin $tagName
