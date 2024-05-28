@@ -43,6 +43,7 @@
     "swagger-ui-express": "^4.5.0",
     "tencentcloud-sdk-nodejs-tmt": "^4.0.853",
     "typedi": "^0.10.0",
+    "wechatpay-node-v3": "^2.1.8",
     "winston": "^3.8.1",
     "winston-daily-rotate-file": "^4.7.1"
   },
