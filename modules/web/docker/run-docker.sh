@@ -30,6 +30,15 @@ port=$listenPort
 killCP $containerName $port
 runCP $containerName $port
 
-timeout 60 docker logs -f $containerName
-
+while true; do
+    curl 127.0.0.1:$port -I | grep "200 OK"
+    if [ $? -ne 0 ]; then
+        echo "Failed to start container $containerName, still waiting"
+        sleep 3
+        continue
+    else
+        echo "Container $containerName is running"
+        break
+    fi
+done
 exit 0
