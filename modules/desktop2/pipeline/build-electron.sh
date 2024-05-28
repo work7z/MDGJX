@@ -39,9 +39,9 @@ function build-electron(){
     type=$1
     name=$2
     npx electron-builder $type
+    npx electron-builder $type --arm64 
 }
 
-build-electron "-l" linux-x64
 build-electron "-w" windows-x64
+build-electron "-l" linux-x64
 build-electron "m" darwin-x64
-build-electron "--arm64" darwin-arm64

@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow,screen } from "electron";
 import path from "path";
 import { DMainPassProps } from "./d-types";
 
@@ -14,11 +14,14 @@ export default (props: DMainPassProps) => {
     let rootFolder = path.join(__dirname, "..", "..");
     let iconImg = path.join(rootFolder, "assets", "images", "icon.png");
     let webappFolder = path.join(rootFolder, "webapp");
-
+    
+    const display  = screen.getPrimaryDisplay()
+    const appScreenWidth = display.bounds.width
+    const appScreenHeight = display.bounds.height
     // Create the browser window.
     const mainWindow = new BrowserWindow({
-      width: 800,
-      height: 600,
+      width: appScreenWidth,
+      height: appScreenHeight,
       autoHideMenuBar: true,
       icon: iconImg,
       webPreferences: {
