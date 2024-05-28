@@ -20,6 +20,7 @@ export const havingMsgBody = (status: number, msg: string, value: any): string =
 };
 export type WsStatus = "connecting" | "connected" | "closed" | "error" | "initial";
 export const useWebsocket = (url: string): [WebSocket | null, WsStatus] => {
+    return [null, 'initial']
     // websocket
     const ws = useRef<WebSocket | null>(null);
     const [status, setStatus] = useState<WsStatus>("initial");
