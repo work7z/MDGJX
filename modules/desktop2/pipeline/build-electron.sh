@@ -47,6 +47,8 @@ npx electron-builder -w
 npx electron-builder -l
 npx electron-builder -m
 npx electron-builder --arm64
+npx electron-builder --arm64 -l
+npx electron-builder --arm64 -w
 pkgDir=$PWD/pkg-dist
 [ -d $pkgDir ] || mkdir -p $pkgDir
 mv ./dist/* $pkgDir

@@ -1,6 +1,6 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.37",
+  "version": "v5.3.38",
   "description": "The Next-Gen High Efficiency ToolBox for Developers",
   "author": "MDGJX team",
   "main": "src-dist/main.js",
@@ -16,7 +16,7 @@
   "build": {
     "appId": "com.work7z.mdgjx",
     "productName": "MDGJX",
-    "artifactName": "MDGJX-app-v${version}-${os}-${arch}.${ext}",
+    "artifactName": "MDGJX-desktop-v${version}-${os}-${arch}.${ext}",
     "asar": false,
     "files": [
       "src-dist",
