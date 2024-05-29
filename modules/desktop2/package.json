@@ -1,6 +1,6 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.38",
+  "version": "v5.3.39",
   "description": "The Next-Gen High Efficiency ToolBox for Developers",
   "author": "MDGJX team",
   "main": "src-dist/main.js",
