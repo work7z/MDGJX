@@ -227,7 +227,7 @@ import { AppInfoClz } from \"./types\"
         (
             cd $platformDistDir
             fileName=
-            subDirName=LafTools-${crtVersion}-$platformName-minimal
+            subDirName=MDGJX-${crtVersion}-$platformName-minimal
             osPkgDir=$MDGJX_ROOT/dist/os-pkg
             if [ ! -d $osPkgDir ]; then
                 mkdir -p $osPkgDir
@@ -244,10 +244,10 @@ import { AppInfoClz } from \"./types\"
             cp -a * $subDir
             cd $osPkgDir
             if [ $packageType == "zip" ]; then
-                fileName=LafTools-${crtVersion}-$platformName-minimal.zip
+                fileName=MDGJX-${crtVersion}-$platformName-minimal.zip
                 zip -q -r $fileName ./$subDirName &> /dev/null
             else
-                fileName=LafTools-${crtVersion}-$platformName-minimal.tar.gz
+                fileName=MDGJX-${crtVersion}-$platformName-minimal.tar.gz
                 tar -zcf $fileName ./$subDirName &> /dev/null
             fi
             rm -rf $subDir
