@@ -30,7 +30,13 @@ port=$listenPort
 killCP $containerName $port
 runCP $containerName $port
 
+tryCount=0
 while true; do
+    tryCount=$((tryCount+1))
+    if [ $tryCount -gt 10 ]; then
+        echo "Failed to start container $containerName"
+        exit 1
+    fi
     curl 127.0.0.1:$port -I | grep "200 OK"
     if [ $? -ne 0 ]; then
         echo "Failed to start container $containerName, still waiting"

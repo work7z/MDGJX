@@ -1,8 +1,8 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.39",
+  "version": "v5.3.40",
   "description": "The Next-Gen High Efficiency ToolBox for Developers",
-  "author": "MDGJX team",
+  "author": "MDGJX Team <work7z@outlook.com>",
   "main": "src-dist/main.js",
   "scripts": {
     "dev": "sh ./pipeline/dev-electron.sh",
@@ -18,6 +18,9 @@
     "productName": "MDGJX",
     "artifactName": "MDGJX-desktop-v${version}-${os}-${arch}.${ext}",
     "asar": false,
+    "linux": {
+      "target": ["AppImage","deb","rpm","tar.gz"]
+    },
     "files": [
       "src-dist",
       "package.json",

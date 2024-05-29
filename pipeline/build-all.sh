@@ -180,9 +180,7 @@ import { AppInfoClz } from \"./types\"
         (
             echo "[I] building web-server"
             cd $MDGJX_ROOT/modules/web-server
-            [ -d node_modules ] && rm -rf node_modules
             rm -rf dist
-            [ ! -d node_modules ] && npm i --omit=dev --force  
         )
         chmod +x $MDGJX_ROOT/pipeline/build-fe.sh
         $MDGJX_ROOT/pipeline/build-fe.sh

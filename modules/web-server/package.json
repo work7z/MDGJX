@@ -21,6 +21,7 @@
     "morgan": "^1.10.0",
     "query-string": "^9.0.0",
     "reflect-metadata": "^0.2.2",
+    "husky": "^8.0.1",
     "winston": "^3.8.1",
     "winston-daily-rotate-file": "^4.7.1"
   },
@@ -51,7 +52,6 @@
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.1",
     "jest": "^28.1.1",
     "lint-staged": "^13.0.3",
     "node-config": "^0.0.2",
