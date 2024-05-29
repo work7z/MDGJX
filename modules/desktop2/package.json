@@ -1,6 +1,6 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.41",
+  "version": "v5.3.42",
   "description": "The Next-Gen High Efficiency ToolBox for Developers",
   "author": "MDGJX Team <work7z@outlook.com>",
   
@@ -21,7 +21,7 @@
     "artifactName": "MDGJX-desktop-v${version}-${os}-${arch}.${ext}",
     "asar": false,
     "linux": {
-      "target": ["AppImage","deb","rpm","tar.gz"]
+      "target": ["AppImage","deb","tar.gz"]
     },
     "win":{
       "target": ["nsis","portable","msi"]

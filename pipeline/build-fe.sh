@@ -19,10 +19,13 @@ echo "[I] building fe"
 
     rm -rf dist
 
+    mkdir -p dist
+
     echo "[I] copying required node_modules"    
     [ -d node_modules ] && rm -rf node_modules
     [ ! -d node_modules ] && npm i --omit=dev --force  
-    cp -a ./node_modules ./dist
+
+    cp -a ./node_modules/ ./dist
 
     echo "[I] building web-server"
     [ -d node_modules ] && rm -rf node_modules
