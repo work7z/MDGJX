@@ -4,7 +4,7 @@ set -e
 # note that the following environment variables are required: (in .npmrc)
 # ELECTRON_MIRROR=https://registry.npmmirror.com/electron/
 # ELECTRON_BUILDER_BINARIES_MIRROR=http://registry.npmmirror.com/electron-builder-binaries/
-npm config set registry http://mirrors.cloud.tencent.com/npm/
+# npm config set registry http://mirrors.cloud.tencent.com/npm/
 
 chmod +x $MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh
 crtVersion=v`$MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh`
