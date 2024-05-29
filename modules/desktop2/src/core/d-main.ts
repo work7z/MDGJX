@@ -33,7 +33,8 @@ export default (props: DMainPassProps) => {
 
     // and load the index.html of the app.
     if (process.env.NODE_ENV === "development") {
-      mainWindow.loadURL("http://localhost:5173/");
+      // mainWindow.loadURL("http://localhost:5173/");
+      mainWindow.loadFile(path.join(webappFolder, `index.html`));
     } else {
       mainWindow.loadFile(path.join(webappFolder, `index.html`));
     }
