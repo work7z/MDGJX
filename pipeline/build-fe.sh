@@ -25,7 +25,8 @@ echo "[I] building fe"
     [ -d node_modules ] && rm -rf node_modules
     [ ! -d node_modules ] && npm i --omit=dev --force  
 
-    cp -a ./node_modules/ ./dist
+    mkdir -p ./dist
+    cp -a ./node_modules/ ./dist/node_modules
 
     echo "[I] building web-server"
     [ -d node_modules ] && rm -rf node_modules
