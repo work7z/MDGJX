@@ -41,14 +41,14 @@ export type RedirectLinkItem = {
     url: string
 }
 export const redirectLinks: RedirectLinkItem[] = [
-    {
-        path: '/base64',
-        url: '/tools/chat?text=base64'
-    },
-    {
-        path: '/json',
-        url: '/tools/chat?text=json'
-    },
+    // {
+    //     path: '/base64',
+    //     url: '/tools/chat?text=base64'
+    // },
+    // {
+    //     path: '/json',
+    //     url: '/tools/chat?text=json'
+    // },
 ]
 
 export const Fn_MyAccount = () => import('./loadable/MyAccount/index.tsx')

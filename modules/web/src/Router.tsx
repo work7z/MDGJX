@@ -29,24 +29,26 @@ export default () => {
       )
     }
   }, [userInfoMeta.status])
-
+  const routerArr:JSX.Element[] = []
+  for(let x of systemModulesList){
+    x.children?.map((y, yi) => {
+      const optPath = `/${x.id}/${y.id}`
+      console.log('optPath', optPath)
+      routerArr.push(<Route key={yi + x.id + y.id+'2'} exact path={`/${x.id}`} component={HomePage} />)
+      routerArr.push(<Route key={yi + x.id + y.id} exact path={optPath} component={HomePage} />)
+      routerArr.push(<Route key={yi + x.id + y.id} exact path={optPath+'/:extId'} component={HomePage} />)
+    })
+  }
   return <Router basename={basename} >
+    <div>main</div>
     <Switch>
-      <Route exact path={""} component={HomePage} />
-      {
-        systemModulesList.map(x => {
-          return <>
-            {x.children?.map(y => {
-              return <Route key={x.id + '-' + y.id} exact path={`/${x.id}/${y.id}`} component={HomePage} />
-            })}
-          </>
-        })
-      }
       <Route exact path={"/not-found"} component={NotFoundPage} />
+      <Route exact path={"/"} component={HomePage} />
+      {routerArr}
       {
         redirectLinks.map(x => {
           return (
-            <Redirect exact path={x.path} to={x.url} />
+            <Redirect exact key={x.path} path={x.path} to={x.url} />
           )
         })
       }

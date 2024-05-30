@@ -100,7 +100,9 @@ export let verifyResponse = (response: AsyncCreateResponse<any> | undefined): bo
   }
 }
 
-
+export const msg_showNetworkWithDebounce  = _.throttle(()=>{
+  AlertUtils.alertErr('抱歉，网络不稳定，请稍后重试')
+},10*1000)
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
@@ -118,7 +120,13 @@ export const apiSlice = createApi({
     },
     validateStatus: (response, result: AsyncCreateResponse<any> | null) => {
       let errorHandler = () => {
-        AlertUtils.alertErr(result && result.message ? result.message : result && result.error ? result.error : "抱歉，网络不稳定，请稍后重试")
+        const finalResult: string | null = result && result.message ? result.message : result && result.error ? result.error :null
+        if(!finalResult){
+          // "抱歉，网络不稳定，请稍后重试"
+          msg_showNetworkWithDebounce()
+        }else{
+          AlertUtils.alertErr(finalResult)
+        }
       }
       if (result) {
         let error = result.error;
