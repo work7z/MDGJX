@@ -180,9 +180,7 @@ import { AppInfoClz } from \"./types\"
         (
             echo "[I] building web-server"
             cd $MDGJX_ROOT/modules/web-server
-            [ -d node_modules ] && rm -rf node_modules
             rm -rf dist
-            [ ! -d node_modules ] && npm i -S -D --force  
         )
         chmod +x $MDGJX_ROOT/pipeline/build-fe.sh
         $MDGJX_ROOT/pipeline/build-fe.sh
@@ -227,7 +225,7 @@ import { AppInfoClz } from \"./types\"
         (
             cd $platformDistDir
             fileName=
-            subDirName=LafTools-${crtVersion}-$platformName-minimal
+            subDirName=MDGJX-${crtVersion}-$platformName-minimal
             osPkgDir=$MDGJX_ROOT/dist/os-pkg
             if [ ! -d $osPkgDir ]; then
                 mkdir -p $osPkgDir
@@ -244,10 +242,10 @@ import { AppInfoClz } from \"./types\"
             cp -a * $subDir
             cd $osPkgDir
             if [ $packageType == "zip" ]; then
-                fileName=LafTools-${crtVersion}-$platformName-minimal.zip
+                fileName=MDGJX-${crtVersion}-$platformName-minimal.zip
                 zip -q -r $fileName ./$subDirName &> /dev/null
             else
-                fileName=LafTools-${crtVersion}-$platformName-minimal.tar.gz
+                fileName=MDGJX-${crtVersion}-$platformName-minimal.tar.gz
                 tar -zcf $fileName ./$subDirName &> /dev/null
             fi
             rm -rf $subDir

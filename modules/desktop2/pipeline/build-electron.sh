@@ -1,7 +1,13 @@
 #!/bin/bash
 
+set -e
+# note that the following environment variables are required: (in .npmrc)
+# ELECTRON_MIRROR=https://registry.npmmirror.com/electron/
+# ELECTRON_BUILDER_BINARIES_MIRROR=http://registry.npmmirror.com/electron-builder-binaries/
+# npm config set registry http://mirrors.cloud.tencent.com/npm/
+
 chmod +x $MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh
-crtVersion=`$MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh`
+crtVersion=v`$MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh`
 
 if [ -z $crtVersion ]; then
     echo "[E] crtVersion is required."
@@ -35,14 +41,30 @@ mkdir -p ./dist
 cp -a ./src-dist dist/src-dist
 
 
-function build-electron(){
-    echo "[I] building electron app for $1 and $2..."
-    type=$1
-    name=$2
-    npx electron-builder $type
-    npx electron-builder $type --arm64 
-}
+echo "[I] building electron app for x64..."
 
-build-electron "-w" windows-x64
-build-electron "-l" linux-x64
-build-electron "m" darwin-x64
+npx electron-builder -w
+npx electron-builder -l
+npx electron-builder -m
+npx electron-builder --arm64
+npx electron-builder --arm64 -l
+npx electron-builder --arm64 -w
+pkgDir=$PWD/pkg-dist
+[ -d $pkgDir ] || mkdir -p $pkgDir
+mv ./dist/* $pkgDir
+# cp dist/*.exe $pkgDir/MDGJX-$crtVersion-windows-x64.exe
+# cp dist/*.dmg $pkgDir/MDGJX-$crtVersion-macos-x64.dmg
+# cp dist/*.AppImage $pkgDir/MDGJX-$crtVersion-linux-x64.AppImage
+# rm -rf dist
+
+# echo "[I] building electron app for arm64..."
+# npx electron-builder -w --arm64
+# npx electron-builder -l --arm64
+# npx electron-builder -m --arm64
+# pkgDir=$PWD/pkg-dist
+# [ -d $pkgDir ] || mkdir -p $pkgDir
+# mv dist/*.exe $pkgDir/MDGJX-$crtVersion-windows-arm64.exe
+# mv dist/*.dmg $pkgDir/MDGJX-$crtVersion-macos-arm64.dmg
+# mv dist/*.AppImage $pkgDir/MDGJX-$crtVersion-linux-arm64.AppImage
+
+echo "[I] done"

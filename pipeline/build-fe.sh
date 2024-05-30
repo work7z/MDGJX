@@ -16,9 +16,21 @@ echo "[I] building fe"
 (
     echo "[I] building web-server"
     cd $MDGJX_ROOT/modules/web-server
-    rm -rf dist
+
+    [ -d dist ] && rm -rf dist
+    [ ! -d dist ] && mkdir -p dist
+
+    echo "[I] copying required node_modules"    
+    [ -d node_modules ] && rm -rf node_modules
+    [ ! -d node_modules ] && npm i --omit=dev --force  
+
+    cp -a ./node_modules/ ./dist/
+
+    echo "[I] building web-server"
+    [ -d node_modules ] && rm -rf node_modules
+    [ ! -d node_modules ] && npm i -S -D --force  
+
     npm run build
-    cp -a ./node_modules ./dist
     cp -a $MDGJX_ROOT/modules/web/dist ./dist/spa
     cp -a $MDGJX_ROOT/addons/it-tools/dist ./dist/xtools
     [ -d $MDGJX_ROOT/dist/web ] && rm -rf $MDGJX_ROOT/dist/web

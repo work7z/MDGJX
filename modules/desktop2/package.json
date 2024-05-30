@@ -1,8 +1,10 @@
 {
-  "name": "秒达工具箱",
-  "version": "desktop2-v5.3.28",
+  "name": "MDGJX",
+  "version": "v5.3.45",
   "description": "The Next-Gen High Efficiency ToolBox for Developers",
-  "author": "MDGJX team",
+  "author": "MDGJX Team <work7z@outlook.com>",
+  
+"homepage": "https://mdgjx.com",
   "main": "src-dist/main.js",
   "scripts": {
     "dev": "sh ./pipeline/dev-electron.sh",
@@ -15,8 +17,15 @@
   },
   "build": {
     "appId": "com.work7z.mdgjx",
-    "productName": "秒达工具箱",
+    "productName": "MDGJX",
+    "artifactName": "MDGJX-desktop-v${version}-${os}-${arch}.${ext}",
     "asar": false,
+    "linux": {
+      "target": ["AppImage","deb","tar.gz"]
+    },
+    "win":{
+      "target": ["nsis","portable"]
+    },
     "files": [
       "src-dist",
       "package.json",
@@ -41,6 +50,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "electron": "^17.1.2",
+    "electron-builder": "^24.13.3",
     "electron-packager": "^14.2.0",
     "ts-node": "^10.0.0",
     "typescript": "~4.5.4",
