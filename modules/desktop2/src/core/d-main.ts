@@ -3,6 +3,7 @@ import path from "path";
 import { DMainPassProps } from "./d-types";
 import { isDevEnv } from "./web2share-copy/env";
 import { cfg_getAppClientEntryPage } from "./d-config";
+import { APP_WIN_REF } from "./d-winref";
 
 export default (props: DMainPassProps) => {
   let { MAIN_WINDOW_VITE_DEV_SERVER_URL } = props;
@@ -35,6 +36,7 @@ export default (props: DMainPassProps) => {
         preload: path.join(__dirname, "d-preload.js"),
       },
     });
+    APP_WIN_REF.setupWin=mainWindow
 
     // and load the index.html of the app.
     // if (isDevEnv()) {
