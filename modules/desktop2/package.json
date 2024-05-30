@@ -1,6 +1,6 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.48",
+  "version": "v5.3.49",
   "description": "The Next-Gen High Efficiency ToolBox - all in one, right now",
   "author": "MDGJX Team <work7z@outlook.com>",   
   "homepage": "https://mdgjx.com",
@@ -22,7 +22,7 @@
       "target": ["nsis","zip"]
     },
     "files": [
-      "pkg-dist",
+      "minimal-dist",
       "src-dist",
       "package.json",
       "assets",

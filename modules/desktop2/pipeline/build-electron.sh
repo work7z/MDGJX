@@ -47,11 +47,11 @@ copyMinimal(){
     fileOs=$1
     fileExt=$2
     echo "[I] deleting pkg-dist..."
-    pkgDistDir=./pkg-dist
-    if [ -d $pkgDistDir ]; then
-        rm -rf $pkgDistDir
+    minimalDistDir=./minimal-dist
+    if [ -d $minimalDistDir ]; then
+        rm -rf $minimalDistDir
     fi
-    mkdir -p $pkgDistDir
+    mkdir -p $minimalDistDir
 
     echo "[I] copying minimal files... $fileOs $fileName"
     tFile=$(ls $MDGJX_ROOT/dist/pkg | grep $fileOs | grep $fileExt | head -n 1)
@@ -63,9 +63,9 @@ copyMinimal(){
     f_tFile=$MDGJX_ROOT/dist/pkg/$tFile
     echo "[I] decompressing $f_tFile"
     if [ $fileExt == "zip" ]; then
-        unzip -q -o $f_tFile -d $pkgDistDir
+        unzip -q -o $f_tFile -d $minimalDistDir
     else
-        tar -xzf $f_tFile -C $pkgDistDir
+        tar -xzf $f_tFile -C $minimalDistDir
     fi
 }
 
