@@ -2,6 +2,7 @@ export const GLOBAL_REF_KEY='APP_BRIDGE'
 export type AppConfig = {
     platform: "windows"|"mac"|"linux"
     arch: "x64" | "arm64"
+    updateTitle: (newTitle:string)=>void
 }
 export abstract class AppBridge {
   abstract getConfig: () => AppConfig;
