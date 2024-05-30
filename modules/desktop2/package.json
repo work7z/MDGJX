@@ -1,6 +1,6 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.46",
+  "version": "v5.3.47",
   "description": "The Next-Gen High Efficiency ToolBox for Developers",
   "author": "MDGJX Team <work7z@outlook.com>",   
   "homepage": "https://mdgjx.com",
@@ -19,9 +19,10 @@
       "target": ["AppImage","deb","tar.gz"]
     },
     "win":{
-      "target": ["nsis","portable"]
+      "target": ["nsis","zip"]
     },
     "files": [
+      "pkg-dist",
       "src-dist",
       "package.json",
       "assets",

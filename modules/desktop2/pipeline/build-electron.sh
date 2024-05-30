@@ -43,28 +43,49 @@ cp -a ./src-dist dist/src-dist
 
 echo "[I] building electron app for x64..."
 
+copyMinimal(){
+    fileOs=$1
+    fileExt=$2
+    pkgDistDir=./pkg-dist
+    [ -d $pkgDistDir ] || rm -rf $pkgDistDir
+    mkdir -p $pkgDistDir
+
+    echo "[I] copying minimal files... $fileOs $fileName"
+    tFile=$(ls $MDGJX_ROOT/dist/pkg | grep $fileOs | grep $fileExt | head -n 1)
+    echo "[I] copying $tFile"
+    if [ -z $tFile ]; then
+        echo "[E] $fileOs $fileExt not found"
+        exit 1
+    fi
+    f_tFile=$MDGJX_ROOT/dist/pkg/$tFile
+    echo "[I] decompressing $f_tFile"
+    if [ $fileExt == "zip" ]; then
+        unzip -o $f_tFile -d $pkgDistDir
+    else
+        tar -xzf $f_tFile -C $pkgDistDir
+    fi
+}
+
+echo "[I] windows"
+copyMinimal windows-x64 zip
 npx electron-builder -w
-npx electron-builder -l
-npx electron-builder -m
-npx electron-builder --arm64
-npx electron-builder --arm64 -l
+copyMinimal windows-arm64 zip
 npx electron-builder --arm64 -w
+
+echo "[I] linux"
+copyMinimal linux-x64 tar.gz
+npx electron-builder -l
+copyMinimal linux-arm64 tar.gz
+npx electron-builder --arm64 -l
+
+echo "[I] macos"
+copyMinimal darwin-x64 tar.gz
+npx electron-builder -m
+copyMinimal darwin-arm64 tar.gz
+npx electron-builder --arm64
+
 pkgDir=$PWD/pkg-dist
 [ -d $pkgDir ] || mkdir -p $pkgDir
 mv ./dist/* $pkgDir
-# cp dist/*.exe $pkgDir/MDGJX-$crtVersion-windows-x64.exe
-# cp dist/*.dmg $pkgDir/MDGJX-$crtVersion-macos-x64.dmg
-# cp dist/*.AppImage $pkgDir/MDGJX-$crtVersion-linux-x64.AppImage
-# rm -rf dist
-
-# echo "[I] building electron app for arm64..."
-# npx electron-builder -w --arm64
-# npx electron-builder -l --arm64
-# npx electron-builder -m --arm64
-# pkgDir=$PWD/pkg-dist
-# [ -d $pkgDir ] || mkdir -p $pkgDir
-# mv dist/*.exe $pkgDir/MDGJX-$crtVersion-windows-arm64.exe
-# mv dist/*.dmg $pkgDir/MDGJX-$crtVersion-macos-arm64.dmg
-# mv dist/*.AppImage $pkgDir/MDGJX-$crtVersion-linux-arm64.AppImage
 
 echo "[I] done"
