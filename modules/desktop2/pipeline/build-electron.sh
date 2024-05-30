@@ -60,7 +60,7 @@ copyMinimal(){
     f_tFile=$MDGJX_ROOT/dist/pkg/$tFile
     echo "[I] decompressing $f_tFile"
     if [ $fileExt == "zip" ]; then
-        unzip -o $f_tFile -d $pkgDistDir
+        unzip -q -o $f_tFile -d $pkgDistDir
     else
         tar -xzf $f_tFile -C $pkgDistDir
     fi

@@ -9,6 +9,7 @@ import apiSlice from './store/reducers/apiSlice';
 import UsersSlice from './store/reducers/userSlice';
 import SystemAlertOrPrompt from './containers/SystemAlertOrPrompt';
 import exportUtils from './utils/ExportUtils';
+import { SetupPage } from './pages/Setup.page';
 
 
 
@@ -40,10 +41,10 @@ export default () => {
     })
   }
   return <Router basename={basename} >
-    <div>main</div>
     <Switch>
       <Route exact path={"/not-found"} component={NotFoundPage} />
       <Route exact path={"/"} component={HomePage} />
+      <Route exact path={"/setup"} component={SetupPage} />
       {routerArr}
       {
         redirectLinks.map(x => {
