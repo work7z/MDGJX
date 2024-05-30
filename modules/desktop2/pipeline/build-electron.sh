@@ -46,8 +46,11 @@ echo "[I] building electron app for x64..."
 copyMinimal(){
     fileOs=$1
     fileExt=$2
+    echo "[I] deleting pkg-dist..."
     pkgDistDir=./pkg-dist
-    [ -d $pkgDistDir ] || rm -rf $pkgDistDir
+    if [ -d $pkgDistDir ]; then
+        rm -rf $pkgDistDir
+    fi
     mkdir -p $pkgDistDir
 
     echo "[I] copying minimal files... $fileOs $fileName"

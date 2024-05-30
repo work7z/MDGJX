@@ -5,6 +5,6 @@ export const cfg_getAppMainHost = ()=>{
 }
 
 export const cfg_getAppClientEntryPage = ()=>{
-    return cfg_getAppMainHost()+'/entry'
+    return cfg_getAppMainHost()+'/setup'
 }
 
