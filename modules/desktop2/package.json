@@ -1,19 +1,14 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.45",
+  "version": "v5.3.46",
   "description": "The Next-Gen High Efficiency ToolBox for Developers",
-  "author": "MDGJX Team <work7z@outlook.com>",
-  
-"homepage": "https://mdgjx.com",
+  "author": "MDGJX Team <work7z@outlook.com>",   
+  "homepage": "https://mdgjx.com",
   "main": "src-dist/main.js",
   "scripts": {
     "dev": "sh ./pipeline/dev-electron.sh",
     "compileTS": "npx tsc",
     "build": "sh ./pipeline/build-electron.sh"
-  },
-  "nsis": {
-    "oneClick": false,
-    "allowToChangeInstallationDirectory": true
   },
   "build": {
     "appId": "com.work7z.mdgjx",
@@ -37,8 +32,9 @@
     ],
     "nsis": {
       "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "perMachine": true
+      "language":"0004",
+      "menuCategory":true,
+      "allowToChangeInstallationDirectory": true
     },
     "directories": {
       "buildResources": "build"
