@@ -24,9 +24,14 @@ import React, { useMemo } from 'react';
 import LoadingView from '../LoadingView';
 import { FooterCentered } from './Footer';
 import LoadableWrapper from '../LoadableWrapper';
+import { isDesktopMode } from '@/utils/DesktopUtils';
 
 export let useWrapWithTitle = (title: string) => {
-    useDocumentTitle(`${title} - 秒达工具箱`)
+    if(!isDesktopMode()){
+        useDocumentTitle(`${title}`)
+    }else{
+        useDocumentTitle(`${title} - 秒达工具箱`)
+    }
 }
 
 export function GeneralLayout(props) {

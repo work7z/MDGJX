@@ -34,7 +34,6 @@ export default () => {
   for(let x of systemModulesList){
     x.children?.map((y, yi) => {
       const optPath = `/${x.id}/${y.id}`
-      console.log('optPath', optPath)
       routerArr.push(<Route key={yi + x.id + y.id+'2'} exact path={`/${x.id}`} component={HomePage} />)
       routerArr.push(<Route key={yi + x.id + y.id} exact path={optPath} component={HomePage} />)
       routerArr.push(<Route key={yi + x.id + y.id} exact path={optPath+'/:extId'} component={HomePage} />)
