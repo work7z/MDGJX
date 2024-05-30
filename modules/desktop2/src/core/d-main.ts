@@ -1,6 +1,8 @@
 import { app, BrowserWindow,screen } from "electron";
 import path from "path";
 import { DMainPassProps } from "./d-types";
+import { isDevEnv } from "./web2share-copy/env";
+import { cfg_getAppClientEntryPage } from "./d-config";
 
 export default (props: DMainPassProps) => {
   let { MAIN_WINDOW_VITE_DEV_SERVER_URL } = props;
@@ -20,9 +22,12 @@ export default (props: DMainPassProps) => {
     const appScreenHeight = display.bounds.height
     // Create the browser window.
     const mainWindow = new BrowserWindow({
-      width: appScreenWidth,
-      height: appScreenHeight,
-      autoHideMenuBar: true,
+      // full width and height
+      // width: appScreenWidth,
+      // height: appScreenHeight,
+      width: appScreenWidth*0.618,
+      height: appScreenHeight*0.618,
+      autoHideMenuBar: false,
       icon: iconImg,
       webPreferences: {
         nodeIntegration: true, // is default value after Electron v5
@@ -32,16 +37,17 @@ export default (props: DMainPassProps) => {
     });
 
     // and load the index.html of the app.
-    if (process.env.NODE_ENV === "development") {
-      // mainWindow.loadURL("http://localhost:5173/");
-      mainWindow.loadFile(path.join(webappFolder, `index.html`));
-    } else {
-      mainWindow.loadFile(path.join(webappFolder, `index.html`));
-    }
+    // if (isDevEnv()) {
+    //   // mainWindow.loadURL("http://localhost:5173/");
+    // } else {
+    //   mainWindow.loadFile(path.join(webappFolder, `index.html`));
+    // }
+    
+    mainWindow.loadURL(cfg_getAppClientEntryPage());
 
     // Open the DevTools.
     if (process.env.NODE_ENV === "development") {
-      mainWindow.webContents.openDevTools({ mode: "detach" });
+      // mainWindow.webContents.openDevTools({ mode: "detach" });
     }
   };
 

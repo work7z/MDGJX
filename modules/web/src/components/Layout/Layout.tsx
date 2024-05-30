@@ -26,8 +26,7 @@ import { FooterCentered } from './Footer';
 import LoadableWrapper from '../LoadableWrapper';
 
 export let useWrapWithTitle = (title: string) => {
-    useDocumentTitle(`${title}`)
-    // - 秒达工具箱
+    useDocumentTitle(`${title} - 秒达工具箱`)
 }
 
 export function GeneralLayout(props) {
