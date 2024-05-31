@@ -101,6 +101,10 @@ copyMinimal(){
     else
         tar -xzf $f_tFile -C $minimalDistDir
     fi
+    chmod +x $MDGJX_ROOT/pipeline/tools/get-web2-version.sh
+    web2_crtVersion=`$MDGJX_ROOT/pipeline/tools/get-web2-version.sh`
+
+    mv $minimalDistDir/MDGJX-* $minimalDistDir/MDGJX
 }
 
 echo "[I] windows"
