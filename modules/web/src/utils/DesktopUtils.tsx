@@ -1,4 +1,4 @@
-import { APP_GET_BRIDGE } from "@/lib2/bridge"
+import { APP_GET_BRIDGE } from "@/lib2-copy/bridge"
 
 const bridgeRef = APP_GET_BRIDGE(window)
 export const isDesktopMode = ()=>{

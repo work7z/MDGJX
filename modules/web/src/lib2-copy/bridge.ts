@@ -1,10 +1,10 @@
 export const GLOBAL_REF_KEY='APP_BRIDGE'
 export type AppConfig = {
     platform: "windows"|"mac"|"linux"
-    arch: "x64" | "arm64",
+    arch: "x64" | "arm64"
 }
 export interface AppBridge {
-   getConfig: () => AppConfig;
+  getConfig: () => AppConfig;
   updateTitle: (newTitle: string) => void;
 }
 export const APP_SET_BRIDGE=(window:any, value:AppBridge)=>{

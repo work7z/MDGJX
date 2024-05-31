@@ -1,9 +1,13 @@
-import { app, BrowserWindow,screen } from "electron";
+import { app, BrowserWindow, screen } from "electron";
 import path from "path";
 import { DMainPassProps } from "./d-types";
 import { isDevEnv } from "./web2share-copy/env";
 import { cfg_getAppClientEntryPage } from "./d-config";
 import { APP_WIN_REF } from "./d-winref";
+import { logger } from "./utils/logger";
+import { MSG_REF } from "../lib2/msg";
+import { registerIpcMainOn } from "./d-main-msg";
+
 
 export default (props: DMainPassProps) => {
   let { MAIN_WINDOW_VITE_DEV_SERVER_URL } = props;
@@ -17,8 +21,8 @@ export default (props: DMainPassProps) => {
     let rootFolder = path.join(__dirname, "..", "..");
     let iconImg = path.join(rootFolder, "assets", "images", "icon.png");
     let webappFolder = path.join(rootFolder, "webapp");
-    
-    const display  = screen.getPrimaryDisplay()
+
+    const display = screen.getPrimaryDisplay()
     const appScreenWidth = display.bounds.width
     const appScreenHeight = display.bounds.height
     // Create the browser window.
@@ -26,8 +30,8 @@ export default (props: DMainPassProps) => {
       // full width and height
       // width: appScreenWidth,
       // height: appScreenHeight,
-      width: appScreenWidth*0.618,
-      height: appScreenHeight*0.618,
+      width: appScreenWidth * 0.618,
+      height: appScreenHeight * 0.618,
       autoHideMenuBar: false,
       icon: iconImg,
       webPreferences: {
@@ -36,7 +40,16 @@ export default (props: DMainPassProps) => {
         preload: path.join(__dirname, "d-preload.js"),
       },
     });
-    APP_WIN_REF.setupWin=mainWindow
+
+    registerIpcMainOn('setup', async (key, values) => {
+      switch (key) {
+        case 'updateTitle':
+          mainWindow.setTitle(values)
+          return true;
+        default:
+          return false;
+      }
+    })
 
     // and load the index.html of the app.
     // if (isDevEnv()) {
@@ -44,7 +57,7 @@ export default (props: DMainPassProps) => {
     // } else {
     //   mainWindow.loadFile(path.join(webappFolder, `index.html`));
     // }
-    
+
     mainWindow.loadURL(cfg_getAppClientEntryPage());
 
     // Open the DevTools.
