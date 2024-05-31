@@ -2,7 +2,7 @@ import { app, BrowserWindow, screen } from "electron";
 import path from "path";
 import { DMainPassProps } from "./d-types";
 import { isDevEnv } from "./web2share-copy/env";
-import { cfg_getAppClientEntryPage } from "./d-config";
+import { cfg_getAppClientEntryPage ,cfg_getRootFolder} from "./d-config";
 import { APP_WIN_REF } from "./d-winref";
 import { logger } from "./utils/logger";
 import { MSG_REF } from "../lib2/msg";
@@ -18,9 +18,8 @@ export default (props: DMainPassProps) => {
   }
 
   const createWindow = () => {
-    let rootFolder = path.join(__dirname, "..", "..");
+    let rootFolder = cfg_getRootFolder();
     let iconImg = path.join(rootFolder, "assets", "images", "icon.png");
-    let webappFolder = path.join(rootFolder, "webapp");
 
     const display = screen.getPrimaryDisplay()
     const appScreenWidth = display.bounds.width
@@ -50,13 +49,6 @@ export default (props: DMainPassProps) => {
           return false;
       }
     })
-
-    // and load the index.html of the app.
-    // if (isDevEnv()) {
-    //   // mainWindow.loadURL("http://localhost:5173/");
-    // } else {
-    //   mainWindow.loadFile(path.join(webappFolder, `index.html`));
-    // }
 
     mainWindow.loadURL(cfg_getAppClientEntryPage());
 

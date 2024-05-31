@@ -49,7 +49,6 @@
         "desktop2-pages-local",
         "it-tools dev server"
     ],
-      "preLaunchTask": "${defaultBuildTask}",
       "stopAll": true
     }
   ]
