@@ -7,3 +7,5 @@ export const isDesktopMode = ()=>{
 export const getBridgeRef = ()=>{
     return bridgeRef
 }
+
+window['bridgeRef'] = bridgeRef

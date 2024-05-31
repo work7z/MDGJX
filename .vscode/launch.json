@@ -5,24 +5,31 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "web2 应用前端",
+      "name": "web2",
       "type": "node-terminal",
       "cwd": "${workspaceFolder}/modules/web",
       "request": "launch",
       "command": "npm run dev"
     },
     {
-      "name": "web2-server 应用前端服务器",
+      "name": "web2-server",
       "type": "node-terminal",
       "cwd": "${workspaceFolder}/modules/web-server",
       "request": "launch",
       "command": "npm run start"
     },
     {
-      "name": "desktop2 桌面端",
+      "name": "desktop2",
       "type": "node-terminal",
       "request": "launch",
       "cwd": "${workspaceFolder}/modules/desktop2",
+      "command": "npm run dev"
+    },
+    {
+      "name": "desktop2-pages-local",
+      "type": "node-terminal",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/modules/desktop2/pages/local",
       "command": "npm run dev"
     },
     {
@@ -32,5 +39,18 @@
       "cwd": "${workspaceFolder}/addons/it-tools",
       "command": "npm run dev"
     },
+  ],
+  "compounds": [
+    {
+      "name": "Run it at once",
+      "configurations": [
+        "web2", "web2-server",
+        "desktop2",
+        "desktop2-pages-local",
+        "it-tools dev server"
+    ],
+      "preLaunchTask": "${defaultBuildTask}",
+      "stopAll": true
+    }
   ]
 }

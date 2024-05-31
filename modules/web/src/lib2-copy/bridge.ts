@@ -1,4 +1,4 @@
-export const GLOBAL_REF_KEY='APP_BRIDGE'
+export const GLOBAL_REF_KEY='MD_APP_BRIDGE'
 export type AppConfig = {
     platform: "windows"|"mac"|"linux"
     arch: "x64" | "arm64"

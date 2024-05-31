@@ -7,8 +7,9 @@ export interface AppBridge {
   getConfig: () => AppConfig;
   updateTitle: (newTitle: string) => void;
 }
-export const APP_SET_BRIDGE=(window:any, value:AppBridge)=>{
+export const APP_SET_BRIDGE=(window:any, value:AppBridge):AppBridge=>{
     window[GLOBAL_REF_KEY]= value    
+    return value;
 }
 export const APP_GET_BRIDGE = (window:any):AppBridge|null=>{
     return window[GLOBAL_REF_KEY] || null

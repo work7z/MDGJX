@@ -2,10 +2,10 @@
 // https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
 const { BrowserWindow } = require('electron')
 import { MSG_REF } from '../lib2/msg'
-import {APP_SET_BRIDGE} from '../lib2/bridge'
+import {APP_SET_BRIDGE, GLOBAL_REF_KEY} from '../lib2/bridge'
 import { APP_WIN_REF } from './d-winref'
 import { logger } from './utils/logger'
-import { ipcRenderer } from 'electron'
+import { contextBridge, ipcRenderer } from 'electron'
 
 MSG_REF.ipcRender_send = (key, value)=>{
   logger.debug(`[ipcRender_send] key=${key} value=${value}`)
@@ -13,7 +13,8 @@ MSG_REF.ipcRender_send = (key, value)=>{
 }
 
 
-APP_SET_BRIDGE(window, {
+
+contextBridge.exposeInMainWorld(GLOBAL_REF_KEY, APP_SET_BRIDGE(window, {
   getConfig: ()=>{
     return {
       arch: 'x64',
@@ -23,6 +24,6 @@ APP_SET_BRIDGE(window, {
   updateTitle(newTitle:string){
     MSG_REF.ipcRender_send('updateTitle', newTitle)
   },
-})
+}))
 
 export default () => {};
