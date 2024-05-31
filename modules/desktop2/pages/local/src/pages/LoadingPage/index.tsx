@@ -70,6 +70,9 @@ export default ()=>{
                 <Button onClick={() => {
                     alert(`技术QQ群: 106038310  或 电子邮件: work7z@outlook.com`)
                 }} variant='outline' size='compact-xs' className='border-none' color='gray'>联系我们</Button>
+                <Button variant='outline' size='compact-xs' className='border-none' color='gray' onClick={() => {
+                    window.open(`https://github.com/work7z/MDGJX`)
+                }}>源代码</Button>
             </div>
             <div>
                 构建信息: {bridgeRef?.getConfig()?.buildInfo || 'v5.3.31 & v3.1.23 on 2032-10-21'}

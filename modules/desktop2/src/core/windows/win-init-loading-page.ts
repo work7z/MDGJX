@@ -49,6 +49,11 @@ export  default  () => {
     })
     APP_WIN_REF.setupWin = mainWindow;
 
+    mainWindow.webContents.on("new-window", function (e, url) {
+      e.preventDefault();
+      require("electron").shell.openExternal(url);
+    });
+
     mainWindow.loadURL(cfg_getAppLocalLoadingPage());
 
   };

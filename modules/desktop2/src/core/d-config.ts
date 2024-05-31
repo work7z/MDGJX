@@ -3,7 +3,7 @@ import path from 'path'
 
 // CONFIG
 export const cfg_getRootFolder = ()=>{
-    return isDevEnv()? path.join(__dirname, "..", ".."):path.join(__dirname)
+    return isDevEnv()? path.join(__dirname, "..", ".."):path.join(__dirname, "..", "..")
 }
 
 // CLIENT
@@ -16,7 +16,7 @@ export const cfg_getAppClientEntryPage = ()=>{
 
 // LOCAL
 export const cfg_getAppLocalHost = ()=>{
-    return isDevEnv() ? 'http://localhost:20167' : 'http://localhost:20167'
+    return isDevEnv() ? 'http://localhost:20167' : path.join(cfg_getRootFolder(),'pages-dist','local','index.html')
 }
 export const cfg_getAppLocalLoadingPage = ()=>{
     return cfg_getAppLocalHost()+'/#/loading'

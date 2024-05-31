@@ -46,6 +46,7 @@ rm -rf node_modules
 rm -rf dist
 rm -rf build
 rm -rf src-dist
+rm -rf pages-dist
 echo "[I] installing dependencies..."
 npm i -S -D --force
 
@@ -59,6 +60,16 @@ npm i -S -D --force --omit=dev
 
 
 echo "[I] building electron app..."
+
+mkdir -p ./pages-dist
+crtPageDist=$PWD/pages-dist
+(
+    cd ./pages/local
+    npm i -S -D --force
+    npm run build
+    mkdir -p $crtPageDist/local
+    cp -a ./dist/* $crtPageDist/local
+)
 
 mkdir -p ./dist
 cp -a ./src-dist dist/src-dist
