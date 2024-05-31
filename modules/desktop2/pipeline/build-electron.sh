@@ -32,7 +32,7 @@ cd $(dirname $0)/..
 import { AppInfoClz } from \"./d-types\"
 
 
-    const item:AppInfoClz ={ {
+    const item:AppInfoClz ={ 
     \"version\": \"$crtVersion\",
     \"releaseDate\": \"$(date +%Y-%m-%d)\",
     \"timestamp\": \"$(date +%s)\"
