@@ -1,6 +1,6 @@
 import { GeneralLayout, useWrapWithTitle } from '@/components/Layout/Layout';
 import { AppShell, Burger } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { useDisclosure, useDocumentTitle } from '@mantine/hooks';
 
 export function SetupPage() {
   useWrapWithTitle(`工作台`)
