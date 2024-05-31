@@ -10,6 +10,14 @@ export default ()=>{
         timer: null,
         loadRate: 0
     })
+    useEffect(()=>{
+        APP_GET_MSG(window)?.ipcRender_send('getRunMDGJXMinimalStatus').then(x=>{
+            
+            console.log('getRunMDGJXMinimalStatus', x)
+        }).catch(e=>{
+            console.error('getRunMDGJXMinimalStatus', e)
+        })
+    },[])
     const [updateCtn, setUpdateCtn] = useState(0)
     useEffect(()=>{
         const updateIt = ()=>{

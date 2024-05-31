@@ -56,4 +56,7 @@ export  default  () => {
 
     mainWindow.loadURL(cfg_getAppLocalLoadingPage());
 
+    if(isDevEnv()){
+      mainWindow.webContents.openDevTools();
+    }
   };

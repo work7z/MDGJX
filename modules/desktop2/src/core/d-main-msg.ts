@@ -11,30 +11,37 @@ const allFn: { [key: string]: IpcMainOnTypeFn } = {}
 
 MSG_REF.ipcMain_on = async (key, value) => {
     logger.debug(`[ipcMain_on] key=${key} value=${value}`);
-    // PREDEFINED LOGIC PART BEGIN
-    switch(key){
+    switch (key) {
         case 'openLogDir':
             // show dir
             shell.openPath(logDir)
             return;
-            break;
+        case 'getRunMDGJXMinimalStatus':
+            return {
+                timestr: Date.now()
+            }
+        default:
+            for (let k in allFn) {
+                let r = await allFn[k](key, value)
+                if (r) {
+                    return;
+                }
+            }
+            logger.debug(`[ipcMain_on] key=${key} not found`)
+            return;
     }
-    // PREDEFINED LOGIC PART END
-
-    // OTHER ALL FN
-    for (let k in allFn) {
-        let r = await allFn[k](key, value)
-        if (r) {
-            return true;
-        }
-    }
-    return false;
 }
 for (let item in OBJ_MSG_TYPE) {
     const key = item as any
     ipcMain.on(key, async (event, ...args) => {
         let r = await MSG_REF.ipcMain_on(key, ...args)
-        event.returnValue = r
+        if (r) {
+            let r_str = JSON.stringify(r)
+            logger.debug(`[ipcMain.on] reply with key=${key}_r r=${r_str}`)
+            const winId =event.sender.id
+const contents = BrowserWindow.fromId(winId).webContents;
+            contents.send(key + '_r', r_str)
+        }
     })
 }
 
