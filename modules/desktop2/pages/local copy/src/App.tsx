@@ -2,13 +2,11 @@ import { useState } from 'react'
 import './App.css'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import LoadingPage from './pages/LoadingPage'
-import { MantineProvider } from '@mantine/core';
-import '@mantine/core/styles.css';
 
 function App() {
+
   return (
     <>
-      <MantineProvider theme={'light'}>
      <HashRouter>
       <Switch>
         <Route path={'/loading'} component={LoadingPage}/>
@@ -19,7 +17,6 @@ function App() {
         }}/>
       </Switch>
       </HashRouter>
-      </MantineProvider>
     </>
   )
 }
