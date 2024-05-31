@@ -14,15 +14,39 @@ if [ -z $crtVersion ]; then
     exit 1
 fi
 
+
+
 echo "Current version: $crtVersion"
 
 cd $(dirname $0)/..
+
+
+
+    targetFile=./src/core/d-pkginfo.ts
+    if [ ! -f $targetFile ]; then
+        echo "[E] $targetFile is not found."
+        exit 1
+    fi
+
+    echo "
+import { AppInfoClz } from \"./d-types\"
+
+
+    const item:AppInfoClz ={ {
+    \"version\": \"$crtVersion\",
+    \"releaseDate\": \"$(date +%Y-%m-%d)\",
+    \"timestamp\": \"$(date +%s)\"
+    } 
+    export default item
+    " > $targetFile
+
 
 echo "[I] cleaning up..."
 rm -rf node_modules
 rm -rf dist
 rm -rf build
 rm -rf src-dist
+rm -rf pages-dist
 echo "[I] installing dependencies..."
 npm i -S -D --force
 
@@ -36,6 +60,16 @@ npm i -S -D --force --omit=dev
 
 
 echo "[I] building electron app..."
+
+mkdir -p ./pages-dist
+crtPageDist=$PWD/pages-dist
+(
+    cd ./pages/local
+    npm i -S -D --force
+    npm run build
+    mkdir -p $crtPageDist/local
+    cp -a ./dist/* $crtPageDist/local
+)
 
 mkdir -p ./dist
 cp -a ./src-dist dist/src-dist

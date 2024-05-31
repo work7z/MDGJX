@@ -26,7 +26,7 @@
       "command": "npm run dev"
     },
     {
-      "name": "desktop2-pages-local",
+      "name": "d2-pages-local",
       "type": "node-terminal",
       "request": "launch",
       "cwd": "${workspaceFolder}/modules/desktop2/pages/local",

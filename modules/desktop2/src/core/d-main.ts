@@ -2,11 +2,12 @@ import { app, BrowserWindow, screen } from "electron";
 import path from "path";
 import { DMainPassProps } from "./d-types";
 import { isDevEnv } from "./web2share-copy/env";
-import { cfg_getAppClientEntryPage ,cfg_getRootFolder} from "./d-config";
+import { cfg_getAppClientEntryPage ,cfg_getAppLocalLoadingPage,cfg_getRootFolder} from "./d-config";
 import { APP_WIN_REF } from "./d-winref";
 import { logger } from "./utils/logger";
 import { MSG_REF } from "../lib2/msg";
 import { registerIpcMainOn } from "./d-main-msg";
+import winInitLoadingPage from "./windows/win-init-loading-page";
 
 
 export default (props: DMainPassProps) => {
@@ -17,51 +18,11 @@ export default (props: DMainPassProps) => {
     app.quit();
   }
 
-  const createWindow = () => {
-    let rootFolder = cfg_getRootFolder();
-    let iconImg = path.join(rootFolder, "assets", "images", "icon.png");
-
-    const display = screen.getPrimaryDisplay()
-    const appScreenWidth = display.bounds.width
-    const appScreenHeight = display.bounds.height
-    // Create the browser window.
-    const mainWindow = new BrowserWindow({
-      // full width and height
-      // width: appScreenWidth,
-      // height: appScreenHeight,
-      width: appScreenWidth * 0.618,
-      height: appScreenHeight * 0.618,
-      autoHideMenuBar: false,
-      icon: iconImg,
-      webPreferences: {
-        nodeIntegration: true, // is default value after Electron v5
-        contextIsolation: false,
-        preload: path.join(__dirname, "d-preload.js"),
-      },
-    });
-
-    registerIpcMainOn('setup', async (key, values) => {
-      switch (key) {
-        case 'updateTitle':
-          mainWindow.setTitle(values)
-          return true;
-        default:
-          return false;
-      }
-    })
-
-    mainWindow.loadURL(cfg_getAppClientEntryPage());
-
-    // Open the DevTools.
-    if (process.env.NODE_ENV === "development") {
-      // mainWindow.webContents.openDevTools({ mode: "detach" });
-    }
-  };
 
   // This method will be called when Electron has finished
   // initialization and is ready to create browser windows.
   // Some APIs can only be used after this event occurs.
-  app.on("ready", createWindow);
+  app.on("ready", winInitLoadingPage);
 
   // Quit when all windows are closed, except on macOS. There, it's common
   // for applications and their menu bar to stay active until the user quits
@@ -76,7 +37,7 @@ export default (props: DMainPassProps) => {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow();
+      winInitLoadingPage()
     }
   });
 
