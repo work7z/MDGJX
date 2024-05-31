@@ -20,3 +20,11 @@ export const MSG_REF:MsgRefType = {
     } 
 }
 // you should implement above functions in your main process and renderer process
+const GLOBAL_MSG_KEY = 'GLOBAL_MSG_KEY'
+
+export const APP_GET_MSG = (window:any):MsgRefType|null=>{
+    return window[GLOBAL_MSG_KEY] || null
+}
+export const APP_SET_MSG = (window:any, value:any)=>{
+     window[GLOBAL_MSG_KEY]=value
+}

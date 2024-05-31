@@ -6,6 +6,7 @@ import { cfg_getAppClientEntryPage ,cfg_getAppLocalLoadingPage,cfg_getRootFolder
 import { APP_WIN_REF } from "../d-winref";
 import { logger } from "../utils/logger";
 import { registerIpcMainOn } from "../d-main-msg";
+import { existsSync } from "original-fs";
 
 export  default  () => {
     let rootFolder = cfg_getRootFolder();
@@ -14,6 +15,11 @@ export  default  () => {
     const display = screen.getPrimaryDisplay()
     const appScreenWidth = display.bounds.width
     const appScreenHeight = display.bounds.height
+    const dPreloadJS =path.join(__dirname, "preload-loading-pages.js")
+    if(!existsSync(dPreloadJS)){
+      logger.error(`preload file not found: ${dPreloadJS}`)
+      return
+    }
     // Create the browser window.
     const mainWindow = new BrowserWindow({
       // full width and height
@@ -27,8 +33,8 @@ export  default  () => {
       icon: iconImg,
       webPreferences: {
         nodeIntegration: true, // is default value after Electron v5
-        contextIsolation: false,
-        preload: path.join(__dirname,'..', "d-preload.js"),
+        contextIsolation: false, // protect against prototype pollution
+        preload: dPreloadJS,
       },
     });
 

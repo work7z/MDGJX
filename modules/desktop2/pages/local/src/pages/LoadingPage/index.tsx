@@ -1,13 +1,13 @@
 import { APP_GET_BRIDGE } from '@/lib2-copy/bridge'
 import icon from '../../assets/icon.png'
 import { Button, Progress } from '@mantine/core'
-import { MSG_REF } from '@/lib2-copy/msg'
+import { APP_GET_MSG } from '@/lib2-copy/msg'
 
 export default ()=>{
     const bridgeRef = APP_GET_BRIDGE(window)
 
     return <div style={{
-        '-webkit-app-region':'drag'
+        WebkitAppRegion:'drag'
     } as any} className=" shadow-xl bg-gray-50 p-2 w-[620px] h-[330px] relative">
         <div>
             <h1 className="text-4xl text-center py-16 pb-6 items-center justify-center flex mx-auto space-x-4">
@@ -34,12 +34,12 @@ export default ()=>{
         </div>
         <div 
         style={{
-                '-webkit-app-region': 'no-drag'
+                WebkitAppRegion: 'no-drag'
         } as any}
         className='bg-gray-200 w-full text-right mx-auto text-[12px] text-gray-500 p-1  flex justify-between items-center text-center absolute bottom-0 right-0 '>
             <div>
                 <Button variant='outline' size='compact-xs' className='border-none' color='gray' onClick={()=>{
-                    MSG_REF.ipcRender_send('openLogDir')
+                    APP_GET_MSG(window)?.ipcRender_send('openLogDir')
                 }}>查看日志</Button>
                 {/* <Button onClick={() => {
                     if (confirm("很抱歉错误的产生，我们将发送错误报告到服务器，以便调查修复，是否继续？")) {
