@@ -1,5 +1,7 @@
 export const OBJ_MSG_TYPE = {
-    'updateTitle': 1
+    'updateTitle': 1,
+    'openLogDir':1,
+    'reportLogToServer':1
 }
 // get key as type
 export type MsgType = keyof typeof OBJ_MSG_TYPE;

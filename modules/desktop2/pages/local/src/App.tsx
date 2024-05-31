@@ -8,7 +8,7 @@ import '@mantine/core/styles.css';
 function App() {
   return (
     <>
-      <MantineProvider theme={'light'}>
+      <MantineProvider >
      <HashRouter>
       <Switch>
         <Route path={'/loading'} component={LoadingPage}/>

@@ -1,6 +1,7 @@
 import { APP_GET_BRIDGE } from '@/lib2-copy/bridge'
 import icon from '../../assets/icon.png'
 import { Button, Progress } from '@mantine/core'
+import { MSG_REF } from '@/lib2-copy/msg'
 
 export default ()=>{
     const bridgeRef = APP_GET_BRIDGE(window)
@@ -31,16 +32,24 @@ export default ()=>{
         <div className='left-0 w-full  absolute bottom-[29px]'>
             <Progress value={50} striped animated />
         </div>
-        <div className='bg-gray-200 w-full text-right mx-auto text-[12px] text-gray-500 p-1  flex justify-between items-center text-center absolute bottom-0 right-0 '>
+        <div 
+        style={{
+                '-webkit-app-region': 'no-drag'
+        } as any}
+        className='bg-gray-200 w-full text-right mx-auto text-[12px] text-gray-500 p-1  flex justify-between items-center text-center absolute bottom-0 right-0 '>
             <div>
                 <Button variant='outline' size='compact-xs' className='border-none' color='gray' onClick={()=>{
-                    //
+                    MSG_REF.ipcRender_send('openLogDir')
                 }}>查看日志</Button>
-                <Button onClick={()=>{
-                    if(confirm("很抱歉错误的产生，我们将发送错误报告到服务器，以便调查修复，是否继续？")){
+                {/* <Button onClick={() => {
+                    if (confirm("很抱歉错误的产生，我们将发送错误报告到服务器，以便调查修复，是否继续？")) {
                         // send error report
+                        MSG_REF.ipcRender_send('reportLogToServer')
                     }
-                }} variant='outline' size='compact-xs' className='border-none' color='gray'>报告错误</Button>
+                }} variant='outline' size='compact-xs' className='border-none' color='gray'>报告错误</Button> */}
+                <Button onClick={() => {
+                    alert(`技术QQ群: 106038310  或 电子邮件: work7z@outlook.com`)
+                }} variant='outline' size='compact-xs' className='border-none' color='gray'>联系我们</Button>
             </div>
             <div>
                 构建信息: {bridgeRef?.getConfig()?.buildInfo || 'v5.3.31 & v3.1.23 on 2032-10-21'}

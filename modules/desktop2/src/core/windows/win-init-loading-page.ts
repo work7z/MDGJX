@@ -28,7 +28,7 @@ export  default  () => {
       webPreferences: {
         nodeIntegration: true, // is default value after Electron v5
         contextIsolation: false,
-        preload: path.join(__dirname, "d-preload.js"),
+        preload: path.join(__dirname,'..', "d-preload.js"),
       },
     });
 

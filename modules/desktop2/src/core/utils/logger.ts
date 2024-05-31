@@ -11,7 +11,7 @@ import {
 } from "../web2share-copy/appdir";
 
 // logs dir
-const logDir: string = FileUtils.mkdir(
+export const logDir: string = FileUtils.mkdir(
   join(join(getAppLogInternalDir(), "bootstrap")),
 );
 
