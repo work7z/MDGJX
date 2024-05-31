@@ -14,9 +14,32 @@ if [ -z $crtVersion ]; then
     exit 1
 fi
 
+
+
 echo "Current version: $crtVersion"
 
 cd $(dirname $0)/..
+
+
+
+    targetFile=./src/core/d-pkginfo.ts
+    if [ ! -f $targetFile ]; then
+        echo "[E] $targetFile is not found."
+        exit 1
+    fi
+
+    echo "
+import { AppInfoClz } from \"./d-types\"
+
+
+    const item:AppInfoClz ={ {
+    \"version\": \"$crtVersion\",
+    \"releaseDate\": \"$(date +%Y-%m-%d)\",
+    \"timestamp\": \"$(date +%s)\"
+    } 
+    export default item
+    " > $targetFile
+
 
 echo "[I] cleaning up..."
 rm -rf node_modules
