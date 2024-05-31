@@ -2,9 +2,29 @@ import { APP_GET_BRIDGE } from '@/lib2-copy/bridge'
 import icon from '../../assets/icon.png'
 import { Button, Progress } from '@mantine/core'
 import { APP_GET_MSG } from '@/lib2-copy/msg'
+import { useEffect, useRef, useState } from 'react'
 
 export default ()=>{
     const bridgeRef = APP_GET_BRIDGE(window)
+    const timeoutRef = useRef<{ timer: any, loadRate :number}>({
+        timer: null,
+        loadRate: 0
+    })
+    const [updateCtn, setUpdateCtn] = useState(0)
+    useEffect(()=>{
+        const updateIt = ()=>{
+            if (timeoutRef.current.loadRate >= 81.8) {
+                clearTimeout(timeoutRef.current.timer)
+                return
+            }
+            timeoutRef.current.loadRate = timeoutRef.current.loadRate +1
+            timeoutRef.current.timer = setTimeout(updateIt, Math.random()*600+10)
+            setUpdateCtn(timeoutRef.current.loadRate)
+        }
+        timeoutRef.current.timer = setTimeout(updateIt, 100)
+        return ()=>{
+        }
+    },[])
 
     return <div style={{
         WebkitAppRegion:'drag'
@@ -30,7 +50,7 @@ export default ()=>{
         </div>
         
         <div className='left-0 w-full  absolute bottom-[29px]'>
-            <Progress value={50} striped animated />
+            <Progress key={updateCtn} value={updateCtn} striped animated />
         </div>
         <div 
         style={{
