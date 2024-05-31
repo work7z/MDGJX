@@ -18,6 +18,6 @@ export const cfg_getAppClientEntryPage = ()=>{
 export const cfg_getAppLocalHost = ()=>{
     return isDevEnv() ? 'http://localhost:20167' : 'http://localhost:20167'
 }
-export const cfg_getAppLocalPage = ()=>{
-    return cfg_getAppLocalHost()+'/setup'
+export const cfg_getAppLocalLoadingPage = ()=>{
+    return cfg_getAppLocalHost()+'/#/loading'
 }

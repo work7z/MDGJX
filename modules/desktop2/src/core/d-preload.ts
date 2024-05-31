@@ -7,16 +7,18 @@ import { APP_WIN_REF } from './d-winref'
 import { logger } from './utils/logger'
 import { contextBridge, ipcRenderer } from 'electron'
 
+const { app } = require('electron')
 MSG_REF.ipcRender_send = (key, value)=>{
   logger.debug(`[ipcRender_send] key=${key} value=${value}`)
   ipcRenderer.send(key, value)
 }
-
-
+const appVersion = app.getVersion()
 
 contextBridge.exposeInMainWorld(GLOBAL_REF_KEY, APP_SET_BRIDGE(window, {
   getConfig: ()=>{
     return {
+      version: appVersion,
+      buildInfo: `Built with ${appVersion}`,
       arch: 'x64',
       platform: 'windows'
     }
