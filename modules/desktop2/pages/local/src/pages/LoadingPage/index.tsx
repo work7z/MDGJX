@@ -1,40 +1,56 @@
 import { APP_GET_BRIDGE } from '@/lib2-copy/bridge'
 import icon from '../../assets/icon.png'
 import { Button, Progress } from '@mantine/core'
-import { APP_GET_MSG } from '@/lib2-copy/msg'
-import { useEffect, useRef, useState } from 'react'
+import { APP_GET_MSG, MSG_REF, OBJ_MSG_TYPE_IPC_RENDER } from '@/lib2-copy/msg'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import _ from 'lodash'
+import { RES_PushMDGJXStatus } from '@/lib2-copy/types'
 
-export default ()=>{
+
+
+export default () => {
     const bridgeRef = APP_GET_BRIDGE(window)
-    const timeoutRef = useRef<{ timer: any, loadRate :number}>({
-        timer: null,
-        loadRate: 0
-    })
-    useEffect(()=>{
-        APP_GET_MSG(window)?.ipcRender_send('getRunMDGJXMinimalStatus').then(x=>{
-            console.log('getRunMDGJXMinimalStatus', x)
-        }).catch(e=>{
-            console.error('getRunMDGJXMinimalStatus', e)
+    const [currentMsg, setCurrentMsg] = useState('等待启动本地核心服务中...')
+    const [updateCtn, setUpdateCtn] = useState(2)
+    // const timeoutRef = useRef<{ timer: any, loadRate: number }>({
+    //     timer: null,
+    //     loadRate: 0
+    // })
+    const run_mdgjx_minimal_fn = useCallback(_.throttle(() => {
+        APP_GET_MSG(window)?.ipcRender_send('startRunMDGJXMinimal').then(x => {
+            console.log('startRunMDGJXMinimal', x)
+        }).catch(e => {
+            console.error('startRunMDGJXMinimal', e)
         })
-    },[])
-    const [updateCtn, setUpdateCtn] = useState(0)
-    useEffect(()=>{
-        const updateIt = ()=>{
-            if (timeoutRef.current.loadRate >= 81.8) {
-                clearTimeout(timeoutRef.current.timer)
-                return
-            }
-            timeoutRef.current.loadRate = timeoutRef.current.loadRate +1
-            timeoutRef.current.timer = setTimeout(updateIt, Math.random()*600+10)
-            setUpdateCtn(timeoutRef.current.loadRate)
-        }
-        timeoutRef.current.timer = setTimeout(updateIt, 100)
-        return ()=>{
-        }
-    },[])
+    }, 1000), [])
+    useEffect(() => {
+        APP_GET_MSG(window)?.ipcRender_on('pushInitStatusToRender', (msg) => {
+            const body: RES_PushMDGJXStatus=msg;
+            console.log(body)
+            setCurrentMsg(body?.msg)
+            setUpdateCtn(body?.pct)
+        })
+    }, [])
+    useEffect(() => {
+        run_mdgjx_minimal_fn()
+    }, [])
+    // useEffect(() => {
+    //     const updateIt = () => {
+    //         if (timeoutRef.current.loadRate >= 81.8) {
+    //             clearTimeout(timeoutRef.current.timer)
+    //             return
+    //         }
+    //         timeoutRef.current.loadRate = timeoutRef.current.loadRate + 1
+    //         timeoutRef.current.timer = setTimeout(updateIt, Math.random() * 600 + 10)
+    //         setUpdateCtn(timeoutRef.current.loadRate)
+    //     }
+    //     timeoutRef.current.timer = setTimeout(updateIt, 100)
+    //     return () => {
+    //     }
+    // }, [])
 
     return <div style={{
-        WebkitAppRegion:'drag'
+        WebkitAppRegion: 'drag'
     } as any} className=" shadow-xl bg-gray-50 p-2 w-[620px] h-[330px] relative">
         <div>
             <h1 className="text-4xl text-center py-16 pb-6 items-center justify-center flex mx-auto space-x-4">
@@ -55,17 +71,22 @@ export default ()=>{
                 </div>
             </div>
         </div>
-        
+        <div className='left-0 w-full flex justify-between items-center text-xs text-gray-500 px-2  absolute bottom-[42px]'>
+            <div>
+                {currentMsg}
+            </div>
+            <div>{updateCtn.toFixed(0)}%</div>
+        </div>
         <div className='left-0 w-full  absolute bottom-[29px]'>
             <Progress key={updateCtn} value={updateCtn} striped animated />
         </div>
-        <div 
-        style={{
+        <div
+            style={{
                 WebkitAppRegion: 'no-drag'
-        } as any}
-        className='bg-gray-200 w-full text-right mx-auto text-[12px] text-gray-500 p-1  flex justify-between items-center text-center absolute bottom-0 right-0 '>
+            } as any}
+            className='bg-gray-200 w-full text-right mx-auto text-[12px] text-gray-500 p-1  flex justify-between items-center text-center absolute bottom-0 right-0 '>
             <div>
-                <Button variant='outline' size='compact-xs' className='border-none' color='gray' onClick={()=>{
+                <Button variant='outline' size='compact-xs' className='border-none' color='gray' onClick={() => {
                     APP_GET_MSG(window)?.ipcRender_send('openLogDir')
                 }}>查看日志</Button>
                 {/* <Button onClick={() => {

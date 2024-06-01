@@ -1,3 +1,4 @@
+// TYPE DEFINTIION BEGIN
 export const OBJ_MSG_TYPE_IPC_MAIN = {
     'updateTitle': 1,
     'openLogDir':1,
@@ -9,6 +10,10 @@ export const OBJ_MSG_TYPE_IPC_MAIN = {
 export const OBJ_MSG_TYPE_IPC_RENDER = {
     pushInitStatusToRender:1
 }
+// TYPE DEFINTIION END
+
+
+
 // get key as type
 export type MsgTypeIpcMain = keyof typeof OBJ_MSG_TYPE_IPC_MAIN;
 export type MsgTypeIpcRender = keyof typeof OBJ_MSG_TYPE_IPC_RENDER;
