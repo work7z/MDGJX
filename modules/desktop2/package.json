@@ -1,6 +1,6 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.67",
+  "version": "v5.3.68",
   "description": "秒达工具箱以独创高效的输入方式，让您可以快速呼出各类工具、文档及笔记等资源，免费安全无广告，现已完全开源！",
   "author": "MDGJX <work7z@outlook.com>",   
   "homepage": "https://mdgjx.com",
@@ -19,8 +19,7 @@
       "target": ["AppImage","deb","tar.gz"]
     },
     "win":{
-      "target": ["nsis","zip"],
-      "requestedExecutionLevel":"requireAdministrator"
+      "target": ["nsis","zip"]
     },
      "extraFiles": [
       {
@@ -40,7 +39,7 @@
     "nsis": {
       "oneClick": false,
       "selectPerMachineByDefault":true,
-      "perMachine": false,
+      "perMachine": true,
       "language":"0004",
       "menuCategory":true,
       "allowToChangeInstallationDirectory": false
@@ -52,8 +51,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "electron": "^17.1.2",
-    "electron-builder": "^24.13.3",
-    "electron-packager": "^14.2.0",
+    "electron-builder": "22.14.13",
     "ts-node": "^10.0.0",
     "typescript": "~4.5.4",
     "vite": "^5.0.12"
