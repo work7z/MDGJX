@@ -26,7 +26,7 @@ echo "[I] copying required node_modules"
 
 cp -a ./node_modules/ ./dist/
 
-if [ ! -d $MDGJX_ROOT/dist/node_modules ]; then
+if [ ! -d ./dist/node_modules ]; then
     echo "[E] node_modules not found"
     exit 1
 fi
