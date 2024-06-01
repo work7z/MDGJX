@@ -20,14 +20,16 @@ cd $MDGJX_ROOT/modules/web-server
 [ -d dist ] && rm -rf dist
 [ ! -d dist ] && mkdir -p dist
 
-echo "[I] copying required node_modules"    
+echo "[I] copying required node_modules, pwd is $PWD"    
 [ -d node_modules ] && rm -rf node_modules
 npm i --omit=dev --force  
 
+mkdir -p ./dist/node_modules
 cp -a ./node_modules/* ./dist/node_modules
 
-if [ ! -d ./dist/node_modules ]; then
-    echo "[E] node_modules not found"
+ctnNodeModules=$(ls ./dist/node_modules | wc -l)
+if [ $ctnNodeModules -lt 1 ]; then
+    echo "[E] node_modules not copied"
     exit 1
 fi
 
