@@ -107,6 +107,8 @@ copyMinimal(){
     web2_crtVersion=`$MDGJX_ROOT/pipeline/tools/get-web2-version.sh`
 
     mv $minimalDistDir/MDGJX-* $minimalDistDir/MDGJX
+
+    mkdir -p ./resources/app
 }
 
 build-windows-x64(){

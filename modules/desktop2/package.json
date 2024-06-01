@@ -1,7 +1,7 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.62",
-  "description": "The Next-Gen High Efficiency ToolBox - all in one, right now",
+  "version": "v5.3.63",
+  "description": "秒达工具箱，借助独创高效的输入方式，让您可以快速呼出各类工具、文档及笔记等资源，免费安全无广告，现已完全开源！",
   "author": "MDGJX Team <work7z@outlook.com>",   
   "homepage": "https://mdgjx.com",
   "main": "src-dist/main.js",
@@ -21,9 +21,14 @@
     "win":{
       "target": ["nsis","zip"]
     },
+     "extraFiles": [
+      {
+        "from": "minimal-dist",
+        "to": "resources/app/minimal-dist"
+      }
+    ],
     "files": [
       "pages-dist",
-      "minimal-dist",
       "src-dist",
       "package.json",
       "assets",
