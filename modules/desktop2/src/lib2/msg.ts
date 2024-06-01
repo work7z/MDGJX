@@ -25,7 +25,8 @@ export type MsgRefType = {
     ipcMain_on: IpcMainOnTypeFn_on,
     ipcRender_send: IpcRenderTypeFn_send
     ipcRender_on: IpcRenderOnTypeFn_on,
-    ipcMain_send: IpcMainTypeFn_send
+    ipcMain_send: IpcMainTypeFn_send,
+    registerIpcRenderOn: (key: string, fn: IpcRenderOnTypeFn_on) => void
 }
 
 export const MSG_REF:MsgRefType = {
@@ -41,6 +42,9 @@ export const MSG_REF:MsgRefType = {
     ipcMain_send: async function(key,value:any):Promise<any>{
         throw new Error('ipcMain_send not implemented')
     },
+    registerIpcRenderOn : (key: string, fn: IpcRenderOnTypeFn_on) => {
+        throw new Error('registerIpcRenderOn not implemented')
+}
 
 }
 // you should implement above functions in your main process and renderer process

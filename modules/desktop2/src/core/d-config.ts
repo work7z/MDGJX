@@ -5,6 +5,9 @@ import path from 'path'
 export const cfg_getRootFolder = ()=>{
     return isDevEnv()? path.join(__dirname, "..", ".."):path.join(__dirname, "..", "..")
 }
+export const cfg_getIconImg=()=>{
+    return path.join(cfg_getRootFolder(), "build",  "icon.png");
+}
 
 // CLIENT
 export const cfg_getAppMainHost = ()=>{

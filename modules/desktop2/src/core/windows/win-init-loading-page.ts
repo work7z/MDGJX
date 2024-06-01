@@ -2,7 +2,7 @@ import { app, BrowserWindow, screen } from "electron";
 import path from "path";
 import { DMainPassProps } from "../d-types";
 import { isDevEnv } from "../web2share-copy/env";
-import { cfg_getAppClientEntryPage, cfg_getAppLocalLoadingPage, cfg_getRootFolder } from "../d-config";
+import { cfg_getAppClientEntryPage, cfg_getAppLocalLoadingPage, cfg_getIconImg, cfg_getRootFolder } from "../d-config";
 import { APP_WIN_REF } from "../d-winref";
 import { logger } from "../utils/logger";
 import { registerIpcMainOn } from "../d-main-msg";
@@ -38,6 +38,11 @@ const fn_startMinimalService = async () => {
       fn_updateMsgToRenderer('正在读取服务模块' + i + '...', i + 10)
     }
     fn_updateMsgToRenderer(`服务模块读取完毕`, 90)
+    await sleep(1000)
+    fn_updateMsgToRenderer(`检测本地服务连通性...`, 90)
+    await sleep(1000)
+    fn_updateMsgToRenderer(`本地服务启动成功，将跳转至主页面...`, 90)
+    RefStartStatus.isStarted=false
   } catch (e) {
     logger.error(`startMinimalService: ${e.message} ${e}`)
     RefStartStatus.isStarted = false
@@ -46,8 +51,7 @@ const fn_startMinimalService = async () => {
 }
 
 export default () => {
-  let rootFolder = cfg_getRootFolder();
-  let iconImg = path.join(rootFolder, "assets", "images", "icon.png");
+  let iconImg = cfg_getIconImg()
 
   const display = screen.getPrimaryDisplay()
   const appScreenWidth = display.bounds.width

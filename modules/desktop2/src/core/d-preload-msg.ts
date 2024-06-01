@@ -20,7 +20,7 @@ MSG_REF.ipcRender_send = async (key, value): Promise<any> => {
 const allFn: { [key: string]: IpcRenderOnTypeFn_on } = {}
 
 MSG_REF.ipcRender_on = async (key, value) => {
-    logger.debug(`[ipcMain_on] key=${key} value=${value}`);
+    logger.debug(`[ipcRender_on] key=${key} value=${value}`);
     switch (key) {
         default:
             for (let k in allFn) {
@@ -36,11 +36,11 @@ MSG_REF.ipcRender_on = async (key, value) => {
 for (let item in OBJ_MSG_TYPE_IPC_RENDER) {
     const key = item as any
     ipcRenderer.on(key, async (event, ...args) => {
-        let r = await MSG_REF.ipcMain_on(key, ...args)
+        let r = await MSG_REF.ipcRender_on(key, ...args)
         // nothing to return in ipcRender since you can use ipcRender_send to do so
         return {}
     })
 }
-export const registerIpcRenderOn = (key: string, fn: IpcRenderOnTypeFn_on) => {
+MSG_REF.registerIpcRenderOn = (key: string, fn: IpcRenderOnTypeFn_on) => {
     allFn[key] = fn
 }

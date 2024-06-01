@@ -1,7 +1,7 @@
 import { APP_GET_BRIDGE } from '@/lib2-copy/bridge'
 import icon from '../../assets/icon.png'
 import { Button, Progress } from '@mantine/core'
-import { APP_GET_MSG, MSG_REF, OBJ_MSG_TYPE_IPC_RENDER } from '@/lib2-copy/msg'
+import { APP_GET_MSG, APP_SET_MSG, MSG_REF, OBJ_MSG_TYPE_IPC_RENDER } from '@/lib2-copy/msg'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import _ from 'lodash'
 import { RES_PushMDGJXStatus } from '@/lib2-copy/types'
@@ -24,11 +24,16 @@ export default () => {
         })
     }, 1000), [])
     useEffect(() => {
-        APP_GET_MSG(window)?.ipcRender_on('pushInitStatusToRender', (msg) => {
-            const body: RES_PushMDGJXStatus=msg;
-            console.log(body)
-            setCurrentMsg(body?.msg)
-            setUpdateCtn(body?.pct)
+        APP_GET_MSG(window)?.registerIpcRenderOn('loading-pages', async (key, value) => {
+            if (key == 'pushInitStatusToRender') {
+                const body: RES_PushMDGJXStatus = value;
+                console.log(body)
+                setCurrentMsg(body?.msg)
+                setUpdateCtn(body?.pct)
+                return true;
+            } else {
+                return false;
+            }
         })
     }, [])
     useEffect(() => {
