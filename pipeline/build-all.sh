@@ -373,13 +373,6 @@ import { AppInfoClz } from \"./types\"
     refining
     # package as zip and tar.gz
     package-all
-    # run-test-all # not running at this moment
-    if [ $? -ne 0 ]; then
-        echo "[E] run-test-all failed."
-        exit 1
-    else 
-        echo "[I] $(date) run-test-all PASSED"
-    fi
 
     # build docker images
     docker-all

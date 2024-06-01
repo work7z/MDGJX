@@ -144,14 +144,12 @@ build-darwin-arm64(){
 }
 
 
-# build-windows-x64
-# build-windows-arm64
-# build-linux-x64
-# build-linux-arm64
-# build-darwin-x64
-# build-darwin-arm64
-
-$1
+build-windows-x64
+build-windows-arm64
+build-linux-x64
+build-linux-arm64
+build-darwin-x64
+build-darwin-arm64
 
 pkgDir=$PWD/pkg-dist
 [ -d $pkgDir ] || mkdir -p $pkgDir
