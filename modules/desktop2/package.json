@@ -40,6 +40,8 @@
     ],
     "nsis": {
       "oneClick": false,
+      "selectPerMachineByDefault":true,
+  "perMachine": true,
       "language":"0004",
       "menuCategory":true,
       "allowToChangeInstallationDirectory": true
