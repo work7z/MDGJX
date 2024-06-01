@@ -22,9 +22,9 @@ cd $MDGJX_ROOT/modules/web-server
 
 echo "[I] copying required node_modules"    
 [ -d node_modules ] && rm -rf node_modules
-[ ! -d node_modules ] && npm i --omit=dev --force  
+npm i --omit=dev --force  
 
-cp -a ./node_modules/ ./dist/
+cp -a ./node_modules/* ./dist/node_modules
 
 if [ ! -d ./dist/node_modules ]; then
     echo "[E] node_modules not found"
