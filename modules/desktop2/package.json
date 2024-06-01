@@ -1,7 +1,7 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.63",
-  "description": "秒达工具箱，借助独创高效的输入方式，让您可以快速呼出各类工具、文档及笔记等资源，免费安全无广告，现已完全开源！",
+  "version": "v5.3.64",
+  "description": "秒达工具箱以独创高效的输入方式，让您可以快速呼出各类工具、文档及笔记等资源，免费安全无广告，现已完全开源！",
   "author": "MDGJX Team <work7z@outlook.com>",   
   "homepage": "https://mdgjx.com",
   "main": "src-dist/main.js",
@@ -19,7 +19,8 @@
       "target": ["AppImage","deb","tar.gz"]
     },
     "win":{
-      "target": ["nsis","zip"]
+      "target": ["nsis","zip"],
+      "requestedExecutionLevel":"requireAdministrator"
     },
      "extraFiles": [
       {
