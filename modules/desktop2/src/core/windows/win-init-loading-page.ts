@@ -1,8 +1,8 @@
 import { app, BrowserWindow, screen } from "electron";
 import path from "path";
 import { DMainPassProps } from "../d-types";
-import { isDevEnv } from "../web2share-copy/env";
-import { cfg_getAppClientEntryPage, cfg_getAppLocalLoadingPage, cfg_getIconImg, cfg_getRootFolder } from "../d-config";
+import { isDevEnv, isProductionEnv } from "../web2share-copy/env";
+import { cfg_getAppClientEntryPage, cfg_getAppLocalLoadingPage, cfg_getAppMainHost, cfg_getIconImg, cfg_getMinimalMDGJXRootDir, cfg_getRootFolder } from "../d-config";
 import { APP_WIN_REF } from "../d-winref";
 import { logger } from "../utils/logger";
 import { registerIpcMainOn } from "../d-main-msg";
@@ -62,9 +62,30 @@ const fn_startMinimalService = async () => {
       fn_updateMsgToRenderer('端口测试完毕('+finalPort+')，准备启动服务...', 40)
     }
     fn_updateMsgToRenderer(`服务模块读取完毕`, 90)
-    await sleep(1000)
+
+
+    const finalEntryPageLink = cfg_getAppClientEntryPage() 
+    if(isProductionEnv()){
+    const rootDir = cfg_getMinimalMDGJXRootDir()
+    process.env.HOSTNAME='127.0.0.1'
+    process.env.PORT=finalPort+''
+    process.env.NODE_ENV='production'
+      const bootEntryFile=path.join(rootDir, 'boot', 'pre-entrypoint.js')
+      logger.info(`startMinimalService: bootEntryFile is ${bootEntryFile}`)
+      if(!existsSync(bootEntryFile)){
+        throw new Error('启动文件不存在: '+bootEntryFile)
+      }else{
+        fn_updateMsgToRenderer(`启动服务中...`, 90)
+        setTimeout(()=>{
+          require(bootEntryFile)
+        },0)
+        await sleep(1000)
+        logger.info(`startMinimalService: server started`)
+      }
+    }
+
+    // cfg_getMinimalMDGJXRootDir
     fn_updateMsgToRenderer(`检测本地服务连通性...`, 90)
-    await sleep(1000)
     fn_updateMsgToRenderer(`本地服务启动成功，将跳转至主页面`, 90)
     RefStartStatus.startChecking = false
   } catch (e) {

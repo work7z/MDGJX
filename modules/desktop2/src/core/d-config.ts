@@ -15,7 +15,7 @@ export const cfg_getMinimalMDGJXRootDir=()=>{
     // set PORT=39899
     // set NODE_ENV=production
     // .\boot\pre-entrypoint.js --type=web2
-    return path.join(cfg_getRootFolder(), "minimal-dist",  "MDGJX","");
+    return path.join(cfg_getRootFolder(), "minimal-dist",  "MDGJX");
 }
 
 // CLIENT
