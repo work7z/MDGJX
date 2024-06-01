@@ -350,6 +350,10 @@ import { AppInfoClz } from \"./types\"
     }
 
     docker-all(){
+        if [ "$DOCKER_PKG_BUILD_MODE" = "false" ]; then
+            echo "[I] docker build mode is disabled, will skip docker build."
+            return;
+        fi
         # check if docker command is available
         if [ -z $(which docker) ]; then
             echo "[E] docker command is not available, will ignore this part. To run it, please install docker first."
