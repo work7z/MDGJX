@@ -19,5 +19,6 @@ export const cfg_getAppLocalHost = ()=>{
     return isDevEnv() ? 'http://localhost:20167' : path.join(cfg_getRootFolder(),'pages-dist','local','index.html')
 }
 export const cfg_getAppLocalLoadingPage = ()=>{
-    return cfg_getAppLocalHost()+'/#/loading'
+    return cfg_getAppLocalHost() 
+    // +'/#/loading'
 }
