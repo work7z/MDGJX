@@ -263,7 +263,9 @@ import { AppInfoClz } from \"./types\"
     }
     package-all(){
         echo "[I] packaging all platforms"
-        if [[ $mode = "linux" ]]; then
+        if [[ "$ONLY_WIN_BINARY" = "true" ]]; then
+            package-for windows-x64 zip
+        elif [[ $mode = "linux" ]]; then
             package-for linux-x64
             package-for linux-arm64
         else
@@ -352,6 +354,10 @@ import { AppInfoClz } from \"./types\"
     docker-all(){
         if [ "$DOCKER_PKG_BUILD_MODE" = "false" ]; then
             echo "[I] docker build mode is disabled, will skip docker build."
+            return;
+        fi
+        if [[ "$ONLY_WIN_BINARY" = "true" ]]; then
+            echo "[I] only windows binary, will skip docker build."
             return;
         fi
         # check if docker command is available

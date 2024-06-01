@@ -13,43 +13,45 @@ echo "[I] building fe"
     npm i -S -D --verbose --force
     npm run build
 )
-(
-    echo "[I] building web-server"
-    cd $MDGJX_ROOT/modules/web-server
 
-    [ -d dist ] && rm -rf dist
-    [ ! -d dist ] && mkdir -p dist
+echo "[I] building web-server"
+cd $MDGJX_ROOT/modules/web-server
 
-    echo "[I] copying required node_modules"    
-    [ -d node_modules ] && rm -rf node_modules
-    [ ! -d node_modules ] && npm i --omit=dev --force  
+[ -d dist ] && rm -rf dist
+[ ! -d dist ] && mkdir -p dist
 
-    mkdir ./dist/node_modules
+echo "[I] copying required node_modules"    
+[ -d node_modules ] && rm -rf node_modules
+[ ! -d node_modules ] && npm i --omit=dev --force  
 
-    cp -a ./node_modules/* ./dist/node_modules/
+cp -a ./node_modules/ ./dist/
 
-    echo "[I] building web-server"
-    [ -d node_modules ] && rm -rf node_modules
-    [ ! -d node_modules ] && npm i -S -D --force  
+if [ ! -d $MDGJX_ROOT/dist/node_modules ]; then
+    echo "[E] node_modules not found"
+    exit 1
+fi
 
-    npm run build
-    cp -a $MDGJX_ROOT/modules/web/dist ./dist/spa
-    cp -a $MDGJX_ROOT/addons/it-tools/dist ./dist/xtools
-    [ -d $MDGJX_ROOT/dist/web ] && rm -rf $MDGJX_ROOT/dist/web
-    mkdir -p $MDGJX_ROOT/dist/web
-    cp -a dist $MDGJX_ROOT/dist/web
-    echo "[I] fe bundle size: $(du -sh $MDGJX_ROOT/dist/web)"
-)
+echo "[I] building web-server"
+[ -d node_modules ] && rm -rf node_modules
+[ ! -d node_modules ] && npm i -S -D --force  
+
+npm run build
+cp -a $MDGJX_ROOT/modules/web/dist ./dist/spa
+cp -a $MDGJX_ROOT/addons/it-tools/dist ./dist/xtools
+[ -d $MDGJX_ROOT/dist/web ] && rm -rf $MDGJX_ROOT/dist/web
+mkdir -p $MDGJX_ROOT/dist/web
+cp -a dist $MDGJX_ROOT/dist/web
+echo "[I] fe bundle size: $(du -sh $MDGJX_ROOT/dist/web)"
 
 echo "[I] built fe"
 
-if [ "$testRunServer" == "test" ]; then
-    echo "[I] testing run server"
-    (
-        echo "[I] testing web-server"
-        export NODE_ENV=production
-        export PORT=39899
-        cd $MDGJX_ROOT/dist/web/dist
-        node ./server.js
-    )
-fi
+# if [ "$testRunServer" == "test" ]; then
+#     echo "[I] testing run server"
+#     (
+#         echo "[I] testing web-server"
+#         export NODE_ENV=production
+#         export PORT=39899
+#         cd $MDGJX_ROOT/dist/web/dist
+#         node ./server.js
+#     )
+# fi

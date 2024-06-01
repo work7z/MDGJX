@@ -6,8 +6,10 @@ set -e
 # ELECTRON_BUILDER_BINARIES_MIRROR=http://registry.npmmirror.com/electron-builder-binaries/
 # npm config set registry http://mirrors.cloud.tencent.com/npm/
 
+echo "ONLY_WIN_BINARY: $ONLY_WIN_BINARY"
+
 chmod +x $MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh
-crtVersion=v`$MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh`
+crtVersion=`$MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh`
 
 if [ -z $crtVersion ]; then
     echo "[E] crtVersion is required."
@@ -143,13 +145,16 @@ build-darwin-arm64(){
     npx electron-builder --arm64
 }
 
-
-build-windows-x64
-build-windows-arm64
-build-linux-x64
-build-linux-arm64
-build-darwin-x64
-build-darwin-arm64
+if [ "$ONLY_WIN_BINARY" == "true" ]; then
+    build-windows-x64
+else
+    build-windows-x64
+    build-windows-arm64
+    build-linux-x64
+    build-linux-arm64
+    build-darwin-x64
+    build-darwin-arm64
+fi
 
 pkgDir=$PWD/pkg-dist
 [ -d $pkgDir ] || mkdir -p $pkgDir

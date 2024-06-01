@@ -12,7 +12,6 @@ export default ()=>{
     })
     useEffect(()=>{
         APP_GET_MSG(window)?.ipcRender_send('getRunMDGJXMinimalStatus').then(x=>{
-            
             console.log('getRunMDGJXMinimalStatus', x)
         }).catch(e=>{
             console.error('getRunMDGJXMinimalStatus', e)
