@@ -13,6 +13,8 @@ export type IpcRenderTypeFn = (key:MsgType,...value:any)=>Promise<any>
 export type MsgRefType = {
     ipcMain_on: IpcMainOnTypeFn,
     ipcRender_send: IpcRenderTypeFn
+    ipcRender_on: IpcMainOnTypeFn,
+    ipcMain_send: IpcRenderTypeFn
 }
 
 export const MSG_REF:MsgRefType = {
@@ -21,7 +23,14 @@ export const MSG_REF:MsgRefType = {
     },
     ipcRender_send: async function(key:MsgType,value:any):Promise<any>{
         throw new Error('ipcRender_send not implemented')
-    } 
+    },
+    ipcRender_on: function(key:MsgType, value: any){
+        throw new Error('ipcRender_on not implemented')
+    },
+    ipcMain_send: async function(key:MsgType,value:any):Promise<any>{
+        throw new Error('ipcMain_send not implemented')
+    },
+
 }
 // you should implement above functions in your main process and renderer process
 const GLOBAL_MSG_KEY = 'GLOBAL_MSG_KEY'

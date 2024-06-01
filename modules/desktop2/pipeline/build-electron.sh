@@ -107,23 +107,51 @@ copyMinimal(){
     mv $minimalDistDir/MDGJX-* $minimalDistDir/MDGJX
 }
 
-echo "[I] windows"
-copyMinimal windows-x64 zip
-npx electron-builder -w
-copyMinimal windows-arm64 zip
-npx electron-builder --arm64 -w
+build-windows-x64(){
+    echo "[I] windows x64"
+    copyMinimal windows-x64 zip
+    npx electron-builder -w
+}
 
-echo "[I] linux"
-copyMinimal linux-x64 tar.gz
-npx electron-builder -l
-copyMinimal linux-arm64 tar.gz
-npx electron-builder --arm64 -l
+build-windows-arm64(){
+    echo "[I] windows arm64"
+    copyMinimal windows-arm64 zip
+    npx electron-builder --arm64 -w
+}
 
-echo "[I] macos"
-copyMinimal darwin-x64 tar.gz
-npx electron-builder -m
-copyMinimal darwin-arm64 tar.gz
-npx electron-builder --arm64
+build-linux-x64(){
+    echo "[I] linux x64"
+    copyMinimal linux-x64 tar.gz
+    npx electron-builder -l
+}
+
+build-linux-arm64(){
+    echo "[I] linux arm64"
+    copyMinimal linux-arm64 tar.gz
+    npx electron-builder --arm64 -l
+}
+
+build-darwin-x64(){
+    echo "[I] darwin x64"
+    copyMinimal darwin-x64 tar.gz
+    npx electron-builder -m
+}
+
+build-darwin-arm64(){
+    echo "[I] darwin arm64"
+    copyMinimal darwin-arm64 tar.gz
+    npx electron-builder --arm64
+}
+
+
+# build-windows-x64
+# build-windows-arm64
+# build-linux-x64
+# build-linux-arm64
+# build-darwin-x64
+# build-darwin-arm64
+
+$1
 
 pkgDir=$PWD/pkg-dist
 [ -d $pkgDir ] || mkdir -p $pkgDir

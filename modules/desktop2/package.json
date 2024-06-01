@@ -1,6 +1,6 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.53",
+  "version": "v5.3.54",
   "description": "The Next-Gen High Efficiency ToolBox - all in one, right now",
   "author": "MDGJX Team <work7z@outlook.com>",   
   "homepage": "https://mdgjx.com",
@@ -12,7 +12,7 @@
   },
   "build": {
     "appId": "com.work7z.mdgjx",
-    "productName": "MDGJX",
+    "productName": "秒达工具箱",
     "artifactName": "MDGJX-desktop-v${version}-${os}-${arch}.${ext}",
     "asar": false,
     "linux": {
