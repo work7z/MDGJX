@@ -5,9 +5,9 @@ import { isDevEnv } from "./web2share-copy/env";
 import { cfg_getAppClientEntryPage } from "./d-config";
 import { APP_WIN_REF } from "./d-winref";
 import { logDir, logger } from "./utils/logger";
-import { IpcMainOnTypeFn, MSG_REF, MsgType, OBJ_MSG_TYPE } from "../lib2/msg";
+import { IpcMainOnTypeFn_on, MSG_REF, MsgTypeIpcMain, OBJ_MSG_TYPE_IPC_MAIN } from "../lib2/msg";
 
-const allFn: { [key: string]: IpcMainOnTypeFn } = {}
+const allFn: { [key: string]: IpcMainOnTypeFn_on } = {}
 
 MSG_REF.ipcMain_on = async (key, value) => {
     logger.debug(`[ipcMain_on] key=${key} value=${value}`);
@@ -31,7 +31,7 @@ MSG_REF.ipcMain_on = async (key, value) => {
             return;
     }
 }
-for (let item in OBJ_MSG_TYPE) {
+for (let item in OBJ_MSG_TYPE_IPC_MAIN) {
     const key = item as any
     ipcMain.on(key, async (event, ...args) => {
         let r = await MSG_REF.ipcMain_on(key, ...args)
@@ -45,6 +45,15 @@ const contents = BrowserWindow.fromId(winId).webContents;
     })
 }
 
-export const registerIpcMainOn = (key: string, fn: IpcMainOnTypeFn) => {
+MSG_REF.ipcMain_send = async (key, value): Promise<any> => {
+  logger.debug(`[ipcMain_send] key=${key} value=${value}`)
+  BrowserWindow.getAllWindows().forEach(win => {
+    logger.debug(`[ipcMain_send] send to win.id=${win.id}`)
+    win.webContents.send(key, value)
+  })
+  return {} // nothing to return
+}
+
+export const registerIpcMainOn = (key: string, fn: IpcMainOnTypeFn_on) => {
     allFn[key] = fn
 }
