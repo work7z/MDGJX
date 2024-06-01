@@ -14,7 +14,8 @@ var tcpPortUsed = require("tcp-port-used");
 
 
 const RefStartStatus = {
-  isStarted: false,
+  startChecking: false,
+  serverRunning: false,
   msg: ''
 }
 const fn_startMinimalService = async () => {
@@ -26,12 +27,17 @@ const fn_startMinimalService = async () => {
     MSG_REF.ipcMain_send('pushInitStatusToRender', v)
   }
   try {
-    if (RefStartStatus.isStarted) {
+    if(RefStartStatus.serverRunning) {
+      logger.info(`startMinimalService: already running, do not start again`)
+      fn_updateMsgToRenderer('服务已经启动，无需再次启动', 100)
+      return
+    }
+    if (RefStartStatus.startChecking) {
       logger.info(`startMinimalService: already started, do not start again`)
       return
     }
 
-    RefStartStatus.isStarted = true
+    RefStartStatus.startChecking = true
     logger.debug(`startMinimalService: start`)
     fn_updateMsgToRenderer('正在启动本地核心服务...', 5)
     fn_updateMsgToRenderer('正在检查服务端口可用性...', 10)
@@ -41,12 +47,12 @@ const fn_startMinimalService = async () => {
       try {
         await tcpPortUsed.waitUntilUsed(44204, 200, 800)
                 logger.info(`startMinimalService: the port is used: ${port}`)
-                break;
+        continue;
       } catch (e) {
         // get errors means the port is not used
         finalPort = port
         logger.info(`startMinimalService: port ${port} is available`)
-        continue;
+        break;
       }
     }
     if(finalPort == -1) {
@@ -60,10 +66,10 @@ const fn_startMinimalService = async () => {
     fn_updateMsgToRenderer(`检测本地服务连通性...`, 90)
     await sleep(1000)
     fn_updateMsgToRenderer(`本地服务启动成功，将跳转至主页面`, 90)
-    RefStartStatus.isStarted = false
+    RefStartStatus.startChecking = false
   } catch (e) {
     logger.error(`startMinimalService: ${e.message} ${e}`)
-    RefStartStatus.isStarted = false
+    RefStartStatus.startChecking = false
     fn_updateMsgToRenderer('无法启动，错误原因： ' + (e.message || e), 20)
   }
 }

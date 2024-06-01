@@ -66,7 +66,7 @@ export default () => {
             </h1>
             <div className=' mx-auto w-[80%] text-center space-y-2'>
                 <div className='space-y-2'>
-                    基于AI智能分析，秒速送达各类工具、文档及笔记等资源
+                    基于AI智能分析，一秒送达各类工具、文档及笔记等资源
                 </div>
                 <div className='text-sky-500 text-base font-semibold'>
                     免费 / 安全 / 开源 / 智能
