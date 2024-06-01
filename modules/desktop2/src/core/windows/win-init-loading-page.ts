@@ -10,19 +10,21 @@ import { existsSync } from "original-fs";
 import { MSG_REF } from "../../lib2/msg";
 import { sleep } from "../d-utils";
 import { RES_PushMDGJXStatus } from "src/lib2/types";
+var tcpPortUsed = require("tcp-port-used");
+
 
 const RefStartStatus = {
   isStarted: false,
   msg: ''
 }
 const fn_startMinimalService = async () => {
-      const fn_updateMsgToRenderer = (msg: string, pct: number) => {
-      const v: RES_PushMDGJXStatus = {
-        msg: msg,
-        pct: pct
-      } 
-      MSG_REF.ipcMain_send('pushInitStatusToRender', v)
+  const fn_updateMsgToRenderer = (msg: string, pct: number) => {
+    const v: RES_PushMDGJXStatus = {
+      msg: msg,
+      pct: pct
     }
+    MSG_REF.ipcMain_send('pushInitStatusToRender', v)
+  }
   try {
     if (RefStartStatus.isStarted) {
       logger.info(`startMinimalService: already started, do not start again`)
@@ -32,21 +34,37 @@ const fn_startMinimalService = async () => {
     RefStartStatus.isStarted = true
     logger.debug(`startMinimalService: start`)
     fn_updateMsgToRenderer('正在启动本地核心服务...', 5)
-
-    for (let i = 0; i < 50; i++) {
-      await sleep(100)
-      fn_updateMsgToRenderer('正在读取服务模块' + i + '...', i + 10)
+    fn_updateMsgToRenderer('正在检查服务端口可用性...', 10)
+    let finalPort = -1;
+    for (let port = 32016, j = 0; port < 42020; port++, j++) {
+      fn_updateMsgToRenderer('正在测试端口' + port + '中...', 10 + j)
+      try {
+        await tcpPortUsed.waitUntilUsed(44204, 200, 800)
+                logger.info(`startMinimalService: the port is used: ${port}`)
+        continue;
+      } catch (e) {
+        // get errors means the port is not used
+        finalPort = port
+        logger.info(`startMinimalService: port ${port} is available`)
+        break;
+      }
+    }
+    if(finalPort == -1) {
+      throw new Error('无法找到可用端口')
+    }else{
+      logger.info(`startMinimalService: finalPort is ${finalPort}`)
+      fn_updateMsgToRenderer('端口测试完毕('+finalPort+')，准备启动服务...', 40)
     }
     fn_updateMsgToRenderer(`服务模块读取完毕`, 90)
     await sleep(1000)
     fn_updateMsgToRenderer(`检测本地服务连通性...`, 90)
     await sleep(1000)
-    fn_updateMsgToRenderer(`本地服务启动成功，将跳转至主页面...`, 90)
-    RefStartStatus.isStarted=false
+    fn_updateMsgToRenderer(`本地服务启动成功，将跳转至主页面`, 90)
+    RefStartStatus.isStarted = false
   } catch (e) {
     logger.error(`startMinimalService: ${e.message} ${e}`)
     RefStartStatus.isStarted = false
-    fn_updateMsgToRenderer('无法启动，错误原因： '+(e.message||e), 20)
+    fn_updateMsgToRenderer('无法启动，错误原因： ' + (e.message || e), 20)
   }
 }
 

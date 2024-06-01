@@ -1,8 +1,8 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.69",
+  "version": "v5.3.70",
   "description": "秒达工具箱以独创高效的输入方式，让您可以快速呼出各类工具、文档及笔记等资源，免费安全无广告，现已完全开源！",
-  "author": "MDGJX <work7z@outlook.com>",   
+  "author": "MDGJX <work7z@outlook.com>",
   "homepage": "https://mdgjx.com",
   "main": "src-dist/main.js",
   "scripts": {
@@ -16,12 +16,19 @@
     "artifactName": "MDGJX-desktop-v${version}-${os}-${arch}.${ext}",
     "asar": false,
     "linux": {
-      "target": ["AppImage","deb","tar.gz"]
+      "target": [
+        "AppImage",
+        "deb",
+        "tar.gz"
+      ]
     },
-    "win":{
-      "target": ["nsis","zip"]
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ]
     },
-     "extraFiles": [
+    "extraFiles": [
       {
         "from": "minimal-dist",
         "to": "resources/app/minimal-dist"
@@ -38,10 +45,10 @@
     ],
     "nsis": {
       "oneClick": false,
-      "selectPerMachineByDefault":true,
+      "selectPerMachineByDefault": true,
       "perMachine": true,
-      "language":"0004",
-      "menuCategory":true,
+      "language": "0004",
+      "menuCategory": true,
       "allowToChangeInstallationDirectory": false
     },
     "publish": null,
