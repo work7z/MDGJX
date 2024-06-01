@@ -41,12 +41,12 @@ const fn_startMinimalService = async () => {
       try {
         await tcpPortUsed.waitUntilUsed(44204, 200, 800)
                 logger.info(`startMinimalService: the port is used: ${port}`)
-        continue;
+                break;
       } catch (e) {
         // get errors means the port is not used
         finalPort = port
         logger.info(`startMinimalService: port ${port} is available`)
-        break;
+        continue;
       }
     }
     if(finalPort == -1) {
