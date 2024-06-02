@@ -11,14 +11,6 @@ Caption "${PRODUCT_NAME} ${VERSION}"
     nsExec::Exec 'TASKKILL /F /IM "MDGJX.exe"'
 !macroend
 
-!macro customUnInit
-    ${un.FindIt} "$INSTDIR" "data" $R0
-    ${If} -1 != $R0
-        MessageBox MB_ICONSTOP "检测到安装路径下包含了工作空间数据 $R0，请将工作空间文件夹移到其他位置后再试。$\n$\n\
-            The workspace data $R0 was detected in the installation path, please move the workspace folder to another location and try again.$\n"
-        Quit
-    ${EndIf}
-!macroend
 
 !macro customUnInstall
     ${IfNot} ${isUpdated}

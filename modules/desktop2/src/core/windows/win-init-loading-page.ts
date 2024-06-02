@@ -21,11 +21,16 @@ const RefStartStatus = {
 
 const systemHost = '127.0.0.1'
 
-export const getPortURLResponse = async (port: number):Promise<number>=>{
-  const r = await axios(`http://${systemHost}:${port}`)
-  logger.info(`getPortURLResponse: ${r.status} ${r.statusText}`)
-  logger.debug(`getPortURLResponse: ${r.data}`)
-  return r.status
+export const getPortURLResponse = async (port: number): Promise<number> => {
+  try {
+    const r = await axios(`http://${systemHost}:${port}`)
+    logger.info(`getPortURLResponse: ${r.status} ${r.statusText}`)
+    logger.debug(`getPortURLResponse: ${r.data}`)
+    return r.status
+  } catch (e) {
+    logger.error(`getPortURLResponse: ${e.message} ${e}, but it is ok, we will return 500`)
+    return 500
+  }
 }
 
 const fn_startMinimalService = async () => {
@@ -128,7 +133,7 @@ const fn_startMinimalService = async () => {
     fn_updateMsgToRenderer(`本地服务(${finalPort})启动成功，将跳转至主页面`, 90)
     RefStartStatus.serverRunning = true
     RefStartStatus.startChecking = false
-    await sleep(500)    
+    await sleep(500)
     // TODO: if the core service is killed by user, we should catch it first and then resume the service
     APP_WIN_REF.setupWin.hide()
     const webSetupFn = winWebSetup()
