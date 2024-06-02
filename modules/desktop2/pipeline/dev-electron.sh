@@ -14,7 +14,6 @@ cd $(dirname $0)/..
 
 echo "[I] cleaning up..."
 rm -rf dist
-rm -rf build
 rm -rf src-dist
 
 echo "[I] compiling tsc files..."

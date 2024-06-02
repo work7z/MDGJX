@@ -13,9 +13,10 @@ function App() {
       <Switch>
         <Route path={'/loading'} component={LoadingPage}/>
         <Route exact path={'/'} component={()=>{
-          return <div>
-            Opps, there's nothing here, do not access this page directly, checkout App.tsx pls
-          </div>
+          return <LoadingPage/>
+          // return <div>
+          //   Opps, there's nothing here, do not access this page directly, checkout App.tsx pls
+          // </div>
         }}/>
       </Switch>
       </HashRouter>

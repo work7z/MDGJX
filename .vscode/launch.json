@@ -44,9 +44,10 @@
     {
       "name": "Run it at once",
       "configurations": [
-        "web2", "web2-server",
         "desktop2",
-        "desktop2-pages-local",
+        "web2", 
+        "web2-server",
+        "d2-pages-local",
         "it-tools dev server"
     ],
       "stopAll": true

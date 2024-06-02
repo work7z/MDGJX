@@ -6,8 +6,10 @@ set -e
 # ELECTRON_BUILDER_BINARIES_MIRROR=http://registry.npmmirror.com/electron-builder-binaries/
 # npm config set registry http://mirrors.cloud.tencent.com/npm/
 
+echo "ONLY_WIN_BINARY: $ONLY_WIN_BINARY"
+
 chmod +x $MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh
-crtVersion=v`$MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh`
+crtVersion=`$MDGJX_ROOT/pipeline/tools/get-desktop2-version.sh`
 
 if [ -z $crtVersion ]; then
     echo "[E] crtVersion is required."
@@ -32,7 +34,7 @@ cd $(dirname $0)/..
 import { AppInfoClz } from \"./d-types\"
 
 
-    const item:AppInfoClz ={ {
+    const item:AppInfoClz ={ 
     \"version\": \"$crtVersion\",
     \"releaseDate\": \"$(date +%Y-%m-%d)\",
     \"timestamp\": \"$(date +%s)\"
@@ -44,7 +46,6 @@ import { AppInfoClz } from \"./d-types\"
 echo "[I] cleaning up..."
 rm -rf node_modules
 rm -rf dist
-rm -rf build
 rm -rf src-dist
 rm -rf pages-dist
 echo "[I] installing dependencies..."
@@ -101,25 +102,60 @@ copyMinimal(){
     else
         tar -xzf $f_tFile -C $minimalDistDir
     fi
+    chmod +x $MDGJX_ROOT/pipeline/tools/get-web2-version.sh
+    web2_crtVersion=`$MDGJX_ROOT/pipeline/tools/get-web2-version.sh`
+
+    mv $minimalDistDir/MDGJX-* $minimalDistDir/MDGJX
+
+    mkdir -p ./resources/app
 }
 
-echo "[I] windows"
-copyMinimal windows-x64 zip
-npx electron-builder -w
-copyMinimal windows-arm64 zip
-npx electron-builder --arm64 -w
+build-windows-x64(){
+    echo "[I] windows x64"
+    copyMinimal windows-x64 zip
+    npx electron-builder -w
+}
 
-echo "[I] linux"
-copyMinimal linux-x64 tar.gz
-npx electron-builder -l
-copyMinimal linux-arm64 tar.gz
-npx electron-builder --arm64 -l
+build-windows-arm64(){
+    echo "[I] windows arm64"
+    copyMinimal windows-arm64 zip
+    npx electron-builder --arm64 -w
+}
 
-echo "[I] macos"
-copyMinimal darwin-x64 tar.gz
-npx electron-builder -m
-copyMinimal darwin-arm64 tar.gz
-npx electron-builder --arm64
+build-linux-x64(){
+    echo "[I] linux x64"
+    copyMinimal linux-x64 tar.gz
+    npx electron-builder -l
+}
+
+build-linux-arm64(){
+    echo "[I] linux arm64"
+    copyMinimal linux-arm64 tar.gz
+    npx electron-builder --arm64 -l
+}
+
+build-darwin-x64(){
+    echo "[I] darwin x64"
+    copyMinimal darwin-x64 tar.gz
+    npx electron-builder -m
+}
+
+build-darwin-arm64(){
+    echo "[I] darwin arm64"
+    copyMinimal darwin-arm64 tar.gz
+    npx electron-builder --arm64
+}
+
+if [ "$ONLY_WIN_BINARY" == "true" ]; then
+    build-windows-x64
+else
+    build-windows-x64
+    build-windows-arm64
+    build-linux-x64
+    build-linux-arm64
+    build-darwin-x64
+    build-darwin-arm64
+fi
 
 pkgDir=$PWD/pkg-dist
 [ -d $pkgDir ] || mkdir -p $pkgDir

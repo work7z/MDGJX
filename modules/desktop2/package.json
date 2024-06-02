@@ -1,8 +1,8 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.51",
-  "description": "The Next-Gen High Efficiency ToolBox - all in one, right now",
-  "author": "MDGJX Team <work7z@outlook.com>",   
+  "version": "v5.3.84",
+  "description": "秒达工具箱以独创高效的输入方式，让您可以快速呼出各类工具、文档及笔记等资源，免费安全无广告，现已完全开源！",
+  "author": "MDGJX <work7z@outlook.com>",
   "homepage": "https://mdgjx.com",
   "main": "src-dist/main.js",
   "scripts": {
@@ -11,35 +11,60 @@
     "build": "sh ./pipeline/build-electron.sh"
   },
   "build": {
-    "appId": "com.work7z.mdgjx",
-    "productName": "MDGJX",
+    "appId": "com.mdgjx.app",
+    "productName": "秒达工具箱",
     "artifactName": "MDGJX-desktop-v${version}-${os}-${arch}.${ext}",
     "asar": false,
     "linux": {
-      "target": ["AppImage","deb","tar.gz"]
+      "target": [
+        "AppImage",
+        "deb",
+        "tar.gz"
+      ],
+      "icon": "build/icon.png",
+      "category": "Utility"
     },
-    "win":{
-      "target": ["nsis","zip"]
-    },
+    "extraFiles": [
+      {
+        "from": "minimal-dist",
+        "to": "resources/app/minimal-dist"
+      }
+    ],
     "files": [
+      "nsis",
+      "LICENSE",
       "pages-dist",
-      "minimal-dist",
       "src-dist",
       "package.json",
-      "assets",
       "build",
       "node_modules/**/*",
       "node_modules/*",
       "package.json"
     ],
-    "nsis": {
-      "oneClick": false,
-      "language":"0004",
-      "menuCategory":true,
-      "allowToChangeInstallationDirectory": true
+    "win": {
+      "requestedExecutionLevel": "asInvoker",
+      "icon": "build/icon.ico",
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "rfc3161TimeStampServer": "http://timestamp.entrust.net/TSS/RFC3161sha2TS"
     },
-    "directories": {
-      "buildResources": "build"
+    "nsis": {
+      "language": "0004",
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "deleteAppDataOnUninstall": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "秒达工具箱(MDGJX)",
+      "license": "./LICENSE",
+      "include": "nsis/installer.nsh",
+      "warningsAsErrors": false,
+      "installerSidebar": "nsis/installerSidebar.bmp",
+      "uninstallerSidebar": "nsis/uninstallerSidebar.bmp"
     },
     "publish": null,
     "electronVersion": "17.1.2"
@@ -48,14 +73,13 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "electron": "^17.1.2",
-    "electron-builder": "^24.13.3",
-    "electron-packager": "^14.2.0",
+    "electron-builder": "22.14.13",
     "ts-node": "^10.0.0",
     "typescript": "~4.5.4",
     "vite": "^5.0.12"
   },
   "dependencies": {
-    "axios": "^0.26.0",
+    "axios": "^0.26.1",
     "core-util-is": "^1.0.3",
     "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^8.0.1",

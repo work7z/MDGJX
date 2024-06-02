@@ -5,39 +5,59 @@ import { isDevEnv } from "./web2share-copy/env";
 import { cfg_getAppClientEntryPage } from "./d-config";
 import { APP_WIN_REF } from "./d-winref";
 import { logDir, logger } from "./utils/logger";
-import { IpcMainOnTypeFn, MSG_REF, MsgType, OBJ_MSG_TYPE } from "../lib2/msg";
+import { IpcMainOnTypeFn_on, MSG_REF, MsgTypeIpcMain, OBJ_MSG_TYPE_IPC_MAIN } from "../lib2/msg";
 
-const allFn: { [key: string]: IpcMainOnTypeFn } = {}
+const allFn: { [key: string]: IpcMainOnTypeFn_on } = {}
 
 MSG_REF.ipcMain_on = async (key, value) => {
     logger.debug(`[ipcMain_on] key=${key} value=${value}`);
-    // PREDEFINED LOGIC PART BEGIN
-    switch(key){
+    switch (key) {
         case 'openLogDir':
             // show dir
             shell.openPath(logDir)
             return;
-            break;
+        case 'getRunMDGJXMinimalStatus':
+            return {
+                timestr: Date.now()
+            }
+        default:
+            for (let k in allFn) {
+                let r = await allFn[k](key, value)
+                if (r) {
+                    return;
+                }
+            }
+            logger.debug(`[ipcMain_on] key=${key} not found`)
+            return;
     }
-    // PREDEFINED LOGIC PART END
-
-    // OTHER ALL FN
-    for (let k in allFn) {
-        let r = await allFn[k](key, value)
-        if (r) {
-            return true;
-        }
-    }
-    return false;
 }
-for (let item in OBJ_MSG_TYPE) {
+for (let item in OBJ_MSG_TYPE_IPC_MAIN) {
     const key = item as any
     ipcMain.on(key, async (event, ...args) => {
         let r = await MSG_REF.ipcMain_on(key, ...args)
-        event.returnValue = r
+        if (r) {
+            let r_str = JSON.stringify(r)
+            logger.debug(`[ipcMain.on] reply with key=${key}_r r=${r_str}`)
+            const winId =event.sender.id
+const contents = BrowserWindow.fromId(winId).webContents;
+            contents.send(key + '_r', r_str)
+        }
     })
 }
 
-export const registerIpcMainOn = (key: string, fn: IpcMainOnTypeFn) => {
+MSG_REF.ipcMain_send = async (key, value): Promise<any> => {
+  logger.debug(`[ipcMain_send] key=${key} value=${value}`)
+  BrowserWindow.getAllWindows().forEach(win => {
+    if(win.isDestroyed()){
+        logger.warn(`[ipcMain_send] win.id=${win.id} is destroyed, ignore send`)
+        return
+    }
+    logger.debug(`[ipcMain_send] send to win.id=${win.id}`)
+    win.webContents.send(key, value)
+  })
+  return {} // nothing to return
+}
+
+export const registerIpcMainOn = (key: string, fn: IpcMainOnTypeFn_on) => {
     allFn[key] = fn
 }

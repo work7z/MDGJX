@@ -12,6 +12,7 @@ export default defineConfig({
   //     plugins: [tailwindcss],
   //   },
   // },
+  base: './',
   server: {
     port: 20167 // debut year
   },

@@ -1,20 +1,17 @@
 // See the Electron documentation for details on how to use preload scripts:
 // https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
 import { APP_SET_MSG, MSG_REF } from '../lib2/msg'
-import {APP_SET_BRIDGE, GLOBAL_REF_KEY} from '../lib2/bridge'
+import { APP_SET_BRIDGE, GLOBAL_REF_KEY } from '../lib2/bridge'
 import { logger } from './utils/logger'
-import { contextBridge, ipcRenderer,BrowserWindow,app } from 'electron'
+import { contextBridge, ipcRenderer, BrowserWindow, app, ipcMain } from 'electron'
 import pkgInfo from './d-pkginfo'
-const appVersion =  pkgInfo.version
+import './d-preload-msg'
+const appVersion = pkgInfo.version
 console.log('d-preload is initializing')
 
-MSG_REF.ipcRender_send = (key, value)=>{
-  logger.debug(`[ipcRender_send] key=${key} value=${value}`)
-  ipcRenderer.send(key, value)
-}
 const verType = 'insider' // or 'release'
 APP_SET_BRIDGE(window, {
-  getConfig: ()=>{
+  getConfig: () => {
     return {
       version: appVersion,
       buildInfo: `${pkgInfo.version}-${verType} on ${pkgInfo.releaseDate}`,
@@ -22,10 +19,10 @@ APP_SET_BRIDGE(window, {
       platform: 'windows'
     }
   },
-  updateTitle(newTitle:string){
+  updateTitle(newTitle: string) {
     MSG_REF.ipcRender_send('updateTitle', newTitle)
   },
 })
-APP_SET_MSG(window,MSG_REF)
+APP_SET_MSG(window, MSG_REF)
 
-export default () => {};
+export default () => { };

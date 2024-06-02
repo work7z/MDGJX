@@ -5,6 +5,6 @@ import { useDisclosure, useDocumentTitle } from '@mantine/hooks';
 export function SetupPage() {
   useWrapWithTitle(`工作台`)
   return (
-    <div>this is setup</div>
+    <div>欢迎来到秒达工具箱，地址是{location.href}</div>
   );
 }

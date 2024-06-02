@@ -145,7 +145,7 @@ dist
 /coverage
 
 # production
-/build
+
 
 # misc
 .DS_Store
@@ -194,8 +194,6 @@ src/main/java/resources/runtime_api_set_dist/*
 fanyi2.json
 ### NetBeans ###
 nbproject/private/
-build/
-nbbuild/
 dist/
 nbdist/
 .nb-gradle/
