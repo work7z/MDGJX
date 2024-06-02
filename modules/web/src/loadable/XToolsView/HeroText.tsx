@@ -35,19 +35,19 @@ export function HeroText() {
 
                 <div className={classes.controls}>
                     <Button onClick={() => {
-                        AlertUtils.alertInfo("抱歉，桌面端暂未开放下载，敬请期待！感兴趣可加QQ群" + GetAppInfo().qqGroup)
+                        window.open(GetAppInfo().githubRepo)
                     }} className={classes.control} size="lg" variant="default" color="gray">
-                        下载桌面版
+                    应用自部署(Docker)
                     </Button>
                     <Button
                         onClick={() => {
                             // AlertUtils.alertInfo("抱歉，专业版暂未开放，敬请期待！感兴趣可加QQ群" + GetAppInfo().qqGroup)
                             // history.push("/settings/faq")
                             // AlertUtils.alertInfo("抱歉，更多功能页暂不可用，暂时为您跳转到常见问题页")
-                            AlertUtils.alertInfo("抱歉，IDE插件暂未开放下载，敬请期待！感兴趣可加QQ群" + GetAppInfo().qqGroup)
+                            AlertUtils.alertInfo("抱歉，桌面端暂未开放下载，敬请期待！感兴趣可加QQ群" + GetAppInfo().qqGroup)
                         }}
                         className={classes.control} size="lg">
-                        安装IDE插件
+                        下载桌面版(Desktop)
                     </Button>
                 </div>
             </div>

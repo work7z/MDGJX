@@ -15,26 +15,19 @@
 
 秒达工具箱是一款隐私优先，可自部署且完全开源的中文工具箱！
 
-# 💌 
+# 💌 特征
 
-- FOSS Forever
-- Lightweight Runtime
-- Full platform support(including ARMv8)
-- Full GPT-alike support
-- Highly integrated with productive UI
-- Available Docker Images and Portable Edition
-- Desktop edition support(Planning)
+- 永远的自由软件
+- 轻量级运行时
+- 全平台支持（包括ARMv8）
+- 完全类似 GPT 的支持
+- 与高效的 UI 高度集成
+- 可用的 Docker 映像和便携式版本
+- 桌面版支持(Planning)
 - ...
 
-# 🚀 Run it on Docker
+# 🚀 在 Docker 上运行
 
-**For GLOBAL users:**
-
-```
-docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -v ~/.laftools-docker:/root/.laftools  -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
-```
-
-**For CHINESE users(国内用户):**
 
 ```
 docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
@@ -42,43 +35,42 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 
 **NOTE**:
 
-1. Default port is set to 39899, you can adjust it if needed.
-2. LafTools will always be upgraded to latest version automatically so that you can enjoy latest functions and bugfixs.
+1. 默认端口设置为39899，您可以根据需要进行调整。
+2. 秒达工具箱将始终自动升级到最新版本，让您可以享受最新的功能和错误修复。
 
 **Docker Images:**
 
 - [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
 - [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
 
-# 🔗 Online Websites
+# 🔗 在线网站
 
-To quickly use these functions, we've deployed stable online website in US and CN region for you to use. Most tools are available in our online websites except for some tools that rely on specific OS capablities.
+为了快速使用这些功能，我们部署了稳定的在线网站供您使用。除了一些依赖特定操作系统功能的工具外，大多数工具都可以在我们的在线网站上找到。
 
-- 🇺🇸 United State: [laftools.dev](https://laftools.dev)
-- 🇨🇳 China Mainland: [laftools.cn](https://laftools.cn)
+- 🇨🇳 国内版: [mdgjx.com](https://mdgjx.com)
 
-# 🌠 Preview
+# 🌠 预览
 
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark-zh_CN.png?raw=true)
 
-# 📡 About LAF
+# 📡 关于LAF
 
 - `L` -> Linked
 - `A` -> Asynchronous
 - `F` -> Functional
 
-In short, LafTools is a suite that offers a series of linked, asynchronous, and functional toolsets.
+从本质上讲，秒达工具箱是一个提供一系列基于互连(Linked)、可异步(Asynchronous)且功能化(Functional)的编程向工具集。
 
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+请放心，随着时间的推移，这个项目将会以非凡而奇妙的方式发展。这个项目需要更多的时间，就像酒一样，越久越好。
 
-# 🌠 Contribution
+# 🌠 贡献
 
-## 1. Setup System Environment
+## 1. 设置系统环境
 
-For the sake of simplicity, let's say that you've cloned this repository to either `C:\Usersjerry\project\laftools-repo` on Windows or `/Users/jerry/projects/laftools-repo` on Linux/MacOS, then you should declare env and set config below in your file **~/.bashrc**, or simply execute them before running any command.
+为了简单起见，假设您已将此仓库克隆到 Windows 上的 `C:\Usersjerry\project\laftools-repo` 或 Linux/MacOS 上的 `/Users/jerry/projects/laftools-repo`，那么您应该在文件 **~/.bashrc* 中声明 env 并在下面设置配置*，或者只是在运行任何命令之前执行它们。
 
-If you're using Windows OS, please ensure that all commands are executed in git-bash, learn more please refer to [CONTRIBUTION](/docs/en_US/CONTRIBUTION.md). Apart from this, it is recommended to avoid using any whitespace or non-English characters in the file path where this project is located.
+如果您使用的是 Windows 操作系统，请确保所有命令都在 git-bash 中执行，了解更多信息请参阅 [贡献](/docs/zh_CN/CONTRIBUTION.md)。除此之外，建议避免在该项目所在的文件路径中使用任何空格或非英文字符。
 
 **Env for Windows:**
 
@@ -94,40 +86,40 @@ export PATH=$PATH:$MDGJX_ROOT\dev\source\windows-bin
 export MDGJX_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. 编译并运行
 
 ```bash
-# install required global library
+# 安装所需的全局库
 npm i -g pnpm ts-node typescript
 
-# install project deps
+# 安装项目依赖
 cd $MDGJX_ROOT && npm install -S -D --force
-cd $MDGJX_ROOT/modules/web && npm install -S -D --force
+cd $MDGJX_ROOT/modules/web2 && npm install -S -D --force
 cd $MDGJX_ROOT/devtools/scripts/scan && npm install -S -D --force
 
-# run core service
+# 运行核心服务
 npm run fe-web
 
 ```
 
-## 3. Build
+## 3. 构建(Build)
 
 ```bash
 cd pipeline
 ./build-all.sh
 ```
 
-# 📑 Other Materials
+# 📑 其他材料
 
-Below are further materials that you can have a look if you'd like to learn more detail about this project:
+如果您想了解有关该项目的更多详细信息，可以查看以下更多材料：
 
-- [FAQ](/docs/en_US/FAQ.md)
-- [CONTRIBUTION](/docs/en_US/CONTRIBUTION.md)
-- [For China Developers](/devtools/notes/common/issues.md)
+- [常见问题](/docs/zh_CN/FAQ.md)
+- [贡献](/docs/zh_CN/CONTRIBUTION.md)
+- [对于中国开发者](/devtools/notes/common/issues.md)
 
 # 💐 Icons
 
-We would appreciate talent artists who provided below beautiful icons:
+我们非常感谢提供以下精美图标的才华横溢的艺术家：
 <a href="https://www.flaticon.com/free-icons/ide" title="ide icons">Ide icons created by umartvurdu - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/ide" title="ide icons">Ide icons created by heisenberg_jr - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/fund" title="fund icons">Fund icons created by Freepik - Flaticon</a>
@@ -136,17 +128,17 @@ We would appreciate talent artists who provided below beautiful icons:
 <a href="https://www.flaticon.com/free-icons/timer" title="timer icons">Timer icons created by Freepik - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/dictionary" title="dictionary icons">Dictionary icons created by Freepik - Flaticon</a>
 
-# 🙏 Acknowledgements
+# 🙏 致谢
 
-This project would not have been possible without awesome open source projects which I would like to personally express my deepest gratitude to:
+如果没有出色的开源项目，这个项目就不可能实现，我想亲自向以下项目表示最深切的谢意：
 
 1. [Blueprint UI](https://blueprintjs.com/) - a React-based UI toolkit.
 1. [CyberChef](https://github.com/gchq/CyberChef/tree/master) - a web app for encryption, encoding, compression and data analysis.
 1. [Lodash](https://github.com/lodash/lodash) - a modern JavaScript utility library delivering modularity, performance, & extras.
 1. [one-api](https://github.com/songquanpeng/one-api) - an OpenAI key management & redistribution system.
 
-For sure, there are other open source projects that have benefited and facilitated this project, which I couldn't detail in this part; Without these projects and these talent developers' efforts, LafTools would not have been possible.
+当然，还有其他开源项目受益并促进了这个项目，我无法在这一部分中详细介绍；如果没有这些项目和这些人才开发人员的努力，秒达工具箱就不可能实现。
 
 # 🪪 License
 
-This project is protected under the GNU Affero General Public License, please see the LICENSE file for more details.
+该项目受 GNU Affero 通用公共许可证保护，请参阅许可证文件了解更多详细信息。
