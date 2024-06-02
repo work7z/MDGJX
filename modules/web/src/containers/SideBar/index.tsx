@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { UnstyledButton, Tooltip, Title, rem } from '@mantine/core';
+import { UnstyledButton, Tooltip, Title, rem, Stack, TextInput, Code } from '@mantine/core';
 import {
     IconHome2,
     IconUser,
@@ -9,6 +9,9 @@ import {
     IconBook,
     IconLanguage,
     IconApiApp,
+    IconLogout,
+    IconSwitchHorizontal,
+    IconSearch,
 
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
@@ -17,7 +20,21 @@ import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
 import { SystemModuleItem, SystemSubModuleItem, systemModulesList } from '@/systemModules';
 import { Link, useHistory } from 'react-router-dom';
+import AuthUtils from '@/utils/AuthUtils';
+import {
+    IconNotes,
+    IconCalendarStats,
+    IconGauge,
+    IconPresentationAnalytics,
+    IconFileAnalytics,
+    IconAdjustments,
+    IconLock,
+} from '@tabler/icons-react';
 
+import { LinksGroup } from './NavbarLinksGroup';
+import exportUtils from '@/utils/ExportUtils';
+import { FN_GetDispatch } from '@/store/nocycle';
+import settingsSlice from '@/store/reducers/settingsSlice';
 const latestReadForEachModule: {
     [key: string]: SystemSubModuleItem
 } = {
@@ -50,18 +67,54 @@ export const useMDParams = (): TypeMDParams => {
         mainSubToolID: tmp_mainSubToolsID
     }
 }
+const mockdata = [
+    { label: 'Dashboard', icon: IconGauge },
+    {
+        label: 'Market news',
+        icon: IconNotes,
+        initiallyOpened: true,
+        links: [
+            { label: 'Overview', link: '/' },
+            { label: 'Forecasts', link: '/' },
+            { label: 'Outlook', link: '/' },
+            { label: 'Real time', link: '/' },
+        ],
+    },
+    {
+        label: 'Releases',
+        icon: IconCalendarStats,
+        links: [
+            { label: 'Upcoming releases', link: '/' },
+            { label: 'Previous releases', link: '/' },
+            { label: 'Releases schedule', link: '/' },
+        ],
+    },
+    { label: 'Analytics', icon: IconPresentationAnalytics },
+    { label: 'Contracts', icon: IconFileAnalytics },
+    { label: 'Settings', icon: IconAdjustments },
+    {
+        label: 'Security',
+        icon: IconLock,
+        links: [
+            { label: 'Enable 2FA', link: '/' },
+            { label: 'Change password', link: '/' },
+            { label: 'Recovery codes', link: '/' },
+        ],
+    },
+];
 
 export function DoubleNavbar(props: {
     mdParams: TypeMDParams,
     toggle: () => void
 }) {
+    const hideLeftMenu=    exportUtils.useSelector(v=>v.settings.hideLeftMenu)
     const { mainModuleItem, mainSubModuleItem } = props.mdParams
     const justSysModuleList = systemModulesList
 
     const mainModule = mainModuleItem.id
     const mainModuleSubItemId = mainSubModuleItem.id
 
-    const mainLinks = justSysModuleList.map((link) => (
+    const fn_mainLinks = (link) => (
         <Tooltip
             label={link.label}
             position="right"
@@ -78,9 +131,13 @@ export function DoubleNavbar(props: {
                 </UnstyledButton>
             </Link>
         </Tooltip>
-    ));
+    )
+    const firstLevel_links = justSysModuleList.filter(x=>!x.fixedAtBottom).map(fn_mainLinks);
+    const firstLevel_links_btm = justSysModuleList.filter(x => x.fixedAtBottom).map(fn_mainLinks);
+    const jsx_linksgroup = mockdata.map((item) => <LinksGroup {...item} key={item.label} />);
 
-    const links = (mainModuleItem?.children || []).map((item) => {
+
+    const sub_links = (mainModuleItem?.children || []).map((item) => {
         let link = item.id
         if (item.href) {
             return (
@@ -119,13 +176,53 @@ export function DoubleNavbar(props: {
                     <div className={classes.logo}>
                         <MantineLogo type="mark" size={30} />
                     </div>
-                    {mainLinks}
+                    <div className='flex flex-col  space-y-0 '>
+                        {firstLevel_links}
+                    </div>
+                    <div className='flex flex-col space-y-0 bottom-4 fixed '>
+                        <Tooltip
+                            label={hideLeftMenu ? '展开左侧目录':"收起左侧目录"}
+                            position="right"
+                            withArrow
+                            transitionProps={{ duration: 0 }}
+                        >
+                                <UnstyledButton
+                                    className={classes.mainLink}
+                                    onClick={()=>{
+                                        FN_GetDispatch()(
+                                            settingsSlice.actions.updateOneOfParamState({
+                                                hideLeftMenu:!hideLeftMenu
+                                            })
+                                        )
+                                    }}
+                                >
+                                <IconSwitchHorizontal style={{ width: rem(22), height: rem(22) }} stroke={1.5} />
+                                </UnstyledButton>
+                        </Tooltip>
+                        
+                        {firstLevel_links_btm}
+                    </div>
+
                 </div>
                 <div className={classes.main}>
                     <Title order={4} className={classes.title}>
                         {mainModuleItem?.label}
                     </Title>
-                    {links}
+                   <div className='px-2'>
+                        <TextInput
+                            placeholder={
+                                `快速搜索`
+                            }
+                            size="xs"
+                            leftSection={<IconSearch style={{ width: rem(12), height: rem(12) }} stroke={1.5} />}
+                            rightSectionWidth={70}
+                            rightSection={<Code className={classes.searchCode}>Ctrl + K</Code>}
+                            styles={{ section: { pointerEvents: 'none' } }}
+                            mb="sm"
+                        />
+                   </div>
+                    {jsx_linksgroup}
+                    {/* {links} */}
                 </div>
             </div>
         </nav>

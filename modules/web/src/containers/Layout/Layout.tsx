@@ -25,6 +25,7 @@ import LoadingView from '../../components/LoadingView';
 import { FooterCentered } from './Footer';
 import LoadableWrapper from '../../components/LoadableWrapper';
 import { getBridgeRef, isDesktopMode } from '@/utils/DesktopUtils';
+import exportUtils from '@/utils/ExportUtils';
 
 export let useWrapWithTitle = (title: string) => {
     const finalTitle = isDesktopMode()?`${title} - 秒达工具箱`:`${title}`
@@ -33,7 +34,7 @@ export let useWrapWithTitle = (title: string) => {
         getBridgeRef()?.updateTitle(finalTitle)
     }
 }
-
+const FIXED_COLUMN_WIDTH=60
 export function GeneralLayout(props) {
     const mdParams = useMDParams()
     const { mainModuleItem, mainSubModuleItem } = mdParams
@@ -51,6 +52,8 @@ export function GeneralLayout(props) {
             return <div>当前页面正在重构中，敬请期待 </div>
         }
     }, [bodyFn])
+    const hideLeftMenu = exportUtils.useSelector(v => v.settings.hideLeftMenu)
+
     return (
         <AppShell
             header={{ height: 60 }}
@@ -70,12 +73,20 @@ export function GeneralLayout(props) {
             { /** app sidebar */}
             <AppShell.Navbar p="md" px={0} py={0} mb={0} style={{
                 height: '100%',
+                ...(hideLeftMenu?{
+                    width: FIXED_COLUMN_WIDTH+'px',
+                    overflow:'hidden'
+                }:{})
             }}>
                 <SideBar mdParams={mdParams} toggle={toggle} />
             </AppShell.Navbar>
 
             { /** app main */}
-            <AppShell.Main >
+            <AppShell.Main style={{
+                ...(hideLeftMenu ? {
+                    paddingLeft: (FIXED_COLUMN_WIDTH+10) + 'px',
+                } : {})
+            }}>
                 {bodyJSX}
             </AppShell.Main>
             {

@@ -34,6 +34,7 @@ export type SystemModuleItem = {
     id: string,
     icon: React.FC<any>;
     label: string,
+    fixedAtBottom?:boolean;
     children?: SystemSubModuleItem[]
 }
 export type RedirectLinkItem = {
@@ -50,6 +51,25 @@ export const redirectLinks: RedirectLinkItem[] = [
     //     url: '/tools/chat?text=json'
     // },
 ]
+// {
+//     id: 'api',
+//     icon: IconApiApp,
+//     label: 'API联调联试',
+//     children: [
+//         // {
+//         //     name: 'API 客户端',
+//         //     id: 'client'
+//         // },
+//         {
+//             name: '常用 API',
+//             id: 'common'
+//         },
+//         {
+//             name: '模拟 API (Mock)',
+//             id: 'mock'
+//         },
+//     ]
+// },
 
 export const Fn_MyAccount = () => import('./loadable/MyAccount/index.tsx')
 
@@ -77,25 +97,6 @@ export const systemModulesList: SystemModuleItem[] = [
             })
         ]
     },
-    // {
-    //     id: 'api',
-    //     icon: IconApiApp,
-    //     label: 'API联调联试',
-    //     children: [
-    //         // {
-    //         //     name: 'API 客户端',
-    //         //     id: 'client'
-    //         // },
-    //         {
-    //             name: '常用 API',
-    //             id: 'common'
-    //         },
-    //         {
-    //             name: '模拟 API (Mock)',
-    //             id: 'mock'
-    //         },
-    //     ]
-    // },
     {
         id: 'i18n',
         icon: IconLanguage,
@@ -143,6 +144,7 @@ export const systemModulesList: SystemModuleItem[] = [
     },
     {
         id: 'settings',
+        fixedAtBottom:true,
         icon: IconSettings, label: '系统设置',
         children: [
             {

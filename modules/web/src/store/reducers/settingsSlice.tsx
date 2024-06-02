@@ -12,6 +12,7 @@ const initialState = {
   initCount: 0,
   testContent: 'yes',
   darkMode: false,
+  hideLeftMenu: false,
   currentNavTabId: "Home",
 };
 

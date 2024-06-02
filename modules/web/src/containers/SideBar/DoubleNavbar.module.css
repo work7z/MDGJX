@@ -26,7 +26,7 @@
 
 .main {
   flex: 1;
-  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+  /* background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6)); */
 }
 
 .mainLink {
@@ -55,7 +55,8 @@
   font-family:
     Greycliff CF,
     var(--mantine-font-family);
-  margin-bottom: var(--mantine-spacing-xl);
+  /* margin-bottom: var(--mantine-spacing-xl); */
+  margin-bottom:10px;
   background-color: var(--mantine-color-body);
   padding: var(--mantine-spacing-md);
   padding-top: rem(18px);
@@ -70,7 +71,7 @@
   height: rem(60px);
   padding-top: var(--mantine-spacing-md);
   border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-7));
-  margin-bottom: var(--mantine-spacing-xl);
+  margin-bottom: 10px;
 }
 
 .link {
