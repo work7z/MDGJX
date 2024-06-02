@@ -1,6 +1,6 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.85",
+  "version": "v5.3.86",
   "description": "秒达工具箱以独创高效的输入方式，让您可以快速呼出各类工具、文档及笔记等资源，免费安全无广告，现已完全开源！",
   "author": "MDGJX <work7z@outlook.com>",
   "homepage": "https://mdgjx.com",
@@ -72,6 +72,7 @@
   "devDependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@types/tcp-port-used": "^1.0.4",
     "electron": "^17.1.2",
     "electron-builder": "22.14.13",
     "ts-node": "^10.0.0",

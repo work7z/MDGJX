@@ -11,9 +11,8 @@ import { MSG_REF } from "../../lib2/msg";
 import { sleep } from "../d-utils";
 import { RES_PushMDGJXStatus } from "src/lib2/types";
 import winWebSetup from "./win-web-setup";
-var tcpPortUsed = require("tcp-port-used");
+import tcpPortUsed from "tcp-port-used"
 import axios from 'axios'
-
 
 const RefStartStatus = {
   startChecking: false,
@@ -46,11 +45,15 @@ const fn_startMinimalService = async () => {
     let finalPort = -1;
     for (let port = 32016, j = 0; port < 42020; port++, j++) {
       fn_updateMsgToRenderer('正在测试端口' + port + '中...', 10 + j)
-      try {
-        await tcpPortUsed.waitUntilUsed(44204, 200, 800)
+      const isUsed = await tcpPortUsed.check({
+        port: port,
+        retryTimeMs: 500,
+        timeOutMs: 1000
+      })
+      if (isUsed) {
         logger.info(`startMinimalService: the port is used: ${port}`)
         continue;
-      } catch (e) {
+      } else {
         // get errors means the port is not used
         finalPort = port
         logger.info(`startMinimalService: port ${port} is available`)
@@ -105,19 +108,27 @@ const fn_startMinimalService = async () => {
     let isOK = false;
     let lastErr = ''
     for (let i = 0; i < tryTimes; i++) {
-      try {
-        await tcpPortUsed.waitUntilUsed(finalPort, 500, 1000)
-        lastErr = `端口${finalPort}无法占用，请检查防火墙或安全软件添加白名单`
-        fn_updateMsgToRenderer(`检测本地服务连通性[${i}]次...`, 90)
-        logger.error(`startMinimalService: server is not running, tryTimes: ${i}/${tryTimes}, failed to listen to port ${finalPort}`)
-        await sleep(800)
-      } catch (e) {
+      logger.info(`startMinimalService: try to listen to port ${finalPort}`)
+      const isUsed = await tcpPortUsed.check({
+        port: finalPort,
+        retryTimeMs: 500,
+        timeOutMs: 1000
+      })
+      logger.info(`startMinimalService: isUsed: ${isUsed}`)
+      if (isUsed) {
         // if the port is used, then the server is running
-        logger.info(`startMinimalService: server is running ${e.message} ${e}`)
+        logger.info(`startMinimalService: server is running`)
         logger.info(`startMinimalService: server is running`)
         RefStartStatus.serverRunning = true
         isOK = true;
         break;
+
+      } else {
+        lastErr = `端口${finalPort}无法占用，请检查防火墙或安全软件是否阻止TCP服务启动`
+        fn_updateMsgToRenderer(`检测本地服务连通性[${i}]次...`, 90)
+        logger.error(`startMinimalService: server is not running, tryTimes: ${i}/${tryTimes}, failed to listen to port ${finalPort}`)
+        await sleep(800)
+        continue;
       }
     }
     if (!isOK) {
