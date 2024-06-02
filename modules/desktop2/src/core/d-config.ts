@@ -37,3 +37,7 @@ export const cfg_getAppLocalHost = ()=>{
 export const cfg_getAppLocalLoadingPage = ()=>{
     return cfg_getAppLocalHost() 
 }
+
+export const cfg_getServerPort = ()=>{
+    return isDevEnv()?5173: 42016 // this is a fixed port value for now
+}

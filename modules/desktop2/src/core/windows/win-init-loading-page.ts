@@ -2,7 +2,7 @@ import { app, BrowserWindow, screen } from "electron";
 import path from "path";
 import { DMainPassProps } from "../d-types";
 import { isDevEnv, isProductionEnv } from "../web2share-copy/env";
-import { cfg_getAppClientEntryPage, cfg_getAppLocalLoadingPage, cfg_getAppMainHost, cfg_getIconImg, cfg_getMinimalMDGJXRootDir, cfg_getRootFolder, CONFIG_OBJ } from "../d-config";
+import { cfg_getAppClientEntryPage, cfg_getAppLocalLoadingPage, cfg_getAppMainHost, cfg_getIconImg, cfg_getMinimalMDGJXRootDir, cfg_getRootFolder, cfg_getServerPort, CONFIG_OBJ } from "../d-config";
 import { APP_WIN_REF } from "../d-winref";
 import { logger } from "../utils/logger";
 import { registerIpcMainOn } from "../d-main-msg";
@@ -11,7 +11,6 @@ import { MSG_REF } from "../../lib2/msg";
 import { sleep } from "../d-utils";
 import { RES_PushMDGJXStatus } from "src/lib2/types";
 import winWebSetup from "./win-web-setup";
-import tcpPortUsed from "tcp-port-used"
 import axios from 'axios'
 
 const RefStartStatus = {
@@ -19,6 +18,16 @@ const RefStartStatus = {
   serverRunning: false,
   msg: ''
 }
+
+const systemHost = '127.0.0.1'
+
+export const getPortURLResponse = async (port: number):Promise<number>=>{
+  const r = await axios(`http://${systemHost}:${port}`)
+  logger.info(`getPortURLResponse: ${r.status} ${r.statusText}`)
+  logger.debug(`getPortURLResponse: ${r.data}`)
+  return r.status
+}
+
 const fn_startMinimalService = async () => {
   const fn_updateMsgToRenderer = (msg: string, pct: number) => {
     const v: RES_PushMDGJXStatus = {
@@ -39,29 +48,20 @@ const fn_startMinimalService = async () => {
     }
 
     RefStartStatus.startChecking = true
-    logger.debug(`startMinimalService: start`)
+    const httpsProxy = process.env.HTTPS_PROXY || process.env.https_proxy || process.env.HTTPS_PROXY || process.env.https_proxy
+    const httpProxy = process.env.HTTP_PROXY || process.env.http_proxy || process.env.HTTP_PROXY || process.env.http_proxy
+    logger.debug(`startMinimalService: start, proxy info: ${httpsProxy} ${httpProxy}`)
     fn_updateMsgToRenderer('正在启动本地核心服务...', 5)
     fn_updateMsgToRenderer('正在检查服务端口可用性...', 10)
-    let finalPort = -1;
-    for (let port = 32016, j = 0; port < 42020; port++, j++) {
-      fn_updateMsgToRenderer('正在测试端口' + port + '中...', 10 + j)
-      const isUsed = await tcpPortUsed.check({
-        port: port,
-        retryTimeMs: 500,
-        timeOutMs: 1000
-      })
-      if (isUsed) {
-        logger.info(`startMinimalService: the port is used: ${port}`)
-        continue;
-      } else {
-        // get errors means the port is not used
-        finalPort = port
-        logger.info(`startMinimalService: port ${port} is available`)
-        break;
-      }
-    }
-    if (isDevEnv()) {
-      finalPort = 5173
+    let finalPort = cfg_getServerPort()
+    fn_updateMsgToRenderer('正在测试端口' + finalPort + '中...', 10)
+    const isUsed = await getPortURLResponse(finalPort) == 200
+    if (isUsed && isProductionEnv()) {
+      logger.info(`startMinimalService: the port is used: ${finalPort}`)
+      throw new Error(`端口${finalPort}已被占用，请先关闭所有秒达工具箱进程`)
+    } else {
+      // get errors means the port is not used
+      logger.info(`startMinimalService: port ${finalPort} is available`)
     }
     if (finalPort == -1) {
       throw new Error('无法找到可用端口')
@@ -74,7 +74,6 @@ const fn_startMinimalService = async () => {
 
     const finalEntryPageLink = cfg_getAppClientEntryPage()
     logger.info(`startMinimalService: finalEntryPageLink is ${finalEntryPageLink}`)
-    const systemHost = '127.0.0.1'
     if (isProductionEnv()) {
       const rootDir = cfg_getMinimalMDGJXRootDir()
       process.env.HOSTNAME = systemHost
@@ -101,28 +100,19 @@ const fn_startMinimalService = async () => {
     } else {
       logger.info(`startMinimalService: is not production env, skip starting server`)
     }
-
-
     fn_updateMsgToRenderer(`检测本地服务连通性...`, 90)
     const tryTimes = 20;
     let isOK = false;
     let lastErr = ''
     for (let i = 0; i < tryTimes; i++) {
       logger.info(`startMinimalService: try to listen to port ${finalPort}`)
-      const isUsed = await tcpPortUsed.check({
-        port: finalPort,
-        retryTimeMs: 500,
-        timeOutMs: 1000
-      })
-      logger.info(`startMinimalService: isUsed: ${isUsed}`)
-      if (isUsed) {
-        // if the port is used, then the server is running
-        logger.info(`startMinimalService: server is running`)
+      const isRunning = await getPortURLResponse(finalPort) == 200
+      logger.info(`startMinimalService: isUsed: ${isRunning}`)
+      if (isRunning) {
         logger.info(`startMinimalService: server is running`)
         RefStartStatus.serverRunning = true
         isOK = true;
         break;
-
       } else {
         lastErr = `端口${finalPort}无法占用，请检查防火墙或安全软件是否阻止TCP服务启动`
         fn_updateMsgToRenderer(`检测本地服务连通性[${i}]次...`, 90)
@@ -133,7 +123,7 @@ const fn_startMinimalService = async () => {
     }
     if (!isOK) {
       fn_updateMsgToRenderer(`服务启动失败: ${lastErr}`, 20)
-      throw new Error('无法连接到本地服务，请尝试关闭所有相关进程')
+      throw new Error('无法连接到本地服务' + finalPort + '，请尝试关闭所有相关进程')
     }
     fn_updateMsgToRenderer(`本地服务启动成功，将跳转至主页面`, 90)
     RefStartStatus.serverRunning = true
