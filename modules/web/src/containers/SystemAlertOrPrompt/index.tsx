@@ -1,4 +1,4 @@
-import BackToTop from "@/components/Layout/BackToTop"
+import BackToTop from "@/containers/Layout/BackToTop"
 import LoadableWrapper from "@/components/LoadableWrapper"
 import MyAccount from "@/loadable/MyAccount"
 import { FN_GetDispatch } from "@/store/nocycle"

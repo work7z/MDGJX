@@ -1,4 +1,4 @@
-import { GeneralLayout as GeneralLayout } from '@/components/Layout/Layout';
+import { GeneralLayout as GeneralLayout } from '@/containers/Layout/Layout';
 import { AppShell, Burger } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Title, Text, Button, Container, Group } from '@mantine/core';

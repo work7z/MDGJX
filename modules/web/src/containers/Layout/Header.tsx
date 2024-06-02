@@ -6,7 +6,7 @@ import {
 } from '@mantine/core';
 import { useDisclosure, useWindowScroll } from '@mantine/hooks';
 import imgFile from '/src/favicon.png'
-import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
+import { ColorSchemeToggle } from '../../components/ColorSchemeToggle/ColorSchemeToggle';
 import {
     IconNotification,
     IconBook,
@@ -17,7 +17,7 @@ import {
     IconUser,
     IconUserCircle
 } from '@tabler/icons-react';
-import SourceCodeLink from '../SourceCodeLink';
+import SourceCodeLink from '../../components/SourceCodeLink';
 import { DoubleNavbar as SideBar } from '@/containers/SideBar';
 import GetAppInfo from '@/AppInfo';
 import BackToTop from './BackToTop';

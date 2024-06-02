@@ -1,14 +1,14 @@
 import { ActionIcon, Affix, AppShell, Box, Burger, Button, Group, HoverCard, LoadingOverlay, Transition, rem } from '@mantine/core';
 import { useDisclosure, useDocumentTitle, useWindowScroll } from '@mantine/hooks';
 import imgFile from '/src/favicon.png'
-import { ColorSchemeToggle, useDarkModeOrNot } from '../ColorSchemeToggle/ColorSchemeToggle';
+import { ColorSchemeToggle, useDarkModeOrNot } from '../../components/ColorSchemeToggle/ColorSchemeToggle';
 import { IconArrowUp, IconBrandGithub, IconBrandGithubFilled, IconSourceCode } from '@tabler/icons-react';
-import SourceCodeLink from '../SourceCodeLink';
+import SourceCodeLink from '../../components/SourceCodeLink';
 import { DoubleNavbar as SideBar, useMDParams } from '@/containers/SideBar';
 import GetAppInfo from '@/AppInfo';
 import BackToTop from './BackToTop';
 import Header from './Header';
-import GenCodeMirror from '../GenCodeMirror';
+import GenCodeMirror from '../../components/GenCodeMirror';
 import {
     withRouter,
     BrowserRouter as Router,
@@ -21,9 +21,9 @@ import {
     useRouteMatch,
 } from "react-router-dom";
 import React, { useMemo } from 'react';
-import LoadingView from '../LoadingView';
+import LoadingView from '../../components/LoadingView';
 import { FooterCentered } from './Footer';
-import LoadableWrapper from '../LoadableWrapper';
+import LoadableWrapper from '../../components/LoadableWrapper';
 import { getBridgeRef, isDesktopMode } from '@/utils/DesktopUtils';
 
 export let useWrapWithTitle = (title: string) => {
@@ -79,7 +79,7 @@ export function GeneralLayout(props) {
                 {bodyJSX}
             </AppShell.Main>
             {
-                mainSubModuleItem.disableFooter ? '' : <FooterCentered />
+                mainSubModuleItem.disableFooter || isDesktopMode() ? '' : <FooterCentered />
             }
         </AppShell>
     );

@@ -1,5 +1,5 @@
 import AppConstants from "@/AppConstants"
-import { useWrapWithTitle } from "@/components/Layout/Layout"
+import { useWrapWithTitle } from "@/containers/Layout/Layout"
 import LoadableWrapper from "@/components/LoadableWrapper"
 import { useMDParams } from "@/containers/SideBar"
 import XToolsViewer from "@/containers/XToolsViewer"
