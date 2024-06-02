@@ -14,7 +14,7 @@ export  default  () => {
     const display = screen.getPrimaryDisplay()
     const appScreenWidth = display.bounds.width
     const appScreenHeight = display.bounds.height
-  const dPreloadJS = path.join(__dirname, "preload-loading-pages.js")
+  const dPreloadJS = path.join(__dirname, "preload-web-setup.js")
   if (!existsSync(dPreloadJS)) {
     logger.error(`preload file not found: ${dPreloadJS}`)
     return
@@ -34,7 +34,7 @@ export  default  () => {
       },
     });
 
-    registerIpcMainOn('example', async (key, values) => {
+    registerIpcMainOn('websetup', async (key, values) => {
       switch (key) {
         case 'updateTitle':
           mainWindow.setTitle(values)
@@ -43,8 +43,8 @@ export  default  () => {
           return false;
       }
     })
-    APP_WIN_REF.exampleWin = mainWindow;
+    APP_WIN_REF.setupWin = mainWindow;
 
-    mainWindow.loadURL(cfg_getAppLocalLoadingPage());
-
+    mainWindow.loadURL(cfg_getAppClientEntryPage());
+    return mainWindow
   };

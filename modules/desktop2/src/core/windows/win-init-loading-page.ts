@@ -10,6 +10,7 @@ import { existsSync } from "original-fs";
 import { MSG_REF } from "../../lib2/msg";
 import { sleep } from "../d-utils";
 import { RES_PushMDGJXStatus } from "src/lib2/types";
+import winWebSetup from "./win-web-setup";
 var tcpPortUsed = require("tcp-port-used");
 
 
@@ -92,6 +93,11 @@ const fn_startMinimalService = async () => {
     fn_updateMsgToRenderer(`检测本地服务连通性...`, 90)
     fn_updateMsgToRenderer(`本地服务启动成功，将跳转至主页面`, 90)
     RefStartStatus.startChecking = false
+    await sleep(500)
+    APP_WIN_REF.setupWin.close()
+
+    const webSetupFn = winWebSetup()
+    webSetupFn.show()
   } catch (e) {
     logger.error(`startMinimalService: ${e.message} ${e}`)
     RefStartStatus.startChecking = false

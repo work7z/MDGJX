@@ -32,5 +32,4 @@ export const cfg_getAppLocalHost = ()=>{
 }
 export const cfg_getAppLocalLoadingPage = ()=>{
     return cfg_getAppLocalHost() 
-    // +'/#/loading'
 }
