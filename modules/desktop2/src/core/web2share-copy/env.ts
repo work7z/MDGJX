@@ -29,7 +29,7 @@ export let isTestEnv = () => {
 }
 
 export let isProductionEnv = () => {
-    return envObj.env === 'production';
+    return !isDevEnv()
 }
 
 export let getLafELB3Root = (): string => {

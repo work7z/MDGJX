@@ -27,7 +27,7 @@ const fn_startMinimalService = async () => {
     MSG_REF.ipcMain_send('pushInitStatusToRender', v)
   }
   try {
-    if(RefStartStatus.serverRunning) {
+    if (RefStartStatus.serverRunning) {
       logger.info(`startMinimalService: already running, do not start again`)
       fn_updateMsgToRenderer('服务已经启动，无需再次启动', 100)
       return
@@ -46,7 +46,7 @@ const fn_startMinimalService = async () => {
       fn_updateMsgToRenderer('正在测试端口' + port + '中...', 10 + j)
       try {
         await tcpPortUsed.waitUntilUsed(44204, 200, 800)
-                logger.info(`startMinimalService: the port is used: ${port}`)
+        logger.info(`startMinimalService: the port is used: ${port}`)
         continue;
       } catch (e) {
         // get errors means the port is not used
@@ -55,33 +55,37 @@ const fn_startMinimalService = async () => {
         break;
       }
     }
-    if(finalPort == -1) {
+    if (finalPort == -1) {
       throw new Error('无法找到可用端口')
-    }else{
+    } else {
       logger.info(`startMinimalService: finalPort is ${finalPort}`)
-      fn_updateMsgToRenderer('端口测试完毕('+finalPort+')，准备启动服务...', 40)
+      fn_updateMsgToRenderer('端口测试完毕(' + finalPort + ')，准备启动服务...', 40)
     }
     fn_updateMsgToRenderer(`服务模块读取完毕`, 90)
 
 
-    const finalEntryPageLink = cfg_getAppClientEntryPage() 
-    if(isProductionEnv()){
-    const rootDir = cfg_getMinimalMDGJXRootDir()
-    process.env.HOSTNAME='127.0.0.1'
-    process.env.PORT=finalPort+''
-    process.env.NODE_ENV='production'
-      const bootEntryFile=path.join(rootDir, 'boot', 'pre-entrypoint.js')
+    const finalEntryPageLink = cfg_getAppClientEntryPage()
+    logger.info(`startMinimalService: finalEntryPageLink is ${finalEntryPageLink}`)
+    if (isProductionEnv()) {
+      const rootDir = cfg_getMinimalMDGJXRootDir()
+      process.env.HOSTNAME = '127.0.0.1'
+      process.env.PORT = finalPort + ''
+      process.env.NODE_ENV = 'production'
+      const bootEntryFile = path.join(rootDir, 'boot', 'pre-entrypoint.js')
       logger.info(`startMinimalService: bootEntryFile is ${bootEntryFile}`)
-      if(!existsSync(bootEntryFile)){
-        throw new Error('启动文件不存在: '+bootEntryFile)
-      }else{
+      if (!existsSync(bootEntryFile)) {
+        throw new Error('启动文件不存在: ' + bootEntryFile)
+      } else {
+        logger.info(`startMinimalService: starting server... by using ${bootEntryFile}`)
         fn_updateMsgToRenderer(`启动服务中...`, 90)
-        setTimeout(()=>{
+        setTimeout(() => {
           require(bootEntryFile)
-        },0)
+        }, 0)
         await sleep(1000)
         logger.info(`startMinimalService: server started`)
       }
+    }else{
+      logger.info(`startMinimalService: is not production env, skip starting server`)
     }
 
     // cfg_getMinimalMDGJXRootDir

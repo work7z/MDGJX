@@ -12,7 +12,7 @@ import {
 
 // logs dir
 export const logDir: string = FileUtils.mkdir(
-  join(join(getAppLogInternalDir(), "bootstrap")),
+  join(join(getAppLogInternalDir(), "desktop2")),
 );
 
 if (!existsSync(logDir)) {

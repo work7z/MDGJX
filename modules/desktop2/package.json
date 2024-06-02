@@ -1,6 +1,6 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.79",
+  "version": "v5.3.81",
   "description": "秒达工具箱以独创高效的输入方式，让您可以快速呼出各类工具、文档及笔记等资源，免费安全无广告，现已完全开源！",
   "author": "MDGJX <work7z@outlook.com>",
   "homepage": "https://mdgjx.com",
@@ -41,7 +41,7 @@
     ],
     "win": {
       "requestedExecutionLevel": "asInvoker",
-      "icon": "build/icon.png",
+      "icon": "build/icon.ico",
       "target": [
         "nsis",
         "zip"
@@ -57,7 +57,7 @@
       "deleteAppDataOnUninstall": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "MDGJX",
+      "shortcutName": "秒达工具箱(MDGJX)",
       "license": "./LICENSE",
       "include": "nsis/installer.nsh",
       "warningsAsErrors": false,
