@@ -128,10 +128,11 @@ const fn_startMinimalService = async () => {
     fn_updateMsgToRenderer(`本地服务(${finalPort})启动成功，将跳转至主页面`, 90)
     RefStartStatus.serverRunning = true
     RefStartStatus.startChecking = false
-    await sleep(500)
-    // APP_WIN_REF.setupWin.close()
-    // const webSetupFn = winWebSetup()
-    // webSetupFn.show()
+    await sleep(500)    
+    // TODO: if the core service is killed by user, we should catch it first and then resume the service
+    APP_WIN_REF.setupWin.hide()
+    const webSetupFn = winWebSetup()
+    webSetupFn.show()
   } catch (e) {
     logger.error(`startMinimalService: ${e.message} ${e}`)
     RefStartStatus.startChecking = false
@@ -191,7 +192,4 @@ export default () => {
 
   mainWindow.loadURL(cfg_getAppLocalLoadingPage());
 
-  if (isDevEnv()) {
-    mainWindow.webContents.openDevTools();
-  }
 };

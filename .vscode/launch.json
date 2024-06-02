@@ -39,17 +39,24 @@
       "cwd": "${workspaceFolder}/addons/it-tools",
       "command": "npm run dev"
     },
+       {
+      "name": "it-tools dev server",
+      "type": "node-terminal",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/addons/it-tools",
+      "command": "npm run dev"
+    },
   ],
   "compounds": [
     {
       "name": "Run it at once",
       "configurations": [
-        "desktop2",
-        "web2", 
-        "web2-server",
-        "d2-pages-local",
-        "it-tools dev server"
-    ],
+          "desktop2",
+          "web2", 
+          "web2-server",
+          "d2-pages-local",
+          "it-tools dev server",
+      ],
       "stopAll": true
     }
   ]

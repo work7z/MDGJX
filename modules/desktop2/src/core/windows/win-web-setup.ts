@@ -14,18 +14,19 @@ export  default  () => {
     const display = screen.getPrimaryDisplay()
     const appScreenWidth = display.bounds.width
     const appScreenHeight = display.bounds.height
-  const dPreloadJS = path.join(__dirname, "preload-web-setup.js")
-  if (!existsSync(dPreloadJS)) {
-    logger.error(`preload file not found: ${dPreloadJS}`)
-    return
-  }
+
+    const dPreloadJS = path.join(__dirname, "preload-web-setup.js")
+    if (!existsSync(dPreloadJS)) {
+      logger.error(`preload file not found: ${dPreloadJS}`)
+      return
+    }
 
     // Create the browser window.
     const mainWindow = new BrowserWindow({
       // full width and height
       width: appScreenWidth * 0.618,
       height: appScreenHeight * 0.618,
-      autoHideMenuBar: false,
+      autoHideMenuBar: true, // no need to show menu bar here
       icon: iconImg,
       webPreferences: {
         nodeIntegration: true, // is default value after Electron v5

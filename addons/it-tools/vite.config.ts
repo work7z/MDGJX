@@ -20,6 +20,9 @@ const baseUrl = '/xtools'; // process.env.BASE_URL ?? '/';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    port: 25173
+  },
   plugins: [
     VueI18n({
       runtimeOnly: true,
