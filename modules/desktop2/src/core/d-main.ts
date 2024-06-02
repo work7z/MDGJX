@@ -15,19 +15,7 @@ export default (props: DMainPassProps) => {
   let MAIN_WINDOW_VITE_NAME = "unknown";
 
 
-const gotTheLock = app.requestSingleInstanceLock()
-if (!gotTheLock) {
-  app.quit()
-} else {
-  app.on('second-instance', (event, commandLine, workingDirectory) => {
-    // Someone tried to run a second instance, we should focus our window.
-    [APP_WIN_REF.mainEntryWin].forEach(myWindow=>{
-      if (myWindow) {
-        if (myWindow.isMinimized()) myWindow.restore()
-        myWindow.focus()
-      }
-    })
-  })
+
   
   // Handle creating/removing shortcuts on Windows when installing/uninstalling.
   if (require("electron-squirrel-startup")) {
@@ -59,6 +47,5 @@ if (!gotTheLock) {
 
   // In this file you can include the rest of your app's specific main process
   // code. You can also put them in separate files and import them here.
-} 
 
 };
