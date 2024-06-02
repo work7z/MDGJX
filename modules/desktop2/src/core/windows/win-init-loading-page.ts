@@ -128,10 +128,9 @@ const fn_startMinimalService = async () => {
     RefStartStatus.serverRunning = true
     RefStartStatus.startChecking = false
     await sleep(500)
-    APP_WIN_REF.setupWin.close()
-
-    const webSetupFn = winWebSetup()
-    webSetupFn.show()
+    // APP_WIN_REF.setupWin.close()
+    // const webSetupFn = winWebSetup()
+    // webSetupFn.show()
   } catch (e) {
     logger.error(`startMinimalService: ${e.message} ${e}`)
     RefStartStatus.startChecking = false
