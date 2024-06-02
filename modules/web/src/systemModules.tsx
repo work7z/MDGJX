@@ -32,7 +32,7 @@ export type SystemSubModuleItem = {
 }
 export type SystemModuleItem = {
     id: string,
-    icon: React.FC<any>;
+    icon?: React.FC<any>;
     label: string,
     fixedAtBottom?:boolean;
     children?: SystemSubModuleItem[]

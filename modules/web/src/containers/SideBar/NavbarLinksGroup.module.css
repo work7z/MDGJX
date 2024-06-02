@@ -10,8 +10,18 @@
         background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-7));
         color: light-dark(var(--mantine-color-black), var(--mantine-color-dark-0));
     }
-}
 
+
+}
+.controlactive {
+    /* background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-8))!important;
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-dark-0))!important; */
+        /* background-color: var(--mantine-color-blue-light)!important;
+            color: var(--mantine-color-blue-light-color)!important; */
+                border-left-color: var(--mantine-color-blue-filled)!important;
+                    background-color: var(--mantine-color-blue-filled)!important;
+                    color: var(--mantine-color-white)!important;
+}
 .link {
     font-weight: 500;
     display: block;

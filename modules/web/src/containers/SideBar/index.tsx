@@ -107,7 +107,7 @@ export function DoubleNavbar(props: {
     mdParams: TypeMDParams,
     toggle: () => void
 }) {
-    const hideLeftMenu=    exportUtils.useSelector(v=>v.settings.hideLeftMenu)
+    const hideLeftMenu = exportUtils.useSelector(v => v.settings.hideLeftMenu)
     const { mainModuleItem, mainSubModuleItem } = props.mdParams
     const justSysModuleList = systemModulesList
 
@@ -132,10 +132,17 @@ export function DoubleNavbar(props: {
             </Link>
         </Tooltip>
     )
-    const firstLevel_links = justSysModuleList.filter(x=>!x.fixedAtBottom).map(fn_mainLinks);
+    const firstLevel_links = justSysModuleList.filter(x => !x.fixedAtBottom).map(fn_mainLinks);
     const firstLevel_links_btm = justSysModuleList.filter(x => x.fixedAtBottom).map(fn_mainLinks);
-    const jsx_linksgroup = mockdata.map((item) => <LinksGroup {...item} key={item.label} />);
-
+    // const jsx_linksgroup = mockdata.map((item) => <LinksGroup {...item} key={item.label} />);
+    const jsx_linksgroup = (mainModuleItem?.children || []).map((item,idx) => <LinksGroup key={item.id}
+        {...item}
+        active={mainModuleSubItemId === item.id || undefined}
+        label={item.name}
+        href={`/${mainModuleItem.id}/${item.id}${item.defaultSubToolId ? `/${item.defaultSubToolId}` : ''}`}
+        initiallyOpened={false}
+        links={undefined}
+    />);
 
     const sub_links = (mainModuleItem?.children || []).map((item) => {
         let link = item.id
@@ -181,25 +188,25 @@ export function DoubleNavbar(props: {
                     </div>
                     <div className='flex flex-col space-y-0 bottom-4 fixed '>
                         <Tooltip
-                            label={hideLeftMenu ? '展开左侧目录':"收起左侧目录"}
+                            label={hideLeftMenu ? '展开左侧目录' : "收起左侧目录"}
                             position="right"
                             withArrow
                             transitionProps={{ duration: 0 }}
                         >
-                                <UnstyledButton
-                                    className={classes.mainLink}
-                                    onClick={()=>{
-                                        FN_GetDispatch()(
-                                            settingsSlice.actions.updateOneOfParamState({
-                                                hideLeftMenu:!hideLeftMenu
-                                            })
-                                        )
-                                    }}
-                                >
+                            <UnstyledButton
+                                className={classes.mainLink}
+                                onClick={() => {
+                                    FN_GetDispatch()(
+                                        settingsSlice.actions.updateOneOfParamState({
+                                            hideLeftMenu: !hideLeftMenu
+                                        })
+                                    )
+                                }}
+                            >
                                 <IconSwitchHorizontal style={{ width: rem(22), height: rem(22) }} stroke={1.5} />
-                                </UnstyledButton>
+                            </UnstyledButton>
                         </Tooltip>
-                        
+
                         {firstLevel_links_btm}
                     </div>
 
@@ -208,10 +215,10 @@ export function DoubleNavbar(props: {
                     <Title order={4} className={classes.title}>
                         {mainModuleItem?.label}
                     </Title>
-                   <div className='px-2'>
+                    <div className='px-2'>
                         <TextInput
                             placeholder={
-                                `快速搜索`
+                                `快速搜索(待发布)`
                             }
                             size="xs"
                             leftSection={<IconSearch style={{ width: rem(12), height: rem(12) }} stroke={1.5} />}
@@ -220,7 +227,7 @@ export function DoubleNavbar(props: {
                             styles={{ section: { pointerEvents: 'none' } }}
                             mb="sm"
                         />
-                   </div>
+                    </div>
                     {jsx_linksgroup}
                     {/* {links} */}
                 </div>
