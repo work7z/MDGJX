@@ -27,7 +27,7 @@ export const cfg_getAppMainHost = ()=>{
     return isDevEnv() ? 'http://127.0.0.1:5173' : 'http://127.0.0.1:'+CONFIG_OBJ.APP_MAIN_HOST_PORT
 }
 export const cfg_getAppClientEntryPage = ()=>{
-    return cfg_getAppMainHost()+'/setup'
+    return cfg_getAppMainHost()+''
 }
 
 // LOCAL

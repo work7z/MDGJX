@@ -24,8 +24,8 @@ export  default  () => {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
       // full width and height
-      width: appScreenWidth * 0.75,
-      height: appScreenHeight * 0.7,
+      width: parseInt(""+(appScreenWidth*0.6)),
+      height: parseInt(""+(appScreenHeight*0.7)),
       autoHideMenuBar: true, // no need to show menu bar here
       icon: iconImg,
       webPreferences: {
