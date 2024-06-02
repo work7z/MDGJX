@@ -3,13 +3,12 @@ Caption "${PRODUCT_NAME} ${VERSION}"
 
 !macro preInit
     ${IfNot} ${AtLeastWin10}
-        MessageBox MB_ICONEXCLAMATION "非常抱歉，思源笔记无法在低于 Windows 10 的系统上进行安装$\n$\n\
-            Sorry, SiYuan cannot be installed on systems below Windows 10$\n"
+        MessageBox MB_ICONEXCLAMATION "非常抱歉，秒达工具箱无法在低于 Windows 10 的系统上进行安装。如认为此系统有必要支持，请联系我们$\n$\n\
+            Sorry, MDGJX cannot be installed on systems below Windows 10$\n"
         Quit
     ${EndIf}
 
-    nsExec::Exec 'TASKKILL /F /IM "SiYuan.exe"'
-    nsExec::Exec 'TASKKILL /F /IM "SiYuan-Kernel.exe"'
+    nsExec::Exec 'TASKKILL /F /IM "MDGJX.exe"'
 !macroend
 
 !macro customUnInit
@@ -23,20 +22,20 @@ Caption "${PRODUCT_NAME} ${VERSION}"
 
 !macro customUnInstall
     ${IfNot} ${isUpdated}
-        MessageBox MB_YESNO "是否需要彻底删除全局配置（$PROFILE\.config\siyuan\）？$\n$\n\
-            Do you want to delete the global configuration ($PROFILE\.config\siyuan\)?$\n" \
+        MessageBox MB_YESNO "是否需要彻底删除全局配置（$PROFILE\.mdgjx\）？$\n$\n\
+            Do you want to delete the global configuration ($PROFILE\.mdgjx\)?$\n" \
             /SD IDYES IDYES AcceptedRMConf IDNO SkippedRMConf
             AcceptedRMConf:
-                RMDir /r "$PROFILE\.config\siyuan\"
+                RMDir /r "$PROFILE\.mdgjx\"
             SkippedRMConf:
     ${EndIf}
 
     ${IfNot} ${isUpdated}
-        MessageBox MB_YESNO "是否需要彻底删除默认工作空间（$PROFILE\SiYuan\）？$\n$\n\
-            Do you want to completely delete the default workspace ($PROFILE\SiYuan\)?$\n" \
+        MessageBox MB_YESNO "是否需要彻底删除默认工作空间（$PROFILE\MDGJX\）？$\n$\n\
+            Do you want to completely delete the default workspace ($PROFILE\MDGJX\)?$\n" \
             /SD IDNO IDYES AcceptedRMWorkspace IDNO SkippedRMWrokspace
             AcceptedRMWorkspace:
-                RMDir /r "$PROFILE\SiYuan\"
+                RMDir /r "$PROFILE\MDGJX\"
             SkippedRMWrokspace:
     ${EndIf}
 !macroend
