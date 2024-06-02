@@ -84,8 +84,8 @@ const fn_startMinimalService = async () => {
       process.env.HOSTNAME = systemHost
       process.env.PORT = finalPort + ''
       process.env.NODE_ENV = 'production'
-      const bootEntryFile = path.join(rootDir, 'boot', 'pre-entrypoint.js')
-      // const bootEntryFile = 'C:\\Users\\jerrylai\\AppData\\Local\\Programs\\MDGJX\\resources\\app\\minimal-dist\\MDGJX\\boot\\pre-entrypoint.js'
+      const bootEntryFile = path.join(rootDir, 'boot', 'entrypoint.js')
+      // const bootEntryFile = 'C:\\Users\\jerrylai\\AppData\\Local\\Programs\\MDGJX\\resources\\app\\minimal-dist\\MDGJX\\boot\\entrypoint.js'
       logger.info(`startMinimalService: bootEntryFile is ${bootEntryFile}`)
       if (!existsSync(bootEntryFile)) {
         throw new Error('启动文件不存在: ' + bootEntryFile)
