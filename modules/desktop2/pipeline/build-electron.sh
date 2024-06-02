@@ -46,7 +46,6 @@ import { AppInfoClz } from \"./d-types\"
 echo "[I] cleaning up..."
 rm -rf node_modules
 rm -rf dist
-rm -rf build
 rm -rf src-dist
 rm -rf pages-dist
 echo "[I] installing dependencies..."

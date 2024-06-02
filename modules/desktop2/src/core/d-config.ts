@@ -18,9 +18,13 @@ export const cfg_getMinimalMDGJXRootDir=()=>{
     return path.join(cfg_getRootFolder(), "minimal-dist",  "MDGJX");
 }
 
+
+export const CONFIG_OBJ = {
+    APP_MAIN_HOST_PORT: -1
+}
 // CLIENT
 export const cfg_getAppMainHost = ()=>{
-    return isDevEnv() ? 'http://localhost:5173' : 'http://localhost:5173'
+    return isDevEnv() ? 'http://localhost:5173' : 'http://localhost:'+CONFIG_OBJ.APP_MAIN_HOST_PORT
 }
 export const cfg_getAppClientEntryPage = ()=>{
     return cfg_getAppMainHost()+'/setup'
