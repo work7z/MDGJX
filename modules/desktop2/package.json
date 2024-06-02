@@ -1,6 +1,6 @@
 {
   "name": "MDGJX",
-  "version": "v5.3.77",
+  "version": "v5.3.78",
   "description": "秒达工具箱以独创高效的输入方式，让您可以快速呼出各类工具、文档及笔记等资源，免费安全无广告，现已完全开源！",
   "author": "MDGJX <work7z@outlook.com>",
   "homepage": "https://mdgjx.com",
@@ -22,12 +22,6 @@
         "tar.gz"
       ]
     },
-    "win": {
-      "target": [
-        "nsis",
-        "zip"
-      ]
-    },
     "extraFiles": [
       {
         "from": "minimal-dist",
@@ -35,23 +29,40 @@
       }
     ],
     "files": [
+      "nsis",
+      "LICENSE",
       "pages-dist",
       "src-dist",
       "package.json",
-      "installer",
       "build",
       "node_modules/**/*",
       "node_modules/*",
       "package.json"
     ],
+    "win": {
+      "requestedExecutionLevel": "asInvoker",
+      "icon": "build/icon.png",
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "rfc3161TimeStampServer": "http://timestamp.entrust.net/TSS/RFC3161sha2TS"
+    },
     "nsis": {
-      "include": "installer/installer.nsh",
-      "oneClick": false,
       "language": "0004",
-      "allowElevation":false,
-      "createStartMenuShortcut": true,
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "deleteAppDataOnUninstall": true,
       "createDesktopShortcut": true,
-      "shortcutName":"秒达工具箱"
+      "createStartMenuShortcut": true,
+      "shortcutName": "MDGJX",
+      "license": "./LICENSE",
+      "include": "nsis/installer.nsh",
+      "warningsAsErrors": false,
+      "installerSidebar": "nsis/installerSidebar.bmp",
+      "uninstallerSidebar": "nsis/uninstallerSidebar.bmp"
     },
     "publish": null,
     "electronVersion": "17.1.2"
