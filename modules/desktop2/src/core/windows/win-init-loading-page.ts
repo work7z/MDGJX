@@ -125,7 +125,7 @@ const fn_startMinimalService = async () => {
       fn_updateMsgToRenderer(`服务启动失败: ${lastErr}`, 20)
       throw new Error('无法连接到本地服务' + finalPort + '，请尝试关闭所有相关进程')
     }
-    fn_updateMsgToRenderer(`本地服务启动成功，将跳转至主页面`, 90)
+    fn_updateMsgToRenderer(`本地服务(${finalPort})启动成功，将跳转至主页面`, 90)
     RefStartStatus.serverRunning = true
     RefStartStatus.startChecking = false
     await sleep(500)
