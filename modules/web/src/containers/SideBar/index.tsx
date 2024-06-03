@@ -43,9 +43,9 @@ export function DoubleNavbar(props: {
     toggle: () => void
 }) {
     const hideLeftMenu = exportUtils.useSelector(v => v.settings.hideLeftMenu)
-    const {  mainSubModuleItem  } = props.mdParams
-    const mainModule = props.mdParams.mainModuleId
-    const mainModuleItem = props.mdParams.mainModuleItem
+    const {  subModuleItem: mainSubModuleItem  } = props.mdParams
+    const mainModule = props.mdParams.firstRouteId
+    const mainModuleItem = props.mdParams.rootModuleItem
     const [searchCtn, setSearchCtn] = useState('')
     if(!mainSubModuleItem || !mainModuleItem){
         return <NotFoundPage/>
@@ -77,28 +77,43 @@ export function DoubleNavbar(props: {
             firstLevel_links_btm: systemModulesList.filter(x => x.fixedAtBottom).map(fn_mainLinks)
         }
     }, [systemModulesList]);
+    const [actualOpenId,setActualOpenId] = useState(props.mdParams.firstRouteId)
     const jsx_linksgroup = useMemo(() => {
+        const l2 =_.toLower(searchCtn)
+        const hasNoSearch = _.isEmpty(searchCtn)
+        const fn_filter_txt = (x: SystemSubModuleItem) => {
+            if (hasNoSearch){
+                return true;
+            }
+            return  _.toLower(x.name).indexOf(l2) !== -1
+        }
         return (
-            (mainModuleItem?.children || []).filter(x => (!searchCtn) || _.toLower(x.name).indexOf(_.toLower(searchCtn)) != -1).map((item, idx) => {
-                let isOpenedByDefault = false;
-                if (item.children) {
-                    isOpenedByDefault = props.mdParams.mainModuleId == item.id; // firstly, the moduleid should be matched 
-                    console.log('loop', {
-                        isOpenedByDefault,
-                        mid: mainModuleItem.id,
-                        itemid: item.id
+            (mainModuleItem?.children || []).filter(x=>{
+                if(x.bodyFn){
+                    return fn_filter_txt(x)
+                }else{
+                    return true;
+                }
+            }).map((_item, idx) => {
+                const item: SystemSubModuleItem = {
+                    ..._item
+                }
+                if (item.children){
+                    item.children = item.children.filter(xx => {
+                        return fn_filter_txt(xx)
                     })
-                } else {
-                    isOpenedByDefault = props.mdParams.subModuleId == item.id
                 }
                 return (
                     <LinksGroup key={item.id}
                         {...item}
-                        initiallyOpened={isOpenedByDefault}
+                        setUpdateOpenId={v=>{
+                            setActualOpenId(v+'')
+                        }}
+                        forceOpen={!hasNoSearch}
+                        actualOpenId={actualOpenId}
+                        // initiallyOpened={isOpenedByDefault}
                         isItActive={item => {
-                            return item.id == (
-                                !item.children ? props.mdParams.mainModuleId : props.mdParams.subModuleId
-                            )
+                            return item.id == props.mdParams.secondRouteId && item.firstRouteId == props.mdParams.firstRouteId
                         }}
                         getHrefValue={item => {
                             return item.href + '';
@@ -107,7 +122,7 @@ export function DoubleNavbar(props: {
                 )
             })
         )
-    }, [props.mdParams.mainModuleId, props.mdParams.subModuleId, mainModuleItem.children, searchCtn]);
+    }, [actualOpenId,props.mdParams.firstRouteId, props.mdParams.secondRouteId, mainModuleItem.children, searchCtn]);
 
     return (
         <nav className={classes.navbar}>
@@ -144,7 +159,7 @@ export function DoubleNavbar(props: {
                     </div>
 
                 </div>
-                <div className={classes.main + ' overflow-auto h-[100vh]'}>
+                <div className={classes.main + ' overflow-auto h-[100vh] scrollbar-hide'}>
                     <Title order={4} className={classes.title}>
                         {mainModuleItem?.label}
                     </Title>

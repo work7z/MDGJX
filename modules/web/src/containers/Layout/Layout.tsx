@@ -38,7 +38,7 @@ export let useWrapWithTitle = (title: string) => {
 const FIXED_COLUMN_WIDTH=60
 export function GeneralLayout(props) {
     const mdParams = useMDParams()
-    const { mainModuleItem: mainModuleItem, mainSubModuleItem } = mdParams
+    const { rootModuleItem: mainModuleItem, subModuleItem: mainSubModuleItem } = mdParams
     const darkOrNot = useDarkModeOrNot()
     const [opened, { toggle }] = useDisclosure();
     let bodyFn = mainSubModuleItem.bodyFn

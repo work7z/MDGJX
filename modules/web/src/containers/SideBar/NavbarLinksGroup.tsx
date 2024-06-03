@@ -6,16 +6,22 @@ import { SystemModuleItem, SystemSubModuleItem } from '@/systemModules';
 import { Link } from 'react-router-dom';
 
 type LinksGroupProps = {
+    forceOpen: boolean,
     getHrefValue: (item: SystemSubModuleItem) => string;
     isItActive: (item: SystemSubModuleItem) => boolean;
-    initiallyOpened?: boolean;
+    setUpdateOpenId:(newId:string|undefined)=>any;
+    actualOpenId?:string,
     icon?:Icon;
 } & SystemSubModuleItem
 
 export function LinksGroup(props: LinksGroupProps) {
-    const { id, href, icon: Icon, children, name, initiallyOpened,  } = props;
+    const { id, href, icon: Icon, children, name, } = props;
+    const initiallyOpened = props.actualOpenId == props.id
     const hasLinks = Array.isArray(children) && children.length > 0;
-    const [opened, setOpened] = useState(initiallyOpened || false);
+    const opened = initiallyOpened || props.forceOpen;
+    const setOpened =  (isOpen:boolean)=>{
+        props.setUpdateOpenId(isOpen ? props.id : 'n/a')
+    }
     const items = (hasLinks ? children : []).map((linkItem) => {
         const active = props.isItActive(linkItem)
         return <Link
@@ -33,7 +39,7 @@ export function LinksGroup(props: LinksGroupProps) {
     });
 
     const active = props.isItActive(props)
-    const jsx = <UnstyledButton onClick={() => setOpened((o) => !o)} className={classes.control + (
+    const jsx = <UnstyledButton onClick={() => setOpened(!initiallyOpened)} className={classes.control + (
         active ? " " + classes.controlactive : ''
     )}>
         <Group justify="space-between" gap={0}>

@@ -12,9 +12,9 @@ import { NotFoundPage } from "@/pages/NotFound.page"
 
 const InnerXToolsDetail = () => {
     const {
-       mainModuleItem : mainModuleItem,
-        mainSubModuleItem,
-        subModuleId: tmp_mainSubToolID
+       rootModuleItem : mainModuleItem,
+        subModuleItem: mainSubModuleItem,
+        secondRouteId: tmp_mainSubToolID
     } = useMDParams()
     const history = useHistory()
     if(

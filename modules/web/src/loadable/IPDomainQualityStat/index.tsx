@@ -77,7 +77,7 @@ export default () => {
         // },
     ]
     const iconStyle = { width: rem(12), height: rem(12) };
-    const activeId = mdp.subModuleId || items[0].id
+    const activeId = mdp.secondRouteId || items[0].id
 
     const hVal = 'calc(100vh - 85px)'
     if (!rh) {
@@ -285,7 +285,7 @@ export default () => {
                     {
                         items.map(x => {
                             return (
-                                <Link to={`/${mdp.mainModuleItem?.id}/${mdp?.mainSubModuleItem?.id}/${x.id}`}>
+                                <Link to={`/${mdp.rootModuleItem?.id}/${mdp?.subModuleItem?.id}/${x.id}`}>
                                     <Tabs.Tab className="h-[35px]" value={x.id} leftSection={<x.icon style={iconStyle} />}>
                                         {x.name}
                                     </Tabs.Tab>

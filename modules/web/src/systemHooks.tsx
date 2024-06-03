@@ -3,10 +3,10 @@ import { ROUTE_CPT_MAPPING, SystemModuleItem, SystemSubModuleItem, systemModules
 import { useMemo } from "react"
 
 export type TypeMDParams = {
-    mainModuleItem: SystemModuleItem,
-    mainSubModuleItem: SystemSubModuleItem,
-    mainModuleId: string
-    subModuleId: string
+    rootModuleItem: SystemModuleItem,
+    subModuleItem: SystemSubModuleItem,
+    firstRouteId: string
+    secondRouteId: string
 }
 export const useMDParams = (): TypeMDParams => {
     const hist = useHistory()
@@ -35,10 +35,10 @@ export const useMDParams = (): TypeMDParams => {
         tmp_mainModuleId = finalSubModuleItem.firstRouteId+''
         tmp_mainSubToolsID = finalSubModuleItem.id
         return {
-            mainModuleItem: foundSystemModuleItem as SystemModuleItem,
-            mainSubModuleItem: finalSubModuleItem,
-            mainModuleId: tmp_mainModuleId,
-            subModuleId: tmp_mainSubToolsID
+            rootModuleItem: foundSystemModuleItem as SystemModuleItem,
+            subModuleItem: finalSubModuleItem,
+            firstRouteId: tmp_mainModuleId,
+            secondRouteId: tmp_mainSubToolsID
         } satisfies TypeMDParams
     }, [hist.location.pathname])
 }
