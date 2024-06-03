@@ -1,18 +1,17 @@
 #!/bin/bash
+set -e
 testRunServer=$1
 echo "[I] building fe"
-(
-    echo "[I] building web"
-    cd $MDGJX_ROOT/modules/web
-    npm run build
-)
-(
-    echo "[I] building addons"
-    cd $MDGJX_ROOT/addons/it-tools
-    [ -d node_modules ] && rm -rf node_modules
-    npm i -S -D --verbose --force
-    npm run build
-)
+
+echo "[I] building web"
+cd $MDGJX_ROOT/modules/web
+npm run build
+
+echo "[I] building addons"
+cd $MDGJX_ROOT/addons/it-tools
+[ -d node_modules ] && rm -rf node_modules
+npm i -S -D --verbose --force
+npm run build
 
 echo "[I] building web-server"
 cd $MDGJX_ROOT/modules/web-server
@@ -44,6 +43,7 @@ cp -a $MDGJX_ROOT/addons/it-tools/dist ./dist/xtools
 mkdir -p $MDGJX_ROOT/dist/web
 cp -a dist $MDGJX_ROOT/dist/web
 echo "[I] fe bundle size: $(du -sh $MDGJX_ROOT/dist/web)"
+
 
 echo "[I] built fe"
 
