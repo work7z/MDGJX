@@ -81,7 +81,7 @@ const formatModuleItem = (obj: SystemModuleItem[]): SystemModuleItem[] =>{
 
 export const systemModulesList: SystemModuleItem[] = formatModuleItem([
     {
-        id: 'tools',
+        id: 'main',
         defaultHref: '/tools/index',
         icon: IconHome2, 
         label: '主页', 

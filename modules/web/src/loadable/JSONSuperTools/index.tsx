@@ -35,7 +35,7 @@ export default () => {
         //     loadFN: () => import('./JSONDiff.tsx')
         // },
     ]
-    const activeId = mdp.secondRouteId || items[0].id
+    const activeId = mdp.thirdRouteId || items[0].id
     const hVal = 'calc(100vh - 85px)'
     return (
         <Card p={0} withBorder style={{

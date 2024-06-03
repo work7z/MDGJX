@@ -42,6 +42,7 @@ export default () => {
             } satisfies JSONConversionState
         }
     })
+    
     const clipboard = useClipboard({ timeout: 500 });
 
     if (!rh) {

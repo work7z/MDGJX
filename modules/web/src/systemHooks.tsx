@@ -7,22 +7,24 @@ export type TypeMDParams = {
     subModuleItem: SystemSubModuleItem,
     firstRouteId: string
     secondRouteId: string
+    thirdRouteId: string
 }
 export const useMDParams = (): TypeMDParams => {
     const hist = useHistory()
     return useMemo(() => {
         const splitArr = hist.location.pathname.split('/')
-        let tmp_mainModuleId: string | undefined = splitArr && splitArr[1]
-        let tmp_mainSubToolsID: string | undefined = splitArr && splitArr[2]
+        let url_firstPart: string | undefined = splitArr && splitArr[1]
+        let url_secondPart: string | undefined = splitArr && splitArr[2]
+        let url_thirdPart: string | undefined = splitArr && splitArr[3]
         let mainSubModuleItem: SystemSubModuleItem | undefined = undefined;
         let dft_mainSubModuleItem: SystemSubModuleItem | undefined = undefined;
         const firstMappingItem = ROUTE_CPT_MAPPING[0]
         for (let eachItem of ROUTE_CPT_MAPPING) {
-            if (eachItem.firstRouteId == tmp_mainModuleId) {
+            if (eachItem.firstRouteId == url_firstPart) {
                 if (!dft_mainSubModuleItem) {
                     dft_mainSubModuleItem = eachItem
                 }
-                if (eachItem.id == tmp_mainSubToolsID) {
+                if (eachItem.id == url_secondPart) {
                     mainSubModuleItem = eachItem;
                 }
             }
@@ -32,13 +34,16 @@ export const useMDParams = (): TypeMDParams => {
             finalSubModuleItem = firstMappingItem
         }
         const foundSystemModuleItem = systemModulesList.find(x => x.id == finalSubModuleItem.rootMainModuleId)
-        tmp_mainModuleId = finalSubModuleItem.firstRouteId+''
-        tmp_mainSubToolsID = finalSubModuleItem.id
-        return {
+        url_firstPart = finalSubModuleItem.firstRouteId+''
+        url_secondPart = finalSubModuleItem.id
+        const r = {
             rootModuleItem: foundSystemModuleItem as SystemModuleItem,
             subModuleItem: finalSubModuleItem,
-            firstRouteId: tmp_mainModuleId,
-            secondRouteId: tmp_mainSubToolsID
+            firstRouteId: url_firstPart,
+            secondRouteId: url_secondPart,
+            thirdRouteId: url_thirdPart
         } satisfies TypeMDParams
+        console.log('mdparams',r)
+        return r
     }, [hist.location.pathname])
 }

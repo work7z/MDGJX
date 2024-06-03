@@ -14,7 +14,7 @@ const InnerXToolsDetail = () => {
     const {
        rootModuleItem : mainModuleItem,
         subModuleItem: mainSubModuleItem,
-        secondRouteId: tmp_mainSubToolID
+        thirdRouteId: tmp_mainSubToolID
     } = useMDParams()
     const history = useHistory()
     if(
@@ -26,10 +26,6 @@ const InnerXToolsDetail = () => {
     const findItem = toolsNavInfo.find(x => x.id === mainSubModuleItem.id)
     const subTools = findItem?.subTools || []
     const subToolId = tmp_mainSubToolID ? tmp_mainSubToolID : (subTools && subTools[0] && subTools[0].id || "")
-    const subToolItem = subTools.find(x => x.id === subToolId)
-    const setIdx = (x: string) => {
-        history.push(`/tools/${mainSubModuleItem.id}/${x}`)
-    }
     // useWrapWithTitle(`${subToolItem?.name} - ${mainSubModuleItem.name}`)
     if (findItem?.bodyFnIfHave) {
         return <LoadableWrapper id={'meandu' + findItem.id} fn={findItem.bodyFnIfHave} key={'meandu' + findItem.id} />

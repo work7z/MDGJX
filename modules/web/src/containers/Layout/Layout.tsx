@@ -38,22 +38,23 @@ export let useWrapWithTitle = (title: string) => {
 const FIXED_COLUMN_WIDTH=60
 export function GeneralLayout(props) {
     const mdParams = useMDParams()
-    const { rootModuleItem: mainModuleItem, subModuleItem: mainSubModuleItem } = mdParams
+    const { rootModuleItem: rootModuleItem, subModuleItem: mainSubModuleItem } = mdParams
     const darkOrNot = useDarkModeOrNot()
     const [opened, { toggle }] = useDisclosure();
     let bodyFn = mainSubModuleItem.bodyFn
-    useWrapWithTitle(mainSubModuleItem.name + ` - ${mainModuleItem.label}`)
+    useWrapWithTitle(mainSubModuleItem.name + ` - ${rootModuleItem.label}`)
+    const hist = useHistory()
     const hideLeftMenu = exportUtils.useSelector(v => v.settings.hideLeftMenu)
     let bodyJSX: JSX.Element = useMemo(() => {
         if (bodyFn) {
             const loadFn = mainSubModuleItem.bodyFn
             return (
-                <LoadableWrapper id={`${mainModuleItem.id}-${mainSubModuleItem.id}`} fn={loadFn} />
+                <LoadableWrapper id={`${mdParams.firstRouteId}-${mainSubModuleItem.id}`} fn={loadFn} />
             )
         } else {
             return <div>当前页面正在重构中，敬请期待 </div>
         }
-    }, [bodyFn])
+    }, [bodyFn, hist.location.pathname])
 
     return (
         <AppShell
