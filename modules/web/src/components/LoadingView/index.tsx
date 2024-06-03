@@ -4,7 +4,6 @@ import imgFile from '/src/favicon.png'
 import { ColorSchemeToggle } from '../ColorSchemeToggle/ColorSchemeToggle';
 import { IconArrowUp, IconBrandGithub, IconBrandGithubFilled, IconSourceCode } from '@tabler/icons-react';
 import SourceCodeLink from '../SourceCodeLink';
-import { DoubleNavbar as SideBar, useMDParams } from '@/containers/SideBar';
 import GetAppInfo from '@/AppInfo';
 import GenCodeMirror from '../GenCodeMirror';
 import {

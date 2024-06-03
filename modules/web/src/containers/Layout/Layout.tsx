@@ -4,7 +4,7 @@ import imgFile from '/src/favicon.png'
 import { ColorSchemeToggle, useDarkModeOrNot } from '../../components/ColorSchemeToggle/ColorSchemeToggle';
 import { IconArrowUp, IconBrandGithub, IconBrandGithubFilled, IconSourceCode } from '@tabler/icons-react';
 import SourceCodeLink from '../../components/SourceCodeLink';
-import { DoubleNavbar as SideBar, useMDParams } from '@/containers/SideBar';
+import { DoubleNavbar as SideBar,  } from '@/containers/SideBar';
 import GetAppInfo from '@/AppInfo';
 import BackToTop from './BackToTop';
 import Header from './Header';
@@ -26,6 +26,7 @@ import { FooterCentered } from './Footer';
 import LoadableWrapper from '../../components/LoadableWrapper';
 import { getBridgeRef, isDesktopMode } from '@/utils/DesktopUtils';
 import exportUtils from '@/utils/ExportUtils';
+import { useMDParams } from '@/systemHooks';
 
 export let useWrapWithTitle = (title: string) => {
     const finalTitle = isDesktopMode()?`${title} - 秒达工具箱`:`${title}`
@@ -37,22 +38,22 @@ export let useWrapWithTitle = (title: string) => {
 const FIXED_COLUMN_WIDTH=60
 export function GeneralLayout(props) {
     const mdParams = useMDParams()
-    const { mainModuleItem, mainSubModuleItem } = mdParams
+    const { mainModuleItem: mainModuleItem, mainSubModuleItem } = mdParams
     const darkOrNot = useDarkModeOrNot()
     const [opened, { toggle }] = useDisclosure();
-    let appInfo = GetAppInfo()
     let bodyFn = mainSubModuleItem.bodyFn
     useWrapWithTitle(mainSubModuleItem.name + ` - ${mainModuleItem.label}`)
+    const hideLeftMenu = exportUtils.useSelector(v => v.settings.hideLeftMenu)
     let bodyJSX: JSX.Element = useMemo(() => {
         if (bodyFn) {
+            const loadFn = mainSubModuleItem.bodyFn
             return (
-                <LoadableWrapper id={`${mainModuleItem.id}-${mainSubModuleItem.id}`} fn={mainSubModuleItem.bodyFn} />
+                <LoadableWrapper id={`${mainModuleItem.id}-${mainSubModuleItem.id}`} fn={loadFn} />
             )
         } else {
             return <div>当前页面正在重构中，敬请期待 </div>
         }
     }, [bodyFn])
-    const hideLeftMenu = exportUtils.useSelector(v => v.settings.hideLeftMenu)
 
     return (
         <AppShell
@@ -90,7 +91,7 @@ export function GeneralLayout(props) {
                 {bodyJSX}
             </AppShell.Main>
             {
-                mainSubModuleItem.disableFooter || isDesktopMode() ? '' : <FooterCentered />
+                mainSubModuleItem.disableFooter ? '' : <FooterCentered />
             }
         </AppShell>
     );

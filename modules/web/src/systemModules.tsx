@@ -11,13 +11,16 @@ import {
     IconApiApp,
     IconNetwork,
     IconSuperscript,
+    IconBuildingStore,
+    IconStar,
+    IconBookmark,
+    IconBookmarks,
 
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './DoubleNavbar.module.css';
 import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
-import { TypeMDParams } from '@/containers/SideBar';
 import { toolsNavInfo } from './toolsNavInfo.tsx';
 import AppConstants from './AppConstants.tsx';
 
@@ -25,15 +28,19 @@ export type LoadModuleType = () => any
 export type SystemSubModuleItem = {
     id: string,
     href?: string,
+    firstRouteId?:string,
+    rootMainModuleId?:string,
     name: string,
     disableFooter?: boolean,
     defaultSubToolId?: string,
+    children?: SystemSubModuleItem[],
     bodyFn?: LoadModuleType
 }
 export type SystemModuleItem = {
     id: string,
     icon?: React.FC<any>;
     label: string,
+    defaultHref: string
     fixedAtBottom?:boolean;
     children?: SystemSubModuleItem[]
 }
@@ -42,111 +49,144 @@ export type RedirectLinkItem = {
     url: string
 }
 export const redirectLinks: RedirectLinkItem[] = [
-    // {
-    //     path: '/base64',
-    //     url: '/tools/chat?text=base64'
-    // },
-    // {
-    //     path: '/json',
-    //     url: '/tools/chat?text=json'
-    // },
+
 ]
-// {
-//     id: 'api',
-//     icon: IconApiApp,
-//     label: 'API联调联试',
-//     children: [
-//         // {
-//         //     name: 'API 客户端',
-//         //     id: 'client'
-//         // },
-//         {
-//             name: '常用 API',
-//             id: 'common'
-//         },
-//         {
-//             name: '模拟 API (Mock)',
-//             id: 'mock'
-//         },
-//     ]
-// },
 
 export const Fn_MyAccount = () => import('./loadable/MyAccount/index.tsx')
 
-export const systemModulesList: SystemModuleItem[] = [
+export const ROUTE_CPT_MAPPING: SystemSubModuleItem[]=[]
+window['ROUTE_CPT_MAPPING'] = ROUTE_CPT_MAPPING
+
+const formatModuleItem = (obj: SystemModuleItem[]): SystemModuleItem[] =>{
+    return _.map(obj,mainModule=>{
+        mainModule.children = mainModule.children?.map((subModule_1: SystemSubModuleItem) => {
+            const checkEachMainSubModule = (pid:string,sub: SystemSubModuleItem)=>{
+                sub.href = `/${pid}/${sub.id}`
+                sub.firstRouteId = pid
+                sub.rootMainModuleId = mainModule.id
+                ROUTE_CPT_MAPPING.push(sub)
+            }
+            if(subModule_1.bodyFn){
+                checkEachMainSubModule(mainModule.id, subModule_1)
+            }else{
+                _.forEach(subModule_1.children,(subModule_2)=>{
+                    checkEachMainSubModule(subModule_1.id, subModule_2)
+                })
+            }
+            return subModule_1
+        }) || []
+        return mainModule 
+    })
+}
+
+export const systemModulesList: SystemModuleItem[] = formatModuleItem([
     {
         id: 'tools',
-        icon: IconHome2, label: '快捷工具', children: [
-            GetAppInfo().isInLafToolsCOM ? {
-                name: 'Chat对话框',
-                id: 'chat',
-                bodyFn: () => import('./loadable/ChatBot/index.tsx')
-            } : {
-                name: "首页",
+        defaultHref: '/tools/index',
+        icon: IconHome2, 
+        label: '主页', 
+        children: [
+            {
+                id: 'tools',
+                name: '便捷工具',
+                children:  [
+                    {
+                        name: "工具总览",
+                        id: 'index',
+                        bodyFn: () => import('./loadable/XToolsView/index.tsx')
+                    },
+                    ...toolsNavInfo.map(x => {
+                        return {
+                            name: x.name,
+                            id: x.id,
+                            disableFooter: true,
+                            defaultSubToolId: x.defaultSubToolId,
+                            bodyFn: () => import('./loadable/XToolsDetail/index.tsx')
+                        } satisfies SystemSubModuleItem
+                    })
+                ]
+            },
+            {
+                id: 'i18n',
+                // icon: IconLanguage,
+                name: '翻译助手',
+                children:  [
+                    {
+                        name: '文本翻译',
+                        id: 'text',
+                        bodyFn: () => import('./loadable/TLNText/index.tsx')
+                    },
+                    {
+                        name: 'JSON 格式翻译',
+                        id: 'json',
+                        bodyFn: () => import('./loadable/TLNJSON/index.tsx')
+                    },
+                    {
+                        name: 'JSON 中英文对照',
+                        id: 'json-cn-en',
+                        bodyFn: () => import('./loadable/TLNJSONComparison/index.tsx')
+                    },
+                    {
+                        name: 'Markdown 文档翻译',
+                        id: 'md',
+                        bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
+                    },
+                    {
+                        name: '简繁中文对照翻译',
+                        id: 'ftzt',
+                        bodyFn: () => import('./loadable/TLNZTFT/index.tsx')
+                    },
+                ]
+            },
+            {
+                id: 'network',
+                // icon: IconNetwork,
+                name: '网络运维',
+                children: [
+                    {
+                        name: 'IP/域名质量监测',
+                        id: 'ipstats',
+                        disableFooter: true,
+                        bodyFn: () => import('./loadable/IPDomainQualityStat/index.tsx')
+                    },
+                ]
+            },
+        ]
+    },
+    {
+        id: 'collections',
+        icon: IconBookmarks,
+        defaultHref: '/collections/index',
+        label: '收藏夹',
+        children: [
+            {
+                name: '首页',
                 id: 'index',
-                bodyFn: () => import('./loadable/XToolsView/index.tsx')
-            },
-            ...toolsNavInfo.map(x => {
-                return {
-                    name: x.name,
-                    id: x.id,
-                    disableFooter: true,
-                    defaultSubToolId: x.defaultSubToolId,
-                    bodyFn: () => import('./loadable/XToolsDetail/index.tsx')
-                } satisfies SystemSubModuleItem
-            })
-        ]
-    },
-    {
-        id: 'i18n',
-        icon: IconLanguage,
-        label: '翻译助手',
-        children: [
-            {
-                name: '文本翻译',
-                id: 'text',
-                bodyFn: () => import('./loadable/TLNText/index.tsx')
-            },
-            {
-                name: 'JSON 格式翻译',
-                id: 'json',
-                bodyFn: () => import('./loadable/TLNJSON/index.tsx')
-            },
-            {
-                name: 'JSON 中英文对照',
-                id: 'json-cn-en',
-                bodyFn: () => import('./loadable/TLNJSONComparison/index.tsx')
-            },
-            {
-                name: 'Markdown 文档翻译',
-                id: 'md',
-                bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
-            },
-            {
-                name: '简繁中文对照翻译',
-                id: 'ftzt',
-                bodyFn: () => import('./loadable/TLNZTFT/index.tsx')
-            },
-        ]
-    },
-    {
-        id: 'network',
-        icon: IconNetwork,
-        label: '网络运维',
-        children: [
-            {
-                name: 'IP/域名质量监测',
-                id: 'ipstats',
                 disableFooter: true,
-                bodyFn: () => import('./loadable/IPDomainQualityStat/index.tsx')
+                bodyFn: () => import('./loadable/NotOK/index.tsx')
+            },
+        ]
+    },
+    {
+        id: 'marketplace',
+        defaultHref: '/marketplace/index',
+        icon: IconBuildingStore,
+        label: '插件市场',
+        children: [
+            {
+                name: '首页',
+                id: 'index',
+                disableFooter: true,
+                bodyFn: () => import('./loadable/NotOK/index.tsx')
             },
         ]
     },
     {
         id: 'settings',
-        fixedAtBottom:true,
+        defaultHref: '/settings/my-account',
+        fixedAtBottom: true,
         icon: IconSettings, label: '系统设置',
-        children: [
+        children:[
             {
                 name: '我的账号',
                 id: 'my-account',
@@ -180,11 +220,6 @@ export const systemModulesList: SystemModuleItem[] = [
             },
         ]
     },
-];
+] satisfies SystemModuleItem[]);
 
 
-
-// { icon: IconBook, label: '文档中心' },
-// { icon: IconMapSearch, label: '资源检索' },
-// { icon: IconNotebook, label: '随手札记' },
-// { icon: IconUser, label: '用户中心' },

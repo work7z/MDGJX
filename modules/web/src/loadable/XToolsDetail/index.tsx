@@ -1,25 +1,32 @@
 import AppConstants from "@/AppConstants"
 import { useWrapWithTitle } from "@/containers/Layout/Layout"
 import LoadableWrapper from "@/components/LoadableWrapper"
-import { useMDParams } from "@/containers/SideBar"
 import XToolsViewer from "@/containers/XToolsViewer"
 import { toolsNavInfo } from "@/toolsNavInfo"
 import { Tabs } from "@mantine/core"
 import React from "react"
 import { useHistory } from "react-router"
 import { Link } from "react-router-dom"
+import { useMDParams } from "@/systemHooks"
+import { NotFoundPage } from "@/pages/NotFound.page"
 
 const InnerXToolsDetail = () => {
     const {
-        mainModuleItem,
+       mainModuleItem : mainModuleItem,
         mainSubModuleItem,
-        mainSubToolID: tmp_mainSubToolID
+        subModuleId: tmp_mainSubToolID
     } = useMDParams()
+    const history = useHistory()
+    if(
+        !mainModuleItem 
+        || !mainSubModuleItem
+    ){
+        return <NotFoundPage/>
+    }
     const findItem = toolsNavInfo.find(x => x.id === mainSubModuleItem.id)
     const subTools = findItem?.subTools || []
     const subToolId = tmp_mainSubToolID ? tmp_mainSubToolID : (subTools && subTools[0] && subTools[0].id || "")
     const subToolItem = subTools.find(x => x.id === subToolId)
-    const history = useHistory()
     const setIdx = (x: string) => {
         history.push(`/tools/${mainSubModuleItem.id}/${x}`)
     }
