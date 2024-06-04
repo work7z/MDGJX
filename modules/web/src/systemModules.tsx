@@ -212,6 +212,11 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
                 bodyFn: () => import('./loadable/PrivacyAgreement/index.tsx')
             },
             {
+                name: '下载与更新',
+                id: 'install',
+                bodyFn: () => import('./loadable/DownloadAndInstall/index.tsx')
+            },
+            {
                 name: '建议与反馈',
                 bodyFn: () => import('./loadable/Feedback/index.tsx'),
                 id: 'feedback'
