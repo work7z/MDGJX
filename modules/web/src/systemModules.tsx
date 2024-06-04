@@ -15,6 +15,8 @@ import {
     IconStar,
     IconBookmark,
     IconBookmarks,
+    Icon,
+    IconTools,
 
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
@@ -27,6 +29,7 @@ import AppConstants from './AppConstants.tsx';
 export type LoadModuleType = () => any
 export type SystemSubModuleItem = {
     id: string,
+    icon?:any,
     href?: string,
     firstRouteId?:string,
     rootMainModuleId?:string,
@@ -88,6 +91,7 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
         children: [
             {
                 id: 'tools',
+                icon: IconTools,
                 name: '便捷工具',
                 children:  [
                     {
@@ -108,7 +112,7 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
             },
             {
                 id: 'i18n',
-                // icon: IconLanguage,
+                icon: IconLanguage,
                 name: '翻译助手',
                 children:  [
                     {
@@ -140,7 +144,7 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
             },
             {
                 id: 'network',
-                // icon: IconNetwork,
+                icon: IconNetwork,
                 name: '网络运维',
                 children: [
                     {
