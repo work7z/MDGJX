@@ -61,7 +61,7 @@ export function DoubleNavbar(props: {
             <Link to={`${item.defaultHref}`}>
                 <UnstyledButton
                     className={classes.mainLink}
-                    data-active={item.id === mainModule || undefined}
+                    data-active={item.id === props.mdParams.rootModuleItem.id || undefined}
                 >
                     {
                         item.icon ? <item.icon style={{ width: rem(22), height: rem(22) }} stroke={1.5} /> : ''

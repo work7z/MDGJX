@@ -86,9 +86,13 @@ export function GeneralLayout(props) {
             { /** app main */}
             <AppShell.Main style={{
                 ...(hideLeftMenu ? {
-                    paddingLeft: (FIXED_COLUMN_WIDTH+10) + 'px',
+                    // paddingLeft: (FIXED_COLUMN_WIDTH+10) + 'px',
                 } : {})
-            }}>
+            }} className={
+            `pl-[10px] `+(
+                hideLeftMenu? (`  sm:pl-[70px] `):' sm:pl-[310px] '
+            )
+            }>
                 {bodyJSX}
             </AppShell.Main>
             {

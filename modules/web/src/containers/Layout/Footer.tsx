@@ -33,7 +33,7 @@ export function FooterCentered() {
 
     return (
         <div className={classes.footer + (
-            hideLeftMenu ? '' : ' pl-[300px]'
+            hideLeftMenu ? ' pl-[10px] ' : ' pl-[10px] sm:pl-[300px]'
         )} >
             <div className={classes.inner + ' flex justify-center items-center flex-row '} >
                 <Group></Group>
