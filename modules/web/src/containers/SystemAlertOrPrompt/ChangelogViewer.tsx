@@ -27,7 +27,7 @@ export default ()=>{
             // only for non-portal mode
             if (changeLogRes.isSuccess) {
                 const crtRes = changeLogRes.data?.data
-                if (crtRes) {
+                if (crtRes && !_.isEmpty(crtRes.updates)) {
                     if(crtRes.timestamp == localStorage.getItem(saveKey)){
                         console.log('ignore this update')
                         return;

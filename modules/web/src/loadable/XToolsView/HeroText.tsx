@@ -48,7 +48,7 @@ export function HeroText() {
                                 // history.push("/settings/faq")
                                 // AlertUtils.alertInfo("抱歉，更多功能页暂不可用，暂时为您跳转到常见问题页")
                                 // AlertUtils.alertInfo("抱歉，桌面端暂未开放下载，敬请期待！感兴趣可加QQ群" + GetAppInfo().qqGroup)
-                                history.push(`/settings/install?type=desktop`)
+                                history.push(`/settings/install?type=desktop2`)
                             }}
                             className={classes.control} size="lg">
                             下载桌面版(Desktop)

@@ -29,7 +29,7 @@ import exportUtils from '@/utils/ExportUtils';
 import { useMDParams } from '@/systemHooks';
 
 export let useWrapWithTitle = (title: string) => {
-    const finalTitle = isDesktopMode()?`${title} - 秒达工具箱`:`${title}`
+    const finalTitle =true || isDesktopMode()?`${title} - 秒达工具箱`:`${title}`
     useDocumentTitle(`${finalTitle}`)
     if(isDesktopMode()){
         getBridgeRef()?.updateTitle(finalTitle)
