@@ -11,3 +11,18 @@ version=desktop2-`jq '.version' $MDGJX_ROOT/modules/desktop2/package.json -r`
 tagName=$version
 git tag $tagName
 git push origin $tagName
+
+targetFile=$SRV_MDGJX_ROOT/modules/sysconf/release/desktop2/$tagName.js
+if [ -f $targetFile ]; then
+    echo "File $targetFile already exists, ignore to update it"
+else 
+    echo "
+    export default {
+    \"version\": \"$tagName\",
+    \"minUpgradableVersion\": null, // null or string, null means no restriction
+    \"description\": ``, // when we generate the static files, the empty descirption is disallowed
+    \"releaseDate\": \"$(date +%Y-%m-%d)\",
+    \"timestamp\": \"$(date +%s)\"
+    } 
+    " > $targetFile
+fi
