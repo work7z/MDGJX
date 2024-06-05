@@ -7,7 +7,7 @@ if [ $? -eq 0 ]; then
 fi
 
 set -e
-version=desktop2-`jq '.version' $MDGJX_ROOT/modules/desktop2/package.json -r` 
+version=desktop2-`jq '.desktop2' $MDGJX_ROOT/version.json -r` 
 tagName=$version
 git tag $tagName
 git push origin $tagName
@@ -20,7 +20,7 @@ else
     export default {
     \"version\": \"$tagName\",
     \"minUpgradableVersion\": null, // null or string, null means no restriction
-    \"description\": ``, // when we generate the static files, the empty descirption is disallowed
+    \"description\": \"\", // when we generate the static files, the empty descirption is disallowed
     \"releaseDate\": \"$(date +%Y-%m-%d)\",
     \"timestamp\": \"$(date +%s)\"
     } 
