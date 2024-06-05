@@ -10,6 +10,10 @@ import UsersSlice from './store/reducers/userSlice';
 import SystemAlertOrPrompt from './containers/SystemAlertOrPrompt';
 import exportUtils from './utils/ExportUtils';
 import { SetupPage } from './pages/Setup.page';
+import { isDesktopMode } from './utils/DesktopUtils';
+import GetAppInfo from './AppInfo';
+import { isPortalMode } from './utils/PortalUtils';
+import AlertUtils from './utils/AlertUtils';
 
 
 
@@ -30,20 +34,12 @@ export default () => {
       )
     }
   }, [userInfoMeta.status])
-  const routerArr:JSX.Element[] = []
-  for (let eachRoute of ROUTE_CPT_MAPPING){
+  const routerArr: JSX.Element[] = []
+  for (let eachRoute of ROUTE_CPT_MAPPING) {
     const pathName = eachRoute.href
     routerArr.push(<Route key={pathName} exact path={pathName} component={HomePage} />)
     routerArr.push(<Route key={pathName} exact path={pathName + '/:extId'} component={HomePage} />)
   }
-  // for(let x of systemModulesList){
-  //   x.children?.map((y, yi) => {
-  //     const optPath = `/${x.id}/${y.id}`
-  //     routerArr.push(<Route key={yi + x.id + y.id+'2'} exact path={`/${x.id}`} component={HomePage} />)
-  //     routerArr.push(<Route key={yi + x.id + y.id} exact path={optPath} component={HomePage} />)
-  //     routerArr.push(<Route key={yi + x.id + y.id} exact path={optPath+'/:extId'} component={HomePage} />)
-  //   })
-  // }
   return <Router basename={basename} >
     <Switch>
       <Route exact path={"/not-found"} component={NotFoundPage} />

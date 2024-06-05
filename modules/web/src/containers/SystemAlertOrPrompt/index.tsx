@@ -26,5 +26,6 @@ export default () => {
         }} title="请先登录">
             <LoadableWrapper id={'myacct'} fn={Fn_MyAccount} />
         </Modal>
+        <LoadableWrapper disableLoadingText={true} id={'changelogviewer'} fn={()=>import('./ChangelogViewer')} />
     </>
 }

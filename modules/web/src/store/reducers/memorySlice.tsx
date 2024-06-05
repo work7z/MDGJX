@@ -9,10 +9,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import _ from 'lodash'
 
 export type MemoryState = {
-  showLoginModal: boolean
+  showLoginModal: boolean,
+  showChangeLogModal: boolean
 };
 const initialState: MemoryState = {
   showLoginModal: false,
+  showChangeLogModal: false
 };
 
 

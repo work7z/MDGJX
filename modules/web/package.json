@@ -168,6 +168,7 @@
     "react-dom": "^18.2.0",
     "react-draggable": "4.4.4",
     "react-grid-layout": "1.4.2",
+    "react-markdown": "^9.0.1",
     "react-redux": "8.1.2",
     "react-refresh": "0.11.0",
     "react-router": "5.1.2",
