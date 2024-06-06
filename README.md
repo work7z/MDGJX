@@ -1,5 +1,5 @@
 <p style="text-align: center">
-<img width="100" src="./modules/web/src/favicon.png" alt="favicon.png">
+<img width="203" src="./modules/web/src/favicon.png" alt="favicon.png">
 <br>
 <span style="font-size:20px">秒达工具箱 -- 免费安全的一键式呼出工具箱
 </span>
@@ -46,8 +46,7 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 
 # 🌠 预览
 
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark-zh_CN.png?raw=true)
+![](./docs/imgs/portal.png)
 
 # 📡 关于LAF
 
