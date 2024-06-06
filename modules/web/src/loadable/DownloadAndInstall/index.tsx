@@ -7,6 +7,7 @@ import { useHistory } from 'react-router';
 import queryString from 'query-string';
 import { useState } from 'react';
 import Markdown from 'react-markdown';
+import { IconClock24 } from '@tabler/icons-react';
 
 export default () => {
     // https://dkstatic.mdgjx.com/hello.html
@@ -65,7 +66,14 @@ export default () => {
                     <a href={'https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64'} target='_blank' className='text-blue-500'>🔗 Docker Hub - laftools-arm64-x64</a>
                    </div>
                    <div>需要更多帮助请在GitHub上联系我们，谢谢</div>
-                </p> : <ListTable />
+                </p> : <div>
+<div className='my-2'>
+                            <Alert p={5} variant="light" color="green" title="本软件完全开源，无任何恶意代码，请信任并忽略报毒错误，我们也正在申请软件签名证书，敬请理解" icon={<IconClock24 />}>
+                            </Alert>
+
+</div>
+                        <ListTable />
+                </div>
           }
        </Container>
     </div>
