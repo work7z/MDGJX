@@ -1,6 +1,10 @@
 import { Table, Progress, Anchor, Text, Group } from '@mantine/core';
 import classes from './TableReviews.module.css';
 import { IconBrandApple, IconBrandUbuntu, IconBrandWindows } from '@tabler/icons-react';
+import { useEffect } from 'react';
+import apiSlice from '@/store/reducers/apiSlice';
+import GetAppInfo from '@/AppInfo';
+import _ from 'lodash';
 
 const data:{
     icon?:any,
@@ -61,6 +65,16 @@ const data:{
 ];
 
 export default function TableReviews() {
+    let latestVer = 'unknown'
+    const changeLogRes = apiSlice.useGetSysConfChangeLogQuery({
+        checkType: 'desktop2',
+        currentVer:'desktop2-'+ GetAppInfo().version
+    }, {
+        pollingInterval: 60 * 1000 * 5, // 5 minutes
+    })
+    if (changeLogRes.isSuccess){
+        latestVer = _.first(changeLogRes.data?.data?.updates)?.version || 'unknown'
+    }
     const rows = data.map((row) => {
 
         return (
@@ -76,7 +90,7 @@ export default function TableReviews() {
                         row.ext.map(x=>{
                             return <Anchor
                             key={x} component="button" fz="sm">
-                                <a target="_blank" href={`MDGJX-desktop-v1.0.0-${
+                                <a target="_blank" href={`https://dkstatic.mdgjx.com/${latestVer}-release/MDGJX-desktop-${latestVer.replace('desktop2-','')}-${
                                     row.overwriteFn ? row.overwriteFn(x) || row.fileArch : row.fileArch
                                 }.${x}`}>
                                     {x}
@@ -89,7 +103,9 @@ export default function TableReviews() {
             </Table.Tr>
         );
     });
-
+    if (latestVer == 'unknown'){
+        return <Progress color="blue" size="xl" value={0} />
+    }
     return (
         <Table.ScrollContainer minWidth={800}>
             <Table verticalSpacing="xs">

@@ -18,7 +18,7 @@ const saveKey = 'ukSwp3UmN'
 export default ()=>{
     const changeLogRes = apiSlice.useGetSysConfChangeLogQuery({
         checkType: isDesktopMode() ? 'desktop2' : 'web2',
-        currentVer: GetAppInfo().version
+        currentVer: isDesktopMode() ?  'desktop2-'+GetAppInfo().version:GetAppInfo().version
     }, {
         pollingInterval: 60 * 1000*5 , // 5 minutes
         skip: isPortalMode()
