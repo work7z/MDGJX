@@ -24,16 +24,20 @@ export const CONFIG_OBJ = {
 }
 // CLIENT
 export const cfg_getAppMainHost = ()=>{
-    return isDevEnv() ? 'http://localhost:5173' : 'http://localhost:'+CONFIG_OBJ.APP_MAIN_HOST_PORT
+    return isDevEnv() ? 'http://127.0.0.1:5173' : 'http://127.0.0.1:'+CONFIG_OBJ.APP_MAIN_HOST_PORT
 }
 export const cfg_getAppClientEntryPage = ()=>{
-    return cfg_getAppMainHost()+'/setup'
+    return cfg_getAppMainHost()+''
 }
 
 // LOCAL
 export const cfg_getAppLocalHost = ()=>{
-    return isDevEnv() ? 'http://localhost:20167' : path.join(cfg_getRootFolder(),'pages-dist','local','index.html')
+    return isDevEnv() ? 'http://127.0.0.1:20167' : path.join(cfg_getRootFolder(),'pages-dist','local','index.html')
 }
 export const cfg_getAppLocalLoadingPage = ()=>{
     return cfg_getAppLocalHost() 
+}
+
+export const cfg_getServerPort = ()=>{
+    return isDevEnv()?5173: 42016 // this is a fixed port value for now
 }

@@ -10,7 +10,6 @@ import { useClipboard } from "@mantine/hooks";
 import FileExportUtils, { js_export_trigger } from "@/utils/FileExportUtils";
 import base64metautils from "./base64metautils";
 import { useHistory } from "react-router";
-import { useMDParams } from "@/containers/SideBar";
 
 export type JSONConversionState = {
     //
@@ -26,7 +25,6 @@ export type JSONConversionNPState = {
 
 export default () => {
     const hist = useHistory()
-    const mdp = useMDParams()
     const rh = exportUtils.register('jsonsuper', {
         getPersistedStateFn: () => {
             return {
@@ -44,6 +42,7 @@ export default () => {
             } satisfies JSONConversionState
         }
     })
+    
     const clipboard = useClipboard({ timeout: 500 });
 
     if (!rh) {

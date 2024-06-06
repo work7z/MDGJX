@@ -1,24 +1,6 @@
 !include WinVer.nsh
 Caption "${PRODUCT_NAME} ${VERSION}"
 
-!macro preInit
-    ${IfNot} ${AtLeastWin10}
-        MessageBox MB_ICONEXCLAMATION "非常抱歉，秒达工具箱无法在低于 Windows 10 的系统上进行安装。如认为此系统有必要支持，请联系我们$\n$\n\
-            Sorry, MDGJX cannot be installed on systems below Windows 10$\n"
-        Quit
-    ${EndIf}
-
-    nsExec::Exec 'TASKKILL /F /IM "MDGJX.exe"'
-!macroend
-
-!macro customUnInit
-    ${un.FindIt} "$INSTDIR" "data" $R0
-    ${If} -1 != $R0
-        MessageBox MB_ICONSTOP "检测到安装路径下包含了工作空间数据 $R0，请将工作空间文件夹移到其他位置后再试。$\n$\n\
-            The workspace data $R0 was detected in the installation path, please move the workspace folder to another location and try again.$\n"
-        Quit
-    ${EndIf}
-!macroend
 
 !macro customUnInstall
     ${IfNot} ${isUpdated}

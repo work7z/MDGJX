@@ -46,7 +46,7 @@ const contents = BrowserWindow.fromId(winId).webContents;
 }
 
 MSG_REF.ipcMain_send = async (key, value): Promise<any> => {
-  logger.debug(`[ipcMain_send] key=${key} value=${value}`)
+  logger.debug(`[ipcMain_send] key=${key} value=${JSON.stringify(value)}`)
   BrowserWindow.getAllWindows().forEach(win => {
     if(win.isDestroyed()){
         logger.warn(`[ipcMain_send] win.id=${win.id} is destroyed, ignore send`)

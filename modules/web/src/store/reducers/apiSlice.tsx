@@ -100,6 +100,22 @@ export let verifyResponse = (response: AsyncCreateResponse<any> | undefined): bo
   }
 }
 
+export type CommonVerDetail = {
+  version: string;
+  description: string;
+  releaseDate: string,
+  timestamp: string
+};
+export type RawChangeLogStruct = {
+  desktop2: CommonVerDetail[];
+  web2: CommonVerDetail[];
+};
+export type SysConfChangeLogResponse = {
+  type: string;
+  timestamp: string;
+  updates: CommonVerDetail[];
+};
+
 export const msg_showNetworkWithDebounce  = _.throttle(()=>{
   AlertUtils.alertErr('抱歉，网络不稳定，请稍后重试')
 },10*1000)
@@ -155,6 +171,19 @@ export const apiSlice = createApi({
       query: () => {
         return {
           url: "/hello-world",
+          method: "GET",
+        };
+      },
+    }),
+    // sysconf 
+    getSysConfChangeLog: build.query <AsyncCreateResponse<SysConfChangeLogResponse>, {
+      currentVer?:string,
+      checkType:'web2'|'desktop2'
+    }>({
+      query: (params) => {
+        return {
+          params,
+          url: "/sysconf/changelog",
           method: "GET",
         };
       },

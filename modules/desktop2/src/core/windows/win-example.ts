@@ -23,8 +23,8 @@ export  default  () => {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
       // full width and height
-      width: appScreenWidth * 0.618,
-      height: appScreenHeight * 0.618,
+      width: appScreenWidth * 0.8,
+      height: appScreenHeight * 0.8,
       autoHideMenuBar: false,
       icon: iconImg,
       webPreferences: {

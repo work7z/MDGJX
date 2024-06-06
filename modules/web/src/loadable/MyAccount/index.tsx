@@ -80,7 +80,9 @@ function AuthenticationTitle() {
         const cardList = st_cardList.data?.data || []
         return (
             <Container my={10} size={'xl'} className='block sm:flex flex-row justify-start items-start sm:space-x-4 '>
-                <div className='flex-1 mb-5'>
+                <div className='flex-1 mb-5 sm:w-[calc(100%-350px)]' style={{
+                    // width: `calc(100% - 350px)`
+                }} >
                     <Paper withBorder shadow="md" p={10} radius="md">
                         <Title
                             size='xl'
@@ -103,7 +105,7 @@ function AuthenticationTitle() {
                         </Alert>
                     </Paper>
                 </div>
-                <Flex dir='col' className='flex flex-col sm:w-[400px]'>
+                <Flex dir='col' className='flex flex-col sm:w-[350px]'>
                     <Paper withBorder shadow="md" p={30} radius="md">
                         <Group wrap="nowrap">
                             <div>

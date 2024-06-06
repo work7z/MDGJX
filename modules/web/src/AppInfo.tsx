@@ -1,9 +1,10 @@
 import { isDevEnv } from "./env";
 import info from "./meta/info";
+import { isDesktopMode } from "./utils/DesktopUtils";
 
 const isBeiAnType = true;
 const isInLafToolsCOM = location.href.indexOf("laf-tools.com") !== -1 && isBeiAnType
-const isInMdgjxCOM = !isInLafToolsCOM && location.href.indexOf("mdgjx.com") !== -1 || isDevEnv()
+const isInMdgjxCOM = isDesktopMode()|| !isInLafToolsCOM && location.href.indexOf("mdgjx.com") !== -1 || isDevEnv()
 
 const appInfo = {
     ...info,

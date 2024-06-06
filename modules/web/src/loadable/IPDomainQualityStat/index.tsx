@@ -9,12 +9,12 @@ import _ from "lodash";
 import { IconClock24, IconCopy, IconHours24, IconInfoCircle, IconSettings, IconTransformFilled } from "@tabler/icons-react";
 import FileExportUtils, { js_export_trigger } from "@/utils/FileExportUtils";
 import { useHistory } from "react-router";
-import { useMDParams } from "@/containers/SideBar";
 import { Link } from "react-router-dom";
 import { JSX_Pro_Only } from "@/AppJSX";
 import TimeDelayTable from "./TimeDelayTable";
 import AutoUpdated from "./AutoUpdated";
 import StatSetting from "./StatSetting";
+import { useMDParams } from "@/systemHooks";
 
 export default () => {
     const rh = exportUtils.register('ipdomainqualitystat', {
@@ -77,7 +77,7 @@ export default () => {
         // },
     ]
     const iconStyle = { width: rem(12), height: rem(12) };
-    const activeId = mdp.mainSubToolID || items[0].id
+    const activeId = mdp.secondRouteId || items[0].id
 
     const hVal = 'calc(100vh - 85px)'
     if (!rh) {
@@ -285,7 +285,7 @@ export default () => {
                     {
                         items.map(x => {
                             return (
-                                <Link to={`/${mdp.mainModuleItem?.id}/${mdp?.mainSubModuleItem?.id}/${x.id}`}>
+                                <Link to={`/${mdp.rootModuleItem?.id}/${mdp?.subModuleItem?.id}/${x.id}`}>
                                     <Tabs.Tab className="h-[35px]" value={x.id} leftSection={<x.icon style={iconStyle} />}>
                                         {x.name}
                                     </Tabs.Tab>

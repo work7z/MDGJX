@@ -2,6 +2,7 @@ import { Anchor, Group, ActionIcon, rem } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
 import classes from './Footer.module.css';
 import GetAppInfo from '@/AppInfo';
+import exportUtils from '@/utils/ExportUtils';
 
 const appInfo = GetAppInfo()
 
@@ -28,9 +29,12 @@ export function FooterCentered() {
             {link.label}
         </Anchor>
     ));
+    const hideLeftMenu = exportUtils.useSelector(v => v.settings.hideLeftMenu)
 
     return (
-        <div className={classes.footer}>
+        <div className={classes.footer + (
+            hideLeftMenu ? ' pl-[10px] ' : ' pl-[10px] sm:pl-[300px]'
+        )} >
             <div className={classes.inner + ' flex justify-center items-center flex-row '} >
                 <Group></Group>
                 <Group className={classes.links}>{items}</Group>

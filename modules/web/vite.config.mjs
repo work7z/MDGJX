@@ -49,6 +49,8 @@ export default defineConfig({
   //   },
   // },
   server: {
+    open:true,
+    host: '127.0.0.1',
     proxy: {
       '/ws': {
         target: 'ws://127.0.0.1:2016', //这里是后台ws访问地址

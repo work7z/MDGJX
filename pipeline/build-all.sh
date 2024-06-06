@@ -1,12 +1,11 @@
 #!/bin/bash 
 # this script is designated for building this whole project.  
 # version will be retrieved from the file package.json
+set -e
+
 source ~/.zshrc
 
-set -e
-if [ "$TAG_MODE" = "true" ]; then
-    cp -a /home/runner/work/LafTools/LafTools $MDGJX_ROOT
-fi
+echo "[I] MDGJX_ROOT=$MDGJX_ROOT"
 
 chmod +x $MDGJX_ROOT/pipeline/tools/get-web2-version.sh
 crtVersion=`$MDGJX_ROOT/pipeline/tools/get-web2-version.sh`

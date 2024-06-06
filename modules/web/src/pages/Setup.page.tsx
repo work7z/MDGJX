@@ -1,10 +1,11 @@
-import { GeneralLayout, useWrapWithTitle } from '@/components/Layout/Layout';
+import { GeneralLayout, useWrapWithTitle } from '@/containers/Layout/Layout';
 import { AppShell, Burger } from '@mantine/core';
 import { useDisclosure, useDocumentTitle } from '@mantine/hooks';
+import { SetupLayout } from './unused-setup/SetupLayout';
 
 export function SetupPage() {
   useWrapWithTitle(`工作台`)
   return (
-    <div>欢迎来到秒达工具箱，地址是{location.href}</div>
+    <GeneralLayout />
   );
 }

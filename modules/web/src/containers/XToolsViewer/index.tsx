@@ -11,7 +11,7 @@ export default (props: {
     const isDark = useDarkModeOrNot()
     const baseURL_for_ITTools = '/xtools/'
     const itToolsBaseURL = (
-        isDevEnv() ? 'http://localhost:5174' : ''
+        isDevEnv() ? 'http://localhost:25173' : ''
     ) + baseURL_for_ITTools + props.toolId //'uuid-generator'
     const itToolsFullURL = itToolsBaseURL + '?' + queryString.stringify({
         sysdarkmode: isDark

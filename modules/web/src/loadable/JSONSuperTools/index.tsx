@@ -1,5 +1,5 @@
 import LoadableWrapper from "@/components/LoadableWrapper";
-import { useMDParams } from "@/containers/SideBar/index.tsx";
+import { useMDParams } from "@/systemHooks.tsx";
 import { Card, Tabs, rem } from "@mantine/core"
 import { IconDatabaseExport, IconFileInfinity, IconGitCompare, IconInfinity, IconLayersIntersect, IconMessageCircle, IconOutlet, IconPhoto, IconSettings, IconTransform, IconTransformFilled } from "@tabler/icons-react"
 import { Route, Switch, useHistory } from "react-router";
@@ -35,7 +35,7 @@ export default () => {
         //     loadFN: () => import('./JSONDiff.tsx')
         // },
     ]
-    const activeId = mdp.mainSubToolID || items[0].id
+    const activeId = mdp.thirdRouteId || items[0].id
     const hVal = 'calc(100vh - 85px)'
     return (
         <Card p={0} withBorder style={{

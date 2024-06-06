@@ -18,7 +18,7 @@ export let getSysEnv = () => {
   return envObj.env;
 };
 
-const isDevEnvVal = location.href.indexOf('http://localhost:5173/') != -1;
+const isDevEnvVal = location.href.indexOf('http://127.0.0.1:5173') != -1;
 export let isDevEnv = () => {
   return isDevEnvVal;
 };

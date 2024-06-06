@@ -13,6 +13,10 @@ import winInitLoadingPage from "./windows/win-init-loading-page";
 export default (props: DMainPassProps) => {
   let { MAIN_WINDOW_VITE_DEV_SERVER_URL } = props;
   let MAIN_WINDOW_VITE_NAME = "unknown";
+
+
+
+  
   // Handle creating/removing shortcuts on Windows when installing/uninstalling.
   if (require("electron-squirrel-startup")) {
     app.quit();
@@ -37,10 +41,11 @@ export default (props: DMainPassProps) => {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) {
-      winInitLoadingPage()
+      // winInitLoadingPage()
     }
   });
 
   // In this file you can include the rest of your app's specific main process
   // code. You can also put them in separate files and import them here.
+
 };
