@@ -1,4 +1,4 @@
-<p style="text-align: center">
+<p align="center">
 <img width="203" src="./modules/web/src/favicon.png" alt="favicon.png">
 <br>
 <span style="font-size:20px">秒达工具箱 -- 免费安全的一键式呼出工具箱
