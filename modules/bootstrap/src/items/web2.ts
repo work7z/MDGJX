@@ -304,7 +304,7 @@ let item: TypeRunItem = {
     // start launching the server
     require(defaultServerEntry);
 
-    job_runVersionCheck();
+    // job_runVersionCheck();
   },
 };
 export default item;

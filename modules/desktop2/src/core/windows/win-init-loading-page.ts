@@ -39,7 +39,9 @@ export const killPortServiceNow = async (port: number): Promise<number> => {
     return;
   }
   try {
-    const r = await axios(`http://${systemHost}:${port}/killnow`)
+    const r = await axios(`http://${systemHost}:${port}/killnow`,{
+      timeout: 1500
+    })
     logger.info(`killPortServiceNow: ${r.status} ${r.statusText}`)
     return r.status
   } catch (e) {

@@ -130,6 +130,14 @@ export class App {
         res.sendFile(path.resolve(distDir, 'index.html'));
       });
     }
+    this.app.get('/killnow',(req,res)=>{
+      if (this.port + '' > '40000') {
+        process.exit(0);
+        res.send('OK');
+      } else {
+        res.send('not allowed');
+      }
+    });
     const ErrorMiddleware = (error: HttpException, req: Request, res: Response, next: NextFunction) => {
       try {
         const status: number = error.status || 500;
