@@ -33,6 +33,22 @@ export const getPortURLResponse = async (port: number): Promise<number> => {
   }
 }
 
+export const killPortServiceNow = async (port: number): Promise<number> => {
+  if(isDevEnv()){
+    logger.info('killPortServiceNow: skip killing port in dev env')
+    return;
+  }
+  try {
+    const r = await axios(`http://${systemHost}:${port}/killnow`)
+    logger.info(`killPortServiceNow: ${r.status} ${r.statusText}`)
+    return r.status
+  } catch (e) {
+    logger.error(`getPortURLResponse: ${e.message} ${e}, but it is ok, we will return 500`)
+    return 500
+  }
+}
+
+
 const fn_startMinimalService = async () => {
   const fn_updateMsgToRenderer = (msg: string, pct: number) => {
     const v: RES_PushMDGJXStatus = {
@@ -56,9 +72,11 @@ const fn_startMinimalService = async () => {
     const httpsProxy = process.env.HTTPS_PROXY || process.env.https_proxy || process.env.HTTPS_PROXY || process.env.https_proxy
     const httpProxy = process.env.HTTP_PROXY || process.env.http_proxy || process.env.HTTP_PROXY || process.env.http_proxy
     logger.debug(`startMinimalService: start, proxy info: ${httpsProxy} ${httpProxy}`)
+    let finalPort = cfg_getServerPort()
+    fn_updateMsgToRenderer('正在查找本地核心服务...', 5)
+    await killPortServiceNow(finalPort)
     fn_updateMsgToRenderer('正在启动本地核心服务...', 5)
     fn_updateMsgToRenderer('正在检查服务端口可用性...', 10)
-    let finalPort = cfg_getServerPort()
     fn_updateMsgToRenderer('正在测试端口' + finalPort + '中...', 10)
     const isUsed = await getPortURLResponse(finalPort) == 200
     if (isUsed && isProductionEnv()) {

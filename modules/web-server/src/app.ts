@@ -90,6 +90,11 @@ export class App {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
+
+    // this.app.use('/killnow',()=>{
+    //   // process.exit(0);
+    // })
+
     const proxyPrefixArr = ['/v3', '/ws'];
     for (let i = 0; i < proxyPrefixArr.length; i++) {
       const prefix = proxyPrefixArr[i];

@@ -32,9 +32,11 @@ export default (props: DMainPassProps) => {
   // for applications and their menu bar to stay active until the user quits
   // explicitly with Cmd + Q.
   app.on("window-all-closed", () => {
-    if (process.platform !== "darwin") {
       app.quit();
-    }
+      process.exit(0)
+    // if (process.platform !== "darwin") {
+    //   app.quit();
+    // }
   });
 
   app.on("activate", () => {

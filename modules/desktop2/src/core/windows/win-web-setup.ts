@@ -24,8 +24,10 @@ export  default  () => {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
       // full width and height
-      width: parseInt(""+(appScreenWidth*0.6)),
-      height: parseInt(""+(appScreenHeight*0.7)),
+      // width: parseInt(""+(appScreenWidth*0.6)),
+      // height: parseInt(""+(appScreenHeight*0.7)),
+      // width: appScreenWidth,
+      // height: appScreenHeight,
       autoHideMenuBar: true, // no need to show menu bar here
       icon: iconImg,
       webPreferences: {
@@ -34,6 +36,8 @@ export  default  () => {
         preload: dPreloadJS,
       },
     });
+
+    mainWindow.maximize();
 
     registerIpcMainOn('websetup', async (key, values) => {
       switch (key) {
