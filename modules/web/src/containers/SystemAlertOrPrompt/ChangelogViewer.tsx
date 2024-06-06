@@ -12,6 +12,7 @@ import { useEffect } from "react"
 import { useHistory } from "react-router"
 import { Link } from "react-router-dom"
 import Markdown from 'react-markdown'
+import MarkdownCpt from "@/components/MarkdownCpt"
 const saveKey = 'ukSwp3UmN'
 
 export default ()=>{
@@ -19,7 +20,7 @@ export default ()=>{
         checkType: isDesktopMode() ? 'desktop2' : 'web2',
         currentVer: GetAppInfo().version
     }, {
-        pollingInterval: 60 * 1000,
+        pollingInterval: 60 * 1000*5 , // 5 minutes
         skip: isPortalMode()
     })
     useEffect(() => {
@@ -59,7 +60,9 @@ export default ()=>{
         `更新日志 - 新版本已为您推送`
     }>
         <div className="p-2 space-y-1">
-            <a href={`https://mdgjx.com/settings/install?from=app`} target="_blank" >
+            <a onClick={()=>{
+                localStorage.setItem(saveKey, tData?.timestamp || '0')
+            }} href={`https://mdgjx.com/settings/install?from=app`} target="_blank" >
                 <Button color="blue" fullWidth>立即更新</Button>
             </a>
             <Button color="gray" fullWidth variant="outline" onClick={()=>{
@@ -75,8 +78,8 @@ export default ()=>{
                         return <div>
                             <div className='font-bold'>{x.version}</div>
                             <div className='text-sm'>
-                                <Markdown >{
-                                    x.description || `修复了一些**逻辑**错误`}</Markdown>
+                                <MarkdownCpt str={x.description || `暂无更多信息`}>
+                                </MarkdownCpt>
                             </div>
                             <div className='text-xs text-gray-500'>{dayjs(parseInt(x.timestamp || '0') * 1000).format('YYYY-MM-DD HH:mm:ss')}</div>
                         </div>

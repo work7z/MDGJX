@@ -184,6 +184,7 @@
     "redux-persist": "^6.0.0",
     "redux-state-sync": "^3.1.4",
     "reflect-metadata": "^0.1.13",
+    "remark-gfm": "^4.0.0",
     "resolve": "1.20.0",
     "resolve-url-loader": "4.0.0",
     "rollup-plugin-node-builtins": "^2.1.2",
