@@ -1,0 +1,36 @@
+{
+  "menus": [
+    {
+      "label": ["Formatter"],
+      "id": "formatter"
+    },
+    {
+      "label": ["Encode/Decode"],
+      "id": "encode_decode"
+    },
+    {
+      "label": ["Encrypt/Decrypt"],
+      "id": "encrypt_decrypt"
+    },
+    {
+      "label": ["JSON Tools"],
+      "id": "json"
+    },
+    {
+      "label": ["XML Tools"],
+      "id": "xml"
+    },
+    {
+      "label": ["Text Tools"],
+      "id": "text_tools"
+    },
+    {
+      "label": ["Image Tools"],
+      "id": "image_tools"
+    },
+    {
+      "label": ["Other Tools"],
+      "id": "other"
+    }
+  ]
+}
