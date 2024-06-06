@@ -1,0 +1,10 @@
+{
+    "presets": [
+        "react-app",
+        "es2017"
+    ],
+    "plugins": [
+        "transform-decorators-legacy",
+        "transform-class-properties"
+    ]
+}
