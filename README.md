@@ -1,13 +1,8 @@
-<p align="center">
-<img width="100" src="https://github.com/work7z/MDGJX/blob/master/modules/web/src/favicon.png?raw=true"></img>
+<p style="text-align: center">
+<img width="100" src="./modules/web/src/favicon.png" alt="favicon.png">
 <br>
 <span style="font-size:20px">秒达工具箱 -- 免费安全的一键式呼出工具箱
 </span>
-<!-- <center>
-<div style="text-align:center;">
-<a target="_blank" href="http://cloud.laftools.cn">Preview the Insider Version of LafTools</a>
-</div>
-</center> -->
 <br><br>
 </p>
 
@@ -82,6 +77,8 @@ export PATH=$PATH:$MDGJX_ROOT\dev\source\windows-bin
 
 **Env for Linux/MacOS:**
 
+> 如您遇到permission denied问题请在命令前加sudo赋予更高权限
+
 ```bash
 export MDGJX_ROOT=/users/jerry/projects/laftools-repo
 ```
@@ -133,9 +130,9 @@ cd pipeline
 如果没有出色的开源项目，这个项目就不可能实现，我想亲自向以下项目表示最深切的谢意：
 
 1. [Blueprint UI](https://blueprintjs.com/) - a React-based UI toolkit.
-1. [CyberChef](https://github.com/gchq/CyberChef/tree/master) - a web app for encryption, encoding, compression and data analysis.
-1. [Lodash](https://github.com/lodash/lodash) - a modern JavaScript utility library delivering modularity, performance, & extras.
-1. [one-api](https://github.com/songquanpeng/one-api) - an OpenAI key management & redistribution system.
+2. [CyberChef](https://github.com/gchq/CyberChef/tree/master) - a web app for encryption, encoding, compression and data analysis.
+3. [Lodash](https://github.com/lodash/lodash) - a modern JavaScript utility library delivering modularity, performance, & extras.
+4. [one-api](https://github.com/songquanpeng/one-api) - an OpenAI key management & redistribution system.
 
 当然，还有其他开源项目受益并促进了这个项目，我无法在这一部分中详细介绍；如果没有这些项目和这些人才开发人员的努力，秒达工具箱就不可能实现。
 
