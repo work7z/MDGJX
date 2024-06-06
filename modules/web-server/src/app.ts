@@ -91,9 +91,14 @@ export class App {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
 
-    // this.app.use('/killnow',()=>{
-    //   // process.exit(0);
-    // })
+
+    this.app.get('/killnow',(req,res)=>{
+      if (this.port + '' > '40000') {
+        process.exit(0);
+      } else {
+        res.send('not allowed');
+      }
+    });
 
     const proxyPrefixArr = ['/v3', '/ws'];
     for (let i = 0; i < proxyPrefixArr.length; i++) {
@@ -130,14 +135,7 @@ export class App {
         res.sendFile(path.resolve(distDir, 'index.html'));
       });
     }
-    this.app.get('/killnow',(req,res)=>{
-      if (this.port + '' > '40000') {
-        process.exit(0);
-        res.send('OK');
-      } else {
-        res.send('not allowed');
-      }
-    });
+
     const ErrorMiddleware = (error: HttpException, req: Request, res: Response, next: NextFunction) => {
       try {
         const status: number = error.status || 500;

@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import apiSlice from '@/store/reducers/apiSlice';
 import GetAppInfo from '@/AppInfo';
 import _ from 'lodash';
+import { isOnlineTestMode } from '@/utils/PortalUtils';
 
 const data:{
     icon?:any,
@@ -75,6 +76,7 @@ export default function TableReviews() {
     if (changeLogRes.isSuccess){
         latestVer = _.first(changeLogRes.data?.data?.updates)?.version || 'unknown'
     }
+    // const whatTypeOfPkg = isOnlineTestMode() ? 'test':'release'
     const rows = data.map((row) => {
 
         return (
