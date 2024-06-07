@@ -374,6 +374,8 @@ const MyRootContent = () => {
       </div>
     );
   };
+    return <ParentRoot>{innterJSX}</ParentRoot>;
+
   if (gstore.localSettings.using_desktop_mode) {
     return <ParentRoot>{innterJSX}</ParentRoot>;
   }

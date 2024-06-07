@@ -1,0 +1,29 @@
+:global {
+}
+.concise-menu-wrapper {
+  padding: 5px 4px;
+  display: flex;
+  flex-direction: column;
+  .m-menu-item {
+    cursor: default;
+    font-size: 13px;
+    padding: 5px 8px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    min-width: 130px;
+    cursor: pointer;
+    &,
+    &:hover,
+    &:visited {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+    &:hover {
+      background-color: var(--app-bg-blueview-active) !important;
+      color: var(--app-text-white) !important;
+    }
+  }
+}

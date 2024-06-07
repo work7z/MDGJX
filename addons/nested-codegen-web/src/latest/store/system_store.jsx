@@ -151,15 +151,15 @@ let fn_raw_local_set = () => {
     showing_terminal_panel: false,
     is_using_dark_mode: false,
     softwareUpdatesTabId: "prod",
-    appTypeView: "all",
+    appTypeView: "no-nav,no-subnav,no-leftmenu,no-panel-pad",
     lastExtSize: -1,
     is_allow_show_area_mode_in_time: true,
     // appTypeView: "no-nav,no-subnav",
     // no-nav,no-subnav,no-leftmenu,no-panel-pad
-    isLeftMenuOpen: true,
+    isLeftMenuOpen: false,
     showingOmnibar: false,
-    hasTopNav: true,
-    hasTopSubNav: true,
+    hasTopNav: false,
+    hasTopSubNav: false,
     pre_dataBackupDir: null,
     dataBackupDir: _.get(window, "ipc.backupDir"),
     noPanelPadValue: true,
@@ -204,31 +204,31 @@ function safeparse(str) {
 // }
 let previousLocalSettingJson = null;
 
-try {
-  function customizer(objValue, srcValue) {
-    // if (_.isArray(objValue)) {
-    //   if (!_.isEmpty(srcValue)) {
-    //     return srcValue;
-    //   } else {
-    //     return objValue;
-    //   }
-    // }
-  }
-  previousLocalSettingJson = window.ipc.readLocalSourceReadOnlyLocalSettings();
-  let p_global_menu_tabs_obj = _.cloneDeep(
-    window.ipc.readLocalSourceReadOnlyLocalSettings().global_menu_tabs_obj
-  );
-  _.mergeWith(localSettings, previousLocalSettingJson, customizer);
-  _.merge(localSettings, mywidthobj);
-  if (!_.isEmpty(p_global_menu_tabs_obj)) {
-    localSettings.global_menu_tabs_obj = p_global_menu_tabs_obj;
-  }
-  // _.defaultsDeep(localSettings.global_menu_tabs_obj);
-  // debugger;
-} catch (e) {
-  // debugger;
-  // document.write(JSON.stringify(e));
-}
+// try {
+//   function customizer(objValue, srcValue) {
+//     // if (_.isArray(objValue)) {
+//     //   if (!_.isEmpty(srcValue)) {
+//     //     return srcValue;
+//     //   } else {
+//     //     return objValue;
+//     //   }
+//     // }
+//   }
+//   previousLocalSettingJson = window.ipc.readLocalSourceReadOnlyLocalSettings();
+//   let p_global_menu_tabs_obj = _.cloneDeep(
+//     window.ipc.readLocalSourceReadOnlyLocalSettings().global_menu_tabs_obj
+//   );
+//   _.mergeWith(localSettings, previousLocalSettingJson, customizer);
+//   _.merge(localSettings, mywidthobj);
+//   if (!_.isEmpty(p_global_menu_tabs_obj)) {
+//     localSettings.global_menu_tabs_obj = p_global_menu_tabs_obj;
+//   }
+//   // _.defaultsDeep(localSettings.global_menu_tabs_obj);
+//   // debugger;
+// } catch (e) {
+//   // debugger;
+//   // document.write(JSON.stringify(e));
+// }
 
 // if (
 //   _.isNil(localSettings.dataBackupDir) ||

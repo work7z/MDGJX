@@ -1,0 +1,35 @@
+:global {
+  .pd-lr-10 {
+    padding: 0 10px;
+  }
+  .form-page-root-box {
+    border-top: 1px solid var(--app-bg-border-e3e3e2);
+    width: 100%;
+    height: 100%;
+    @control_height_val: 40px;
+    .form-page-main {
+      height: calc(~"100% - @{control_height_val} - 1px");
+      max-height: calc(~"100% - @{control_height_val} - 1px");
+      width: 100%;
+      .form-page-main-leftMenu,
+      .form-page-main-rightMenu {
+        height: 100%;
+        overflow: auto;
+      }
+      .form-page-each-item {
+        border-bottom: 1px solid var(--app-bg-border-e3e3e2);
+        // &:last-child {
+        //   border-bottom: none;
+        // }
+      }
+    }
+    .form-page-controls {
+      border-top: 1px solid var(--app-bg-border-e3e3e2);
+      height: @control_height_val;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}

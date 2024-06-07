@@ -1,0 +1,13 @@
+{
+	"bundle_with_exteriors":[
+		{
+			"prop":"bridge_common"
+		}
+	],
+	"runtime_listings":[
+		{
+			"prop":"less_js_lib_4.1.3"
+		}
+	],
+	"version":"v1.8.32"
+}

@@ -74,7 +74,7 @@ import ReactDOM from "react-dom";
 import jszip from "jszip";
 window.jszip = jszip;
 window.JSZIP = jszip;
-// import * as EXT_MONACO_ALL_EDITOR from "@monaco-editor";
+
 
 // Editor, {
 //   DiffEditor,
@@ -189,6 +189,8 @@ import { LocaleUtils } from "react-day-picker";
 import MomentLocaleUtils from "react-day-picker/moment";
 // import * as RVReactVirtualized from "react-virtualized";
 
+import * as EXT_MONACO_ALL_REACT from "@monaco-editor/react";
+
 window.worknow = {
   atan2,
   chain,
@@ -225,6 +227,7 @@ let CodeGenDefinition = (window.CodeGenDefinition = {
   CallOutWithKeep,
   LocalProjectBtnWithPanel,
   HalfResizeForTwo,
+  EXT_MONACO_ALL_REACT,
   GFormSlider,
   prettier,
   Collapse,
@@ -343,7 +346,6 @@ let CodeGenDefinition = (window.CodeGenDefinition = {
   BluePrintCpt,
   BluePrintTable,
   gstore,
-  // gutils,
   observable,
   ReactDOM,
   useEffect,
@@ -361,7 +363,6 @@ let CodeGenDefinition = (window.CodeGenDefinition = {
   Route,
   Link,
   useHistory,
-  // gutils,
   fn_constants: () => {
     return window.constants;
   },

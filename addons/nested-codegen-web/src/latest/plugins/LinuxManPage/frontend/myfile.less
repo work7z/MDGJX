@@ -1,0 +1,61 @@
+:global {
+  * {
+    --app-text-darkyellow: #502000;
+    --app-bg-darkred-n1: #a00000;
+    --app-text-green-n1: #006000;
+  }
+  .bp3-dark * {
+    --app-text-darkyellow: #ff7b22 !important;
+    --app-bg-darkred-n1: #ec5c5c !important;
+    --app-text-green-n1: #33e033 !important;
+  }
+
+  .linux-man-page-wrapper {
+    font-family: monospace;
+    padding-bottom: 10px;
+    // padding: 0 12px;
+    // padding-top: 15px;
+    // padding-bottom: 15px;
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+      vertical-align: top;
+    }
+    pre {
+      margin-top: 0;
+      margin-bottom: 0;
+      vertical-align: top;
+    }
+    table {
+      margin-top: 0;
+      margin-bottom: 0;
+      vertical-align: top;
+    }
+    h1 {
+      text-align: center;
+    }
+    h2 {
+      font-size: 18px;
+      color: var(--app-bg-darkred-n1);
+    }
+    b {
+      color: var(--app-text-darkyellow);
+    }
+    i {
+      color: var(--app-text-green-n1);
+    }
+    // padding-right: 20%;
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
+    & > * {
+      * {
+        // width: 70%;
+      }
+      h1,
+      hr {
+        // width: 100%;
+      }
+    }
+  }
+}

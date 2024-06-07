@@ -1,0 +1,37 @@
+:global {
+  .sys-editor {
+    .docs-example-frame {
+      position: absolute;
+      left: 50%;
+      width: 31.78%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+.editor-ctx-button {
+  cursor: default;
+  min-width: 40px;
+  padding: 0 5px;
+  text-align: center;
+  border-left: 1px solid var(--app-border-white-s3);
+  .ctx-left &:first-child {
+    border-left: none;
+  }
+  .ctx-right &:last-child {
+    border-right: none;
+  }
+  &:last-child {
+    border-right: 1px solid var(--app-border-white-s3);
+  }
+  &,
+  &:hover,
+  &:visited {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+  &:hover {
+    background-color: var(--app-bg-f5-white);
+  }
+  display: block;
+}

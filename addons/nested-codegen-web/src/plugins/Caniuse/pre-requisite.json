@@ -1,0 +1,13 @@
+{
+	"bundle_with_exteriors":[
+		{
+			"prop":"bridge_common"
+		}
+	],
+	"runtime_listings":[
+		{
+			"prop":"caniuse_data_2023"
+		}
+	],
+	"version":"v1.8.5"
+}

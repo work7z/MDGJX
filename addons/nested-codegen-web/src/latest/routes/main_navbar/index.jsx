@@ -408,6 +408,7 @@ export default observer(() => {
     // );
   };
   window.fn_light_dark = fn_light_dark;
+  
   return (
     <div
       style={{

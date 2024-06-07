@@ -1,0 +1,15 @@
+{
+	"bundle_with_exteriors":[
+		{
+			"prop":"bridge_common"
+		}
+	],
+	"runtime_listings":[],
+	"autoinit":true,
+	"extra_services":[
+		{
+			"prop":"CmdScheduler"
+		}
+	],
+	"version":"v1.8.13"
+}

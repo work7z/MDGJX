@@ -1,0 +1,10 @@
+{
+  "combinations": [
+    {
+      "prop": "bridge_common"
+    },
+    {
+      "prop": "sql_pass_vm"
+    }
+  ]
+}

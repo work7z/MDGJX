@@ -1,0 +1,33 @@
+.gterm-global-wrapper {
+  width: 100%;
+  height: 100%;
+  @headerHeight: 38px;
+  // @footerHeight: 28px;
+  // @headerHeight: 0px;
+  @footerHeight: 0px;
+  .gterm-header,
+  .gterm-footer {
+    padding: 0 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .gterm-header {
+    width: 100%;
+    height: @headerHeight;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .gterm-core-body {
+    width: 100%;
+    height: calc(~"100% - @{headerHeight} - @{footerHeight}");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .gterm-footer {
+    width: 100%;
+    height: @footerHeight;
+  }
+}

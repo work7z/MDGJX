@@ -45,8 +45,6 @@ import {
 } from "@blueprintjs/table";
 import gapi from "./gapi.jsx";
 import React from "react";
-import ReactDOM from "react-dom";
-import { useState } from "react";
 import axios from "axios";
 
 import { Provider, observer, inject ,useLocalStore} from "mobx-react";
@@ -71,6 +69,7 @@ import GForm2Wrapper from "./components/GForm2Wrapper/index.jsx";
 import constants from "./constants.jsx";
 import Qs from "querystring";
 import WrapperGeditor from "./components/GEditor/index.jsx";
+import { CodeGenDefinition } from "./routes/main_menu_frame/im.jsx";
 
 window.calculateTextWidth = calculateTextWidth;
 
@@ -2763,6 +2762,7 @@ $.ajax({
     return res;
   },
 };
+CodeGenDefinition.gutils=gutils
 // window.gutils = gutils.getExposeGUtils();
 const otherRef = gutils;
 gutils.getExposeGUtils = () => {

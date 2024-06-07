@@ -93,7 +93,7 @@ export default observer(() => {
 </div>: ''
       }
       <div className="each-settings">
-        <h2 className="each-setting-title">{t("TextEditor - PreView")}</h2>
+        {/* <h2 className="each-setting-title">{t("TextEditor - PreView")}</h2>
         <div
           className="each-setting-content"
           style={{ width: "100%", height: "250px" }}
@@ -119,10 +119,10 @@ export default observer(() => {
             }}
             style={{ width: "100%", height: "100%" }}
           ></GEditor>
-        </div>
+        </div> */}
       </div>
       <div className="each-settings">
-        <h2 className="each-setting-title">{t("Editor Mode")}(TEXT/VIM/EMACS)</h2>
+        {/* <h2 className="each-setting-title">{t("Editor Mode")}(TEXT/VIM/EMACS)</h2>
         <div className="each-setting-content">
           <GFormSelect
           disabled={not_reg}
@@ -152,7 +152,7 @@ export default observer(() => {
               // gutils.ask_reload();
             }}
           ></GFormSelect>
-        </div>
+        </div> */}
       </div>
       <div className="each-settings">
         <h2 className="each-setting-title">

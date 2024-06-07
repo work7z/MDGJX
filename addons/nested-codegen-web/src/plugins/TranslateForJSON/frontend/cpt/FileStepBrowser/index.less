@@ -1,0 +1,87 @@
+.file-step-browser {
+  width: 100%;
+  height: 100%;
+  .subfile-idx {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > * {
+      display: inline-block;
+    }
+    .idx-left,
+    .idx-right {
+      display: flex;
+    }
+    .idx-left > *,
+    .idx-right > * {
+      display: flex;
+      display: inline-block;
+      margin-right: 5px;
+      vertical-align: middle;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.subconsole-idx {
+  @myheight: calc(~"100% - 46px - 0px");
+  // border-top: 1px solid var(--app-bg-border-e3e3e2);
+  height: @myheight;
+  max-height: @myheight;
+  overflow: auto;
+}
+
+.sys-compact-tree-wrapper {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  * {
+    white-space: nowrap;
+  }
+  :global {
+    .bp3-tree {
+      width: max-content !important;
+    }
+    .bp3-tree-node-content,
+    .bp3-tree-node {
+      white-space: nowrap;
+      text-overflow: initial;
+      min-width: 100% !important;
+      width: min-content !important;
+      max-width: max-content !important;
+    }
+  }
+}
+
+.file-editor-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  @myheightForTitleAndFooter: 27px;
+  .file-editor-ctn {
+    // height: calc(~"100% - @{myheightForTitleAndFooter} - 1px");
+    // max-height: calc(~"100% - @{myheightForTitleAndFooter} - 1px");
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+  }
+  .file-editor-title {
+    border-bottom: 1px solid var(--app-border-bg-gray);
+  }
+  .file-editor-footer {
+    border-top: 1px solid var(--app-border-bg-gray);
+  }
+  .file-editor-title,
+  .file-editor-footer {
+    font-size: 13px;
+    height: @myheightForTitleAndFooter;
+    line-height: @myheightForTitleAndFooter;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+}

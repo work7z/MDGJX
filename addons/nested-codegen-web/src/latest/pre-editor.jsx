@@ -79,10 +79,11 @@ import parserMeriyah from "prettier/esm/parser-meriyah.mjs";
 import parserHtml from "prettier/esm/parser-html.mjs";
 import "./pre-initGroo.jsx";
 import simpleExt from "./utils-simpleExt.jsx";
-
+// const f=  (o)=>observable.box(o)
+const f=  (o)=>o
 // toolbar menus
 class EditorStore {
-   fn_menus_app = observable.box((ctx) => {
+   fn_menus_app = f((ctx) => {
     return [
       {
         label: t(`Current Version`),
@@ -109,7 +110,7 @@ class EditorStore {
       },
     ];
   });
-   fn_menus_codec = observable.box((ctx) => {
+   fn_menus_codec = f((ctx) => {
     let handleEncryptForMd5AndSha = async ({
       sha_type,
       md5_type,
@@ -205,7 +206,7 @@ class EditorStore {
       },
     ];
   });
-   fn_menus_transform = observable.box((ctx) => {
+   fn_menus_transform = f((ctx) => {
     return [
       {
         label: `Base64`,
@@ -429,7 +430,7 @@ class EditorStore {
       },
     ];
   });
-   fn_menus_formats = observable.box((ctx) => {
+   fn_menus_formats = f((ctx) => {
     let ext_css_less_scss = (lang) => {
       return {
         parser: lang,

@@ -1,0 +1,17 @@
+{
+	"show_service_controls":true,
+	"runtime_listings":[
+		{
+			"prop":"nodejs_v18.0.0"
+		},
+		{
+			"prop":"qrcode_v3.3.3"
+		}
+	],
+	"node_deps":[
+		{
+			"prop":"ServerStatic"
+		}
+	],
+	"version":"v1.4.6"
+}

@@ -183,9 +183,10 @@ let auth_obj = {
     return p_mode() && !is_sign_in();
   },
   not_reg: () => {
-    return (
-      !gstore.apiInfo.can_this_device_use_presently && gstore.apiInfo.finalChk
-    );
+    return false;
+    // return (
+    //   !gstore.apiInfo.can_this_device_use_presently && gstore.apiInfo.finalChk
+    // );
   },
 };
 _.map(auth_obj, (x, d, n) => {
