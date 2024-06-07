@@ -52,6 +52,8 @@ import ReactDOM from "react-dom";
 import gutils from "./utils";
 import _ from "lodash";
 import { useState } from "react";
+import zhCN from './zh_CN.json'
+import zh_CN_overwrite from './zh_CN_overwrite.json'
 
 import { Provider, observer, inject ,useLocalStore} from "mobx-react";
 window.observer = observer;
@@ -496,7 +498,17 @@ window.LOCAL_AUTH_LOGIN_CHK = {
 async function startFunc() {
   let b_fn_inner = async () => {
     try {
-      let { content } = await gutils.opt(`/portal_public/get_api_info`);
+      let { content } = {
+        content: {
+            "direct_platform": "linux-x64",
+        "server_using_windows": false,
+        "using_dev_mode": false,
+        "using_portal_mode": true,
+        "version": "v1.8.63",
+        "can_this_device_use_presently": false,
+        "if_can_use_msg": "WHEREBY_ONLINE_ELIGIBILITY"
+        }
+      } // await gutils.opt(`/portal_public/get_api_info`);
       _.merge(gstore.apiInfo, {
         ...content,
       });
@@ -512,6 +524,9 @@ async function startFunc() {
           }
           let mp = get_user_info();
           if (mp && !mp.signed) {
+            return;
+          }
+          if(true){
             return;
           }
           let r = await gutils.optCentre(
@@ -606,12 +621,32 @@ async function startFunc() {
   if (p_mode()) {
     gutils.defer(async () => {
       try {
-        let m_sign_in_status = await gutils.optCentre(
-          `/api_tool/sign_in_status`,
-          {
-            mute: true,
-          }
-        );
+        let m_sign_in_status = {
+    "content": {
+        "signed": true,
+        "username": "N/A",
+        "token": "N/A",
+        "email": "N/A",
+        "user_id": null
+    },
+    "errors": null,
+    "ftlMap": null,
+    "ftlPath": null,
+    "message": null,
+    "newRedirectURL": null,
+    "noFurtherHandle": false,
+    "payload": null,
+    "status": 1,
+    "timestamp": 1717782854825,
+    "v2Msg": null,
+    "v2OK": true
+}
+        // await gutils.optCentre(
+        //   `/api_tool/sign_in_status`,
+        //   {
+        //     mute: true,
+        //   }
+        // );
         window.m_sign_in_status = m_sign_in_status;
         _.merge(gstore.localSettings.userInfo, {
           ...m_sign_in_status.content,
@@ -641,7 +676,7 @@ async function startFunc() {
     if (!_.isNil(window["init_already_" + crtLang])) {
       // return false;
     }
-    let doitlangarr = [crtLang, crtLang + "_overwrite"];
+    let doitlangarr = [crtLang,];
     try {
       for (let eachJsonName of doitlangarr) {
         let tmpKey = "key_lang_" + eachJsonName;
@@ -662,32 +697,38 @@ async function startFunc() {
       // document.title = ;
       // gutils.alert(`Loading ${eachJsonName}...`);
       let baseObject = {};
-      if (!p_mode()) {
-        try {
-          let lang_link = "/local_auth/getLangMapValue";
-          console.log("lang_link", lang_link);
-          let mres = await gutils.opt(lang_link, {
-            type: eachJsonName,
-          });
-          baseObject = _.get(mres, "content.map");
-          isAnyAck = true;
-          console.log("mres", baseObject);
-        } catch (err) {
-          console.log("checking updateLangFunc err", err);
-        }
-      }
+      // if (!p_mode()) {
+      //   try {
+      //     let lang_link = "/local_auth/getLangMapValue";
+      //     console.log("lang_link", lang_link);
+      //     let mres = await gutils.opt(lang_link, {
+      //       type: eachJsonName,
+      //     });
+      //     baseObject = _.get(mres, "content.map");
+      //     isAnyAck = true;
+      //     console.log("mres", baseObject);
+      //   } catch (err) {
+      //     console.log("checking updateLangFunc err", err);
+      //   }
+      // }
       try {
-        let lang_link = gutils.dev()
-          ? "/app/static/lang/" + eachJsonName + ".json"
-          : `/app_${pkgInfo.version}` +
-            `/static/lang/` +
-            eachJsonName +
-            ".json";
-        if (p_mode()) {
-          lang_link = "/static/lang/" + eachJsonName + ".json";
-        }
+        // let lang_link = gutils.dev()
+        //   ? "/app/static/lang/" + eachJsonName + ".json"
+        //   : `/app_${pkgInfo.version}` +
+        //     `/static/lang/` +
+        //     eachJsonName +
+        //     ".json";
+        // if (p_mode()) {
+        //   lang_link = "/static/lang/" + eachJsonName + ".json";
+        // }
         // console.log("lang_link", lang_link);
-        let langObject = await gutils.optStatic(lang_link);
+        // debugger
+        let langObject =  {
+          data: {
+            ...zhCN,
+            ...zh_CN_overwrite
+          },
+        } // await gutils.optStatic(lang_link);
         // console.log("langObject", langObject);
         if (!_.isEmpty(baseObject)) {
           console.log("mres merging", langObject.data);

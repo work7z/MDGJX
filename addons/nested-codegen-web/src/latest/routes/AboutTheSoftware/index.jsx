@@ -203,13 +203,14 @@ export default observer(() => {
                 } else {
                   localStorage.removeItem("mywaittimenow");
                 }
-                await gutils.optCentreWithDeviceInfo(
-                  "/release-notes/json/verify-version",
-                  {
-                    CALL_OR_NOT_MODE:
-                      gstore.localSettings.can_call_remove_requests,
-                  }
-                );
+
+                // await gutils.optCentreWithDeviceInfo(
+                //   "/release-notes/json/verify-version",
+                //   {
+                //     CALL_OR_NOT_MODE:
+                //       gstore.localSettings.can_call_remove_requests,
+                //   }
+                // );
               }}
               value={gstore.localSettings.can_call_remove_requests}
             />

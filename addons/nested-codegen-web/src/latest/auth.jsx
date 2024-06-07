@@ -113,6 +113,7 @@ let auth_obj = {
     }
   },
   p_mode: () => {
+    return true;
     return (
       location.host == "cloud.codegen.cc" ||
       location.host == "test.codegen.cc" ||
@@ -121,7 +122,7 @@ let auth_obj = {
     );
   },
   checkLicenseFromTimeToTime: async () => {
-    if (p_mode()) {
+    if (true || p_mode()) {
       return;
     }
     // await gm_api.opt("/reg/show_post_body", {

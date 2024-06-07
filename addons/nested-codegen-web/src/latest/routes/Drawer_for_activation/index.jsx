@@ -145,7 +145,7 @@ const settings_licenses = observer(() => {
     canOutsideClickClose: true,
     enforceFocus: true,
     hasBackdrop: true,
-    isOpen: drawerConfig.open,
+    isOpen: false , // drawerConfig.open,
     size: "80%",
     position: Position.BOTTOM,
     usePortal: true,

@@ -20,8 +20,11 @@ window.changeLang = (val, askNow = true) => {
   }, 0);
 };
 window.getCrtLang = () => {
-  return window.ipc.getCurrentLang();
+  return 'zh_CN'
+  // return window.ipc.getCurrentLang();
 };
+// import zh_CN from './zh_CN.json'
+// import zh_CNOverwrite from './zh_CN_overwrite.json'
 window.changeLang(crtLang);
 window.t = (...args) => {
   // const updateRefForLang_2 = _.get(
@@ -32,10 +35,10 @@ window.t = (...args) => {
   try {
     // TODO: uncomment
     if (window.gstore && _.isNil(window.cstore)) {
-      let userLang = window.gstore.preliAllData.configs.lang;
-      if (window.getCrtLang() != userLang) {
-        window.changeLang(userLang);
-      }
+      let userLang = 'zh_CN' // window.gstore.preliAllData.configs.lang;
+      // if (window.getCrtLang() != userLang) {
+      //   window.changeLang(userLang);
+      // }
       const updateRefForLang = _.get(
         window,
         "gstore.preliAllData.updateRefForLang"
@@ -46,7 +49,7 @@ window.t = (...args) => {
     }
     return window.t_preload(crtLang, ...args);
   } catch (e) {
-    // console.log("e", e);
+    console.log("e", e);
     return _.get(args, "0");
   }
 };

@@ -110,7 +110,7 @@ let fn_raw_local_set = () => {
     should_always_consume_mousewheel: false,
     app_sys_app_view_height: 673,
     app_left_to_right_mode: false,
-    app_multiple_tab_mode: true,
+    app_multiple_tab_mode: false,
     app_need_left_tabs_open: true,
     pre_app_multiple_tab_mode: null,
     crt_doc_title: ``,

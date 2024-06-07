@@ -155,6 +155,7 @@ import { CodeGenDefinition } from "./im";
 import ScrollMemWrapper from "./ScrollMemWrapper";
 
 const NoteForNewUser = observer(() => {
+  return ''
   let padVal = "55px";
   return (
     <div

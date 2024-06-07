@@ -9,6 +9,8 @@ function uuid(str = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx") {
     })
     .replace(/-/gi, "");
 }
+import zh_CN from './zh_CN.json'
+import zh_CNOverwrite from './zh_CN_overwrite.json'
 if (_.isNil(localStorage.getItem("machineID"))) {
   localStorage.setItem("machineID", uuid());
 }
@@ -22,7 +24,471 @@ if (undefined == window.n_ext) {
         return ok.timestamp;
       },
       readList: async function () {
-        let { content } = await gutils.opt("/ext/list");
+        let { content } = {
+    "content": [
+        "EncryptSM2",
+        "MavenRepo",
+        "TextHanTools200",
+        "CurlParser",
+        "MorseCode",
+        "ASymRSA",
+        "SQLToBean200",
+        "JDKJRE100",
+        "YamlJSONTool",
+        "DMLToJSON200",
+        "RenderDoT",
+        "TimeCrontab",
+        "BasicCalc",
+        "IPLongConverter",
+        "TextHelperUniquer",
+        "SymBlowfish",
+        "TranslateForCustomizer",
+        "QRCodeDecoder",
+        "SoftwareCenter",
+        "SiteBrowser",
+        "TranslateForJSON",
+        "SwaggerOpenAPI",
+        "ReactReplaceClz",
+        "JSONConverter",
+        "TextMultipleToOne",
+        "CDNTool100",
+        "Caniuse",
+        "EncryptSM3",
+        "RegexTester",
+        "JSONProbe",
+        "TextJoinTools",
+        "CurlToAPI",
+        "Base32",
+        "PowerDiff200",
+        "Monolithic",
+        "SymDES",
+        "QRCodeCreator",
+        "SymRC4",
+        "QueryStringConversion",
+        "SymDESede",
+        "SymARCFOUR",
+        "ColorPicker",
+        "XMLJSoup",
+        "MathBCD",
+        "BizXMLToCodeM",
+        "TextHelperShuffle",
+        "LinuxManPage",
+        "JSONQMapper",
+        "ReactReplaceStyle",
+        "JSONFilter",
+        "KeyboardListen",
+        "SymPBEWithSHA1AndRC240",
+        "LoremC",
+        "UnicodeConversion",
+        "SymPBEWithMD5AndDES",
+        "JSONFlattenDeep",
+        "TextHelperFilter",
+        "JWTEncoder",
+        "SQLToJSON200",
+        "RenderHandleBars",
+        "JWTDecoder",
+        "Cool",
+        "XMLXPath",
+        "IPv4Calculator",
+        "SymPBEWithSHA1AndDESede",
+        "JSONQFilter",
+        "BizJSONToCode",
+        "TextASCIITools200",
+        "TextRandomText",
+        "FRPCodeG",
+        "IPAddrMasker",
+        "SymAES",
+        "ZipText",
+        "NumberDigits",
+        "SymRC6",
+        "TextHelperSorter",
+        "TextRandomMock",
+        "TextHexConverter",
+        "SymRC2",
+        "EncryptSM4",
+        "NamePubC",
+        "JSONXPath",
+        "Base64Previewer",
+        "SystemFormat",
+        "SymRC5",
+        "TranslateForProperties",
+        "HexBaseBiConverter",
+        "DateCalcTool100",
+        "JSONZipper",
+        "WebWorld"
+    ],
+    "customerReturned": false,
+    "directStrValue": null,
+    "extraMap": {
+        "tunedList": [
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            },
+            {
+                "a": 1
+            }
+        ],
+        "configExt": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    "message": null,
+    "status": 1,
+    "timestamp": 1717783807166
+} // await gutils.opt("/ext/list");
         return content;
       },
       getDetailById: async function (folderName, myconfig = {}) {
@@ -543,6 +1009,7 @@ if (undefined === window.t_preload) {
   }
 
   window.t_preload = (crtLang, keyname, ...args) => {
+    crtLang='zh_CN'
     let isDev = _.get(window, "ipc.dev", false);
     // console.log("translating", crtLang, keyname);
     if (_.isNil(keyname) || keyname == " " || keyname == "") {

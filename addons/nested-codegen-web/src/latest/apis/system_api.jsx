@@ -458,7 +458,700 @@ const myapi = {
       }
     },
     initAllCharset: async function () {
-      let { content } = await gutils.opt("/pub/getAllCharset");
+      let { content } = {
+    "content": [
+        {
+            "label": "Big5",
+            "value": "Big5"
+        },
+        {
+            "label": "Big5-HKSCS",
+            "value": "Big5-HKSCS"
+        },
+        {
+            "label": "CESU-8",
+            "value": "CESU-8"
+        },
+        {
+            "label": "EUC-JP",
+            "value": "EUC-JP"
+        },
+        {
+            "label": "EUC-KR",
+            "value": "EUC-KR"
+        },
+        {
+            "label": "GB18030",
+            "value": "GB18030"
+        },
+        {
+            "label": "GB2312",
+            "value": "GB2312"
+        },
+        {
+            "label": "GBK",
+            "value": "GBK"
+        },
+        {
+            "label": "IBM-Thai",
+            "value": "IBM-Thai"
+        },
+        {
+            "label": "IBM00858",
+            "value": "IBM00858"
+        },
+        {
+            "label": "IBM01140",
+            "value": "IBM01140"
+        },
+        {
+            "label": "IBM01141",
+            "value": "IBM01141"
+        },
+        {
+            "label": "IBM01142",
+            "value": "IBM01142"
+        },
+        {
+            "label": "IBM01143",
+            "value": "IBM01143"
+        },
+        {
+            "label": "IBM01144",
+            "value": "IBM01144"
+        },
+        {
+            "label": "IBM01145",
+            "value": "IBM01145"
+        },
+        {
+            "label": "IBM01146",
+            "value": "IBM01146"
+        },
+        {
+            "label": "IBM01147",
+            "value": "IBM01147"
+        },
+        {
+            "label": "IBM01148",
+            "value": "IBM01148"
+        },
+        {
+            "label": "IBM01149",
+            "value": "IBM01149"
+        },
+        {
+            "label": "IBM037",
+            "value": "IBM037"
+        },
+        {
+            "label": "IBM1026",
+            "value": "IBM1026"
+        },
+        {
+            "label": "IBM1047",
+            "value": "IBM1047"
+        },
+        {
+            "label": "IBM273",
+            "value": "IBM273"
+        },
+        {
+            "label": "IBM277",
+            "value": "IBM277"
+        },
+        {
+            "label": "IBM278",
+            "value": "IBM278"
+        },
+        {
+            "label": "IBM280",
+            "value": "IBM280"
+        },
+        {
+            "label": "IBM284",
+            "value": "IBM284"
+        },
+        {
+            "label": "IBM285",
+            "value": "IBM285"
+        },
+        {
+            "label": "IBM290",
+            "value": "IBM290"
+        },
+        {
+            "label": "IBM297",
+            "value": "IBM297"
+        },
+        {
+            "label": "IBM420",
+            "value": "IBM420"
+        },
+        {
+            "label": "IBM424",
+            "value": "IBM424"
+        },
+        {
+            "label": "IBM437",
+            "value": "IBM437"
+        },
+        {
+            "label": "IBM500",
+            "value": "IBM500"
+        },
+        {
+            "label": "IBM775",
+            "value": "IBM775"
+        },
+        {
+            "label": "IBM850",
+            "value": "IBM850"
+        },
+        {
+            "label": "IBM852",
+            "value": "IBM852"
+        },
+        {
+            "label": "IBM855",
+            "value": "IBM855"
+        },
+        {
+            "label": "IBM857",
+            "value": "IBM857"
+        },
+        {
+            "label": "IBM860",
+            "value": "IBM860"
+        },
+        {
+            "label": "IBM861",
+            "value": "IBM861"
+        },
+        {
+            "label": "IBM862",
+            "value": "IBM862"
+        },
+        {
+            "label": "IBM863",
+            "value": "IBM863"
+        },
+        {
+            "label": "IBM864",
+            "value": "IBM864"
+        },
+        {
+            "label": "IBM865",
+            "value": "IBM865"
+        },
+        {
+            "label": "IBM866",
+            "value": "IBM866"
+        },
+        {
+            "label": "IBM868",
+            "value": "IBM868"
+        },
+        {
+            "label": "IBM869",
+            "value": "IBM869"
+        },
+        {
+            "label": "IBM870",
+            "value": "IBM870"
+        },
+        {
+            "label": "IBM871",
+            "value": "IBM871"
+        },
+        {
+            "label": "IBM918",
+            "value": "IBM918"
+        },
+        {
+            "label": "ISO-2022-CN",
+            "value": "ISO-2022-CN"
+        },
+        {
+            "label": "ISO-2022-JP",
+            "value": "ISO-2022-JP"
+        },
+        {
+            "label": "ISO-2022-JP-2",
+            "value": "ISO-2022-JP-2"
+        },
+        {
+            "label": "ISO-2022-KR",
+            "value": "ISO-2022-KR"
+        },
+        {
+            "label": "ISO-8859-1",
+            "value": "ISO-8859-1"
+        },
+        {
+            "label": "ISO-8859-13",
+            "value": "ISO-8859-13"
+        },
+        {
+            "label": "ISO-8859-15",
+            "value": "ISO-8859-15"
+        },
+        {
+            "label": "ISO-8859-2",
+            "value": "ISO-8859-2"
+        },
+        {
+            "label": "ISO-8859-3",
+            "value": "ISO-8859-3"
+        },
+        {
+            "label": "ISO-8859-4",
+            "value": "ISO-8859-4"
+        },
+        {
+            "label": "ISO-8859-5",
+            "value": "ISO-8859-5"
+        },
+        {
+            "label": "ISO-8859-6",
+            "value": "ISO-8859-6"
+        },
+        {
+            "label": "ISO-8859-7",
+            "value": "ISO-8859-7"
+        },
+        {
+            "label": "ISO-8859-8",
+            "value": "ISO-8859-8"
+        },
+        {
+            "label": "ISO-8859-9",
+            "value": "ISO-8859-9"
+        },
+        {
+            "label": "JIS_X0201",
+            "value": "JIS_X0201"
+        },
+        {
+            "label": "JIS_X0212-1990",
+            "value": "JIS_X0212-1990"
+        },
+        {
+            "label": "KOI8-R",
+            "value": "KOI8-R"
+        },
+        {
+            "label": "KOI8-U",
+            "value": "KOI8-U"
+        },
+        {
+            "label": "Shift_JIS",
+            "value": "Shift_JIS"
+        },
+        {
+            "label": "TIS-620",
+            "value": "TIS-620"
+        },
+        {
+            "label": "US-ASCII",
+            "value": "US-ASCII"
+        },
+        {
+            "label": "UTF-16",
+            "value": "UTF-16"
+        },
+        {
+            "label": "UTF-16BE",
+            "value": "UTF-16BE"
+        },
+        {
+            "label": "UTF-16LE",
+            "value": "UTF-16LE"
+        },
+        {
+            "label": "UTF-32",
+            "value": "UTF-32"
+        },
+        {
+            "label": "UTF-32BE",
+            "value": "UTF-32BE"
+        },
+        {
+            "label": "UTF-32LE",
+            "value": "UTF-32LE"
+        },
+        {
+            "label": "UTF-8",
+            "value": "UTF-8"
+        },
+        {
+            "label": "windows-1250",
+            "value": "windows-1250"
+        },
+        {
+            "label": "windows-1251",
+            "value": "windows-1251"
+        },
+        {
+            "label": "windows-1252",
+            "value": "windows-1252"
+        },
+        {
+            "label": "windows-1253",
+            "value": "windows-1253"
+        },
+        {
+            "label": "windows-1254",
+            "value": "windows-1254"
+        },
+        {
+            "label": "windows-1255",
+            "value": "windows-1255"
+        },
+        {
+            "label": "windows-1256",
+            "value": "windows-1256"
+        },
+        {
+            "label": "windows-1257",
+            "value": "windows-1257"
+        },
+        {
+            "label": "windows-1258",
+            "value": "windows-1258"
+        },
+        {
+            "label": "windows-31j",
+            "value": "windows-31j"
+        },
+        {
+            "label": "x-Big5-HKSCS-2001",
+            "value": "x-Big5-HKSCS-2001"
+        },
+        {
+            "label": "x-Big5-Solaris",
+            "value": "x-Big5-Solaris"
+        },
+        {
+            "label": "x-COMPOUND_TEXT",
+            "value": "x-COMPOUND_TEXT"
+        },
+        {
+            "label": "x-euc-jp-linux",
+            "value": "x-euc-jp-linux"
+        },
+        {
+            "label": "x-EUC-TW",
+            "value": "x-EUC-TW"
+        },
+        {
+            "label": "x-eucJP-Open",
+            "value": "x-eucJP-Open"
+        },
+        {
+            "label": "x-IBM1006",
+            "value": "x-IBM1006"
+        },
+        {
+            "label": "x-IBM1025",
+            "value": "x-IBM1025"
+        },
+        {
+            "label": "x-IBM1046",
+            "value": "x-IBM1046"
+        },
+        {
+            "label": "x-IBM1097",
+            "value": "x-IBM1097"
+        },
+        {
+            "label": "x-IBM1098",
+            "value": "x-IBM1098"
+        },
+        {
+            "label": "x-IBM1112",
+            "value": "x-IBM1112"
+        },
+        {
+            "label": "x-IBM1122",
+            "value": "x-IBM1122"
+        },
+        {
+            "label": "x-IBM1123",
+            "value": "x-IBM1123"
+        },
+        {
+            "label": "x-IBM1124",
+            "value": "x-IBM1124"
+        },
+        {
+            "label": "x-IBM1166",
+            "value": "x-IBM1166"
+        },
+        {
+            "label": "x-IBM1364",
+            "value": "x-IBM1364"
+        },
+        {
+            "label": "x-IBM1381",
+            "value": "x-IBM1381"
+        },
+        {
+            "label": "x-IBM1383",
+            "value": "x-IBM1383"
+        },
+        {
+            "label": "x-IBM300",
+            "value": "x-IBM300"
+        },
+        {
+            "label": "x-IBM33722",
+            "value": "x-IBM33722"
+        },
+        {
+            "label": "x-IBM737",
+            "value": "x-IBM737"
+        },
+        {
+            "label": "x-IBM833",
+            "value": "x-IBM833"
+        },
+        {
+            "label": "x-IBM834",
+            "value": "x-IBM834"
+        },
+        {
+            "label": "x-IBM856",
+            "value": "x-IBM856"
+        },
+        {
+            "label": "x-IBM874",
+            "value": "x-IBM874"
+        },
+        {
+            "label": "x-IBM875",
+            "value": "x-IBM875"
+        },
+        {
+            "label": "x-IBM921",
+            "value": "x-IBM921"
+        },
+        {
+            "label": "x-IBM922",
+            "value": "x-IBM922"
+        },
+        {
+            "label": "x-IBM930",
+            "value": "x-IBM930"
+        },
+        {
+            "label": "x-IBM933",
+            "value": "x-IBM933"
+        },
+        {
+            "label": "x-IBM935",
+            "value": "x-IBM935"
+        },
+        {
+            "label": "x-IBM937",
+            "value": "x-IBM937"
+        },
+        {
+            "label": "x-IBM939",
+            "value": "x-IBM939"
+        },
+        {
+            "label": "x-IBM942",
+            "value": "x-IBM942"
+        },
+        {
+            "label": "x-IBM942C",
+            "value": "x-IBM942C"
+        },
+        {
+            "label": "x-IBM943",
+            "value": "x-IBM943"
+        },
+        {
+            "label": "x-IBM943C",
+            "value": "x-IBM943C"
+        },
+        {
+            "label": "x-IBM948",
+            "value": "x-IBM948"
+        },
+        {
+            "label": "x-IBM949",
+            "value": "x-IBM949"
+        },
+        {
+            "label": "x-IBM949C",
+            "value": "x-IBM949C"
+        },
+        {
+            "label": "x-IBM950",
+            "value": "x-IBM950"
+        },
+        {
+            "label": "x-IBM964",
+            "value": "x-IBM964"
+        },
+        {
+            "label": "x-IBM970",
+            "value": "x-IBM970"
+        },
+        {
+            "label": "x-ISCII91",
+            "value": "x-ISCII91"
+        },
+        {
+            "label": "x-ISO-2022-CN-CNS",
+            "value": "x-ISO-2022-CN-CNS"
+        },
+        {
+            "label": "x-ISO-2022-CN-GB",
+            "value": "x-ISO-2022-CN-GB"
+        },
+        {
+            "label": "x-iso-8859-11",
+            "value": "x-iso-8859-11"
+        },
+        {
+            "label": "x-JIS0208",
+            "value": "x-JIS0208"
+        },
+        {
+            "label": "x-JISAutoDetect",
+            "value": "x-JISAutoDetect"
+        },
+        {
+            "label": "x-Johab",
+            "value": "x-Johab"
+        },
+        {
+            "label": "x-MacArabic",
+            "value": "x-MacArabic"
+        },
+        {
+            "label": "x-MacCentralEurope",
+            "value": "x-MacCentralEurope"
+        },
+        {
+            "label": "x-MacCroatian",
+            "value": "x-MacCroatian"
+        },
+        {
+            "label": "x-MacCyrillic",
+            "value": "x-MacCyrillic"
+        },
+        {
+            "label": "x-MacDingbat",
+            "value": "x-MacDingbat"
+        },
+        {
+            "label": "x-MacGreek",
+            "value": "x-MacGreek"
+        },
+        {
+            "label": "x-MacHebrew",
+            "value": "x-MacHebrew"
+        },
+        {
+            "label": "x-MacIceland",
+            "value": "x-MacIceland"
+        },
+        {
+            "label": "x-MacRoman",
+            "value": "x-MacRoman"
+        },
+        {
+            "label": "x-MacRomania",
+            "value": "x-MacRomania"
+        },
+        {
+            "label": "x-MacSymbol",
+            "value": "x-MacSymbol"
+        },
+        {
+            "label": "x-MacThai",
+            "value": "x-MacThai"
+        },
+        {
+            "label": "x-MacTurkish",
+            "value": "x-MacTurkish"
+        },
+        {
+            "label": "x-MacUkraine",
+            "value": "x-MacUkraine"
+        },
+        {
+            "label": "x-MS932_0213",
+            "value": "x-MS932_0213"
+        },
+        {
+            "label": "x-MS950-HKSCS",
+            "value": "x-MS950-HKSCS"
+        },
+        {
+            "label": "x-MS950-HKSCS-XP",
+            "value": "x-MS950-HKSCS-XP"
+        },
+        {
+            "label": "x-mswin-936",
+            "value": "x-mswin-936"
+        },
+        {
+            "label": "x-PCK",
+            "value": "x-PCK"
+        },
+        {
+            "label": "x-SJIS_0213",
+            "value": "x-SJIS_0213"
+        },
+        {
+            "label": "x-UTF-16LE-BOM",
+            "value": "x-UTF-16LE-BOM"
+        },
+        {
+            "label": "X-UTF-32BE-BOM",
+            "value": "X-UTF-32BE-BOM"
+        },
+        {
+            "label": "X-UTF-32LE-BOM",
+            "value": "X-UTF-32LE-BOM"
+        },
+        {
+            "label": "x-windows-50220",
+            "value": "x-windows-50220"
+        },
+        {
+            "label": "x-windows-50221",
+            "value": "x-windows-50221"
+        },
+        {
+            "label": "x-windows-874",
+            "value": "x-windows-874"
+        },
+        {
+            "label": "x-windows-949",
+            "value": "x-windows-949"
+        },
+        {
+            "label": "x-windows-950",
+            "value": "x-windows-950"
+        },
+        {
+            "label": "x-windows-iso2022jp",
+            "value": "x-windows-iso2022jp"
+        }
+    ],
+    "customerReturned": false,
+    "directStrValue": null,
+    "extraMap": {},
+    "message": null,
+    "status": 1,
+    "timestamp": 1717783805607
+      }// await gutils.opt("/pub/getAllCharset");
       gstore.common_app.model_charset_listings = content;
     },
     workspace_base_init: async function () {
@@ -471,59 +1164,59 @@ const myapi = {
       await gutils.api.user.refreshWorkspaceList();
     },
     checkLangLogic: function () {
-      let crtLocale = ipc.locale;
-      let fn_engtell = (str) => {
-        return `Software just detected your system language is Chinese, Would you like to switch the software language to ${str}?`;
-      };
-      let hkobj = {
-        text: `系統檢測到您的系統語言是繁體中文，需要為您切換到繁體中文嗎？? ${fn_engtell(
-          "Chinese"
-        )}`,
-        afterText: "程序將重載當前頁以進行應用，點擊確認繼續",
-        targetLang: "zh_HK",
-      };
-      let mappingLang = {
-        "zh-CN": {
-          text: `系统检测到您的系统语言是简体中文，需要为您切换到简体中文吗(zh-CN)? ${fn_engtell(
-            "Chinese"
-          )}`,
-          afterText: "程序将重载当前页以进行应用，点击确认继续",
-          targetLang: "zh_CN",
-        },
-        "zh-TW": hkobj,
-        "zh-HK": hkobj,
-      };
-      let mappingItem = mappingLang[crtLocale];
-      let fn_call_update_switch = async () => {
-        gutils.changeLang(mappingItem.targetLang);
-        gutils.saveLangToDisk();
-        if (mappingItem.afterText) {
-          await gutils.win_alert(mappingItem.afterText);
-        }
-      };
-      if (mappingItem) {
-        if (true || p_mode()) {
-          // gutils.onceDisk(`${"ask-lang-for" + crtLocale}`,()=>{
-          //    fn_call_update_switch();
-          // })
-        } else {
-          gutils.confirmIfNotClickOk(
-            "ask-lang-for" + crtLocale,
-            mappingItem.text,
-            () => {},
-            {
-              fn_first: () => {
-                fn_call_update_switch();
-                location.reload();
-              },
-              needBothSet: true,
-              title: "System Language Detected",
-              cancelText: "Switch",
-              cancelIntent: "primary",
-            }
-          );
-        }
-      }
+      // let crtLocale = ipc.locale;
+      // let fn_engtell = (str) => {
+      //   return `Software just detected your system language is Chinese, Would you like to switch the software language to ${str}?`;
+      // };
+      // let hkobj = {
+      //   text: `系統檢測到您的系統語言是繁體中文，需要為您切換到繁體中文嗎？? ${fn_engtell(
+      //     "Chinese"
+      //   )}`,
+      //   afterText: "程序將重載當前頁以進行應用，點擊確認繼續",
+      //   targetLang: "zh_HK",
+      // };
+      // let mappingLang = {
+      //   "zh-CN": {
+      //     text: `系统检测到您的系统语言是简体中文，需要为您切换到简体中文吗(zh-CN)? ${fn_engtell(
+      //       "Chinese"
+      //     )}`,
+      //     afterText: "程序将重载当前页以进行应用，点击确认继续",
+      //     targetLang: "zh_CN",
+      //   },
+      //   "zh-TW": hkobj,
+      //   "zh-HK": hkobj,
+      // };
+      // let mappingItem = mappingLang[crtLocale];
+      // let fn_call_update_switch = async () => {
+      //   gutils.changeLang(mappingItem.targetLang);
+      //   gutils.saveLangToDisk();
+      //   if (mappingItem.afterText) {
+      //     await gutils.win_alert(mappingItem.afterText);
+      //   }
+      // };
+      // if (mappingItem) {
+      //   if (true || p_mode()) {
+      //     // gutils.onceDisk(`${"ask-lang-for" + crtLocale}`,()=>{
+      //     //    fn_call_update_switch();
+      //     // })
+      //   } else {
+      //     gutils.confirmIfNotClickOk(
+      //       "ask-lang-for" + crtLocale,
+      //       mappingItem.text,
+      //       () => {},
+      //       {
+      //         fn_first: () => {
+      //           fn_call_update_switch();
+      //           location.reload();
+      //         },
+      //         needBothSet: true,
+      //         title: "System Language Detected",
+      //         cancelText: "Switch",
+      //         cancelIntent: "primary",
+      //       }
+      //     );
+      //   }
+      // }
     },
     startHandlingAllKeyMaps: function () {
       // ipcRenderer
@@ -572,8 +1265,8 @@ const myapi = {
         } catch (e) {
           console.log("e", e);
         }
-        let devModeRes = await gutils.opt("/portal_private/dev-mode");
-        gstore.settings.dev_mode = devModeRes.content;
+        // let devModeRes = await gutils.opt("/portal_private/dev-mode");
+        gstore.settings.dev_mode = false // devModeRes.content;
       } catch (e) {
         console.log("e2", e);
       }
@@ -587,6 +1280,7 @@ const myapi = {
           if (gutils.dev()) {
             return;
           }
+          if(true)return;
           try {
             let res = await gutils.optCentreWithDeviceInfo(
               "/release-notes/json/verify-version",
