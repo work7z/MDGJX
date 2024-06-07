@@ -1,4 +1,4 @@
-import mypkgFile from "../../../package.json";
+import mypkgFile from "./tmpfile.json";
 window.mypkgFile = mypkgFile;
 
 function getOS() {

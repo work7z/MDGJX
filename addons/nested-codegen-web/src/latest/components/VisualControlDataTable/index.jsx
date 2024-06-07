@@ -1090,7 +1090,6 @@ class VisualControlDataTable extends React.Component {
                           );
                           gutils.callWhenResize();
                         },
-                        key: d,
                         enable: _.merge(gutils.enableResize(), {
                           right: d != _.size(n) - 1 && !isCrtOrderColumn,
                         }),

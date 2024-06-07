@@ -72,7 +72,9 @@ import Simple_table from "../simple_table";
 import CallOutAndView from "../../components/CallOutAndView";
 import _ from "lodash";
 import moment from "moment";
-import mapi from "../../../../../plugins/TranslateForJSON/frontend/kit/common_api";
+// import mapi from "../../../../../plugins/TranslateForJSON/frontend/kit/common_api";
+import mapi from "../../frontend/kit/common_api";
+
 
 const Drawer_for_device_maintenance = observer(() => {
   const drawerConfig = gstore.localDeviceConfig.drawer;

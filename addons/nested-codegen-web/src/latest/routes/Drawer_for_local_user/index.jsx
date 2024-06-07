@@ -65,7 +65,8 @@ import {
 } from "react-router-dom";
 var { autorun, observable } = require("mobx");
 import gstore from "../../store.jsx";
-import mapi from "../../../../../plugins/TranslateForJSON/frontend/kit/common_api";
+// import mapi from "../../../../../plugins/TranslateForJSON/frontend/kit/common_api";
+import mapi from "../../frontend/kit/common_api";
 import "./index.less";
 import UserLoginPanel from "../overlay_for_user_panel/UserLoginPanel";
 import GFormInput from "../../components/GFormInput";

@@ -256,7 +256,6 @@ let createStoreForCommonStore = (
       name: x.storeName,
       initObj: initObj,
       fn_initObj,
-      fn_initObj,
       hist: {
         TABLE_ID: x.tableId,
         history_table_id: x.tableId,

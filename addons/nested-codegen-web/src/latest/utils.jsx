@@ -960,7 +960,6 @@ $.ajax({
       _.merge(
         {
           noCancel: true,
-          confirmIntent: "none",
           icon: "error",
           width: "430px",
           s_clzname: "succ-view",
@@ -2774,9 +2773,6 @@ const otherRef = gutils;
 gutils.getExposeGUtils = () => {
   return {
     ...otherRef,
-    opt: undefined,
-    optCentre: undefined,
-    optCentreWithDeviceInfo: undefined,
     optCentreWithDeviceInfo: (...args) => {
       // all kinds of optWithDeviceInfo will be sent here
       // console.log("handling optCentreWithDeviceInfo");

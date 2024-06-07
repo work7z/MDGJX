@@ -16,7 +16,13 @@ import fs from "fs";
 //   }
 // });
 // https://vitejs.dev/config/
+// // import babel from "@rollup/plugin-babel";
+// import babel from "vite-plugin-babel";
+
 export default defineConfig({
+  esbuild: {
+    logOverride: { "css-syntax-error": "silent" },
+  },
   //  build: {
   //        rollupOptions: {
   //          plugins: matchers => [rollupPlugin(matchers)]
@@ -33,10 +39,21 @@ export default defineConfig({
   //        }
   //      },
   plugins: [
+    // babel({
+    //   babelConfig: {
+    //     babelrc: true,
+    //     // configFile: false,
+    //     configFile: true,
+    //     // plugins: [
+    //     //   //
+    //     //   ["@babel/plugin-proposal-decorators", { legacy: true }]
+    //     // ],
+    //   },
+    // }),
     react({
       babel: {
         parserOpts: {
-          plugins: ["decorators-legacy", "classProperties"],
+          plugins: ["decorators-legacy"],
         },
       },
     }),
