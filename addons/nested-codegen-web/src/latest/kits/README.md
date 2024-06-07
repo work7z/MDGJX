@@ -61,7 +61,7 @@ converter.toWords(199254740992); // => 壹仟玖佰玖拾貳億伍仟肆佰柒�
 
 #### `Direct load javascript from html`
 ```html
-  <script src="//unpkg.com/number-to-chinese-words@^1.0/number-to-chinese-words.min.js"></script>
+  <script src="//unpkg.com/number-to-chinese-words@^1.0/number-to-chinese-words.min.jsx"></script>
   <script>
     var converter = window.index.NumberToChineseWords;
     console.log(converter.toWords(13)); // => 十三

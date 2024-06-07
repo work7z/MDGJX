@@ -1,14 +1,9 @@
-var path = require('path')
-var fs = require('fs')
-const fileName = process.env.FILENAME;
+import fs from "fs";
 
-fs.readFileSync(fileName, { encoding: "utf-8" }, (err, data) => {
-    if (err) {
-        console.error(err)
-        return
-    }
-    const file = data;
-    const transformed = esbuild.transformSync(file, { loader: "jsx" });
-    // fs.writeFileSync(fileName, transformed.code, { encoding: "utf-8" });
-    console.log(transformed)
-})
+const fileName = process.argv[2];
+console.log('doing ' +fileName)
+
+
+const data = fs.readFileSync(fileName, { encoding: "utf-8" });
+    fs.writeFileSync(fileName.replace(".js", ".jsx"),data);
+fs.unlinkSync(fileName);

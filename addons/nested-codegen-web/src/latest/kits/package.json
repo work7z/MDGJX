@@ -2,12 +2,12 @@
   "name": "number-to-chinese-words",
   "version": "1.0.20",
   "description": "Convert a number to chinese words. Inspired from number-to-words",
-  "main": "number-to-chinese-words.js",
+  "main": "number-to-chinese-words.jsx",
   "scripts": {
     "test": "jasmine",
     "build": "npm run build-js && npm run build-min",
     "build-js": "babel src/index.js --out-file number-to-chinese-words.js --presets=es2015 --plugins transform-es2015-modules-umd",
-    "build-min": "uglifyjs -o number-to-chinese-words.min.js number-to-chinese-words.js"
+    "build-min": "uglifyjs -o number-to-chinese-words.min.js number-to-chinese-words.jsx"
   },
   "repository": {
     "type": "git",
