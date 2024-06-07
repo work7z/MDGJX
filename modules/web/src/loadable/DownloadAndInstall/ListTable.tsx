@@ -52,6 +52,8 @@ const data:{
             overwriteFn(val){
                 if(val === 'AppImage'){
                     return 'linux-x86_64'
+                }if(val === 'deb'){
+                    return 'linux-amd64'
                 }
                 return null
             }

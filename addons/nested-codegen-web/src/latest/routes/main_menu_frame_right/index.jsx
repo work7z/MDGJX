@@ -367,7 +367,9 @@ const MyRootContent = () => {
           // myheightval
         }
         style={{
-          width: `calc(100vw - ${gutils.frame_defaultWidth})`,
+          // width: `calc(100vw - ${gutils.frame_defaultWidth})`,
+          width:'100vw',
+          height:'100vh'
         }}
       >
         {props.children}
