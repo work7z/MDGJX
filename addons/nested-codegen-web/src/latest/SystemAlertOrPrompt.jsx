@@ -1,4 +1,4 @@
-import { Example, IExampleProps } from "@blueprintjs/docs-theme";
+import { Example,  } from "@blueprintjs/docs-theme";
 import {
   Callout,
   PanelStack,
@@ -38,7 +38,7 @@ import {
 } from "@blueprintjs/core";
 import React from "react";
 import _ from "lodash";
-import { Provider, observer, inject } from "mobx-react";
+import { Provider, observer, inject ,useLocalStore} from "mobx-react";
 
 let SystemAlertOrPrompt = observer(() => {
   return (

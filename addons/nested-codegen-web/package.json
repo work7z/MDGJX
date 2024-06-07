@@ -61,7 +61,6 @@
     "zmodem.js": "0.1.10"
   },
   "devDependencies": {
-    "vite-plugin-babel": "^1.2.0",
     "@babel/core": "^7.24.7",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-decorators": "^7.24.7",
@@ -99,6 +98,8 @@
     "shelljs": "^0.8.3",
     "typescript": "^3.1.6",
     "vite": "^5.2.0",
+    "vite-plugin-babel": "^1.2.0",
+    "vite-plugin-require": "^1.2.14",
     "vue-template-compiler": "^2.5.2",
     "vue-template-es2015-compiler": "^1.6.0",
     "watchpack": "^1.6.0",

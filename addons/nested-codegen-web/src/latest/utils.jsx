@@ -35,7 +35,7 @@ import {
   Elevation,
   Button,
 } from "@blueprintjs/core";
-import { Example, IExampleProps } from "@blueprintjs/docs-theme";
+import { Example,  } from "@blueprintjs/docs-theme";
 import {
   ColumnHeaderCell,
   Cell,
@@ -48,14 +48,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { useState } from "react";
 import axios from "axios";
-import {
-  useStores,
-  useAsObservableSource,
-  useLocalStore,
-  useObserver,
-} from "mobx-react-lite";
-import { Provider, observer, inject } from "mobx-react";
-var createHistory = require("history").createBrowserHistory;
+
+import { Provider, observer, inject ,useLocalStore} from "mobx-react";
+// var createHistory = require("history").createBrowserHistory;
 import $ from "jquery";
 window.$ = $;
 import {
@@ -66,7 +61,7 @@ import {
   Link,
   useHistory,
 } from "react-router-dom";
-var { autorun, observable, reaction } = require("mobx");
+import {autorun, observable, reaction}  from 'mobx'
 var Moment = require("moment");
 import _ from "lodash";
 import gstore from "./store.jsx";

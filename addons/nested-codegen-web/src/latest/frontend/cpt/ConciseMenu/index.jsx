@@ -1,5 +1,5 @@
 import common_pre_utils from "../../kit/common_pre_utils";
-import myless from "./index.less";
+import myless from "./index.module.less";
 let clz = common_pre_utils.wrapClz(myless);
 
 let ConciseMenuItem = observer((props) => {

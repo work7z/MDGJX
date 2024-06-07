@@ -1,7 +1,7 @@
 let observer = _.get(window, "CodeGenDefinition.observer", window.observer);
 
-import ConciseMenu from "./ConciseMenu";
-import myless from "./index.less";
+import ConciseMenu from "../../frontend/cpt/ConciseMenu";
+import myless from "./index.module.less";
 window.test_myless_file = myless;
 function clz(key) {
   return myless[key] || key;

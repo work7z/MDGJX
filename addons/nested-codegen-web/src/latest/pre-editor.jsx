@@ -47,14 +47,9 @@ import {
 import React from "react";
 import ReactDOM from "react-dom";
 import { useState, useEffect } from "react";
-import {
-  useStores,
-  useAsObservableSource,
-  useLocalStore,
-  useObserver,
-} from "mobx-react-lite";
-import { Provider, observer, inject } from "mobx-react";
-var createHistory = require("history").createBrowserHistory;
+
+import { Provider, observer, inject ,useLocalStore} from "mobx-react";
+// var createHistory = require("history").createBrowserHistory;
 import {
   withRouter,
   BrowserRouter as Router,
@@ -63,7 +58,8 @@ import {
   Link,
   useHistory,
 } from "react-router-dom";
-var { autorun, reaction, observable } = require("mobx");
+import { autorun, reaction,observable  } from "mobx";
+
 import {
   Classes as Popover2Classes,
   ContextMenu2,
@@ -86,7 +82,7 @@ import simpleExt from "./utils-simpleExt.jsx";
 
 // toolbar menus
 class EditorStore {
-   fn_menus_app = observable((ctx) => {
+   fn_menus_app = observable.box((ctx) => {
     return [
       {
         label: t(`Current Version`),
@@ -113,7 +109,7 @@ class EditorStore {
       },
     ];
   });
-   fn_menus_codec = observable((ctx) => {
+   fn_menus_codec = observable.box((ctx) => {
     let handleEncryptForMd5AndSha = async ({
       sha_type,
       md5_type,
@@ -209,7 +205,7 @@ class EditorStore {
       },
     ];
   });
-   fn_menus_transform = observable((ctx) => {
+   fn_menus_transform = observable.box((ctx) => {
     return [
       {
         label: `Base64`,
@@ -433,7 +429,7 @@ class EditorStore {
       },
     ];
   });
-   fn_menus_formats = observable((ctx) => {
+   fn_menus_formats = observable.box((ctx) => {
     let ext_css_less_scss = (lang) => {
       return {
         parser: lang,

@@ -19,6 +19,8 @@ import fs from "fs";
 // // import babel from "@rollup/plugin-babel";
 // import babel from "vite-plugin-babel";
 
+import vitePluginRequire from "vite-plugin-require";
+
 export default defineConfig({
   esbuild: {
     logOverride: { "css-syntax-error": "silent" },
@@ -53,17 +55,19 @@ export default defineConfig({
     react({
       babel: {
         parserOpts: {
-          plugins: [
-            "decorators-legacy"
-          ],
+          plugins: ["decorators-legacy"],
         },
       },
     }),
+    vitePluginRequire.default(),
   ],
+    define: {
+    'process.env': {}
+  },
   server: {
     port: 29999,
   },
   build: {
-    target: 'es2015'
-  }
+    target: "es2015",
+  },
 });

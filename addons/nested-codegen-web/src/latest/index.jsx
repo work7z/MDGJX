@@ -39,7 +39,7 @@ import {
   Elevation,
   Button,
 } from "@blueprintjs/core";
-import { Example, IExampleProps } from "@blueprintjs/docs-theme";
+import { Example,  } from "@blueprintjs/docs-theme";
 import {
   ColumnHeaderCell,
   Cell,
@@ -52,15 +52,10 @@ import ReactDOM from "react-dom";
 import gutils from "./utils";
 import _ from "lodash";
 import { useState } from "react";
-import {
-  useStores,
-  useAsObservableSource,
-  useLocalStore,
-  useObserver,
-} from "mobx-react-lite";
-import { Provider, observer, inject } from "mobx-react";
+
+import { Provider, observer, inject ,useLocalStore} from "mobx-react";
 window.observer = observer;
-var createHistory = require("history").createBrowserHistory;
+// var createHistory = require("history").createBrowserHistory;
 import {
   withRouter,
   BrowserRouter as Router,
@@ -70,7 +65,7 @@ import {
   useHistory,
   Redirect,
 } from "react-router-dom";
-var { autorun, observable, reaction } = require("mobx");
+import {autorun, observable, reaction}  from 'mobx'
 import gstore from "./store.jsx";
 import LoadingPage from "./routes/loading/index";
 import MainPage from "./routes/main/index";
@@ -152,24 +147,7 @@ window.get_hm_js_link = () => {
 };
 
 const fn_sending_GetBaidu = _.throttle((props) => {
-  if (gutils.dev()) {
-    return;
-  }
-  if (p_mode()) {
-    if ((location.href || "").indexOf("http://127.0.0.1:55777/") != -1) {
-      return;
-    }
-  }
-  if (localStorage.getItem("NO_HM_SEND")) {
-    return;
-  }
-  let _hmt = _hmt || [];
-  (function () {
-    var hm = document.createElement("script");
-    hm.src = get_hm_js_link();
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
+
 }, 3000);
 
 setTimeout(() => {

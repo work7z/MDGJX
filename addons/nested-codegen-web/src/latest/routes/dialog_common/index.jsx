@@ -33,7 +33,7 @@ import {
   Dialog,
   Button,
 } from "@blueprintjs/core";
-import { Example, IExampleProps } from "@blueprintjs/docs-theme";
+import { Example,  } from "@blueprintjs/docs-theme";
 import {
   ColumnHeaderCell,
   Cell,
@@ -47,14 +47,9 @@ import gutils from "../../utils";
 import { useState } from "react";
 import $ from "jquery";
 import { Resizable } from "re-resizable";
-import {
-  useStores,
-  useAsObservableSource,
-  useLocalStore,
-  useObserver,
-} from "mobx-react-lite";
-import { Provider, observer, inject } from "mobx-react";
-var createHistory = require("history").createBrowserHistory;
+
+import { Provider, observer, inject ,useLocalStore} from "mobx-react";
+// var createHistory = require("history").createBrowserHistory;
 import {
   withRouter,
   BrowserRouter as Router,
@@ -63,7 +58,9 @@ import {
   Link,
   useHistory,
 } from "react-router-dom";
-var { autorun, observable, observe } = require("mobx");
+// var { autorun, observable, observe } = require("mobx");
+import {autorun, observable, observe, reaction} from "mobx";
+
 import gstore from "../../store.jsx";
 import "./index.less";
 import classNames from "classNames";

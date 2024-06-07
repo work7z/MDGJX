@@ -10,7 +10,6 @@ import {
   MenuItem,
   MenuDivider,
   Drawer,
-  NumberRange,
   RangeSlider,
   Popover,
   Overlay,
@@ -46,7 +45,7 @@ import {
   Spinner,
 } from "@blueprintjs/core";
 import * as BluePrintCpt from "@blueprintjs/core";
-import { Example, IExampleProps } from "@blueprintjs/docs-theme";
+import { Example,  } from "@blueprintjs/docs-theme";
 import * as BluePrintDocs from "@blueprintjs/docs-theme";
 window.BluePrintCpt = BluePrintCpt;
 window.BluePrintDocs = BluePrintDocs;
@@ -71,16 +70,11 @@ import {
   useContext,
   useMemo,
 } from "react";
-import {
-  useStores,
-  useAsObservableSource,
-  useLocalStore,
-  useObserver,
-} from "mobx-react-lite";
+
 import * as MobxReactLite from "mobx-react-lite";
 import * as MobxReact from "mobx-react";
-import { Provider, observer, inject } from "mobx-react";
-var createHistory = require("history").createBrowserHistory;
+import { Provider, observer, inject ,useLocalStore} from "mobx-react";
+// var createHistory = require("history").createBrowserHistory;
 import {
   withRouter,
   BrowserRouter as Router,
@@ -91,8 +85,8 @@ import {
 } from "react-router-dom";
 // import "moment/locale/zh-cn";
 // import "moment/locale/zh-hk";
-var { autorun, observable } = require("mobx");
-var Mobx = require("mobx");
+import { autorun, observable }  from 'mobx';
+// var Mobx = require("mobx");
 import gstore from "../../store.jsx";
 import "./index.less";
 import MainFrameLeft from "../main_menu_frame_left/index";

@@ -50,7 +50,7 @@ export default WrapperGeditor;
 //   Button,
 //   PanelStack2,
 // } from "@blueprintjs/core";
-// import { Example, IExampleProps } from "@blueprintjs/docs-theme";
+// import { Example,  } from "@blueprintjs/docs-theme";
 // import {
 //   ColumnHeaderCell,
 //   Cell,
@@ -69,8 +69,8 @@ export default WrapperGeditor;
 //   useLocalStore,
 //   useObserver,
 // } from "mobx-react-lite";
-// import { Provider, observer, inject } from "mobx-react";
-// var createHistory = require("history").createBrowserHistory;
+// import { Provider, observer, inject ,useLocalStore} from "mobx-react";
+// // var createHistory = require("history").createBrowserHistory;
 // import {
 //   withRouter,
 //   BrowserRouter as Router,
@@ -79,7 +79,7 @@ export default WrapperGeditor;
 //   Link,
 //   useHistory,
 // } from "react-router-dom";
-// var { autorun, observable, reaction } = require("mobx");
+// import {autorun, observable, reaction}  from 'mobx'
 // import gstore from "../../store.jsx";
 // // import { initVimMode } from "monaco-vim";
 // // import { EmacsExtension } from "monaco-emacs";

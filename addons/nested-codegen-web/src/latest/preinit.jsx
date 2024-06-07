@@ -1,8 +1,9 @@
-import { Provider, observer, inject } from "mobx-react";
+import { Provider, observer, inject ,useLocalStore} from "mobx-react";
 window.observer = observer;
 import "./prelogic";
 import Moment from "moment";
 import _ from "lodash";
+import $ from 'jquery'
 // let crtLang = window.defaultLang || "en_US";
 // let crtLang = window.defaultLang || "zh_CN";
 // crtLang = "zh_CN";

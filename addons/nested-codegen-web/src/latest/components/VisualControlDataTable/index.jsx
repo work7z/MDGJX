@@ -37,7 +37,7 @@ import {
   PanelStack2,
   Divider,
 } from "@blueprintjs/core";
-import { Example, IExampleProps } from "@blueprintjs/docs-theme";
+import { Example,  } from "@blueprintjs/docs-theme";
 import {
   ColumnHeaderCell,
   Cell,
@@ -49,14 +49,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import gutils from "../../utils";
 import { useState, useEffect } from "react";
-import {
-  useStores,
-  useAsObservableSource,
-  useLocalStore,
-  useObserver,
-} from "mobx-react-lite";
-import { Provider, observer, inject } from "mobx-react";
-var createHistory = require("history").createBrowserHistory;
+
+import { Provider, observer, inject ,useLocalStore} from "mobx-react";
+// var createHistory = require("history").createBrowserHistory;
 import {
   withRouter,
   BrowserRouter as Router,
@@ -65,7 +60,7 @@ import {
   Link,
   useHistory,
 } from "react-router-dom";
-var { autorun, reaction, observable } = require("mobx");
+import { autorun, reaction,observable } from "mobx";
 import gstore from "../../store.jsx";
 import "./index.less";
 import {

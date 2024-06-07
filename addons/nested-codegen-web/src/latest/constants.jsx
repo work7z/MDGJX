@@ -1,4 +1,6 @@
 import Active4D from "./themes/Active4D.json";
+import _ from 'lodash'
+window['_'] = _
 import All_Hallows_Eve from "./themes/All Hallows Eve.json";
 import Amy from "./themes/Amy.json";
 import Birds_of_Paradise from "./themes/Birds of Paradise.json";
