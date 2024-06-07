@@ -37,7 +37,6 @@ import {
   Button,
   PanelStack2,
 } from "@blueprintjs/core";
-import { Example, IExampleProps } from "@blueprintjs/docs-theme";
 import {
   ColumnHeaderCell,
   Cell,
@@ -87,7 +86,7 @@ import simpleExt from "./utils-simpleExt.jsx";
 
 // toolbar menus
 class EditorStore {
-  @observable fn_menus_app = (ctx) => {
+   fn_menus_app = observable((ctx) => {
     return [
       {
         label: t(`Current Version`),
@@ -113,8 +112,8 @@ class EditorStore {
         },
       },
     ];
-  };
-  @observable fn_menus_codec = (ctx) => {
+  });
+   fn_menus_codec = observable((ctx) => {
     let handleEncryptForMd5AndSha = async ({
       sha_type,
       md5_type,
@@ -209,8 +208,8 @@ class EditorStore {
         }),
       },
     ];
-  };
-  @observable fn_menus_transform = (ctx) => {
+  });
+   fn_menus_transform = observable((ctx) => {
     return [
       {
         label: `Base64`,
@@ -433,8 +432,8 @@ class EditorStore {
         ],
       },
     ];
-  };
-  @observable fn_menus_formats = (ctx) => {
+  });
+   fn_menus_formats = observable((ctx) => {
     let ext_css_less_scss = (lang) => {
       return {
         parser: lang,
@@ -630,7 +629,7 @@ class EditorStore {
         },
       };
     });
-  };
+  });
 }
 let ed_store = new EditorStore();
 window.ed_store = ed_store;

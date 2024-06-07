@@ -10,8 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@babel/plugin-proposal-decorators": "^7.24.7",
-    "@babel/plugin-syntax-decorators": "^7.24.7",
     "@blueprintjs/core": "^3.51.3",
     "@blueprintjs/datetime": "^3.23.18",
     "@blueprintjs/docs-theme": "^3.4.0",
@@ -28,9 +26,9 @@
     "localforage": "^1.10.0",
     "lodash": "^4.17.11",
     "mathjs": "^10.5.1",
-    "mobx": "^5.15.2",
-    "mobx-react": "^6.1.5",
-    "mobx-react-lite": "^1.5.2",
+    "mobx": "5.15.2",
+    "mobx-react": "6.1.5",
+    "mobx-react-lite": "1.5.2",
     "moment": "^2.24.0",
     "monaco-themes": "^0.4.0",
     "number-to-chinese-words": "^1.0.20",

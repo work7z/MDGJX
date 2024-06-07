@@ -53,7 +53,9 @@ export default defineConfig({
     react({
       babel: {
         parserOpts: {
-          plugins: ["decorators-legacy"],
+          plugins: [
+            "decorators-legacy"
+          ],
         },
       },
     }),
@@ -61,4 +63,7 @@ export default defineConfig({
   server: {
     port: 29999,
   },
+  build: {
+    target: 'es2015'
+  }
 });

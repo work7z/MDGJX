@@ -72,80 +72,82 @@ import User_store from "./store/user_store";
 import Common_store from "./store/common_app_store";
 import Ext_store from "./store/ext_store";
 
+let f = (obj)=>observable(obj)
+
 class SysStore {
   // user
-  @observable user = User_store;
+   user = f(User_store);
 
-  @observable scroll_mem_obj = {};
+   scroll_mem_obj =f( {});
 
   // common app
-  @observable common_app = Common_store;
+   common_app = f( Common_store)
 
   // static
-  @observable staticOverlay = {
+   staticOverlay = f({
     deleteItem: static_server_store.overlay.deleteServer,
     addItem: static_server_store.overlay.addItem,
-  };
-  @observable static_view_detail_console = static_server_store.consoleData;
-  @observable staticServerPageData = static_server_store.pageData;
+  });
+   static_view_detail_console = f(static_server_store.consoleData);
+   staticServerPageData = f(static_server_store.pageData);
 
   // proxy
-  @observable proxyOverlay = {
+   proxyOverlay = f({
     deleteItem: proxy_server_store.overlay.deleteServer,
     addItem: proxy_server_store.overlay.addItem,
     addRule: proxy_server_store.overlay.addRule,
     addRulePathRewrite: proxy_server_store.overlay.addRulePathRewrite,
-  };
-  @observable proxy_view_detail_console = proxy_server_store.consoleData;
-  @observable proxyServerPageData = proxy_server_store.pageData;
-  @observable proxyServerPageDataForRule = proxy_server_store.pageDataForRule;
-  @observable proxyServerPageDataForPathRewrite =
-    proxy_server_store.pageDataForPathRewrite;
+  });
+   proxy_view_detail_console = f(proxy_server_store.consoleData);
+   proxyServerPageData = f(proxy_server_store.pageData);
+   proxyServerPageDataForRule = f(proxy_server_store.pageDataForRule);
+   proxyServerPageDataForPathRewrite =
+    f(proxy_server_store.pageDataForPathRewrite);
 
   // system
-  @observable overwrite_roadmap = [];
-  // @observable fn_roadmap = system_store.roadmap;
-  @observable nav_menu = system_store.nav_menu;
-  @observable sysinfo = system_store.sysinfo;
-  @observable omnibusInfo = system_store.omnibusInfo;
-  @observable apiInfo = system_store.apiInfo;
-  @observable sysBootServer = system_store.bootServer;
-  @observable settings = system_store.settings;
-  @observable licenseConfig = system_store.licenseConfig;
-  @observable localUserConfig = system_store.localUserConfig;
-  @observable localDeviceConfig = system_store.localDeviceConfig;
-  @observable localSettings = system_store.localSettings;
-  @observable memSettings = {};
+   overwrite_roadmap = f([]);
+  //  fn_roadmap = system_store.roadmap);
+   nav_menu = f(system_store.nav_menu);
+   sysinfo =f( system_store.sysinfo);
+   omnibusInfo = f(system_store.omnibusInfo);
+   apiInfo =f( system_store.apiInfo);
+   sysBootServer =f( system_store.bootServer);
+   settings = f(system_store.settings);
+   licenseConfig = f(system_store.licenseConfig);
+   localUserConfig =f( system_store.localUserConfig);
+   localDeviceConfig = f(system_store.localDeviceConfig);
+   localSettings = f(system_store.localSettings);
+   memSettings =f( {});
 
-  @observable show_left_menu_obj = {
+   show_left_menu_obj = f({
     isOpen: false,
-  };
-
-  @observable desktop = system_store.desktop;
-  @observable msgPanelData = system_store.msgPanelData;
-  @observable otherParserConfigList = system_store.otherParserConfigList;
-  @observable databaseAllData = database_store;
-  @observable preliAllData = preliminary_store;
-
-  @observable menu_jsx_definition = {};
-
-  @observable ext = Ext_store;
-
-  @observable roadmap = computed(() => {
-    return system_store.roadmap();
   });
 
-  @observable roadmap_plain = computed(() => {
+   desktop = f(system_store.desktop);
+   msgPanelData = f(system_store.msgPanelData);
+   otherParserConfigList = f(system_store.otherParserConfigList);
+   databaseAllData =f( database_store);
+   preliAllData = f(preliminary_store);
+
+   menu_jsx_definition =f( {});
+
+   ext = f(Ext_store);
+
+   roadmap = f(computed(() => {
+    return system_store.roadmap();
+  }))
+
+   roadmap_plain = f(computed(() => {
     return _.map(gstore.roadmap.get(), (x, d, n) => {
-      let mysubchildren = [];
-      let parent_x = x;
+      let mysubchildren = []
+      let parent_x = x
       gutils.iterateTree(x.children, (x, d, n) => {
         if (_.isNil(x.children)) {
           mysubchildren.push({ parent: parent_x, ...x });
         }
       });
       if (_.isEmpty(mysubchildren)) {
-        mysubchildren = [];
+        mysubchildren = []
       }
       mysubchildren = _.sortBy(
         mysubchildren,
@@ -156,31 +158,22 @@ class SysStore {
         children: mysubchildren,
       };
     });
-  });
+  }));
 
-  // @observable cpt_node_map = computed(() => {
-  //   let all_map = {};
-  //   gutils.iterateTree(gstore.nav_menu, (node) => {
-  //     if (node.label && node.pathname) {
-  //       all_map[node.pathname] = node;
-  //     }
-  //   });
-  //   return all_map;
-  // });
 
-  @observable parent_roadmap_list = computed(() => {
-    let finArr = [];
+   parent_roadmap_list = f(computed(() => {
+    let finArr = []
     let obj = {
       ref: gstore.sysinfo.updateMenuCount,
-    };
-    window.test_100 = obj;
+    }
+    window.test_100 = obj
     gutils.iterateTree(system_store.roadmap(), (x, d, n) => {
       if (!_.isNil(x.children)) {
         finArr.push(x);
       }
     });
-    return finArr;
-  });
+    return finArr
+  }))
 }
 let gstore = new SysStore();
 
