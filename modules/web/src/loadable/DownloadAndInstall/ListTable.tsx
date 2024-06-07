@@ -101,7 +101,7 @@ export default function TableReviews() {
                         })
                     }
                 </Table.Td>
-                <Table.Td>无</Table.Td>
+                <Table.Td>{latestVer.replace("desktop2-","")}</Table.Td>
             </Table.Tr>
         );
     });
