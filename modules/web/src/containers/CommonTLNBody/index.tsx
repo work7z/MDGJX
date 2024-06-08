@@ -11,7 +11,7 @@ import { stat } from "fs";
 import _ from "lodash";
 import { FN_GetDispatch } from "@/store/nocycle";
 import StateSlice from "@/store/reducers/stateSlice";
-import { useClipboard, useDebouncedCallback } from "@mantine/hooks";
+import { useClipboard, useCounter, useDebouncedCallback, useDisclosure } from "@mantine/hooks";
 import AlertUtils from "@/utils/AlertUtils";
 import Blink from "@/components/Blink";
 import { sleep } from "@/utils/CommonUtils";
@@ -55,6 +55,9 @@ export default (props: {
 
     const isZTFT = props.id == 'tlnztft'
     const isJSONType = props.id == 'json' || props.id == 'json-comparison'
+    const fanyiCountRef = useRef<{interval: any}>({
+        interval: null
+    })
     const isMarkdownType = props.id == 'markdown'
     const rh = exportUtils.register('tln' + props.saveDataId, {
         getPersistedStateFn: () => {
@@ -70,6 +73,7 @@ export default (props: {
         },
         getNotPersistedStateFn: () => {
             return {
+                fanyiCount: 0,
                 fileProcessLabel: '当前任务处于闲置状态',
                 inputJSON: '',
                 outputJSON: '',
@@ -78,7 +82,7 @@ export default (props: {
             }
         }
     })
-    const [wsRef, wsStatus] = useWebsocket("/ws/userchannel", {
+    useWebsocket("userchannel", 'tln'+props.id,{
         onMessage(msg) {
             switch(msg.id){
                 case 'tln-res-'+props.id:
@@ -86,11 +90,7 @@ export default (props: {
             }
         }
     })
-    useEffect(() => {
-        if (wsStatus !== 'authorized') {
-            return;
-        }
-    }, [wsStatus, wsRef])
+
     const maxRows = 10
     const clipboard = useClipboard({ timeout: 500 });
     const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})
@@ -132,6 +132,7 @@ export default (props: {
                     const r = await t_sendReq({
                         text: (value + "") || '',
                         type: props.id + '',
+                        id: props.id + '',
                         sourceLang: tState?.sourceLang + "",
                         targetLang: tState?.targetLang + "",
                         reservedWords: tState?.reservedWords as string,
@@ -153,8 +154,15 @@ export default (props: {
                         AlertUtils.alertWarn("无文件可处理，请先选择文件")
                         return;
                     }
+                    let ctn = 0;
+                    fanyiCountRef.current.interval = setInterval(() => {
+                        ctn++
+                        rh.updateNonPState({
+                            fanyiCount: ctn,
+                        })
+                    },1000)
                     rh.updateNonPState({
-                        fileProcessLabel: `开始处理本次翻译`,
+                    fileProcessLabel: `开始处理本次翻译`,
                         detailForHandlingUploadFiles: {}
                     })
                     let idx = 0
@@ -258,7 +266,7 @@ export default (props: {
         }) : [
             {
                 type: 'submit',
-                text: translating ? "取消翻译" : "开始翻译",
+                text: translating ? "取消翻译" + `(${rh?.npState?.fanyiCount})` : "开始翻译",
                 color: translating ? 'red' : undefined,
                 onClick: fn_submit_create({
                     eventSource: 'submit'
