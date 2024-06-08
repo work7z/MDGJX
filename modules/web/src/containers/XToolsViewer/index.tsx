@@ -19,6 +19,7 @@ export default (props: {
     return <div className="flex-1">
         <Card className=" flex flex-col " withBorder style={{
             padding: 0,
+            // height: AppConstants.smallDevice ? '150vh' : '100%'
             height: AppConstants.smallDevice ? '150vh' : '100%'
         }}>
             <FrameWrapper src={

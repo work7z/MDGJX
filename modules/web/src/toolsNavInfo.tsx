@@ -1808,7 +1808,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
         ...x,
         subTools: x.subTools.map((y: SubToolItem) => {
             y.id = y.path.replace(/\//g, '')
-            y.path = `/tools/${x.id}${y.path}`
+            y.path = `/${x.id}${y.path}`
             return y satisfies SubToolItem
         })
     } satisfies ToolNavInfoType

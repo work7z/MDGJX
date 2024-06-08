@@ -33,7 +33,7 @@ const InnerXToolsDetail = () => {
     return <div key={mainSubModuleItem.id} className="flex flex-col" style={{
         height: `calc(${AppConstants.calcMainBodyHeight})`,
     }}>
-        <Tabs className="py-2" variant="pills" value={subToolId} onChange={e => {
+        {/* <Tabs className="py-2" variant="pills" value={subToolId} onChange={e => {
         }}>
             <Tabs.List >
                 {
@@ -48,7 +48,7 @@ const InnerXToolsDetail = () => {
                     })
                 }
             </Tabs.List>
-        </Tabs>
+        </Tabs> */}
         <XToolsViewer key={mainSubModuleItem.id} toolId={subToolId} />
     </div>
 }
