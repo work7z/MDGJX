@@ -6,7 +6,6 @@ export type WsMsgBody = {
     whoami: 'client' | 'server';
     headers?: any;
     status: number;
-    msg: string;
     value: any;
 };
 export const havingMsgBody = (id: string,status: number, value?: any): string => {
@@ -17,16 +16,15 @@ export const havingMsgBody = (id: string,status: number, value?: any): string =>
         value: value || {},
     } satisfies WsMsgBody);
 };
-export type WsStatus = "connecting" | "connected" | "closed" | "error" | "initial";
+export type WsStatus = "connecting"  | "connected" | "authorized" | "closed" | "error" | "initial";
 export type WsEvent = {
-    onConnect: (p: WebSocket) => {},
-    onDisconnect: (p: WebSocket) => {},
+    onMessage: (msg: WsMsgBody) => void
 }
 let ws: { current: WebSocket | null } = {
     current: null
 };
 
-export const useWebsocket = (url: string): [WebSocket | null, WsStatus] => {
+export const useWebsocket = (url: string, wsEvents:WsEvent): [WebSocket | null, WsStatus] => {
     // websocket
     const [status, setStatus] = useState<WsStatus>("initial");
     const isSignIn = useHasUserSignIn()
@@ -46,6 +44,19 @@ export const useWebsocket = (url: string): [WebSocket | null, WsStatus] => {
             !isDevEnv() ? 'wss' : 'ws'
         ) + `://${location.host}` + url)
         ws.current = i_ws;
+        ws.current.onmessage = (e) => {
+            const msg = e.data;
+            debugger;
+            const reqMsg = JSON.parse(msg) as WsMsgBody;
+            switch(reqMsg.id){
+                case 'user-auth-ok':
+                    setStatus("authorized")
+                    break;
+                default:
+                    wsEvents.onMessage(reqMsg)
+                    break;
+            }
+        }
         ws.current.onopen = () => {
             setStatus("connected")
             setTimeout(() => {
