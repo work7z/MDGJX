@@ -14,7 +14,7 @@ const InnerXToolsDetail = () => {
     const {
        rootModuleItem : mainModuleItem,
         subModuleItem: mainSubModuleItem,
-        thirdRouteId: tmp_mainSubToolID
+        secondRouteId: tmp_mainSubToolID
     } = useMDParams()
     const history = useHistory()
     if(

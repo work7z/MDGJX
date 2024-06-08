@@ -99,15 +99,12 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
                         id: 'index',
                         bodyFn: () => import('./loadable/XToolsView/index.tsx')
                     },
-                    ...toolsNavInfo.map(x => {
-                        return {
-                            name: x.name,
-                            id: x.id,
-                            disableFooter: true,
-                            defaultSubToolId: x.defaultSubToolId,
-                            bodyFn: () => import('./loadable/XToolsDetail/index.tsx')
-                        } satisfies SystemSubModuleItem
-                    })
+                    {
+                        name: 'JSON超级工具',
+                        id: 'json',
+                        defaultSubToolId: 'convert',
+                        bodyFn: () => import('./loadable/JSONSuperTools/index.tsx'),
+                    },
                 ]
             },
             {
@@ -142,19 +139,41 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
                     },
                 ]
             },
-            {
-                id: 'network',
-                icon: IconNetwork,
-                name: '网络运维',
-                children: [
-                    {
-                        name: 'IP/域名质量监测',
-                        id: 'ipstats',
-                        disableFooter: true,
-                        bodyFn: () => import('./loadable/IPDomainQualityStat/index.tsx')
-                    },
-                ]
-            },
+            // {
+            //     id: 'network',
+            //     icon: IconNetwork,
+            //     name: '网络运维',
+            //     children: [
+            //         {
+            //             name: 'IP/域名质量监测',
+            //             id: 'ipstats',
+            //             disableFooter: true,
+            //             bodyFn: () => import('./loadable/IPDomainQualityStat/index.tsx')
+            //         },
+            //     ]
+            // },
+            ...toolsNavInfo.map(eachToolNavInfo => {
+                return {
+                    id: eachToolNavInfo.id,
+                    icon: eachToolNavInfo.icon ||  IconNetwork,
+                    name: eachToolNavInfo.name,
+                    children: (eachToolNavInfo.subTools||[]).map(eachSubTool=>{
+                        return {
+                            id: eachSubTool.id+'',
+                            disableFooter: true,
+                            name: eachSubTool.name,
+                            bodyFn: () => import('./loadable/XToolsDetail/index.tsx')
+                        }
+                    }),
+                } satisfies SystemSubModuleItem
+                // return {
+                //     name: x.name,
+                //     id: x.id,
+                //     disableFooter: true,
+                //     defaultSubToolId: x.defaultSubToolId,
+                //     bodyFn: () => import('./loadable/XToolsDetail/index.tsx')
+                // } satisfies SystemSubModuleItem
+            })
         ]
     },
     {
