@@ -52,7 +52,7 @@ export default (props: {
     translateActionItems?: ActionItem[],
     handleTranslate: (val: TLNState, fn_translate) => Promise<string>
 }) => {
-    useWebsocket("/ws/testwsnow")
+    useWebsocket("/ws/userchannel")
     const [message, setMessage] = useState('');
     const isZTFT = props.id == 'tlnztft'
     const isJSONType = props.id == 'json' || props.id == 'json-comparison'

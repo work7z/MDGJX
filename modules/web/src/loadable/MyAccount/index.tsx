@@ -457,6 +457,7 @@ function AuthenticationTitle() {
                                     if (verifyResponse(r.data)) {
                                         AlertUtils.alertSuccess("登录成功，欢迎回来")
                                         ACTION_doSignInByInfo(r.data?.data)
+
                                     }
                                 } catch (e) {
                                     AlertUtils.alertErr(e)
