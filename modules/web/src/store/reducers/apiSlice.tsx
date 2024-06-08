@@ -10,11 +10,12 @@ import _ from "lodash";
 import { PayloadListData, PayloadValueData } from "../../constants";
 import { url } from "inspector";
 import { getHeaders } from "../request";
-import { HEADER_X_LAF_TOKEN, URL_AUTH_GET_FINDPW, URL_AUTH_GET_SIGNIN, URL_AUTH_GET_SIGNOUT, URL_AUTH_GET_SIGNUP } from "../constants/api_constants";
+import { HEADER_X_LAF_PAGE_SESSION_ID, HEADER_X_LAF_TOKEN, URL_AUTH_GET_FINDPW, URL_AUTH_GET_SIGNIN, URL_AUTH_GET_SIGNOUT, URL_AUTH_GET_SIGNUP } from "../constants/api_constants";
 import AlertUtils from "@/utils/AlertUtils";
 import { FN_GetDispatch, FN_GetState } from "../nocycle";
 import UsersSlice, { DisplayUserInfo } from "./userSlice";
 import AuthUtils from "@/utils/AuthUtils";
+import { PAGE_SESSION_ID } from "@/utils/PageUtils";
 
 
 export type FindPwReq = {
@@ -132,6 +133,7 @@ export const apiSlice = createApi({
         }
       });
       headers.set(HEADER_X_LAF_TOKEN, AuthUtils.token || '')
+      headers.set(HEADER_X_LAF_PAGE_SESSION_ID, PAGE_SESSION_ID || '')
       return headers;
     },
     validateStatus: (response, result: AsyncCreateResponse<any> | null) => {

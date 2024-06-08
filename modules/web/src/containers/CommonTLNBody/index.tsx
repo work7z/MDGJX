@@ -52,13 +52,7 @@ export default (props: {
     translateActionItems?: ActionItem[],
     handleTranslate: (val: TLNState, fn_translate) => Promise<string>
 }) => {
-    const [wsRef, wsStatus] = useWebsocket("/ws/userchannel")
-    useEffect(() => {
-        if (wsStatus !== 'authorized') {
-            return;
-        }
-    }, [wsStatus, wsRef])
-    const [message, setMessage] = useState('');
+
     const isZTFT = props.id == 'tlnztft'
     const isJSONType = props.id == 'json' || props.id == 'json-comparison'
     const isMarkdownType = props.id == 'markdown'
@@ -84,6 +78,19 @@ export default (props: {
             }
         }
     })
+    const [wsRef, wsStatus] = useWebsocket("/ws/userchannel", {
+        onMessage(msg) {
+            switch(msg.id){
+                case 'tln-res-'+props.id:
+                    break;
+            }
+        }
+    })
+    useEffect(() => {
+        if (wsStatus !== 'authorized') {
+            return;
+        }
+    }, [wsStatus, wsRef])
     const maxRows = 10
     const clipboard = useClipboard({ timeout: 500 });
     const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})

@@ -1,0 +1,1 @@
+export const PAGE_SESSION_ID = Date.now() + Math.random().toString(36).substring(7);

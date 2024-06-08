@@ -1,9 +1,11 @@
 import { isDevEnv } from "@/env";
 import { useLayoutEffect, useRef, useState } from "react";
 import AuthUtils, { useHasUserSignIn } from "./AuthUtils";
+import { PAGE_SESSION_ID } from "./PageUtils";
 export type WsMsgBody = {
     id:string,
     whoami: 'client' | 'server';
+    pageSessionId:string,
     headers?: any;
     status: number;
     value: any;
@@ -12,6 +14,7 @@ export const havingMsgBody = (id: string,status: number, value?: any): string =>
     return JSON.stringify({
         id,
         whoami: 'client',
+        pageSessionId: PAGE_SESSION_ID,
         status: status,
         value: value || {},
     } satisfies WsMsgBody);
@@ -46,8 +49,10 @@ export const useWebsocket = (url: string, wsEvents:WsEvent): [WebSocket | null, 
         ws.current = i_ws;
         ws.current.onmessage = (e) => {
             const msg = e.data;
-            debugger;
             const reqMsg = JSON.parse(msg) as WsMsgBody;
+            if(reqMsg.pageSessionId !== PAGE_SESSION_ID){
+                return
+            }
             switch(reqMsg.id){
                 case 'user-auth-ok':
                     setStatus("authorized")
