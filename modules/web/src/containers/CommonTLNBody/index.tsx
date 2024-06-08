@@ -173,6 +173,9 @@ export default (props: {
                 }
                 let ctn = 0;
                 window.clearInterval(fanyiCountRef.current.interval)
+                rh.updateNonPState({
+                    fanyiCount: 0,
+                })
                 fanyiCountRef.current.interval = setInterval(() => {
                     ctn++
                     rh.updateNonPState({
