@@ -51,6 +51,7 @@ export type SystemRefresh = {
 export type TLNRequest = {
   text: string;
   type: string;
+  id:string
   sourceLang: string;
   targetLang: string;
   reservedWords: string;

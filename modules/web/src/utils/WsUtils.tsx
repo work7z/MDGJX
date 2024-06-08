@@ -22,8 +22,9 @@ export const havingMsgBody = (id: string,status: number, value?: any): string =>
     } satisfies WsMsgBody);
 };
 export type WsStatus = "connecting"  | "connected" | "authorized" | "closed" | "error" | "initial";
+export type WsOnMessage = (msg: WsMsgBody) => void
 export type WsEvent = {
-    onMessage: (msg: WsMsgBody) => void
+    onMessage: WsOnMessage
 }
 
 const WS_EVENT_MANAGER: {
@@ -73,7 +74,9 @@ export const initWSConn = (url:URLWebsocket)=>{
                 setStatus("authorized")
                 break;
             default:
-                _.forEach(WS_EVENT_MANAGER[url],(v,k)=>v.onMessage(reqMsg))
+                _.forEach(WS_EVENT_MANAGER[url],(v,k)=>{
+                    v.onMessage(reqMsg)
+                })
                 break;
         }
     }
@@ -89,16 +92,10 @@ export const initWSConn = (url:URLWebsocket)=>{
 }
 
 export const useWebsocket = (url: URLWebsocket, wsEventId:string, wsEvents:WsEvent): [WebSocket | null, WsStatus] => {
-    // websocket
-    useLayoutEffect(() => {
-        if (!WS_EVENT_MANAGER[url]){
-            WS_EVENT_MANAGER[url]={}
-        }
-        WS_EVENT_MANAGER[url][wsEventId] = wsEvents
-
-        return () => {
-        };
-    }, []);
+    if (!WS_EVENT_MANAGER[url]) {
+        WS_EVENT_MANAGER[url] = {}
+    }
+    WS_EVENT_MANAGER[url][wsEventId] = wsEvents
 
     return [
         WS_INIT_MANAGER[url]?.inst || null,
