@@ -1,4 +1,4 @@
-import { app, BrowserWindow, screen } from "electron";
+import { app, BrowserWindow, dialog, screen } from "electron";
 import path from "path";
 import { DMainPassProps } from "../d-types";
 import { isDevEnv, isProductionEnv } from "../web2share-copy/env";
@@ -194,6 +194,7 @@ export default () => {
     },
   });
 
+dialog.showErrorBox('Title', 'Prompt text') 
   registerIpcMainOn('setup', async (key, values) => {
     switch (key) {
       case 'updateTitle':
