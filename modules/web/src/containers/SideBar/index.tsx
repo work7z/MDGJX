@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react';
-import { UnstyledButton, Tooltip, Title, rem, Stack, TextInput, Code } from '@mantine/core';
+import { useEffect, useMemo, useState } from 'react';
+import { UnstyledButton, Tooltip, Title, rem, Stack, TextInput, Code, SegmentedControl } from '@mantine/core';
 import {
     IconHome2,
     IconUser,
@@ -37,18 +37,20 @@ import { FN_GetDispatch } from '@/store/nocycle';
 import settingsSlice from '@/store/reducers/settingsSlice';
 import { TypeMDParams } from '@/systemHooks';
 import { NotFoundPage } from '@/pages/NotFound.page';
+import React from 'react';
+import MemorySlice from '@/store/reducers/memorySlice';
+import { useHotkeys } from '@mantine/hooks';
 
 export function DoubleNavbar(props: {
     mdParams: TypeMDParams,
     toggle: () => void
 }) {
     const hideLeftMenu = exportUtils.useSelector(v => v.settings.hideLeftMenu)
-    const {  subModuleItem: mainSubModuleItem  } = props.mdParams
+    const { subModuleItem: mainSubModuleItem } = props.mdParams
     const mainModule = props.mdParams.firstRouteId
     const mainModuleItem = props.mdParams.rootModuleItem
-    const [searchCtn, setSearchCtn] = useState('')
-    if(!mainSubModuleItem || !mainModuleItem){
-        return <NotFoundPage/>
+    if (!mainSubModuleItem || !mainModuleItem) {
+        return <NotFoundPage />
     }
     const fn_mainLinks = (item: SystemModuleItem) => (
         <Tooltip
@@ -77,52 +79,6 @@ export function DoubleNavbar(props: {
             firstLevel_links_btm: systemModulesList.filter(x => x.fixedAtBottom).map(fn_mainLinks)
         }
     }, [systemModulesList]);
-    const [actualOpenId,setActualOpenId] = useState(props.mdParams.firstRouteId)
-    const jsx_linksgroup = useMemo(() => {
-        const l2 =_.toLower(searchCtn)
-        const hasNoSearch = _.isEmpty(searchCtn)
-        const fn_filter_txt = (x: SystemSubModuleItem) => {
-            if (hasNoSearch){
-                return true;
-            }
-            return  _.toLower(x.name).indexOf(l2) !== -1
-        }
-        return (
-            (mainModuleItem?.children || []).filter(x=>{
-                if(x.bodyFn){
-                    return fn_filter_txt(x)
-                }else{
-                    return true;
-                }
-            }).map((_item, idx) => {
-                const item: SystemSubModuleItem = {
-                    ..._item
-                }
-                if (item.children){
-                    item.children = item.children.filter(xx => {
-                        return fn_filter_txt(xx)
-                    })
-                }
-                return (
-                    <LinksGroup key={item.id}
-                        {...item}
-                        setUpdateOpenId={v=>{
-                            setActualOpenId(v+'')
-                        }}
-                        forceOpen={!hasNoSearch}
-                        actualOpenId={actualOpenId}
-                        // initiallyOpened={isOpenedByDefault}
-                        isItActive={item => {
-                            return item.id == props.mdParams.secondRouteId && item.firstRouteId == props.mdParams.firstRouteId
-                        }}
-                        getHrefValue={item => {
-                            return item.href + '';
-                        }}
-                    />
-                )
-            })
-        )
-    }, [actualOpenId,props.mdParams.firstRouteId, props.mdParams.secondRouteId, mainModuleItem.children, searchCtn]);
 
     return (
         <nav className={classes.navbar}>
@@ -159,34 +115,154 @@ export function DoubleNavbar(props: {
                     </div>
 
                 </div>
-                <div className={classes.main + ' overflow-auto h-[100vh] scrollbar-hide'}>
-                    <Title order={4} className={classes.title}>
-                        {mainModuleItem?.label}
-                    </Title>
-                    <div>
-                        <div className='px-2'>
-                            <TextInput
-                                placeholder={
-                                    `快速搜索`
-                                }
-                                size="xs"
-                                value={searchCtn}
-                                onChange={e => {
-                                    setSearchCtn(e.currentTarget.value)
-                                }}
-                                leftSection={<IconSearch style={{ width: rem(12), height: rem(12) }} stroke={1.5} />}
-                                rightSectionWidth={70}
-                                rightSection={<Code className={classes.searchCode}>Ctrl + K</Code>}
-                                styles={{ section: { pointerEvents: 'none' } }}
-                                mb="sm"
-                            />
-                        </div>
-                        {jsx_linksgroup}
-                    </div>
-                </div>
+                <SecondMenu mdParams={props.mdParams} mainModuleItem={mainModuleItem} />
             </div>
         </nav>
     );
+}
+
+export let SecondMenu = (props: {
+    mainModuleItem: SystemModuleItem,
+    mdParams: TypeMDParams,
+}) => {
+    const { mainModuleItem } = props
+    const [searchCtn, setSearchCtn] = useState('')
+    const [actualOpenId, setActualOpenId] = useState(props.mdParams.firstRouteId)
+    // const [ scrollPos, setScrollPos ] = useState(0)
+    const scrollPos = exportUtils.useSelector(v => v.memory.scrollPos)
+    const setScrollPos = (v: number) => {
+        FN_GetDispatch()(MemorySlice.actions.updateOneOfParamState({
+            scrollPos: v
+        }))
+    }
+    const jsx_linksgroup = useMemo(() => {
+        const l2 = _.toLower(searchCtn)
+        const hasNoSearch = _.isEmpty(searchCtn)
+        const fn_filter_txt = (x: SystemSubModuleItem) => {
+            if (hasNoSearch) {
+                return true;
+            }
+            return _.toLower(x.name).indexOf(l2) !== -1
+        }
+        return (
+            (mainModuleItem?.children || []).filter(x => {
+                if (x.bodyFn) {
+                    return fn_filter_txt(x)
+                } else {
+                    return true;
+                }
+            }).map((_item, idx) => {
+                const item: SystemSubModuleItem = {
+                    ..._item
+                }
+                if (item.children) {
+                    item.children = item.children.filter(xx => {
+                        return fn_filter_txt(xx)
+                    })
+                }
+                return (
+                    <LinksGroup key={item.id}
+                        {...item}
+                        setUpdateOpenId={v => {
+                            setActualOpenId(v + '')
+                        }}
+                        forceOpen={!hasNoSearch}
+                        actualOpenId={actualOpenId}
+                        // initiallyOpened={isOpenedByDefault}
+                        isItActive={item => {
+                            return item.id == props.mdParams.secondRouteId && item.firstRouteId == props.mdParams.firstRouteId
+                        }}
+                        getHrefValue={item => {
+                            return item.href + '';
+                        }}
+                    />
+                )
+            })
+        )
+    }, [actualOpenId, props.mdParams.firstRouteId, props.mdParams.secondRouteId, mainModuleItem.children, searchCtn]);
+    const ref = React.useRef<{
+        ele: HTMLDivElement | null
+        eleipt: HTMLDivElement | null
+    }>({
+        ele: null,
+        eleipt: null
+    })
+    useEffect(() => {
+        ref.current?.ele?.scrollTo(0, scrollPos)
+    }, [])
+    type ControlItem = {
+        label: string,
+        id: string
+    }
+    const cfgControls: ControlItem[] = [
+        {
+            label: '工具',
+            id: 'tools'
+        },
+        {
+            label: '文档',
+            id: 'docs'
+        },
+        {
+            label: '资源',
+            id: 'resources'
+        }
+    ]
+    const [controlId, setControlId] = useState(_.first(cfgControls)?.label)
+    useHotkeys([
+        ['ctrl+I', () => {
+            console.log('Trigger search')
+            ref.current.eleipt?.focus()
+        }],
+    ]);
+    return (
+        <div onScroll={(e) => {
+            setScrollPos(e.currentTarget.scrollTop)
+        }} className={classes.main + ' overflow-auto h-[100vh] scrollbar-hide'} ref={e => {
+            if (e) {
+                ref.current.ele = e 
+            }
+        }} onClick={e => {
+
+        }}>
+            <Title order={4} className={classes.title}>
+                {mainModuleItem?.label}
+            </Title>
+            <div className='mx-2 my-2'>
+                <SegmentedControl fullWidth 
+                onChange={e=>{
+                    setControlId(e)
+                }}
+                value={controlId} data={cfgControls.map(x=>x.label)} />
+
+            </div>
+            <div>
+                <div className='px-2'>
+                    <TextInput
+                        placeholder={
+                            `快速搜索` +controlId
+                        }
+                        ref={e=>{
+                            if(e){
+                                ref.current.eleipt = e
+                            }
+                        }}
+                        size="xs"
+                        value={searchCtn}
+                        onChange={e => {
+                            setSearchCtn(e.currentTarget.value)
+                        }}
+                        leftSection={<IconSearch style={{ width: rem(12), height: rem(12) }} stroke={1.5} />}
+                        rightSectionWidth={70}
+                        rightSection={<Code className={classes.searchCode}>Ctrl + I</Code>}
+                        styles={{ section: { pointerEvents: 'none' } }}
+                        mb="sm"
+                    />
+                </div>
+                {controlId == '工具'?                jsx_linksgroup : <div className='text-center text-gray-400'>依旧内测中，敬请期待</div>}
+            </div>
+        </div>
+    )
 }
 
 // const sub_links = (mainModuleItem?.children || []).map((item) => {

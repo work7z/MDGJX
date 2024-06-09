@@ -9,10 +9,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import _ from 'lodash'
 
 export type MemoryState = {
+  scrollPos: number,
   showLoginModal: boolean,
   showChangeLogModal: boolean
 };
 const initialState: MemoryState = {
+  scrollPos: 0,
   showLoginModal: false,
   showChangeLogModal: false
 };
