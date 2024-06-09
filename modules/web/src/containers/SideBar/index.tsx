@@ -215,6 +215,7 @@ export let SecondMenu = (props: {
             ref.current.eleipt?.focus()
         }],
     ]);
+    const isItMain = props.mainModuleItem?.id == 'main' 
     return (
         <div onScroll={(e) => {
             setScrollPos(e.currentTarget.scrollTop)
@@ -228,19 +229,23 @@ export let SecondMenu = (props: {
             <Title order={4} className={classes.title}>
                 {mainModuleItem?.label}
             </Title>
-            <div className='mx-2 my-2'>
-                <SegmentedControl fullWidth 
-                onChange={e=>{
-                    setControlId(e)
-                }}
-                value={controlId} data={cfgControls.map(x=>x.label)} />
+            {
+                isItMain? <>
+                    <div className='mx-2 my-2'>
+                        <SegmentedControl fullWidth
+                            onChange={e => {
+                                setControlId(e)
+                            }}
+                            value={controlId} data={cfgControls.map(x => x.label)} />
 
-            </div>
+                    </div>
+                </>:''
+            }
             <div>
                 <div className='px-2'>
                     <TextInput
                         placeholder={
-                            `快速搜索` +controlId
+                            `快速搜索` + (isItMain ? controlId:'')
                         }
                         ref={e=>{
                             if(e){

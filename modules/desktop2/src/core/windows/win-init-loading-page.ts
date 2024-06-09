@@ -194,7 +194,6 @@ export default () => {
     },
   });
 
-dialog.showErrorBox('Title', 'Prompt text') 
   registerIpcMainOn('setup', async (key, values) => {
     switch (key) {
       case 'updateTitle':
