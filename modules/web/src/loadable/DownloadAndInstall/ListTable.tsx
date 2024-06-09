@@ -33,14 +33,14 @@ const data:{
             icon: <IconBrandApple />,
             name: 'MacOS 苹果系统 (Intel核芯版本)',
             arch: 'x64',
-            fileArch: 'darwin-x64',
+            fileArch: 'mac-x64',
             ext: ['dmg', 'tar.gz'],
         },
         {
             icon: <IconBrandApple />,
             name: 'MacOS 苹果系统 (M1系列芯片/Apple Silicon)',
             arch: 'arm64',
-            fileArch: 'darwin-arm64',
+            fileArch: 'mac-arm64',
             ext: ['dmg', 'tar.gz'],
         },
         {

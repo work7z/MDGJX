@@ -38,13 +38,6 @@ const logger = winston.createLogger({
   ),
   transports: [
     new Console({}),
-    // new Console({
-    //   level: "info",
-    // }),
-    // new Console({
-    //   level: "error",
-    // }),
-    // debug log setting
     new winstonDaily({
       level: "debug",
       datePattern: "YYYY-MM-DD",
@@ -92,5 +85,7 @@ const stream = {
     logger.info(message.substring(0, message.lastIndexOf("\n")));
   },
 };
+
+logger.info("loaded logger.ts")
 
 export { logger, stream };

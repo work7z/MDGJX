@@ -1,5 +1,8 @@
 // dynamic load core logic
-
+import log from 'electron-log/main';
+// Optional, initialize the logger for any renderer process
+log.initialize();
+console.log = log.log;
 import path from "path";
 import { DMainPassProps } from "./core/d-types";
 import dMain from "./core/d-main";
