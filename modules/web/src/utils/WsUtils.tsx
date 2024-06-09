@@ -86,7 +86,7 @@ export const initWSConn = (url:URLWebsocket)=>{
     i_ws.onclose = () => {
         setTimeout(()=>{
             initWSConn(url)
-        },2000)
+        },120)
         setStatus("closed")
     }
 }
