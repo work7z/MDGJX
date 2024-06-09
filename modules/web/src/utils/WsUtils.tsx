@@ -35,23 +35,24 @@ const WS_EVENT_MANAGER: {
 const WS_INIT_MANAGER : {
     [key:string]: {
         status: WsStatus,
-        inst: WebSocket
+        inst: WebSocket,
+        latestTS: number
     }
 } = {}
 const WS_REFRESH_INTERVAL:  {
     [key:string]:any
 }={}
 export type URLWebsocket = "userchannel" | "adminchannel" | "publicchannel"
-
 export const initWSConn = (url:URLWebsocket)=>{
     if (!AuthUtils.token) {
         return
     }
-    if (WS_INIT_MANAGER[url]) {
-        if(WS_INIT_MANAGER[url].inst.readyState === WebSocket.OPEN){
-            WS_INIT_MANAGER[url].inst.close()
-        }
-    }
+    // if (WS_INIT_MANAGER[url]) {
+    //     if(WS_INIT_MANAGER[url].inst.readyState === WebSocket.OPEN){
+    //         WS_INIT_MANAGER[url].inst.close()
+    //     }
+    // }
+    let latestTS = Date.now()
     const i_ws = new WebSocket((
         !isDevEnv() ? 'wss' : 'ws'
     ) + `://${location.host}/ws/` + url + "?" + queryString.stringify({
@@ -60,7 +61,8 @@ export const initWSConn = (url:URLWebsocket)=>{
     }))
     WS_INIT_MANAGER[url] = {
         status: "initial",
-        inst: i_ws
+        inst: i_ws,
+        latestTS: latestTS
     }
     let setStatus = (status:WsStatus)=>{
         WS_INIT_MANAGER[url].status = status
