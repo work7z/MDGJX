@@ -34,7 +34,7 @@ const tools = computed<ToolCategory[]>(() => [
 
 <template>
   <MenuLayout class="menu-layout" :class="{ isSmallScreen: styleStore.isSmallScreen }">
-    <template #sider>
+    <template #sider v-if="false">
       <RouterLink to="/" class="hero-wrapper">
         <HeroGradient class="gradient" />
         <div class="text-wrapper">
@@ -48,7 +48,7 @@ const tools = computed<ToolCategory[]>(() => [
         </div>
       </RouterLink>
 
-      <div class="sider-content">
+      <div class="sider-content hidden">
         <div v-if="styleStore.isSmallScreen" flex flex-col items-center>
           <!-- <locale-selector w="90%" /> -->
 
@@ -90,7 +90,7 @@ const tools = computed<ToolCategory[]>(() => [
     </template>
 
     <template #content>
-      <div flex items-center justify-center gap-2>
+      <div flex items-center justify-center gap-2 style="display:none;">
         <c-button
           circle
           variant="text"
