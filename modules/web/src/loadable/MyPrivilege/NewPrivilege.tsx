@@ -21,7 +21,7 @@ export type WxPayPlanSt = {
 }
 
 export default function () {
-    const [active, setActive] = useState(1);
+    const [active, setActive] = useState(0);
     const [highestStepVisited, setHighestStepVisited] = useState(active);
     const r_sysconf = apiSlice.useGetSysConfWithStaticDataQuery({
         type: 'wxpay-plan.json'
@@ -89,9 +89,12 @@ export default function () {
 
     useEffect(() => {
         if (wxVerifyRes.isSuccess) {
-            if (wxVerifyRes.data?.data?.trade_state == 'SUCCESS') {
+            if (
+                active !== 3 && 
+                wxVerifyRes.data?.data?.trade_state == 'SUCCESS') {
                 AlertUtils.alertSuccess('支付成功，感谢您的支持，将跳转到下一页')
                 // success
+                setActive(3)
             }
         }
     }, [wxVerifyRes.status])

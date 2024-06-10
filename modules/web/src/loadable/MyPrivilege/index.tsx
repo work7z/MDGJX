@@ -35,6 +35,7 @@ import { useMDParams, useMDQuery } from '@/systemHooks';
 import NewPrivilege from './NewPrivilege';
 import MyPrivilege from './MyPrivilege';
 import Redemption from './Redemption';
+import Orders from './Orders';
 
 
 export default () => {
@@ -62,6 +63,9 @@ export default () => {
                                 <Tabs.Tab value="my">
                                     我的权益
                                 </Tabs.Tab>
+                                <Tabs.Tab value="orders">
+                                    订单列表
+                                </Tabs.Tab>
                                 <Tabs.Tab value="redemption">
                                     礼品卡列表
                                 </Tabs.Tab>
@@ -77,6 +81,9 @@ export default () => {
 
                             <Tabs.Panel value="redemption">
                                 <Redemption />
+                            </Tabs.Panel>
+                            <Tabs.Panel value="orders">
+                                <Orders/>
                             </Tabs.Panel>
                         </Tabs>
                     </Paper>
