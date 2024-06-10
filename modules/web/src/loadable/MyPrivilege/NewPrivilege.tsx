@@ -215,11 +215,13 @@ export default function () {
                 </Button>}
                 {
                     active === 1 ? <>
-                        <Button color='lime' onClick={() => {
-                            rt_t_orderQueryRes().then(v => {
-                                AlertUtils.alertSuccess('付款码已刷新')
-                            })
-                        }}>
+                        <Button color='lime'
+                            loading={orderQueryRes.isLoading}
+                            onClick={() => {
+                                rt_t_orderQueryRes().then(v => {
+                                    AlertUtils.alertSuccess('付款码已刷新')
+                                })
+                            }}>
                             刷新界面
                         </Button>
                         <Button onClick={async () => {
