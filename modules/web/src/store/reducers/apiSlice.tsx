@@ -134,6 +134,19 @@ export type SysConfGeneralStaticResponse= {
   };
 
 
+export class S2UserWxPayRecord {
+  declare id?: number;
+  declare userId: number;
+  declare outTradeNo: string;
+  declare total: number;
+  declare description: string;
+  declare selectedPlan: string;
+  declare planCount: number;
+  declare hasPaid: number;
+  declare createdAt: Date | null;
+}
+
+
 export const msg_showNetworkWithDebounce  = _.throttle(()=>{
   AlertUtils.alertErr('抱歉，网络不稳定，请稍后重试')
 },10*1000)
@@ -242,7 +255,15 @@ export const apiSlice = createApi({
         };
       },
     }),
-
+    wxpayGetOrders: build.query<AsyncCreateResponse<S2UserWxPayRecord[]>, {}>({
+      query: (params) => {
+        return {
+          params,
+          url: `/wxpay/getorders`,
+          method: "GET",
+        };
+      },
+    }),
     // auth
     signIn: build.query<AsyncCreateResponse<SignInCredentials>, {
       userName: string,
