@@ -26,8 +26,13 @@ export default function () {
     const r_sysconf = apiSlice.useGetSysConfWithStaticDataQuery({
         type: 'wxpay-plan.json'
     }, {
-        pollingInterval: 5000 * 10
+        pollingInterval: 5000 * 10,
+        refetchOnFocus: true,
     })
+    useEffect(() => {
+        r_sysconf.refetch()
+    }, [useHistory().location.pathname])
+
     const handleStepChange = (nextStep: number) => {
         const isOutOfBounds = nextStep > 3 || nextStep < 0;
         if (isOutOfBounds) {
@@ -253,9 +258,9 @@ export default function () {
                         <Button color='cyan' onClick={async () => {
                             AlertUtils.alertSuccess(`为您跳转至礼品卡列表`)
                             hist.push(`/settings/my-privilege?type=redemption`)
-                            setTimeout(()=>{
-                                location.reload()
-                            },300)
+                            // setTimeout(()=>{
+                                // location.reload()
+                            // },300)
                         }}>查看礼品卡</Button>
                     </> : ''
                 }

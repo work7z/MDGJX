@@ -43,6 +43,7 @@ export default () => {
         type: string,
         type2: string
     }>()
+    const typeval = query.result.type || 'new'
     return (
      <div>
             <Container my={10} size={'xl'} className='block sm:flex flex-row justify-start items-start sm:space-x-4 '>
@@ -50,7 +51,7 @@ export default () => {
                     // width: `calc(100% - 350px)`
                 }} >
                     <Paper withBorder shadow="md" p={10} radius="md">
-                        <Tabs value={query.result.type || 'new'} onChange={e => {
+                        <Tabs value={typeval} onChange={e => {
                             query.pushNewQuery({
                                 ...query.result,
                                 type: e + ''
@@ -71,7 +72,19 @@ export default () => {
                                 </Tabs.Tab>
                             </Tabs.List>
 
-                            <Tabs.Panel value="new">
+{
+                                _.map({
+                                    'new': () => <NewPrivilege />,
+                                    'my': () => <MyPrivilege />,
+                                    'orders': () => <Orders />,
+                                    'redemption': () => <Redemption />
+                                },(x,d,n)=>{
+                                    return <Tabs.Panel value={d}>
+                                        {typeval == d ?  (x() as any) : ''}
+                                    </Tabs.Panel>
+                                })
+}
+                            {/* <Tabs.Panel value="new">
                                 <NewPrivilege/>
                             </Tabs.Panel>
 
@@ -84,7 +97,7 @@ export default () => {
                             </Tabs.Panel>
                             <Tabs.Panel value="orders">
                                 <Orders/>
-                            </Tabs.Panel>
+                            </Tabs.Panel> */}
                         </Tabs>
                     </Paper>
                 </div>

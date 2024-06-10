@@ -39,8 +39,13 @@ export const GiftCardDIV = (props: {
     const hasSignIn = useHasUserSignIn()
     const st_cardList = apiSlice.useGetGiftCardListQuery({},{
         skip: !hasSignIn,
-        pollingInterval: 5000
+        pollingInterval: 5000,
+        refetchOnFocus: true,
     })
+    useEffect(() => {
+        st_cardList.refetch()
+    }, [useHistory().location.pathname])
+
     const uObj = exportUtils.useSelector(v=>v.users)
     const cardList = st_cardList?.data?.data || []
     return (

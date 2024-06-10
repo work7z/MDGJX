@@ -3,17 +3,23 @@ import { S2GiftCard } from '@/store/reducers/apiSlice';
 import AlertUtils from '@/utils/AlertUtils';
 import apiSlice from '../../store/reducers/apiSlice';
 import _ from 'lodash';
+import { useEffect } from 'react';
+import { useHistory } from 'react-router';
 
 export  default function CardListTableView(props: {
 }) {
 
 const [t_verifyPayQuery]=    apiSlice.useLazyWxpayVerfiyPayQuery({})
  const wxQueryGetOrdersRes =   apiSlice.useWxpayGetOrdersQuery({},{
-    pollingInterval: 5000
+    pollingInterval: 5000,
+    refetchOnFocus: true,
  })
     const data = wxQueryGetOrdersRes.data?.data || []
     // wxQueryGetOrdersRes.data?.data? [
     // ];
+    useEffect(()=>{
+        wxQueryGetOrdersRes.refetch()
+    },[useHistory().location.pathname])
     const rows = data.map((row) => {
         
         return (

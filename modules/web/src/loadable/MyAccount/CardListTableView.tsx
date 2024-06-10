@@ -33,7 +33,7 @@ export function CardListTableView(props: {
                     {row.usedByWho < 1 ? '未启用' : '已启用'}
                 </Table.Td>
                 <Table.Td>
-                    {row.totalDays < 365 ? `${row.totalDays}天` : `${row.totalDays / 365}年`}
+                    {row.totalDays < 365 || row.totalDays % 365 != 0 ? `${row.totalDays}天` : `${row.totalDays / 365}年`}
                 </Table.Td>
                 <Table.Td>
                     {
