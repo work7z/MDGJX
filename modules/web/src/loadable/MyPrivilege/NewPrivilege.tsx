@@ -21,8 +21,7 @@ export type WxPayPlanSt = {
 }
 
 export default function () {
-    // const [active, setActive] = useState(2);
-    const [active, setActive] = useState(3);
+    const [active, setActive] = useState(1);
     const [highestStepVisited, setHighestStepVisited] = useState(active);
     const r_sysconf = apiSlice.useGetSysConfWithStaticDataQuery({
         type: 'wxpay-plan.json'
