@@ -209,7 +209,7 @@ export default function () {
             </Stepper>
 
             <Group justify="center" mt="xl">
-                {active === 0 && false ? '' : <Button variant="default" disabled={
+                {active === 3 ? '' : <Button variant="default" disabled={
                     active === 0
                 } onClick={() => handleStepChange(active - 1)}>
                     上一步
@@ -228,7 +228,9 @@ export default function () {
                             wxVerifyRes.refetch().then(x => {
                                 if (x.data?.data?.trade_state != 'SUCCESS') {
                                     AlertUtils.alertWarn(`支付未完成，当前状态: ${x.data?.data?.trade_state_desc}，如果需要订单支持，请点击下方按钮联系我们，感谢您的理解`)
+                                    return;
                                 }
+                                setActive(3)
                             })
                         }}>付款已完成</Button>
                     </> : ''
