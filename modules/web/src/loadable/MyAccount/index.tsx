@@ -138,7 +138,6 @@ function AuthenticationTitle() {
 
                                 <TokenUsage />
 
-
                                 {/* <Group wrap="nowrap" gap={10} mt={5}>
                                     <IconUserBolt stroke={1.5} size="1rem" className={classes.icon} />
                                     <Text fz="xs" c="dimmed">
@@ -159,7 +158,6 @@ function AuthenticationTitle() {
                             <Link className='w-full' to='/settings/feedback'>
                                 <Button fullWidth color='blue' onClick={() => {
                                     AlertUtils.alertInfo("很抱歉让您来到账号申诉板块，如果您在账号使用过程中，发现用户权益与预期不一致，或者数据不一致，请随时联系我们，我们将为您排查并尽快处理。")
-
                                 }}>
                                     账号申诉
                                 </Button>

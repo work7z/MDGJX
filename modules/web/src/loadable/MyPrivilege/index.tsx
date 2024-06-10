@@ -32,6 +32,9 @@ import { formatToYYYYMMDD } from '@/utils/DateUtils';
 import OldUserRemark from '../FAQ/OldUserRemark';
 import { form_onSubmit } from '@/utils/FormUtils';
 import { useMDParams, useMDQuery } from '@/systemHooks';
+import NewPrivilege from './NewPrivilege';
+import MyPrivilege from './MyPrivilege';
+import Redemption from './Redemption';
 
 
 export default () => {
@@ -65,22 +68,17 @@ export default () => {
                             </Tabs.List>
 
                             <Tabs.Panel value="new">
-                                Gallery tab content2
+                                <NewPrivilege/>
                             </Tabs.Panel>
 
                             <Tabs.Panel value="my">
-                                Messages tab content3
+                                <MyPrivilege />
                             </Tabs.Panel>
 
                             <Tabs.Panel value="redemption">
-                                Settings tab content4
+                                <Redemption />
                             </Tabs.Panel>
                         </Tabs>
-                        {/* <Alert mb={10} variant="light" color="teal" title="关于礼品卡的兑换与赠与" icon={
-                        <IconInfoCircle />
-                    }>
-                        感谢您的支持，我们为您提供了礼品卡的兑换与赠与功能，您可以通过礼品卡的兑换与赠与功能，为您自己或者您的亲朋好友提供礼品卡，让他们享受到我们的服务。
-                    </Alert> */}
                     </Paper>
                 </div>
             </Container>

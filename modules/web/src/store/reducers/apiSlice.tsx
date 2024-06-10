@@ -117,6 +117,10 @@ export type SysConfChangeLogResponse = {
   timestamp: string;
   updates: CommonVerDetail[];
 };
+export type SysConfGeneralStaticResponse= {
+  data: any
+  timestamp: string;
+};
 
 export const msg_showNetworkWithDebounce  = _.throttle(()=>{
   AlertUtils.alertErr('抱歉，网络不稳定，请稍后重试')
@@ -179,14 +183,26 @@ export const apiSlice = createApi({
       },
     }),
     // sysconf 
-    getSysConfChangeLog: build.query <AsyncCreateResponse<SysConfChangeLogResponse>, {
-      currentVer?:string,
-      checkType:'web2'|'desktop2'
+    getSysConfChangeLog: build.query<AsyncCreateResponse<SysConfChangeLogResponse>, {
+      currentVer?: string,
+      checkType: 'web2' | 'desktop2'
     }>({
       query: (params) => {
         return {
           params,
           url: "/sysconf/changelog",
+          method: "GET",
+        };
+      },
+    }),
+    // sysconf 
+    getSysConfWithStaticData: build.query<AsyncCreateResponse<SysConfGeneralStaticResponse>, {
+      type:string
+    }>({
+      query: (params) => {
+        return {
+          params,
+          url: "/sysconf/"+params.type,
           method: "GET",
         };
       },
