@@ -29,10 +29,10 @@ import AppConstants from './AppConstants.tsx';
 export type LoadModuleType = () => any
 export type SystemSubModuleItem = {
     id: string,
-    icon?:any,
+    icon?: any,
     href?: string,
-    firstRouteId?:string,
-    rootMainModuleId?:string,
+    firstRouteId?: string,
+    rootMainModuleId?: string,
     name: string,
     disableFooter?: boolean,
     defaultSubToolId?: string,
@@ -44,7 +44,7 @@ export type SystemModuleItem = {
     icon?: React.FC<any>;
     label: string,
     defaultHref: string
-    fixedAtBottom?:boolean;
+    fixedAtBottom?: boolean;
     children?: SystemSubModuleItem[]
 }
 export type RedirectLinkItem = {
@@ -57,28 +57,28 @@ export const redirectLinks: RedirectLinkItem[] = [
 
 export const Fn_MyAccount = () => import('./loadable/MyAccount/index.tsx')
 
-export const ROUTE_CPT_MAPPING: SystemSubModuleItem[]=[]
+export const ROUTE_CPT_MAPPING: SystemSubModuleItem[] = []
 window['ROUTE_CPT_MAPPING'] = ROUTE_CPT_MAPPING
 
-const formatModuleItem = (obj: SystemModuleItem[]): SystemModuleItem[] =>{
-    return _.map(obj,mainModule=>{
+const formatModuleItem = (obj: SystemModuleItem[]): SystemModuleItem[] => {
+    return _.map(obj, mainModule => {
         mainModule.children = mainModule.children?.map((subModule_1: SystemSubModuleItem) => {
-            const checkEachMainSubModule = (pid:string,sub: SystemSubModuleItem)=>{
+            const checkEachMainSubModule = (pid: string, sub: SystemSubModuleItem) => {
                 sub.href = `/${pid}/${sub.id}`
                 sub.firstRouteId = pid
                 sub.rootMainModuleId = mainModule.id
                 ROUTE_CPT_MAPPING.push(sub)
             }
-            if(subModule_1.bodyFn){
+            if (subModule_1.bodyFn) {
                 checkEachMainSubModule(mainModule.id, subModule_1)
-            }else{
-                _.forEach(subModule_1.children,(subModule_2)=>{
+            } else {
+                _.forEach(subModule_1.children, (subModule_2) => {
                     checkEachMainSubModule(subModule_1.id, subModule_2)
                 })
             }
             return subModule_1
         }) || []
-        return mainModule 
+        return mainModule
     })
 }
 
@@ -86,14 +86,14 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
     {
         id: 'main',
         defaultHref: '/tools/index',
-        icon: IconHome2, 
-        label: '主页', 
+        icon: IconHome2,
+        label: '主页',
         children: [
             {
                 id: 'tools',
                 icon: IconTools,
                 name: '便捷工具',
-                children:  [
+                children: [
                     {
                         name: "工具总览",
                         id: 'index',
@@ -111,7 +111,7 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
                 id: 'i18n',
                 icon: IconLanguage,
                 name: '翻译助手',
-                children:  [
+                children: [
                     {
                         name: '文本翻译',
                         id: 'text',
@@ -155,11 +155,11 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
             ...toolsNavInfo.map(eachToolNavInfo => {
                 return {
                     id: eachToolNavInfo.id,
-                    icon: eachToolNavInfo.icon ||  IconNetwork,
+                    icon: eachToolNavInfo.icon || IconNetwork,
                     name: eachToolNavInfo.name,
-                    children: (eachToolNavInfo.subTools||[]).map(eachSubTool=>{
+                    children: (eachToolNavInfo.subTools || []).map(eachSubTool => {
                         return {
-                            id: eachSubTool.id+'',
+                            id: eachSubTool.id + '',
                             disableFooter: true,
                             name: eachSubTool.name,
                             bodyFn: () => import('./loadable/XToolsDetail/index.tsx')
@@ -209,11 +209,16 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
         defaultHref: '/settings/my-account',
         fixedAtBottom: true,
         icon: IconSettings, label: '系统设置',
-        children:[
+        children: [
             {
                 name: '我的账号',
                 id: 'my-account',
                 bodyFn: Fn_MyAccount
+            },
+            {
+                name: '权益中心',
+                id: 'my-privilege',
+                bodyFn: () => import('./loadable/MyPrivilege/index.tsx')
             },
             {
                 name: '常见问题',
