@@ -9,6 +9,7 @@ import _ from 'lodash';
 import { QRCodeSVG } from 'qrcode.react';
 
 export type WxPayPlanConfigItem = {
+    status: string;
     type: string;
     id: string;
     label: string;
@@ -49,7 +50,7 @@ export default function () {
         <Alert mt={10} mb={10} variant="light" color="teal" title="为什么开源项目会收费？不是全部免费吗？" icon={
             <IconInfoCircle />
         }>
-            开源不等于完全免费服务，        为了开源项目的可持续发展以及覆盖相关服务器费用，我们设计了若干基于云端的付费项。如果您认可秒达工具箱，并希望该项目能有更好的发展，可以考虑通过订阅增值服务的方式来支持我们。您只需付出一份午餐的钱，就能获得物超所值的高级权益，也能让开发团队有更多的资金和信心做更多的事情。
+            开源不等于完全免费服务，为了本开源项目的可持续发展以及覆盖相关服务器费用，我们设计了若干基于云端的付费项。如果您认可秒达工具箱，并希望该项目能有更好的发展，可以考虑通过订阅增值服务的方式来支持我们。您只需付出一份午餐的钱，就能获得物超所值的高级权益，还能让开发团队有更多的资金和信心做更多的事情。
 
             请放心，离线不依赖服务器API的功能，依旧会永久免费开放给所有用户，我们只对云端API进行适当的收费。如果付费项对您造成了困扰，请随时让我们知道，我们会积极再改进可持续化的开源发展方案。
         </Alert>
@@ -95,7 +96,7 @@ export default function () {
             <Group mt="xs">
                 <Stack>
                     {
-                        wxpayPlanConfigs?.configs?.map(x => (
+                        wxpayPlanConfigs?.configs?.filter(x=>x.status!=='offline')?.map(x => (
                             <Radio key={x.id} value={x.id} label={x.label + `(${x.price}元)`} />
                         )) || []
                     }

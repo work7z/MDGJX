@@ -9,11 +9,21 @@ export default (props: {disableLoadingText?:boolean, id: string, fn: any }) => {
     const [loadCtn, setLoadCtn] = React.useState<number>(0);
     const existCpt = LoadResObj[props.id];
     useEffect(() => {
-        if (!existCpt) {
+        let runIt = ()=>{
             props.fn().then(e => {
                 LoadResObj[props.id] = e.default
                 setLoadCtn(loadCtn + 1)
+            }).catch(e => {
+                console.error(e)
             })
+            if(!existCpt){
+                setTimeout(()=>{
+                    runIt()
+                },400)
+            }
+        }
+        if (!existCpt) {
+            runIt()
         }
     }, [props.id])
 
