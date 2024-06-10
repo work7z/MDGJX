@@ -1,23 +1,13 @@
 import { useState } from 'react';
-import { Stepper, Button, Group, Alert, Paper, TextInput, NumberInput, Select, NativeSelect, Radio } from '@mantine/core';
+import { Stepper, Button, Group, Alert, Paper, TextInput, NumberInput, Select, NativeSelect, Radio, Stack } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
 import { useHistory } from 'react-router';
 import AlertUtils from '@/utils/AlertUtils';
 import apiSlice from '@/store/reducers/apiSlice';
 import exportUtils, { RHelper } from '@/utils/ExportUtils';
 import _ from 'lodash';
+import { QRCodeSVG } from 'qrcode.react';
 
-/**
-     "configs": [
-        {
-            "type": "basic",
-            "id": "trial-premium",
-            "label": "1元试用30天会员",
-            "price": 1,
-            "days": 30
-        },
-
- */
 export type WxPayPlanConfigItem = {
     type: string;
     id: string;
@@ -35,30 +25,35 @@ export default function () {
     const r_sysconf = apiSlice.useGetSysConfWithStaticDataQuery({
         type: 'wxpay-plan.json'
     }, {
-        pollingInterval: 5000
+        pollingInterval: 5000 * 10
     })
-
     const handleStepChange = (nextStep: number) => {
         const isOutOfBounds = nextStep > 3 || nextStep < 0;
-
         if (isOutOfBounds) {
             return;
         }
-
         setActive(nextStep);
         setHighestStepVisited((hSC) => Math.max(hSC, nextStep));
     };
     const hist = useHistory()
-
     // Allow the user to freely go back and forth between visited steps.
     const shouldAllowSelectStep = (step: number) => highestStepVisited >= step && active !== step;
-    const jsx_why =  <Alert mt={100} mb={10} variant="light" color="teal" title="为什么开源项目会收费？" icon={
-        <IconInfoCircle />
-    }>
-        为了开源项目的可持续发展以及覆盖相关服务器费用，我们设计了若干基于云端的付费项目。如果您认可我们，并希望该项目能有更好的发展，可以考虑通过订阅增值服务的方式来支持我们。您只需付出一份午餐的钱，就能获得物超所值的高级权益，也能让开发团队有更多的资金和信心做更多的事情。
+    const jsx_why = <>
+        <Alert mt={80} mb={10} variant="light" color="lime" title="目标权益下的各个选项有什么区分？还有权益数量怎么理解？" icon={
+            <IconInfoCircle />
+        }>
+            关于权益类型，它们之间只有天数区别，没有功能区分，您可以根据自己的需求选择不同的权益。<br />
+            关于权益数量，假设您选择了3份权益，那么您将获得3份权益的权益礼品卡，您可以自己使用，也可以赠送给他人使用。<br />
+            关于永久会员，这是秒达工具箱初期的限时优惠，我们仅短暂开放，并承诺永久会员将永久享有秒达工具箱的所有权益，不再另行收费或者收益变更。
+        </Alert>
+        <Alert mt={10} mb={10} variant="light" color="teal" title="为什么开源项目会收费？不是全部免费吗？" icon={
+            <IconInfoCircle />
+        }>
+            开源不等于完全免费服务，        为了开源项目的可持续发展以及覆盖相关服务器费用，我们设计了若干基于云端的付费项。如果您认可秒达工具箱，并希望该项目能有更好的发展，可以考虑通过订阅增值服务的方式来支持我们。您只需付出一份午餐的钱，就能获得物超所值的高级权益，也能让开发团队有更多的资金和信心做更多的事情。
 
-        请放心，离线不依赖服务器API的功能，依旧会永久免费开放给所有用户，我们只对云端API进行适当的收费。如果付费项对您造成了困扰，请随时让我们知道，我们会积极再改进可持续化的开源发展方案。
-    </Alert>
+            请放心，离线不依赖服务器API的功能，依旧会永久免费开放给所有用户，我们只对云端API进行适当的收费。如果付费项对您造成了困扰，请随时让我们知道，我们会积极再改进可持续化的开源发展方案。
+        </Alert>
+    </>
 
     const rh = exportUtils.register('r_newprivil', {
         getNotPersistedStateFn() {
@@ -73,13 +68,22 @@ export default function () {
         }
     })
 
+    const [t_orderQueryRes, orderQueryRes] = apiSlice.useLazyWxpayNewOrderQuery({
+    })
+    const rt_t_orderQueryRes = () => {
+        return t_orderQueryRes({
+            planCount: rh?.npState?.planCount || 1,
+            selectedPlan: rh?.npState?.selectedPlan + '',
+        })
+    }
+
+
     if (!rh) {
         return ''
     }
 
     const wxpayPlanConfigs = r_sysconf?.data?.data?.data as WxPayPlanSt | undefined
     const jsx_newRights = <Paper withBorder shadow="md" className='space-y-2 w-full sm:w-[1/5] mx-auto' p={20} mt={10} radius="md" >
-
         <Radio.Group
             label="目标权益"
             withAsterisk
@@ -89,24 +93,15 @@ export default function () {
             mb={20}
         >
             <Group mt="xs">
-                {
-                    wxpayPlanConfigs?.configs?.map(x => (
-                        <Radio key={x.id} value={x.id} label={x.label+`(${x.price}元)`} />
-                    )) || []
-                }
+                <Stack>
+                    {
+                        wxpayPlanConfigs?.configs?.map(x => (
+                            <Radio key={x.id} value={x.id} label={x.label + `(${x.price}元)`} />
+                        )) || []
+                    }
+                </Stack>
             </Group>
         </Radio.Group>
-
-        {/* <NativeSelect
-        label="所选权益"
-        data={wxpayPlanConfigs?.configs?.map(x=>(
-            {
-                value: x.id,
-                label: `${x.label}(${x.price}元)`
-            }
-        ))||[]}
-        mb={20}
-        /> */}
         <NumberInput
             {...rh?.bindOnChange({
                 npStateKey: 'planCount'
@@ -130,7 +125,41 @@ export default function () {
                     description="使用微信以扫码"
                     allowStepSelect={shouldAllowSelectStep(1)}
                 >
-                    Step 2 content: Verify email
+                    <div className='w-full items-center'>
+                        <div className='mx-auto flex justify-center items-center flex-col '>
+                            <div className='mt-10'>
+                                {
+                                    orderQueryRes.isLoading ? 'loading...' :
+                                        orderQueryRes.data?.error ? 'error: ' + orderQueryRes.data?.error :
+                                            !orderQueryRes.data?.data?.qrcode ? 'no available data' :
+                                                <QRCodeSVG width={'200px'} height={'200px'} value={orderQueryRes.data?.data?.qrcode + ''} />
+                                }
+                            </div>
+                            <div>
+                                <div className='mt-5 ' style={{
+                                    fontWeight: 'bold',
+                                    textAlign: 'center',
+                                }}>
+                                    <div className='font-xs' style={{
+                                        fontSize: '15px'
+                                    }}>
+                                        {orderQueryRes.data?.data?.description ? '' + orderQueryRes.data?.data?.description : ''}
+                                    </div>
+                                    <div className='font-xs' style={{
+                                        fontSize: '15px'
+                                    }}>
+                                        {orderQueryRes.data?.data?.outTradeNo? '订单号: ' + orderQueryRes.data?.data?.outTradeNo : ''}
+                                    </div>
+                                    <div style={{
+                                        color: 'darkorange',
+                                        fontSize: '24px'
+                                    }} className='mt-5'>
+                                        {orderQueryRes.data?.data?.total ? '总金额: ' + orderQueryRes.data?.data?.total +'元': ''}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </Stepper.Step>
                 <Stepper.Step
                     label="付款成功"
@@ -151,7 +180,40 @@ export default function () {
                 } onClick={() => handleStepChange(active - 1)}>
                     上一步
                 </Button>}
-                <Button onClick={() => handleStepChange(active + 1)}>下一步</Button>
+                {
+                    active === 1 ? <>
+                        <Button  color='lime' onClick={() => {
+                            rt_t_orderQueryRes().then(v => {
+                                AlertUtils.alertSuccess('付款码已刷新')
+                            })
+                        }}>
+                            刷新界面
+                        </Button>
+                        <Button onClick={async () => {
+
+                        }}>付款已完成</Button>
+                    </> : ''
+                }
+                {
+                    active === 0 ? <>
+                        <Button onClick={async () => {
+                            switch (active + '') {
+                                case '0':
+                                    if (!rh?.npState?.selectedPlan) {
+                                        AlertUtils.alertErr('请先选择目标权益')
+                                        return
+                                    }
+                                    if (!rh?.npState?.planCount) {
+                                        AlertUtils.alertErr('请先选择权益数量')
+                                        return
+                                    }
+                                    rt_t_orderQueryRes()
+                                    break;
+                            }
+                            handleStepChange(active + 1)
+                        }}>下一步</Button>
+                    </> : ''
+                }
             </Group>
             {jsx_why}
 
