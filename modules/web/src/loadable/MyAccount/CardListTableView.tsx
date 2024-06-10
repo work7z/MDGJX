@@ -16,6 +16,7 @@ export function CardListTableView(props: {
             <Table.Tr key={row.id}>
                 <Table.Td>{({
                     'THANKS_FOR_FUNDRAISING': '永久会员权益卡',
+                    'WX_PAY':"付费会员权益卡"
                 })[row.giftCardType] || "通用"}</Table.Td>
                 <Table.Td>
                     {/* <Anchor component="button" fz="sm" onClick={() => {
@@ -26,10 +27,10 @@ export function CardListTableView(props: {
                     {row.giftCardCode}
                 </Table.Td>
                 <Table.Td>
-                    未使用
+                    {row.usedByWho < 1 ? '未启用' : '已启用'}
                 </Table.Td>
                 <Table.Td>
-                    100年
+                    {row.totalDays < 365 ? `${row.totalDays}天` : `${row.totalDays / 365}年`}
                 </Table.Td>
                 <Table.Td>
                     {

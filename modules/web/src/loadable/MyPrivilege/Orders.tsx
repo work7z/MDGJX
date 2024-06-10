@@ -37,6 +37,9 @@ const [t_verifyPayQuery]=    apiSlice.useLazyWxpayVerfiyPayQuery({})
                   </Badge>
                 </Table.Td>
                 <Table.Td>
+                    {_.toString(row.createdAt)}
+                </Table.Td>
+                <Table.Td>
                                         <div className='space-x-2'>
                        {
                           row.hasPaid != 1 ? <Button variant='light' size='compact-xs' 
@@ -83,6 +86,7 @@ const [t_verifyPayQuery]=    apiSlice.useLazyWxpayVerfiyPayQuery({})
                             <Table.Th>订单金额</Table.Th>
                             <Table.Th>订单数量</Table.Th>
                             <Table.Th>是否已付款</Table.Th>
+                            <Table.Th>创建时间</Table.Th>
                             <Table.Th>操作</Table.Th>
                         </Table.Tr>
                     </Table.Thead>
