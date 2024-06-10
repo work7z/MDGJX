@@ -1,12 +1,11 @@
 import { Braces } from '@vicons/tabler';
 import { defineTool } from '../tool';
-import { translate } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: translate('tools.json-prettify.title'),
+  name: 'JSON 格式化',
   path: '/json-prettify',
-  description: translate('tools.json-prettify.description'),
-  keywords: ['json', 'viewer', 'prettify', 'format'],
+  description: '将 JSON 格式化',
+  keywords: ['json', '视图', '美化', '格式化'],
   component: () => import('./json-viewer.vue'),
   icon: Braces,
   redirectFrom: ['/json-viewer'],

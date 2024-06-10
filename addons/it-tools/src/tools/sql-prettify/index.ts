@@ -1,15 +1,14 @@
 import { Database } from '@vicons/tabler';
 import { defineTool } from '../tool';
-import { translate } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: translate('tools.sql-prettify.title'),
+  name: 'SQL 格式化',
   path: '/sql-prettify',
-  description: translate('tools.sql-prettify.description'),
+  description: '在线格式化和美化 SQL 查询语句（支持各种 SQL 语句）。',
   keywords: [
     'sql',
-    'prettify',
-    'beautify',
+    '格式化',
+    '美化',
     'GCP BigQuery',
     'IBM DB2',
     'Apache Hive',

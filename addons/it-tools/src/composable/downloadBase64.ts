@@ -46,7 +46,7 @@ function useDownloadFileFromBase64({ source, filename }: { source: Ref<string>; 
   return {
     download() {
       if (source.value === '') {
-        throw new Error('Base64 string is empty');
+        throw new Error('Base64 字符串为空');
       }
 
       const { mimeType } = getMimeTypeFromBase64({ base64String: source.value });

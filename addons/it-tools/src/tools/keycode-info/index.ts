@@ -1,22 +1,19 @@
 import { Keyboard } from '@vicons/tabler';
 import { defineTool } from '../tool';
-import { translate } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: translate('tools.keycode-info.title'),
+  name: '键盘按键信息',
   path: '/keycode-info',
-  description: translate('tools.keycode-info.description'),
+  description: '查找任何按下的键盘按键的 JavaScript 键码、代码、位置和修饰符。',
   keywords: [
-    'keycode',
-    'info',
-    'code',
+    '按键',
+    '信息',
+    '代码',
     'javascript',
-    'event',
-    'keycodes',
-    'which',
-    'keyboard',
-    'press',
-    'modifier',
+    '事件',
+    '键盘',
+    '按下',
+    '修饰符',
     'alt',
     'ctrl',
     'meta',

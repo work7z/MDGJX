@@ -1,16 +1,15 @@
 import { Math } from '@vicons/tabler';
 import { defineTool } from '../tool';
-import { translate } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: translate('tools.math-evaluator.title'),
+  name: '数学计算器',
   path: '/math-evaluator',
-  description: translate('tools.math-evaluator.description'),
+  description: '用于计算数学表达式的计算器。支持 sqrt、cos、sin、abs 等函数。',
   keywords: [
-    'math',
-    'evaluator',
-    'calculator',
-    'expression',
+    '数学',
+    '计算器',
+    '表达式',
+    '函数',
     'abs',
     'acos',
     'acosh',

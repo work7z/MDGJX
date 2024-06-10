@@ -21,7 +21,7 @@ const props = withDefaults(
     followHeightOf: null,
     language: 'txt',
     copyPlacement: 'top-right',
-    copyMessage: 'Copy to clipboard',
+    copyMessage: '复制到剪贴板',
   },
 );
 hljs.registerLanguage('sql', sqlHljs);
@@ -35,7 +35,7 @@ const { value, language, followHeightOf, copyPlacement, copyMessage } = toRefs(p
 const { height } = followHeightOf.value ? useElementSize(followHeightOf) : { height: ref(null) };
 
 const { copy, isJustCopied } = useCopy({ source: value, createToast: false });
-const tooltipText = computed(() => isJustCopied.value ? 'Copied!' : copyMessage.value);
+const tooltipText = computed(() => isJustCopied.value ? '已复制' : copyMessage.value);
 </script>
 
 <template>

@@ -3,7 +3,7 @@
 
 import { addMilliseconds, formatRelative } from 'date-fns';
 
-import { enGB } from 'date-fns/locale';
+import { zhCN } from 'date-fns/locale';
 
 import { formatMsDuration } from './eta-calculator.service';
 
@@ -19,54 +19,54 @@ const durationMs = computed(() => {
   return unitCount.value / (unitPerTimeSpan.value / timeSpanMs);
 });
 const endAt = computed(() =>
-  formatRelative(addMilliseconds(startedAt.value, durationMs.value), Date.now(), { locale: enGB }),
+  formatRelative(addMilliseconds(startedAt.value, durationMs.value), Date.now(), { locale: zhCN }),
 );
 </script>
 
 <template>
   <div>
     <div text-justify op-70>
-      With a concrete example, if you wash 5 plates in 3 minutes and you have 500 plates to wash, it will take you 5
-      hours to wash them all.
+      举个例子，如果你3分钟洗5个盘子，你还有500个盘子要洗，那么你需要5个小时才能全部洗完。
     </div>
     <n-divider />
     <div flex gap-2>
-      <n-form-item label="Amount of element to consume" flex-1>
+      <n-form-item label="任务数量" flex-1>
         <n-input-number v-model:value="unitCount" :min="1" />
       </n-form-item>
-      <n-form-item label="The consumption started at" flex-1>
+      <n-form-item label="开始时间" flex-1>
         <n-date-picker v-model:value="startedAt" type="datetime" />
       </n-form-item>
     </div>
 
-    <p>Amount of unit consumed by time span</p>
+    <p>速度</p>
     <div flex flex-col items-baseline gap-y-2 md:flex-row>
-      <n-input-number v-model:value="unitPerTimeSpan" :min="1" />
       <div flex items-baseline gap-2>
-        <span ml-2>in</span>
+        <span>每</span>
         <n-input-number v-model:value="timeSpan" min-w-130px :min="1" />
         <c-select
           v-model:value="timeSpanUnitMultiplier"
           min-w-130px
           :options="[
-            { label: 'milliseconds', value: 1 },
-            { label: 'seconds', value: 1000 },
-            { label: 'minutes', value: 1000 * 60 },
-            { label: 'hours', value: 1000 * 60 * 60 },
-            { label: 'days', value: 1000 * 60 * 60 * 24 },
+            { label: '毫秒', value: 1 },
+            { label: '秒钟', value: 1000 },
+            { label: '分钟', value: 1000 * 60 },
+            { label: '小时', value: 1000 * 60 * 60 },
+            { label: '天', value: 1000 * 60 * 60 * 24 },
           ]"
         />
+        <span mr-2>做</span>
       </div>
+      <n-input-number v-model:value="unitPerTimeSpan" :min="1" />
     </div>
 
     <n-divider />
     <c-card mb-2>
-      <n-statistic label="Total duration">
+      <n-statistic label="共需多少时间">
         {{ formatMsDuration(durationMs) }}
       </n-statistic>
     </c-card>
     <c-card>
-      <n-statistic label="It will end ">
+      <n-statistic label="将在什么时间结束">
         {{ endAt }}
       </n-statistic>
     </c-card>

@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import { createToken } from './token-generator.service';
 import { useCopy } from '@/composable/copy';
-import { useQueryParam } from '@/composable/queryParams';
 import { computedRefreshable } from '@/composable/computedRefreshable';
 
-const length = useQueryParam({ name: 'length', defaultValue: 64 });
-const withUppercase = useQueryParam({ name: 'uppercase', defaultValue: true });
-const withLowercase = useQueryParam({ name: 'lowercase', defaultValue: true });
-const withNumbers = useQueryParam({ name: 'numbers', defaultValue: true });
-const withSymbols = useQueryParam({ name: 'symbols', defaultValue: false });
-const { t } = useI18n();
+const length = ref(64);
+const withUppercase = ref(true);
+const withLowercase = ref(true);
+const withNumbers = ref(true);
+const withSymbols = ref(false);
 
 const [token, refreshToken] = computedRefreshable(() =>
   createToken({
@@ -21,44 +19,38 @@ const [token, refreshToken] = computedRefreshable(() =>
   }),
 );
 
-const { copy } = useCopy({ source: token, text: t('tools.token-generator.copied') });
+const { copy } = useCopy({ source: token, text: '已复制到剪贴板' });
 </script>
 
 <template>
   <div>
     <c-card>
-      <n-form label-placement="left" label-width="140">
-        <div flex justify-center>
-          <div>
-            <n-form-item :label="t('tools.token-generator.uppercase')">
-              <n-switch v-model:value="withUppercase" />
-            </n-form-item>
+      <n-form label-placement="top">
+        <n-form-item label="字符类型">
+          <n-checkbox size="large" v-model:checked="withUppercase">
+            大写字母
+          </n-checkbox>
+          <n-checkbox ml-4 size="large" v-model:checked="withLowercase">
+            小写字母
+          </n-checkbox>
+          <n-checkbox ml-4 size="large" v-model:checked="withNumbers">
+            数字
+          </n-checkbox>
+          <n-checkbox ml-4 size="large" v-model:checked="withSymbols">
+            符号
+          </n-checkbox>
+        </n-form-item>
 
-            <n-form-item :label="t('tools.token-generator.lowercase')">
-              <n-switch v-model:value="withLowercase" />
-            </n-form-item>
-          </div>
-
-          <div>
-            <n-form-item :label="t('tools.token-generator.numbers')">
-              <n-switch v-model:value="withNumbers" />
-            </n-form-item>
-
-            <n-form-item :label="t('tools.token-generator.symbols')">
-              <n-switch v-model:value="withSymbols" />
-            </n-form-item>
-          </div>
-        </div>
+        <n-form-item label="字符长度">
+          <n-slider v-model:value="length" :step="1" :min="1" :max="512" />
+          <n-input-number ml-4 v-model:value="length" min="1" max="512" :show-button="false" />
+        </n-form-item>
       </n-form>
-
-      <n-form-item :label="`${t('tools.token-generator.length')} (${length})`" label-placement="left">
-        <n-slider v-model:value="length" :step="1" :min="1" :max="512" />
-      </n-form-item>
 
       <c-input-text
         v-model:value="token"
         multiline
-        :placeholder="t('tools.token-generator.tokenPlaceholder')"
+        placeholder="生成的随机字符"
         readonly
         rows="3"
         autosize
@@ -67,10 +59,10 @@ const { copy } = useCopy({ source: token, text: t('tools.token-generator.copied'
 
       <div mt-5 flex justify-center gap-3>
         <c-button @click="copy()">
-          {{ t('tools.token-generator.button.copy') }}
+          复制
         </c-button>
         <c-button @click="refreshToken">
-          {{ t('tools.token-generator.button.refresh') }}
+          刷新
         </c-button>
       </div>
     </c-card>

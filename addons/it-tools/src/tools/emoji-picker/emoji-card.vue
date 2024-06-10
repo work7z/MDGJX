@@ -10,7 +10,7 @@ const { copy } = useCopy();
 
 <template>
   <c-card flex items-center gap-3 important:py-8px important:pl-10px important:pr-5px>
-    <div cursor-pointer text-30px @click="copy(emojiInfo.emoji, { notificationMessage: `Emoji ${emojiInfo.emoji} copied to the clipboard` })">
+    <div cursor-pointer text-30px @click="copy(emojiInfo.emoji, { notificationMessage: `Emoji ${emojiInfo.emoji} 已复制到剪贴板` })">
       {{ emojiInfo.emoji }}
     </div>
 
@@ -30,10 +30,10 @@ const { copy } = useCopy();
       </div> -->
 
       <div flex gap-2 text-xs font-mono op-70>
-        <span cursor-pointer transition hover:text-primary @click="copy(emojiInfo.codePoints, { notificationMessage: `Code points '${emojiInfo.codePoints}' copied to the clipboard` })">
+        <span cursor-pointer transition hover:text-primary @click="copy(emojiInfo.codePoints, { notificationMessage: `Code points '${emojiInfo.codePoints}' 已复制到剪贴板` })">
           {{ emojiInfo.codePoints }}
         </span>
-        <span cursor-pointer truncate transition hover:text-primary @click="copy(emojiInfo.unicode, { notificationMessage: `Unicode '${emojiInfo.unicode}' copied to the clipboard` })">
+        <span cursor-pointer truncate transition hover:text-primary @click="copy(emojiInfo.unicode, { notificationMessage: `Unicode '${emojiInfo.unicode}' 已复制到剪贴板` })">
           {{ emojiInfo.unicode }}
         </span>
       </div>

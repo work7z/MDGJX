@@ -1,11 +1,7 @@
 import { tool as base64FileConverter } from './base64-file-converter';
 import { tool as base64StringConverter } from './base64-string-converter';
 import { tool as basicAuthGenerator } from './basic-auth-generator';
-
-import { tool as asciiTextDrawer } from './ascii-text-drawer';
-
-import { tool as textToUnicode } from './text-to-unicode';
-import { tool as safelinkDecoder } from './safelink-decoder';
+import { tool as rmbD } from './rmb-d';
 import { tool as pdfSignatureChecker } from './pdf-signature-checker';
 import { tool as numeronymGenerator } from './numeronym-generator';
 import { tool as macAddressGenerator } from './mac-address-generator';
@@ -80,7 +76,6 @@ import { tool as urlParser } from './url-parser';
 import { tool as uuidGenerator } from './uuid-generator';
 import { tool as macAddressLookup } from './mac-address-lookup';
 import { tool as xmlFormatter } from './xml-formatter';
-import { tool as yamlViewer } from './yaml-viewer';
 
 export const toolsByCategory: ToolCategory[] = [
   {
@@ -95,13 +90,14 @@ export const toolsByCategory: ToolCategory[] = [
       bip39,
       hmacGenerator,
       rsaKeyPairGenerator,
-      passwordStrengthAnalyser,
-      pdfSignatureChecker,
+      // passwordStrengthAnalyser,
+      // pdfSignatureChecker,
     ],
   },
   {
     name: 'Converter',
     components: [
+      rmbD,
       dateTimeConverter,
       baseConverter,
       romanNumeralConverter,
@@ -109,9 +105,8 @@ export const toolsByCategory: ToolCategory[] = [
       base64FileConverter,
       colorConverter,
       caseConverter,
-      textToNatoAlphabet,
+      // textToNatoAlphabet,
       textToBinary,
-      textToUnicode,
       yamlToJson,
       yamlToToml,
       jsonToYaml,
@@ -134,23 +129,27 @@ export const toolsByCategory: ToolCategory[] = [
       mimeTypes,
       jwtParser,
       keycodeInfo,
-      slugifyString,
+      // slugifyString,
       htmlWysiwygEditor,
       userAgentParser,
       httpStatusCodes,
       jsonDiff,
-      safelinkDecoder,
     ],
   },
   {
     name: 'Images and videos',
-    components: [qrCodeGenerator, wifiQrCodeGenerator, svgPlaceholderGenerator, cameraRecorder],
+    components: [
+      qrCodeGenerator,
+      wifiQrCodeGenerator,
+      svgPlaceholderGenerator,
+      cameraRecorder,
+    ],
   },
   {
     name: 'Development',
     components: [
       gitMemo,
-      randomPortGenerator,
+      // randomPortGenerator,
       crontabGenerator,
       jsonViewer,
       jsonMinify,
@@ -159,7 +158,6 @@ export const toolsByCategory: ToolCategory[] = [
       chmodCalculator,
       dockerRunToDockerComposeConverter,
       xmlFormatter,
-      yamlViewer,
     ],
   },
   {
@@ -175,11 +173,19 @@ export const toolsByCategory: ToolCategory[] = [
   },
   {
     name: 'Math',
-    components: [mathEvaluator, etaCalculator, percentageCalculator],
+    components: [
+      // mathEvaluator,
+      etaCalculator,
+      // percentageCalculator,
+    ],
   },
   {
     name: 'Measurement',
-    components: [chronometer, temperatureConverter, benchmarkBuilder, phoneParserAndFormatter, ibanValidatorAndParser],
+    components: [
+      chronometer,
+      temperatureConverter,
+      // benchmarkBuilder,
+    ],
   },
   {
     name: 'Text',
@@ -189,17 +195,19 @@ export const toolsByCategory: ToolCategory[] = [
       emojiPicker,
       stringObfuscator,
       textDiff,
-      numeronymGenerator,
-      asciiTextDrawer,
+      // numeronymGenerator,
     ],
   },
-  {
-    name: 'Data',
-    components: [],
-  },
+  // {
+  //   name: 'Data',
+  //   components: [
+  //     phoneParserAndFormatter,
+  //     ibanValidatorAndParser,
+  //   ],
+  // },
 ];
-// debugger;
+
 export const tools = toolsByCategory.flatMap(({ components }) => components);
 export const toolsWithCategory = toolsByCategory.flatMap(({ components, name }) =>
-  components.map((tool) => ({ category: name, ...tool })),
+  components.map(tool => ({ category: name, ...tool })),
 );

@@ -6,16 +6,16 @@ const username = ref('');
 const password = ref('');
 const header = computed(() => `Authorization: Basic ${textToBase64(`${username.value}:${password.value}`)}`);
 
-const { copy } = useCopy({ source: header, text: 'Header copied to the clipboard' });
+const { copy } = useCopy({ source: header, text: '已复制到剪贴板' });
 </script>
 
 <template>
   <div>
-    <c-input-text v-model:value="username" label="Username" placeholder="Your username..." clearable raw-text mb-5 />
+    <c-input-text v-model:value="username" label="用户名" placeholder="请输入用户名" raw-text clearable mb-5 />
     <c-input-text
       v-model:value="password"
-      label="Password"
-      placeholder="Your password..."
+      label="密码"
+      placeholder="请输入密码"
       clearable
       raw-text
       mb-2
@@ -23,7 +23,7 @@ const { copy } = useCopy({ source: header, text: 'Header copied to the clipboard
     />
 
     <c-card>
-      <n-statistic label="Authorization header:" class="header">
+      <n-statistic label="授权标头：" class="header">
         <n-scrollbar x-scrollable style="max-width: 550px; margin-bottom: -10px; padding-bottom: 10px" trigger="none">
           {{ header }}
         </n-scrollbar>
@@ -31,7 +31,7 @@ const { copy } = useCopy({ source: header, text: 'Header copied to the clipboard
     </c-card>
     <div mt-5 flex justify-center>
       <c-button @click="copy()">
-        Copy header
+        复制
       </c-button>
     </div>
   </div>

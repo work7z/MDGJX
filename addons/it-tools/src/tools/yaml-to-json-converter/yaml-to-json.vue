@@ -14,16 +14,16 @@ function transformer(value: string) {
 const rules: UseValidationRule<string>[] = [
   {
     validator: (value: string) => isNotThrowing(() => parseYaml(value)),
-    message: 'Provided YAML is not valid.',
+    message: '无效的YAML',
   },
 ];
 </script>
 
 <template>
   <format-transformer
-    input-label="Your YAML"
-    input-placeholder="Paste your yaml here..."
-    output-label="JSON from your YAML"
+    input-label="YAML"
+    input-placeholder="请输入yaml"
+    output-label="JSON"
     output-language="json"
     :input-validation-rules="rules"
     :transformer="transformer"

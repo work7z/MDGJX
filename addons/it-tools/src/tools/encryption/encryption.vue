@@ -14,65 +14,65 @@ const decryptAlgo = ref<keyof typeof algos>('AES');
 const decryptSecret = ref('my secret key');
 const [decryptOutput, decryptError] = computedCatch(() => algos[decryptAlgo.value].decrypt(decryptInput.value, decryptSecret.value).toString(enc.Utf8), {
   defaultValue: '',
-  defaultErrorMessage: 'Unable to decrypt your text',
+  defaultErrorMessage: '无法解密文本',
 });
 </script>
 
 <template>
-  <c-card title="Encrypt">
+  <c-card title="加密">
     <div flex gap-3>
       <c-input-text
         v-model:value="cypherInput"
-        label="Your text:"
-        placeholder="The string to cypher"
+        label="明文："
+        placeholder="待加密的明文"
         rows="4"
         multiline raw-text monospace autosize flex-1
       />
       <div flex flex-1 flex-col gap-2>
-        <c-input-text v-model:value="cypherSecret" label="Your secret key:" clearable raw-text />
+        <c-input-text v-model:value="cypherSecret" label="秘钥：" clearable raw-text />
 
         <c-select
           v-model:value="cypherAlgo"
-          label="Encryption algorithm:"
+          label="加密算法："
           :options="Object.keys(algos).map((label) => ({ label, value: label }))"
         />
       </div>
     </div>
     <c-input-text
-      label="Your text encrypted:"
+      label="密文："
       :value="cypherOutput"
       rows="3"
-      placeholder="Your string hash"
+      placeholder="加密后的密文"
       multiline monospace readonly autosize mt-5
     />
   </c-card>
-  <c-card title="Decrypt">
+  <c-card title="解密">
     <div flex gap-3>
       <c-input-text
         v-model:value="decryptInput"
-        label="Your encrypted text:"
-        placeholder="The string to cypher"
+        label="密文："
+        placeholder="待解密的密文"
         rows="4"
         multiline raw-text monospace autosize flex-1
       />
       <div flex flex-1 flex-col gap-2>
-        <c-input-text v-model:value="decryptSecret" label="Your secret key:" clearable raw-text />
+        <c-input-text v-model:value="decryptSecret" label="秘钥：" clearable raw-text />
 
         <c-select
           v-model:value="decryptAlgo"
-          label="Encryption algorithm:"
+          label="加密算法："
           :options="Object.keys(algos).map((label) => ({ label, value: label }))"
         />
       </div>
     </div>
-    <c-alert v-if="decryptError" type="error" mt-12 title="Error while decrypting">
+    <c-alert v-if="decryptError" type="warning" mt-12 title="解密时出错">
       {{ decryptError }}
     </c-alert>
     <c-input-text
       v-else
-      label="Your decrypted text:"
+      label="明文："
       :value="decryptOutput"
-      placeholder="Your string hash"
+      placeholder="解密后的明文"
       rows="3"
       multiline monospace readonly autosize mt-5
     />

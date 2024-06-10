@@ -2,9 +2,9 @@ import type { OGSchemaType } from '../OGSchemaType.type';
 import { videoMovie } from './videoMovie';
 
 export const videoEpisode: OGSchemaType = {
-  name: 'Video episode details',
+  name: '电视剧详情',
   elements: [
     ...videoMovie.elements,
-    { type: 'input', label: 'Series', key: 'video:series', placeholder: 'Which series this episode belongs to...' },
+    { type: 'input', label: '电视剧名称', key: 'video:series', placeholder: '请输入电视剧名称' },
   ],
 };

@@ -1,30 +1,30 @@
 import type { OGSchemaType } from '../OGSchemaType.type';
 
 export const image: OGSchemaType = {
-  name: 'Image',
+  name: '图片',
   elements: [
     {
       type: 'input',
-      label: 'Image url',
-      placeholder: 'The url of your website social image...',
+      label: '图片URL',
+      placeholder: '请输入图片的URL',
       key: 'image',
     },
     {
       type: 'input',
-      label: 'Image alt',
-      placeholder: 'The alternative text of your website social image...',
+      label: '图片替代文本',
+      placeholder: '请输入图片的替代文本',
       key: 'image:alt',
     },
     {
       type: 'input',
-      label: 'Width',
-      placeholder: 'Width in px of your website social image...',
+      label: '宽度',
+      placeholder: '请输入图片的宽度（以像素为单位）',
       key: 'image:width',
     },
     {
       type: 'input',
-      label: 'Height',
-      placeholder: 'Height in px of your website social image...',
+      label: '高度',
+      placeholder: '请输入图片的高度（以像素为单位）',
       key: 'image:height',
     },
   ],

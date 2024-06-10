@@ -11,5 +11,5 @@ function isNotThrowing(cb: () => unknown): boolean {
 }
 
 function booleanToHumanReadable(value: boolean): string {
-  return value ? 'Yes' : 'No';
+  return value ? '是' : '否';
 }
