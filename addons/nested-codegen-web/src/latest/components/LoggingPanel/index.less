@@ -1,0 +1,43 @@
+@import "@blueprintjs/core/lib/less/variables.less";
+@import "../../vars.less";
+
+.logging-content-panel {
+  font-family: monospace;
+  padding: 9px;
+  background: black;
+  color: var(--app-text-white);
+  max-height: 620px;
+  overflow: scroll;
+  .eachLogRow {
+    & > * {
+      padding-right: 1px;
+    }
+    .log-spe,
+    .log-ctn {
+      // padding-right: 0px;
+    }
+    .log-thread {
+      padding-right: 3px;
+    }
+    .log-time {
+      color: cadetblue;
+    }
+    .log-thread {
+      color: #ababab;
+    }
+    .log-time,
+    .log-thread,
+    .log-type {
+      //   font-weight: bold;
+    }
+  }
+}
+
+.simple-flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3 {
+    margin: 0;
+  }
+}

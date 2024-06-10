@@ -1,0 +1,10 @@
+.wrapper {
+  color: blue;
+}
+:global {
+  .sub-pt-10 {
+    & > * {
+      padding-bottom: 5px;
+    }
+  }
+}

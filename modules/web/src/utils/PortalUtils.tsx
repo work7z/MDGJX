@@ -7,6 +7,8 @@ const ipm = (
     ) || (
     location.href.indexOf('codegen.cc') !== -1
     )
+
+export const isOnlineTestMode = location.href.indexOf('testmiaoda.codegen.cc') !== -1
 export const isPortalMode = () => {
     return ipm
 }

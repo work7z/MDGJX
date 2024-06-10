@@ -1,0 +1,23 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "rebuild": "/Users/jerrylai/mincontent/PersonalProjects/denote-fe/attach/nodejs/node-myself/bin/npm rebuild",
+    "reinstall": "/Users/jerrylai/mincontent/PersonalProjects/denote-fe/attach/nodejs/node-myself/bin/npm install",
+    "dev": "/Users/jerrylai/mincontent/PersonalProjects/denote-fe/attach/nodejs/node-myself/bin/node ./server/server.js --concerto=/Users/jerrylai/mincontent/PersonalProjects/denote-fe/plugins/SwiftTerminal/node/example/SwiftTerminal-config.json"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "^5.0.0-beta.1",
+    "express-ws": "5.0.2",
+    "lodash": "4.17.21",
+    "log4js": "^6.7.0",
+    "node-pty-prebuilt-multiarch": "0.10.1-pre.5",
+    "shelljs": "0.8.5"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

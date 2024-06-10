@@ -1,0 +1,43 @@
+{
+  "name": "number-to-chinese-words",
+  "version": "1.0.20",
+  "description": "Convert a number to chinese words. Inspired from number-to-words",
+  "main": "number-to-chinese-words.jsx",
+  "scripts": {
+    "test": "jasmine",
+    "build": "npm run build-js && npm run build-min",
+    "build-js": "babel src/index.js --out-file number-to-chinese-words.js --presets=es2015 --plugins transform-es2015-modules-umd",
+    "build-min": "uglifyjs -o number-to-chinese-words.min.js number-to-chinese-words.jsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digi3studio/number-to-chinese-words.git"
+  },
+  "keywords": [
+    "converter",
+    "number",
+    "ordinal",
+    "string",
+    "word",
+    "chinese"
+  ],
+  "author": "Colin Leung (https://github.com/digi3colin)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/digi3studio/number-to-chinese-words/issues"
+  },
+  "homepage": "https://github.com/digi3studio/number-to-chinese-words#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "jasmine": "^2.6.0",
+    "uglify-js": "^3.0.26"
+  },
+  "__npminstall_done": true,
+  "_from": "number-to-chinese-words@1.0.20",
+  "_resolved": "https://registry.npmmirror.com/number-to-chinese-words/-/number-to-chinese-words-1.0.20.tgz"
+}

@@ -32,7 +32,7 @@ export const cfg_getAppClientEntryPage = ()=>{
 
 // LOCAL
 export const cfg_getAppLocalHost = ()=>{
-    return isDevEnv() ? 'http://127.0.0.1:20167' : path.join(cfg_getRootFolder(),'pages-dist','local','index.html')
+    return isDevEnv() ? 'http://127.0.0.1:20167' :'file://'+ path.join(cfg_getRootFolder(),'pages-dist','local','index.html')
 }
 export const cfg_getAppLocalLoadingPage = ()=>{
     return cfg_getAppLocalHost() 

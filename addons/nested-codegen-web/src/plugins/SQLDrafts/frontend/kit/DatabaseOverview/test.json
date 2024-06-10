@@ -1,0 +1,57 @@
+{
+  "content": {
+    "columnIndexArr": [
+      "ORDINAL_POSITION",
+      "COLUMN_NAME",
+      "DATA_TYPE",
+      "IS_NULLABLE",
+      "CHARACTER_MAXIMUM_LENGTH"
+    ],
+    "dataList": [
+      {
+        "ORDINAL_POSITION": { "value": 1, "clz": "java.lang.Integer" },
+        "COLUMN_NAME": { "value": "SETTING_NAME", "clz": "java.lang.String" },
+        "DATA_TYPE": {
+          "value": "CHARACTER VARYING",
+          "clz": "java.lang.String"
+        },
+        "IS_NULLABLE": { "value": "YES", "clz": "java.lang.String" },
+        "CHARACTER_MAXIMUM_LENGTH": {
+          "value": 1048576,
+          "clz": "java.lang.Long"
+        }
+      },
+      {
+        "ORDINAL_POSITION": { "value": 2, "clz": "java.lang.Integer" },
+        "COLUMN_NAME": { "value": "SETTING_VALUE", "clz": "java.lang.String" },
+        "DATA_TYPE": {
+          "value": "CHARACTER VARYING",
+          "clz": "java.lang.String"
+        },
+        "IS_NULLABLE": { "value": "YES", "clz": "java.lang.String" },
+        "CHARACTER_MAXIMUM_LENGTH": {
+          "value": 1048576,
+          "clz": "java.lang.Long"
+        }
+      }
+    ],
+    "optSQLItem": {
+      "OPT_SQL_TYPE": "query",
+      "OPT_SQL": "\nSELECT ORDINAL_POSITION as \"ORDINAL_POSITION\",\nCOLUMN_NAME as \"COLUMN_NAME\",\nDATA_TYPE as \"DATA_TYPE\",IS_NULLABLE as \"IS_NULLABLE\",CHARACTER_MAXIMUM_LENGTH as \"CHARACTER_MAXIMUM_LENGTH\" FROM INFORMATION_SCHEMA.columns WHERE TABLE_SCHEMA =:DBNAME AND TABLE_NAME = :TBNAME\n",
+      "OPT_PARAM": "{\"ID\":1,\"TYPE\":\"show-columns\",\"IPT\":null,\"DBNAME\":\"INFORMATION_SCHEMA\",\"TBNAME\":\"SETTINGS\",\"COLNAME\":null,\"MYINPUT\":\"\"}",
+      "IS_LOADING": 0,
+      "RS_ID": 0,
+      "ID": 5,
+      "DATA_FILE_PATH": "/Users/jerrylai/mincontent/PersonalProjects/denote-be/target/workspaces/default/dblink/resultSets/system/opt-5_data.json",
+      "INFO_FILE_PATH": "/Users/jerrylai/mincontent/PersonalProjects/denote-be/target/workspaces/default/dblink/resultSets/system/opt-5_info.json",
+      "ERROR_FILE_PATH": "/Users/jerrylai/mincontent/PersonalProjects/denote-be/target/workspaces/default/dblink/resultSets/system/opt-5_error.json"
+    },
+    "optTimeMiles": 0
+  },
+  "customerReturned": false,
+  "directStrValue": null,
+  "extraMap": {},
+  "message": null,
+  "status": 1,
+  "timestamp": 1659587637792
+}

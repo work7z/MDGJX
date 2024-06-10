@@ -2,7 +2,7 @@ import GetAppInfo from '@/AppInfo';
 import apiSlice from '@/store/reducers/apiSlice';
 import AlertUtils from '@/utils/AlertUtils';
 import exportUtils from '@/utils/ExportUtils';
-import { TextInput, Textarea, SimpleGrid, Group, Title, Button, Container, Anchor } from '@mantine/core';
+import { TextInput, Textarea, SimpleGrid, Group, Title, Button, Container, Anchor, Badge } from '@mantine/core';
 import { useForm } from '@mantine/form';
 
 export default function GetInTouchSimple() {
@@ -89,6 +89,15 @@ export default function GetInTouchSimple() {
                 <ul className={
                     `list-disc ml-4 mt-2`
                 }>
+                    <li>
+                        <span>
+                            QQ群：{GetAppInfo().qqGroup}
+                        </span>
+
+                        <Badge color="teal"  ml={9} >
+                            推荐
+                        </Badge>
+                    </li>
                     <li>邮箱：work7z@outlook.com</li>
                     <li>
                         GitHub:

@@ -1,0 +1,42 @@
+@import "@blueprintjs/core/lib/less/variables.less";
+@import "../../vars.less";
+
+.terminalview {
+  // padding: 5px;
+  font-size: 12px;
+  &,
+  & {
+    white-space: nowrap;
+    font-family: monospace;
+  }
+}
+.textline-info {
+  color: var(--app-text-info-cadet);
+}
+.textline-note {
+  //   color: var(--app-text-info-cadet);
+  color: var(--app-text-purple);
+  font-weight: bold;
+}
+.textline-system {
+  //   color: var(--app-text-info-cadet);
+  color: var(--app-text-info-cadet);
+  // font-weight: bold;
+}
+.textline-success {
+  color: var(--app-text-darkgreen);
+}
+.textline-error {
+  color: var(--app-text-darkred);
+}
+
+.eachlinefortext {
+  // width: 100%;
+  @mynnnn: 18px;
+  padding: 0 5px;
+  // height: @mynnnn;
+  line-height: @mynnnn;
+  // font-family: monospace;
+  // white-space: nowrap;
+  // font-size: 12px;
+}

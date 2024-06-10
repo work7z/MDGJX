@@ -1,0 +1,72 @@
+.maven-repo-container {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  .cdn-body-wrapper {
+    margin: 10px auto;
+    width: 960px;
+    transition: width 0.3s;
+    &.has-body-wrapper {
+      width: 96%;
+    }
+    padding-bottom: 50px;
+  }
+  .float-wrapper-lr {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  .banner-wrapper {
+    background-color: var(--app-bg-orange3);
+    color: var(--app-text-white);
+    text-align: center;
+    padding: 25px 50px;
+    .main-title {
+      margin: 0;
+      font-size: 53px;
+      text-shadow: ~"-5px 5px 0 rgb(0 0 0 / 10%)";
+      text-align: center;
+      margin-bottom: 0px;
+    }
+    .main-sub-title {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    p {
+    }
+  }
+
+  .cdn-lists {
+    :global {
+      .bp3-card {
+        margin: 0 !important;
+      }
+    }
+  }
+  .p-crt-panel-body {
+    & > * {
+      padding: 10px 20px;
+      display: inline-block;
+      vertical-align: middle;
+      border-radius: 5px;
+    }
+    padding: 0;
+    .p-crt-panel-first {
+      width: 25%;
+    }
+    .p-crt-panel-second {
+      width: 75%;
+    }
+    .p-crt-panel-full {
+      width: 100%;
+    }
+  }
+}
+.caniuse-detail-wrapper {
+  background-color: var(--app-bg-orange7);
+  border-bottom: none !important;
+  // padding: 30px;
+}
+.xbb1 {
+  color: rgb(255, 255, 127);
+}

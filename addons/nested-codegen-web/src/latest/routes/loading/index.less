@@ -1,0 +1,95 @@
+@import "@blueprintjs/core/lib/less/variables.less";
+
+.loading-box {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-box {
+  width: 100vw;
+  height: 100vh;
+  background: #182026;
+  .bp3-card {
+    // width: 61.8vw;
+    // height: 44.2vh;
+    width: 597px;
+    height: 391px;
+    color: #03151b;
+    font-weight: 500;
+    h1 {
+      margin-top: 0;
+      margin-bottom: 6px;
+
+      -webkit-text-stroke: 1px #dff9ff;
+      font-family: monospace;
+    }
+    .listview-wrapper {
+      // color: #002028;
+      // text-shadow: 1px 1px #1799b6;
+      color: #f9f9f9;
+      text-shadow: 1px 1px #144550;
+      & > * {
+        margin-bottom: 2px;
+      }
+    }
+    .mybtmpos {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      .bp3-progress-meter {
+        border-radius: 0;
+        background-color: #085568 !important;
+      }
+      .bp3-progress-bar {
+        border-radius: 0;
+      }
+    }
+  }
+
+  // .bp3-panel-stack-header {
+  //   position: sticky;
+  //   top: 0;
+  //   left: 0;
+  //   background: var(--app-bg-white);
+  // }
+}
+
+.viewtextbtm {
+  color: var(--app-text-white);
+  text-align: left;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.auto-no-force-view {
+  & > * {
+    height: auto !important;
+  }
+}
+.no-pad-panel-view {
+  .auto-no-force-view {
+    & > * {
+      height: auto !important;
+    }
+    .left-wrapper {
+      margin: auto !important;
+      padding: auto !important;
+
+      margin: 10px 8px !important;
+      align-self: flex-start;
+      padding: 12px !important;
+    }
+  }
+}
+
+.right-wrapper {
+  & > * {
+    margin-bottom: 0px !important;
+  }
+}

@@ -1,0 +1,81 @@
+@import "@blueprintjs/core/lib/less/variables.less";
+@import "../../vars.less";
+
+.myroadmap-controller-wrapper {
+  padding: 10px;
+}
+
+.myroadmap-wrapper {
+  width: 100%;
+  column-count: 4;
+  column-width: 250px;
+  column-gap: 8px;
+  padding: 10px;
+  padding-top: 0px;
+  .myeachroadmap {
+    // width: 25%;
+    min-height: 200px;
+    border: 1px solid var(--app-border-gray-lightdark);
+    // display: inline-block;
+    break-inside: avoid;
+    margin-bottom: 5px;
+    width: 100%;
+    .myroaditem {
+      width: 50%;
+      display: inline-block;
+    }
+    .myeachroadmap-body {
+      padding: 8px;
+    }
+  }
+  .my-top-box {
+    height: auto !important;
+    min-height: auto !important;
+  }
+}
+
+.home-root-ele {
+  /* 瀑布流最外层 */
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  column-count: 4;
+  column-gap: 20px;
+  /* 每一列图片包含层 */
+  .home-item {
+    margin-bottom: 10px;
+    /* 防止多列布局，分页媒体和多区域上下文中的意外中断 */
+    break-inside: avoid;
+    border: 1px solid #fff;
+  }
+  .home-item:hover {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.mycrthome {
+  display: flex;
+  align-items: baseline;
+  & > * {
+    vertical-align: top;
+  }
+  .leftcardhome {
+  }
+  .rightcardhome {
+  }
+}
+
+.myeachroadmap-body {
+  .myroaditem {
+    margin-right: 10px;
+  }
+}
+.mycolview-right {
+  display: inherit;
+  user-select: none;
+  flex-direction: column;
+  & > * {
+    margin-left: 0 !important;
+  }
+}

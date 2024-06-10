@@ -10,11 +10,12 @@ import _ from "lodash";
 import { PayloadListData, PayloadValueData } from "../../constants";
 import { url } from "inspector";
 import { getHeaders } from "../request";
-import { HEADER_X_LAF_TOKEN, URL_AUTH_GET_FINDPW, URL_AUTH_GET_SIGNIN, URL_AUTH_GET_SIGNOUT, URL_AUTH_GET_SIGNUP } from "../constants/api_constants";
+import { HEADER_X_LAF_PAGE_SESSION_ID, HEADER_X_LAF_TOKEN, URL_AUTH_GET_FINDPW, URL_AUTH_GET_SIGNIN, URL_AUTH_GET_SIGNOUT, URL_AUTH_GET_SIGNUP } from "../constants/api_constants";
 import AlertUtils from "@/utils/AlertUtils";
 import { FN_GetDispatch, FN_GetState } from "../nocycle";
 import UsersSlice, { DisplayUserInfo } from "./userSlice";
 import AuthUtils from "@/utils/AuthUtils";
+import { PAGE_SESSION_ID } from "@/utils/PageUtils";
 
 
 export type FindPwReq = {
@@ -50,6 +51,7 @@ export type SystemRefresh = {
 export type TLNRequest = {
   text: string;
   type: string;
+  id:string
   sourceLang: string;
   targetLang: string;
   reservedWords: string;
@@ -115,6 +117,22 @@ export type SysConfChangeLogResponse = {
   timestamp: string;
   updates: CommonVerDetail[];
 };
+export type SysConfGeneralStaticResponse= {
+  data: any
+  timestamp: string;
+};
+
+  type NewRouterReq = {
+    selectedPlan: string;
+    planCount: number;
+  };
+  type NewRouterRes = {
+    qrcode: string;
+    total: number;
+    outTradeNo: string;
+    description: string;
+  };
+
 
 export const msg_showNetworkWithDebounce  = _.throttle(()=>{
   AlertUtils.alertErr('抱歉，网络不稳定，请稍后重试')
@@ -132,6 +150,7 @@ export const apiSlice = createApi({
         }
       });
       headers.set(HEADER_X_LAF_TOKEN, AuthUtils.token || '')
+      headers.set(HEADER_X_LAF_PAGE_SESSION_ID, PAGE_SESSION_ID || '')
       return headers;
     },
     validateStatus: (response, result: AsyncCreateResponse<any> | null) => {
@@ -176,9 +195,9 @@ export const apiSlice = createApi({
       },
     }),
     // sysconf 
-    getSysConfChangeLog: build.query <AsyncCreateResponse<SysConfChangeLogResponse>, {
-      currentVer?:string,
-      checkType:'web2'|'desktop2'
+    getSysConfChangeLog: build.query<AsyncCreateResponse<SysConfChangeLogResponse>, {
+      currentVer?: string,
+      checkType: 'web2' | 'desktop2'
     }>({
       query: (params) => {
         return {
@@ -188,6 +207,42 @@ export const apiSlice = createApi({
         };
       },
     }),
+    // sysconf 
+    getSysConfWithStaticData: build.query<AsyncCreateResponse<SysConfGeneralStaticResponse>, {
+      type:string
+    }>({
+      query: (params) => {
+        return {
+          params,
+          url: "/sysconf/"+params.type,
+          method: "GET",
+        };
+      },
+    }),
+    wxpayNewOrder: build.query<AsyncCreateResponse<NewRouterRes>, NewRouterReq>({
+      query: (params) => {
+        return {
+          params,
+          url: `/wxpay/getqrcode`,
+          method: "GET",
+        };
+      },
+    }),
+    wxpayVerfiyPay: build.query<AsyncCreateResponse<{
+      trade_state: string,
+      trade_state_desc:string
+    }>, {
+      outTradeNo: string
+    }>({
+      query: (params) => {
+        return {
+          params,
+          url: `/wxpay/verifypay`,
+          method: "GET",
+        };
+      },
+    }),
+
     // auth
     signIn: build.query<AsyncCreateResponse<SignInCredentials>, {
       userName: string,

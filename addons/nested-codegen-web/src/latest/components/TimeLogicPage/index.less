@@ -1,0 +1,68 @@
+@import "@blueprintjs/core/lib/less/variables.less";
+@import "../../vars.less";
+
+.beautify-code-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.needleftborder {
+  // border-left: 1px solid #e3e3e3;
+  // border-left: 1px solid #ededec;
+  border-left: 1px solid var(--app-bg-border-e3e3e2);
+}
+
+.subitem-all-3px {
+  padding: 6px;
+  & > * {
+    margin-bottom: 8px;
+    margin-top: 4px;
+    padding: 0 7px;
+  }
+}
+
+.report-item-wrapper {
+  border: 1px solid var(--app-border-white-dd);
+  padding: 10px;
+  border-radius: 5px;
+  .report-item {
+    width: 50%;
+    display: inline-block;
+
+    padding: 5px 0px;
+    font-size: 12px;
+    color: var(--app-text-viewblack);
+    span.report-item-title {
+      font-weight: bold;
+      margin-right: 4px;
+    }
+  }
+}
+
+.m3-7-part-wrapper {
+  .report-item {
+    &:nth-child(even) {
+      width: 38.2% !important;
+    }
+    &:nth-child(odds) {
+      width: 61.8% !important;
+    }
+  }
+}
+
+.o-green {
+  color: var(--app-text-green);
+}
+.o-red {
+  color: var(--app-text-darkred);
+}
+.o-blue {
+  color: blueviolet;
+}
+
+.myutcgmt-wrapper {
+  padding: 0 !important;
+  table {
+    width: 100%;
+  }
+}

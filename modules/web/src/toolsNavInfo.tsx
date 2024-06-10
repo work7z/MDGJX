@@ -1,3 +1,4 @@
+import { IconBrandRedhat, IconFileFunction, IconLock, IconMath, IconPilcrow, IconRulerMeasure, IconSend, IconVideo, IconWebhook } from "@tabler/icons-react"
 import { LoadModuleType } from "./systemModules"
 
 export type SubToolItem = {
@@ -15,21 +16,17 @@ export type SubToolItem = {
 }
 export type ToolNavInfoType = {
     name: string,
+    icon?: any,
     id: string,
     defaultSubToolId?: string,
     bodyFnIfHave?: LoadModuleType,
     subTools?: SubToolItem[]
 }
 export const toolsNavInfo: ToolNavInfoType[] = [
-    {
-        name: 'JSON超级工具',
-        id: 'json',
-        defaultSubToolId: 'convert',
-        bodyFnIfHave: () => import('./loadable/JSONSuperTools/index.tsx'),
-        subTools: []
-    },
+
     {
         name: "通用格式转换",
+        icon:IconFileFunction,
         id: 'converter',
         subTools: [
             {
@@ -353,6 +350,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
     },
     {
         name: "网络安全工具",
+        icon: IconLock,
         id: 'cyber',
         subTools: [
             {
@@ -609,6 +607,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
     {
         name: "Web开发类",
         id: 'web',
+        icon:IconWebhook,
         subTools: [
             {
                 "isNew": false,
@@ -1063,6 +1062,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
     {
         name: "运维开发类",
         id: 'devops',
+        icon: IconBrandRedhat,
         subTools: [
             {
                 "isNew": false,
@@ -1277,6 +1277,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
     {
         name: "网络通信协议",
         id: 'network',
+        icon: IconSend,
         subTools: [
             {
                 "isNew": false,
@@ -1394,6 +1395,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
     {
         name: "数学运算工具",
         id: 'math',
+        icon:IconMath,
         subTools: [
             {
                 "isNew": false,
@@ -1477,6 +1479,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
     {
         name: "快速测量工具",
         id: 'measure',
+        icon:IconRulerMeasure,
         subTools: [
             {
                 "isNew": false,
@@ -1583,6 +1586,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
     {
         name: "文本处理工具",
         id: 'text',
+        icon:IconPilcrow,
         subTools: [
             {
                 "isNew": false,
@@ -1718,6 +1722,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
     {
         name: "图像视频处理",
         id: 'video',
+        icon: IconVideo,
         subTools: [
             {
                 "isNew": false,
@@ -1803,7 +1808,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
         ...x,
         subTools: x.subTools.map((y: SubToolItem) => {
             y.id = y.path.replace(/\//g, '')
-            y.path = `/tools/${x.id}${y.path}`
+            y.path = `/${x.id}${y.path}`
             return y satisfies SubToolItem
         })
     } satisfies ToolNavInfoType

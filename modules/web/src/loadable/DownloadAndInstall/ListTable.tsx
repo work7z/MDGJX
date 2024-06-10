@@ -1,6 +1,11 @@
 import { Table, Progress, Anchor, Text, Group } from '@mantine/core';
 import classes from './TableReviews.module.css';
 import { IconBrandApple, IconBrandUbuntu, IconBrandWindows } from '@tabler/icons-react';
+import { useEffect } from 'react';
+import apiSlice from '@/store/reducers/apiSlice';
+import GetAppInfo from '@/AppInfo';
+import _ from 'lodash';
+import { isOnlineTestMode } from '@/utils/PortalUtils';
 
 const data:{
     icon?:any,
@@ -28,14 +33,14 @@ const data:{
             icon: <IconBrandApple />,
             name: 'MacOS 苹果系统 (Intel核芯版本)',
             arch: 'x64',
-            fileArch: 'darwin-x64',
+            fileArch: 'mac-x64',
             ext: ['dmg', 'tar.gz'],
         },
         {
             icon: <IconBrandApple />,
             name: 'MacOS 苹果系统 (M1系列芯片/Apple Silicon)',
             arch: 'arm64',
-            fileArch: 'darwin-arm64',
+            fileArch: 'mac-arm64',
             ext: ['dmg', 'tar.gz'],
         },
         {
@@ -47,6 +52,8 @@ const data:{
             overwriteFn(val){
                 if(val === 'AppImage'){
                     return 'linux-x86_64'
+                }if(val === 'deb'){
+                    return 'linux-amd64'
                 }
                 return null
             }
@@ -61,6 +68,17 @@ const data:{
 ];
 
 export default function TableReviews() {
+    let latestVer = 'unknown'
+    const changeLogRes = apiSlice.useGetSysConfChangeLogQuery({
+        checkType: 'desktop2',
+        currentVer:'desktop2-'+ GetAppInfo().version
+    }, {
+        pollingInterval: 60 * 1000 * 5, // 5 minutes
+    })
+    if (changeLogRes.isSuccess){
+        latestVer = _.first(changeLogRes.data?.data?.updates)?.version || 'unknown'
+    }
+    // const whatTypeOfPkg = isOnlineTestMode() ? 'test':'release'
     const rows = data.map((row) => {
 
         return (
@@ -76,7 +94,7 @@ export default function TableReviews() {
                         row.ext.map(x=>{
                             return <Anchor
                             key={x} component="button" fz="sm">
-                                <a target="_blank" href={`MDGJX-desktop-v1.0.0-${
+                                <a target="_blank" href={`https://dkstatic.mdgjx.com/${latestVer}-release/MDGJX-desktop-${latestVer.replace('desktop2-','')}-${
                                     row.overwriteFn ? row.overwriteFn(x) || row.fileArch : row.fileArch
                                 }.${x}`}>
                                     {x}
@@ -85,11 +103,13 @@ export default function TableReviews() {
                         })
                     }
                 </Table.Td>
-                <Table.Td>无</Table.Td>
+                <Table.Td>{latestVer.replace("desktop2-","")}</Table.Td>
             </Table.Tr>
         );
     });
-
+    if (latestVer == 'unknown'){
+        return <Progress color="blue" size="xl" value={0} />
+    }
     return (
         <Table.ScrollContainer minWidth={800}>
             <Table verticalSpacing="xs">

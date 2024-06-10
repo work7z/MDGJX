@@ -1,6 +1,7 @@
 import { useHistory } from "react-router"
 import { ROUTE_CPT_MAPPING, SystemModuleItem, SystemSubModuleItem, systemModulesList } from "./systemModules"
 import { useMemo } from "react"
+import queryString from "query-string"
 
 export type TypeMDParams = {
     rootModuleItem: SystemModuleItem,
@@ -8,6 +9,21 @@ export type TypeMDParams = {
     firstRouteId: string
     secondRouteId: string
     thirdRouteId: string
+}
+export const useMDQuery = function <T>():{
+    result: T,
+    pushNewQuery: (newQuery: T) => void
+} {
+    const hist = useHistory()
+    let search = hist.location.search
+    return {
+        result: queryString.parse(search) as T,
+        pushNewQuery: (newQuery: T) => {
+            const newSearch = queryString.stringify(newQuery as any)
+            hist.push(hist.location.pathname + '?' + newSearch)
+        }
+    
+    }
 }
 export const useMDParams = (): TypeMDParams => {
     const hist = useHistory()

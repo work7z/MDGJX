@@ -22,7 +22,6 @@ const iconMapping = {
 
 }
 export default () => {
-    // toolsNavInfo[0].id
     const [idx, setIdx] = React.useState('all')
     const currentToolItem = toolsNavInfo.find(x => x.id === idx) || toolsNavInfo[0]
     let finalSubToolsArr: SubToolItem[] = []

@@ -1,0 +1,10 @@
+{
+  "combinations": [
+    {
+      "prop": "bridge_common"
+    },
+    {
+      "prop": "redis_pass_vm"
+    }
+  ]
+}

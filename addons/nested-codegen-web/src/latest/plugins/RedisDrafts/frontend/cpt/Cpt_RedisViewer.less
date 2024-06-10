@@ -1,0 +1,60 @@
+.cpt-redis-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  padding-left: 0;
+}
+.inner-redis-wrapper {
+  @myredisheight: 35px;
+  width: 100%;
+  height: 100%;
+  .msgbox {
+    font-size: 14px;
+    padding: 0 8px;
+    height: @myredisheight;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: none;
+  }
+  .inner-redis-viewer {
+    width: 100%;
+    height: calc(~"100% - @{myredisheight}");
+    max-height: calc(~"100% - @{myredisheight}");
+  }
+}
+.redis-right-global-wrapper {
+  width: 100%;
+  height: 100%;
+  @keybox-height: 40px;
+  @ctrlbox-height: 35px;
+  .redis-right-key {
+    height: @keybox-height;
+    max-height: @keybox-height;
+    border-bottom: 1px solid var(--app-border-bg-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+    }
+  }
+  .redis-right-control {
+    display: flex;
+    align-items: center;
+    height: @ctrlbox-height;
+    max-height: @ctrlbox-height;
+    border-bottom: 1px solid var(--app-border-bg-gray);
+  }
+  .redis-right-content {
+    height: calc(~"100% - @{keybox-height} - @{ctrlbox-height}");
+    max-height: calc(~"100% - @{keybox-height} - @{ctrlbox-height}");
+  }
+}
+
+// :global {
+//   .bp3-editable-text.bp3-intent-primary {
+//     .bp3-editable-text-input {
+//       width: 100% !important;
+//     }
+//   }
+// }

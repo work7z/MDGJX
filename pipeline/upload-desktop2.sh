@@ -5,4 +5,4 @@ source ~/.zshrc
 cd $MDGJX_ROOT/modules/desktop2/pkg-dist
 mkdir -p ./$TAGNAME
 cp -a ./MDGJX-* ./$TAGNAME
-coscli-mac cp ./$TAGNAME cos://$BNAME/$uploadType/$TAGNAME/desktop2 -r
+coscli-mac cp ./$TAGNAME cos://$BNAME/$TAGNAME-$uploadType -r

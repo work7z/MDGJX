@@ -1,0 +1,248 @@
+:global {
+  @bordervalcolor: var(--app-border-gray-f3);
+  @bordervalcolor_header: var(--app-border-white-db);
+
+  @myfontsizebar: 10px;
+  @eachCellHeight: 23px;
+
+  .common-control-bar-btmgroup {
+    .bp3-divider {
+      height: 15px !important;
+      margin: 1px 2px !important;
+    }
+  }
+
+  .control-tb-bar-view {
+    // border-top: 1px solid #e2ebf1;
+    height: @eachCellHeight;
+    max-height: @eachCellHeight;
+    // line-height: @eachCellHeight;
+    line-height: 18px;
+    padding: 0 6px;
+    font-size: @myfontsizebar;
+    .myleftview-box {
+      // height: @eachCellHeight;
+      // line-height: @eachCellHeight;
+    }
+  }
+  .hidden {
+    display: none !important;
+  }
+  .myleftview-box {
+    & > * {
+      margin-right: 5px;
+    }
+    & > *:last-child {
+      margin-right: 0;
+    }
+  }
+
+  // other settings
+  .commonBorderRightForCellOrder {
+    border-right: 1px solid @bordervalcolor_header!important;
+  }
+  .control-tb-view {
+    display: flex;
+    flex-direction: column;
+
+    .vc-table-headers-box {
+      min-height: 26px;
+      line-height: 26px;
+      height: 26px;
+    }
+    .gvisual-table-box {
+      overflow: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      &,
+      & * {
+        &,
+        &:focus {
+          outline: none;
+          user-select: none;
+        }
+      }
+      .vc-table-box {
+        border: 1px solid @bordervalcolor;
+        overflow: auto;
+        // common styles
+        .vc-data-row {
+          .vc-data-cell {
+            font-size: @myfontsizebar;
+            box-sizing: content-box;
+            padding: 0 6px;
+            &.vc-table-headers-box {
+              position: sticky;
+              left: 0;
+            }
+          }
+        }
+        .headerCellFormatting {
+          border-top: 1px solid @bordervalcolor_header;
+          border-right: 1px solid @bordervalcolor_header;
+          border-bottom: 1px solid @bordervalcolor_header;
+          background: var(--app-bg-white);
+          height: auto;
+          color: var(--app-text-viewblack-pure);
+          font-weight: 500;
+        }
+        .commonBorderRightForCellOrder {
+          border-right: 1px solid var(--app-text-red) !important;
+          text-align: center;
+        }
+        // header styles
+        .vc-table-headers-box {
+          box-shadow: 0 2px 3px 0px var(--app-border-gray-e1e8ed);
+          z-index: 17;
+          position: relative;
+          .vc-data-row {
+            .vc-data-cell {
+              .headerCellFormatting;
+              &.vc-first-cell-for-order {
+                color: transparent;
+                padding-left: 0;
+                padding-right: 0;
+                .commonBorderRightForCellOrder;
+              }
+            }
+          }
+        }
+        // body styles
+        .vc-table-body-box {
+          .vc-data-row {
+            .vc-data-cell {
+              border-right: 1px solid @bordervalcolor;
+              border-top: 1px solid @bordervalcolor;
+              min-height: @eachCellHeight;
+              height: @eachCellHeight;
+              line-height: @eachCellHeight;
+              &.vc-first-cell-for-order {
+                color: transparent;
+                padding-left: 0;
+                padding-right: 0;
+                .headerCellFormatting;
+                .commonBorderRightForCellOrder;
+              }
+            }
+          }
+          &:last-child {
+            .vc-data-cell {
+              border-bottom: 1px solid @bordervalcolor;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tb-consist-part {
+    // margin-bottom: -6px;
+    & > * {
+      vertical-align: top;
+    }
+    .gvisual-table-box-left-side {
+      display: inline-block;
+      ::-webkit-scrollbar {
+        width: none;
+      }
+      .Grid,
+      .VirtualScroll {
+        overflow-y: hidden !important;
+      }
+      .ReactVirtualized__Grid__innerScrollContainer,
+      .ReactVirtualized__Grid,
+      .ReactVirtualized__List {
+        overflow-y: hidden !important;
+      }
+      .Grid__innerScrollContainer {
+        overflow: hidden !important;
+      }
+    }
+    .gvisual-table-box-right-side {
+      display: inline-block;
+    }
+  }
+
+  .g-scrollbar-box {
+    position: relative;
+    height: 100%;
+    background: var(--app-bg-white);
+    border-bottom: 1px solid var(--app-bg-white-fb);
+    box-shadow: 0 0 2px 1px var(--app-border-gray-e1e8ed) inset;
+    .g-scrollbar-dragitem {
+      width: 100%;
+      // position: absolute;
+      // top: 0;
+      // left: 0;
+      // background: rgba(100, 100, 100, 0.4);
+      background: var(--app-bg-dark-black-40);
+    }
+  }
+
+  .rc-tabs-content-holder,
+  .rc-tabs-tabpane {
+    &:focus,
+    & {
+      outline: none !important;
+    }
+  }
+
+  .select-focus-cell {
+    // background: #a6d1ff !important;
+    // background: #9edaff !important;
+    background: var(--app-bg-lightblue) !important;
+  }
+
+  .focus-start-or-end {
+    // box-shadow: 0 0 3px 0 #1f526c7d inset;
+  }
+
+  .control-tb-view {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    .fullview-page {
+      background: var(--app-bg-white);
+      z-index: 18;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .myloading-page {
+      .fullview-page;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .docs-example-frame {
+        width: 31.78%;
+      }
+    }
+    .myempty-page {
+      .fullview-page;
+      padding: 10px;
+      font-size: 11px;
+    }
+    .myerror-page {
+      .fullview-page;
+      padding: 10px;
+      font-size: 11px;
+      color: var(--app-text-darkred);
+    }
+  }
+
+  .crt-null-cell {
+    color: var(--app-text-gray-bbbbbb);
+    text-align: right;
+  }
+  [data-clz="java.lang.Long"],
+  [data-clz="java.lang.Integer"],
+  [data-clz="java.math.BigDecimal"] {
+    // color: #db2c6f;
+    // color: #2965cc;
+    color: var(--app-text-purple);
+    text-align: right;
+  }
+}

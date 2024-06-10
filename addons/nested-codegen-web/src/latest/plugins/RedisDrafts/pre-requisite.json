@@ -1,0 +1,14 @@
+{
+	"bundle_with_exteriors":[
+		{
+			"prop":"bridge_common"
+		}
+	],
+	"runtime_listings":[
+		{
+			"prop":"redis_connector_2.9.0"
+		}
+	],
+	"direct_use_libs":true,
+	"version":"v1.8.4"
+}

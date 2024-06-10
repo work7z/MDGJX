@@ -1,0 +1,63 @@
+@import "@blueprintjs/core/lib/less/variables.less";
+@import "../../vars.less";
+@header_height_val: 27px;
+
+.g-tab-centre-view {
+  .g-tab-centre-header {
+    width: 61.8%;
+    &.g-tab-card-header-1-len {
+      width: 20.5%;
+    }
+    margin: 0 auto;
+    background: var(--app-border-gray-e1e8ed);
+    height: @header_height_val;
+    line-height: @header_height_val - 2;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    font-size: 13px;
+    position: relative;
+
+    .g-tab-centre-item {
+      display: inline;
+      flex: 1;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      border: 1px solid transparent;
+      &:hover {
+        background-color: #ebf1f5;
+      }
+      &.active-tab-centre,
+      &:hover {
+        border: 1px solid var(--app-border-st-white);
+        border-radius: 5px;
+      }
+      &:active {
+        background-color: #d8e1e8;
+      }
+      &.active-tab-centre {
+        &,
+        &:hover,
+        &:active {
+          cursor: default;
+          background-color: var(--app-bg-white);
+        }
+      }
+    }
+  }
+  .g-tab-centre-body {
+    background: var(--all-bg-main);
+    border-radius: 5px;
+    @bodyPadVal: 10px;
+    padding: @bodyPadVal;
+    margin-top: -(@header_height_val / 2);
+    padding-top: (@header_height_val / 2)+8;
+    min-height: 300px;
+    overflow: auto;
+  }
+}
+
+.g-tab-card-view {
+  padding: 10px 10px !important;
+}

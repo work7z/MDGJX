@@ -8,8 +8,6 @@
 'use client'
 import React from "react";
 
-
-
 export default (props: { children?: any, }) => {
     let [mounted, setMounted] = React.useState(false);
     React.useEffect(() => {

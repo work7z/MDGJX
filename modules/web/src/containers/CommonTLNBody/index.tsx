@@ -1,4 +1,4 @@
-import apiSlice from "@/store/reducers/apiSlice"
+import apiSlice, { AsyncCreateResponse, TLNResponse } from "@/store/reducers/apiSlice"
 import { Badge, Button, Container, Divider, Select, Table, TextInput, Textarea } from "@mantine/core"
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
 import { Card, Group, Text, Menu, ActionIcon, Image, SimpleGrid, rem } from '@mantine/core';
@@ -11,7 +11,7 @@ import { stat } from "fs";
 import _ from "lodash";
 import { FN_GetDispatch } from "@/store/nocycle";
 import StateSlice from "@/store/reducers/stateSlice";
-import { useClipboard, useDebouncedCallback } from "@mantine/hooks";
+import { useClipboard, useCounter, useDebouncedCallback, useDisclosure } from "@mantine/hooks";
 import AlertUtils from "@/utils/AlertUtils";
 import Blink from "@/components/Blink";
 import { sleep } from "@/utils/CommonUtils";
@@ -20,7 +20,7 @@ import SimpleSelect from "@/components/SimpleSelect";
 import FileChoosePanel from "@/components/FileChoosePanel";
 import { readStrFromFile } from "@/AppFn";
 import { js_export_trigger } from "@/utils/FileExportUtils";
-import { useWebsocket } from "@/utils/WsUtils";
+import { WsOnMessage, useWebsocket } from "@/utils/WsUtils";
 export type TLNPState = {
     fillFileMode: boolean
     sourceLang: string;
@@ -52,10 +52,13 @@ export default (props: {
     translateActionItems?: ActionItem[],
     handleTranslate: (val: TLNState, fn_translate) => Promise<string>
 }) => {
-    useWebsocket("/ws/testwsnow")
-    const [message, setMessage] = useState('');
+
+
     const isZTFT = props.id == 'tlnztft'
     const isJSONType = props.id == 'json' || props.id == 'json-comparison'
+    const fanyiCountRef = useRef<{ interval: any }>({
+        interval: null
+    })
     const isMarkdownType = props.id == 'markdown'
     const rh = exportUtils.register('tln' + props.saveDataId, {
         getPersistedStateFn: () => {
@@ -71,6 +74,7 @@ export default (props: {
         },
         getNotPersistedStateFn: () => {
             return {
+                fanyiCount: 1,
                 fileProcessLabel: '当前任务处于闲置状态',
                 inputJSON: '',
                 outputJSON: '',
@@ -79,9 +83,29 @@ export default (props: {
             }
         }
     })
+    const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})
+    const msgEventList = useRef<{
+        msgEventMap: {
+            [ts: string]: WsOnMessage
+        },
+        lastTimestamp: number
+    }>({
+        lastTimestamp: -1,
+        msgEventMap: {}
+    })
+    const cptID = rh?.keyname + props.id
+    useWebsocket("userchannel", 'tln' + cptID, {
+        onMessage(msg) {
+            if(msg.id.startsWith('tln-res')){
+                _.forEach(msgEventList.current.msgEventMap, (x, d, n) => {
+                    x(msg)
+                })
+            }
+        }
+    })
+
     const maxRows = 10
     const clipboard = useClipboard({ timeout: 500 });
-    const [t_sendReq] = apiSlice.useLazyTlnSendRequestQuery({})
     const [translating, setTranslating] = useState(false)
     const internalThrottledFnSubmitCreate = useDebouncedCallback(async () => {
         fn_submit_create({ eventSource: 'input' })()
@@ -117,25 +141,50 @@ export default (props: {
                 })
                 let lastErrMsg: string = ''
                 const fn_fanyi = async (value) => {
-                    const r = await t_sendReq({
+                    const crtTS = Date.now()
+                    const crtReqID = cptID + crtTS + Date.now() + Math.random().toString(36).substring(7)
+                    const prev_listen = new Promise((r, e) => {
+                        msgEventList.current.msgEventMap[crtReqID] = async (msg) => {
+                            switch (msg.id) {
+                                case 'tln-res-' + crtReqID:
+                                    r(msg.value)
+                                    delete msgEventList.current.msgEventMap[crtReqID] 
+                                    break;
+                            }
+                        }
+                    })
+                    await t_sendReq({
                         text: (value + "") || '',
                         type: props.id + '',
+                        id: crtReqID + '',
                         sourceLang: tState?.sourceLang + "",
                         targetLang: tState?.targetLang + "",
                         reservedWords: tState?.reservedWords as string,
                         extraRequests: tState?.extraRequests as string,
                     })
-                    if (r.isError) {
-                        const errObj: any = r.error
-                        lastErrMsg = errObj?.data?.error + ''
-                        throw new Error(lastErrMsg)
-                    }
-                    const result = r.data?.data?.result
+                    const r = await prev_listen as AsyncCreateResponse<TLNResponse>
+                    // if (r.isError) {
+                    //     const errObj: any = r.error
+                    //     lastErrMsg = errObj?.data?.error + ''
+                    //     throw new Error(lastErrMsg)
+                    // }
+                    const result = r.data?.result
                     return result || '';
                 }
+                let ctn = 0;
+                window.clearInterval(fanyiCountRef.current.interval)
+                rh.updateNonPState({
+                    fanyiCount: 0,
+                })
+                fanyiCountRef.current.interval = setInterval(() => {
+                    ctn++
+                    rh.updateNonPState({
+                        fanyiCount: ctn,
+                    })
+                }, 1000)
 
                 if (tState.fillFileMode) {
-                    let allLen = 0
+                    let allLen = 1
                     const files = tState.selectedUploadFiles
                     if (_.isEmpty(files)) {
                         AlertUtils.alertWarn("无文件可处理，请先选择文件")
@@ -246,7 +295,7 @@ export default (props: {
         }) : [
             {
                 type: 'submit',
-                text: translating ? "取消翻译" : "开始翻译",
+                text: translating ? "取消翻译" + `(${Math.min(99, rh?.npState?.fanyiCount || 0)})` : "开始翻译",
                 color: translating ? 'red' : undefined,
                 onClick: fn_submit_create({
                     eventSource: 'submit'

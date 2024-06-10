@@ -1,0 +1,54 @@
+@import "@blueprintjs/core/lib/less/variables.less";
+@import "../../vars.less";
+
+.each-navi-wrapper {
+  background: var(--app-bg-white);
+  padding: 8px 12px;
+  // cursor: pointer;
+  opacity: 0.9;
+  transition: all 0.3s;
+  &:hover {
+    opacity: 1;
+    // background: var(--app-bg-border-e7);
+  }
+  .each-navi-header {
+    margin: 0;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .navi-anchor {
+    &,
+    & > * {
+      vertical-align: middle;
+    }
+    width: 120px;
+    height: 38px;
+    max-height: 38px;
+    border-radius: 3px;
+    display: inline-block;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+    border: 1px solid var(--app-border-white-s3);
+    margin-right: 5px;
+    margin-bottom: 3px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    &,
+    &:hover,
+    &:visited {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+    &:hover {
+      // font-weight: 500;
+    }
+    &:hover {
+      background-color: var(--app-bg-f5-white);
+    }
+  }
+}

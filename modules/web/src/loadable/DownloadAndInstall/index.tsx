@@ -1,4 +1,4 @@
-import { Overlay, Container, Title, Button, Text, Tabs, Alert } from '@mantine/core';
+import { Overlay, Container, Title, Button, Text, Tabs, Alert, Modal } from '@mantine/core';
 import classes from './HeroContentLeft.module.css';
 import { useWrapWithTitle } from '@/containers/Layout/Layout';
 import AlertUtils from '@/utils/AlertUtils';
@@ -14,7 +14,38 @@ export default () => {
     // https://dkstatic.mdgjx.com/test/desktop2/MDGJX-desktop-v5.3.96-win-x64.zip
     // useWrapWithTitle(`下载与更新`)
     const hist = useHistory()
+    const [showDownloadPage, setShowDownloadPage] = useState(false)
     const [type, onType] = useState(queryString.parse(hist.location.search)?.type||'desktop2')
+    const justJSX = <>
+        <Tabs value={type + ''} onChange={e => {
+            onType(e + '')
+        }}>
+            <Tabs.List>
+                <Tabs.Tab value={'desktop2'} >下载桌面端(Desktop)</Tabs.Tab>
+                <Tabs.Tab value={'docker'} >应用自部署(Docker)</Tabs.Tab>
+            </Tabs.List>
+        </Tabs>
+        {
+            type == 'docker' ? <p className='p-2 mt-2'>
+                <div>🚀 Docker部署命令行:</div>
+                <Alert>
+                    docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+                </Alert>
+                <div className='mt-2'>
+                    <a href={'https://hub.docker.com/r/codegentoolbox/laftools-linux-x64'} target='_blank' className='text-blue-500'>🔗 Docker Hub - laftools-linux-x64</a>
+                    <a href={'https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64'} target='_blank' className='text-blue-500'>🔗 Docker Hub - laftools-arm64-x64</a>
+                </div>
+                <div>需要更多帮助请在GitHub上联系我们，谢谢</div>
+            </p> : <div>
+                <div className='my-2'>
+                    <Alert p={5} variant="light" color="green" title="本软件完全开源，无任何恶意代码，请信任并忽略报毒错误，我们也正在申请软件签名证书，敬请理解" icon={<IconClock24 />}>
+                    </Alert>
+
+                </div>
+                <ListTable />
+            </div>
+        }
+        </>
     return <div className='m-[-10px]'>
         <div className={classes.hero}>
             <Overlay
@@ -32,49 +63,33 @@ export default () => {
 
               <a href='#detail'>
                     <Button variant="gradient" size="xl" radius="xl" className={classes.control} onClick={()=>{
-                        AlertUtils.alertSuccess(`加载资源成功，请在下方表格选择对应的平台，并单击下载链接以进行下载安装。`)
-                        // scroll to detail
-                        const d = document.getElementById('detail')
-                        if(d){
-                            window.scrollTo({
-                                top: d.offsetTop-100,
-                                behavior: 'smooth' })
-                        }
+                        // AlertUtils.alertSuccess(`加载资源成功，请在下方表格选择对应的平台，并单击下载链接以进行下载安装。`)
+                        setShowDownloadPage(true)
+                        // // scroll to detail
+                        // const d = document.getElementById('detail')
+                        // if(d){
+                        //     window.scrollTo({
+                        //         top: d.offsetTop-100,
+                        //         behavior: 'smooth' })
+                        // }
                     }}>
                         立即下载
                     </Button>
               </a>
             </Container>
         </div>
-       <Container size='lg' className='mt-8' id='detail'>
-            <Tabs value={type+''} onChange={e => {
-                onType(e+'')
-            }}>
-                <Tabs.List>
-                    <Tabs.Tab value={'desktop2'} >下载桌面端(Desktop)</Tabs.Tab>
-                    <Tabs.Tab value={'docker'} >应用自部署(Docker)</Tabs.Tab>
-                </Tabs.List>
-            </Tabs>
-          {
-                type == 'docker' ? <p className='p-2 mt-2'>
-                    <div>🚀 Docker部署命令行:</div>
-                    <Alert>
-                        docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
-                    </Alert>
-                   <div className='mt-2'>
-                    <a href={'https://hub.docker.com/r/codegentoolbox/laftools-linux-x64'} target='_blank' className='text-blue-500'>🔗 Docker Hub - laftools-linux-x64</a>
-                    <a href={'https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64'} target='_blank' className='text-blue-500'>🔗 Docker Hub - laftools-arm64-x64</a>
-                   </div>
-                   <div>需要更多帮助请在GitHub上联系我们，谢谢</div>
-                </p> : <div>
-<div className='my-2'>
-                            <Alert p={5} variant="light" color="green" title="本软件完全开源，无任何恶意代码，请信任并忽略报毒错误，我们也正在申请软件签名证书，敬请理解" icon={<IconClock24 />}>
-                            </Alert>
-
-</div>
-                        <ListTable />
-                </div>
-          }
+       <Container size='lg' className='mt-8 ' id='detail'>
+           {justJSX}
        </Container>
+        <Modal  fullScreen opened={showDownloadPage} onClose={() => {
+            setShowDownloadPage(false)
+        }} title={
+            `下载详情`
+        }>
+            <div className='w-[80vw]'>
+
+           {justJSX}
+            </div>
+        </Modal>
     </div>
 }

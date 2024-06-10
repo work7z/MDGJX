@@ -1,0 +1,30 @@
+@import "@blueprintjs/core/lib/less/variables.less";
+@import "../../vars.less";
+
+.beautify-code-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.needleftborder {
+  // border-left: 1px solid #e3e3e3;
+  // border-left: 1px solid #ededec;
+  border-left: 1px solid var(--app-bg-border-e3e3e2);
+}
+
+.subitem-all-3px {
+  padding: 6px;
+  & > * {
+    margin-bottom: 8px;
+    margin-top: 4px;
+    padding: 0 7px;
+  }
+}
+
+.my50box {
+  .bp3-form-group {
+    width: 50%;
+    display: inline-block;
+    padding: 0 10px;
+  }
+}

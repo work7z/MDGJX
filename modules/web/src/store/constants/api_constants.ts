@@ -9,3 +9,4 @@ export const URL_AUTH_GET_SIGNOUT = '/auth/sign-out';
 export const URL_AUTH_GET_FINDPW = '/auth/find-pw';
 
 export const HEADER_X_LAF_TOKEN = 'x-mdgjx-token';
+export const HEADER_X_LAF_PAGE_SESSION_ID = 'x-mdgjx-pagesessionid';

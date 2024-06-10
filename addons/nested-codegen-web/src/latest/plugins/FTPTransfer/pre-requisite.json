@@ -1,0 +1,12 @@
+{
+	"bundle_with_exteriors":[
+		{
+			"prop":"bridge_common"
+		},
+		{
+			"prop": "net_handler"
+		}
+	],
+	"runtime_listings":[],
+	"version":"v1.2.63"
+}

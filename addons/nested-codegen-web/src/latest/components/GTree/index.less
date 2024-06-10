@@ -1,0 +1,25 @@
+@import "@blueprintjs/core/lib/less/variables.less";
+@import "../../vars.less";
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.db_conn_project_body {
+  .bp3-icon-refresh {
+    transform: rotate(360deg);
+    transition: transform 2s linear;
+    animation: spin 2s linear infinite;
+  }
+}
+
+.bp3-tree-node-content {
+  .bp3-spinner {
+    margin-right: 7px;
+  }
+}

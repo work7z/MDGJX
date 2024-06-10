@@ -14,7 +14,8 @@ import { isDesktopMode } from './utils/DesktopUtils';
 import GetAppInfo from './AppInfo';
 import { isPortalMode } from './utils/PortalUtils';
 import AlertUtils from './utils/AlertUtils';
-
+import { useHasUserSignIn } from './utils/AuthUtils';
+import { init_when_signIn_mode as init_when_signIn_mode } from './AppInitFn';
 
 
 export default () => {
@@ -34,6 +35,12 @@ export default () => {
       )
     }
   }, [userInfoMeta.status])
+  const signInOrNot = useHasUserSignIn()
+  useEffect(() => {
+    if (signInOrNot) {
+      init_when_signIn_mode()
+    }
+  }, [])
   const routerArr: JSX.Element[] = []
   for (let eachRoute of ROUTE_CPT_MAPPING) {
     const pathName = eachRoute.href

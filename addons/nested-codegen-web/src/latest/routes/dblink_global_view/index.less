@@ -1,0 +1,115 @@
+@import "@blueprintjs/core/lib/less/variables.less";
+@import "../../vars.less";
+
+.dblink-page {
+  .control-table-wrapper {
+    // max-height: 50%;
+    overflow: hidden;
+    margin-bottom: 0;
+    .bp3-table-quadrant-scroll-container {
+      height: 330px;
+      max-height: 330px;
+      overflow: auto;
+    }
+  }
+}
+
+.just-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.h100p {
+  height: 100%;
+}
+.dbAllContent {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  .dbEditorView {
+  }
+  .editor-conbine-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.border-for-left-and-right {
+  border: 1px solid var(--app-border-gray-e1e8ed);
+}
+.editor-left-project {
+  .border-for-left-and-right;
+}
+.editor-right-content {
+  .border-for-left-and-right;
+  border-top: none;
+  border-left: none;
+}
+
+.editor-right-content {
+  height: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+.dbEditorView {
+  border-left: 1px solid var(--app-border-gray-e1e8ed);
+  border-top: 1px solid var(--app-border-gray-e1e8ed);
+  border-bottom: 1px solid var(--app-border-gray-e1e8ed);
+}
+.dbDataView {
+  border: 1px solid var(--app-border-gray-e1e8ed);
+  border-top: none;
+}
+
+.mycrt-tab-title {
+  border: 1px solid var(--app-bg-border-e1-gray);
+  width: 100%;
+  @myheightValue: 30px;
+  height: @myheightValue;
+  min-height: @myheightValue;
+  background: var(--app-bg-white);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  & > * {
+    padding: 0 16px;
+    height: 100%;
+    line-height: 100%;
+    align-items: center;
+    cursor: default;
+    user-select: none;
+    &:hover {
+      background: var(--app-bg-hover-f7-white);
+    }
+    &:active {
+      background: var(--app-bg-ebebeb);
+    }
+  }
+  font-size: 11px;
+  .conn-st-val {
+    font-weight: 500;
+    margin-left: 5px;
+  }
+  .conn-st-CONNECTED {
+    // color: darkgreen;
+    color: var(--app-text-darkgreen);
+  }
+  .conn-st-DISCONNECTED {
+    color: var(--app-text-darkred);
+  }
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mycrt-tab-box {
+  display: flex;
+  flex-direction: column;
+}
+.mycrt-tab-body {
+  flex: 1;
+}
