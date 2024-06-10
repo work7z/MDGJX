@@ -228,6 +228,20 @@ export const apiSlice = createApi({
         };
       },
     }),
+    wxpayVerfiyPay: build.query<AsyncCreateResponse<{
+      trade_state: string,
+      trade_state_desc:string
+    }>, {
+      outTradeNo: string
+    }>({
+      query: (params) => {
+        return {
+          params,
+          url: `/wxpay/verifypay`,
+          method: "GET",
+        };
+      },
+    }),
 
     // auth
     signIn: build.query<AsyncCreateResponse<SignInCredentials>, {

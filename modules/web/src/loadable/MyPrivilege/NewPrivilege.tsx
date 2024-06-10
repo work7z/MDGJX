@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Stepper, Button, Group, Alert, Paper, TextInput, NumberInput, Select, NativeSelect, Radio, Stack } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
 import { useHistory } from 'react-router';
 import AlertUtils from '@/utils/AlertUtils';
-import apiSlice from '@/store/reducers/apiSlice';
+import apiSlice, { verifyResponse } from '@/store/reducers/apiSlice';
 import exportUtils, { RHelper } from '@/utils/ExportUtils';
 import _ from 'lodash';
 import { QRCodeSVG } from 'qrcode.react';
@@ -69,6 +69,7 @@ export default function () {
         }
     })
 
+
     const [t_orderQueryRes, orderQueryRes] = apiSlice.useLazyWxpayNewOrderQuery({
     })
     const rt_t_orderQueryRes = () => {
@@ -77,6 +78,22 @@ export default function () {
             selectedPlan: rh?.npState?.selectedPlan + '',
         })
     }
+
+const wxVerifyRes=    apiSlice.useWxpayVerfiyPayQuery({
+        outTradeNo: orderQueryRes?.data?.data?.outTradeNo||''
+    },{
+        pollingInterval: 3000,
+        refetchOnMountOrArgChange: true,
+        skip: !orderQueryRes?.data?.data?.outTradeNo
+    })
+
+    useEffect(()=>{
+        if (wxVerifyRes.isSuccess){
+        if (wxVerifyRes.data?.data?.trade_state == 'SUCCESS'){
+                // success
+            }
+        }
+    }, [wxVerifyRes.status])
 
 
     if (!rh) {
@@ -103,10 +120,11 @@ export default function () {
                 </Stack>
             </Group>
         </Radio.Group>
-        <NumberInput
+        <TextInput
             {...rh?.bindOnChange({
                 npStateKey: 'planCount'
             })}
+            type='number'
             mb={10}
             label="权益数量" placeholder="购买权益礼品卡数量" />
     </Paper>
@@ -144,7 +162,7 @@ export default function () {
                                     <div className='font-xs' style={{
                                         fontSize: '15px'
                                     }}>
-                                        {orderQueryRes.data?.data?.description ? '' + orderQueryRes.data?.data?.description : ''}
+                                        {orderQueryRes.data?.data?.description ? '' + orderQueryRes.data?.data?.description : ''} - {wxVerifyRes?.data?.data?.trade_state_desc}
                                     </div>
                                     <div className='font-xs' style={{
                                         fontSize: '15px'
@@ -191,7 +209,12 @@ export default function () {
                             刷新界面
                         </Button>
                         <Button onClick={async () => {
-
+                            AlertUtils.alertInfo(`正在查询付款状态中...`)
+                            wxVerifyRes.refetch().then(x=>{
+                                if(x.data?.data?.trade_state != 'SUCCESS'){
+                                    AlertUtils.alertWarn(`支付未完成，当前状态: ${x.data?.data?.trade_state_desc}，如果需要订单支持，请点击下方按钮联系我们，感谢您的理解`)
+                                }
+                            })
                         }}>付款已完成</Button>
                     </> : ''
                 }
