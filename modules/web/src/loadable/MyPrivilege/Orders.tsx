@@ -1,6 +1,7 @@
 import { Table, Progress, Anchor, Text, Group } from '@mantine/core';
 import { S2GiftCard } from '@/store/reducers/apiSlice';
 import AlertUtils from '@/utils/AlertUtils';
+import apiSlice from '../../store/reducers/apiSlice';
 
 export  default function CardListTableView(props: {
 }) {
@@ -11,6 +12,9 @@ export  default function CardListTableView(props: {
             giftCardCode: 'THANKS_FOR_FUNDRAISING',
         }
     ];
+ const wxQueryGetOrdersRes =   apiSlice.useWxpayGetOrdersQuery({},{
+    pollingInterval: 5000
+ })
     const rows = data.map((row) => {
 
         return (
