@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Stepper, Button, Group, Alert, Paper, TextInput, NumberInput, Select, NativeSelect, Radio, Stack } from '@mantine/core';
+import { Stepper, Button, Group, Alert, Paper, TextInput, NumberInput, Select, NativeSelect, Radio, Stack, Title } from '@mantine/core';
 import { IconInfoCircle } from '@tabler/icons-react';
 import { useHistory } from 'react-router';
 import AlertUtils from '@/utils/AlertUtils';
@@ -21,7 +21,8 @@ export type WxPayPlanSt = {
 }
 
 export default function () {
-    const [active, setActive] = useState(0);
+    // const [active, setActive] = useState(2);
+    const [active, setActive] = useState(3);
     const [highestStepVisited, setHighestStepVisited] = useState(active);
     const r_sysconf = apiSlice.useGetSysConfWithStaticDataQuery({
         type: 'wxpay-plan.json'
@@ -79,17 +80,18 @@ export default function () {
         })
     }
 
-const wxVerifyRes=    apiSlice.useWxpayVerfiyPayQuery({
-        outTradeNo: orderQueryRes?.data?.data?.outTradeNo||''
-    },{
+    const wxVerifyRes = apiSlice.useWxpayVerfiyPayQuery({
+        outTradeNo: orderQueryRes?.data?.data?.outTradeNo || ''
+    }, {
         pollingInterval: 3000,
         refetchOnMountOrArgChange: true,
         skip: !orderQueryRes?.data?.data?.outTradeNo
     })
 
-    useEffect(()=>{
-        if (wxVerifyRes.isSuccess){
-        if (wxVerifyRes.data?.data?.trade_state == 'SUCCESS'){
+    useEffect(() => {
+        if (wxVerifyRes.isSuccess) {
+            if (wxVerifyRes.data?.data?.trade_state == 'SUCCESS') {
+                AlertUtils.alertSuccess('支付成功，感谢您的支持，将跳转到下一页')
                 // success
             }
         }
@@ -113,7 +115,7 @@ const wxVerifyRes=    apiSlice.useWxpayVerfiyPayQuery({
             <Group mt="xs">
                 <Stack>
                     {
-                        wxpayPlanConfigs?.configs?.filter(x=>x.status!=='offline')?.map(x => (
+                        wxpayPlanConfigs?.configs?.filter(x => x.status !== 'offline')?.map(x => (
                             <Radio key={x.id} value={x.id} label={x.label + `(${x.price}元)`} />
                         )) || []
                     }
@@ -167,13 +169,13 @@ const wxVerifyRes=    apiSlice.useWxpayVerfiyPayQuery({
                                     <div className='font-xs' style={{
                                         fontSize: '15px'
                                     }}>
-                                        {orderQueryRes.data?.data?.outTradeNo? '订单号: ' + orderQueryRes.data?.data?.outTradeNo : ''}
+                                        {orderQueryRes.data?.data?.outTradeNo ? '订单号: ' + orderQueryRes.data?.data?.outTradeNo : ''}
                                     </div>
                                     <div style={{
                                         color: 'darkorange',
                                         fontSize: '24px'
                                     }} className='mt-5'>
-                                        {orderQueryRes.data?.data?.total ? '总金额: ' + orderQueryRes.data?.data?.total +'元': ''}
+                                        {orderQueryRes.data?.data?.total ? '总金额: ' + orderQueryRes.data?.data?.total + '元' : ''}
                                     </div>
                                 </div>
                             </div>
@@ -182,14 +184,27 @@ const wxVerifyRes=    apiSlice.useWxpayVerfiyPayQuery({
                 </Stepper.Step>
                 <Stepper.Step
                     label="付款成功"
-                    description="付款后将应用权益"
+                    description="查看礼品卡列表"
                     allowStepSelect={shouldAllowSelectStep(2)}
                 >
-                    Step 3 content: Get full access
+                    <div className='w-full items-center'>
+                        <div className='mx-auto flex justify-center items-center flex-col '>
+                            <Title>感谢您的支持！</Title>
+                        </div>
+                    </div>
                 </Stepper.Step>
 
                 <Stepper.Completed>
-                    Completed, click back button to get to previous step
+                    <div className='w-full items-center p-2'>
+                        <div className='mx-auto flex justify-center items-center flex-col '>
+                            <Title>感谢您的支持！</Title>
+                            <p className='text-center'>
+                                默认情况下，我们不会直接应用您的权益，您的权益礼品卡已发放到您的账户中，您可以在个人中心查看您的权益礼品卡列表。
+                                <br />
+                                点击下方按钮即可查看并应用您的权益礼品卡，如果您有任何问题，请随时联系我们。
+                            </p>
+                        </div>
+                    </div>
                 </Stepper.Completed>
             </Stepper>
 
@@ -201,7 +216,7 @@ const wxVerifyRes=    apiSlice.useWxpayVerfiyPayQuery({
                 </Button>}
                 {
                     active === 1 ? <>
-                        <Button  color='lime' onClick={() => {
+                        <Button color='lime' onClick={() => {
                             rt_t_orderQueryRes().then(v => {
                                 AlertUtils.alertSuccess('付款码已刷新')
                             })
@@ -210,12 +225,20 @@ const wxVerifyRes=    apiSlice.useWxpayVerfiyPayQuery({
                         </Button>
                         <Button onClick={async () => {
                             AlertUtils.alertInfo(`正在查询付款状态中...`)
-                            wxVerifyRes.refetch().then(x=>{
-                                if(x.data?.data?.trade_state != 'SUCCESS'){
+                            wxVerifyRes.refetch().then(x => {
+                                if (x.data?.data?.trade_state != 'SUCCESS') {
                                     AlertUtils.alertWarn(`支付未完成，当前状态: ${x.data?.data?.trade_state_desc}，如果需要订单支持，请点击下方按钮联系我们，感谢您的理解`)
                                 }
                             })
                         }}>付款已完成</Button>
+                    </> : ''
+                }
+                {
+                    active === 3 ? <>
+                        <Button color='cyan' onClick={async () => {
+                            AlertUtils.alertSuccess(`为您跳转至礼品卡列表`)
+                            hist.push(`/settings/my-privilege?type=redemption`)
+                        }}>查看礼品卡</Button>
                     </> : ''
                 }
                 {

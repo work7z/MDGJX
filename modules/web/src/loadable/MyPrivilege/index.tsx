@@ -63,7 +63,7 @@ export default () => {
                                     我的权益
                                 </Tabs.Tab>
                                 <Tabs.Tab value="redemption">
-                                    礼品卡兑换
+                                    礼品卡列表
                                 </Tabs.Tab>
                             </Tabs.List>
 
