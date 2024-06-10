@@ -253,6 +253,9 @@ export default function () {
                         <Button color='cyan' onClick={async () => {
                             AlertUtils.alertSuccess(`为您跳转至礼品卡列表`)
                             hist.push(`/settings/my-privilege?type=redemption`)
+                            setTimeout(()=>{
+                                location.reload()
+                            },300)
                         }}>查看礼品卡</Button>
                     </> : ''
                 }

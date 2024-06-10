@@ -37,14 +37,12 @@ export const GiftCardDIV = (props: {
     noSidebar?: boolean
 })=>{
     const hasSignIn = useHasUserSignIn()
-    const [t_getCardList, st_cardList] = apiSlice.useLazyGetGiftCardListQuery({})
+    const st_cardList = apiSlice.useGetGiftCardListQuery({},{
+        skip: !hasSignIn,
+        pollingInterval: 5000
+    })
     const uObj = exportUtils.useSelector(v=>v.users)
     const cardList = st_cardList?.data?.data || []
-    useEffect(() => {
-        if (hasSignIn) {
-            t_getCardList({})
-        }
-    }, [hasSignIn])
     return (
         <Container my={10} size={'xl'} className={
             ' block justify-start items-start sm:space-x-4 ' + (
@@ -65,7 +63,7 @@ export const GiftCardDIV = (props: {
                         礼品卡列表
                     </Title>
                     <CardListTableView refreshNow={()=>{
-                        t_getCardList({})
+                        st_cardList.refetch()
                     }} cardList={cardList} />
                     <Alert mb={10} variant="light" color="green" title="关于礼品卡兑换、赠与功能的说明" icon={
                         <IconInfoCircle />
