@@ -7,8 +7,8 @@ const fn_getMsgCount = () => {
     // return `[${msgCtn++}] `
 }
 export default {
-    confirm(msg: string) {
-        //
+    confirm: async (msg: string): Promise<boolean> =>{
+        return confirm(msg)
     },
     alertSuccess(msg: any) {
         // alert("" + _.toString(msg))

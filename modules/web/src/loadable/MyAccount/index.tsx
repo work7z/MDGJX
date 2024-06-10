@@ -64,7 +64,9 @@ export const GiftCardDIV = (props: {
                     >
                         礼品卡列表
                     </Title>
-                    <CardListTableView cardList={cardList} />
+                    <CardListTableView refreshNow={()=>{
+                        t_getCardList({})
+                    }} cardList={cardList} />
                     <Alert mb={10} variant="light" color="green" title="关于礼品卡兑换、赠与功能的说明" icon={
                         <IconInfoCircle />
                     }>
