@@ -3,6 +3,8 @@ import classes from './CardListTableView.module.css';
 import { S2GiftCard } from '@/store/reducers/apiSlice';
 import AlertUtils from '@/utils/AlertUtils';
 import { useHistory } from 'react-router';
+import _ from 'lodash';
+import dayjs from 'dayjs';
 
 export function CardListTableView(props: {
     cardList: S2GiftCard[],
@@ -14,6 +16,7 @@ export function CardListTableView(props: {
 
         return (
             <Table.Tr key={row.id}>
+                <Table.Td>{row.id}</Table.Td>
                 <Table.Td>{({
                     'THANKS_FOR_FUNDRAISING': '永久会员权益卡',
                     'WX_PAY':"付费会员权益卡"
@@ -40,6 +43,12 @@ export function CardListTableView(props: {
                 <Table.Td>
                     {
                         row.usedByWho < 1 ? 'N/A' : '2116-09-01'
+                    }
+                </Table.Td>
+                
+                <Table.Td>
+                    {
+                        dayjs(row.createdAt).format('YYYY-MM-DD HH:mm:ss')
                     }
                 </Table.Td>
                 <Table.Td>
@@ -85,12 +94,14 @@ export function CardListTableView(props: {
             <Table verticalSpacing="xs">
                 <Table.Thead>
                     <Table.Tr>
+                        <Table.Th>ID</Table.Th>
                         <Table.Th>类型</Table.Th>
                         <Table.Th>礼品卡</Table.Th>
                         <Table.Th>状态</Table.Th>
                         <Table.Th>有效期</Table.Th>
                         <Table.Th>开始时间</Table.Th>
                         <Table.Th>结束时间</Table.Th>
+                        <Table.Th>创建时间</Table.Th>
                         <Table.Th align='center'>操作</Table.Th>
                     </Table.Tr>
                 </Table.Thead>

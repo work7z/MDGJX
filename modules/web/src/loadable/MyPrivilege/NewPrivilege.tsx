@@ -204,6 +204,8 @@ export default function () {
                                 默认情况下，我们不会直接应用您的权益，您的权益礼品卡已发放到您的账户中，您可以在个人中心查看您的权益礼品卡列表。
                                 <br />
                                 点击下方按钮即可查看并应用您的权益礼品卡，如果您有任何问题，请随时联系我们。
+                                <br/> 
+                                 {orderQueryRes.data?.data?.outTradeNo ? '订单号: ' + orderQueryRes.data?.data?.outTradeNo : ''}
                             </p>
                         </div>
                     </div>
@@ -241,6 +243,13 @@ export default function () {
                 }
                 {
                     active === 3 ? <>
+                    <Button variant="default" disabled={
+                        false
+                } onClick={() => {
+                    location.reload()
+                }}>
+                    再来一单
+                </Button>
                         <Button color='cyan' onClick={async () => {
                             AlertUtils.alertSuccess(`为您跳转至礼品卡列表`)
                             hist.push(`/settings/my-privilege?type=redemption`)
