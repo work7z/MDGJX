@@ -9,7 +9,7 @@ if (isDarkTheme) {
 
 export const useStyleStore = defineStore('style', {
   state: () => {
-    const isDarkTheme = useDark();
+//    const isDarkTheme = isDark// useDark();
     const toggleDark = useToggle(isDarkTheme);
     // const isSmallScreen = useMediaQuery('(max-width: 700px)');
     // const isMenuCollapsed = useStorage('isMenuCollapsed', isSmallScreen.value) as Ref<boolean>;
