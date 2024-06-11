@@ -70,6 +70,7 @@ export default function () {
         },
         getPersistedStateFn() {
             return {
+                p:1
             }
         }
     })

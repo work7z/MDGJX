@@ -61,9 +61,9 @@ export default () => {
                                 <Tabs.Tab value="new">
                                     购买新权益
                                 </Tabs.Tab>
-                                <Tabs.Tab value="my">
+                                {/* <Tabs.Tab value="my">
                                     我的权益
-                                </Tabs.Tab>
+                                </Tabs.Tab> */}
                                 <Tabs.Tab value="orders">
                                     订单列表
                                 </Tabs.Tab>

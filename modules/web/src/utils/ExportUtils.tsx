@@ -99,7 +99,7 @@ function register<T, K>(name: string, options: ROptions<T, K>): RHelper<T, K> | 
   let crtPState = exportUtils.useSelector(v => v.state.kvSessionMap[name])
   let crtNPState = exportUtils.useSelector(v => v.state.npKVSessionMap[name])
   useEffect(() => {
-    const emptyOrNot = _.isEmpty(crtPState)
+    const emptyOrNot = _.isNil(crtPState)
     if (emptyOrNot) {
       FN_GetDispatch()(StateSlice.actions.updateSessionMapValue({
         keyname: name,
