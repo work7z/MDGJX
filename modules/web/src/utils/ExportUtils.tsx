@@ -120,7 +120,7 @@ function register<T, K>(name: string, options: ROptions<T, K>): RHelper<T, K> | 
   }, [_.isEmpty(crtNPState)])
 
 
-  if (_.isEmpty(crtPState) || _.isEmpty(crtNPState)) {
+  if (_.isNil(crtPState) || _.isNil(crtNPState)) {
     return null;
   }
   return new RHelper<T, K>(name, crtPState as T, crtNPState as K)

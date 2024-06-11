@@ -36,6 +36,7 @@ import NewPrivilege from './NewPrivilege';
 import MyPrivilege from './MyPrivilege';
 import Redemption from './Redemption';
 import Orders from './Orders';
+import PleaseSignIn from './PleaseSignIn';
 
 
 export default () => {
@@ -43,7 +44,11 @@ export default () => {
         type: string,
         type2: string
     }>()
+const hasSignIn=    useHasUserSignIn()
     const typeval = query.result.type || 'new'
+    if(!hasSignIn){
+        return <PleaseSignIn/>
+    }
     return (
      <div>
             <Container my={10} size={'xl'} className='block sm:flex flex-row justify-start items-start sm:space-x-4 '>

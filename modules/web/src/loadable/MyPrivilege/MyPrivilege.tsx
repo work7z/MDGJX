@@ -10,7 +10,7 @@ export default () => {
         refetchOnFocus: true,
     })
     useEffect(() => {
-        r.refetch()
+      r.isSuccess &&   r.refetch()
     }, [useHistory().location.pathname])
 
     return <div>
