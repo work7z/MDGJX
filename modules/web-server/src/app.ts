@@ -25,9 +25,16 @@ const env = NODE_ENV || 'development';
 const port = process.env.PORT || (env == 'development' ? 3050 : 39899);
 let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
 import httpProxy from 'http-proxy';
-var proxyWS = httpProxy.createProxyServer({ target: DIRECT_PROXY_SERVER, ws: true }).on('error', e => {
-  logger.error('proxyWS error' + e);
-});
+var proxyWS = httpProxy
+  .createProxyServer({
+    target: DIRECT_PROXY_SERVER,
+    ws: true,
+    changeOrigin: true,
+    //
+  })
+  .on('error', e => {
+    logger.error('proxyWS error' + e);
+  });
 const launchTime = new Date();
 
 console.log('DIRECT_PROXY_SERVER: ' + DIRECT_PROXY_SERVER);
@@ -91,8 +98,7 @@ export class App {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
 
-
-    this.app.get('/killnow',(req,res)=>{
+    this.app.get('/killnow', (req, res) => {
       if (this.port + '' > '40000') {
         process.exit(0);
       } else {

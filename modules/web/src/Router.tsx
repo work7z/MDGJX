@@ -40,7 +40,7 @@ export default () => {
     if (signInOrNot) {
       init_when_signIn_mode()
     }
-  }, [])
+  }, [signInOrNot])
   const routerArr: JSX.Element[] = []
   for (let eachRoute of ROUTE_CPT_MAPPING) {
     const pathName = eachRoute.href
