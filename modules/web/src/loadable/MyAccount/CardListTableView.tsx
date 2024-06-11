@@ -38,12 +38,14 @@ export function CardListTableView(props: {
                 </Table.Td>
                 <Table.Td>
                     {
-                        !row.enabled ? 'N/A' : '2016-09-01'
+                        // '2016-09-01'
+                        !row.enabled ? 'N/A' : dayjs(row.fromDateTime).format('YYYY-MM-DD')
                     }
                 </Table.Td>
                 <Table.Td>
                     {
-                        !row.enabled ? 'N/A' : '2116-09-01'
+                        // '2116-09-01'
+                        !row.enabled ? 'N/A' : dayjs(row.toDateTime).format('YYYY-MM-DD')
                     }
                 </Table.Td>
                 
