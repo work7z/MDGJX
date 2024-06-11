@@ -78,7 +78,7 @@ export default ()=>{
                         return <div>
                             <div className='font-bold'>{x.version}</div>
                             <div className='text-sm'>
-                                <MarkdownCpt str={x.description || `暂无更多信息`}>
+                                <MarkdownCpt str={x.description || `优化了部分系统组件逻辑`}>
                                 </MarkdownCpt>
                             </div>
                             <div className='text-xs text-gray-500'>{dayjs(parseInt(x.timestamp || '0') * 1000).format('YYYY-MM-DD HH:mm:ss')}</div>

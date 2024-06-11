@@ -26,8 +26,13 @@ export default function () {
     const r_sysconf = apiSlice.useGetSysConfWithStaticDataQuery({
         type: 'wxpay-plan.json'
     }, {
-        pollingInterval: 5000 * 10
+        pollingInterval: 5000 * 10,
+        refetchOnFocus: true,
     })
+    useEffect(() => {
+        r_sysconf.refetch()
+    }, [useHistory().location.pathname])
+
     const handleStepChange = (nextStep: number) => {
         const isOutOfBounds = nextStep > 3 || nextStep < 0;
         if (isOutOfBounds) {
@@ -204,6 +209,8 @@ export default function () {
                                 默认情况下，我们不会直接应用您的权益，您的权益礼品卡已发放到您的账户中，您可以在个人中心查看您的权益礼品卡列表。
                                 <br />
                                 点击下方按钮即可查看并应用您的权益礼品卡，如果您有任何问题，请随时联系我们。
+                                <br/> 
+                                 {orderQueryRes.data?.data?.outTradeNo ? '订单号: ' + orderQueryRes.data?.data?.outTradeNo : ''}
                             </p>
                         </div>
                     </div>
@@ -241,9 +248,19 @@ export default function () {
                 }
                 {
                     active === 3 ? <>
+                    <Button variant="default" disabled={
+                        false
+                } onClick={() => {
+                    location.reload()
+                }}>
+                    再来一单
+                </Button>
                         <Button color='cyan' onClick={async () => {
                             AlertUtils.alertSuccess(`为您跳转至礼品卡列表`)
                             hist.push(`/settings/my-privilege?type=redemption`)
+                            // setTimeout(()=>{
+                                // location.reload()
+                            // },300)
                         }}>查看礼品卡</Button>
                     </> : ''
                 }

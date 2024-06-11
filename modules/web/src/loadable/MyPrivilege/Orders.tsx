@@ -1,87 +1,104 @@
-import { Table, Progress, Anchor, Text, Group } from '@mantine/core';
-import { S2GiftCard } from '@/store/reducers/apiSlice';
+import { Table, Progress, Anchor, Text, Group, Badge, Button } from '@mantine/core';
+import { S2GiftCardAndGiftCardUserTable } from '@/store/reducers/apiSlice';
 import AlertUtils from '@/utils/AlertUtils';
+import apiSlice from '../../store/reducers/apiSlice';
+import _ from 'lodash';
+import { useEffect } from 'react';
+import { useHistory } from 'react-router';
 
 export  default function CardListTableView(props: {
 }) {
-    const data = [
-        {
-            id: 1,
-            giftCardType: 'THANKS_FOR_FUNDRAISING',
-            giftCardCode: 'THANKS_FOR_FUNDRAISING',
-        }
-    ];
-    const rows = data.map((row) => {
 
+const [t_verifyPayQuery]=    apiSlice.useLazyWxpayVerfiyPayQuery({})
+ const wxQueryGetOrdersRes =   apiSlice.useWxpayGetOrdersQuery({},{
+    pollingInterval: 5000,
+    refetchOnFocus: true,
+ })
+    const data = wxQueryGetOrdersRes.data?.data || []
+    // wxQueryGetOrdersRes.data?.data? [
+    // ];
+    useEffect(()=>{
+        wxQueryGetOrdersRes.refetch()
+    },[useHistory().location.pathname])
+    const rows = data.map((row) => {
+        
         return (
             <Table.Tr key={row.id}>
-                <Table.Td>{({
-                    'THANKS_FOR_FUNDRAISING': '永久会员权益卡',
-                })[row.giftCardType] || "通用"}</Table.Td>
+                <Table.Td>{row.id}</Table.Td>
                 <Table.Td>
-                    <Anchor component="button" fz="sm" onClick={() => {
-                        AlertUtils.alertWarn("抱歉，系统暂未开放兑换礼品卡的接口，还在内测中，此功能将在测试通过后上线")
-                    }}>
-                        {row.giftCardCode}
-                    </Anchor>
+                    {row.outTradeNo}
                 </Table.Td>
                 <Table.Td>
-                    100年
+                    {row.description}
                 </Table.Td>
                 <Table.Td>
-                    2016-09-01
+                    {row.total}
                 </Table.Td>
                 <Table.Td>
-                    2116-09-01
+                    {row.planCount}
                 </Table.Td>
                 <Table.Td>
-                    未使用
+                  <Badge color={row.hasPaid ? 'green':'yellow'} >
+                        {row.hasPaid ? '已付款' : '未付款'}
+                  </Badge>
                 </Table.Td>
                 <Table.Td>
+                    {_.toString(row.createdAt)}
                 </Table.Td>
-                {/* <Table.Td>
-                    <Group justify="space-between">
-                        <Text fz="xs" c="teal" fw={700}>
-                            {positiveReviews.toFixed(0)}%
-                        </Text>
-                        <Text fz="xs" c="red" fw={700}>
-                            {negativeReviews.toFixed(0)}%
-                        </Text>
-                    </Group>
-                    <Progress.Root>
-                        <Progress.Section
-                            className={classes.progressSection}
-                            value={positiveReviews}
-                            color="teal"
-                        />
-
-                        <Progress.Section
-                            className={classes.progressSection}
-                            value={negativeReviews}
-                            color="red"
-                        />
-                    </Progress.Root>
-                </Table.Td> */}
+                <Table.Td>
+                                        <div className='space-x-2'>
+                       {
+                          row.hasPaid != 1 ? <Button variant='light' size='compact-xs' 
+                                onClick={async () => {
+                                    //
+                                    t_verifyPayQuery({
+                                        outTradeNo: row.outTradeNo
+                                    }).then(x=>{
+                                        wxQueryGetOrdersRes.refetch().then(xx=>{
+                                            AlertUtils.alertInfo(`订单${row.outTradeNo}付款状态已刷新：${x.data?.data?.trade_state_desc}`)
+                                        })
+                                    })
+                                }}
+                            >
+                                刷新付款状态
+                            </Button> : ''
+                       }
+                    </div>
+                </Table.Td>
+               
             </Table.Tr>
         );
     });
 
     return (
-        <Table.ScrollContainer minWidth={800}>
-            <Table verticalSpacing="xs">
-                <Table.Thead>
-                    <Table.Tr>
-                        <Table.Th>类型</Table.Th>
-                        <Table.Th>礼品卡ID</Table.Th>
-                        <Table.Th>有效期</Table.Th>
-                        <Table.Th>开始时间</Table.Th>
-                        <Table.Th>结束时间</Table.Th>
-                        <Table.Th>是否已使用</Table.Th>
-                        <Table.Th>备注</Table.Th>
-                    </Table.Tr>
-                </Table.Thead>
-                <Table.Tbody>{rows}</Table.Tbody>
-            </Table>
-        </Table.ScrollContainer>
+      <div>
+        <div className='flex justify-between p-2'>
+            <div>{_.size(data)}条数据</div>
+            <Button loading={
+                wxQueryGetOrdersRes.isLoading
+            } size='compact-sm' onClick={()=>{
+                wxQueryGetOrdersRes.refetch().then(x=>{
+                    AlertUtils.alertSuccess('已刷新')
+                })
+            }}>刷新订单列表</Button>
+        </div>
+            <Table.ScrollContainer minWidth={800}>
+                <Table verticalSpacing="xs">
+                    <Table.Thead>
+                        <Table.Tr>
+                            <Table.Th>ID</Table.Th>
+                            <Table.Th>订单号</Table.Th>
+                            <Table.Th>权益计划名</Table.Th>
+                            <Table.Th>订单金额</Table.Th>
+                            <Table.Th>订单数量</Table.Th>
+                            <Table.Th>是否已付款</Table.Th>
+                            <Table.Th>创建时间</Table.Th>
+                            <Table.Th>操作</Table.Th>
+                        </Table.Tr>
+                    </Table.Thead>
+                    <Table.Tbody>{rows}</Table.Tbody>
+                </Table>
+            </Table.ScrollContainer>
+      </div>
     );
 }
