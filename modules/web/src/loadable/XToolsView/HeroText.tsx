@@ -36,12 +36,15 @@ export function HeroText() {
 
                {
                     isDesktopMode() ? '' : <div className={classes.controls}>
-                        <Button onClick={() => {
-                            // window.open(GetAppInfo().githubRepo)
-                            history.push(`/settings/install?type=docker`)
-                        }} className={classes.control} size="lg" variant="default" color="gray">
-                            应用自部署(Docker)
-                        </Button>
+                       {/* <a className='inline-block mr-2' href={GetAppInfo().githubRepo} target='_blank' > */}
+                            <Button  onClick={() => {
+                                window.open(GetAppInfo().githubRepo)
+                                // history.push(`/settings/install?type=docker`)
+                            }} className={classes.control} size="lg" variant="default" color="gray">
+                                {/* 应用自部署(Docker) */}
+                                项目源代码(GitHub)
+                            </Button>
+                       {/* </a> */}
                         <Button
                             onClick={() => {
                                 // AlertUtils.alertInfo("抱歉，专业版暂未开放，敬请期待！感兴趣可加QQ群" + GetAppInfo().qqGroup)

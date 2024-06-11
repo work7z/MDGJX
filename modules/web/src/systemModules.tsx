@@ -176,20 +176,21 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
             })
         ]
     },
-    {
-        id: 'collections',
-        icon: IconBookmarks,
-        defaultHref: '/collections/index',
-        label: '收藏夹',
-        children: [
-            {
-                name: '首页',
-                id: 'index',
-                disableFooter: true,
-                bodyFn: () => import('./loadable/NotOK/index.tsx')
-            },
-        ]
-    },
+    // TODO: 后面记得显示出来
+    // {
+    //     id: 'collections',
+    //     icon: IconBookmarks,
+    //     defaultHref: '/collections/index',
+    //     label: '收藏夹',
+    //     children: [
+    //         {
+    //             name: '首页',
+    //             id: 'index',
+    //             disableFooter: true,
+    //             bodyFn: () => import('./loadable/NotOK/index.tsx')
+    //         },
+    //     ]
+    // },
     {
         id: 'marketplace',
         defaultHref: '/marketplace/index',
@@ -197,11 +198,54 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
         label: '插件市场',
         children: [
             {
-                name: '首页',
+                name: '云插件',
                 id: 'index',
+                disableFooter: true,
+                bodyFn: () => import('./loadable/MarketPlace/index.tsx')
+            },
+            {
+                name: '已安装插件',
+                id: 'installed-plugins',
                 disableFooter: true,
                 bodyFn: () => import('./loadable/NotOK/index.tsx')
             },
+            {
+                name: '自启动管理',
+                id: 'self-startup',
+                disableFooter: true,
+                bodyFn: () => import('./loadable/NotOK/index.tsx')
+            },
+            {
+                name: '卸载插件',
+                id: 'uninstall',
+                disableFooter: true,
+                bodyFn: () => import('./loadable/NotOK/index.tsx')
+            },
+            // {
+            //     name: '二级分类',
+            //     id: 'sub',
+            //     disableFooter: true,
+            //     children: [
+            //         {
+            //             name: '工具助手类',
+            //             id: 'index',
+            //             disableFooter: true,
+            //             bodyFn: () => import('./loadable/MarketPlace/index.tsx')
+            //         },
+            //         {
+            //             name: '文档笔记类',
+            //             id: 'index',
+            //             disableFooter: true,
+            //             bodyFn: () => import('./loadable/MarketPlace/index.tsx')
+            //         },
+            //         {
+            //             name: '资源软件类',
+            //             id: 'index',
+            //             disableFooter: true,
+            //             bodyFn: () => import('./loadable/MarketPlace/index.tsx')
+            //         }
+            //     ]
+            // },
         ]
     },
     {
