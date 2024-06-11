@@ -25,7 +25,6 @@ import classes from './Header.module.css'
 import { Link, useHistory } from 'react-router-dom';
 import exportUtils from '@/utils/ExportUtils';
 import AuthUtils from '@/utils/AuthUtils';
-import info from '@/meta/info';
 
 export default (props: {
     opened: boolean,
@@ -53,21 +52,10 @@ export default (props: {
                 <img src={imgFile} className='w-[30px]' />
                 <div className='ml-[-7px] cursor-pointer font-bold text-xl hidden sm:block' onClick={() => {
                     hist.push('/tools/index')
-                }}>{appInfo.name}({info.version})</div>
+                }}>{appInfo.name}({appInfo.version})</div>
                 <div className='ml-[-7px] font-bold text-xl block sm:hidden'>{appInfo.name}</div>
             </Group>
 
-            {/* <Group h="100%" gap={0} visibleFrom="sm">
-                <a href="#" className={classes.link + ' ' + classes.active}>
-                    Chat对话框
-                </a>
-                <a href="#" className={classes.link}>
-                    功能总览(193)
-                </a>
-                <a href="#" className={classes.link}>
-                    我的收藏(0)
-                </a>
-            </Group> */}
 
             <Group gap={6}>
                 <ColorSchemeToggle />

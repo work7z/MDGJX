@@ -4,6 +4,8 @@ import AuthUtils, { useHasUserSignIn } from "./AuthUtils";
 import { PAGE_SESSION_ID } from "./PageUtils";
 import _ from "lodash";
 import queryString from "query-string";
+import { isDesktopMode } from "./DesktopUtils";
+import { isPortalMode, isSSLMode } from "./PortalUtils";
 export type WsMsgBody = {
     id:string,
     whoami: 'client' | 'server';
@@ -47,14 +49,9 @@ export const initWSConn = (url:URLWebsocket)=>{
     if (!AuthUtils.token) {
         return
     }
-    // if (WS_INIT_MANAGER[url]) {
-    //     if(WS_INIT_MANAGER[url].inst.readyState === WebSocket.OPEN){
-    //         WS_INIT_MANAGER[url].inst.close()
-    //     }
-    // }
     let latestTS = Date.now()
     const i_ws = new WebSocket((
-        !isDevEnv() ? 'wss' : 'ws'
+        isSSLMode() ? 'wss' : 'ws'
     ) + `://${location.host}/ws/` + url + "?" + queryString.stringify({
         token: AuthUtils.token,
         pageSessionId: PAGE_SESSION_ID
