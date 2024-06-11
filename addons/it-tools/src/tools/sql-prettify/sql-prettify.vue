@@ -23,49 +23,50 @@ const prettySQL = computed(() => formatSQL(rawSQL.value, config));
       <c-select
         v-model:value="config.language"
         flex-1
-        label="Dialect"
+        label="语句类型"
         :options="[
+          { label: '标准SQL', value: 'sql' },
+          { label: 'Amazon Redshift', value: 'redshift' },
+          { label: 'Apache Hive', value: 'hive' },
+          { label: 'Couchbase N1QL', value: 'n1ql' },
           { label: 'GCP BigQuery', value: 'bigquery' },
           { label: 'IBM DB2', value: 'db2' },
-          { label: 'Apache Hive', value: 'hive' },
           { label: 'MariaDB', value: 'mariadb' },
           { label: 'MySQL', value: 'mysql' },
-          { label: 'Couchbase N1QL', value: 'n1ql' },
           { label: 'Oracle PL/SQL', value: 'plsql' },
           { label: 'PostgreSQL', value: 'postgresql' },
-          { label: 'Amazon Redshift', value: 'redshift' },
           { label: 'Spark', value: 'spark' },
-          { label: 'Standard SQL', value: 'sql' },
-          { label: 'sqlite', value: 'sqlite' },
-          { label: 'SQL Server Transact-SQL', value: 'tsql' },
+          { label: 'SQL Server T-SQL', value: 'tsql' },
+          { label: 'SQLite', value: 'sqlite' },
+
         ]"
       />
       <c-select
-        v-model:value="config.keywordCase" label="Keyword case"
+        v-model:value="config.keywordCase" label="关键词"
         flex-1
         :options="[
-          { label: 'UPPERCASE', value: 'upper' },
-          { label: 'lowercase', value: 'lower' },
-          { label: 'Preserve', value: 'preserve' },
+          { label: '大写', value: 'upper' },
+          { label: '小写', value: 'lower' },
+          { label: '不转换', value: 'preserve' },
         ]"
       />
       <c-select
-        v-model:value="config.indentStyle" label="Indent style"
+        v-model:value="config.indentStyle" label="缩进样式"
         flex-1
         :options="[
-          { label: 'Standard', value: 'standard' },
-          { label: 'Tabular left', value: 'tabularLeft' },
-          { label: 'Tabular right', value: 'tabularRight' },
+          { label: '标准', value: 'standard' },
+          { label: '左侧', value: 'tabularLeft' },
+          { label: '右侧', value: 'tabularRight' },
         ]"
       />
     </div>
   </div>
 
-  <n-form-item label="Your SQL query">
+  <n-form-item label="原始 SQL 查询语句">
     <c-input-text
       ref="inputElement"
       v-model:value="rawSQL"
-      placeholder="Put your SQL query here..."
+      placeholder="输入原始 SQL 查询语句"
       rows="20"
       multiline
       autocomplete="off"
@@ -75,7 +76,7 @@ const prettySQL = computed(() => formatSQL(rawSQL.value, config));
       monospace
     />
   </n-form-item>
-  <n-form-item label="Prettify version of your query">
+  <n-form-item label="已格式化的 SQL 查询语句">
     <TextareaCopyable :value="prettySQL" language="sql" :follow-height-of="inputElement" />
   </n-form-item>
 </template>

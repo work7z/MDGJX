@@ -7,9 +7,8 @@ import { withDefaultOnError } from '@/utils/defaults';
 
 const ua = ref(navigator.userAgent as string);
 
-// If not input in the ua field is present return an empty object of type UAParser.IResult because otherwise
-// UAParser returns the values for the current Browser. This is confusing because results are shown for an empty
-// UA field value.
+// 如果 ua 字段中没有输入，则返回 UAParser.IResult 类型的空对象，否则 UAParser 返回当前浏览器的值。 
+// 这很令人困惑，因为显示的结果是空的 UA 字段值。
 function getUserAgentInfo(userAgent: string) {
   return userAgent.trim().length > 0
     ? UAParser(userAgent.trim())
@@ -19,71 +18,71 @@ const userAgentInfo = computed(() => withDefaultOnError(() => getUserAgentInfo(u
 
 const sections: UserAgentResultSection[] = [
   {
-    heading: 'Browser',
+    heading: '浏览器',
     icon: Browser,
     content: [
       {
-        label: 'Name',
+        label: '名称',
         getValue: block => block?.browser.name,
-        undefinedFallback: 'No browser name available',
+        undefinedFallback: '-',
       },
       {
-        label: 'Version',
+        label: '版本号',
         getValue: block => block?.browser.version,
-        undefinedFallback: 'No browser version available',
+        undefinedFallback: '-',
       },
     ],
   },
   {
-    heading: 'Engine',
+    heading: '引擎',
     icon: Engine,
     content: [
       {
-        label: 'Name',
+        label: '名称',
         getValue: block => block?.engine.name,
-        undefinedFallback: 'No engine name available',
+        undefinedFallback: '-',
       },
       {
-        label: 'Version',
+        label: '版本号',
         getValue: block => block?.engine.version,
-        undefinedFallback: 'No engine version available',
+        undefinedFallback: '-',
       },
     ],
   },
   {
-    heading: 'OS',
+    heading: '操作系统',
     icon: Adjustments,
     content: [
       {
-        label: 'Name',
+        label: '名称',
         getValue: block => block?.os.name,
-        undefinedFallback: 'No OS name available',
+        undefinedFallback: '-',
       },
       {
-        label: 'Version',
+        label: '版本号',
         getValue: block => block?.os.version,
-        undefinedFallback: 'No OS version available',
+        undefinedFallback: '-',
       },
     ],
   },
   {
-    heading: 'Device',
+    heading: '设备',
     icon: Devices,
     content: [
       {
-        label: 'Model',
+        label: '型号',
         getValue: block => block?.device.model,
-        undefinedFallback: 'No device model available',
+        undefinedFallback: '-',
       },
       {
-        label: 'Type',
+        label: '类型',
         getValue: block => block?.device.type,
-        undefinedFallback: 'No device type available',
+        undefinedFallback: '-',
       },
       {
-        label: 'Vendor',
+        label: '制造商',
         getValue: block => block?.device.vendor,
-        undefinedFallback: 'No device vendor available',
+        undefinedFallback: '-',
       },
     ],
   },
@@ -92,9 +91,9 @@ const sections: UserAgentResultSection[] = [
     icon: Cpu,
     content: [
       {
-        label: 'Architecture',
+        label: '架构',
         getValue: block => block?.cpu.architecture,
-        undefinedFallback: 'No CPU architecture available',
+        undefinedFallback: '-',
       },
     ],
   },
@@ -105,9 +104,9 @@ const sections: UserAgentResultSection[] = [
   <div>
     <c-input-text
       v-model:value="ua"
-      label="User agent string"
+      label="User-agent 字符串"
       multiline
-      placeholder="Put your user-agent here..."
+      placeholder="请输入 User-agent 字符串"
       clearable
       raw-text
       rows="2"

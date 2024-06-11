@@ -1,11 +1,10 @@
 import { Braces } from '@vicons/tabler';
 import { defineTool } from '../tool';
-import { translate } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: translate('tools.json-to-yaml-converter.title'),
+  name: 'JSON 转 YAML',
   path: '/json-to-yaml-converter',
-  description: translate('tools.json-to-yaml-converter.description'),
+  description: '只需使用此实时在线转换器即可将 JSON 转换为 YAML。',
   keywords: ['yaml', 'to', 'json'],
   component: () => import('./json-to-yaml.vue'),
   icon: Braces,

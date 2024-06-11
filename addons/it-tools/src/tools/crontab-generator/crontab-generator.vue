@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import cronstrue from 'cronstrue';
+import 'cronstrue/locales/zh_CN';
 import { isValidCron } from 'cron-validator';
 import { useStyleStore } from '@/stores/style.store';
 
@@ -11,6 +12,7 @@ const styleStore = useStyleStore();
 
 const cron = ref('40 * * * *');
 const cronstrueConfig = reactive({
+  locale: 'zh_CN',
   verbose: true,
   dayOfWeekStartIndexZero: true,
   use24HourTimeFormat: true,
@@ -19,76 +21,76 @@ const cronstrueConfig = reactive({
 
 const helpers = [
   {
-    symbol: '*',
-    meaning: 'Any value',
-    example: '* * * *',
-    equivalent: 'Every minute',
+    符号: '*',
+    含义: '任意值',
+    示例: '* * * *',
+    等效于: '每分钟',
   },
   {
-    symbol: '-',
-    meaning: 'Range of values',
-    example: '1-10 * * *',
-    equivalent: 'Minutes 1 through 10',
+    符号: '-',
+    含义: '数值范围',
+    示例: '1-10 * * *',
+    等效于: '第1分钟 到 第10分钟',
   },
   {
-    symbol: ',',
-    meaning: 'List of values',
-    example: '1,10 * * *',
-    equivalent: 'At minutes 1 and 10',
+    符号: ',',
+    含义: '数值列表',
+    示例: '1,10 * * *',
+    等效于: '第1分钟 和 第10分钟',
   },
   {
-    symbol: '/',
-    meaning: 'Step values',
-    example: '*/10 * * *',
-    equivalent: 'Every 10 minutes',
+    符号: '/',
+    含义: '步进值',
+    示例: '*/10 * * *',
+    等效于: '每10分钟',
   },
   {
-    symbol: '@yearly',
-    meaning: 'Once every year at midnight of 1 January',
-    example: '@yearly',
-    equivalent: '0 0 1 1 *',
+    符号: '@yearly',
+    含义: '每年1月1日0点',
+    示例: '@yearly',
+    等效于: '0 0 1 1 *',
   },
   {
-    symbol: '@annually',
-    meaning: 'Same as @yearly',
-    example: '@annually',
-    equivalent: '0 0 1 1 *',
+    符号: '@annually',
+    含义: '与 @yearly 相同',
+    示例: '@annually',
+    等效于: '0 0 1 1 *',
   },
   {
-    symbol: '@monthly',
-    meaning: 'Once a month at midnight on the first day',
-    example: '@monthly',
-    equivalent: '0 0 1 * *',
+    符号: '@monthly',
+    含义: '每月1日0点',
+    示例: '@monthly',
+    等效于: '0 0 1 * *',
   },
   {
-    symbol: '@weekly',
-    meaning: 'Once a week at midnight on Sunday morning',
-    example: '@weekly',
-    equivalent: '0 0 * * 0',
+    符号: '@weekly',
+    含义: '每周日0点',
+    示例: '@weekly',
+    等效于: '0 0 * * 0',
   },
   {
-    symbol: '@daily',
-    meaning: 'Once a day at midnight',
-    example: '@daily',
-    equivalent: '0 0 * * *',
+    符号: '@daily',
+    含义: '每天0点',
+    示例: '@daily',
+    等效于: '0 0 * * *',
   },
   {
-    symbol: '@midnight',
-    meaning: 'Same as @daily',
-    example: '@midnight',
-    equivalent: '0 0 * * *',
+    符号: '@midnight',
+    含义: '与 @daily 相同',
+    示例: '@midnight',
+    等效于: '0 0 * * *',
   },
   {
-    symbol: '@hourly',
-    meaning: 'Once an hour at the beginning of the hour',
-    example: '@hourly',
-    equivalent: '0 * * * *',
+    符号: '@hourly',
+    含义: '每小时',
+    示例: '@hourly',
+    等效于: '0 * * * *',
   },
   {
-    symbol: '@reboot',
-    meaning: 'Run at startup',
-    example: '',
-    equivalent: '',
+    符号: '@reboot',
+    含义: '启动时运行',
+    示例: '',
+    等效于: '',
   },
 ];
 
@@ -102,7 +104,7 @@ const cronString = computed(() => {
 const cronValidationRules = [
   {
     validator: (value: string) => isCronValid(value),
-    message: 'This cron is invalid',
+    message: '该计划任务无效',
   },
 ];
 </script>
@@ -127,43 +129,43 @@ const cronValidationRules = [
 
     <div flex justify-center>
       <n-form :show-feedback="false" label-width="170" label-placement="left">
-        <n-form-item label="Verbose">
+        <n-form-item label="详细描述">
           <n-switch v-model:value="cronstrueConfig.verbose" />
         </n-form-item>
-        <n-form-item label="Use 24 hour time format">
+        <n-form-item label="24小时制">
           <n-switch v-model:value="cronstrueConfig.use24HourTimeFormat" />
         </n-form-item>
-        <n-form-item label="Days start at 0">
+        <!-- <n-form-item label="每周从0开始">
           <n-switch v-model:value="cronstrueConfig.dayOfWeekStartIndexZero" />
-        </n-form-item>
+        </n-form-item> -->
       </n-form>
     </div>
   </c-card>
   <c-card>
     <pre>
-┌──────────── [optional] seconds (0 - 59)
-| ┌────────── minute (0 - 59)
-| | ┌──────── hour (0 - 23)
-| | | ┌────── day of month (1 - 31)
-| | | | ┌──── month (1 - 12) OR jan,feb,mar,apr ...
-| | | | | ┌── day of week (0 - 6, sunday=0) OR sun,mon ...
-| | | | | |
-* * * * * * command</pre>
+  ┌─────── [可选] 秒钟 (0 - 59)
+  | ┌────── 分钟 (0 - 59)
+  | | ┌───── 小时 (0 - 23)
+  | | | ┌──── 日 (1 - 31)
+  | | | | ┌─── 月 (1 - 12) 或者 jan,feb ...
+  | | | | | ┌── 周 (0 - 6, 周日=0) 或者 sun,mon ...
+  | | | | | |
+  * * * * * * command</pre>
 
     <div v-if="styleStore.isSmallScreen">
-      <c-card v-for="{ symbol, meaning, example, equivalent } in helpers" :key="symbol" mb-3 important:border-none>
+      <c-card v-for="{ 符号, 含义, 示例, 等效于 } in helpers" :key="符号" mb-3 important:border-none>
         <div>
-          Symbol: <strong>{{ symbol }}</strong>
+          符号: <strong>{{ 符号 }}</strong>
         </div>
         <div>
-          Meaning: <strong>{{ meaning }}</strong>
+          含义: <strong>{{ 含义 }}</strong>
         </div>
         <div>
-          Example:
-          <strong><code>{{ example }}</code></strong>
+          示例:
+          <strong><code>{{ 示例 }}</code></strong>
         </div>
         <div>
-          Equivalent: <strong>{{ equivalent }}</strong>
+          等效于: <strong>{{ 等效于 }}</strong>
         </div>
       </c-card>
     </div>

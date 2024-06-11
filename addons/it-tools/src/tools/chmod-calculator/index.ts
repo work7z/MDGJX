@@ -1,22 +1,20 @@
 import { FileInvoice } from '@vicons/tabler';
 import { defineTool } from '../tool';
-import { translate } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: translate('tools.chmod-calculator.title'),
+  name: 'chmod权限计算',
   path: '/chmod-calculator',
-  description: translate('tools.chmod-calculator.description'),
+  description: '使用此在线 chmod 权限计算计算您的 chmod 权限和命令。',
   keywords: [
     'chmod',
-    'calculator',
-    'file',
-    'permission',
-    'files',
-    'directory',
-    'folder',
-    'recursive',
-    'generator',
-    'octal',
+    '计算',
+    '文件',
+    '权限',
+    '目录',
+    '文件夹',
+    '递归',
+    '生成',
+    '八进制',
   ],
   component: () => import('./chmod-calculator.vue'),
   icon: FileInvoice,

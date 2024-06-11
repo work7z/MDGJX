@@ -1,55 +1,65 @@
 import type { OGSchemaType } from '../OGSchemaType.type';
 
 const typeOptions = [
-  { label: 'Website', value: 'website' },
-  { label: 'Article', value: 'article' },
-  { label: 'Book', value: 'book' },
-  { label: 'Profile', value: 'profile' },
-  {
-    type: 'group',
-    label: 'Music',
-    key: 'Music',
-    children: [
-      { label: 'Song', value: 'music.song' },
-      { label: 'Music album', value: 'music.album' },
-      { label: 'Playlist', value: 'music.playlist' },
-      { label: 'Radio station', value: 'music.radio_station' },
-    ],
-  },
-  {
-    type: 'group',
-    label: 'Video',
-    key: 'Video',
-    children: [
-      { label: 'Movie', value: 'video.movie' },
-      { label: 'Episode', value: 'video.episode' },
-      { label: 'TV show', value: 'video.tv_show' },
-      { label: 'Other video', value: 'video.other' },
-    ],
-  },
+  { label: '🌐 网站', value: 'website' },
+  { label: '📃 文章', value: 'article' },
+  { label: '📖 书籍', value: 'book' },
+  { label: '🙋 个人简介', value: 'profile' },
+  // 音乐
+  { label: '🎵 [音乐] 歌曲', value: 'music.song' },
+  { label: '🎵 [音乐] 专辑', value: 'music.album' },
+  { label: '🎵 [音乐] 歌单', value: 'music.playlist' },
+  { label: '🎵 [音乐] 电台', value: 'music.radio_station' },
+  // 视频
+  { label: '🎞️ [视频] 电影', value: 'video.movie' },
+  { label: '🎞️ [视频] 电视剧', value: 'video.episode' },
+  { label: '🎞️ [视频] 电视节目', value: 'video.tv_show' },
+  { label: '🎞️ [视频] 其他', value: 'video.other' },
+  // {
+  //   type: 'group',
+  //   label: '音乐',
+  //   key: 'Music',
+  //   children: [
+  //     { label: '歌曲', value: 'music.song' },
+  //     { label: '专辑', value: 'music.album' },
+  //     { label: '歌单', value: 'music.playlist' },
+  //     { label: '电台', value: 'music.radio_station' },
+  //   ],
+  // },
+  // {
+  //   type: 'group',
+  //   label: '视频',
+  //   key: 'Video',
+  //   children: [
+  //     { label: '电影', value: 'video.movie' },
+  //     { label: '剧集', value: 'video.episode' },
+  //     { label: '电视剧', value: 'video.tv_show' },
+  //     { label: '其他', value: 'video.other' },
+  //   ],
+  // },
 ];
 
 export const website: OGSchemaType = {
-  name: 'General information',
+  name: '基本信息',
   elements: [
     {
       type: 'select',
-      label: 'Page type',
-      placeholder: 'Select the type of your website...',
+      label: '页面类型',
+      placeholder: '选择页面类型',
       key: 'type',
       options: typeOptions,
     },
-    { type: 'input', label: 'Title', placeholder: 'Enter the title of your website...', key: 'title' },
+    { type: 'input', label: '标题', placeholder: '输入网站标题', key: 'title' },
     {
       type: 'input',
-      label: 'Description',
-      placeholder: 'Enter the description of your website...',
+      label: '描述',
+      placeholder: '输入网站描述',
       key: 'description',
     },
     {
       type: 'input',
-      label: 'Page URL',
-      placeholder: 'Enter the url of your website...',
+      label: '页面URL',
+      placeholder: '输入页面URL',
       key: 'url',
     },
   ],

@@ -1,21 +1,15 @@
 import type { OGSchemaType } from '../OGSchemaType.type';
 
 export const musicPlaylist: OGSchemaType = {
-  name: 'Playlist details',
+  name: '歌单详情',
   elements: [
-    { type: 'input', label: 'Song', key: 'music:song', placeholder: 'The song on this album...' },
+    { type: 'input-multiple', label: '歌曲名称', key: 'music:song', placeholder: '请输入歌曲名称' },
     {
       type: 'input',
-      label: 'Disc',
-      key: 'music:song:disc',
-      placeholder: 'The same as music:album:disc but in reverse...',
-    },
-    {
-      type: 'input',
-      label: 'Track',
+      label: '曲目编号',
       key: 'music:song:track',
-      placeholder: 'The same as music:album:track but in reverse...',
+      placeholder: '请输入曲目编号',
     },
-    { type: 'input', label: 'Creator', key: 'music:creator', placeholder: 'The creator of this playlist...' },
+    { type: 'input-multiple', label: '创建者', key: 'music:creator', placeholder: '请输入创建者' },
   ],
 };

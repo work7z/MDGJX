@@ -23,5 +23,6 @@ function convert(list: string, options: ConvertOptions): string {
     .map(p => options.itemPrefix + p + options.itemSuffix)
     .join(options.separator + lineBreak)
     .thru(text => [options.listPrefix, text, options.listSuffix].join(lineBreak))
-    .value();
+    .value()
+    .replace(/(\r\n|\n|\r)/,"");
 }

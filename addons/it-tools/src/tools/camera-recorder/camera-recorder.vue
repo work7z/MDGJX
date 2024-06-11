@@ -106,20 +106,19 @@ function downloadMedia({ type, value, createdAt }: Media) {
 <template>
   <div>
     <c-card v-if="!isSupported">
-      Your browser does not support recording video from camera
+      您的浏览器不支持摄像头录制视频
     </c-card>
 
     <c-card v-else-if="!permissionGranted" text-center>
-      You need to grant permission to use your camera and microphone
+      您需要授予使用摄像头和麦克风的权限
 
       <c-alert v-if="permissionCannotBePrompted" mt-4 text-left>
-        Your browser has blocked permission request or does not support it. You need to grant permission manually in
-        your browser settings (usually the lock icon in the address bar).
+        您的浏览器已阻止权限请求或不支持它。 您需要在浏览器设置中手动授予权限（通常是地址栏中的锁定图标）。
       </c-alert>
 
       <div v-else mt-4 flex justify-center>
         <c-button @click="requestPermissions">
-          Grant permission
+          授予权限
         </c-button>
       </div>
     </c-card>
@@ -130,24 +129,24 @@ function downloadMedia({ type, value, createdAt }: Media) {
           v-model:value="currentCamera"
           label-position="left"
           label-width="60px"
-          label="Video:"
+          label="视频："
           :options="cameras.map(({ deviceId, label }) => ({ value: deviceId, label }))"
-          placeholder="Select camera"
+          placeholder="选择相机"
         />
         <c-select
           v-if="currentMicrophone && microphones.length > 0"
           v-model:value="currentMicrophone"
-          label="Audio:"
+          label="音频："
           label-position="left"
           label-width="60px"
           :options="microphones.map(({ deviceId, label }) => ({ value: deviceId, label }))"
-          placeholder="Select microphone"
+          placeholder="选择麦克风"
         />
       </div>
 
       <div v-if="!isMediaStreamAvailable" mt-3 flex justify-center>
         <c-button type="primary" @click="start">
-          Start webcam
+          启动摄像头
         </c-button>
       </div>
 
@@ -159,32 +158,32 @@ function downloadMedia({ type, value, createdAt }: Media) {
         <div flex items-center justify-between gap-2>
           <c-button :disabled="!isMediaStreamAvailable" @click="takeScreenshot">
             <span mr-2> <icon-mdi-camera /></span>
-            Take screenshot
+            截图
           </c-button>
 
           <div v-if="isRecordingSupported" flex justify-center gap-2>
             <c-button v-if="recordingState === 'stopped'" @click="startRecording">
               <span mr-2> <icon-mdi-video /></span>
-              Start recording
+              开始录制
             </c-button>
 
             <c-button v-if="recordingState === 'recording'" @click="pauseRecording">
               <span mr-2> <icon-mdi-pause /></span>
-              Pause
+              暂停
             </c-button>
 
             <c-button v-if="recordingState === 'paused'" @click="resumeRecording">
               <span mr-2> <icon-mdi-play /></span>
-              Resume
+              继续
             </c-button>
 
             <c-button v-if="recordingState !== 'stopped'" type="error" @click="stopRecording">
               <span mr-2> <icon-mdi-record /></span>
-              Stop
+              停止
             </c-button>
           </div>
           <div v-else italic op-60>
-            Video recording is not supported in your browser
+            您的浏览器不支持视频录制
           </div>
         </div>
       </div>
@@ -192,13 +191,13 @@ function downloadMedia({ type, value, createdAt }: Media) {
 
     <div grid grid-cols-2 mt-5 gap-2>
       <c-card v-for="({ type, value, createdAt }, index) in medias" :key="index">
-        <img v-if="type === 'image'" :src="value" max-h-full w-full alt="screenshot">
+        <img v-if="type === 'image'" :src="value" max-h-full w-full alt="截图">
 
         <video v-else :src="value" controls max-h-full w-full />
 
         <div flex items-center justify-between>
           <div font-bold>
-            {{ type === 'image' ? 'Screenshot' : 'Video' }}
+            {{ type === 'image' ? '截图' : '视频' }}
           </div>
 
           <div flex gap-2>

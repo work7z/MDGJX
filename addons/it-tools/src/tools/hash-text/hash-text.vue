@@ -4,7 +4,6 @@ import { MD5, RIPEMD160, SHA1, SHA224, SHA256, SHA3, SHA384, SHA512, enc } from 
 
 import InputCopyable from '../../components/InputCopyable.vue';
 import { convertHexToBin } from './hash-text.service';
-import { useQueryParam } from '@/composable/queryParams';
 
 const algos = {
   MD5,
@@ -20,7 +19,7 @@ const algos = {
 type AlgoNames = keyof typeof algos;
 type Encoding = keyof typeof enc | 'Bin';
 const algoNames = Object.keys(algos) as AlgoNames[];
-const encoding = useQueryParam<Encoding>({ defaultValue: 'Hex', name: 'encoding' });
+const encoding = ref('Hex') as Ref<Encoding>;
 const clearText = ref('');
 
 function formatWithEncoding(words: lib.WordArray, encoding: Encoding) {
@@ -37,29 +36,29 @@ const hashText = (algo: AlgoNames, value: string) => formatWithEncoding(algos[al
 <template>
   <div>
     <c-card>
-      <c-input-text v-model:value="clearText" multiline raw-text placeholder="Your string to hash..." rows="3" autosize autofocus label="Your text to hash:" />
+      <c-input-text v-model:value="clearText" multiline raw-text placeholder="请输入文本..." rows="3" autosize autofocus label="待计算哈希值的文本：" />
 
       <n-divider />
 
       <c-select
         v-model:value="encoding"
         mb-4
-        label="Digest encoding"
+        label="结果编码格式"
         :options="[
           {
-            label: 'Binary (base 2)',
+            label: '二进制',
             value: 'Bin',
           },
           {
-            label: 'Hexadecimal (base 16)',
+            label: '十六进制',
             value: 'Hex',
           },
           {
-            label: 'Base64 (base 64)',
+            label: 'Base64',
             value: 'Base64',
           },
           {
-            label: 'Base64url (base 64 with url safe chars)',
+            label: 'Base64url（url编码）',
             value: 'Base64url',
           },
         ]"

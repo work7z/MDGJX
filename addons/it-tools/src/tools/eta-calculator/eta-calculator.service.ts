@@ -1,4 +1,5 @@
 import { formatDuration } from 'date-fns';
+import { zhCN } from 'date-fns/locale';
 
 export function formatMsDuration(duration: number) {
   const ms = Math.floor(duration % 1000);
@@ -11,6 +12,6 @@ export function formatMsDuration(duration: number) {
       hours: hrs,
       minutes: mins,
       seconds: secs,
-    }) + (ms > 0 ? ` ${ms} ms` : '')
+    }, { locale: zhCN }) + (ms > 0 ? ` ${ms} 毫秒` : '')
   );
 }

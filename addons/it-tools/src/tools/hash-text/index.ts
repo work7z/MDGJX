@@ -1,13 +1,13 @@
 import { EyeOff } from '@vicons/tabler';
 import { defineTool } from '../tool';
-import { translate } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: translate('tools.hash-text.title'),
+  name: '文本哈希计算',
   path: '/hash-text',
-  description: translate('tools.hash-text.description'),
+  description:
+    '使用您需要的函数对文本字符串进行哈希处理：MD5、SHA1、SHA256、SHA224、SHA512、SHA384、SHA3 或 RIPEMD160',
   keywords: [
-    'hash',
+    '哈希',
     'digest',
     'crypto',
     'security',

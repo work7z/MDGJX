@@ -1,12 +1,11 @@
 import { ImageOutlined } from '@vicons/material';
 import { defineTool } from '../tool';
-import { translate } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: translate('tools.svg-placeholder-generator.title'),
+  name: 'SVG 图片占位生成器',
   path: '/svg-placeholder-generator',
-  description: translate('tools.svg-placeholder-generator.description'),
-  keywords: ['svg', 'placeholder', 'generator', 'image', 'size', 'mockup'],
+  description: '生成用于应用程序中占位的 svg 图片。',
+  keywords: ['svg', '占位', '生成', '图片', '尺寸', '样机'],
   component: () => import('./svg-placeholder-generator.vue'),
   icon: ImageOutlined,
 });

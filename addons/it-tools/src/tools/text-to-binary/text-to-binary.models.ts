@@ -11,7 +11,7 @@ function convertAsciiBinaryToText(binary: string): string {
   const cleanBinary = binary.replace(/[^01]/g, '');
 
   if (cleanBinary.length % 8) {
-    throw new Error('Invalid binary string');
+    throw new Error('无效的二进制字符串');
   }
 
   return cleanBinary

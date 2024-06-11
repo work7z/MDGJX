@@ -1,24 +1,23 @@
 import { DeviceMobile } from '@vicons/tabler';
 import { defineTool } from '../tool';
-import { translate } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: translate('tools.otp-generator.title'),
+  name: 'OTP 验证码生成器',
   path: '/otp-generator',
-  description: translate('tools.otp-generator.description'),
+  description: '生成并验证基于时间的 OTP（一次性密码）以进行多重身份验证。',
   keywords: [
     'otp',
-    'code',
-    'generator',
-    'validator',
-    'one',
-    'time',
-    'password',
-    'authentication',
+    '代码',
+    '生成',
+    '验证',
+    '一次性',
+    '时间',
+    '密码',
+    '认证',
     'MFA',
     'mobile',
-    'device',
-    'security',
+    '设备',
+    '安全',
     'TOTP',
     'Time',
     'HMAC',

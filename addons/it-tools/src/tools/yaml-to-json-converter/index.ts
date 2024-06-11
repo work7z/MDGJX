@@ -1,12 +1,11 @@
 import { AlignJustified } from '@vicons/tabler';
 import { defineTool } from '../tool';
-import { translate } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: translate('tools.yaml-to-json-converter.title'),
+  name: 'YAML 转 JSON',
   path: '/yaml-to-json-converter',
-  description: translate('tools.yaml-to-json-converter.description'),
-  keywords: ['yaml', 'to', 'json'],
+  description: '解析 YAML 并转换为 JSON',
+  keywords: ['yaml', '转', '转换', 'json'],
   component: () => import('./yaml-to-json.vue'),
   icon: AlignJustified,
   createdAt: new Date('2023-04-10'),

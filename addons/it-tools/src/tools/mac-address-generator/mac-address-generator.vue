@@ -11,8 +11,8 @@ const macAddressPrefix = useStorage('mac-address-generator-prefix', '64:16:7F');
 const prefixValidation = usePartialMacAddressValidation(macAddressPrefix);
 
 const casesTransformers = [
-  { label: 'Uppercase', value: (value: string) => value.toUpperCase() },
-  { label: 'Lowercase', value: (value: string) => value.toLowerCase() },
+  { label: '大写', value: (value: string) => value.toUpperCase() },
+  { label: '小写', value: (value: string) => value.toLowerCase() },
 ];
 const caseTransformer = ref(casesTransformers[0].value);
 
@@ -30,7 +30,7 @@ const separators = [
     value: '.',
   },
   {
-    label: 'None',
+    label: '无',
     value: '',
   },
 ];
@@ -48,20 +48,20 @@ const [macAddresses, refreshMacAddresses] = computedRefreshable(() => {
   return ids.join('\n');
 });
 
-const { copy } = useCopy({ source: macAddresses, text: 'MAC addresses copied to the clipboard' });
+const { copy } = useCopy({ source: macAddresses, text: 'MAC地址已复制到剪贴板' });
 </script>
 
 <template>
   <div flex flex-col justify-center gap-2>
     <div flex items-center>
-      <label w-150px pr-12px text-right> Quantity:</label>
-      <n-input-number v-model:value="amount" min="1" max="100" flex-1 />
+      <label w-150px pr-12px text-right> 数量:</label>
+      <n-input-number v-model:value="amount" min="1" max="10000" flex-1 />
     </div>
 
     <c-input-text
       v-model:value="macAddressPrefix"
-      label="MAC address prefix:"
-      placeholder="Set a prefix, e.g. 64:16:7F"
+      label="MAC地址前缀:"
+      placeholder="设置前缀，例：64:16:7F"
       clearable
       label-position="left"
       spellcheck="false"
@@ -74,7 +74,7 @@ const { copy } = useCopy({ source: macAddresses, text: 'MAC addresses copied to 
     <c-buttons-select
       v-model:value="caseTransformer"
       :options="casesTransformers"
-      label="Case:"
+      label="格式:"
       label-width="150px"
       label-align="right"
     />
@@ -82,7 +82,7 @@ const { copy } = useCopy({ source: macAddresses, text: 'MAC addresses copied to 
     <c-buttons-select
       v-model:value="separator"
       :options="separators"
-      label="Separator:"
+      label="分隔符:"
       label-width="150px"
       label-align="right"
     />
@@ -93,10 +93,10 @@ const { copy } = useCopy({ source: macAddresses, text: 'MAC addresses copied to 
 
     <div flex justify-center gap-2>
       <c-button data-test-id="refresh" @click="refreshMacAddresses()">
-        Refresh
+        刷新
       </c-button>
       <c-button @click="copy()">
-        Copy
+        复制
       </c-button>
     </div>
   </div>

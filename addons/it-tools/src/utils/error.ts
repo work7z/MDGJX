@@ -20,6 +20,6 @@ function getErrorMessageIfThrows(cb: () => unknown) {
       return (err as { message: string }).message;
     }
 
-    return 'An error as occurred.';
+    return '发生错误';
   }
 }

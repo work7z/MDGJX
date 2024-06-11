@@ -6,19 +6,20 @@ const isDarkTheme = location.href.indexOf('sysdarkmode=true') != -1; // useDark(
 if (isDarkTheme) {
   document.body.className = document.body.className + ' dark';
 }
+
 export const useStyleStore = defineStore('style', {
   state: () => {
+//    const isDarkTheme = isDark// useDark();
     const toggleDark = useToggle(isDarkTheme);
     // const isSmallScreen = useMediaQuery('(max-width: 700px)');
-    const isSmallScreen = true;
     // const isMenuCollapsed = useStorage('isMenuCollapsed', isSmallScreen.value) as Ref<boolean>;
-
-    // watch(isSmallScreen, (v) => (isMenuCollapsed.value = v));
+    const isSmallScreen = true;
+    // watch(isSmallScreen, v => (isMenuCollapsed.value = v));
 
     return {
       isDarkTheme,
       toggleDark,
-      isMenuCollapsed: true,
+      isMenuCollapsed:true,
       isSmallScreen,
     };
   },

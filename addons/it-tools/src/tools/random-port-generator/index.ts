@@ -1,11 +1,10 @@
 import { Server } from '@vicons/tabler';
 import { defineTool } from '../tool';
-import { translate } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: translate('tools.random-port-generator.title'),
+  name: 'Random port generator',
   path: '/random-port-generator',
-  description: translate('tools.random-port-generator.description'),
+  description: 'Generate random port numbers outside of the range of "known" ports (0-1023).',
   keywords: ['system', 'port', 'lan', 'generator', 'random', 'development', 'computer'],
   component: () => import('./random-port-generator.vue'),
   icon: Server,

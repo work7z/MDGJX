@@ -1,12 +1,11 @@
 import { Unlink } from '@vicons/tabler';
 import { defineTool } from '../tool';
-import { translate } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: translate('tools.url-parser.title'),
+  name: 'URL 解析',
   path: '/url-parser',
-  description: translate('tools.url-parser.description'),
-  keywords: ['url', 'parser', 'protocol', 'origin', 'params', 'port', 'username', 'password', 'href'],
+  description: '解析URL字符串以获取所有不同部分（协议、域名、路径、参数）',
+  keywords: ['url', '解析', '协议', '域名', '路径', '参数', '链接'],
   component: () => import('./url-parser.vue'),
   icon: Unlink,
 });

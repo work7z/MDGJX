@@ -7,6 +7,9 @@ const event = ref<KeyboardEvent>();
 
 useEventListener(document, 'keydown', (e) => {
   event.value = e;
+  if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) {
+    e.preventDefault();
+  }
 });
 
 const fields = computed(() => {
@@ -16,37 +19,37 @@ const fields = computed(() => {
 
   return [
     {
-      label: 'Key :',
+      label: '按键:',
       value: event.value.key,
-      placeholder: 'Key name...',
+      placeholder: '按键名称',
     },
     {
-      label: 'Keycode :',
+      label: '按键代码:',
       value: String(event.value.keyCode),
-      placeholder: 'Keycode...',
+      placeholder: '按键代码',
     },
     {
-      label: 'Code :',
+      label: '代码:',
       value: event.value.code,
-      placeholder: 'Code...',
+      placeholder: '代码',
     },
     {
-      label: 'Location :',
+      label: '位置 :',
       value: String(event.value.location),
-      placeholder: 'Code...',
+      placeholder: '位置',
     },
 
     {
-      label: 'Modifiers :',
+      label: '组合按键:',
       value: [
-        event.value.metaKey && 'Meta',
+        event.value.metaKey && 'Win',
         event.value.shiftKey && 'Shift',
         event.value.ctrlKey && 'Ctrl',
         event.value.altKey && 'Alt',
       ]
         .filter(Boolean)
         .join(' + '),
-      placeholder: 'None',
+      placeholder: '无',
     },
   ];
 });
@@ -59,7 +62,7 @@ const fields = computed(() => {
         {{ event.key }}
       </div>
       <span lh-1 op-70>
-        Press the key on your keyboard you want to get info about this key
+        按下键盘中的任意键
       </span>
     </c-card>
 

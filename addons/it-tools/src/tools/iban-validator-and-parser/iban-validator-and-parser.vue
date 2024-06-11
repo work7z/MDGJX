@@ -19,23 +19,23 @@ const ibanInfo = computed<CKeyValueListItems>(() => {
   return [
 
     {
-      label: 'Is IBAN valid ?',
+      label: 'IBAN 有效吗？',
       value: isIbanValid,
       showCopyButton: false,
     },
     {
-      label: 'IBAN errors',
+      label: 'IBAN 错误',
       value: errors.length === 0 ? undefined : errors,
       hideOnNil: true,
       showCopyButton: false,
     },
     {
-      label: 'Is IBAN a QR-IBAN ?',
+      label: 'IBAN 是一个 QR-IBAN 吗？',
       value: isQRIBAN(iban),
       showCopyButton: false,
     },
     {
-      label: 'Country code',
+      label: '国家代码',
       value: countryCode,
     },
     {
@@ -43,7 +43,7 @@ const ibanInfo = computed<CKeyValueListItems>(() => {
       value: bban,
     },
     {
-      label: 'IBAN friendly format',
+      label: 'IBAN 友好格式',
       value: friendlyFormatIBAN(iban),
     },
   ];
@@ -58,13 +58,13 @@ const ibanExamples = [
 
 <template>
   <div>
-    <c-input-text v-model:value="rawIban" placeholder="Enter an IBAN to check for validity..." test-id="iban-input" />
+    <c-input-text v-model:value="rawIban" placeholder="输入 IBAN 以检查有效性..." test-id="iban-input" />
 
     <c-card v-if="ibanInfo.length > 0" mt-5>
       <c-key-value-list :items="ibanInfo" data-test-id="iban-info" />
     </c-card>
 
-    <c-card title="Valid IBAN examples" mt-5>
+    <c-card title="有效的 IBAN 示例" mt-5>
       <div v-for="iban in ibanExamples" :key="iban">
         <c-text-copyable :value="iban" font-mono :displayed-value="friendlyFormatIBAN(iban)" />
       </div>

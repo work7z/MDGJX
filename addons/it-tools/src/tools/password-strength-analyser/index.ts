@@ -1,12 +1,11 @@
 import { defineTool } from '../tool';
-import { translate } from '@/plugins/i18n.plugin';
 import PasswordIcon from '~icons/mdi/form-textbox-password';
 
 export const tool = defineTool({
-  name: translate('tools.password-strength-analyser.title'),
+  name: '密码强度分析器',
   path: '/password-strength-analyser',
-  description: translate('tools.password-strength-analyser.description'),
-  keywords: ['password', 'strength', 'analyser', 'and', 'crack', 'time', 'estimation', 'brute', 'force', 'attack', 'entropy', 'cracking', 'hash', 'hashing', 'algorithm', 'algorithms', 'md5', 'sha1', 'sha256', 'sha512', 'bcrypt', 'scrypt', 'argon2', 'argon2id', 'argon2i', 'argon2d'],
+  description: '分析密码的暴力破解所需时间，仅客户端运算，此工具不会与服务器通信，且不会保存密码信息。',
+  keywords: ['密码', '强度', '分析器'],
   component: () => import('./password-strength-analyser.vue'),
   icon: PasswordIcon,
   createdAt: new Date('2023-06-24'),

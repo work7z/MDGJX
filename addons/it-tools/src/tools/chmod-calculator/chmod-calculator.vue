@@ -9,9 +9,9 @@ import type { Group, Scope } from './chmod-calculator.types';
 const themeVars = useThemeVars();
 
 const scopes: { scope: Scope; title: string }[] = [
-  { scope: 'read', title: 'Read (4)' },
-  { scope: 'write', title: 'Write (2)' },
-  { scope: 'execute', title: 'Execute (1)' },
+  { scope: 'read', title: '读取 (4)' },
+  { scope: 'write', title: '写入 (2)' },
+  { scope: 'execute', title: '执行 (1)' },
 ];
 const groups: Group[] = ['owner', 'group', 'public'];
 
@@ -32,13 +32,13 @@ const symbolic = computed(() => computeChmodSymbolicRepresentation({ permissions
         <tr>
           <th class="text-center" scope="col" />
           <th class="text-center" scope="col">
-            Owner (u)
+            Owner 所有者
           </th>
           <th class="text-center" scope="col">
-            Group (g)
+            Group 组
           </th>
           <th class="text-center" scope="col">
-            Public (o)
+            Public 公共
           </th>
         </tr>
       </thead>

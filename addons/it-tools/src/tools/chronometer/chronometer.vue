@@ -31,20 +31,20 @@ function pause() {
 <template>
   <div>
     <c-card>
-      <div class="duration">
+      <div class="duration" style="font-family: none;">
         {{ formatMs(counter) }}
       </div>
     </c-card>
     <div mt-5 flex justify-center gap-3>
       <c-button v-if="!isRunning" type="primary" @click="resume">
-        Start
+        开始
       </c-button>
       <c-button v-else type="warning" @click="pause">
-        Stop
+        停止
       </c-button>
 
       <c-button @click="counter = 0">
-        Reset
+        复位
       </c-button>
     </div>
   </div>

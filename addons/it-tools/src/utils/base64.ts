@@ -7,7 +7,7 @@ function textToBase64(str: string, { makeUrlSafe = false }: { makeUrlSafe?: bool
 
 function base64ToText(str: string, { makeUrlSafe = false }: { makeUrlSafe?: boolean } = {}) {
   if (!isValidBase64(str, { makeUrlSafe })) {
-    throw new Error('Incorrect base64 string');
+    throw new Error('Base64 字符串不正确');
   }
 
   let cleanStr = removePotentialDataAndMimePrefix(str);
@@ -19,7 +19,7 @@ function base64ToText(str: string, { makeUrlSafe = false }: { makeUrlSafe?: bool
     return window.atob(cleanStr);
   }
   catch (_) {
-    throw new Error('Incorrect base64 string');
+    throw new Error('Base64 字符串不正确');
   }
 }
 

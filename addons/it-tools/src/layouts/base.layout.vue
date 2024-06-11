@@ -34,12 +34,12 @@ const tools = computed<ToolCategory[]>(() => [
 
 <template>
   <MenuLayout class="menu-layout" :class="{ isSmallScreen: styleStore.isSmallScreen }">
-    <template #sider v-if="false" >
+    <template #sider v-if="false">
       <RouterLink to="/" class="hero-wrapper">
         <HeroGradient class="gradient" />
         <div class="text-wrapper">
           <div class="title">
-            IT - TOOLS
+            IT-Tools
           </div>
           <div class="divider" />
           <div class="subtitle">
@@ -50,7 +50,7 @@ const tools = computed<ToolCategory[]>(() => [
 
       <div class="sider-content hidden">
         <div v-if="styleStore.isSmallScreen" flex flex-col items-center>
-          <locale-selector w="90%" />
+          <!-- <locale-selector w="90%" /> -->
 
           <div flex justify-center>
             <NavbarButtons />
@@ -63,7 +63,7 @@ const tools = computed<ToolCategory[]>(() => [
           <div>
             IT-Tools
 
-            <c-link target="_blank" rel="noopener" :href="`https://github.com/CorentinTh/it-tools/tree/v${version}`">
+            <c-link target="_blank" rel="noopener" :href="`https://github.com/angelofan/it-tools/tree/v${version}`">
               v{{ version }}
             </c-link>
 
@@ -73,7 +73,7 @@ const tools = computed<ToolCategory[]>(() => [
                 target="_blank"
                 rel="noopener"
                 type="primary"
-                :href="`https://github.com/CorentinTh/it-tools/tree/${commitSha}`"
+                :href="`https://github.com/angelofan/it-tools/tree/${commitSha}`"
               >
                 {{ commitSha }}
               </c-link>
@@ -91,7 +91,7 @@ const tools = computed<ToolCategory[]>(() => [
 
     <template #content>
       <div flex items-center justify-center gap-2 style="display:none;">
-      <c-button
+        <c-button
           circle
           variant="text"
           :aria-label="$t('home.toggleMenu')"
@@ -114,7 +114,7 @@ const tools = computed<ToolCategory[]>(() => [
 
         <command-palette />
 
-        <locale-selector v-if="!styleStore.isSmallScreen" />
+        <!-- <locale-selector v-if="!styleStore.isSmallScreen" /> -->
 
         <div>
           <NavbarButtons v-if="!styleStore.isSmallScreen" />

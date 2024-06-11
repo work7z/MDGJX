@@ -1,15 +1,14 @@
 import { Key } from '@vicons/tabler';
 import { defineTool } from '../tool';
-import { translate } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: translate('tools.jwt-parser.title'),
+  name: 'JWT 解析器',
   path: '/jwt-parser',
-  description: translate('tools.jwt-parser.description'),
+  description: '解析 JSON Web Token (JWT) 并显示其内容。',
   keywords: [
     'jwt',
-    'parser',
-    'decode',
+    '解析',
+    '解码',
     'typ',
     'alg',
     'iss',

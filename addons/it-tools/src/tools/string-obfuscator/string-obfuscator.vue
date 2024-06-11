@@ -2,7 +2,7 @@
 import { useObfuscateString } from './string-obfuscator.model';
 import { useCopy } from '@/composable/copy';
 
-const str = ref('Lorem ipsum dolor sit amet');
+const str = ref('ccTOFrepLD62Zu9cSgIRGvhU');
 const keepFirst = ref(4);
 const keepLast = ref(4);
 const keepSpace = ref(true);
@@ -13,22 +13,22 @@ const { copy } = useCopy({ source: obfuscatedString });
 
 <template>
   <div>
-    <c-input-text v-model:value="str" raw-text placeholder="Enter string to obfuscate" label="String to obfuscate:" clearable multiline />
+    <c-input-text v-model:value="str" raw-text placeholder="请输入文本" label="待混淆:" clearable multiline />
 
     <div mt-4 flex gap-10px>
       <div>
-        <div>Keep first:</div>
+        <div>头部保留:</div>
         <n-input-number v-model:value="keepFirst" min="0" />
       </div>
 
       <div>
-        <div>Keep last:</div>
+        <div>尾部保留:</div>
         <n-input-number v-model:value="keepLast" min="0" />
       </div>
 
       <div>
         <div mb-5px>
-          Keep&nbsp;spaces:
+          保持空格:
         </div>
         <n-switch v-model:value="keepSpace" />
       </div>

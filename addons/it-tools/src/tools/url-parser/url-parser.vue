@@ -3,24 +3,21 @@ import InputCopyable from '../../components/InputCopyable.vue';
 import { isNotThrowing } from '@/utils/boolean';
 import { withDefaultOnError } from '@/utils/defaults';
 
-const urlToParse = ref('https://me:pwd@it-tools.tech:3000/url-parser?key1=value&key2=value2#the-hash');
+const urlToParse = ref('https://cn.bing.com/search?q=URL%E8%A7%A3%E6%9E%90&form=QBLH&sp=-1&lq=0&pq=urljiex&sc=10-7&qs=n&sk=&cvid=1DB3F89659C040B296A799066212A03D&ghsh=0&ghacc=0&ghpl=');
 
 const urlParsed = computed(() => withDefaultOnError(() => new URL(urlToParse.value), undefined));
 const urlValidationRules = [
   {
     validator: (value: string) => isNotThrowing(() => new URL(value)),
-    message: 'Invalid url',
+    message: '无效的URL',
   },
 ];
 
 const properties: { title: string; key: keyof URL }[] = [
-  { title: 'Protocol', key: 'protocol' },
-  { title: 'Username', key: 'username' },
-  { title: 'Password', key: 'password' },
-  { title: 'Hostname', key: 'hostname' },
-  { title: 'Port', key: 'port' },
-  { title: 'Path', key: 'pathname' },
-  { title: 'Params', key: 'search' },
+  { title: '协议', key: 'protocol' },
+  { title: '域名', key: 'hostname' },
+  { title: '路径', key: 'pathname' },
+  { title: '参数', key: 'search' },
 ];
 </script>
 
@@ -28,8 +25,8 @@ const properties: { title: string; key: keyof URL }[] = [
   <c-card>
     <c-input-text
       v-model:value="urlToParse"
-      label="Your url to parse:"
-      placeholder="Your url to parse..."
+      label="URL链接:"
+      placeholder="输入URL链接"
       raw-text
       :validation-rules="urlValidationRules"
     />
@@ -59,8 +56,8 @@ const properties: { title: string; key: keyof URL }[] = [
         <icon-mdi-arrow-right-bottom />
       </div>
 
-      <InputCopyable :value="k" readonly />
-      <InputCopyable :value="v" readonly />
+      <InputCopyable :value="k" readonly placeholder="" />
+      <InputCopyable :value="v" readonly placeholder="" />
     </div>
   </c-card>
 </template>

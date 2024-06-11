@@ -1,27 +1,27 @@
 import type { OGSchemaType } from '../OGSchemaType.type';
 
 export const musicAlbum: OGSchemaType = {
-  name: 'Album details',
+  name: '音乐专辑详情',
   elements: [
-    { type: 'input', label: 'Song', key: 'music:song', placeholder: 'The song on this album...' },
+    { type: 'input-multiple', label: '歌曲名称', key: 'music:song', placeholder: '请输入歌曲名称' },
     {
       type: 'input',
-      label: 'Disc',
+      label: '光盘编号',
       key: 'music:song:disc',
-      placeholder: 'The same as music:album:disc but in reverse...',
+      placeholder: '请输入光盘编号',
     },
     {
       type: 'input',
-      label: 'Track',
+      label: '曲目编号',
       key: 'music:song:track',
-      placeholder: 'The same as music:album:track but in reverse...',
+      placeholder: '请输入曲目编号',
     },
-    { type: 'input', label: 'Musician', key: 'music:musician', placeholder: 'The musician that made this song...' },
+    { type: 'input-multiple', label: '艺术家', key: 'music:musician', placeholder: '请输入艺术家' },
     {
       type: 'input',
-      label: 'Release date',
+      label: '发布日期',
       key: 'music:release_date',
-      placeholder: 'The date the album was released...',
+      placeholder: '请输入发布日期，格式：2023-09-02',
     },
   ],
 };

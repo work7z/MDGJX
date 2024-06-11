@@ -108,7 +108,7 @@ function verifyTOTP({
 function buildKeyUri({
   secret,
   app = 'IT-Tools',
-  account = 'demo-user',
+  account = 'it-tools.haokudelei.com(user)',
   algorithm = 'SHA1',
   digits = 6,
   period = 30,

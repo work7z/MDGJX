@@ -4,7 +4,7 @@ import { useValidation } from '@/composable/validation';
 import { isNotThrowing } from '@/utils/boolean';
 import { withDefaultOnError } from '@/utils/defaults';
 
-const encodeInput = ref('Hello world :)');
+const encodeInput = ref('https://it-tools.haokudelei.com');
 const encodeOutput = computed(() => withDefaultOnError(() => encodeURIComponent(encodeInput.value), ''));
 
 const encodedValidation = useValidation({
@@ -12,14 +12,14 @@ const encodedValidation = useValidation({
   rules: [
     {
       validator: value => isNotThrowing(() => encodeURIComponent(value)),
-      message: 'Impossible to parse this string',
+      message: '无法解析该字符串',
     },
   ],
 });
 
-const { copy: copyEncoded } = useCopy({ source: encodeOutput, text: 'Encoded string copied to the clipboard' });
+const { copy: copyEncoded } = useCopy({ source: encodeOutput, text: '已复制到剪贴板' });
 
-const decodeInput = ref('Hello%20world%20%3A)');
+const decodeInput = ref('https%3A%2F%2Fit-tools.haokudelei.com');
 const decodeOutput = computed(() => withDefaultOnError(() => decodeURIComponent(decodeInput.value), ''));
 
 const decodeValidation = useValidation({
@@ -27,70 +27,70 @@ const decodeValidation = useValidation({
   rules: [
     {
       validator: value => isNotThrowing(() => decodeURIComponent(value)),
-      message: 'Impossible to parse this string',
+      message: '无法解析该字符串',
     },
   ],
 });
 
-const { copy: copyDecoded } = useCopy({ source: decodeOutput, text: 'Decoded string copied to the clipboard' });
+const { copy: copyDecoded } = useCopy({ source: decodeOutput, text: '已复制到剪贴板' });
 </script>
 
 <template>
-  <c-card title="Encode">
+  <c-card title="URL编码">
     <c-input-text
       v-model:value="encodeInput"
-      label="Your string :"
+      label="URL字符串:"
       :validation="encodedValidation"
       multiline
       autosize
-      placeholder="The string to encode"
+      placeholder="URL字符串"
       rows="2"
       mb-3
     />
 
     <c-input-text
-      label="Your string encoded :"
+      label="已编码的URL字符串:"
       :value="encodeOutput"
       multiline
       autosize
       readonly
-      placeholder="Your string encoded"
+      placeholder="已编码的URL字符串"
       rows="2"
       mb-3
     />
 
     <div flex justify-center>
       <c-button @click="copyEncoded()">
-        Copy
+        复制
       </c-button>
     </div>
   </c-card>
-  <c-card title="Decode">
+  <c-card title="URL解码">
     <c-input-text
       v-model:value="decodeInput"
-      label="Your encoded string :"
+      label="URL字符串:"
       :validation="decodeValidation"
       multiline
       autosize
-      placeholder="The string to decode"
+      placeholder="URL字符串"
       rows="2"
       mb-3
     />
 
     <c-input-text
-      label="Your string decoded :"
+      label="已解码的URL字符串:"
       :value="decodeOutput"
       multiline
       autosize
       readonly
-      placeholder="Your string decoded"
+      placeholder="已解码的URL字符串"
       rows="2"
       mb-3
     />
 
     <div flex justify-center>
       <c-button @click="copyDecoded()">
-        Copy
+        复制
       </c-button>
     </div>
   </c-card>

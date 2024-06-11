@@ -32,12 +32,12 @@ const { download } = useDownloadFileFromBase64({ source: dockerComposeBase64, fi
   <div>
     <c-input-text
       v-model:value="dockerRun"
-      label="Your docker run command:"
+      label="docker run 命令:"
       style="font-family: monospace"
       multiline
       raw-text
       monospace
-      placeholder="Your docker run command to convert..."
+      placeholder="请输入 docker run 命令..."
       rows="3"
     />
 
@@ -47,7 +47,7 @@ const { download } = useDownloadFileFromBase64({ source: dockerComposeBase64, fi
 
     <div mt-5 flex justify-center>
       <c-button :disabled="dockerCompose === ''" secondary @click="download">
-        Download docker-compose.yml
+        下载 docker-compose.yml
       </c-button>
     </div>
 
