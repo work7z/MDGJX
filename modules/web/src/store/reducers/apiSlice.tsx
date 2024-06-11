@@ -73,7 +73,7 @@ export type I18nItem = {
 };
 
 
-export class S2GiftCard {
+export class S2GiftCardAndGiftCardUserTable {
   declare id?: number;
   declare giftCardCode: string;
   declare giftCardType: string;
@@ -81,6 +81,9 @@ export class S2GiftCard {
   declare remarks: string;
   declare usedByWho: number; // userId
   declare sourceType: string;
+  declare enabled: number;
+  declare fromDateTime: Date;
+  declare toDateTime: Date;
   declare createdAt: Date | null;
   declare updatedAt: Date | null;
   declare deleteAt: Date | null;
@@ -334,6 +337,18 @@ export const apiSlice = createApi({
         };
       },
     }),
+    enableGiftCard: build.query<AsyncCreateResponse<{}>, {
+      giftCardCode: string}>({
+      query: (obj) => {
+        return {
+          params: obj,
+          method: "GET",
+          url: (
+            "/user/enableGiftCard"
+          ),
+        };
+      },
+    }),
     getFurtherAcctDetail: build.query<AsyncCreateResponse<DisplayUserAcctDetail>, {} & SystemRefresh>({
       query: (obj) => {
         return {
@@ -344,7 +359,7 @@ export const apiSlice = createApi({
         };
       },
     }),
-    getGiftCardList: build.query<AsyncCreateResponse<S2GiftCard[]>, {}>({
+    getGiftCardList: build.query<AsyncCreateResponse<S2GiftCardAndGiftCardUserTable[]>, {}>({
       query: (obj) => {
         return {
           method: "GET",

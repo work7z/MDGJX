@@ -1,5 +1,5 @@
 import { Table, Progress, Anchor, Text, Group, Badge, Button } from '@mantine/core';
-import { S2GiftCard } from '@/store/reducers/apiSlice';
+import { S2GiftCardAndGiftCardUserTable } from '@/store/reducers/apiSlice';
 import AlertUtils from '@/utils/AlertUtils';
 import apiSlice from '../../store/reducers/apiSlice';
 import _ from 'lodash';

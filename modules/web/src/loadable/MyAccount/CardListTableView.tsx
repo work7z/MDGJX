@@ -1,22 +1,23 @@
 import { Table, Progress, Anchor, Text, Group, Button } from '@mantine/core';
 import classes from './CardListTableView.module.css';
-import { S2GiftCard } from '@/store/reducers/apiSlice';
+import apiSlice, { S2GiftCardAndGiftCardUserTable } from '@/store/reducers/apiSlice';
 import AlertUtils from '@/utils/AlertUtils';
 import { useHistory } from 'react-router';
 import _ from 'lodash';
 import dayjs from 'dayjs';
 
 export function CardListTableView(props: {
-    cardList: S2GiftCard[],
+    cardList: S2GiftCardAndGiftCardUserTable[],
     refreshNow: ()=>void
 }) {
+    const [t_enableGiftCard,stType] = apiSlice.useLazyEnableGiftCardQuery({})
     const data = props.cardList;
     const hist = useHistory()
     const rows = data.map((row) => {
 
         return (
             <Table.Tr key={row.id}>
-                <Table.Td>{row.id}</Table.Td>
+                {/* <Table.Td>{row.id}</Table.Td> */}
                 <Table.Td>{({
                     'THANKS_FOR_FUNDRAISING': '永久会员权益卡',
                     'WX_PAY':"付费会员权益卡"
@@ -30,25 +31,25 @@ export function CardListTableView(props: {
                     {row.giftCardCode}
                 </Table.Td>
                 <Table.Td>
-                    {row.usedByWho < 1 ? '未启用' : '已启用'}
+                    {!row.enabled ? '未启用' : '已启用'}
                 </Table.Td>
                 <Table.Td>
                     {row.totalDays < 365 || row.totalDays % 365 != 0 ? `${row.totalDays}天` : `${row.totalDays / 365}年`}
                 </Table.Td>
                 <Table.Td>
                     {
-                        row.usedByWho < 1 ? 'N/A' : '2016-09-01'
+                        !row.enabled ? 'N/A' : '2016-09-01'
                     }
                 </Table.Td>
                 <Table.Td>
                     {
-                        row.usedByWho < 1 ? 'N/A' : '2116-09-01'
+                        !row.enabled ? 'N/A' : '2116-09-01'
                     }
                 </Table.Td>
                 
                 <Table.Td>
                     {
-                        dayjs(row.createdAt).format('YYYY-MM-DD HH:mm:ss')
+                        dayjs(row.createdAt).format('YYYY-MM-DD')
                     }
                 </Table.Td>
                 <Table.Td>
@@ -59,10 +60,15 @@ export function CardListTableView(props: {
                     </Anchor> */}
                     <div className='space-x-2'>
                        {
-                          row.usedByWho < 1 ? <Button size='compact-sm' color='green'
+                          row.usedByWho < 1 ? <Button 
+                                loading={stType.isLoading}
+                          size='compact-sm' color='green'
                                 onClick={async () => {
-                                    //
-                                    props.refreshNow()
+                                    t_enableGiftCard({
+                                        giftCardCode: row.giftCardCode+''
+                                    }).then(x=>{
+                                        props.refreshNow()
+                                    })
                                 }}
                             >
                                 立即激活
@@ -94,14 +100,14 @@ export function CardListTableView(props: {
             <Table verticalSpacing="xs">
                 <Table.Thead>
                     <Table.Tr>
-                        <Table.Th>ID</Table.Th>
+                        {/* <Table.Th>ID</Table.Th> */}
                         <Table.Th>类型</Table.Th>
                         <Table.Th>礼品卡</Table.Th>
                         <Table.Th>状态</Table.Th>
                         <Table.Th>有效期</Table.Th>
                         <Table.Th>开始时间</Table.Th>
                         <Table.Th>结束时间</Table.Th>
-                        <Table.Th>创建时间</Table.Th>
+                        <Table.Th>创建日期</Table.Th>
                         <Table.Th align='center'>操作</Table.Th>
                     </Table.Tr>
                 </Table.Thead>
