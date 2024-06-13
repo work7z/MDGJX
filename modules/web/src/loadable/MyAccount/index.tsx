@@ -43,7 +43,9 @@ export const GiftCardDIV = (props: {
         refetchOnFocus: true,
     })
     useEffect(() => {
-        st_cardList.refetch()
+        if (st_cardList.isSuccess) {
+            st_cardList.refetch()
+        }
     }, [useHistory().location.pathname])
 
     const uObj = exportUtils.useSelector(v=>v.users)

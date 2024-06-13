@@ -30,7 +30,7 @@ export default function () {
         refetchOnFocus: true,
     })
     useEffect(() => {
-        r_sysconf.refetch()
+     r_sysconf.isSuccess&&   r_sysconf.refetch()
     }, [useHistory().location.pathname])
 
     const handleStepChange = (nextStep: number) => {
@@ -70,6 +70,7 @@ export default function () {
         },
         getPersistedStateFn() {
             return {
+                p:1
             }
         }
     })

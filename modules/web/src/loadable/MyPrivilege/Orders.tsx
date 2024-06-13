@@ -18,7 +18,7 @@ const [t_verifyPayQuery]=    apiSlice.useLazyWxpayVerfiyPayQuery({})
     // wxQueryGetOrdersRes.data?.data? [
     // ];
     useEffect(()=>{
-        wxQueryGetOrdersRes.refetch()
+       wxQueryGetOrdersRes.isSuccess && wxQueryGetOrdersRes.refetch()
     },[useHistory().location.pathname])
     const rows = data.map((row) => {
         
