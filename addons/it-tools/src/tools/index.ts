@@ -8,6 +8,10 @@ import { tool as macAddressGenerator } from './mac-address-generator';
 import { tool as textToBinary } from './text-to-binary';
 import { tool as ulidGenerator } from './ulid-generator';
 import { tool as ibanValidatorAndParser } from './iban-validator-and-parser';
+import {tool as yamlViewer} from './yaml-viewer'
+import {tool as textToUnicode} from './text-to-unicode'
+import {tool as safelinkDecoder} from './safelink-decoder'
+import {tool as asciiTextDrawer} from './ascii-text-drawer'
 import { tool as stringObfuscator } from './string-obfuscator';
 import { tool as textDiff } from './text-diff';
 import { tool as emojiPicker } from './emoji-picker';
@@ -90,8 +94,8 @@ export const toolsByCategory: ToolCategory[] = [
       bip39,
       hmacGenerator,
       rsaKeyPairGenerator,
-      // passwordStrengthAnalyser,
-      // pdfSignatureChecker,
+      passwordStrengthAnalyser,
+      pdfSignatureChecker,
     ],
   },
   {
@@ -105,7 +109,7 @@ export const toolsByCategory: ToolCategory[] = [
       base64FileConverter,
       colorConverter,
       caseConverter,
-      // textToNatoAlphabet,
+      textToNatoAlphabet,
       textToBinary,
       yamlToJson,
       yamlToToml,
@@ -114,6 +118,10 @@ export const toolsByCategory: ToolCategory[] = [
       listConverter,
       tomlToJson,
       tomlToYaml,
+      textToUnicode,
+      safelinkDecoder,
+      asciiTextDrawer,
+      yamlViewer
     ],
   },
   {
@@ -129,7 +137,7 @@ export const toolsByCategory: ToolCategory[] = [
       mimeTypes,
       jwtParser,
       keycodeInfo,
-      // slugifyString,
+      slugifyString,
       htmlWysiwygEditor,
       userAgentParser,
       httpStatusCodes,
@@ -149,7 +157,7 @@ export const toolsByCategory: ToolCategory[] = [
     name: 'Development',
     components: [
       gitMemo,
-      // randomPortGenerator,
+      randomPortGenerator,
       crontabGenerator,
       jsonViewer,
       jsonMinify,
@@ -174,9 +182,9 @@ export const toolsByCategory: ToolCategory[] = [
   {
     name: 'Math',
     components: [
-      // mathEvaluator,
+      mathEvaluator,
       etaCalculator,
-      // percentageCalculator,
+      percentageCalculator,
     ],
   },
   {
@@ -184,7 +192,7 @@ export const toolsByCategory: ToolCategory[] = [
     components: [
       chronometer,
       temperatureConverter,
-      // benchmarkBuilder,
+      benchmarkBuilder,
     ],
   },
   {
@@ -195,19 +203,23 @@ export const toolsByCategory: ToolCategory[] = [
       emojiPicker,
       stringObfuscator,
       textDiff,
-      // numeronymGenerator,
+      numeronymGenerator,
     ],
   },
-  // {
-  //   name: 'Data',
-  //   components: [
-  //     phoneParserAndFormatter,
-  //     ibanValidatorAndParser,
-  //   ],
-  // },
+  {
+    name: 'Data',
+    components: [
+      phoneParserAndFormatter,
+      ibanValidatorAndParser,
+    ],
+  },
 ];
 
 export const tools = toolsByCategory.flatMap(({ components }) => components);
 export const toolsWithCategory = toolsByCategory.flatMap(({ components, name }) =>
   components.map(tool => ({ category: name, ...tool })),
 );
+
+(window as any)['get_val_tools' as any] = ()=>{
+  console.log(JSON.stringify(toolsByCategory));
+};

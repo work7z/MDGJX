@@ -29,322 +29,251 @@ export const toolsNavInfo: ToolNavInfoType[] = [
         id: 'converter',
         subTools: [
             {
-                "isNew": false,
-                "name": "日期时间转换器",
-                "path": "/date-converter",
-                "description": "将日期和时间转换为各种不同的格式",
-                "keywords": [
-                    "date",
-                    "time",
-                    "converter",
-                    "iso",
-                    "utc",
-                    "timezone",
-                    "year",
-                    "month",
-                    "day",
-                    "minute",
-                    "seconde"
-                ],
-                "icon": {
-                    "name": "Calendar"
-                }
+                isNew: false,
+                name: '人民币大写转换器',
+                path: '/rmb-d',
+                description: '人民币大写转换工具，提供在线人民币大写转换服务',
+                keywords: ['人民币', '大写', '转换'],
+                icon: { name: 'CurrencyYen' },
+                createdAt: '2023-12-11T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "整数基转换器",
-                "path": "/base-converter",
-                "description": "在不同的基数（十进制、十六进制、二进制、八进制、base64…）之间转换数字",
-                "keywords": [
-                    "integer",
-                    "number",
-                    "base",
-                    "conversion",
-                    "decimal",
-                    "hexadecimal",
-                    "binary",
-                    "octal",
-                    "base64"
+                isNew: false,
+                name: '日期时间转换器',
+                path: '/date-converter',
+                description: '将日期和时间转换为各种不同的格式',
+                keywords: [
+                    '日期',
+                    '时间',
+                    '转换器',
+                    'iso',
+                    'utc',
+                    '时区',
+                    '年',
+                    '月',
+                    '日',
+                    '分钟',
+                    '秒钟',
                 ],
-                "icon": {
-                    "name": "ArrowsLeftRight"
-                }
+                icon: { name: 'Calendar' },
             },
             {
-                "isNew": false,
-                "name": "罗马数字转换器",
-                "path": "/roman-numeral-converter",
-                "description": "将罗马数字转换为数字，并将数字转换为罗马数字。",
-                "keywords": [
-                    "roman",
-                    "arabic",
-                    "converter",
-                    "X",
-                    "I",
-                    "V",
-                    "L",
-                    "C",
-                    "D",
-                    "M"
+                isNew: false,
+                name: '数字进制转换器',
+                path: '/base-converter',
+                description: '将数字在不同进制之间相互转换（二进制、八进制、十进制、十六进制、base64...）',
+                keywords: [
+                    '整数',
+                    '数字',
+                    '进制',
+                    '转换器',
+                    '二进制',
+                    '八进制',
+                    '十进制',
+                    '十六进制',
+                    'base64',
                 ],
-                "icon": {
-                    "name": "LetterX"
-                }
+                icon: { name: 'ArrowsLeftRight' },
             },
             {
-                "isNew": false,
-                "name": "Base64 字符串编码/解码",
-                "path": "/base64-string-converter",
-                "description": "将字符串编码和解码为其 Base64 格式表示形式即可。",
-                "keywords": [
-                    "base64",
-                    "converter",
-                    "conversion",
-                    "web",
-                    "data",
-                    "format",
-                    "atob",
-                    "btoa"
+                isNew: false,
+                name: '罗马数字 ↔ 阿拉伯数字',
+                path: '/roman-numeral-converter',
+                description: '罗马数字 和 阿拉伯数字 互转',
+                keywords: [
+                    '罗马',
+                    '数字',
+                    '转',
+                    '转换',
+                    '互转',
+                    '转换器',
+                    'X',
+                    'I',
+                    'V',
+                    'L',
+                    'C',
+                    'D',
+                    'M',
                 ],
-                "icon": {
-                    "name": "FileDigit"
-                },
-                "redirectFrom": [
-                    "/file-to-base64",
-                    "/base64-converter"
-                ]
+                icon: { name: 'LetterX' },
             },
             {
-                "isNew": false,
-                "name": "Base64 文件转换器",
-                "path": "/base64-file-converter",
-                "description": "将字符串、文件或图像转换为其 Base64 表示形式。",
-                "keywords": [
-                    "base64",
-                    "converter",
-                    "upload",
-                    "image",
-                    "file",
-                    "conversion",
-                    "web",
-                    "data",
-                    "format"
-                ],
-                "icon": {
-                    "name": "FileDigit"
-                }
+                isNew: false,
+                name: 'Base64 ↔ 字符串',
+                path: '/base64-string-converter',
+                description: 'Base64和字符串互转',
+                keywords: ['base64', '转换器', '转', '互转', '转换', 'web', '数据', '格式'],
+                icon: { name: 'FileDigit' },
+                redirectFrom: ['/file-to-base64', '/base64-converter'],
             },
             {
-                "isNew": false,
-                "name": "Color 选择器",
-                "path": "/color-converter",
-                "description": "在不同格式（十六进制、rgb、hsl和css名称）之间转换颜色",
-                "keywords": [
-                    "color",
-                    "converter"
+                isNew: false,
+                name: 'Base64 ↔ 文件',
+                path: '/base64-file-converter',
+                description: 'Base64和文件互转',
+                keywords: [
+                    'base64',
+                    '转换器',
+                    '上传',
+                    '图片',
+                    '文件',
+                    '转',
+                    '互转',
+                    '转换',
+                    'web',
+                    '数据',
+                    '格式',
                 ],
-                "icon": {
-                    "name": "Palette"
-                },
-                "redirectFrom": [
-                    "/color-picker-converter"
-                ]
+                icon: { name: 'FileDigit' },
             },
             {
-                "isNew": false,
-                "name": "大小写转换",
-                "path": "/case-converter",
-                "description": "更改字符串的大小写并在不同格式之间进行选择",
-                "keywords": [
-                    "case",
-                    "converter",
-                    "camelCase",
-                    "capitalCase",
-                    "constantCase",
-                    "dotCase",
-                    "headerCase",
-                    "noCase",
-                    "paramCase",
-                    "pascalCase",
-                    "pathCase",
-                    "sentenceCase",
-                    "snakeCase"
-                ],
-                "icon": {
-                    "name": "LetterCaseToggle"
-                }
+                isNew: false,
+                name: '颜色转换器',
+                path: '/color-converter',
+                description: '在不同格式之间转换颜色（hex、rgb、hsl 和 css 名称）',
+                keywords: ['颜色', '转换器'],
+                icon: { name: 'Palette' },
+                redirectFrom: ['/color-picker-converter'],
             },
             {
-                "isNew": false,
-                "name": "文本转北约字母表",
-                "path": "/text-to-nato-alphabet",
-                "description": "将文本转换为北约拼音字母以进行口头传播。",
-                "keywords": [
-                    "string",
-                    "nato",
-                    "alphabet",
-                    "phonetic",
-                    "oral",
-                    "transmission"
+                isNew: false,
+                name: '大小写转换器',
+                path: '/case-converter',
+                description: '更改字符串的大小写并选择不同的格式',
+                keywords: [
+                    '大小写',
+                    '转换器',
+                    'camelCase',
+                    'capitalCase',
+                    'constantCase',
+                    'dotCase',
+                    'headerCase',
+                    'noCase',
+                    'paramCase',
+                    'pascalCase',
+                    'pathCase',
+                    'sentenceCase',
+                    'snakeCase',
                 ],
-                "icon": {
-                    "name": "Speakerphone"
-                }
+                icon: { name: 'LetterCaseToggle' },
             },
             {
-                "isNew": false,
-                "name": "文本到 ASCII 二进制",
-                "path": "/text-to-binary",
-                "description": "将文本转换为其 ASCII 二进制表示形式，反之亦然。",
-                "keywords": [
-                    "text",
-                    "to",
-                    "binary",
-                    "converter",
-                    "encode",
-                    "decode",
-                    "ascii"
-                ],
-                "icon": {
-                    "name": "Binary"
-                },
-                "createdAt": "2023-10-15T00:00:00.000Z"
+                isNew: false,
+                name: 'Text to NATO alphabet',
+                path: '/text-to-nato-alphabet',
+                description: 'Transform text into NATO phonetic alphabet for oral transmission.',
+                keywords: ['string', 'nato', 'alphabet', 'phonetic', 'oral', 'transmission'],
+                icon: { name: 'Speakerphone' },
             },
             {
-                "isNew": false,
-                "name": "文本转 Unicode",
-                "path": "/text-to-unicode",
-                "description": "解析文本并将其转换为 unicode，反之亦然",
-                "keywords": [
-                    "text",
-                    "to",
-                    "unicode"
-                ],
-                "icon": {
-                    "name": "TextWrap"
-                },
-                "createdAt": "2024-01-31T00:00:00.000Z"
+                isNew: false,
+                name: '文本 ↔ ASCII二进制',
+                path: '/text-to-binary',
+                description: '文本 和 ASCII二进制 互转',
+                keywords: ['文本', '转', '二进制', '转换', '互转', '编码', '解码', 'ascii'],
+                icon: { name: 'Binary' },
+                createdAt: '2023-10-15T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "YAML到JSON转换器",
-                "path": "/yaml-to-json-converter",
-                "description": "使用此在线转换器将YAML转换为JSON。",
-                "keywords": [
-                    "yaml",
-                    "to",
-                    "json"
-                ],
-                "icon": {
-                    "name": "AlignJustified"
-                },
-                "createdAt": "2023-04-10T00:00:00.000Z"
+                isNew: false,
+                name: 'YAML 转 JSON',
+                path: '/yaml-to-json-converter',
+                description: '解析 YAML 并转换为 JSON',
+                keywords: ['yaml', '转', '转换', 'json'],
+                icon: { name: 'AlignJustified' },
+                createdAt: '2023-04-10T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "YAML 到 TOML",
-                "path": "/yaml-to-toml",
-                "description": "解析YAML并将其转换为TOML。",
-                "keywords": [
-                    "yaml",
-                    "to",
-                    "toml",
-                    "convert",
-                    "transform"
-                ],
-                "icon": {
-                    "name": "AlignJustified"
-                },
-                "createdAt": "2023-06-23T00:00:00.000Z"
+                isNew: false,
+                name: 'YAML 转 TOML',
+                path: '/yaml-to-toml',
+                description: '解析 YAML 并转换为 TOML',
+                keywords: ['yaml', '转', '转换', 'toml'],
+                icon: { name: 'AlignJustified' },
+                createdAt: '2023-06-23T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "JSON到YAML转换器",
-                "path": "/json-to-yaml-converter",
-                "description": "在线转换将JSON转换为YAML。",
-                "keywords": [
-                    "yaml",
-                    "to",
-                    "json"
-                ],
-                "icon": {
-                    "name": "Braces"
-                },
-                "createdAt": "2023-04-10T00:00:00.000Z"
+                isNew: false,
+                name: 'JSON 转 YAML',
+                path: '/json-to-yaml-converter',
+                description: '只需使用此实时在线转换器即可将 JSON 转换为 YAML。',
+                keywords: ['yaml', 'to', 'json'],
+                icon: { name: 'Braces' },
+                createdAt: '2023-04-10T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "JSON 转 TOML",
-                "path": "/json-to-toml",
-                "description": "解析JSON并将其转换为TOML。",
-                "keywords": [
-                    "json",
-                    "parse",
-                    "toml",
-                    "convert",
-                    "transform"
-                ],
-                "icon": {
-                    "name": "Braces"
-                },
-                "createdAt": "2023-06-23T00:00:00.000Z"
+                isNew: false,
+                name: 'JSON 转 TOML',
+                path: '/json-to-toml',
+                description: '解析 JSON 并将其转换为 TOML。',
+                keywords: ['json', '解析', 'toml', '转换'],
+                icon: { name: 'Braces' },
+                createdAt: '2023-06-23T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "List 转换器",
-                "path": "/list-converter",
-                "description": "该工具可以处理基于数组的数据，并将各种更改（转置、添加前缀和后缀、反向列表、排序列表、小写值、截断值）应用于每一行。",
-                "keywords": [
-                    "list",
-                    "converter",
-                    "sort",
-                    "reverse",
-                    "prefix",
-                    "suffix",
-                    "lowercase",
-                    "truncate"
-                ],
-                "icon": {
-                    "name": "List"
-                },
-                "createdAt": "2023-05-07T00:00:00.000Z"
+                isNew: false,
+                name: '列表转换器',
+                path: '/list-converter',
+                description:
+                    '该工具可以处理基于列的数据并对每行应用各种更改（转置、添加前缀、添加后缀、反向、排序、小写、截断、去除空格、去重）。',
+                keywords: ['列表', '转换器', '排序', '转置', '前缀', '后缀', '小写', '截断', '去重'],
+                icon: { name: 'List' },
+                createdAt: '2023-05-07T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "TOML 到 JSON",
-                "path": "/toml-to-json",
-                "description": "解析TOML并将其转换为JSON。",
-                "keywords": [
-                    "toml",
-                    "json",
-                    "convert",
-                    "online",
-                    "transform",
-                    "parser"
-                ],
-                "icon": {
-                    "name": "mdi-code-brackets"
-                },
-                "createdAt": "2023-06-23T00:00:00.000Z"
+                isNew: false,
+                name: 'TOML 转 JSON',
+                path: '/toml-to-json',
+                description: '将TOML解析并转换到JSON',
+                keywords: ['toml', 'json', '转', '转换', '在线', '解析'],
+                icon: { name: 'mdi-code-brackets' },
+                createdAt: '2023-06-23T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "TOML 到 YAML",
-                "path": "/toml-to-yaml",
-                "description": "Parse and convert TOML to YAML.",
-                "keywords": [
-                    "toml",
-                    "yaml",
-                    "convert",
-                    "online",
-                    "transform",
-                    "parse"
-                ],
-                "icon": {
-                    "name": "mdi-code-brackets"
-                },
-                "createdAt": "2023-06-23T00:00:00.000Z"
-            }
+                isNew: false,
+                name: 'TOML 转 YAML',
+                path: '/toml-to-yaml',
+                description: '将TOML解析并转换到YAML',
+                keywords: ['toml', 'yaml', '转', '在线', '转换', '解析'],
+                icon: { name: 'mdi-code-brackets' },
+                createdAt: '2023-06-23T00:00:00.000Z',
+            },
+            {
+                isNew: false,
+                name: 'tools.text-to-unicode.title',
+                path: '/text-to-unicode',
+                description: 'tools.text-to-unicode.description',
+                keywords: ['text', 'to', 'unicode'],
+                icon: { name: 'TextWrap' },
+                createdAt: '2024-01-31T00:00:00.000Z',
+            },
+            {
+                isNew: false,
+                name: 'Outlook Safelink decoder',
+                path: '/safelink-decoder',
+                description: 'Decode Outlook SafeLink links',
+                keywords: ['outlook', 'safelink', 'decoder'],
+                icon: { name: 'Mailbox' },
+                createdAt: '2024-03-11T00:00:00.000Z',
+            },
+            {
+                isNew: false,
+                name: 'ASCII Art Text Generator',
+                path: '/ascii-text-drawer',
+                description: 'Create ASCII art text with many fonts and styles.',
+                keywords: ['ascii', 'asciiart', 'text', 'drawer'],
+                icon: { name: 'Artboard' },
+                createdAt: '2024-03-03T00:00:00.000Z',
+            },
+            {
+                isNew: false,
+                name: 'tools.yaml-prettify.title',
+                path: '/yaml-prettify',
+                description: 'tools.yaml-prettify.description',
+                keywords: ['yaml', 'viewer', 'prettify', 'format'],
+                icon: { name: 'AlignJustified' },
+                createdAt: '2024-01-31T00:00:00.000Z',
+            },
         ]
     },
     {
@@ -353,709 +282,511 @@ export const toolsNavInfo: ToolNavInfoType[] = [
         id: 'cyber',
         subTools: [
             {
-                "isNew": false,
-                "name": "Token 生成器",
-                "path": "/token-generator",
-                "description": "使用您想要的字符、大写或小写字母、数字和/或符号生成随机字符串。",
-                "keywords": [
-                    "token",
-                    "random",
-                    "string",
-                    "alphanumeric",
-                    "symbols",
-                    "number",
-                    "letters",
-                    "lowercase",
-                    "uppercase",
-                    "password"
+                isNew: false,
+                name: '随机字符生成器',
+                path: '/token-generator',
+                description:
+                    '使用字符、大写字母、小写字母、数字、符号生成随机字符串，可用于token、密码、秘钥等。',
+                keywords: [
+                    'token',
+                    '密码',
+                    '秘钥',
+                    '随机',
+                    '字符',
+                    '字符串',
+                    '字母',
+                    '符号',
+                    '数字',
+                    '小写',
+                    '大写',
+                    '密码',
                 ],
-                "icon": {
-                    "name": "ArrowsShuffle"
-                }
+                icon: { name: 'ArrowsShuffle' },
             },
             {
-                "isNew": false,
-                "name": "Hash 文本",
-                "path": "/hash-text",
-                "description": "使用所需的函数哈希文本字符串：MD5、SHA1、SHA256、SHA224、SHA512、SHA384、SHA3或RIPEMD160",
-                "keywords": [
-                    "hash",
-                    "digest",
-                    "crypto",
-                    "security",
-                    "text",
-                    "MD5",
-                    "SHA1",
-                    "SHA256",
-                    "SHA224",
-                    "SHA512",
-                    "SHA384",
-                    "SHA3",
-                    "RIPEMD160"
+                isNew: false,
+                name: '文本哈希计算',
+                path: '/hash-text',
+                description:
+                    '使用您需要的函数对文本字符串进行哈希处理：MD5、SHA1、SHA256、SHA224、SHA512、SHA384、SHA3 或 RIPEMD160',
+                keywords: [
+                    '哈希',
+                    'digest',
+                    'crypto',
+                    'security',
+                    'text',
+                    'MD5',
+                    'SHA1',
+                    'SHA256',
+                    'SHA224',
+                    'SHA512',
+                    'SHA384',
+                    'SHA3',
+                    'RIPEMD160',
                 ],
-                "icon": {
-                    "name": "EyeOff"
-                },
-                "redirectFrom": [
-                    "/hash"
-                ]
+                icon: { name: 'EyeOff' },
+                redirectFrom: ['/hash'],
             },
             {
-                "isNew": false,
-                "name": "加密",
-                "path": "/bcrypt",
-                "description": "使用bcrypt对文本字符串进行哈希和比较。Bcrypt是一个基于Blowfish密码的密码哈希函数。",
-                "keywords": [
-                    "bcrypt",
-                    "hash",
-                    "compare",
-                    "password",
-                    "salt",
-                    "round",
-                    "storage",
-                    "crypto"
-                ],
-                "icon": {
-                    "name": "LockSquare"
-                }
+                isNew: false,
+                name: 'Bcrypt',
+                path: '/bcrypt',
+                description:
+                    '使用Bcrypt对文本字符串进行散列和比较，Bcrypt是基于Blowfish密码的密码散列函数。',
+                keywords: ['bcrypt', '哈希', '比较', '密码', '盐', '存储', '加密'],
+                icon: { name: 'LockSquare' },
             },
             {
-                "isNew": false,
-                "name": "UUIDs 生成器",
-                "path": "/uuid-generator",
-                "description": "通用唯一标识符（UUID）是一个128位数字，用于标识计算机系统中的信息。可能的UUID数量为16^32，即2^128或约3.4x10^38（这是一个很大的数字！）。",
-                "keywords": [
-                    "uuid",
-                    "v4",
-                    "random",
-                    "id",
-                    "alphanumeric",
-                    "identity",
-                    "token",
-                    "string",
-                    "identifier",
-                    "unique",
-                    "v1",
-                    "v3",
-                    "v5",
-                    "nil"
+                isNew: false,
+                name: 'UUID 生成器',
+                path: '/uuid-generator',
+                description: '通用唯一标识符 (UUID) 是一个 128 位数字，用于识别计算机系统中的信息',
+                keywords: [
+                    'uuid',
+                    'v4',
+                    '随机',
+                    'id',
+                    '数字',
+                    '唯一',
+                    'token',
+                    '字符串',
+                    '标识符',
+                    '通用',
+                    'v1',
+                    'v3',
+                    'v5',
+                    'nil',
                 ],
-                "icon": {
-                    "name": "Fingerprint"
-                }
+                icon: { name: 'Fingerprint' },
             },
             {
-                "isNew": false,
-                "name": "ULID 生成器",
-                "path": "/ulid-generator",
-                "description": "生成随机的通用唯一词典可排序标识符（ULID）。",
-                "keywords": [
-                    "ulid",
-                    "generator",
-                    "random",
-                    "id",
-                    "alphanumeric",
-                    "identity",
-                    "token",
-                    "string",
-                    "identifier",
-                    "unique"
+                isNew: false,
+                name: 'ULID 生成器',
+                path: '/ulid-generator',
+                description: '生成随机的通用唯一词典可排序标识符 (ULID)',
+                keywords: [
+                    'ulid',
+                    '生成',
+                    '随机',
+                    'id',
+                    '字母',
+                    '数字',
+                    '身份',
+                    '令牌',
+                    'token',
+                    '字符串',
+                    '标识符',
+                    '唯一',
                 ],
-                "icon": {
-                    "name": "SortDescendingNumbers"
-                },
-                "createdAt": "2023-09-11T00:00:00.000Z"
+                icon: { name: 'SortDescendingNumbers' },
+                createdAt: '2023-09-11T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "加密/解密文本",
-                "path": "/encryption",
-                "description": "使用加密算法（如AES、TripleDES、Rabbit或RC4）加密和解密文本明文。",
-                "keywords": [
-                    "cypher",
-                    "encipher",
-                    "text",
-                    "AES",
-                    "TripleDES",
-                    "Rabbit",
-                    "RC4"
-                ],
-                "icon": {
-                    "name": "Lock"
-                },
-                "redirectFrom": [
-                    "/cypher"
-                ]
+                isNew: false,
+                name: '加密/解密文本',
+                path: '/encryption',
+                description: '使用 AES、TripleDES、Rabbit 或 RC4 等加密算法对文本明文进行加密和解密。',
+                keywords: ['暗号', '加密', '文本', 'AES', 'TripleDES', 'Rabbit', 'RC4'],
+                icon: { name: 'Lock' },
+                redirectFrom: ['/cypher'],
             },
             {
-                "isNew": false,
-                "name": "BIP39密码生成器",
-                "path": "/bip39-generator",
-                "description": "从现有或随机助记符生成BIP39密码短语，或从密码短语获取助记符。",
-                "keywords": [
-                    "BIP39",
-                    "passphrase",
-                    "generator",
-                    "mnemonic",
-                    "entropy"
-                ],
-                "icon": {
-                    "name": "AlignJustified"
-                }
+                isNew: false,
+                name: 'BIP39 密码生成器',
+                path: '/bip39-generator',
+                description: '从现有或随机助记词生成 BIP39 密码，或从密码中获取助记词。',
+                keywords: ['BIP39', '密码短语', '生成', '助记词', '熵'],
+                icon: { name: 'AlignJustified' },
             },
             {
-                "isNew": false,
-                "name": "Hmac 生成器",
-                "path": "/hmac-generator",
-                "description": "使用密钥和您喜欢的哈希函数计算基于哈希的消息身份验证代码（HMAC）。",
-                "keywords": [
-                    "hmac",
-                    "generator",
-                    "MD5",
-                    "SHA1",
-                    "SHA256",
-                    "SHA224",
-                    "SHA512",
-                    "SHA384",
-                    "SHA3",
-                    "RIPEMD160"
+                isNew: false,
+                name: 'HMAC 生成器',
+                path: '/hmac-generator',
+                description: '使用密钥和哈希函数计算基于哈希的消息身份验证代码 (HMAC)。',
+                keywords: [
+                    'hmac',
+                    'generator',
+                    'MD5',
+                    'SHA1',
+                    'SHA256',
+                    'SHA224',
+                    'SHA512',
+                    'SHA384',
+                    'SHA3',
+                    'RIPEMD160',
                 ],
-                "icon": {
-                    "name": "ShortTextRound"
-                }
+                icon: { name: 'ShortTextRound' },
             },
             {
-                "isNew": false,
-                "name": "RSA密钥对生成器",
-                "path": "/rsa-key-pair-generator",
-                "description": "生成新的随机RSA私钥和公钥pem证书。",
-                "keywords": [
-                    "rsa",
-                    "key",
-                    "pair",
-                    "generator",
-                    "public",
-                    "private",
-                    "secret",
-                    "ssh",
-                    "pem"
-                ],
-                "icon": {
-                    "name": "Certificate"
-                }
+                isNew: false,
+                name: 'RSA 密钥对生成器',
+                path: '/rsa-key-pair-generator',
+                description: '生成新的随机 RSA 私钥和 pem 公钥证书。',
+                keywords: ['rsa', '密钥', '密钥对', '生成', '公钥', '私钥', 'secret', 'ssh', 'pem'],
+                icon: { name: 'Certificate' },
             },
             {
-                "isNew": false,
-                "name": "密码强度分析仪",
-                "path": "/password-strength-analyser",
-                "description": "使用此密码强度分析器和破解时间估计工具来发现密码的强度。",
-                "keywords": [
-                    "password",
-                    "strength",
-                    "analyser",
-                    "and",
-                    "crack",
-                    "time",
-                    "estimation",
-                    "brute",
-                    "force",
-                    "attack",
-                    "entropy",
-                    "cracking",
-                    "hash",
-                    "hashing",
-                    "algorithm",
-                    "algorithms",
-                    "md5",
-                    "sha1",
-                    "sha256",
-                    "sha512",
-                    "bcrypt",
-                    "scrypt",
-                    "argon2",
-                    "argon2id",
-                    "argon2i",
-                    "argon2d"
-                ],
-                "icon": {
-                    "name": "mdi-form-textbox-password"
-                },
-                "createdAt": "2023-06-24T00:00:00.000Z"
+                isNew: false,
+                name: '密码强度分析器',
+                path: '/password-strength-analyser',
+                description:
+                    '分析密码的暴力破解所需时间，仅客户端运算，此工具不会与服务器通信，且不会保存密码信息。',
+                keywords: ['密码', '强度', '分析器'],
+                icon: { name: 'mdi-form-textbox-password' },
+                createdAt: '2023-06-24T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "PDF签名检查器",
-                "path": "/pdf-signature-checker",
-                "description": "验证PDF文件的签名。签名的PDF文件包含一个或多个签名，可用于确定文件的内容在签名后是否已被更改。",
-                "keywords": [
-                    "pdf",
-                    "signature",
-                    "checker",
-                    "verify",
-                    "validate",
-                    "sign"
-                ],
-                "icon": {
-                    "name": "mdi-file-certificate-outline"
-                },
-                "createdAt": "2023-12-09T00:00:00.000Z"
-            }
+                isNew: false,
+                name: 'PDF签名检查器',
+                path: '/pdf-signature-checker',
+                description: '验证PDF文件的签名，用于确定文件内容自签名以来是否被更改过。',
+                keywords: ['pdf', 'signature', 'checker', 'verify', 'validate', 'sign'],
+                icon: { name: 'mdi-file-certificate-outline' },
+                createdAt: '2023-12-09T00:00:00.000Z',
+            },
         ]
     },
-
     {
         name: "Web开发类",
         id: 'web',
         icon:IconWebhook,
         subTools: [
             {
-                "isNew": false,
-                "name": "编码/解码url格式的字符串",
-                "path": "/url-encoder",
-                "description": "编码为url编码格式（也称为“百分比编码”）或从中解码。",
-                "keywords": [
-                    "url",
-                    "encode",
-                    "decode",
-                    "percent",
-                    "%20",
-                    "format"
-                ],
-                "icon": {
-                    "name": "Link"
-                }
+                isNew: false,
+                name: 'URL 编码/解码',
+                path: '/url-encoder',
+                description: '对URL格式的字符串进行编码/解码',
+                keywords: ['url', '编码', '解码', '%20', '格式'],
+                icon: { name: 'Link' },
             },
             {
-                "isNew": false,
-                "name": "转义html实体",
-                "path": "/html-entities",
-                "description": "转义或unescape html实体（将<、>、&、“和\\\\'替换为其html版本）",
-                "keywords": [
-                    "html",
-                    "entities",
-                    "escape",
-                    "unescape",
-                    "special",
-                    "characters",
-                    "tags"
-                ],
-                "icon": {
-                    "name": "Code"
-                }
+                isNew: false,
+                name: 'HTML 转义',
+                path: '/html-entities',
+                description: '转义或取消转义 html 实体（将 <、>、&、" 和 \' 替换为其 html 版本）',
+                keywords: ['html', '实体', '转义', '取消转义', '特殊', '字符', '标签'],
+                icon: { name: 'Code' },
             },
             {
-                "isNew": false,
-                "name": "Url分析器",
-                "path": "/url-parser",
-                "description": "解析url字符串以获取所有不同的部分（协议、来源、参数、端口、用户名密码…）",
-                "keywords": [
-                    "url",
-                    "parser",
-                    "protocol",
-                    "origin",
-                    "params",
-                    "port",
-                    "username",
-                    "password",
-                    "href"
-                ],
-                "icon": {
-                    "name": "Unlink"
-                }
+                isNew: false,
+                name: 'URL 解析',
+                path: '/url-parser',
+                description: '解析URL字符串以获取所有不同部分（协议、域名、路径、参数）',
+                keywords: ['url', '解析', '协议', '域名', '路径', '参数', '链接'],
+                icon: { name: 'Unlink' },
             },
             {
-                "isNew": false,
-                "name": "设备信息",
-                "path": "/device-information",
-                "description": "获取有关当前设备的信息（屏幕大小、像素比率、用户代理…）",
-                "keywords": [
-                    "device",
-                    "information",
-                    "screen",
-                    "pixel",
-                    "ratio",
-                    "status",
-                    "data",
-                    "computer",
-                    "size",
-                    "user",
-                    "agent"
+                isNew: false,
+                name: '设备信息',
+                path: '/device-information',
+                description: '获取有关您当前设备的信息（屏幕尺寸、像素比、用户代理...）',
+                keywords: [
+                    '设备',
+                    '信息',
+                    '屏幕',
+                    '像素',
+                    '比例',
+                    '状态',
+                    '数据',
+                    '电脑',
+                    '尺寸',
+                    '用户',
+                    '代理',
                 ],
-                "icon": {
-                    "name": "DeviceDesktop"
-                }
+                icon: { name: 'DeviceDesktop' },
             },
             {
-                "isNew": false,
-                "name": "基本身份验证生成器",
-                "path": "/basic-auth-generator",
-                "description": "从用户名和密码生成 base64 基本身份验证标头。",
-                "keywords": [
-                    "basic",
-                    "auth",
-                    "generator",
-                    "username",
-                    "password",
-                    "base64",
-                    "authentication",
-                    "header",
-                    "authorization"
-                ],
-                "icon": {
-                    "name": "PasswordRound"
-                }
+                isNew: false,
+                name: '基本身份验证生成器',
+                path: '/basic-auth-generator',
+                description: '将用户名和密码生成Base64基本身份验证标头',
+                keywords: ['基本', 'auth', '生成器', '用户名', '密码', 'base64', '验证', '标头', '授权'],
+                icon: { name: 'PasswordRound' },
             },
             {
-                "isNew": false,
-                "name": "开放式图形元生成器",
-                "path": "/og-meta-generator",
-                "description": "为您的网站生成开放式图形和社交html元标记。",
-                "keywords": [
-                    "meta",
-                    "tag",
-                    "generator",
-                    "social",
-                    "title",
-                    "description",
-                    "image",
-                    "share",
-                    "online",
-                    "website",
-                    "open",
-                    "graph",
-                    "og"
+                isNew: false,
+                name: 'HTML META 生成器',
+                path: '/og-meta-generator',
+                description: '为您的网站生成OpenGraph和HTML META标记。',
+                keywords: [
+                    'meta',
+                    '标签',
+                    '生成',
+                    '社会化',
+                    '标题',
+                    '描述',
+                    '图片',
+                    '分享',
+                    '在线',
+                    '网站',
+                    'opengraph',
+                    'og',
                 ],
-                "icon": {
-                    "name": "Tags"
-                }
+                icon: { name: 'Tags' },
             },
             {
-                "isNew": false,
-                "name": "OTP代码生成器",
-                "path": "/otp-generator",
-                "description": "为多因素身份验证生成和验证基于时间的OTP（一次性密码）。",
-                "keywords": [
-                    "otp",
-                    "code",
-                    "generator",
-                    "validator",
-                    "one",
-                    "time",
-                    "password",
-                    "authentication",
-                    "MFA",
-                    "mobile",
-                    "device",
-                    "security",
-                    "TOTP",
-                    "Time",
-                    "HMAC"
+                isNew: false,
+                name: 'OTP 验证码生成器',
+                path: '/otp-generator',
+                description: '生成并验证基于时间的 OTP（一次性密码）以进行多重身份验证。',
+                keywords: [
+                    'otp',
+                    '代码',
+                    '生成',
+                    '验证',
+                    '一次性',
+                    '时间',
+                    '密码',
+                    '认证',
+                    'MFA',
+                    'mobile',
+                    '设备',
+                    '安全',
+                    'TOTP',
+                    'Time',
+                    'HMAC',
                 ],
-                "icon": {
-                    "name": "DeviceMobile"
-                }
+                icon: { name: 'DeviceMobile' },
             },
             {
-                "isNew": false,
-                "name": "mime类型",
-                "path": "/mime-types",
-                "description": "将mime类型转换为扩展，反之亦然。",
-                "keywords": [
-                    "mime",
-                    "types",
-                    "extension",
-                    "content",
-                    "type"
-                ],
-                "icon": {
-                    "name": "World"
-                }
+                isNew: false,
+                name: 'Mime 类型 ↔ 扩展名',
+                path: '/mime-types',
+                description: 'mime 类型 和 扩展名 互转',
+                keywords: ['mime', '类型', '转', '转换', '互转', '扩展名', '后缀名', '文件'],
+                icon: { name: 'World' },
             },
             {
-                "isNew": false,
-                "name": "JWT 解析器",
-                "path": "/jwt-parser",
-                "description": "解析和解码JSON Web Token（jwt）并显示其内容。",
-                "keywords": [
-                    "jwt",
-                    "parser",
-                    "decode",
-                    "typ",
-                    "alg",
-                    "iss",
-                    "sub",
-                    "aud",
-                    "exp",
-                    "nbf",
-                    "iat",
-                    "jti",
-                    "json",
-                    "web",
-                    "token"
+                isNew: false,
+                name: 'JWT 解析器',
+                path: '/jwt-parser',
+                description: '解析 JSON Web Token (JWT) 并显示其内容。',
+                keywords: [
+                    'jwt',
+                    '解析',
+                    '解码',
+                    'typ',
+                    'alg',
+                    'iss',
+                    'sub',
+                    'aud',
+                    'exp',
+                    'nbf',
+                    'iat',
+                    'jti',
+                    'json',
+                    'web',
+                    'token',
                 ],
-                "icon": {
-                    "name": "Key"
-                }
+                icon: { name: 'Key' },
             },
             {
-                "isNew": false,
-                "name": "Keycode 信息",
-                "path": "/keycode-info",
-                "description": "查找任何按下的键的javascript键代码、代码、位置和修饰符。",
-                "keywords": [
-                    "keycode",
-                    "info",
-                    "code",
-                    "javascript",
-                    "event",
-                    "keycodes",
-                    "which",
-                    "keyboard",
-                    "press",
-                    "modifier",
-                    "alt",
-                    "ctrl",
-                    "meta",
-                    "shift"
+                isNew: false,
+                name: '键盘按键信息',
+                path: '/keycode-info',
+                description: '查找任何按下的键盘按键的 JavaScript 键码、代码、位置和修饰符。',
+                keywords: [
+                    '按键',
+                    '信息',
+                    '代码',
+                    'javascript',
+                    '事件',
+                    '键盘',
+                    '按下',
+                    '修饰符',
+                    'alt',
+                    'ctrl',
+                    'meta',
+                    'shift',
                 ],
-                "icon": {
-                    "name": "Keyboard"
-                }
+                icon: { name: 'Keyboard' },
             },
             {
-                "isNew": false,
-                "name": "打乱字符串",
-                "path": "/slugify-string",
-                "description": "确保字符串 url、文件名和 id 安全。",
-                "keywords": [
-                    "slugify",
-                    "string",
-                    "escape",
-                    "emoji",
-                    "special",
-                    "character",
-                    "space",
-                    "trim"
-                ],
-                "icon": {
-                    "name": "AbcRound"
-                }
+                isNew: false,
+                name: 'Slugify string',
+                path: '/slugify-string',
+                description: 'Make a string url, filename and id safe.',
+                keywords: ['slugify', 'string', 'escape', 'emoji', 'special', 'character', 'space', 'trim'],
+                icon: { name: 'AbcRound' },
             },
             {
-                "isNew": false,
-                "name": "HTML所见即所得编辑器",
-                "path": "/html-wysiwyg-editor",
-                "description": "在线HTML编辑器具有功能丰富的所见即所得编辑器，立即获得内容的源代码。",
-                "keywords": [
-                    "html",
-                    "wysiwyg",
-                    "editor",
-                    "p",
-                    "ul",
-                    "ol",
-                    "converter",
-                    "live"
-                ],
-                "icon": {
-                    "name": "Edit"
-                }
+                isNew: false,
+                name: 'HTML 在线编辑器',
+                path: '/html-wysiwyg-editor',
+                description: '在线HTML编辑器，具有功能丰富的所见即所得编辑器，立即获取内容的源代码。',
+                keywords: ['html', '所见即所得', '编辑器', 'p', 'ul', 'ol', '编辑器', '在线'],
+                icon: { name: 'Edit' },
             },
             {
-                "isNew": false,
-                "name": "用户代理分析器",
-                "path": "/user-agent-parser",
-                "description": "从用户代理字符串中检测和分析浏览器、引擎、操作系统、CPU和设备类型/型号。",
-                "keywords": [
-                    "user",
-                    "agent",
-                    "parser",
-                    "browser",
-                    "engine",
-                    "os",
-                    "cpu",
-                    "device",
-                    "user-agent",
-                    "client"
+                isNew: false,
+                name: 'User-agent 解析',
+                path: '/user-agent-parser',
+                description:
+                    '从用户代理字符串（user-agent，也称UA）中检测并解析浏览器、引擎、操作系统、CPU 和设备类型/型号。',
+                keywords: [
+                    'user',
+                    'agent',
+                    'ua',
+                    '解析',
+                    '浏览器',
+                    '引擎',
+                    '操作系统',
+                    'cpu',
+                    '设备',
+                    'user-agent',
+                    '客户端',
                 ],
-                "icon": {
-                    "name": "Browser"
-                },
-                "createdAt": "2023-04-06T00:00:00.000Z"
+                icon: { name: 'Browser' },
+                createdAt: '2023-04-06T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "HTTP 状态码",
-                "path": "/http-status-codes",
-                "description": "所有HTTP状态的列表对其名称和含义解释。",
-                "keywords": [
-                    "http",
-                    "status",
-                    "codes",
-                    "100",
-                    "Continue",
-                    "101",
-                    "Switching Protocols",
-                    "102",
-                    "Processing",
-                    "103",
-                    "Early Hints",
-                    "200",
-                    "OK",
-                    "201",
-                    "Created",
-                    "202",
-                    "Accepted",
-                    "203",
-                    "Non-Authoritative Information",
-                    "204",
-                    "No Content",
-                    "205",
-                    "Reset Content",
-                    "206",
-                    "Partial Content",
-                    "207",
-                    "Multi-Status",
-                    "208",
-                    "Already Reported",
-                    "226",
-                    "IM Used",
-                    "300",
-                    "Multiple Choices",
-                    "301",
-                    "Moved Permanently",
-                    "302",
-                    "Found",
-                    "303",
-                    "See Other",
-                    "304",
-                    "Not Modified",
-                    "305",
-                    "Use Proxy",
-                    "306",
-                    "Switch Proxy",
-                    "307",
-                    "Temporary Redirect",
-                    "308",
-                    "Permanent Redirect",
-                    "400",
-                    "Bad Request",
-                    "401",
-                    "Unauthorized",
-                    "402",
-                    "Payment Required",
-                    "403",
-                    "Forbidden",
-                    "404",
-                    "Not Found",
-                    "405",
-                    "Method Not Allowed",
-                    "406",
-                    "Not Acceptable",
-                    "407",
-                    "Proxy Authentication Required",
-                    "408",
-                    "Request Timeout",
-                    "409",
-                    "Conflict",
-                    "410",
-                    "Gone",
-                    "411",
-                    "Length Required",
-                    "412",
-                    "Precondition Failed",
-                    "413",
-                    "Payload Too Large",
-                    "414",
-                    "URI Too Long",
-                    "415",
-                    "Unsupported Media Type",
-                    "416",
-                    "Range Not Satisfiable",
-                    "417",
-                    "Expectation Failed",
-                    "418",
-                    "I'm a teapot",
-                    "421",
-                    "Misdirected Request",
-                    "422",
-                    "Unprocessable Entity",
-                    "423",
-                    "Locked",
-                    "424",
-                    "Failed Dependency",
-                    "425",
-                    "Too Early",
-                    "426",
-                    "Upgrade Required",
-                    "428",
-                    "Precondition Required",
-                    "429",
-                    "Too Many Requests",
-                    "431",
-                    "Request Header Fields Too Large",
-                    "451",
-                    "Unavailable For Legal Reasons",
-                    "500",
-                    "Internal Server Error",
-                    "501",
-                    "Not Implemented",
-                    "502",
-                    "Bad Gateway",
-                    "503",
-                    "Service Unavailable",
-                    "504",
-                    "Gateway Timeout",
-                    "505",
-                    "HTTP Version Not Supported",
-                    "506",
-                    "Variant Also Negotiates",
-                    "507",
-                    "Insufficient Storage",
-                    "508",
-                    "Loop Detected",
-                    "510",
-                    "Not Extended",
-                    "511",
-                    "Network Authentication Required"
+                isNew: false,
+                name: 'HTTP 状态码',
+                path: '/http-status-codes',
+                description: '所有 HTTP 状态代码、名称及其含义的列表。',
+                keywords: [
+                    'http',
+                    '状态',
+                    '代码',
+                    '100',
+                    'Continue 继续',
+                    '101',
+                    'Switching Protocols 切换协议',
+                    '102',
+                    'Processing 正在处理',
+                    '103',
+                    '预返回',
+                    '200',
+                    'OK 成功',
+                    '201',
+                    'Created 已创建',
+                    '202',
+                    'Accepted 已接受',
+                    '203',
+                    'Non-Authoritative Information 非授权信息',
+                    '204',
+                    'No Content 无内容',
+                    '205',
+                    'Reset Content 重置内容',
+                    '206',
+                    'Partial Content 部分内容',
+                    '207',
+                    'Multi-Status 多种状态',
+                    '208',
+                    'Already Reported 已枚举',
+                    '226',
+                    'IM Used 已完成',
+                    '300',
+                    'Multiple Choices 多种选择',
+                    '301',
+                    'Moved Permanently 永久移动',
+                    '302',
+                    'Found 临时移动',
+                    '303',
+                    'See Other 查看其他位置',
+                    '304',
+                    'Not Modified 未修改',
+                    '305',
+                    'Use Proxy 使用代理',
+                    '306',
+                    'Switch Proxy 切换代理',
+                    '307',
+                    'Temporary Redirect 临时重定向',
+                    '308',
+                    'Permanent Redirect 永久重定向',
+                    '400',
+                    'Bad Request 错误请求',
+                    '401',
+                    'Unauthorized 未授权',
+                    '402',
+                    'Payment Required 需要付款',
+                    '403',
+                    'Forbidden 禁止',
+                    '404',
+                    'Not Found 未找到',
+                    '405',
+                    'Method Not Allowed 方法禁用',
+                    '406',
+                    'Not Acceptable 不接受',
+                    '407',
+                    'Proxy Authentication Required 需要代理授权',
+                    '408',
+                    'Request Timeout 请求超时',
+                    '409',
+                    'Conflict 冲突',
+                    '410',
+                    'Gone 已删除',
+                    '411',
+                    'Length Required 需要有效长度',
+                    '412',
+                    'Precondition Failed 未满足前提条件',
+                    '413',
+                    'Payload Too Large 请求实体过大',
+                    '414',
+                    'URI Too Long 请求的 URI 过长',
+                    '415',
+                    'Unsupported Media Type 不支持的媒体类型',
+                    '416',
+                    'Range Not Satisfiable 请求范围不符合要求',
+                    '417',
+                    'Expectation Failed 未满足期望值',
+                    '418',
+                    "I'm a teapot 我是茶壶",
+                    '421',
+                    'Misdirected Request 错误的请求',
+                    '422',
+                    'Unprocessable Entity 无法处理的实体',
+                    '423',
+                    'Locked 已锁定',
+                    '424',
+                    'Failed Dependency 依赖失败',
+                    '425',
+                    'Too Early 太早了',
+                    '426',
+                    'Upgrade Required 需要升级',
+                    '428',
+                    'Precondition Required 需要先决条件',
+                    '429',
+                    'Too Many Requests 请求过多',
+                    '431',
+                    'Request Header Fields Too Large 请求标头字段太大',
+                    '451',
+                    'Unavailable For Legal Reasons 因法律原因不可用',
+                    '500',
+                    'Internal Server Error 内部服务器错误',
+                    '501',
+                    'Not Implemented 尚未实施',
+                    '502',
+                    'Bad Gateway 错误网关',
+                    '503',
+                    'Service Unavailable 服务不可用',
+                    '504',
+                    'Gateway Timeout 网关超时',
+                    '505',
+                    'HTTP Version Not Supported HTTP版本不受支持',
+                    '506',
+                    'Variant Also Negotiates 内部配置错误',
+                    '507',
+                    'Insufficient Storage 存储空间不足',
+                    '508',
+                    'Loop Detected 检测到循环',
+                    '510',
+                    'Not Extended 未被扩展',
+                    '511',
+                    'Network Authentication Required 需要网络验证',
                 ],
-                "icon": {
-                    "name": "HttpRound"
-                },
-                "createdAt": "2023-04-13T00:00:00.000Z"
+                icon: { name: 'HttpRound' },
+                createdAt: '2023-04-13T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "JSON 差异比较",
-                "path": "/json-diff",
-                "description": "比较两个JSON对象并获得它们之间的差异。",
-                "keywords": [
-                    "json",
-                    "diff",
-                    "compare",
-                    "difference",
-                    "object",
-                    "data"
-                ],
-                "icon": {
-                    "name": "CompareArrowsRound"
-                },
-                "createdAt": "2023-04-20T00:00:00.000Z"
+                isNew: false,
+                name: 'JSON 差异比对',
+                path: '/json-diff',
+                description: '比对两个 JSON 对象之间的差异。',
+                keywords: ['json', '差异', '比对', '不同', '对象', '数据'],
+                icon: { name: 'CompareArrowsRound' },
+                createdAt: '2023-04-20T00:00:00.000Z',
             },
-            {
-                "isNew": false,
-                "name": "Outlook Safelink decoder",
-                "path": "/safelink-decoder",
-                "description": "Decode Outlook SafeLink links",
-                "keywords": [
-                    "outlook",
-                    "safelink",
-                    "decoder"
-                ],
-                "icon": {
-                    "name": "Mailbox"
-                },
-                "createdAt": "2024-03-11T00:00:00.000Z"
-            }
         ]
     },
     {
@@ -1064,214 +795,132 @@ export const toolsNavInfo: ToolNavInfoType[] = [
         icon: IconBrandRedhat,
         subTools: [
             {
-                "isNew": false,
-                "name": "Git 备忘录",
-                "path": "/git-memo",
-                "description": "Git是一种去中心化的版本管理软件。使用此备忘单，您可以快速访问最常见的git命令.",
-                "keywords": [
-                    "git",
-                    "push",
-                    "force",
-                    "pull",
-                    "commit",
-                    "amend",
-                    "rebase",
-                    "merge",
-                    "reset",
-                    "soft",
-                    "hard",
-                    "lease"
+                isNew: false,
+                name: 'Git 速查表',
+                path: '/git-memo',
+                description:
+                    'Git 是一个去中心化的版本管理软件。 通过这个速查表，您将可以快速访问最常见的 git 命令。',
+                keywords: [
+                    'git',
+                    'push',
+                    'force',
+                    'pull',
+                    'commit',
+                    'amend',
+                    'rebase',
+                    'merge',
+                    'reset',
+                    'soft',
+                    'hard',
+                    'lease',
                 ],
-                "icon": {
-                    "name": "BrandGit"
-                }
+                icon: { name: 'BrandGit' },
             },
             {
-                "isNew": false,
-                "name": "随机端口生成",
-                "path": "/random-port-generator",
-                "description": "生成“已知”端口范围（0-1023）之外的随机端口号。",
-                "keywords": [
-                    "system",
-                    "port",
-                    "lan",
-                    "generator",
-                    "random",
-                    "development",
-                    "computer"
-                ],
-                "icon": {
-                    "name": "Server"
-                }
+                isNew: false,
+                name: 'Random port generator',
+                path: '/random-port-generator',
+                description: 'Generate random port numbers outside of the range of "known" ports (0-1023).',
+                keywords: ['system', 'port', 'lan', 'generator', 'random', 'development', 'computer'],
+                icon: { name: 'Server' },
             },
             {
-                "isNew": false,
-                "name": "Crontab 表达式生成",
-                "path": "/crontab-generator",
-                "description": "验证并生成crontab，并获取cron调度的可读描述。",
-                "keywords": [
-                    "crontab",
-                    "generator",
-                    "cronjob",
-                    "cron",
-                    "schedule",
-                    "parse",
-                    "expression",
-                    "year",
-                    "month",
-                    "week",
-                    "day",
-                    "minute",
-                    "second"
+                isNew: false,
+                name: '定时任务生成器',
+                path: '/crontab-generator',
+                description: '验证并生成定时任务并获取人类可读的描述。',
+                keywords: [
+                    '定时任务',
+                    '生成器',
+                    '定时作业',
+                    '计划任务',
+                    '日程安排',
+                    '解析',
+                    '表达式',
+                    '年',
+                    '月',
+                    '周',
+                    '天',
+                    '分钟',
+                    '秒钟',
                 ],
-                "icon": {
-                    "name": "Alarm"
-                }
+                icon: { name: 'Alarm' },
             },
             {
-                "isNew": false,
-                "name": "JSON美化和格式化",
-                "path": "/json-prettify",
-                "description": "将JSON字符串修饰为友好的可读格式。",
-                "keywords": [
-                    "json",
-                    "viewer",
-                    "prettify",
-                    "format"
-                ],
-                "icon": {
-                    "name": "Braces"
-                },
-                "redirectFrom": [
-                    "/json-viewer"
-                ]
+                isNew: false,
+                name: 'JSON 格式化',
+                path: '/json-prettify',
+                description: '将 JSON 格式化',
+                keywords: ['json', '视图', '美化', '格式化'],
+                icon: { name: 'Braces' },
+                redirectFrom: ['/json-viewer'],
             },
             {
-                "isNew": false,
-                "name": "JSON 压缩",
-                "path": "/json-minify",
-                "description": "通过删除不必要的空白来缩小和压缩JSON。",
-                "keywords": [
-                    "json",
-                    "minify",
-                    "format"
-                ],
-                "icon": {
-                    "name": "Braces"
-                }
+                isNew: false,
+                name: 'JSON 压缩',
+                path: '/json-minify',
+                description: '通过删除不必要的空格来缩小和压缩 JSON',
+                keywords: ['json', 'minify', 'format'],
+                icon: { name: 'Braces' },
             },
             {
-                "isNew": false,
-                "name": "JSON 转 CSV",
-                "path": "/json-to-csv",
-                "description": "使用自动标头检测将JSON转换为CSV。",
-                "keywords": [
-                    "json",
-                    "to",
-                    "csv",
-                    "convert"
-                ],
-                "icon": {
-                    "name": "List"
-                },
-                "createdAt": "2023-06-18T00:00:00.000Z"
+                isNew: false,
+                name: 'JSON 转 CSV',
+                path: '/json-to-csv',
+                description: '将 JSON格式的数组数据 转换为 CSV格式。',
+                keywords: ['json', 'to', 'csv', '转换器'],
+                icon: { name: 'List' },
+                createdAt: '2023-06-18T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "SQL 美化和格式化",
-                "path": "/sql-prettify",
-                "description": "在线格式化和美化您的 SQL 查询（它支持各种 SQL 方言）。",
-                "keywords": [
-                    "sql",
-                    "prettify",
-                    "beautify",
-                    "GCP BigQuery",
-                    "IBM DB2",
-                    "Apache Hive",
-                    "MariaDB",
-                    "MySQL",
-                    "Couchbase N1QL",
-                    "Oracle PL/SQL",
-                    "PostgreSQL",
-                    "Amazon Redshift",
-                    "Spark",
-                    "SQL Server Transact-SQL"
+                isNew: false,
+                name: 'SQL 格式化',
+                path: '/sql-prettify',
+                description: '在线格式化和美化 SQL 查询语句（支持各种 SQL 语句）。',
+                keywords: [
+                    'sql',
+                    '格式化',
+                    '美化',
+                    'GCP BigQuery',
+                    'IBM DB2',
+                    'Apache Hive',
+                    'MariaDB',
+                    'MySQL',
+                    'Couchbase N1QL',
+                    'Oracle PL/SQL',
+                    'PostgreSQL',
+                    'Amazon Redshift',
+                    'Spark',
+                    'SQL Server Transact-SQL',
                 ],
-                "icon": {
-                    "name": "Database"
-                }
+                icon: { name: 'Database' },
             },
             {
-                "isNew": false,
-                "name": "Chmod 计算器",
-                "path": "/chmod-calculator",
-                "description": "使用此在线的chmod计算器计算chmod权限和命令。",
-                "keywords": [
-                    "chmod",
-                    "calculator",
-                    "file",
-                    "permission",
-                    "files",
-                    "directory",
-                    "folder",
-                    "recursive",
-                    "generator",
-                    "octal"
-                ],
-                "icon": {
-                    "name": "FileInvoice"
-                }
+                isNew: false,
+                name: 'chmod权限计算',
+                path: '/chmod-calculator',
+                description: '使用此在线 chmod 权限计算计算您的 chmod 权限和命令。',
+                keywords: ['chmod', '计算', '文件', '权限', '目录', '文件夹', '递归', '生成', '八进制'],
+                icon: { name: 'FileInvoice' },
             },
             {
-                "isNew": false,
-                "name": "Docker Run 到 docker-compose 转换器",
-                "path": "/docker-run-to-docker-compose-converter",
-                "description": "将 docker run 命令行转换为 docker-compose 文件!",
-                "keywords": [
-                    "docker",
-                    "run",
-                    "compose",
-                    "yaml",
-                    "yml",
-                    "convert",
-                    "deamon"
-                ],
-                "icon": {
-                    "name": "BrandDocker"
-                }
+                isNew: false,
+                name: 'Docker run 转 compose',
+                path: '/docker-run-to-docker-compose-converter',
+                description: '将 docker run 命令转换为 docker-compose 文件',
+                keywords: ['docker', 'run', 'compose', 'yaml', 'yml', '转换', 'deamon'],
+                icon: { name: 'BrandDocker' },
             },
             {
-                "isNew": false,
-                "name": "XML 格式化",
-                "path": "/xml-formatter",
-                "description": "将XML字符串修饰为友好的可读格式。",
-                "keywords": [
-                    "xml",
-                    "prettify",
-                    "format"
-                ],
-                "icon": {
-                    "name": "Code"
-                },
-                "createdAt": "2023-06-17T00:00:00.000Z"
+                isNew: false,
+                name: 'XML 格式化',
+                path: '/xml-formatter',
+                description: 'XML 美化和格式化',
+                keywords: ['xml', '美化', '格式化'],
+                icon: { name: 'Code' },
+                createdAt: '2023-06-17T00:00:00.000Z',
             },
-            {
-                "isNew": false,
-                "name": "YAML美化和格式化",
-                "path": "/yaml-prettify",
-                "description": "将YAML字符串修饰为友好的可读格式。",
-                "keywords": [
-                    "yaml",
-                    "viewer",
-                    "prettify",
-                    "format"
-                ],
-                "icon": {
-                    "name": "AlignJustified"
-                },
-                "createdAt": "2024-01-31T00:00:00.000Z"
-            }
-        ]
+        ],
     },
     {
         name: "网络通信协议",
@@ -1279,117 +928,70 @@ export const toolsNavInfo: ToolNavInfoType[] = [
         icon: IconSend,
         subTools: [
             {
-                "isNew": false,
-                "name": "IPv4子网计算器",
-                "path": "/ipv4-subnet-calculator",
-                "description": "解析IPv4 CIDR块，并获取有关子网络的所有所需信息。",
-                "keywords": [
-                    "ipv4",
-                    "subnet",
-                    "calculator",
-                    "mask",
-                    "network",
-                    "cidr",
-                    "netmask",
-                    "bitmask",
-                    "broadcast",
-                    "address"
+                isNew: false,
+                name: 'IPv4子网计算器',
+                path: '/ipv4-subnet-calculator',
+                description: '解析 IPv4 CIDR 块并获取有关子网的所有信息。',
+                keywords: [
+                    'ipv4',
+                    '子网',
+                    '计算器',
+                    '掩码',
+                    '网络',
+                    'cidr',
+                    '网络掩码',
+                    '位掩码',
+                    '广播',
+                    '地址',
                 ],
-                "icon": {
-                    "name": "RouterOutlined"
-                }
+                icon: { name: 'RouterOutlined' },
             },
             {
-                "isNew": false,
-                "name": "Ipv4地址转换器",
-                "path": "/ipv4-address-converter",
-                "description": "在ipv6中，将ip地址转换为十进制、二进制、十六进制或事件",
-                "keywords": [
-                    "ipv4",
-                    "address",
-                    "converter",
-                    "decimal",
-                    "hexadecimal",
-                    "binary",
-                    "ipv6"
-                ],
-                "icon": {
-                    "name": "Binary"
-                },
-                "createdAt": "2023-04-08T00:00:00.000Z"
+                isNew: false,
+                name: 'IPv4地址转换器',
+                path: '/ipv4-address-converter',
+                description: '将IP地址转换为十进制、二进制、十六进制或IPv6中的事件',
+                keywords: ['ipv4', '地址', '转换器', '十进制', '十六进制', '二进制', 'ipv6'],
+                icon: { name: 'Binary' },
+                createdAt: '2023-04-08T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "IPv4范围扩展器",
-                "path": "/ipv4-range-expander",
-                "description": "给定起始和结束IPv4地址，此工具使用其CIDR表示法计算有效的IPv4网络。",
-                "keywords": [
-                    "ipv4",
-                    "range",
-                    "expander",
-                    "subnet",
-                    "creator",
-                    "cidr"
-                ],
-                "icon": {
-                    "name": "UnfoldMoreOutlined"
-                },
-                "createdAt": "2023-04-19T00:00:00.000Z"
+                isNew: false,
+                name: 'IPv4范围扩展器',
+                path: '/ipv4-range-expander',
+                description: '给定起始和结束 IPv4 地址，该工具使用 CIDR 表示法计算并扩展有效的 IPv4 网络。',
+                keywords: ['ipv4', '范围', '扩展器', '子网', '创建器', 'cidr'],
+                icon: { name: 'UnfoldMoreOutlined' },
+                createdAt: '2023-04-19T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "MAC地址查找",
-                "path": "/mac-address-lookup",
-                "description": "通过设备的MAC地址查找设备的供应商和制造商。",
-                "keywords": [
-                    "mac",
-                    "address",
-                    "lookup",
-                    "vendor",
-                    "parser",
-                    "manufacturer"
-                ],
-                "icon": {
-                    "name": "Devices"
-                },
-                "createdAt": "2023-04-06T00:00:00.000Z"
+                isNew: false,
+                name: 'MAC地址查询',
+                path: '/mac-address-lookup',
+                description: '通过MAC地址查询设备的供应商和制造商。',
+                keywords: ['mac', '地址', '查询', '设备', '供应商', '制造商'],
+                icon: { name: 'Devices' },
+                createdAt: '2023-04-06T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "MAC 地址生成器",
-                "path": "/mac-address-generator",
-                "description": "输入数量和前缀。MAC地址将以您选择的大小写（大写或小写）生成",
-                "keywords": [
-                    "mac",
-                    "address",
-                    "generator",
-                    "random",
-                    "prefix"
-                ],
-                "icon": {
-                    "name": "Devices"
-                },
-                "createdAt": "2023-12-01T00:00:00.000Z"
+                isNew: false,
+                name: 'MAC地址生成器',
+                path: '/mac-address-generator',
+                description: '指定数量和前缀生成MAC地址',
+                keywords: ['mac', '地址', '生成', '随机', '前缀'],
+                icon: { name: 'Devices' },
+                createdAt: '2023-12-01T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "IPv6 ULA生成器",
-                "path": "/ipv6-ula-generator",
-                "description": "根据RFC4193在网络上生成您自己的本地不可路由IP地址。",
-                "keywords": [
-                    "ipv6",
-                    "ula",
-                    "generator",
-                    "rfc4193",
-                    "network",
-                    "private"
-                ],
-                "icon": {
-                    "name": "BuildingFactory"
-                },
-                "createdAt": "2023-04-09T00:00:00.000Z"
-            }
-        ]
+                isNew: false,
+                name: 'IPv6 ULA 生成器',
+                path: '/ipv6-ula-generator',
+                description: '根据 RFC4193标准 在网络上生成您自己的本地、不可路由的 IP 地址。',
+                keywords: ['ipv6', 'ula', '生成', 'rfc4193', '网络', '私有'],
+                icon: { name: 'BuildingFactory' },
+                createdAt: '2023-04-09T00:00:00.000Z',
+            },
+        ],
     },
     {
         name: "数学运算工具",
@@ -1397,83 +999,64 @@ export const toolsNavInfo: ToolNavInfoType[] = [
         icon:IconMath,
         subTools: [
             {
-                "isNew": false,
-                "name": "数学计算器",
-                "path": "/math-evaluator",
-                "description": "计算数学表达式的计算器。您可以使用sqrt、cos、sin、abs等函数。",
-                "keywords": [
-                    "math",
-                    "evaluator",
-                    "calculator",
-                    "expression",
-                    "abs",
-                    "acos",
-                    "acosh",
-                    "acot",
-                    "acoth",
-                    "acsc",
-                    "acsch",
-                    "asec",
-                    "asech",
-                    "asin",
-                    "asinh",
-                    "atan",
-                    "atan2",
-                    "atanh",
-                    "cos",
-                    "cosh",
-                    "cot",
-                    "coth",
-                    "csc",
-                    "csch",
-                    "sec",
-                    "sech",
-                    "sin",
-                    "sinh",
-                    "sqrt",
-                    "tan",
-                    "tanh"
+                isNew: false,
+                name: '数学计算器',
+                path: '/math-evaluator',
+                description: '用于计算数学表达式的计算器。支持 sqrt、cos、sin、abs 等函数。',
+                keywords: [
+                    '数学',
+                    '计算器',
+                    '表达式',
+                    '函数',
+                    'abs',
+                    'acos',
+                    'acosh',
+                    'acot',
+                    'acoth',
+                    'acsc',
+                    'acsch',
+                    'asec',
+                    'asech',
+                    'asin',
+                    'asinh',
+                    'atan',
+                    'atan2',
+                    'atanh',
+                    'cos',
+                    'cosh',
+                    'cot',
+                    'coth',
+                    'csc',
+                    'csch',
+                    'sec',
+                    'sech',
+                    'sin',
+                    'sinh',
+                    'sqrt',
+                    'tan',
+                    'tanh',
                 ],
-                "icon": {
-                    "name": "Math"
-                }
+                icon: { name: 'Math' },
             },
             {
-                "isNew": false,
-                "name": "ETA 计算器",
-                "path": "/eta-calculator",
-                "description": "ETA（估计到达时间）计算器，用于知道任务的近似结束时间，例如下载的结束时刻。",
-                "keywords": [
-                    "eta",
-                    "calculator",
-                    "estimated",
-                    "time",
-                    "arrival",
-                    "average"
-                ],
-                "icon": {
-                    "name": "Hourglass"
-                }
+                isNew: false,
+                name: '任务用时计算',
+                path: '/eta-calculator',
+                description: '任务用时计算，用于计算任务的大致结束时间，例如下载结束的时刻。',
+                keywords: ['预计到达时间', '计算', '预计', '时间', '到达', '平均'],
+                icon: { name: 'Hourglass' },
             },
             {
-                "isNew": false,
-                "name": "百分比计算器",
-                "path": "/percentage-calculator",
-                "description": "轻松计算从一个值到另一个值的百分比，或从百分比到值的百分比。",
-                "keywords": [
-                    "percentage",
-                    "calculator",
-                    "calculate",
-                    "value",
-                    "number",
-                    "%"
-                ],
-                "icon": {
-                    "name": "Percentage"
-                },
-                "createdAt": "2023-06-18T00:00:00.000Z"
-            }
-        ]
+                isNew: false,
+                name: '百分比计算器',
+                path: '/percentage-calculator',
+                description:
+                    'Easily calculate percentages from a value to another value, or from a percentage to a value.',
+                keywords: ['percentage', 'calculator', 'calculate', 'value', 'number', '%'],
+                icon: { name: 'Percentage' },
+                createdAt: '2023-06-18T00:00:00.000Z',
+            },
+        ],
     },
     {
         name: "快速测量工具",
@@ -1481,106 +1064,84 @@ export const toolsNavInfo: ToolNavInfoType[] = [
         icon:IconRulerMeasure,
         subTools: [
             {
-                "isNew": false,
-                "name": "计时器",
-                "path": "/chronometer",
-                "description": "监控事物的持续时间。基本上是一种具有简单计时器功能的计时器。",
-                "keywords": [
-                    "chronometer",
-                    "time",
-                    "lap",
-                    "duration",
-                    "measure",
-                    "pause",
-                    "resume",
-                    "stopwatch"
+                isNew: false,
+                name: '秒表',
+                path: '/chronometer',
+                description: '这是一个简单的秒表。用于监控事物的持续时间。',
+                keywords: [
+                    'chronometer',
+                    'time',
+                    'lap',
+                    'duration',
+                    'measure',
+                    'pause',
+                    'resume',
+                    'stopwatch',
                 ],
-                "icon": {
-                    "name": "TimerOutlined"
-                }
+                icon: { name: 'TimerOutlined' },
             },
             {
-                "isNew": false,
-                "name": "温度转换器",
-                "path": "/temperature-converter",
-                "description": "开尔文、摄氏度、华氏度、兰金、德莱尔、牛顿、雷奥穆尔和罗默温度度数转换。",
-                "keywords": [
-                    "temperature",
-                    "converter",
-                    "degree",
-                    "Kelvin",
-                    "Celsius",
-                    "Fahrenheit",
-                    "Rankine",
-                    "Delisle",
-                    "Newton",
-                    "Réaumur",
-                    "Rømer"
+                isNew: false,
+                name: '温度转换器',
+                path: '/temperature-converter',
+                description: '开尔文、摄氏度、华氏度、兰金、德莱尔、牛顿、雷奥穆尔和罗默温度转换。',
+                keywords: [
+                    '温度',
+                    '转换器',
+                    '度',
+                    '开尔文',
+                    '摄氏度',
+                    '华氏度',
+                    '兰金',
+                    '德莱尔',
+                    '牛顿',
+                    '雷奥穆尔',
+                    '罗默',
                 ],
-                "icon": {
-                    "name": "Temperature"
-                }
+                icon: { name: 'Temperature' },
             },
             {
-                "isNew": false,
-                "name": "基准生成器",
-                "path": "/benchmark-builder",
-                "description": "简单的在线基准构建器可以轻松比较任务的执行时间。",
-                "keywords": [
-                    "benchmark",
-                    "builder",
-                    "execution",
-                    "duration",
-                    "mean",
-                    "variance"
-                ],
-                "icon": {
-                    "name": "SpeedFilled"
-                },
-                "createdAt": "2023-04-05T00:00:00.000Z"
+                isNew: false,
+                name: '基准构建',
+                path: '/benchmark-builder',
+                description: '使用这个非常简单的在线基准构建可以轻松比较任务的执行时间',
+                keywords: ['benchmark', 'builder', 'execution', 'duration', 'mean', 'variance'],
+                icon: { name: 'SpeedFilled' },
+                createdAt: '2023-04-05T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "电话分析器和格式化程序",
-                "path": "/phone-parser-and-formatter",
-                "description": "解析、验证和格式化电话号码。获取有关电话号码的信息，如国家/地区代码、类型等。",
-                "keywords": [
-                    "phone",
-                    "parser",
-                    "formatter",
-                    "validate",
-                    "format",
-                    "number",
-                    "telephone",
-                    "mobile",
-                    "cell",
-                    "international",
-                    "national"
+                isNew: false,
+                name: '电话号码解析和格式化',
+                path: '/phone-parser-and-formatter',
+                description:
+                    'Parse, validate and format phone numbers. Get information about the phone number, like the country code, type, etc.',
+                keywords: [
+                    'phone',
+                    'parser',
+                    'formatter',
+                    'validate',
+                    'format',
+                    'number',
+                    'telephone',
+                    'mobile',
+                    'cell',
+                    'international',
+                    'national',
                 ],
-                "icon": {
-                    "name": "Phone"
-                },
-                "createdAt": "2023-05-01T00:00:00.000Z"
+                icon: { name: 'Phone' },
+                createdAt: '2023-05-01T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "IBAN验证器和解析器",
-                "path": "/iban-validator-and-parser",
-                "description": "验证和分析IBAN编号。检查IBAN是否有效，并获取国家BBAN，如果它是QR-IBAN和IBAN友好格式。",
-                "keywords": [
-                    "iban",
-                    "validator",
-                    "and",
-                    "parser",
-                    "bic",
-                    "bank"
-                ],
-                "icon": {
-                    "name": "mdi-bank"
-                },
-                "createdAt": "2023-08-26T00:00:00.000Z"
-            }
-        ]
+                isNew: false,
+                name: 'IBAN 验证器和解析器',
+                path: '/iban-validator-and-parser',
+                description:
+                    '验证并解析 IBAN 号码。 检查 IBAN 是否有效，并获取国家/地区、BBAN（如果是 QR-IBAN）以及 IBAN 友好格式。',
+                keywords: ['iban', '验证器', '和', '解析器', 'bic', '银行'],
+                icon: { name: 'mdi-bank' },
+                createdAt: '2023-08-26T00:00:00.000Z',
+            },
+        ],
     },
     {
         name: "文本处理工具",
@@ -1588,135 +1149,61 @@ export const toolsNavInfo: ToolNavInfoType[] = [
         icon:IconPilcrow,
         subTools: [
             {
-                "isNew": false,
-                "name": "Lorem ipsum生成器",
-                "path": "/lorem-ipsum-generator",
-                "description": "Lorem ipsum是一种占位符文本，通常用于演示文档或字体的视觉形式，而不依赖于有意义的内容",
-                "keywords": [
-                    "lorem",
-                    "ipsum",
-                    "dolor",
-                    "sit",
-                    "amet",
-                    "placeholder",
-                    "text",
-                    "filler",
-                    "random",
-                    "generator"
-                ],
-                "icon": {
-                    "name": "AlignJustified"
-                }
+                isNew: false,
+                name: '占位符文本生成器',
+                path: '/lorem-ipsum-generator',
+                description:
+                    'Lorem ipsum 是一种占位符文本，通常用于演示文档或字体的视觉形式，内容没有任何意义',
+                keywords: ['lorem', 'ipsum', '占位符', '文本', '随机', '生成'],
+                icon: { name: 'AlignJustified' },
             },
             {
-                "isNew": false,
-                "name": "文本统计",
-                "path": "/text-statistics",
-                "description": "获取有关文本、字符数、字数、大小等的信息",
-                "keywords": [
-                    "text",
-                    "statistics",
-                    "length",
-                    "characters",
-                    "count",
-                    "size",
-                    "bytes"
-                ],
-                "icon": {
-                    "name": "FileText"
-                },
-                "redirectFrom": [
-                    "/text-stats"
-                ]
+                isNew: false,
+                name: '文本字符统计',
+                path: '/text-statistics',
+                description: '获取有关文本、字符数、行数、字节大小等的信息',
+                keywords: ['文本', '统计', '长度', '字符数', '行数', '大小', '字节'],
+                icon: { name: 'FileText' },
+                redirectFrom: ['/text-stats'],
             },
             {
-                "isNew": false,
-                "name": "Emoji 选择器",
-                "path": "/emoji-picker",
-                "description": "轻松复制和粘贴Emoji表情符号，并获得每个表情符号的unicode和code points值.",
-                "keywords": [
-                    "emoji",
-                    "picker",
-                    "unicode",
-                    "copy",
-                    "paste"
-                ],
-                "icon": {
-                    "name": "MoodSmile"
-                },
-                "createdAt": "2023-08-07T00:00:00.000Z"
+                isNew: false,
+                name: 'Emoji 表情大全',
+                path: '/emoji-picker',
+                description: '轻松复制和粘贴表情符号，并获取每个表情符号的 unicode 和 Code points 值。',
+                keywords: ['emoji', '大全', 'unicode', '复制', '粘贴'],
+                icon: { name: 'MoodSmile' },
+                createdAt: '2023-08-07T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "字符串混淆器",
-                "path": "/string-obfuscator",
-                "description": "混淆字符串（如秘密、IBAN 或令牌），使其可共享和可识别，而不泄露其内容。",
-                "keywords": [
-                    "string",
-                    "obfuscator",
-                    "secret",
-                    "token",
-                    "hide",
-                    "obscure",
-                    "mask",
-                    "masking"
-                ],
-                "icon": {
-                    "name": "EyeOff"
-                },
-                "createdAt": "2023-08-16T00:00:00.000Z"
+                isNew: false,
+                name: '字符串脱敏',
+                path: '/string-obfuscator',
+                description: '混淆字符串（如手机号、车牌号或秘钥），保留格式的情况下进行脱敏。',
+                keywords: ['字符串', '脱敏', '手机号', '车牌号', '隐藏', '秘钥', '格式'],
+                icon: { name: 'EyeOff' },
+                createdAt: '2023-08-16T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "文本比较",
-                "path": "/text-diff",
-                "description": "比较两个文本并查看它们之间的差异。",
-                "keywords": [
-                    "text",
-                    "diff",
-                    "compare",
-                    "string",
-                    "text diff",
-                    "code"
-                ],
-                "icon": {
-                    "name": "FileDiff"
-                },
-                "createdAt": "2023-08-16T00:00:00.000Z"
+                isNew: false,
+                name: '文本差异比对',
+                path: '/text-diff',
+                description: '比较两个文本并查看它们之间的差异',
+                keywords: ['文本', '差异', '比对', '字符串', '文本差异', '代码'],
+                icon: { name: 'FileDiff' },
+                createdAt: '2023-08-16T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "数字名称生成器",
-                "path": "/numeronym-generator",
-                "description": "数字名是一个用数字构成缩写的词。例如，“i18n”是“国际化”的名词，其中18表示单词中第一个i和最后一个n之间的字母数。",
-                "keywords": [
-                    "numeronym",
-                    "generator",
-                    "abbreviation",
-                    "i18n",
-                    "a11y",
-                    "l10n"
-                ],
-                "icon": {},
-                "createdAt": "2023-11-05T00:00:00.000Z"
+                isNew: false,
+                name: 'Numeronym generator',
+                path: '/numeronym-generator',
+                description:
+                    'A numeronym is a word where a number is used to form an abbreviation. For example, "i18n" is a numeronym of "internationalization" where 18 stands for the number of letters between the first i and the last n in the word.',
+                keywords: ['numeronym', 'generator', 'abbreviation', 'i18n', 'a11y', 'l10n'],
+                icon: {},
+                createdAt: '2023-11-05T00:00:00.000Z',
             },
-            {
-                "isNew": false,
-                "name": "ASCII Art Text Generator",
-                "path": "/ascii-text-drawer",
-                "description": "Create ASCII art text with many fonts and styles.",
-                "keywords": [
-                    "ascii",
-                    "asciiart",
-                    "text",
-                    "drawer"
-                ],
-                "icon": {
-                    "name": "Artboard"
-                },
-                "createdAt": "2024-03-03T00:00:00.000Z"
-            }
-        ]
+        ],
     },
     {
         name: "图像视频处理",
@@ -1724,82 +1211,51 @@ export const toolsNavInfo: ToolNavInfoType[] = [
         icon: IconVideo,
         subTools: [
             {
-                "isNew": false,
-                "name": "二维码生成器",
-                "path": "/qrcode-generator",
-                "description": "生成并下载url或文本的QR代码，并自定义背景和前景颜色。",
-                "keywords": [
-                    "qr",
-                    "code",
-                    "generator",
-                    "square",
-                    "color",
-                    "link",
-                    "low",
-                    "medium",
-                    "quartile",
-                    "high",
-                    "transparent"
+                isNew: false,
+                name: '二维码生成器',
+                path: '/qrcode-generator',
+                description: '生成并下载URL或文本的QR码',
+                keywords: [
+                    'qr',
+                    'code',
+                    'generator',
+                    'square',
+                    'color',
+                    'link',
+                    'low',
+                    'medium',
+                    'quartile',
+                    'high',
+                    'transparent',
                 ],
-                "icon": {
-                    "name": "Qrcode"
-                }
+                icon: { name: 'Qrcode' },
             },
             {
-                "isNew": false,
-                "name": "WiFi 二维码生成器",
-                "path": "/wifi-qrcode-generator",
-                "description": "生成和下载QR码以快速连接到WiFi网络。",
-                "keywords": [
-                    "qr",
-                    "code",
-                    "generator",
-                    "square",
-                    "color",
-                    "link",
-                    "low",
-                    "medium",
-                    "quartile",
-                    "high",
-                    "transparent",
-                    "wifi"
-                ],
-                "icon": {
-                    "name": "Qrcode"
-                },
-                "createdAt": "2023-09-06T00:00:00.000Z"
+                isNew: false,
+                name: 'WiFi 二维码生成器',
+                path: '/wifi-qrcode-generator',
+                description: '生成用于快速连接到WiFi网络的二维码',
+                keywords: ['qr', 'code', '二维码', '生成器', '连接', 'wifi', '无线网'],
+                icon: { name: 'Qrcode' },
+                createdAt: '2023-09-06T00:00:00.000Z',
             },
             {
-                "isNew": false,
-                "name": "SVG 占位符生成器",
-                "path": "/svg-placeholder-generator",
-                "description": "生成 svg 图像以用作应用程序中的占位符。",
-                "keywords": [
-                    "svg",
-                    "placeholder",
-                    "generator",
-                    "image",
-                    "size",
-                    "mockup"
-                ],
-                "icon": {
-                    "name": "ImageOutlined"
-                }
+                isNew: false,
+                name: 'SVG 图片占位生成器',
+                path: '/svg-placeholder-generator',
+                description: '生成用于应用程序中占位的 svg 图片。',
+                keywords: ['svg', '占位', '生成', '图片', '尺寸', '样机'],
+                icon: { name: 'ImageOutlined' },
             },
             {
-                "isNew": false,
-                "name": "摄像机记录器",
-                "path": "/camera-recorder",
-                "description": "从网络摄像头或照相机拍摄照片或录制视频。",
-                "keywords": [
-                    "camera",
-                    "recoder"
-                ],
-                "icon": {
-                    "name": "Camera"
-                },
-                "createdAt": "2023-05-15T00:00:00.000Z"
-            }
+                isNew: false,
+                name: '在线摄像头',
+                path: '/camera-recorder',
+                description: '通过浏览器调用你的电脑摄像头来拍摄照片或录制视频。',
+                keywords: ['摄像头', '摄像机'],
+                icon: { name: 'Camera' },
+                createdAt: '2023-05-15T00:00:00.000Z',
+            },
         ]
     },
 ].map(x => {
