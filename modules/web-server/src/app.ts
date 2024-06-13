@@ -70,7 +70,7 @@ export class App {
     logger.info(`======= ENV: ${this.env} =======`);
     logger.info(`======= HOST: ${this.host} =======`);
     logger.info(`======= DIRECT_PROXY_SERVER: ${DIRECT_PROXY_SERVER} =======`);
-    logger.info(`🚀 App listening on the port ${this.port}`);
+    logger.info(`🚀 App listening on the port http://localhost:${this.port}`);
     logger.info(`=================================`);
     server.listen(this.port);
   }
@@ -168,7 +168,7 @@ export class App {
 
   private initializeRoutes(routes: Routes[]) {
     routes.forEach(route => {
-      this.app.use('/v3', route.router);
+      this.app.use('/local', route.router);
     });
     this.app.use('/', (req, res) => {
       if (req.url == '/') {
