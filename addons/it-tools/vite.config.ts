@@ -20,7 +20,6 @@ const baseUrl = process.env.BASE_URL ?? '/';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-
   server: {
     port: 25173
   },

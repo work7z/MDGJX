@@ -25,7 +25,7 @@ export type ToolNavInfoType = {
 export const toolsNavInfo: ToolNavInfoType[] = [
     {
         name: "通用格式转换",
-        icon:IconFileFunction,
+        icon: IconFileFunction,
         id: 'converter',
         subTools: [
             {
@@ -449,7 +449,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
     {
         name: "Web开发类",
         id: 'web',
-        icon:IconWebhook,
+        icon: IconWebhook,
         subTools: [
             {
                 isNew: false,
@@ -996,7 +996,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
     {
         name: "数学运算工具",
         id: 'math',
-        icon:IconMath,
+        icon: IconMath,
         subTools: [
             {
                 isNew: false,
@@ -1050,8 +1050,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
                 isNew: false,
                 name: '百分比计算器',
                 path: '/percentage-calculator',
-                description:
-                    'Easily calculate percentages from a value to another value, or from a percentage to a value.',
+                description: '从一个值到另一个值的百分比计算，或从一个百分比到一个值的计算。',
                 keywords: ['percentage', 'calculator', 'calculate', 'value', 'number', '%'],
                 icon: { name: 'Percentage' },
                 createdAt: '2023-06-18T00:00:00.000Z',
@@ -1061,7 +1060,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
     {
         name: "快速测量工具",
         id: 'measure',
-        icon:IconRulerMeasure,
+        icon: IconRulerMeasure,
         subTools: [
             {
                 isNew: false,
@@ -1146,7 +1145,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
     {
         name: "文本处理工具",
         id: 'text',
-        icon:IconPilcrow,
+        icon: IconPilcrow,
         subTools: [
             {
                 isNew: false,
