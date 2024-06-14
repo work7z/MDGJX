@@ -18,7 +18,13 @@ export type ExtModeSt = {
   isDev: boolean;
   repoPath: string;
 }
-export type MiaodaConfig = {
+export type MiaodaExtraDevConfig = {
+  // post-process
+  fuzzySearchStr?: string;
+  installed?: boolean;
+  hasNewVersion?:boolean;
+};
+export type MiaodaConfig = MiaodaExtraDevConfig & {
   mode: string;
   id: string;
   version: string;
@@ -40,8 +46,6 @@ export type MiaodaConfig = {
   };
   keywords?: string[];
   include: string[];
-  // post-process
-  fuzzySearchStr?: string;
 };
 export type ExtMetaInfo = {
   totals: number;
@@ -58,8 +62,6 @@ export const getExtMode = (): ExtModeSt => {
     repoPath: currentProjectRoot,
   };
 };
-
-
 
 export const getAllExtMetaInfo = (req: ExtMetaSearchReq): ExtMetaInfo => {
   const projectRoots = shelljs.ls(currentProjectRoot);
@@ -97,6 +99,13 @@ export const getAllExtMetaInfo = (req: ExtMetaSearchReq): ExtMetaInfo => {
       return each.fuzzySearchStr.indexOf(lowTxt) >= 0;
     })
   }
+  // installed flag
+  results = results.map(x => {
+    if (isDevEnv()) {
+      x.installed = true;
+    }
+    return x;
+  });
   return {
     allMetaInfo: results,
     totals: results.length,

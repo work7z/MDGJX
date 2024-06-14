@@ -24,7 +24,14 @@ export type ExtModeSt = {
   isDev: boolean;
   repoPath: string;
 }
-export type MiaodaConfig = {
+
+export type MiaodaExtraDevConfig = {
+  // post-process
+  fuzzySearchStr?: string;
+  installed?: boolean;
+  hasNewVersion?:boolean;
+};
+export type MiaodaConfig = MiaodaExtraDevConfig & {
   mode: string;
   id: string;
   version: string;
@@ -46,8 +53,6 @@ export type MiaodaConfig = {
   };
   keywords?: string[];
   include: string[];
-  // post-process
-  fuzzySearchStr?: string;
 };
 export type ExtMetaInfo = {
   totals: number;
@@ -119,8 +124,10 @@ export const localApiSlice = createApi({
       AsyncCreateResponse<ExtMetaInfo>,
       ExtMetaSearchReq
     >({
-      query: () => {
+      query: (b) => {
         return {
+          params:b,
+          data: b,
           url: "/ext/get-ext-list",
           method: "GET",
         };

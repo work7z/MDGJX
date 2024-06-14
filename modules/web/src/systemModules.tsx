@@ -214,13 +214,13 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
                 id: 'self-startup',
                 // disableFooter: true,
                 bodyFn: () => import('./loadable/NotOK/index.tsx')
-            },
-            {
-                name: '卸载插件',
-                id: 'uninstall',
-                // disableFooter: true,
-                bodyFn: () => import('./loadable/NotOK/index.tsx')
-            },
+            },  
+            // {
+            //     name: '卸载插件',
+            //     id: 'uninstall',
+            //     // disableFooter: true,
+            //     bodyFn: () => import('./loadable/NotOK/index.tsx')
+            // },
             // {
             //     name: '二级分类',
             //     id: 'sub',

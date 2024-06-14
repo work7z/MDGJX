@@ -95,14 +95,22 @@ export default function () {
 
                                <div className="flex justify-between space-x-2 mt-4 items-center ">
                                     <div className="flex space-x-1">
-                                        <Badge color="green" variant="light"  size='md'>官方发布</Badge>
+                                        <Badge color="green" variant="light"  size='md'>官方插件</Badge>
                                         <Badge color="yellow" variant="light" size='md'>{x.version}</Badge>
                                     </div>
-                                    <div className="flex ">
-                                        <Button color="blue" size="compact-sm" radius="md">
-                                            安装
-                                        </Button>
-
+                                    <div className="flex space-x-2">
+                                        {
+                                            x.installed ? <>
+                                                {x.hasNewVersion ? <Button color="green" size="compact-sm" radius="md">
+                                                    更新
+                                                </Button>:''}
+                                                <Button color="red" variant="light" size="compact-sm" radius="md">
+                                                    移除
+                                                </Button>
+                                            </> : <Button color="blue" size="compact-sm" radius="md">
+                                                安装
+                                            </Button>
+                                        }
                                     </div>
                                </div>
                             </Card>
