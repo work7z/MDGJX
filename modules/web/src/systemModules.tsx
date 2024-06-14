@@ -200,25 +200,25 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
             {
                 name: '云插件',
                 id: 'index',
-                disableFooter: true,
+                // disableFooter: true,
                 bodyFn: () => import('./loadable/MarketPlace/index.tsx')
             },
             {
                 name: '已安装插件',
                 id: 'installed-plugins',
-                disableFooter: true,
+                // disableFooter: true,
                 bodyFn: () => import('./loadable/NotOK/index.tsx')
             },
             {
                 name: '自启动管理',
                 id: 'self-startup',
-                disableFooter: true,
+                // disableFooter: true,
                 bodyFn: () => import('./loadable/NotOK/index.tsx')
             },
             {
                 name: '卸载插件',
                 id: 'uninstall',
-                disableFooter: true,
+                // disableFooter: true,
                 bodyFn: () => import('./loadable/NotOK/index.tsx')
             },
             // {

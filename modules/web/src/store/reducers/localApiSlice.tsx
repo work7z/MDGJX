@@ -59,7 +59,7 @@ export type ExtMetaSearchReq = {
 }
 
 export const localApiSlice = createApi({
-  reducerPath: "localapi",
+  reducerPath: "localApi",
   baseQuery: fetchBaseQuery({
     // Fill in your own server starting URL here
     baseUrl: '/local',
@@ -107,7 +107,7 @@ export const localApiSlice = createApi({
     },
   }),
   endpoints: (build) => ({
-    checkExtMode: build.query<AsyncCreateResponse<ExtModeSt>,{}>({
+    checkExtMode: build.query < AsyncCreateResponse<ExtModeSt>,{}>({
       query: () => {
         return {
           url: "/ext/check-ext-mode",
@@ -115,7 +115,10 @@ export const localApiSlice = createApi({
         };
       },
     }),
-    getExtListWithSearch: build.query<AsyncCreateResponse<ExtMetaSearchReq>, ExtMetaSearchReq>({
+    getExtListWithSearch: build.query<  
+      AsyncCreateResponse<ExtMetaInfo>,
+      ExtMetaSearchReq
+    >({
       query: () => {
         return {
           url: "/ext/get-ext-list",

@@ -73,8 +73,8 @@ export const store = configureStore(({
             serializableCheck: false,
         })
             .concat(listenerMiddleware.middleware)
-            .concat(localApiSlice.middleware)
-            .concat(apiSlice.middleware) as any
+            .concat(apiSlice.middleware)
+            .concat(localApiSlice.middleware) as any
     },
     enhancers: [],
 }));

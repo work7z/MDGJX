@@ -9,6 +9,7 @@ import { getLafToolsDataDir, getLafToolsExtDir } from '@/web2share-copy/homedir'
 import path from 'path';
 import fs from 'fs';
 import { logger } from '@/utils/logger';
+import dayjs from 'dayjs';
 
 const pinyin = require('tiny-pinyin');
 const currentProjectRoot = getLafToolsExtDir()
@@ -63,7 +64,6 @@ export const getExtMode = (): ExtModeSt => {
 export const getAllExtMetaInfo = (req: ExtMetaSearchReq): ExtMetaInfo => {
   const projectRoots = shelljs.ls(currentProjectRoot);
   let results: MiaodaConfig[] = [];
-  let lastUpdated = new Date().getTime();
   for (let eachFile of projectRoots) {
     logger.info('loading ext: ' + eachFile);
     const miaodaJSON = path.join(currentProjectRoot, eachFile, 'miaoda.json');
@@ -100,7 +100,7 @@ export const getAllExtMetaInfo = (req: ExtMetaSearchReq): ExtMetaInfo => {
   return {
     allMetaInfo: results,
     totals: results.length,
-    lastUpdated: lastUpdated + '',
+    lastUpdated: dayjs().format("YYYY-MM-DD"),
   };
 };
 
