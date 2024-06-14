@@ -19,6 +19,45 @@ import { PAGE_SESSION_ID } from "@/utils/PageUtils";
 import { AsyncCreateResponse, msg_showNetworkWithDebounce } from "./apiSlice";
 
 
+
+export type ExtModeSt = {
+  isDev: boolean;
+  repoPath: string;
+}
+export type MiaodaConfig = {
+  mode: string;
+  id: string;
+  version: string;
+  logo: string;
+  name: string;
+  shortDesc: string;
+  description: string;
+  development: {
+    entryLink: string;
+  };
+  menus: string;
+  init: {
+    dev: string;
+    build: string;
+  };
+  start: {
+    dev: string;
+    build: string;
+  };
+  keywords?: string[];
+  include: string[];
+  // post-process
+  fuzzySearchStr?: string;
+};
+export type ExtMetaInfo = {
+  totals: number;
+  lastUpdated: string;
+  allMetaInfo: MiaodaConfig[];
+};
+export type ExtMetaSearchReq = {
+  searchText: string
+}
+
 export const localApiSlice = createApi({
   reducerPath: "localapi",
   baseQuery: fetchBaseQuery({
@@ -37,11 +76,11 @@ export const localApiSlice = createApi({
     },
     validateStatus: (response, result: AsyncCreateResponse<any> | null) => {
       let errorHandler = () => {
-        const finalResult: string | null = result && result.message ? result.message : result && result.error ? result.error :null
-        if(!finalResult){
+        const finalResult: string | null = result && result.message ? result.message : result && result.error ? result.error : null
+        if (!finalResult) {
           // "抱歉，网络不稳定，请稍后重试"
           msg_showNetworkWithDebounce()
-        }else{
+        } else {
           AlertUtils.alertErr(finalResult)
         }
       }
@@ -68,18 +107,18 @@ export const localApiSlice = createApi({
     },
   }),
   endpoints: (build) => ({
-    sayHelloWorld: build.query<string, void>({
+    checkExtMode: build.query<AsyncCreateResponse<ExtModeSt>,{}>({
       query: () => {
         return {
-          url: "/hello-world",
+          url: "/ext/check-ext-mode",
           method: "GET",
         };
       },
     }),
-    getExtList: build.query<string, {}>({
+    getExtListWithSearch: build.query<AsyncCreateResponse<ExtMetaSearchReq>, ExtMetaSearchReq>({
       query: () => {
         return {
-          url: "/ext/list",
+          url: "/ext/get-ext-list",
           method: "GET",
         };
       },

@@ -17,9 +17,18 @@ export let getUserHomeDir: () => string = () => {
 };
 
 export let getLafToolsDataDir = (): string => {
-  let n = path.join(
-    userHome,
-    isTestEnv() ? ".test-mdgjx" : isDevEnv() ? ".dev-mdgjx" : ".mdgjx",
-  );
+  let n = path.join(userHome, isTestEnv() ? '.test-mdgjx' : isDevEnv() ? '.dev-mdgjx' : '.mdgjx');
+  return fsutils.mkdir(n);
+};
+
+
+
+export let getLafToolsExtDir = (): string => {
+  if (isDevEnv()) {
+    if (process.env.MDGJX_EXT_ROOT) {
+      return process.env.MDGJX_EXT_ROOT;
+    }
+  }
+  let n = path.join(userHome, isTestEnv() ? '.test-mdgjx-extensions' : isDevEnv() ? '.dev-mdgjx-extensions' : '.mdgjx-extensions');
   return fsutils.mkdir(n);
 };

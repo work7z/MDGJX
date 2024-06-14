@@ -73,7 +73,11 @@ export default function () {
                 </Text>
 
                 <div className="mt-6">
-                    <Input rightSection={
+                    <Input
+                    {...rh?.bindOnChange({
+                        npStateKey: 'searchText'
+                    })}
+                    rightSection={
                         <IconSearch size={20} />
                     } size="lg" placeholder="键入以搜索插件名，支持大小写拼音" />
                 </div>
