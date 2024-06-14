@@ -8,9 +8,9 @@ import shelljs from 'shelljs'
 import { getLafToolsDataDir, getLafToolsExtDir } from '@/web2share-copy/homedir';
 import path from 'path';
 import fs from 'fs';
-import pinyin from 'pinyin';
 import { logger } from '@/utils/logger';
 
+const pinyin = require('tiny-pinyin');
 const currentProjectRoot = getLafToolsExtDir()
 
 export type ExtModeSt = {
@@ -76,9 +76,7 @@ export const getAllExtMetaInfo = (req: ExtMetaSearchReq): ExtMetaInfo => {
           if (!eachKeyword) {
             continue;
           }
-          const pinyinStr = pinyin(eachKeyword, {
-            style: pinyin.STYLE_NORMAL,
-          }).join('');
+          const pinyinStr = pinyin.convertToPinyin(eachKeyword);
           if (eachKeyword !== pinyinStr) {
             fuzzySearchStrArr.push(pinyinStr);
           }

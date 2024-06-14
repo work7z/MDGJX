@@ -26,7 +26,7 @@ export let getLafToolsDataDir = (): string => {
 export let getLafToolsExtDir = (): string => {
   if (isDevEnv()) {
     if (process.env.MDGJX_EXT_ROOT) {
-      return process.env.MDGJX_EXT_ROOT;
+      return path.join(process.env.MDGJX_EXT_ROOT,'extensions');
     }
   }
   let n = path.join(userHome, isTestEnv() ? '.test-mdgjx-extensions' : isDevEnv() ? '.dev-mdgjx-extensions' : '.mdgjx-extensions');
