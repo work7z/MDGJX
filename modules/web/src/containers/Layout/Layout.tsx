@@ -46,7 +46,9 @@ export function GeneralLayout(props) {
     const darkOrNot = useDarkModeOrNot()
     const [opened, { toggle }] = useDisclosure();
     let bodyFn = mainSubModuleItem.bodyFn
-    useWrapWithTitle(mainSubModuleItem.name + ` - ${rootModuleItem.label}`)
+    useWrapWithTitle((
+        mainSubModuleItem.seoName ?? mainSubModuleItem.name
+    ) + ` - ${rootModuleItem.label}`)
     const hist = useHistory()
     const hideLeftMenu = exportUtils.useSelector(v => v.settings.hideLeftMenu)
     let bodyJSX: JSX.Element = useMemo(() => {

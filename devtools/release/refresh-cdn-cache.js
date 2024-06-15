@@ -18,11 +18,12 @@ const clientConfig = {
     },
   },
 };
-
+var pathArr = require('./pathArr.json');
+console.log(`pathArr: ${JSON.stringify(pathArr)}`)
 // 实例化要请求产品的client对象,clientProfile是可选的
 const client = new CdnClient(clientConfig);
 const params = {
-  Paths: ["http://laftools.cn/"],
+  Paths: pathArr,
   FlushType: "delete",
 };
 client.PurgePathCache(params).then(

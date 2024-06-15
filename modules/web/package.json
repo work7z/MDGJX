@@ -258,6 +258,7 @@
     "prettier": "^3.2.5",
     "prop-types": "^15.8.1",
     "sass": "^1.77.0",
+    "shelljs": "^0.8.5",
     "storybook": "^8.0.0",
     "storybook-dark-mode": "^3.0.3",
     "stylelint": "^16.2.1",

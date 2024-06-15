@@ -12,7 +12,14 @@ import puppeteer from 'puppeteer';
 test(
   'seo-prerender',
   async () => {
-   
+    const browser = await puppeteer.launch({
+      headless: false,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
+    const page = await browser.newPage();
+    await page.goto('http://localhost:5173', {
+      waitUntil: 'networkidle0',
+    });
   },
   {
     timeout: -1,

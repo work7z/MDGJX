@@ -10,9 +10,6 @@ import Markdown from 'react-markdown';
 import { IconClock24 } from '@tabler/icons-react';
 
 export default () => {
-    // https://dkstatic.mdgjx.com/hello.html
-    // https://dkstatic.mdgjx.com/test/desktop2/MDGJX-desktop-v5.3.96-win-x64.zip
-    // useWrapWithTitle(`下载与更新`)
     const hist = useHistory()
     const [showDownloadPage, setShowDownloadPage] = useState(false)
     const [type, onType] = useState(queryString.parse(hist.location.search)?.type||'desktop2')

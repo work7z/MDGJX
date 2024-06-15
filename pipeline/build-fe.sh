@@ -7,6 +7,12 @@ echo "[I] building web"
 cd $MDGJX_ROOT/modules/web
 npm run build
 
+
+echo "[I] building release cleancache"
+cd $MDGJX_ROOT/devtools/release
+[ -d node_modules ] && rm -rf node_modules
+npm i -S -D --verbose --force
+
 echo "[I] building addons"
 cd $MDGJX_ROOT/addons/it-tools
 [ -d node_modules ] && rm -rf node_modules

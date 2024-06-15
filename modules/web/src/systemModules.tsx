@@ -35,6 +35,7 @@ export type SystemSubModuleItem = {
     firstRouteId?: string,
     rootMainModuleId?: string,
     name: string,
+    seoName?: string,
     disableFooter?: boolean,
     defaultSubToolId?: string,
     children?: SystemSubModuleItem[],
@@ -99,6 +100,7 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
                     {
                         name: "工具总览",
                         id: 'index',
+                        seoName: '在线工具|文档笔记|软件资源',
                         bodyFn: () => import('./loadable/XToolsView/index.tsx')
                     },
                     {
