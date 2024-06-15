@@ -240,7 +240,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: 'tools.text-to-unicode.title',
+                name: 'Text 转 Unicode',
                 path: '/text-to-unicode',
                 description: 'tools.text-to-unicode.description',
                 keywords: ['text', 'to', 'unicode'],

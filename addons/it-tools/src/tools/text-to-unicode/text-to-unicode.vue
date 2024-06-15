@@ -12,22 +12,22 @@ const { copy: copyText } = useCopy({ source: textFromUnicode });
 </script>
 
 <template>
-  <c-card title="Text to Unicode">
-    <c-input-text v-model:value="inputText" multiline placeholder="e.g. 'Hello Avengers'" label="Enter text to convert to unicode" autosize autofocus raw-text test-id="text-to-unicode-input" />
-    <c-input-text v-model:value="unicodeFromText" label="Unicode from your text" multiline raw-text readonly mt-2 placeholder="The unicode representation of your text will be here" test-id="text-to-unicode-output" />
+  <c-card title="Text 转 Unicode">
+    <c-input-text v-model:value="inputText" multiline placeholder="例如 'Hello Avengers'" label="输入Text转成Unicode" autosize autofocus raw-text test-id="text-to-unicode-input" />
+    <c-input-text v-model:value="unicodeFromText" label="以你的Text转换后的Unicode" multiline raw-text readonly mt-2 placeholder="转换后的Unicode在这里" test-id="text-to-unicode-output" />
     <div mt-2 flex justify-center>
       <c-button :disabled="!unicodeFromText" @click="copyUnicode()">
-        Copy unicode to clipboard
+        拷贝unicode到粘贴板
       </c-button>
     </div>
   </c-card>
 
-  <c-card title="Unicode to Text">
-    <c-input-text v-model:value="inputUnicode" multiline placeholder="Input Unicode" label="Enter unicode to convert to text" autosize raw-text test-id="unicode-to-text-input" />
-    <c-input-text v-model:value="textFromUnicode" label="Text from your Unicode" multiline raw-text readonly mt-2 placeholder="The text representation of your unicode will be here" test-id="unicode-to-text-output" />
+  <c-card title="Unicode 转 Text">
+    <c-input-text v-model:value="inputUnicode" multiline placeholder="输入 Unicode" label="输入Unicode转成Text" autosize raw-text test-id="unicode-to-text-input" />
+    <c-input-text v-model:value="textFromUnicode" label="以你的Unicode转换后的Text" multiline raw-text readonly mt-2 placeholder="转换后的Text在这里" test-id="unicode-to-text-output" />
     <div mt-2 flex justify-center>
       <c-button :disabled="!textFromUnicode" @click="copyText()">
-        Copy text to clipboard
+        拷贝text到粘贴板
       </c-button>
     </div>
   </c-card>
