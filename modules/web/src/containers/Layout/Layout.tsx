@@ -33,7 +33,7 @@ const beianUpdateTitleFn = ()=>{
 }
 
 export let useWrapWithTitle = (title: string) => {
-    const finalTitle = `${title} - 秒达工具箱`
+    const finalTitle = `${title} - 秒达工具箱(MDGJX)`
     useDocumentTitle(`${finalTitle}`)
     if(isDesktopMode()){
         getBridgeRef()?.updateTitle(finalTitle)

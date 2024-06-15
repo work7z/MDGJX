@@ -59,7 +59,7 @@ export const redirectLinks: RedirectLinkItem[] = [
 ]
 
 export const Fn_MyAccount = () => import('./loadable/MyAccount/index.tsx')
-
+ 
 export const ROUTE_CPT_MAPPING: SystemSubModuleItem[] = []
 window['ROUTE_CPT_MAPPING'] = ROUTE_CPT_MAPPING
 
@@ -95,12 +95,11 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
             {
                 id: 'tools',
                 icon: IconTools,
-                name: '便捷工具',
+                name: '便捷工具',   
                 children: [
                     {
                         name: "工具总览",
                         id: 'index',
-                        seoName: '在线工具|文档笔记|软件资源',
                         bodyFn: () => import('./loadable/XToolsView/index.tsx')
                     },
                     {

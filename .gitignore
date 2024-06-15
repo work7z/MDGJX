@@ -1,4 +1,7 @@
 var/log/
+screenshots/*.png
+screenshots/**/*.png
+screenshots
 tmp
 *.zip
 LafTools*

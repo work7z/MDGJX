@@ -3,21 +3,21 @@ export default {
 <bookstore>
 
 <book category="cooking">
-    <title lang="en">Everyday Italian</title>
+    <title lang="zh-cn">Everyday Italian</title>
     <author>Giada De Laurentiis</author>
     <year>2005</year>
     <price>30.00</price>
 </book>
 
 <book category="children">
-    <title lang="en">Harry Potter</title>
+    <title lang="zh-cn">Harry Potter</title>
     <author>J K. Rowling</author>
     <year>2005</year>
     <price>29.99</price>
 </book>
 
 <book category="web">
-    <title lang="en">XQuery Kick Start</title>
+    <title lang="zh-cn">XQuery Kick Start</title>
     <author>James McGovern</author>
     <author>Per Bothner</author>
     <author>Kurt Cagle</author>
@@ -28,7 +28,7 @@ export default {
 </book>
 
 <book category="web">
-    <title lang="en">Learning XML</title>
+    <title lang="zh-cn">Learning XML</title>
     <author>Erik T. Ray</author>
     <year>2003</year>
     <price>39.95</price>
