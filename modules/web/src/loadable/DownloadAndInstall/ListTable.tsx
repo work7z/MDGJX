@@ -71,7 +71,7 @@ export default function TableReviews() {
     let latestVer = 'unknown'
     const changeLogRes = apiSlice.useGetSysConfChangeLogQuery({
         checkType: 'desktop2',
-        currentVer:'desktop2-'+ GetAppInfo().version
+        currentVer: 'desktop2-v1.4.53' //  fixed value, since it's only used for checking the latest version
     }, {
         pollingInterval: 60 * 1000 * 5, // 5 minutes
     })
