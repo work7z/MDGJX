@@ -28,8 +28,12 @@ import { getBridgeRef, isDesktopMode } from '@/utils/DesktopUtils';
 import exportUtils from '@/utils/ExportUtils';
 import { useMDParams } from '@/systemHooks';
 
+const beianUpdateTitleFn = ()=>{
+    // useDocumentTitle(      GetAppInfo().isInMdgjxCOM ? '秒达工具箱' : location.href.indexOf('laftools.cn') != -1 ? 'LafTools在线工具箱' : 'LafTools程序员工具箱')
+}
+
 export let useWrapWithTitle = (title: string) => {
-    const finalTitle =true || isDesktopMode()?`${title} - 秒达工具箱`:`${title}`
+    const finalTitle = `${title} - 秒达工具箱`
     useDocumentTitle(`${finalTitle}`)
     if(isDesktopMode()){
         getBridgeRef()?.updateTitle(finalTitle)

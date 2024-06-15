@@ -159,7 +159,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: 'Text to NATO alphabet',
+                name: '文字转北约国家字符',
                 path: '/text-to-nato-alphabet',
                 description: 'Transform text into NATO phonetic alphabet for oral transmission.',
                 keywords: ['string', 'nato', 'alphabet', 'phonetic', 'oral', 'transmission'],
@@ -258,7 +258,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: 'ASCII Art Text Generator',
+                name: 'ASCII艺术文本生成',
                 path: '/ascii-text-drawer',
                 description: 'Create ASCII art text with many fonts and styles.',
                 keywords: ['ascii', 'asciiart', 'text', 'drawer'],
@@ -267,7 +267,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: 'tools.yaml-prettify.title',
+                name: 'Yaml标题格式化工具',
                 path: '/yaml-prettify',
                 description: 'tools.yaml-prettify.description',
                 keywords: ['yaml', 'viewer', 'prettify', 'format'],
@@ -603,7 +603,8 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: 'Slugify string',
+                // name: 'Slugify string',
+                name: '空格转中划线工具(Sligify)',
                 path: '/slugify-string',
                 description: 'Make a string url, filename and id safe.',
                 keywords: ['slugify', 'string', 'escape', 'emoji', 'special', 'character', 'space', 'trim'],

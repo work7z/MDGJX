@@ -198,14 +198,14 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
         defaultHref: '/marketplace/index',
         icon: IconBuildingStore,
         label: '插件市场',
-        hide: isDevEnv(),
+        hide: !isDevEnv(),
         children: [
             {
                 name: '云插件',
                 id: 'index',
                 // disableFooter: true,
                 bodyFn: () => import('./loadable/MarketPlace/index.tsx')
-            },
+            }, 
             // {
             //     name: '已安装插件',
             //     id: 'installed-plugins',
