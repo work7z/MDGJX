@@ -25,6 +25,7 @@ import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
 import { toolsNavInfo } from './toolsNavInfo.tsx';
 import AppConstants from './AppConstants.tsx';
+import { isDevEnv } from './env.ts';
 
 export type LoadModuleType = () => any
 export type SystemSubModuleItem = {
@@ -44,6 +45,7 @@ export type SystemModuleItem = {
     icon?: React.FC<any>;
     label: string,
     defaultHref: string
+    hide?:boolean;
     fixedAtBottom?: boolean;
     children?: SystemSubModuleItem[]
 }
@@ -196,6 +198,7 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
         defaultHref: '/marketplace/index',
         icon: IconBuildingStore,
         label: '插件市场',
+        hide: isDevEnv(),
         children: [
             {
                 name: '云插件',
@@ -203,18 +206,18 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
                 // disableFooter: true,
                 bodyFn: () => import('./loadable/MarketPlace/index.tsx')
             },
-            {
-                name: '已安装插件',
-                id: 'installed-plugins',
-                // disableFooter: true,
-                bodyFn: () => import('./loadable/NotOK/index.tsx')
-            },
-            {
-                name: '自启动管理',
-                id: 'self-startup',
-                // disableFooter: true,
-                bodyFn: () => import('./loadable/NotOK/index.tsx')
-            },  
+            // {
+            //     name: '已安装插件',
+            //     id: 'installed-plugins',
+            //     // disableFooter: true,
+            //     bodyFn: () => import('./loadable/NotOK/index.tsx')
+            // },
+            // {
+            //     name: '自启动管理',
+            //     id: 'self-startup',
+            //     // disableFooter: true,
+            //     bodyFn: () => import('./loadable/NotOK/index.tsx')
+            // },  
             // {
             //     name: '卸载插件',
             //     id: 'uninstall',

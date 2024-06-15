@@ -74,9 +74,25 @@ export function DoubleNavbar(props: {
     )
 
     const { firstLevel_links, firstLevel_links_btm } = useMemo(() => {
+        // firstLevel_links: systemModulesList.filter(x => !x.fixedAtBottom).map(fn_mainLinks),
+        //     firstLevel_links_btm: systemModulesList.filter(x => x.fixedAtBottom).map(fn_mainLinks)
+        // rewrite with more efficient way
+        let firstLevel_links: JSX.Element[] = []
+        let firstLevel_links_btm: JSX.Element[] = []
+        systemModulesList.forEach(x => {
+            if(x.hide){
+                return;
+            }
+            if (x.fixedAtBottom) {
+                firstLevel_links_btm.push(fn_mainLinks(x))
+            } else {
+                firstLevel_links.push(fn_mainLinks(x))
+            }
+        })
+
         return {
-            firstLevel_links: systemModulesList.filter(x => !x.fixedAtBottom).map(fn_mainLinks),
-            firstLevel_links_btm: systemModulesList.filter(x => x.fixedAtBottom).map(fn_mainLinks)
+            firstLevel_links,
+            firstLevel_links_btm
         }
     }, [systemModulesList]);
 

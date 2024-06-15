@@ -1,6 +1,5 @@
 {
-  "name": "web-vite-template",
-  "private": true,
+  "name": "mdgjx-web",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
