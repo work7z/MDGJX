@@ -12,7 +12,7 @@ import { ErrorMiddleware } from '@middlewares/error.middleware';
 import migrateDB from './jobs/background-job';
 import { logger, stream } from '@utils/logger';
 import path from 'path';
-import { isProductionEnv } from './web2share-copy/env';
+import { isDevEnv, isProductionEnv } from './web2share-copy/env';
 import { API_SERVER_URL } from './web2share-copy/api_constants';
 import { HttpException } from './exceptions/httpException';
 import proxy from 'express-http-proxy';

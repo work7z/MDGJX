@@ -90,3 +90,36 @@ test(
     timeout: -1,
   }
 );
+
+
+test(
+  'seo-blend-it',
+  async () => {
+    const WEB_DIST_DIR = process.env.WEB_DIST_DIR || path.join(
+      process.env.MDGJX_ROOT as any,
+      'modules',
+      'web',
+      'dist-example'
+    );
+    const WEB_HTML_DIR = process.env.WEB_HTML_DIR || path.join(
+      process.env.MDGJX_ROOT as any,
+      'modules',
+      'web-server',
+      'html'
+    );
+    console.log('WEB_DIST_DIR: ' + WEB_DIST_DIR);
+    console.log('WEB_HTML_DIR: ' + WEB_HTML_DIR);
+    if (!WEB_DIST_DIR || !WEB_HTML_DIR) {
+        throw new Error('WEB_DIST_DIR or WEB_HTML_DIR not found');
+    }
+    const indexHtmlFile = path.join(WEB_DIST_DIR, 'index.html');
+    if(!fs.existsSync(indexHtmlFile)) {
+      throw new Error('index.html not found');
+    }
+    const indexHtml = fs.readFileSync(indexHtmlFile, 'utf-8');
+    const rootJsonInHtml = JSON.parse(
+      fs.readFileSync(path.join(WEB_HTML_DIR, 'root.json'), 'utf-8')
+    );
+    console.log('indexHtml: '+ indexHtml);
+    console.log('rootJsonInHtml: ' + JSON.stringify(rootJsonInHtml));
+  },0)

@@ -5,7 +5,13 @@ echo "[I] building fe"
 
 echo "[I] building web"
 cd $MDGJX_ROOT/modules/web
+[ -d node_modules ] && rm -rf node_modules
+[ ! -d node_modules ] && npm i -S -D --force 
 npm run build
+
+echo "[I] blending seo files"
+export WEB_DIST_DIR=$MDGJX_ROOT/modules/web/dist
+export WEB_HTML_DIR=$MDGJX_ROOT/modules/web-server/html
 
 echo "[I] building release cleancache"
 cd $MDGJX_ROOT/devtools/release
@@ -30,8 +36,6 @@ npm i --omit=dev --force
 
 mkdir -p ./dist/node_modules
 cp -a ./node_modules/* ./dist/node_modules
-mkdir -p ./dis/html
-cp -a ./html/* ./dist/html
 
 ctnNodeModules=$(ls ./dist/node_modules | wc -l)
 if [ $ctnNodeModules -lt 1 ]; then
