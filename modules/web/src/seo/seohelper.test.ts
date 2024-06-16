@@ -56,7 +56,12 @@ test(
         $ele('script').remove()
         $ele('svg').remove()
 
-        let spaHtml = $ele.html().replaceAll("id=", "data-id=").replaceAll('class=', 'data-class=') as string;
+        let spaHtml = $ele
+          .html()
+          .replace('<!-- MDGJX_HEAD -->','')
+          .replace('<!-- MDGJX_BODY -->','')
+          .replaceAll('id=', 'data-id=')
+          .replaceAll('class=', 'data-class=') as string;
         console.log('spaHtml: ' + spaHtml)
         await browser.close();
 
@@ -135,9 +140,10 @@ test(
         const bodyHtml = fs.readFileSync(body_htmlFileFullPath, 'utf-8');
         const headHtml = fs.readFileSync(head_htmlFileFullPath, 'utf-8');
         const finalOutputHtmlStr = indexHtmlStr
-          .replace('<!-- MDGJX_HEAD -->', bodyHtml)
-          .replace('<!-- MDGJX_BODY -->', headHtml);
+          .replace('<!-- MDGJX_HEAD -->', headHtml)
+          .replace('<!-- MDGJX_BODY -->', bodyHtml);
         const finalOutputFileName = path.join(
+          WEB_DIST_DIR as any,
           ...eachPath.split('/').filter(x => x !== ''),
           isLocalTestMode ? 'index-test.html' : 'index.html'
         )
