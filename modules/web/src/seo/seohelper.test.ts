@@ -54,12 +54,15 @@ test(
 
         $ele('style').remove()
         $ele('script').remove()
-        $ele('svg').remove()
+        $ele('svg').remove();
+        $ele('title').remove();
+        $ele('meta').remove();
+        $ele('link').remove();
 
         let spaHtml = $ele
           .html()
-          .replace('<!-- MDGJX_HEAD -->','')
-          .replace('<!-- MDGJX_BODY -->','')
+          .replace('<!-- MDGJX_HEAD -->', '')
+          .replace('<!-- MDGJX_BODY -->', '')
           .replaceAll('id=', 'data-id=')
           .replaceAll('class=', 'data-class=') as string;
         console.log('spaHtml: ' + spaHtml)

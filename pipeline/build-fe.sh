@@ -12,7 +12,8 @@ npm run build
 echo "[I] blending seo files"
 export WEB_DIST_DIR=$MDGJX_ROOT/modules/web/dist
 export WEB_HTML_DIR=$MDGJX_ROOT/modules/web-server/html
-cd $MDGJX_ROOT/modules/web-
+cd $MDGJX_ROOT/modules/web/src/seo
+npx vitest run -t "seo-blend-it"
 
 echo "[I] building release cleancache"
 cd $MDGJX_ROOT/devtools/release
