@@ -5,7 +5,7 @@ import shelljs from 'shelljs';
 import fs from 'fs';
 import _ from 'lodash';
 import puppeteer from 'puppeteer';
-import SeoDetailItemForMDGJX from './seo-list';
+import SeoDetailItemForMDGJX, { SeoDetail } from './seo-list';
 import $ from 'cheerio'
 
 test(
@@ -50,13 +50,13 @@ test(
           <html>
           ${fullSpaHtml}
 </html>
-        `,null,false);
+        `, null, false);
 
         $ele('style').remove()
         $ele('script').remove()
         $ele('svg').remove()
 
-        let spaHtml = $ele.html().replaceAll("id=", "data-id=").replaceAll('class=','data-class=') as string;
+        let spaHtml = $ele.html().replaceAll("id=", "data-id=").replaceAll('class=', 'data-class=') as string;
         console.log('spaHtml: ' + spaHtml)
         await browser.close();
 
@@ -95,12 +95,14 @@ test(
 test(
   'seo-blend-it',
   async () => {
-    const WEB_DIST_DIR = process.env.WEB_DIST_DIR || path.join(
+    const distExampleStr = path.join(
       process.env.MDGJX_ROOT as any,
       'modules',
       'web',
       'dist-example'
     );
+    const WEB_DIST_DIR = process.env.WEB_DIST_DIR || distExampleStr;
+    const isLocalTestMode = !process.env.WEB_DIST_DIR
     const WEB_HTML_DIR = process.env.WEB_HTML_DIR || path.join(
       process.env.MDGJX_ROOT as any,
       'modules',
@@ -110,16 +112,38 @@ test(
     console.log('WEB_DIST_DIR: ' + WEB_DIST_DIR);
     console.log('WEB_HTML_DIR: ' + WEB_HTML_DIR);
     if (!WEB_DIST_DIR || !WEB_HTML_DIR) {
-        throw new Error('WEB_DIST_DIR or WEB_HTML_DIR not found');
+      throw new Error('WEB_DIST_DIR or WEB_HTML_DIR not found');
     }
     const indexHtmlFile = path.join(WEB_DIST_DIR, 'index.html');
-    if(!fs.existsSync(indexHtmlFile)) {
+    if (!fs.existsSync(indexHtmlFile)) {
       throw new Error('index.html not found');
     }
-    const indexHtml = fs.readFileSync(indexHtmlFile, 'utf-8');
+    const indexHtmlStr = fs.readFileSync(indexHtmlFile, 'utf-8');
     const rootJsonInHtml = JSON.parse(
       fs.readFileSync(path.join(WEB_HTML_DIR, 'root.json'), 'utf-8')
     );
-    console.log('indexHtml: '+ indexHtml);
+    console.log('indexHtml: ' + indexHtmlStr);
     console.log('rootJsonInHtml: ' + JSON.stringify(rootJsonInHtml));
-  },0)
+    for (let eachRootJsonItem of rootJsonInHtml) {
+      const val_eachRootJsonItem = eachRootJsonItem as SeoDetail
+      for (let eachPath of val_eachRootJsonItem.path) {
+        const body_htmlFileName = encodeURIComponent(eachPath) + '-body.html';
+        const body_htmlFileFullPath = path.join(WEB_HTML_DIR, body_htmlFileName);
+        const head_htmlFileName = encodeURIComponent(eachPath) + '-head.html';
+        const head_htmlFileFullPath = path.join(WEB_HTML_DIR, head_htmlFileName);
+        // get html str
+        const bodyHtml = fs.readFileSync(body_htmlFileFullPath, 'utf-8');
+        const headHtml = fs.readFileSync(head_htmlFileFullPath, 'utf-8');
+        const finalOutputHtmlStr = indexHtmlStr
+          .replace('<!-- MDGJX_HEAD -->', bodyHtml)
+          .replace('<!-- MDGJX_BODY -->', headHtml);
+        const finalOutputFileName = path.join(
+          ...eachPath.split('/').filter(x => x !== ''),
+          isLocalTestMode ? 'index-test.html' : 'index.html'
+        )
+        // mkdir parent of finalOutputFileName
+        shelljs.mkdir('-p', path.dirname(finalOutputFileName))
+        fs.writeFileSync(finalOutputFileName, finalOutputHtmlStr)
+      }
+    }
+  }, 0)
