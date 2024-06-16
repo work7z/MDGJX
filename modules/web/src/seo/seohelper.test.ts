@@ -6,15 +6,14 @@ import fs from 'fs';
 import _ from 'lodash';
 import puppeteer from 'puppeteer';
 import SeoDetailItemForMDGJX from './seo-list';
-
+import $ from 'cheerio'
 
 test(
   'seo-prerender',
   async () => {
+    const webServerDir = path.join(process.env.MDGJX_ROOT as any, 'modules', 'web-server');
     const htmlDir = path.join(
-      process.env.MDGJX_ROOT as any,
-      'modules',
-      'web-server',
+      webServerDir,
       'html'
     )
     shelljs.rm('-rf', htmlDir);
@@ -24,7 +23,7 @@ test(
     const rootJSON = path.join(htmlDir, 'root.json');
     fs.writeFileSync(rootJSON, JSON.stringify(SeoDetailItemForMDGJX, null, 2));
 
-    const screenshotSubFolder = path.join(htmlDir, 'screenshots');
+    const screenshotSubFolder = path.join(webServerDir, 'screenshots');
 
     shelljs.rm('-rf', screenshotSubFolder);
     shelljs.mkdir('-p', screenshotSubFolder);
@@ -40,13 +39,25 @@ test(
         await page.goto(`http://127.0.0.1:5173${eachPath}`, {
           waitUntil: 'networkidle0',
         });
-        await page.waitForSelector('.mantine-AppShell-header',{
+        await page.waitForSelector('.mantine-AppShell-header', {
           timeout: 10000
         });
         await page.screenshot({
           path: path.join(screenshotSubFolder, encodeURIComponent(eachPath) + '.png'),
         })
-        const spaHtml = await page.content();
+        const fullSpaHtml = await page.content();
+        let $ele = $.load(`
+          <html>
+          ${fullSpaHtml}
+</html>
+        `,null,false);
+
+        $ele('style').remove()
+        $ele('script').remove()
+        $ele('svg').remove()
+
+        let spaHtml = $ele.html().replaceAll("id=", "data-id=").replaceAll('class=','data-class=') as string;
+        console.log('spaHtml: ' + spaHtml)
         await browser.close();
 
         const f = (str: string) => {

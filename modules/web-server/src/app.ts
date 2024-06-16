@@ -137,6 +137,7 @@ export class App {
     if (existsSync(distDir)) {
       // let us build this first
       this.app.use(express.static(distDir));
+      // TODO: do seo stuff
       this.app.get('/*', (req, res) => {
         res.sendFile(path.resolve(distDir, 'index.html'));
       });
