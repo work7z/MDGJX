@@ -48,7 +48,8 @@ export type SeoDetail = {
     title: `云插件 - 插件市场`,
     description: 'MDGJX秒达工具箱快速提供云插件、插件市场等功能，让您的插件使用更加便捷。',
     keywords: '云插件,插件市场,插件工具,插件工具箱',
-  }
+  },
+  
 ];
 
 toolsNavInfo.map((item) => {
