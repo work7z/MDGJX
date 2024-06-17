@@ -60,7 +60,7 @@ test(
         $ele('link').remove();
 
         let spaHtml = `
-        <div style='color:transparent;'>
+        <div style='color:transparent;display:none;'>
         ${$ele
             .html()
             .replace('<!-- MDGJX_HEAD -->', '')
