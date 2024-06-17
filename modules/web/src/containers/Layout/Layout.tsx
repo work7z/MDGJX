@@ -29,12 +29,12 @@ import exportUtils from '@/utils/ExportUtils';
 import { useMDParams } from '@/systemHooks';
 
 const beianUpdateTitleFn = ()=>{
-    // useDocumentTitle(      GetAppInfo().isInMdgjxCOM ? '秒达工具箱' : location.href.indexOf('laftools.cn') != -1 ? 'LafTools在线工具箱' : 'LafTools程序员工具箱')
+    useDocumentTitle(      GetAppInfo().isInMdgjxCOM ? '秒达工具箱' : location.href.indexOf('laftools.cn') != -1 ? 'LafTools在线工具箱' : 'LafTools程序员工具箱')
 }
 
 export let useWrapWithTitle = (title: string) => {
-    const finalTitle = `${title} - 秒达工具箱(MDGJX)`
-    useDocumentTitle(`${finalTitle}`)
+    const finalTitle = window['PRE_RENDER_MODE'] ? document.title: `${title} - 秒达工具箱(MDGJX)`
+    useDocumentTitle(finalTitle)
     if(isDesktopMode()){
         getBridgeRef()?.updateTitle(finalTitle)
     }

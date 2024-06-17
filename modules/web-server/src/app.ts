@@ -132,6 +132,7 @@ export class App {
       });
     }
 
+  
     // setup spa
     let distDir = path.join(__dirname, 'spa');
     if (existsSync(distDir)) {

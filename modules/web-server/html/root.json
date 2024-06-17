@@ -60,6 +60,70 @@
   },
   {
     "path": [
+      "/settings/my-account"
+    ],
+    "title": "我的账户 - 设置",
+    "description": "MDGJX秒达工具箱快速提供我的账户、设置等功能，让您的账户管理更加便捷。",
+    "keywords": "我的账户,设置,账户管理,账户工具,账户工具箱"
+  },
+  {
+    "path": [
+      "/settings/my-privilege"
+    ],
+    "title": "权益中心 - 设置",
+    "description": "MDGJX秒达工具箱快速提供权益中心、设置等功能。",
+    "keywords": "权益中心,设置,权益管理,权益工具,权益工具箱"
+  },
+  {
+    "path": [
+      "/settings/faq"
+    ],
+    "title": "常见问题 - 设置",
+    "description": "MDGJX秒达工具箱快速提供常见问题、设置等功能。",
+    "keywords": "常见问题,设置,常见问题解答,常见问题工具,常见问题工具箱"
+  },
+  {
+    "path": [
+      "/settings/terms-of-conditions"
+    ],
+    "title": "服务条款 - 设置",
+    "description": "MDGJX秒达工具箱快速提供服务条款、设置等功能。",
+    "keywords": "服务条款,设置,服务条款管理,服务条款工具,服务条款工具箱"
+  },
+  {
+    "path": [
+      "/settings/privacy-agreement"
+    ],
+    "title": "隐私政策 - 设置",
+    "description": "MDGJX秒达工具箱快速提供隐私政策、设置等功能。",
+    "keywords": "隐私政策,设置,隐私政策管理,隐私政策工具,隐私政策工具箱"
+  },
+  {
+    "path": [
+      "/settings/install"
+    ],
+    "title": "安装秒达工具箱 - 设置",
+    "description": "快速安装秒达工具箱、设置等功能",
+    "keywords": "安装秒达工具箱,设置,安装,安装工具,安装工具箱"
+  },
+  {
+    "path": [
+      "/settings/feedback"
+    ],
+    "title": "建议与反馈 - 设置",
+    "description": "MDGJX秒达工具箱快速提供反馈、设置等功能。",
+    "keywords": "反馈,设置,反馈管理,反馈工具,反馈工具箱"
+  },
+  {
+    "path": [
+      "/settings/about"
+    ],
+    "title": "关于秒达工具箱",
+    "description": "MDGJX秒达工具箱快速提供关于、设置等功能。",
+    "keywords": "关于,设置,关于管理,关于工具,关于工具箱"
+  },
+  {
+    "path": [
       "/converter/rmb-d"
     ],
     "title": "人民币大写转换器 | 通用格式转换",

@@ -88,6 +88,7 @@ test(
 <meta name="keywords" content="${f(item.keywords)}">
 <meta name="description" content="${f(item.description)}">
 <title>${f(item.title)} - 秒达工具箱(MDGJX)</title>
+<script>window.PRE_RENDER_MODE=true</script>
 `
         );
         const bodyHtmlFileName = encodeURIComponent(eachPath) + '-body.html';
