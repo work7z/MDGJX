@@ -94,7 +94,7 @@ export default function TableReviews() {
                         row.ext.map(x=>{
                             return <Anchor
                             key={x} component="button" fz="sm">
-                                <a target="_blank" href={`https://dkstatic.mdgjx.com/${latestVer}-release/MDGJX-desktop-${latestVer.replace('desktop2-','')}-${
+                                <a rel='nofollow' target="_blank" href={`https://dkstatic.mdgjx.com/${latestVer}-release/MDGJX-desktop-${latestVer.replace('desktop2-','')}-${
                                     row.overwriteFn ? row.overwriteFn(x) || row.fileArch : row.fileArch
                                 }.${x}`}>
                                     {x}
