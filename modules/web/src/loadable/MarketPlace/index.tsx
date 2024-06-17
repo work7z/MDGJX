@@ -33,8 +33,6 @@ export default function () {
         }
     })
 
-    const extModeRes = localApiSlice.useCheckExtModeQuery({
-    })
     const extListRes = localApiSlice.useGetExtListWithSearchQuery({
         searchText: rh?.npState?.searchText || '',
     },{
