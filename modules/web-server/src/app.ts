@@ -137,7 +137,7 @@ export class App {
     let distDir = path.join(__dirname, 'spa');
     if (existsSync(distDir)) {
       // let us build this first
-      this.app.use(express.static(distDir));
+      this.app.use(express.static(distDir, { extensions: ['html'] }));
       // TODO: do seo stuff
       this.app.get('/*', (req, res) => {
         res.sendFile(path.resolve(distDir, 'index.html'));
