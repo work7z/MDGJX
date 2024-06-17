@@ -59,12 +59,17 @@ test(
         $ele('meta').remove();
         $ele('link').remove();
 
-        let spaHtml = $ele
-          .html()
-          .replace('<!-- MDGJX_HEAD -->', '')
-          .replace('<!-- MDGJX_BODY -->', '')
-          .replaceAll('id=', 'data-id=')
-          .replaceAll('class=', 'data-class=') as string;
+        let spaHtml = `
+        <div style='color:transparent;'>
+        ${$ele
+            .html()
+            .replace('<!-- MDGJX_HEAD -->', '')
+            .replace('<!-- MDGJX_BODY -->', '')
+            .replaceAll('id=', 'data-id=')
+            .replaceAll('class=', 'data-class=') as string
+          }
+        </div>
+        `.trim();
         console.log('spaHtml: ' + spaHtml)
         await browser.close();
 
@@ -145,13 +150,17 @@ test(
         const finalOutputHtmlStr = indexHtmlStr
           .replace('<!-- MDGJX_HEAD -->', headHtml)
           .replace('<!-- MDGJX_BODY -->', bodyHtml);
-        const finalOutputFileName = path.join(
-          WEB_DIST_DIR as any,
-          ...eachPath.split('/').filter(x => x !== ''),
-          isLocalTestMode ? 'index-test.html' : 'index.html'
-        )
+        const subPath = eachPath.split('/').filter((x) => x !== '');
+
+        let finalOutputFileName = _.isEmpty(subPath)
+          ? path.join(WEB_DIST_DIR as any, isLocalTestMode ? 'index-test.html' : 'index.html')
+          : path.join(
+            WEB_DIST_DIR as any,
+            ..._.take(subPath, subPath.length - 1),
+            _.last(subPath) + (isLocalTestMode ? '-test.html' : '.html')
+          );
         // mkdir parent of finalOutputFileName
-        shelljs.mkdir('-p', path.dirname(finalOutputFileName))
+      shelljs.mkdir('-p', path.dirname(finalOutputFileName))
         fs.writeFileSync(finalOutputFileName, finalOutputHtmlStr)
       }
     }
