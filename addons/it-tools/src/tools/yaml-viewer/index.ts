@@ -3,7 +3,7 @@ import { defineTool } from '../tool';
 import { translate } from '@/plugins/i18n.plugin';
 
 export const tool = defineTool({
-  name: translate('tools.yaml-prettify.title'),
+  name: translate('Yaml标题格式化工具'),
   path: '/yaml-prettify',
   description: translate('tools.yaml-prettify.description'),
   keywords: ['yaml', 'viewer', 'prettify', 'format'],

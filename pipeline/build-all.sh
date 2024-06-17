@@ -170,17 +170,6 @@ import { AppInfoClz } from \"./types\"
 
     build-fe(){
         echo "[I] building fe"
-        (
-            echo "[I] building web"
-            cd $MDGJX_ROOT/modules/web
-            [ -d node_modules ] && rm -rf node_modules
-            [ ! -d node_modules ] && npm i -S -D --force 
-        )
-        (
-            echo "[I] building web-server"
-            cd $MDGJX_ROOT/modules/web-server
-            rm -rf dist
-        )
         chmod +x $MDGJX_ROOT/pipeline/build-fe.sh
         $MDGJX_ROOT/pipeline/build-fe.sh
         echo "[I] built fe"

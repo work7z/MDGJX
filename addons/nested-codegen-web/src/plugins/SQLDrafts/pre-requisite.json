@@ -1,9 +1,0 @@
-{
-  "runtime_listings": [],
-  "version": "v1.5.4",
-  "bundle_with_exteriors": [
-    {
-      "prop": "sql_tun_handler"
-    }
-  ]
-}

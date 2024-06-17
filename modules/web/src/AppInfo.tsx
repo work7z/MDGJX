@@ -15,7 +15,7 @@ const appInfo = {
     githubRepo: 'https://github.com/work7z/MDGJX',
     needDoBeiAn: true,
     isInLafToolsCOM,
-    isInMdgjxCOM
+    isInMdgjxCOM,
 }
 
 if(isDesktopMode()){

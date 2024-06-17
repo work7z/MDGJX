@@ -33,6 +33,100 @@ import OldUserRemark from '../FAQ/OldUserRemark';
 import { form_onSubmit } from '@/utils/FormUtils';
 import TokenUsage from './TokenUsage';
 
+export const RightUserInfo = (props: {
+    clz: string
+})=>{
+    const hasSignIn = useHasUserSignIn()
+    const st_cardList = apiSlice.useGetGiftCardListQuery({}, {
+        skip: !hasSignIn,
+        pollingInterval: 5000,
+        refetchOnFocus: true,
+    })
+    useEffect(() => {
+        if (st_cardList.isSuccess) {
+            st_cardList.refetch()
+        }
+    }, [useHistory().location.pathname])
+
+    const uObj = exportUtils.useSelector(v => v.users)
+    const cardList = st_cardList?.data?.data || []
+    return (
+        <Flex dir='col' className={'flex flex-col ' + (
+           props.clz
+        )}>
+            <Paper withBorder shadow="md" p={30} radius="md">
+                <Group wrap="nowrap">
+                    <div>
+                        <Text fz="lg" fw={500} className={classes.name}>
+                            {uObj.userInfo?.name || "N/A"}     {
+                                !(uObj.userInfo?.isProUser) ?
+                                    <Badge size='sm' color={"green"} variant="light">
+                                        开源版用户
+                                    </Badge> : <Badge size='sm' color={"pink"} variant="light">
+                                        专业版用户
+                                    </Badge>
+                            }
+                        </Text>
+
+                        <Group wrap="nowrap" gap={10} mt={3}>
+                            <IconAt stroke={1.5} size="1rem" className={classes.icon} />
+                            <Text fz="xs" c="dimmed">
+                                {uObj.userInfo?.email}
+                            </Text>
+                        </Group>
+
+                        <Group wrap="nowrap" gap={10} mt={5}>
+                            <IconCalendarBolt stroke={1.5} size="1rem" className={classes.icon} />
+                            <Text fz="xs" c="dimmed">
+                                加入于 {
+                                    formatToYYYYMMDD(new Date(uObj.userInfo?.createdAt as any))
+                                }
+                            </Text>
+                        </Group>
+
+                        <TokenUsage />
+
+                        {/* <Group wrap="nowrap" gap={10} mt={5}>
+                                    <IconUserBolt stroke={1.5} size="1rem" className={classes.icon} />
+                                    <Text fz="xs" c="dimmed">
+                                        更多用户管理功能，敬请期待
+                                    </Text>
+                                </Group> */}
+                    </div>
+                </Group>
+            </Paper>
+            <Paper withBorder shadow="md" p={10} mt={10} radius="md">
+                <Group flex='flex-col space-y-3'>
+                    <Link className='w-full' to='/settings/my-privilege'>
+                        <Button className='w-full' color='cyan' onClick={() => {
+                        }}>
+                            订阅专业版
+                        </Button>
+                    </Link>
+                    <Link className='w-full' to='/settings/my-account?type=find-pw'>
+                        <Button fullWidth variant='outline' color='cyan'   onClick={() => {
+                        }}>
+                            修改密码
+                        </Button>
+                    </Link>
+                    <Link className='w-full' to='/settings/feedback'>
+                        <Button fullWidth color='cyan' variant='outline' onClick={() => {
+                            AlertUtils.alertInfo("很抱歉让您来到账号申诉板块，如果您在账号使用过程中，发现用户权益与预期不一致，或者数据不一致，请随时联系我们，我们将为您排查并尽快处理。")
+                        }}>
+                            账号申诉
+                        </Button>
+                    </Link>
+                    <Button className='w-full' color='pink' onClick={() => {
+                        AuthUtils.signOut()
+                    }}>
+                        用户登出
+                    </Button>
+                </Group>
+            </Paper>
+        </Flex>
+    )
+}
+
 export const GiftCardDIV = (props: {
     noSidebar?: boolean
 })=>{
@@ -48,7 +142,6 @@ export const GiftCardDIV = (props: {
         }
     }, [useHistory().location.pathname])
 
-    const uObj = exportUtils.useSelector(v=>v.users)
     const cardList = st_cardList?.data?.data || []
     return (
         <Container my={10} size={'xl'} className={
@@ -86,76 +179,9 @@ export const GiftCardDIV = (props: {
                     </Alert>
                 </Paper>
             </div>
-            <Flex dir='col' className={'flex flex-col '+(
-                props.noSidebar ? ' ' : ' sm:w-[350px] '
-            )}>
-                <Paper withBorder shadow="md" p={30} radius="md">
-                    <Group wrap="nowrap">
-                        <div>
-                            <Text fz="lg" fw={500} className={classes.name}>
-                                {uObj.userInfo?.name || "N/A"}     {
-                                    !(uObj.userInfo?.isProUser) ?
-                                        <Badge size='sm' color={"green"} variant="light">
-                                            开源版用户
-                                        </Badge> : <Badge size='sm' color={"pink"} variant="light">
-                                            专业版用户
-                                        </Badge>
-                                }
-                            </Text>
-
-                            <Group wrap="nowrap" gap={10} mt={3}>
-                                <IconAt stroke={1.5} size="1rem" className={classes.icon} />
-                                <Text fz="xs" c="dimmed">
-                                    {uObj.userInfo?.email}
-                                </Text>
-                            </Group>
-
-                            <Group wrap="nowrap" gap={10} mt={5}>
-                                <IconCalendarBolt stroke={1.5} size="1rem" className={classes.icon} />
-                                <Text fz="xs" c="dimmed">
-                                    加入于 {
-                                        formatToYYYYMMDD(new Date(uObj.userInfo?.createdAt as any))
-                                    }
-                                </Text>
-                            </Group>
-
-                            <TokenUsage />
-
-                            {/* <Group wrap="nowrap" gap={10} mt={5}>
-                                    <IconUserBolt stroke={1.5} size="1rem" className={classes.icon} />
-                                    <Text fz="xs" c="dimmed">
-                                        更多用户管理功能，敬请期待
-                                    </Text>
-                                </Group> */}
-                        </div>
-                    </Group>
-                </Paper>
-                <Paper withBorder shadow="md" p={10} mt={10} radius="md">
-                    <Group flex='flex-col space-y-3'>
-                        <Link className='w-full' to='/settings/my-account?type=find-pw'>
-                            <Button fullWidth color='indigo' onClick={() => {
-                            }}>
-                                修改密码
-                            </Button>
-                        </Link>
-                        <Link className='w-full' to='/settings/feedback'>
-                            <Button fullWidth color='blue' onClick={() => {
-                                AlertUtils.alertInfo("很抱歉让您来到账号申诉板块，如果您在账号使用过程中，发现用户权益与预期不一致，或者数据不一致，请随时联系我们，我们将为您排查并尽快处理。")
-                            }}>
-                                账号申诉
-                            </Button>
-                        </Link>
-                        <Button className='w-full' color='pink' onClick={() => {
-                            AuthUtils.signOut()
-                        }}>
-                            用户登出
-                        </Button>
-                    </Group>
-                </Paper>
-            </Flex>
+            <RightUserInfo clz={props.noSidebar ? ' ' : ' sm:w-[350px] ' }/>
         </Container>
     )
-
 }
 
 function AuthenticationTitle() {
@@ -192,7 +218,9 @@ function AuthenticationTitle() {
         return ''
     }
     if (hasSignIn && sp.type != 'find-pw') {
-        return <GiftCardDIV/>
+        return <Container size={420} my={40}>
+            <RightUserInfo clz={''} />
+        </Container>
     }
     switch (sp.type) {
         case 'find-pw':

@@ -11,9 +11,6 @@ import GetAppInfo from './AppInfo';
 
 
 export default function App() {
-  // useDocumentTitle(
-  //   GetAppInfo().isInMdgjxCOM ? '秒达工具箱' :
-  //     location.href.indexOf('laftools.cn') != -1 ? 'LafTools在线工具箱' : 'LafTools程序员工具箱')
   return (
     <Provider store={store}>
       <MantineProvider theme={theme}>

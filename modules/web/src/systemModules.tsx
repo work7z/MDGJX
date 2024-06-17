@@ -25,6 +25,7 @@ import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
 import { toolsNavInfo } from './toolsNavInfo.tsx';
 import AppConstants from './AppConstants.tsx';
+import { isDevEnv } from './env.ts';
 
 export type LoadModuleType = () => any
 export type SystemSubModuleItem = {
@@ -34,6 +35,7 @@ export type SystemSubModuleItem = {
     firstRouteId?: string,
     rootMainModuleId?: string,
     name: string,
+    seoName?: string,
     disableFooter?: boolean,
     defaultSubToolId?: string,
     children?: SystemSubModuleItem[],
@@ -44,6 +46,7 @@ export type SystemModuleItem = {
     icon?: React.FC<any>;
     label: string,
     defaultHref: string
+    hide?:boolean;
     fixedAtBottom?: boolean;
     children?: SystemSubModuleItem[]
 }
@@ -56,7 +59,7 @@ export const redirectLinks: RedirectLinkItem[] = [
 ]
 
 export const Fn_MyAccount = () => import('./loadable/MyAccount/index.tsx')
-
+ 
 export const ROUTE_CPT_MAPPING: SystemSubModuleItem[] = []
 window['ROUTE_CPT_MAPPING'] = ROUTE_CPT_MAPPING
 
@@ -92,7 +95,7 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
             {
                 id: 'tools',
                 icon: IconTools,
-                name: '便捷工具',
+                name: '便捷工具',   
                 children: [
                     {
                         name: "工具总览",
@@ -196,31 +199,32 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
         defaultHref: '/marketplace/index',
         icon: IconBuildingStore,
         label: '插件市场',
+        hide: !isDevEnv(),
         children: [
             {
                 name: '云插件',
                 id: 'index',
-                disableFooter: true,
+                // disableFooter: true,
                 bodyFn: () => import('./loadable/MarketPlace/index.tsx')
-            },
-            {
-                name: '已安装插件',
-                id: 'installed-plugins',
-                disableFooter: true,
-                bodyFn: () => import('./loadable/NotOK/index.tsx')
-            },
-            {
-                name: '自启动管理',
-                id: 'self-startup',
-                disableFooter: true,
-                bodyFn: () => import('./loadable/NotOK/index.tsx')
-            },
-            {
-                name: '卸载插件',
-                id: 'uninstall',
-                disableFooter: true,
-                bodyFn: () => import('./loadable/NotOK/index.tsx')
-            },
+            }, 
+            // {
+            //     name: '已安装插件',
+            //     id: 'installed-plugins',
+            //     // disableFooter: true,
+            //     bodyFn: () => import('./loadable/NotOK/index.tsx')
+            // },
+            // {
+            //     name: '自启动管理',
+            //     id: 'self-startup',
+            //     // disableFooter: true,
+            //     bodyFn: () => import('./loadable/NotOK/index.tsx')
+            // },  
+            // {
+            //     name: '卸载插件',
+            //     id: 'uninstall',
+            //     // disableFooter: true,
+            //     bodyFn: () => import('./loadable/NotOK/index.tsx')
+            // },
             // {
             //     name: '二级分类',
             //     id: 'sub',

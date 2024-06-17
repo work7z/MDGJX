@@ -71,7 +71,7 @@ export default function TableReviews() {
     let latestVer = 'unknown'
     const changeLogRes = apiSlice.useGetSysConfChangeLogQuery({
         checkType: 'desktop2',
-        currentVer:'desktop2-'+ GetAppInfo().version
+        currentVer: 'desktop2-v1.4.53' //  fixed value, since it's only used for checking the latest version
     }, {
         pollingInterval: 60 * 1000 * 5, // 5 minutes
     })
@@ -94,7 +94,7 @@ export default function TableReviews() {
                         row.ext.map(x=>{
                             return <Anchor
                             key={x} component="button" fz="sm">
-                                <a target="_blank" href={`https://dkstatic.mdgjx.com/${latestVer}-release/MDGJX-desktop-${latestVer.replace('desktop2-','')}-${
+                                <a rel='nofollow' target="_blank" href={`https://dkstatic.mdgjx.com/${latestVer}-release/MDGJX-desktop-${latestVer.replace('desktop2-','')}-${
                                     row.overwriteFn ? row.overwriteFn(x) || row.fileArch : row.fileArch
                                 }.${x}`}>
                                     {x}

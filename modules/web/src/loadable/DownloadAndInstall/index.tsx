@@ -10,9 +10,6 @@ import Markdown from 'react-markdown';
 import { IconClock24 } from '@tabler/icons-react';
 
 export default () => {
-    // https://dkstatic.mdgjx.com/hello.html
-    // https://dkstatic.mdgjx.com/test/desktop2/MDGJX-desktop-v5.3.96-win-x64.zip
-    // useWrapWithTitle(`下载与更新`)
     const hist = useHistory()
     const [showDownloadPage, setShowDownloadPage] = useState(false)
     const [type, onType] = useState(queryString.parse(hist.location.search)?.type||'desktop2')
@@ -32,15 +29,14 @@ export default () => {
                     docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
                 </Alert>
                 <div className='mt-2'>
-                    <a href={'https://hub.docker.com/r/codegentoolbox/laftools-linux-x64'} target='_blank' className='text-blue-500'>🔗 Docker Hub - laftools-linux-x64</a>
-                    <a href={'https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64'} target='_blank' className='text-blue-500'>🔗 Docker Hub - laftools-arm64-x64</a>
+                    <a rel='nofollow' href={'https://hub.docker.com/r/codegentoolbox/laftools-linux-x64'} target='_blank' className='text-blue-500'>🔗 Docker Hub - laftools-linux-x64</a>
+                    <a rel='nofollow' href={'https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64'} target='_blank' className='text-blue-500'>🔗 Docker Hub - laftools-arm64-x64</a>
                 </div>
                 <div>注意：Docker版本目前为Beta版本，如果部署过程中存在问题，需要更多帮助请在GitHub上联系我们，谢谢！</div>
             </p> : <div>
                 <div className='my-2'>
                     <Alert p={5} variant="light" color="green" title="本软件完全开源，无任何恶意代码，请信任并忽略报毒错误，我们也正在申请软件签名证书，敬请理解" icon={<IconClock24 />}>
                     </Alert>
-
                 </div>
                 <ListTable />
             </div>

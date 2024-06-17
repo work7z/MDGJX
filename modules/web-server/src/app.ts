@@ -12,7 +12,7 @@ import { ErrorMiddleware } from '@middlewares/error.middleware';
 import migrateDB from './jobs/background-job';
 import { logger, stream } from '@utils/logger';
 import path from 'path';
-import { isProductionEnv } from './web2share-copy/env';
+import { isDevEnv, isProductionEnv } from './web2share-copy/env';
 import { API_SERVER_URL } from './web2share-copy/api_constants';
 import { HttpException } from './exceptions/httpException';
 import proxy from 'express-http-proxy';
@@ -70,7 +70,7 @@ export class App {
     logger.info(`======= ENV: ${this.env} =======`);
     logger.info(`======= HOST: ${this.host} =======`);
     logger.info(`======= DIRECT_PROXY_SERVER: ${DIRECT_PROXY_SERVER} =======`);
-    logger.info(`🚀 App listening on the port ${this.port}`);
+    logger.info(`🚀 App listening on the port http://localhost:${this.port}`);
     logger.info(`=================================`);
     server.listen(this.port);
   }
@@ -132,11 +132,13 @@ export class App {
       });
     }
 
+  
     // setup spa
     let distDir = path.join(__dirname, 'spa');
     if (existsSync(distDir)) {
       // let us build this first
-      this.app.use(express.static(distDir));
+      this.app.use(express.static(distDir, { extensions: ['html'] }));
+      // TODO: do seo stuff
       this.app.get('/*', (req, res) => {
         res.sendFile(path.resolve(distDir, 'index.html'));
       });
@@ -168,7 +170,7 @@ export class App {
 
   private initializeRoutes(routes: Routes[]) {
     routes.forEach(route => {
-      this.app.use('/v3', route.router);
+      this.app.use('/local', route.router);
     });
     this.app.use('/', (req, res) => {
       if (req.url == '/') {
