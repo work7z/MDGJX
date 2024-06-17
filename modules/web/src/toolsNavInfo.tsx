@@ -77,7 +77,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: '罗马数字 ↔ 阿拉伯数字',
+                name: '罗马数字 互转 阿拉伯数字',
                 path: '/roman-numeral-converter',
                 description: '罗马数字 和 阿拉伯数字 互转',
                 keywords: [
@@ -99,7 +99,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: 'Base64 ↔ 字符串',
+                name: 'Base64 互转 字符串',
                 path: '/base64-string-converter',
                 description: 'Base64和字符串互转',
                 keywords: ['base64', '转换器', '转', '互转', '转换', 'web', '数据', '格式'],
@@ -108,7 +108,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: 'Base64 ↔ 文件',
+                name: 'Base64 互转 文件',
                 path: '/base64-file-converter',
                 description: 'Base64和文件互转',
                 keywords: [
@@ -167,7 +167,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: '文本 ↔ ASCII二进制',
+                name: '文本 互转 ASCII二进制',
                 path: '/text-to-binary',
                 description: '文本 和 ASCII二进制 互转',
                 keywords: ['文本', '转', '二进制', '转换', '互转', '编码', '解码', 'ascii'],
@@ -550,7 +550,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: 'Mime 类型 ↔ 扩展名',
+                name: 'Mime 类型 互转 扩展名',
                 path: '/mime-types',
                 description: 'mime 类型 和 扩展名 互转',
                 keywords: ['mime', '类型', '转', '转换', '互转', '扩展名', '后缀名', '文件'],

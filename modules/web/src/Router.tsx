@@ -23,7 +23,8 @@ export default () => {
   const userInfoMeta = apiSlice.useGetUserInfoQuery({
     initCount: exportUtils.useSelector(v => v.settings.initCount)
   }, {
-    refetchOnMountOrArgChange: true
+    refetchOnMountOrArgChange: true,
+    pollingInterval: 5000
   })
   useEffect(() => {
     const userInfoData = userInfoMeta.data?.data

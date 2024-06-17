@@ -13,8 +13,9 @@ import {
     Input,
     LoadingOverlay,
     Button,
+    ActionIcon,
 } from '@mantine/core';
-import { IconGauge, IconUser, IconCookie, IconSearch, IconSquareDotFilled, IconTruckLoading, IconLoader } from '@tabler/icons-react';
+import { IconGauge, IconUser, IconCookie, IconSearch, IconSquareDotFilled, IconTruckLoading, IconLoader, IconReload } from '@tabler/icons-react';
 import classes from './FeaturesCards.module.css';
 import { Search } from "@blueprintjs/icons";
 import exportUtils from "@/utils/ExportUtils";
@@ -77,7 +78,19 @@ export default function () {
 
             <div className="flex flex-row mt-16  mb-2 px-2  justify-between">
                 <div>总计{fData?.totals}个插件</div>
-                <div>更新于: {fData?.lastUpdated}</div>
+                <div className='flex flex-row space-x-2 items-center'>
+
+    <ActionIcon variant='default' size='sm'  aria-label="Theme" onClick={() => {
+        extListRes.refetch()
+    }}>
+        <IconReload stroke={1.5} />
+    </ActionIcon>
+                    <div>
+                        更新于: {fData?.lastUpdated}
+                    </div>
+
+
+                </div>
             </div>
             <Card withBorder className="h-[100vh]">
                 <LoadingOverlay visible={extListRes.isFetching} zIndex={1000} overlayProps={{ radius: "sm", blur: 2 }} />

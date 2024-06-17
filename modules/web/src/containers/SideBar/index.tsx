@@ -235,7 +235,7 @@ export let SecondMenu = (props: {
     return (
         <div onScroll={(e) => {
             setScrollPos(e.currentTarget.scrollTop)
-        }} className={classes.main + ' overflow-auto h-[100vh] scrollbar-hide'} ref={e => {
+        }} className={classes.main + ' overflow-auto h-[calc(100vh-61px)] scrollbar-hide'} ref={e => {
             if (e) {
                 ref.current.ele = e 
             }
