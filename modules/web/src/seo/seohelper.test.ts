@@ -87,7 +87,7 @@ test(
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="keywords" content="${f(item.keywords)}">
 <meta name="description" content="${f(item.description)}">
-<title>${f(item.title)}</title>
+<title>${f(item.title)} - 秒达工具箱(MDGJX)</title>
 `
         );
         const bodyHtmlFileName = encodeURIComponent(eachPath) + '-body.html';
