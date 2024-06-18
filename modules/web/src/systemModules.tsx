@@ -207,6 +207,18 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
                 // disableFooter: true,
                 bodyFn: () => import('./loadable/MarketPlace/index.tsx')
             }, 
+            {
+                name: '开发者中心',
+                id: 'dev-centre',
+                children: [
+                    {
+                        name: '插件预览',
+                        id: 'installed-plugins',
+                        disableFooter: true,
+                        bodyFn: () => import('./loadable/MpPreviewExt/index.tsx')
+                    },
+                ]
+            },
             // {
             //     name: '已安装插件',
             //     id: 'installed-plugins',

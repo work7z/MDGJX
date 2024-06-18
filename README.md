@@ -44,19 +44,21 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 
 - 🇨🇳 国内版: [mdgjx.com](https://mdgjx.com)
 
-# 🌠 预览
+# 🌠 项目规划
+
+[x] 桌面端应用       
+[x] Docker版本  
+[x] 移动端兼容    
+[x] it-tools集成+汉化    
+[x] 多类型翻译  
+[] 插件化设计    
+[] Spotlight   
+....
+
 
 ![](./docs/imgs/portal.png)
 
-# 📡 关于LAF
 
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Functional
-
-从本质上讲，秒达工具箱是一个提供一系列基于互连(Linked)、可异步(Asynchronous)且功能化(Functional)的编程向工具集。
-
-请放心，随着时间的推移，这个项目将会以非凡而奇妙的方式发展。这个项目需要更多的时间，就像酒一样，越久越好。
 
 # 🌠 贡献
 
