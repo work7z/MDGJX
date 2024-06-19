@@ -107,7 +107,7 @@ export default () => {
                             pStateKey: 'pluginId'
                         })
                     } label="目标插件" description="选择需要预览的插件名" data={fData?.allMetaInfo?.map(x => ({ label: x.name, value: x.id }))} />
-                    <NativeSelect label="插件 - 预览模块" description="选择需要预览的目标模块" data={['React', 'Angular', 'Vue']} />
+                    {/* <NativeSelect label="插件 - 预览模块" description="选择需要预览的目标模块" data={['React', 'Angular', 'Vue']} /> */}
                 </div>
                 <div className="mt-4  ">
                     {

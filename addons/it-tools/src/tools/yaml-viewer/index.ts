@@ -5,7 +5,7 @@ import { translate } from '@/plugins/i18n.plugin';
 export const tool = defineTool({
   name: translate('Yaml标题格式化工具'),
   path: '/yaml-prettify',
-  description: translate('tools.yaml-prettify.description'),
+  description: '格式化 YAML 标题',
   keywords: ['yaml', 'viewer', 'prettify', 'format'],
   component: () => import('./yaml-viewer.vue'),
   icon: AlignJustified,

@@ -25,4 +25,5 @@ export type MiaodaBasicConfig = {
 
 export const fn_miaoda_registerConfig = (config: MiaodaBasicConfig) => {
   console.log(JSON.stringify(config, null, 2));
+  return config;
 };

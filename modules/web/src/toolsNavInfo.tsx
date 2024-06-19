@@ -263,7 +263,8 @@ export const toolsNavInfo: ToolNavInfoType[] = [
                 isNew: false,
                 name: 'ASCII艺术文本生成',
                 path: '/ascii-text-drawer',
-                description: 'Create ASCII art text with many fonts and styles.',
+                // description: 'Create ASCII art text with many fonts and styles.',
+                description: '使用许多字体和样式创建 ASCII 艺术文本。',
                 keywords: ['ascii', 'asciiart', 'text', 'drawer'],
                 icon: { name: 'Artboard' },
                 createdAt: '2024-03-03T00:00:00.000Z',
@@ -272,7 +273,8 @@ export const toolsNavInfo: ToolNavInfoType[] = [
                 isNew: false,
                 name: 'Yaml标题格式化工具',
                 path: '/yaml-prettify',
-                description: 'tools.yaml-prettify.description',
+                // description: 'tools.yaml-prettify.description',
+                description: '格式化 YAML 标题',
                 keywords: ['yaml', 'viewer', 'prettify', 'format'],
                 icon: { name: 'AlignJustified' },
                 createdAt: '2024-01-31T00:00:00.000Z',
@@ -609,7 +611,8 @@ export const toolsNavInfo: ToolNavInfoType[] = [
                 // name: 'Slugify string',
                 name: '空格转中划线工具(Sligify)',
                 path: '/slugify-string',
-                description: 'Make a string url, filename and id safe.',
+                // description: 'Make a string url, filename and id safe.',
+                description: '使字符串 URL、文件名和 ID 安全。',
                 keywords: ['slugify', 'string', 'escape', 'emoji', 'special', 'character', 'space', 'trim'],
                 icon: { name: 'AbcRound' },
             },
@@ -1119,8 +1122,9 @@ export const toolsNavInfo: ToolNavInfoType[] = [
                 name: '电话号码解析和格式化',
                 path: '/phone-parser-and-formatter',
                 description:
-                    'Parse, validate and format phone numbers. Get information about the phone number, like the country code, type, etc.',
-                keywords: [
+                    // 'Parse, validate and format phone numbers. Get information about the phone number, like the country code, type, etc.',
+                    '解析、验证和格式化电话号码。获取有关电话号码的信息，如国家代码、类型等。'
+                ,keywords: [
                     'phone',
                     'parser',
                     'formatter',
@@ -1157,8 +1161,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
                 isNew: false,
                 name: '占位符文本生成器',
                 path: '/lorem-ipsum-generator',
-                description:
-                    'Lorem ipsum 是一种占位符文本，通常用于演示文档或字体的视觉形式，内容没有任何意义',
+                description:                    'Lorem ipsum 是一种占位符文本，通常用于演示文档或字体的视觉形式，内容没有任何意义',
                 keywords: ['lorem', 'ipsum', '占位符', '文本', '随机', '生成'],
                 icon: { name: 'AlignJustified' },
             },

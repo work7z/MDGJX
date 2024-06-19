@@ -38,14 +38,14 @@ const rawYamlValidation = useValidation({
   </div>
 
   <n-form-item
-    label="Your raw YAML"
+    label="未处理Yaml内容"
     :feedback="rawYamlValidation.message"
     :validation-status="rawYamlValidation.status"
   >
     <c-input-text
       ref="inputElement"
       v-model:value="rawYaml"
-      placeholder="Paste your raw YAML here..."
+      placeholder="在此处提供您未处理的Yaml文本..."
       rows="20"
       multiline
       autocomplete="off"
@@ -55,7 +55,7 @@ const rawYamlValidation = useValidation({
       monospace
     />
   </n-form-item>
-  <n-form-item label="Prettified version of your YAML">
+  <n-form-item label="格式化后内容">
     <TextareaCopyable :value="cleanYaml" language="yaml" :follow-height-of="inputElement" />
   </n-form-item>
 </template>
