@@ -190,8 +190,8 @@
     "path": [
       "/converter/text-to-nato-alphabet"
     ],
-    "title": "文字转北约国家字符 | 通用格式转换",
-    "description": "Transform text into NATO phonetic alphabet for oral transmission.",
+    "title": "文本转北约字母表 | 通用格式转换",
+    "description": "将文本转换为北约语音字母，以便口头传播。",
     "keywords": "string,nato,alphabet,phonetic,oral,transmission"
   },
   {
@@ -262,7 +262,7 @@
     "path": [
       "/converter/text-to-unicode"
     ],
-    "title": "tools.text-to-unicode.title | 通用格式转换",
+    "title": "Text 转 Unicode | 通用格式转换",
     "description": "tools.text-to-unicode.description",
     "keywords": "text,to,unicode"
   },
@@ -270,8 +270,8 @@
     "path": [
       "/converter/safelink-decoder"
     ],
-    "title": "Outlook Safelink decoder | 通用格式转换",
-    "description": "Decode Outlook SafeLink links",
+    "title": "Outlook安全链接解码 | 通用格式转换",
+    "description": "解码 Outlook SafeLink 链接",
     "keywords": "outlook,safelink,decoder"
   },
   {
@@ -510,8 +510,8 @@
     "path": [
       "/devops/random-port-generator"
     ],
-    "title": "Random port generator | 运维开发类",
-    "description": "Generate random port numbers outside of the range of \"known\" ports (0-1023).",
+    "title": "随机端口生成器 | 运维开发类",
+    "description": "生成范围在“已知”端口范围之外的随机端口号（0-1023）。",
     "keywords": "system,port,lan,generator,random,development,computer"
   },
   {
@@ -734,8 +734,8 @@
     "path": [
       "/text/numeronym-generator"
     ],
-    "title": "Numeronym generator | 文本处理工具",
-    "description": "A numeronym is a word where a number is used to form an abbreviation. For example, \"i18n\" is a numeronym of \"internationalization\" where 18 stands for the number of letters between the first i and the last n in the word.",
+    "title": "数字缩写生成器 | 文本处理工具",
+    "description": "数字缩写是一个单词，其中使用数字形成缩写。 例如，“i18n”是“国际化”的数字缩写，其中18表示单词中第一个i和最后一个n之间的字母数。",
     "keywords": "numeronym,generator,abbreviation,i18n,a11y,l10n"
   },
   {
