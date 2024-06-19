@@ -240,11 +240,18 @@ export class ExtensionRoute implements Routes {
               fs.appendFileSync(setup_logs, msg.toString() + '\n');
             });
             tItem.killSetupProcess = () => {
-              tItem.killSetupProcess = null;
               kill_process(e)
             };
+            
+            sendRes(res, {
+              data: 1,
+            });
             break;
           case 'start-service':
+            
+            if (tItem.killServiceProcess) {
+              tItem.killServiceProcess();
+            }
             const run_devcmd = findItem.development.run.dev;
             const e2 = shelljs.exec(run_devcmd, {
               cwd: cwd,
@@ -254,9 +261,12 @@ export class ExtensionRoute implements Routes {
               fs.appendFileSync(run_logs, msg.toString() + '\n');
             });
             tItem.killServiceProcess = () => {
-              tItem.killServiceProcess = null;
               kill_process(e2);
             };
+            
+            sendRes(res, {
+              data: 1,
+            });
             break;
           case 'stop-service':
             if (tItem.killServiceProcess) {

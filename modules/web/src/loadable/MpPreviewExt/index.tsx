@@ -52,12 +52,14 @@ export default () => {
         return ''
     }
     const refreshFn = async () => {
-        setRefreshCtn(refreshCtn + 1)
+        setRefreshCtn(Date.now())
         AlertUtils.alertInfo('刷新中')
         await extListRes.refetch()
+        setRefreshCtn(Date.now())
         await extGetStatusQueryRes.refetch()
-        await sleep(2000)
-        setRefreshCtn(refreshCtn + 1)
+        setRefreshCtn(Date.now())
+        await sleep(3000)
+        setRefreshCtn(Date.now())
         AlertUtils.alertSuccess('刷新成功')
     }
     const controls: {
