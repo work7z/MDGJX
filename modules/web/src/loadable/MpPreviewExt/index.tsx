@@ -21,12 +21,23 @@ export default () => {
         }
     })
 
+
     const extListRes = localApiSlice.useGetExtListWithSearchQuery({
         searchText: rh?.npState?.searchText || '',
     }, {
         refetchOnMountOrArgChange: true,
         pollingInterval: 1000 * 60 * 10,
     })
+    const [lazyExtHarmfulDoJob] = localApiSlice.useLazyExtHarmfulDoJobQuery({})
+    const extGetStatusQueryRes = localApiSlice.useExtHarmfulGetStatusQuery({
+        id: rh?.pState?.pluginId || '',
+        type: 'get-all',
+    },{
+        refetchOnMountOrArgChange: true,
+        pollingInterval: 1000 * 2,
+        skip: !rh?.pState?.pluginId
+    })
+
     const iconStyle = { width: rem(12), height: rem(12) };
 
     const fData = extListRes?.data?.data
@@ -64,9 +75,9 @@ export default () => {
         <div className="flex-1">
             <Card withBorder className="w-full h-[calc(100vh-90px)]">
                 <div className="w-full h-full ">
-                    <Tabs value={rh?.pState?.tabId } onChange={(e)=>{
+                    <Tabs value={rh?.pState?.tabId} onChange={(e) => {
                         rh.updatePState({
-                            tabId: e+''
+                            tabId: e + ''
                         })
                     }}>
                         <Tabs.List>
@@ -85,15 +96,15 @@ export default () => {
                         </Tabs.List>
 
                         <Tabs.Panel value="main">
-                            Gallery tab content
+                            主界面
                         </Tabs.Panel>
 
                         <Tabs.Panel value="messages">
-                            Messages tab content
+                            初始化界面
                         </Tabs.Panel>
 
                         <Tabs.Panel value="config">
-                            <GenCodeMirror directValue={'i am ok'} bigTextId={""}/>
+                            <GenCodeMirror directValue={'i am ok'} bigTextId={""} />
                         </Tabs.Panel>
                     </Tabs>
                 </div>
@@ -107,7 +118,7 @@ export default () => {
                             pStateKey: 'pluginId'
                         })
                     } label="目标插件" description="选择需要预览的插件名" data={fData?.allMetaInfo?.map(x => ({ label: x.name, value: x.id }))} />
-                    <NativeSelect label="插件 - 预览模块" description="选择需要预览的目标模块" data={['React', 'Angular', 'Vue']} />
+                    {/* <NativeSelect label="插件 - 预览模块" description="选择需要预览的目标模块" data={['React', 'Angular', 'Vue']} /> */}
                 </div>
                 <div className="mt-4  ">
                     {
