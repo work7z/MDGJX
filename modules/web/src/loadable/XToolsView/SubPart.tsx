@@ -12,7 +12,7 @@ import {
 } from "@tabler/icons-react"
 import _ from "lodash"
 import { Link } from "react-router-dom"
-
+import py from 'tiny-pinyin'
 
 const iconMapping = {
     EyeOff: () => <IconEyeOff />,
@@ -50,7 +50,9 @@ export default () => {
             if (existOrNot) {
                 return true
             }
-            return _.toLower(x.name).includes(lowerIpt) || _.toLower(x.description).includes(lowerIpt)
+            return (_.toLower(x.name) + _.toLower(py.convertToPinyin(x.name))).indexOf(lowerIpt) !== -1 ||('' + (
+                _.toLower(x.description) + _.toLower(py.convertToPinyin(x.description))
+            )).indexOf(lowerIpt) !== -1
         })
     }, [searchIpt, idx])
     return (
@@ -75,6 +77,7 @@ export default () => {
                 <TextInput placeholder="快速检索需要使用的工具名"
                     leftSection={<IconSearch />}
                     value={searchIpt}
+                    name='quickseachmain'
                     onChange={(e) => setSearchIpt(e.currentTarget.value)}
                 />
             </div>

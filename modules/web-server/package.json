@@ -59,6 +59,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "jest": "^28.1.1",
     "lint-staged": "^13.0.3",
+    "miaoda-common": "^1.0.1",
     "node-config": "^0.0.2",
     "node-gyp": "^9.1.0",
     "nodemon": "^2.0.19",

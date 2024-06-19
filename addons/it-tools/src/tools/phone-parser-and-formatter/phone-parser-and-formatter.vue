@@ -17,7 +17,8 @@ const validation = useValidation({
   rules: [
     {
       validator: value => value === '' || /^[0-9 +\-()]+$/.test(value),
-      message: 'Invalid phone number',
+      // message: 'Invalid phone number',
+      message: '手机号格式不正确'
     },
   ],
 });
@@ -85,12 +86,12 @@ const countriesOptions = getCountries().map(code => ({
 
 <template>
   <div>
-    <c-select v-model:value="defaultCountryCode" label="Default country code:" :options="countriesOptions" searchable mb-5 />
+    <c-select v-model:value="defaultCountryCode" label="默认国家与地区编码" :options="countriesOptions" searchable mb-5 />
 
     <c-input-text
       v-model:value="rawPhone"
-      placeholder="Enter a phone number"
-      label="Phone number:"
+      placeholder="输入手机号码"
+      label="手机号码:"
       :validation="validation"
       mb-5
     />

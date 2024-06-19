@@ -33,39 +33,40 @@ const percentageIncreaseDecrease = computed(() => {
   <div style="flex: 0 0 100%">
     <div style="margin: 0 auto; max-width: 600px">
       <c-card mb-3>
-        <div mb-3 sm:hidden>
-          What is
-        </div>
         <div flex gap-2>
-          <div hidden pt-1 sm:block style="min-width: 48px;">
-            What is
-          </div>
           <n-input-number v-model:value="percentageX" data-test-id="percentageX" placeholder="X" />
           <div min-w-fit pt-1>
-            % of
+            的
           </div>
-          <n-input-number v-model:value="percentageY" data-test-id="percentageY" placeholder="Y" />
+          <n-input-number v-model:value="percentageY" style="width: 10em" data-test-id="percentageY"  placeholder="Y" >
+          <template #suffix>
+            %
+          </template>
+          </n-input-number>
+          <div min-w-fit pt1>
+            为
+          </div>
           <input-copyable v-model:value="percentageResult" data-test-id="percentageResult" readonly placeholder="Result" style="max-width: 150px;" />
         </div>
       </c-card>
 
       <c-card mb-3>
-        <div mb-3 sm:hidden>
-          X is what percent of Y
-        </div>
         <div flex gap-2>
           <n-input-number v-model:value="numberX" data-test-id="numberX" placeholder="X" />
           <div hidden min-w-fit pt-1 sm:block>
-            is what percent of
+            是
           </div>
           <n-input-number v-model:value="numberY" data-test-id="numberY" placeholder="Y" />
+          <div hidden min-w-fit pt-1 sm:block>
+            的百分之
+          </div>
           <input-copyable v-model:value="numberResult" data-test-id="numberResult" readonly placeholder="Result" style="max-width: 150px;" />
         </div>
       </c-card>
 
       <c-card mb-3>
         <div mb-3>
-          What is the percentage increase/decrease
+          百分比增加/减少是多少
         </div>
         <div flex gap-2>
           <n-input-number v-model:value="numberFrom" data-test-id="numberFrom" placeholder="From" />

@@ -10,6 +10,7 @@ import path from 'path';
 import fs from 'fs';
 import { logger } from '@/utils/logger';
 import dayjs from 'dayjs';
+import { MiaodaBasicConfig } from 'miaoda-common'
 
 const pinyin = require('tiny-pinyin');
 const currentProjectRoot = getLafToolsExtDir()
@@ -24,29 +25,7 @@ export type MiaodaExtraDevConfig = {
   installed?: boolean;
   hasNewVersion?:boolean;
 };
-export type MiaodaConfig = MiaodaExtraDevConfig & {
-  mode: string;
-  id: string;
-  version: string;
-  logo: string;
-  name: string;
-  shortDesc: string;
-  description: string;
-  development: {
-    entryLink: string;
-  };
-  menus: string;
-  init: {
-    dev: string;
-    build: string;
-  };
-  start: {
-    dev: string;
-    build: string;
-  };
-  keywords?: string[];
-  include: string[];
-};
+export type MiaodaConfig = MiaodaExtraDevConfig & MiaodaBasicConfig;
 export type ExtMetaInfo = {
   totals: number;
   lastUpdated: string;

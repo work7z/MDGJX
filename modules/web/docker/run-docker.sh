@@ -10,8 +10,8 @@ listenPort=$3
 killCP(){
     pContainerName=$1
     pListenPort=$2
-    timeout 20 docker ps -a | grep $pContainerName | awk '{print $1}' | xargs -I {} docker stop {}
-    timeout 20 docker ps -a | grep $pContainerName | awk '{print $1}' | xargs -I {} docker kill {}
+    docker ps -a | grep $pContainerName | awk '{print $1}' | xargs -I {} docker stop {}
+    docker ps -a | grep $pContainerName | awk '{print $1}' | xargs -I {} docker kill {}
     docker ps -a | grep $pContainerName | awk '{print $1}' | xargs -I {} docker rm {}
 }
 runCP(){
@@ -33,7 +33,7 @@ runCP $containerName $port
 tryCount=0
 while true; do
     tryCount=$((tryCount+1))
-    if [ $tryCount -gt 10 ]; then
+    if [ $tryCount -gt 20 ]; then
         echo "Failed to start container $containerName"
         exit 1
     fi

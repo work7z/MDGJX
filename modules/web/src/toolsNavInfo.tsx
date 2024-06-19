@@ -3,6 +3,7 @@ import { LoadModuleType } from "./systemModules"
 
 export type SubToolItem = {
     name: string,
+    searchKW?:string,
     isNew: boolean,
     path: string,
     id?: string,
@@ -159,9 +160,9 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: '文字转北约国家字符',
+                name: '文本转北约字母表',
                 path: '/text-to-nato-alphabet',
-                description: 'Transform text into NATO phonetic alphabet for oral transmission.',
+                description: '将文本转换为北约语音字母，以便口头传播。',
                 keywords: ['string', 'nato', 'alphabet', 'phonetic', 'oral', 'transmission'],
                 icon: { name: 'Speakerphone' },
             },
@@ -240,7 +241,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: 'tools.text-to-unicode.title',
+                name: 'Text 转 Unicode',
                 path: '/text-to-unicode',
                 description: 'tools.text-to-unicode.description',
                 keywords: ['text', 'to', 'unicode'],
@@ -249,9 +250,11 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: 'Outlook Safelink decoder',
+                // name: 'Outlook Safelink decoder',
+                name: 'Outlook安全链接解码',
                 path: '/safelink-decoder',
-                description: 'Decode Outlook SafeLink links',
+                // description: 'Decode Outlook SafeLink links',
+                description: '解码 Outlook SafeLink 链接',
                 keywords: ['outlook', 'safelink', 'decoder'],
                 icon: { name: 'Mailbox' },
                 createdAt: '2024-03-11T00:00:00.000Z',
@@ -819,9 +822,11 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: 'Random port generator',
+                // name: 'Random port generator',
+                name: '随机端口生成器',
                 path: '/random-port-generator',
-                description: 'Generate random port numbers outside of the range of "known" ports (0-1023).',
+                // description: 'Generate random port numbers outside of the range of "known" ports (0-1023).',
+                description: '生成范围在“已知”端口范围之外的随机端口号（0-1023）。',
                 keywords: ['system', 'port', 'lan', 'generator', 'random', 'development', 'computer'],
                 icon: { name: 'Server' },
             },
@@ -1195,10 +1200,12 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: 'Numeronym generator',
+                // name: 'Numeronym generator',
+                name: '数字缩写生成器',
                 path: '/numeronym-generator',
                 description:
-                    'A numeronym is a word where a number is used to form an abbreviation. For example, "i18n" is a numeronym of "internationalization" where 18 stands for the number of letters between the first i and the last n in the word.',
+                    // 'A numeronym is a word where a number is used to form an abbreviation. For example, "i18n" is a numeronym of "internationalization" where 18 stands for the number of letters between the first i and the last n in the word.',
+                    '数字缩写是一个单词，其中使用数字形成缩写。 例如，“i18n”是“国际化”的数字缩写，其中18表示单词中第一个i和最后一个n之间的字母数。',
                 keywords: ['numeronym', 'generator', 'abbreviation', 'i18n', 'a11y', 'l10n'],
                 icon: {},
                 createdAt: '2023-11-05T00:00:00.000Z',
