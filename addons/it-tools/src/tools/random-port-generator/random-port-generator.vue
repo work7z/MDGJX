@@ -5,7 +5,10 @@ import { useCopy } from '@/composable/copy';
 
 const [port, refreshPort] = computedRefreshable(() => String(generatePort()));
 
-const { copy } = useCopy({ source: port, text: 'Port copied to the clipboard' });
+const { copy } = useCopy({ source: port, text: 
+'端口已复制到粘贴板'
+
+});
 </script>
 
 <template>
@@ -15,10 +18,10 @@ const { copy } = useCopy({ source: port, text: 'Port copied to the clipboard' })
     </div>
     <div flex justify-center gap-3>
       <c-button @click="copy()">
-        Copy
+        复制
       </c-button>
       <c-button @click="refreshPort">
-        Refresh
+        刷新
       </c-button>
     </div>
   </c-card>
