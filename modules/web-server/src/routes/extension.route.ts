@@ -47,9 +47,12 @@ export const getAllExtMetaInfo = (req: ExtMetaSearchReq): ExtMetaInfo => {
   let results: MiaodaConfig[] = [];
   for (let eachFile of projectRoots) {
     logger.info('loading ext: ' + eachFile);
-    const miaodaJSON = path.join(currentProjectRoot, eachFile, 'miaoda.json');
+    const miaodaJSON = path.join(currentProjectRoot, eachFile, 'miaoda-dist.json');
     if (fs.existsSync(miaodaJSON)) {
       const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
+      if(miaoda.disabled){
+        continue
+      }
       const keywords = miaoda.keywords;
       const fuzzySearchStrArr = [];
       const addToFuzzy = (arr: string[]) => {
