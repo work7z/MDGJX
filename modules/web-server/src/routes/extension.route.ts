@@ -107,7 +107,7 @@ export const checkIfCurrentEnvPermitHarmfulAPI = () => {
     throw new Error('not allowed');
   }
 };
-
+import os from 'os';
 export type ClosableFn = () => void;
 type ProcessStatus = 'running' | 'stopped' | 'error' | 'ready';
 export type MiaodaRunStatus = {
@@ -121,6 +121,18 @@ const MiaodaEntireRunStatus: {
   // id and run status
   [key: string]: MiaodaRunStatus | null;
 } = {};
+
+export let kill_process = (child: ChildProcess) => {
+  var spawn = require('child_process').spawn;
+  // check if it's windows
+  const isWin = process.platform === 'win32';
+  if (!isWin) {
+    child.kill();
+    return;
+  } else {
+    spawn('taskkill', ['/pid', child.pid, '/f', '/t']);
+  }
+};
 
 export class ExtensionRoute implements Routes {
   public router = Router();
@@ -211,9 +223,9 @@ export class ExtensionRoute implements Routes {
         }
         MiaodaEntireRunStatus[findItem.id] = MiaodaEntireRunStatus[findItem.id] || fn_getInit();
         const tItem = MiaodaEntireRunStatus[findItem.id];
-        const cwd = findItem.cwd || path.join(currentProjectRoot, findItem.id)
-        const setup_logs = path.join(cwd,'setup.log')
-        const run_logs = path.join(cwd,'run.log')
+        const cwd = findItem.cwd || path.join(currentProjectRoot, findItem.id);
+        const setup_logs = path.join(cwd, 'setup.log');
+        const run_logs = path.join(cwd, 'run.log');
         switch (type) {
           case 'setup':
             if (tItem.killSetupProcess) {
@@ -228,23 +240,22 @@ export class ExtensionRoute implements Routes {
               fs.appendFileSync(setup_logs, msg.toString() + '\n');
             });
             tItem.killSetupProcess = () => {
-              e.kill();
+              tItem.killSetupProcess = null;
+              kill_process(e)
             };
             break;
           case 'start-service':
-            if (tItem.killServiceProcess) {
-              tItem.killServiceProcess();
-            }
             const run_devcmd = findItem.development.run.dev;
             const e2 = shelljs.exec(run_devcmd, {
               cwd: cwd,
               async: true,
             });
-            e2.on('message', (msg) => {
-              fs.appendFileSync(run_logs, msg.toString() + '\n')
-            })
+            e2.on('message', msg => {
+              fs.appendFileSync(run_logs, msg.toString() + '\n');
+            });
             tItem.killServiceProcess = () => {
-              e2.kill();
+              tItem.killServiceProcess = null;
+              kill_process(e2);
             };
             break;
           case 'stop-service':

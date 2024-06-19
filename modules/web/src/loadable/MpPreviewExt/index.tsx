@@ -2,6 +2,7 @@ import GenCodeMirror from "@/components/GenCodeMirror"
 import localApiSlice from "@/store/reducers/localApiSlice"
 import { useMDParams, useMDQuery } from "@/systemHooks"
 import AlertUtils from "@/utils/AlertUtils"
+import { sleep } from "@/utils/CommonUtils"
 import exportUtils from "@/utils/ExportUtils"
 import { Alert, Box, Button, Card, LoadingOverlay, NativeSelect, Tabs, Title, rem } from "@mantine/core"
 import { IconAppWindow, IconBrandBlogger, IconInfoCircle, IconMacro, IconMessage, IconMessageCircle, IconPhoto, IconRun, IconSettings } from "@tabler/icons-react"
@@ -50,6 +51,15 @@ export default () => {
     if (!rh) {
         return ''
     }
+    const refreshFn = async () => {
+        setRefreshCtn(refreshCtn + 1)
+        AlertUtils.alertInfo('刷新中')
+        await extListRes.refetch()
+        await extGetStatusQueryRes.refetch()
+        await sleep(2000)
+        setRefreshCtn(refreshCtn + 1)
+        AlertUtils.alertSuccess('刷新成功')
+    }
     const controls: {
         label: string,
         color?: string,
@@ -58,14 +68,7 @@ export default () => {
             {
                 label: '刷新',
                 color: 'green',
-                onclick: async () => {
-                    setRefreshCtn(refreshCtn+1)
-                    AlertUtils.alertInfo('刷新中')
-                    await extListRes.refetch()
-                    await extGetStatusQueryRes.refetch()
-                    setRefreshCtn(refreshCtn + 1)
-                    AlertUtils.alertSuccess('刷新成功')
-                }
+                onclick: refreshFn
             },
             {
                 label: '初始化',
@@ -80,6 +83,7 @@ export default () => {
                         id: rh?.pState?.pluginId,
                         type: 'setup'
                     })
+                    await refreshFn()
                     AlertUtils.alertSuccess('初始化成功')
                 }
             },
@@ -95,6 +99,7 @@ export default () => {
                         id: rh?.pState?.pluginId,
                         type: 'start-service'
                     })
+                    await refreshFn()
                     AlertUtils.alertSuccess('执行启动服务成功')
                 }
             },
@@ -111,6 +116,7 @@ export default () => {
                         id: rh?.pState?.pluginId,
                         type: 'stop-service'
                     })
+                    await refreshFn()
                     AlertUtils.alertSuccess('执行关闭服务成功')
                 }
             }
