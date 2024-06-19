@@ -159,9 +159,9 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: '文字转北约国家字符',
+                name: '文本转北约字母表',
                 path: '/text-to-nato-alphabet',
-                description: 'Transform text into NATO phonetic alphabet for oral transmission.',
+                description: '将文本转换为北约语音字母，以便口头传播。',
                 keywords: ['string', 'nato', 'alphabet', 'phonetic', 'oral', 'transmission'],
                 icon: { name: 'Speakerphone' },
             },
@@ -240,7 +240,7 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: 'tools.text-to-unicode.title',
+                name: 'Text 转 Unicode',
                 path: '/text-to-unicode',
                 description: 'tools.text-to-unicode.description',
                 keywords: ['text', 'to', 'unicode'],
