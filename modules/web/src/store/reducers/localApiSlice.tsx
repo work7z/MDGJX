@@ -17,9 +17,8 @@ import UsersSlice, { DisplayUserInfo } from "./userSlice";
 import AuthUtils from "@/utils/AuthUtils";
 import { PAGE_SESSION_ID } from "@/utils/PageUtils";
 import { AsyncCreateResponse, msg_showNetworkWithDebounce } from "./apiSlice";
-import { MiaodaBasicConfig } from 'miaoda-common'
 
-
+import { MiaodaBasicConfig } from '@/m-types-copy/base/m-types-main'
 
 export type ExtModeSt = {
   isDev: boolean;

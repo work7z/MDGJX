@@ -10,7 +10,7 @@ import path from 'path';
 import fs from 'fs';
 import { logger } from '@/utils/logger';
 import dayjs from 'dayjs';
-import { MiaodaBasicConfig } from 'miaoda-common'
+import { MiaodaBasicConfig } from '../m-types-copy/base/m-types-main'
 
 const pinyin = require('tiny-pinyin');
 const currentProjectRoot = getLafToolsExtDir()
