@@ -49,7 +49,7 @@ export default defineConfig({
   //   },
   // },
   server: {
-    open:true,
+    open: true,
     host: '127.0.0.1',
     proxy: {
       '/ws': {
@@ -60,6 +60,11 @@ export default defineConfig({
       },
       '/v3': {
         target: 'http://127.0.0.1:2016',
+        changeOrigin: true,
+        rewrite: (path) => path,
+      },
+      '/local': {
+        target: 'http://127.0.0.1:3050',
         changeOrigin: true,
         rewrite: (path) => path,
       },

@@ -20,7 +20,7 @@ export default ()=>{
         checkType: isDesktopMode() ? 'desktop2' : 'web2',
         currentVer: isDesktopMode() ?  'desktop2-'+GetAppInfo().version:GetAppInfo().version
     }, {
-        pollingInterval: 60 * 1000*5 , // 5 minutes
+        pollingInterval: 60 * 1000*5, // 5 minutes
         skip: isPortalMode()
     })
     useEffect(() => {

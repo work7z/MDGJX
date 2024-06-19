@@ -35,6 +35,7 @@ import BigTextSlice from "./reducers/bigTextSlice";
 import ALL_NOCYCLE from "./nocycle";
 import StateSlice from "./reducers/stateSlice";
 import ChatSlice from "./reducers/chatSlice";
+import localApiSlice from "./reducers/localApiSlice";
 
 export type StReducer = ReturnType<typeof StateSlice.reducer>;
 const rootReducer = combineReducers({
@@ -48,6 +49,7 @@ const rootReducer = combineReducers({
     // other are regular reducers
     chat: ChatSlice.reducer,
     api: apiSlice.reducer,
+    localApi: localApiSlice.reducer,
     settings: settingsSlice.reducer,
     memory: MemorySlice.reducer,
     users: UsersSlice.reducer,
@@ -71,7 +73,8 @@ export const store = configureStore(({
             serializableCheck: false,
         })
             .concat(listenerMiddleware.middleware)
-            .concat(apiSlice.middleware) as any
+            .concat(apiSlice.middleware)
+            .concat(localApiSlice.middleware) as any
     },
     enhancers: [],
 }));

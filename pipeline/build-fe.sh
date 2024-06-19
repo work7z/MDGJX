@@ -5,7 +5,20 @@ echo "[I] building fe"
 
 echo "[I] building web"
 cd $MDGJX_ROOT/modules/web
+[ -d node_modules ] && rm -rf node_modules
+[ ! -d node_modules ] && npm i -S -D --force 
 npm run build
+
+echo "[I] blending seo files"
+export WEB_DIST_DIR=$MDGJX_ROOT/modules/web/dist
+export WEB_HTML_DIR=$MDGJX_ROOT/modules/web-server/html
+cd $MDGJX_ROOT/modules/web/src/seo
+npx vitest run -t "seo-blend-it"
+
+echo "[I] building release cleancache"
+cd $MDGJX_ROOT/devtools/release
+[ -d node_modules ] && rm -rf node_modules
+npm i -S -D --verbose --force
 
 echo "[I] building addons"
 cd $MDGJX_ROOT/addons/it-tools
