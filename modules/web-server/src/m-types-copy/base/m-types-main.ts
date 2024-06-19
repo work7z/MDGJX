@@ -1,7 +1,8 @@
+
 export type MiaodaBasicConfig = {
   mode: string;
   disabled?: boolean;
-  cwd?: string; // by default, it's $MDGJX_EXT_PATH/$id unless you have a dedicated path 
+  cwd?: string; // by default, it's $MDGJX_EXT_PATH/$id unless you have a dedicated path
   id: string;
   version: string;
   logo: string;
@@ -10,16 +11,16 @@ export type MiaodaBasicConfig = {
   description: string;
   development: {
     entryLink: string;
+    setup: {
+      dev: string;
+      prod: string;
+    };
+    run: {
+      dev: string;
+      prod: string;
+    };
   };
   menus: string;
-  init: {
-    dev: string;
-    build: string;
-  };
-  start: {
-    dev: string;
-    build: string;
-  };
   keywords?: string[];
   include: string[];
 };

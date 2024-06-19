@@ -45,6 +45,14 @@ type HarmfulExtPostQuery = {
   id: string;
   type: 'get-all' | 'setup' | 'start-service' | 'stop-service';
 };
+export type ClosableFn = () => void;
+type ProcessStatus = 'running' | 'stopped' | 'error' | 'ready';
+export type MiaodaRunStatus = {
+  setupStatus: ProcessStatus;
+  serviceStatus: ProcessStatus;
+  setupProcess?: ClosableFn;
+  serviceProcess?: ClosableFn;
+};
 export const localApiSlice = createApi({
   reducerPath: "localApi",
   baseQuery: fetchBaseQuery({
@@ -116,7 +124,10 @@ export const localApiSlice = createApi({
       },
     }),
     extHarmfulGetStatus: build.query<
-      AsyncCreateResponse<{}>,
+      AsyncCreateResponse<{
+        config: MiaodaBasicConfig,
+        status: MiaodaRunStatus
+      }>,
       HarmfulExtPostQuery
     >({
       query: (b) => {
