@@ -40,7 +40,11 @@ export type ExtMetaInfo = {
 export type ExtMetaSearchReq = {
   searchText: string
 }
-
+// these are kind of harmful things, which should not be running in portal mode
+type HarmfulExtPostQuery = {
+  id: string;
+  type: 'get-all' | 'setup' | 'start-service' | 'stop-service';
+};
 export const localApiSlice = createApi({
   reducerPath: "localApi",
   baseQuery: fetchBaseQuery({
@@ -107,6 +111,31 @@ export const localApiSlice = createApi({
           params:b,
           data: b,
           url: "/ext/get-ext-list",
+          method: "GET",
+        };
+      },
+    }),
+    extHarmfulGetStatus: build.query<
+      AsyncCreateResponse<{}>,
+      HarmfulExtPostQuery
+    >({
+      query: (b) => {
+        return {
+          params: b,
+          url: "/ext/harmful/get-status",
+          method: "GET",
+        };
+      },
+    }),
+
+    extHarmfulDoJob: build.query<
+      AsyncCreateResponse<{}>,
+      HarmfulExtPostQuery
+    >({
+      query: (b) => {
+        return {
+          params: b,
+          url: "/ext/harmful/do-job",
           method: "GET",
         };
       },

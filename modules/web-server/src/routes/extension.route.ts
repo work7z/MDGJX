@@ -42,7 +42,10 @@ export const getExtMode = (): ExtModeSt => {
   };
 };
 
-export const getAllExtMetaInfo = (req: ExtMetaSearchReq): ExtMetaInfo => {
+export const getAllExtMetaInfo = (
+  req: ExtMetaSearchReq,
+  filterWhileSearchingInExtDir?: (extDir: string) => boolean
+): ExtMetaInfo => {
   const projectRoots = shelljs.ls(currentProjectRoot);
   let results: MiaodaConfig[] = [];
   for (let eachFile of projectRoots) {
