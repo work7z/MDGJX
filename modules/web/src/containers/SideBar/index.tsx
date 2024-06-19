@@ -40,6 +40,7 @@ import { NotFoundPage } from '@/pages/NotFound.page';
 import React from 'react';
 import MemorySlice from '@/store/reducers/memorySlice';
 import { useHotkeys } from '@mantine/hooks';
+import py from 'tiny-pinyin'
 
 export function DoubleNavbar(props: {
     mdParams: TypeMDParams,
@@ -152,13 +153,13 @@ export let SecondMenu = (props: {
         }))
     }
     const jsx_linksgroup = useMemo(() => {
-        const l2 = _.toLower(searchCtn)
+        const l2 = _.toLower(searchCtn).replaceAll(' ','')
         const hasNoSearch = _.isEmpty(searchCtn)
         const fn_filter_txt = (x: SystemSubModuleItem) => {
             if (hasNoSearch) {
                 return true;
             }
-            return _.toLower(x.name).indexOf(l2) !== -1
+            return (_.toLower(x.name) + _.toLower(py.convertToPinyin(x.name))).indexOf(l2) !== -1
         }
         return (
             (mainModuleItem?.children || []).filter(x => {
@@ -260,6 +261,7 @@ export let SecondMenu = (props: {
             <div>
                 <div className='px-2'>
                     <TextInput
+                        name='quicksearch'
                         placeholder={
                             `快速搜索` + (isItMain ? controlId:'')
                         }

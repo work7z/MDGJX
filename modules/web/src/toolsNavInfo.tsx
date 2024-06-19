@@ -3,6 +3,7 @@ import { LoadModuleType } from "./systemModules"
 
 export type SubToolItem = {
     name: string,
+    searchKW?:string,
     isNew: boolean,
     path: string,
     id?: string,
