@@ -8,7 +8,7 @@ import path from "path";
 export type SystemEnvFlag = "development" | "production" | "test";
 
 let envObj: { env: SystemEnvFlag } = {
-  env: process.env.NODE_ENV as any,
+  env: process.env.NODE_ENV as any || 'development',
 };
 
 export let markEnvAsDevForcibly = () => {

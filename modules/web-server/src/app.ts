@@ -22,6 +22,7 @@ export const asyncHandler = (fn: (req: Request, res: Response, next) => void) =>
   return Promise.resolve(fn(req, res, next)).catch(next);
 };
 const env = NODE_ENV || 'development';
+
 const port = process.env.PORT || (env == 'development' ? 3050 : 39899);
 let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
 import httpProxy from 'http-proxy';
@@ -38,6 +39,8 @@ var proxyWS = httpProxy
 const launchTime = new Date();
 
 console.log('DIRECT_PROXY_SERVER: ' + DIRECT_PROXY_SERVER);
+
+const isDesktopMode = port + '' > '40000';
 
 export class App {
   public app: express.Application;
@@ -99,7 +102,7 @@ export class App {
     this.app.use(cookieParser());
 
     this.app.get('/killnow', (req, res) => {
-      if (this.port + '' > '40000') {
+      if (isDesktopMode) {
         process.exit(0);
       } else {
         res.send('not allowed');
