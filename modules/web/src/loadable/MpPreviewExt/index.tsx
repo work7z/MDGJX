@@ -7,7 +7,7 @@ import exportUtils from "@/utils/ExportUtils"
 import { Alert, Box, Button, Card, LoadingOverlay, NativeSelect, Tabs, Title, rem } from "@mantine/core"
 import { IconAppWindow, IconBrandBlogger, IconInfoCircle, IconMacro, IconMessage, IconMessageCircle, IconPhoto, IconRun, IconSettings } from "@tabler/icons-react"
 import dayjs from "dayjs"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default () => {
     const rh = exportUtils.register('mppreviewext', {
@@ -44,6 +44,17 @@ export default () => {
 
     const fData = extListRes?.data?.data
     const configItem = fData?.allMetaInfo?.find(x => x.id == rh?.pState?.pluginId)
+
+    useEffect(()=>{
+        const pid = rh?.pState?.pluginId
+        if(!pid){
+            if(fData && rh){
+                rh.updatePState({
+                    pluginId: fData?.allMetaInfo[0]?.id
+                })
+            }
+        }
+    }, [rh?.pState?.pluginId, fData])
 
     const md = useMDParams()
     const [refreshCtn, setRefreshCtn] = useState(0)

@@ -76,7 +76,7 @@ export default () => {
                         onLoading(false)
                     }
                 }}
-                loading={addFolderItemRes.isFetching || folderRes.isLoading || folderItemsRes.isLoading}
+                loading={loading || favFoldersItemDeleteRes.isFetching || addFolderItemRes.isFetching || folderRes.isLoading || folderItemsRes.isLoading}
             >
                 <IconBookmark style={{ width: rem(16), height: rem(16) }} />
             </ActionIcon>

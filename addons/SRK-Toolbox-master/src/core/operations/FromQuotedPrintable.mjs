@@ -1,0 +1,71 @@
+/**
+ * Some parts taken from mimelib (http://github.com/andris9/mimelib)
+ * @author Andris Reinman
+ * @license MIT
+ *
+ * @author n1474335 [n1474335@gmail.com]
+ * @copyright Crown Copyright 2016
+ * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
+ */
+
+import Operation from "../Operation.mjs";
+
+/**
+ * From Quoted Printable operation
+ */
+class FromQuotedPrintable extends Operation {
+
+    /**
+     * FromQuotedPrintable constructor
+     */
+    constructor() {
+        super();
+
+        this.name = "QP解码";
+        this.module = "Default";
+        this.description = "把QP编码的字符还原。<br><br>例：QP编码的字符串 <code>hello=20world</code> 解码为 <code>hello world</code>";
+        this.infoURL = "https://wikipedia.org/wiki/Quoted-printable";
+        this.inputType = "string";
+        this.outputType = "byteArray";
+        this.args = [];
+        this.checks = [
+            {
+                pattern: "^[\\x21-\\x3d\\x3f-\\x7e \\t]{0,76}(?:=[\\da-f]{2}|=\\r?\\n)(?:[\\x21-\\x3d\\x3f-\\x7e \\t]|=[\\da-f]{2}|=\\r?\\n)*$",
+                flags: "i",
+                args: []
+            },
+        ];
+    }
+
+    /**
+     * @param {string} input
+     * @param {Object[]} args
+     * @returns {byteArray}
+     */
+    run(input, args) {
+        const str = input.replace(/=(?:\r?\n|$)/g, "");
+
+        const encodedBytesCount = (str.match(/=[\da-fA-F]{2}/g) || []).length,
+            bufferLength = str.length - encodedBytesCount * 2,
+            buffer = new Array(bufferLength);
+        let chr, hex,
+            bufferPos = 0;
+
+        for (let i = 0, len = str.length; i < len; i++) {
+            chr = str.charAt(i);
+            if (chr === "=" && (hex = str.substr(i + 1, 2)) && /[\da-fA-F]{2}/.test(hex)) {
+                buffer[bufferPos++] = parseInt(hex, 16);
+                i += 2;
+                continue;
+            }
+            buffer[bufferPos++] = chr.charCodeAt(0);
+        }
+
+        return buffer;
+    }
+
+}
+
+export default FromQuotedPrintable;

@@ -224,8 +224,17 @@ export class ExtensionRoute implements Routes {
         MiaodaEntireRunStatus[findItem.id] = MiaodaEntireRunStatus[findItem.id] || fn_getInit();
         const tItem = MiaodaEntireRunStatus[findItem.id];
         const cwd = findItem.cwd || path.join(currentProjectRoot, findItem.id);
-        const setup_logs = path.join(cwd, 'setup.log');
-        const run_logs = path.join(cwd, 'run.log');
+        const setup_logs = path.join(__dirname, findItem.id + '-setup.log');
+        const run_logs = path.join(__dirname, findItem.id + '-run.log');
+        if(!fs.existsSync(setup_logs)){
+          fs.writeFileSync(setup_logs, '');
+        }
+        if(!fs.existsSync(run_logs)){
+          fs.writeFileSync(run_logs, '');
+        }
+        logger.info('cwd: ' + cwd);
+        logger.info('setup_logs: ' + setup_logs);
+        logger.info('run_logs: ' + run_logs);
         switch (type) {
           case 'setup':
             if (tItem.killSetupProcess) {
@@ -240,15 +249,14 @@ export class ExtensionRoute implements Routes {
               fs.appendFileSync(setup_logs, msg.toString() + '\n');
             });
             tItem.killSetupProcess = () => {
-              kill_process(e)
+              kill_process(e);
             };
-            
+
             sendRes(res, {
               data: 1,
             });
             break;
           case 'start-service':
-            
             if (tItem.killServiceProcess) {
               tItem.killServiceProcess();
             }
@@ -263,7 +271,7 @@ export class ExtensionRoute implements Routes {
             tItem.killServiceProcess = () => {
               kill_process(e2);
             };
-            
+
             sendRes(res, {
               data: 1,
             });

@@ -1,0 +1,6 @@
+build/prod/BundleAnalyzerReport.html
+build/prod/SRK_Toolbox*.html
+node_modules
+.github
+src
+tests
