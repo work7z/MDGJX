@@ -7,28 +7,6 @@ export default () => {
 
     return (
         <>
-
-            <Affix position={{ bottom: 5, right: 5 }}>
-                <Tooltip label="加入收藏夹">
-                    <ActionIcon
-                        color='green'
-                        size='md'
-                        variant="light"
-                    >
-                        <IconBookmark style={{ width: rem(16), height: rem(16) }} />
-                    </ActionIcon>
-                </Tooltip> 
-                
-                {/* <Button
-                // color="teal"
-                    color='green'
-                    // variant="gradient"
-                    leftSection={<IconBookmark style={{ width: rem(16), height: rem(16) }} />}
-                    onClick={() => scrollTo({ y: 0 })}
-                >
-                </Button> */}
-            </Affix>
-
             <Affix position={{ bottom: 45, right: 45 }}>
                 <Transition transition="slide-up" mounted={scroll.y > 0}>
                     {(transitionStyles) => (

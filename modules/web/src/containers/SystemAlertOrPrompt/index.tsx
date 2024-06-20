@@ -8,6 +8,7 @@ import exportUtils from "@/utils/ExportUtils"
 import { Modal, TextInput } from "@mantine/core"
 import { useHistory } from "react-router"
 import { Toaster } from "sonner"
+import FavButton from "../Layout/FavButton"
 
 export default () => {
     const hist = useHistory()
@@ -16,6 +17,7 @@ export default () => {
     ])
     return <>
         <BackToTop />
+        <FavButton/>
         <Toaster position="top-center" richColors />
         <Modal opened={showLoginModal} onClose={() => {
             FN_GetDispatch()(
