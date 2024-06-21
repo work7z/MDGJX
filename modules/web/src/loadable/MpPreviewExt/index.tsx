@@ -87,6 +87,10 @@ export default () => {
                 label: '初始化',
                 color: 'grape',
                 onclick: async () => {
+                    AlertUtils.alertWarn('初始化操作不支持在页面操作，请直接到插件下执行初始化操作。')
+                    if(true){
+                        return;
+                    }
                     AlertUtils.alertInfo('操作中')
                     if (!rh?.pState?.pluginId) {
                         AlertUtils.alertErr('请先选择插件')
@@ -150,7 +154,7 @@ export default () => {
                             <Tabs.Tab value="config" leftSection={<IconInfoCircle style={iconStyle} />}>
                                 插件配置
                             </Tabs.Tab>
-                            <Tabs.Tab value="messages" leftSection={<IconMessage style={iconStyle} />}>
+                            <Tabs.Tab value="setup" leftSection={<IconMessage style={iconStyle} />}>
                                 初始化日志
                             </Tabs.Tab>
                             <Tabs.Tab value="settings" leftSection={<IconMessage style={iconStyle} />}>
@@ -162,8 +166,8 @@ export default () => {
                             <iframe key={'m' + refreshCtn} src={configItem?.development?.entryLink} className="border-[1px] border-gray-300 mt-2 outline-none m-0 w-full h-[calc(100vh-200px)]"/>
                         </Tabs.Panel>
 
-                        <Tabs.Panel value="messages">
-                            初始化界面
+                        <Tabs.Panel value="setup">
+                            目前，初始化操作不支持在页面显示，请直接到插件下执行初始化操作。
                         </Tabs.Panel>
 
                         <Tabs.Panel value="config">

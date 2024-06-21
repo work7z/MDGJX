@@ -25,13 +25,14 @@
 
 
 ```
-docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.miaoda-docker:/root/.miaoda -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
 ```
 
 **NOTE**:
 
 1. 默认端口设置为39899，您可以根据需要进行调整。
-2. 秒达工具箱将始终自动升级到最新版本，让您可以享受最新的功能和错误修复。
+2. 当有新版本更新时，请手动拉取最新Docker镜像。为避免插件缓存数据丢失，建议保留mountpoint的设置。
+
 
 **Docker Images:**
 
