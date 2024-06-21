@@ -54,6 +54,7 @@ export default function GetInTouchSimple() {
                 <div className='mt-10' >
                     <Title order={5}>软件迭代历程</Title>
                     <ul className='list-disc'>
+                        <li>Work7zCentre - 2019年11月</li>
                         <li>GUtils - 2020年1月</li>
                         <li>CodeGen工具箱 - 2022年3月</li>
                         <li>LafTools工具箱 - 2023年10月</li>

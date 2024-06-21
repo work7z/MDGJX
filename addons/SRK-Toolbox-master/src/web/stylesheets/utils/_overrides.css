@@ -1,0 +1,257 @@
+/**
+ * Overrides for vendor styles
+ *
+ * @author n1474335 [n1474335@gmail.com]
+ * @copyright Crown Copyright 2017
+ * @license Apache-2.0
+ */
+
+/* Bootstrap */
+
+/* fallback */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../static/fonts/MaterialIcons-Regular.ttf") format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+
+button,
+a:focus {
+    outline: none;
+}
+
+.btn.btn-raised.btn-secondary {
+    color: var(--btn-default-font-colour);
+    background-color: var(--btn-default-bg-colour);
+    border-color: var(--btn-default-border-colour);
+}
+
+.btn.btn-raised.btn-secondary:hover,
+.btn.btn-raised.btn-secondary:active,
+.btn.btn-raised.btn-secondary:hover:active {
+    color: var(--btn-default-hover-font-colour);
+    background-color: var(--btn-default-hover-bg-colour);
+    border-color: var(--btn-default-hover-border-colour);
+}
+
+.btn.btn-raised.btn-secondary:focus {
+    color: var(--btn-default-font-colour);
+    background-color: var(--btn-default-bg-colour);
+    border-color: var(--btn-default-hover-border-colour);
+}
+
+.btn.btn-raised.btn-secondary[disabled]:hover {
+    background-color: var(--primary-background-colour);
+    border-color: var(--primary-border-colour);
+}
+
+.btn.btn-raised.btn-success {
+    color: var(--btn-success-font-colour);
+    background-color: var(--btn-success-bg-colour);
+    border-color: var(--btn-success-border-colour);
+}
+
+.btn.btn-raised.btn-success:hover,
+.btn.btn-raised.btn-success:active,
+.btn.btn-raised.btn-success:focus,
+.btn.btn-raised.btn-success:hover:active {
+    color: var(--btn-success-hover-font-colour);
+    background-color: var(--btn-success-hover-bg-colour);
+    border-color: var(--btn-success-hover-border-colour);
+}
+
+select.form-control,
+select.form-control:focus {
+    background-color: var(--primary-background-colour) !important;
+}
+
+select.form-control:focus {
+    transition: none !important;
+}
+
+select.form-control:not([size]):not([multiple]),
+select.custom-file-control:not([size]):not([multiple]) {
+    height: unset !important;
+}
+
+.checkbox label,
+.checkbox-inline,
+.is-focused .checkbox-inline,
+.is-focused .checkbox-inline:hover,
+[class^="bmd-label"],
+.form-control,
+.is-focused .form-control {
+    color: var(--primary-font-colour);
+}
+
+.form-control,
+.is-focused .form-control {
+    background-image:
+        linear-gradient(to top, var(--input-highlight-colour) 2px, rgba(0, 0, 0, 0) 2px),
+        linear-gradient(to top, var(--primary-border-colour) 1px, rgba(0, 0, 0, 0) 1px);
+}
+
+code {
+    border: 0;
+    white-space: pre-wrap;
+    font-family: var(--fixed-width-font-family);
+    background-color: var(--code-background);
+    color: var(--code-font-colour);
+}
+
+pre {
+    border-radius: 0 !important;
+    background-color: var(--secondary-background-colour);
+    border-color: var(--secondary-border-colour);
+    color: var(--fixed-width-font-colour);
+}
+
+blockquote {
+    font-size: inherit;
+    border-left-color: var(--secondary-border-colour);
+}
+
+blockquote a {
+    cursor: pointer;
+}
+
+optgroup {
+    font-weight: bold;
+}
+
+.panel-body:before,
+.panel-body:after {
+    content: "";
+}
+
+.table-nonfluid {
+    width: auto !important;
+}
+
+.table,
+.table-hover tbody tr:hover {
+    color: var(--primary-font-colour);
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid var(--table-border-colour);
+}
+
+.popover {
+    background-color: var(--popover-background);
+    border-color: var(--popover-border-colour);
+}
+
+.popover-body {
+    max-height: 95vh;
+    overflow-y: auto;
+    color: var(--primary-font-colour);
+}
+
+.bs-popover-right>.arrow {
+    border-right-color: var(--popover-border-colour);
+}
+
+.bs-popover-right>.arrow:after {
+    border-right-color: var(--popover-background);
+}
+
+.nav-tabs .nav-link {
+    color: var(--subtext-font-colour);
+}
+
+.nav-tabs>li>a.nav-link.active,
+.nav-tabs>li>a.nav-link.active:focus,
+.nav-tabs>li>a.nav-link.active:hover {
+    background-color: var(--secondary-background-colour);
+    border-color: var(--secondary-border-colour);
+    border-bottom-color: transparent;
+    color: var(--primary-font-colour);
+}
+
+.nav-tabs {
+    border-color: var(--primary-border-colour);
+}
+
+.nav a.nav-link:focus,
+.nav a.nav-link:hover {
+    background-color: var(--secondary-border-colour);
+}
+
+.nav-tabs a.nav-link:hover {
+    border-color: var(--secondary-border-colour) var(--secondary-border-colour) var(--primary-border-colour);
+}
+
+.dropdown-menu {
+    background-color: var(--primary-background-colour);
+}
+
+.dropdown-menu a {
+    color: var(--primary-font-colour);
+}
+
+.dropdown-menu a:focus,
+.dropdown-menu a:hover {
+    background-color: var(--secondary-background-colour);
+    color: var(--primary-font-colour);
+}
+
+.input-group-addon:not(:first-child):not(:last-child) {
+    border-left: 0;
+    border-right: 0;
+}
+
+.input-group-btn:first-child>.btn {
+    border-right: 0;
+}
+
+
+/* Sortable */
+
+.sortable-ghost {
+    opacity: 0.6;
+}
+
+
+/* Bootstrap Colorpicker */
+
+.colorpicker-element {
+    float: left;
+    margin-right: 15px;
+}
+
+.colorpicker-color,
+.colorpicker-color div {
+    height: 100px;
+}
+
+
+/* CodeMirror */
+
+.ͼ2 .cm-specialChar,
+.cm-specialChar {
+    color: red;
+}

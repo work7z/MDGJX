@@ -36,6 +36,7 @@ import ALL_NOCYCLE from "./nocycle";
 import StateSlice from "./reducers/stateSlice";
 import ChatSlice from "./reducers/chatSlice";
 import localApiSlice from "./reducers/localApiSlice";
+import collectionSlice from "./reducers/collectionSlice";
 
 export type StReducer = ReturnType<typeof StateSlice.reducer>;
 const rootReducer = combineReducers({
@@ -51,6 +52,7 @@ const rootReducer = combineReducers({
     api: apiSlice.reducer,
     localApi: localApiSlice.reducer,
     settings: settingsSlice.reducer,
+    collection: collectionSlice.reducer,
     memory: MemorySlice.reducer,
     users: UsersSlice.reducer,
     bigtext: BigTextSlice.reducer
@@ -62,7 +64,7 @@ export const persistedReducer = persistReducer<RootState>({
     key: 'root',
     storage,
     stateReconciler: autoMergeLevel2,
-    whitelist: ['settings', 'users',]
+    whitelist: ['settings', 'users','collection']
 }, rootReducer)
 
 

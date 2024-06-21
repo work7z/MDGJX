@@ -51,7 +51,7 @@ export type SystemRefresh = {
 export type TLNRequest = {
   text: string;
   type: string;
-  id:string
+  id: string
   sourceLang: string;
   targetLang: string;
   reservedWords: string;
@@ -120,21 +120,45 @@ export type SysConfChangeLogResponse = {
   timestamp: string;
   updates: CommonVerDetail[];
 };
-export type SysConfGeneralStaticResponse= {
+export type SysConfGeneralStaticResponse = {
   data: any
   timestamp: string;
 };
 
-  type NewRouterReq = {
-    selectedPlan: string;
-    planCount: number;
-  };
-  type NewRouterRes = {
-    qrcode: string;
-    total: number;
-    outTradeNo: string;
-    description: string;
-  };
+
+export class FavouriteFolder {
+  declare id?: number;
+  declare userId: number;
+  declare name: string;
+  declare remarks: string;
+  declare createdAt: Date | null;
+  declare updatedAt: Date | null;
+  declare deleteAt: Date | null;
+}
+
+export class FavouriteFolderItem {
+  declare id?: number;
+  declare userId: number;
+  declare folderId: number;
+  declare name: string;
+  declare url: string;
+  declare remarks: string;
+  declare type: string;
+  declare createdAt: Date | null;
+  declare updatedAt: Date | null;
+  declare deleteAt: Date | null;
+}
+
+type NewRouterReq = {
+  selectedPlan: string;
+  planCount: number;
+};
+type NewRouterRes = {
+  qrcode: string;
+  total: number;
+  outTradeNo: string;
+  description: string;
+};
 
 
 export class S2UserWxPayRecord {
@@ -150,9 +174,9 @@ export class S2UserWxPayRecord {
 }
 
 
-export const msg_showNetworkWithDebounce  = _.throttle(()=>{
+export const msg_showNetworkWithDebounce = _.throttle(() => {
   AlertUtils.alertErr('抱歉，网络不稳定，请稍后重试')
-},10*1000)
+}, 10 * 1000)
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
@@ -171,11 +195,11 @@ export const apiSlice = createApi({
     },
     validateStatus: (response, result: AsyncCreateResponse<any> | null) => {
       let errorHandler = () => {
-        const finalResult: string | null = result && result.message ? result.message : result && result.error ? result.error :null
-        if(!finalResult){
+        const finalResult: string | null = result && result.message ? result.message : result && result.error ? result.error : null
+        if (!finalResult) {
           // "抱歉，网络不稳定，请稍后重试"
           msg_showNetworkWithDebounce()
-        }else{
+        } else {
           AlertUtils.alertErr(finalResult)
         }
       }
@@ -225,12 +249,12 @@ export const apiSlice = createApi({
     }),
     // sysconf 
     getSysConfWithStaticData: build.query<AsyncCreateResponse<SysConfGeneralStaticResponse>, {
-      type:string
+      type: string
     }>({
       query: (params) => {
         return {
           params,
-          url: "/sysconf/"+params.type,
+          url: "/sysconf/" + params.type,
           method: "GET",
         };
       },
@@ -246,7 +270,7 @@ export const apiSlice = createApi({
     }),
     wxpayVerfiyPay: build.query<AsyncCreateResponse<{
       trade_state: string,
-      trade_state_desc:string
+      trade_state_desc: string
     }>, {
       outTradeNo: string
     }>({
@@ -338,7 +362,8 @@ export const apiSlice = createApi({
       },
     }),
     enableGiftCard: build.query<AsyncCreateResponse<{}>, {
-      giftCardCode: string}>({
+      giftCardCode: string
+    }>({
       query: (obj) => {
         return {
           params: obj,
@@ -397,6 +422,74 @@ export const apiSlice = createApi({
         };
       },
     }),
+    // add folders
+    favFoldersGet: build.query<AsyncCreateResponse<FavouriteFolder[]>, {}>({
+      query: (obj) => {
+        return {
+          method: "GET",
+          url: (
+            "/fav/folders"
+          ),
+        };
+      },
+    }),
+
+    favFoldersItemsGet: build.query<AsyncCreateResponse<FavouriteFolderItem[]>, {}>({
+      query: (obj) => {
+        return {
+          method: "GET",
+          url: (
+            "/fav/folderitems"
+          ),
+        };
+      },
+    }),
+
+    favFoldersAdd: build.query<AsyncCreateResponse<{}>, {
+      name: string,
+      remarks: string
+    }>({
+      query: (obj) => {
+        return {
+          body: obj,
+          method: "POST",
+          url: (
+            "/fav/folder-add"
+          ),
+        };
+      },
+    }),
+    favFoldersItemAdd: build.query<AsyncCreateResponse<{}>, {
+      name: string,
+      remarks: string,
+      folderId: number,
+      url: string,
+      type: string
+    }>({
+      query: (obj) => {
+        return {
+          body: obj,
+          method: "POST",
+          url: (
+            "/fav/folderitem-add"
+          ),
+        };
+      },
+    }),
+    favFoldersItemDelete: build.query<AsyncCreateResponse<{}>, {
+      id: string
+    }>({
+      query: (obj) => {
+        return {
+          body: obj,
+          method: "POST",
+          url: (
+            "/fav/folderitem-delete"
+          ),
+        };
+      },
+    }),
+
 
   }),
 });

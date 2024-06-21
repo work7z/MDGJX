@@ -14,6 +14,9 @@ const initialState = {
   darkMode: false,
   hideLeftMenu: false,
   currentNavTabId: "Home",
+  entryHottestCountMap: {
+    'Home': 0,
+  },
 };
 
 type SettingsState = typeof initialState;
@@ -25,6 +28,11 @@ const settingsSlice = createSlice({
     updateOneOfParamState: (state, action: PayloadAction<Partial<SettingsState>>) => {
       _.merge(state, action.payload)
     },
+    countDownPageWeight: (state,action:PayloadAction<{
+      id: string
+    }>)=>{
+      state.entryHottestCountMap[action.payload.id] = (state.entryHottestCountMap[action.payload.id] || 0) + 1
+    }
   },
 });
 

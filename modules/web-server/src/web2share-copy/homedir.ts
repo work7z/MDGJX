@@ -17,7 +17,7 @@ export let getUserHomeDir: () => string = () => {
 };
 
 export let getLafToolsDataDir = (): string => {
-  let n = path.join(userHome, isTestEnv() ? '.test-mdgjx' : isDevEnv() ? '.dev-mdgjx' : '.mdgjx');
+  let n = path.join(userHome, isTestEnv() ? '.test-mdgjx' : isDevEnv() ? '.dev-miaoda' : ".miaoda");
   return fsutils.mkdir(n);
 };
 
@@ -29,6 +29,6 @@ export let getLafToolsExtDir = (): string => {
       return path.join(process.env.MDGJX_EXT_ROOT,'extensions');
     }
   }
-  let n = path.join(userHome, isTestEnv() ? '.test-mdgjx-extensions' : isDevEnv() ? '.dev-mdgjx-extensions' : '.mdgjx-extensions');
+  let n = path.join(userHome, isTestEnv() ? '.test-mdgjx-extensions' : isDevEnv() ? '.dev-miaoda-extensions' : '.mdgjx-extensions');
   return fsutils.mkdir(n);
 };

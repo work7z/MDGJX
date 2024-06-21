@@ -40,9 +40,9 @@ export const toolsNavInfo: ToolNavInfoType[] = [
             },
             {
                 isNew: false,
-                name: '日期时间转换器',
+                name: '日期时间戳转换器',
                 path: '/date-converter',
-                description: '将日期和时间转换为各种不同的格式',
+                description: '将日期和时间转换为各种不同的格式，包括时间戳、年月日等格式的转换',
                 keywords: [
                     '日期',
                     '时间',
@@ -243,7 +243,8 @@ export const toolsNavInfo: ToolNavInfoType[] = [
                 isNew: false,
                 name: 'Text 转 Unicode',
                 path: '/text-to-unicode',
-                description: 'tools.text-to-unicode.description',
+                // description: 'tools.text-to-unicode.description',
+                description: '将文本转换为 Unicode 编码',
                 keywords: ['text', 'to', 'unicode'],
                 icon: { name: 'TextWrap' },
                 createdAt: '2024-01-31T00:00:00.000Z',

@@ -19,7 +19,7 @@ export let getUserHomeDir: () => string = () => {
 export let getLafToolsDataDir = (): string => {
   let n = path.join(
     userHome,
-    isTestEnv() ? ".test-mdgjx" : isDevEnv() ? ".dev-mdgjx" : ".mdgjx",
+    isTestEnv() ? ".test-mdgjx" : isDevEnv() ? ".dev-miaoda" : ".miaoda",
   );
   return fsutils.mkdir(n);
 };

@@ -24,7 +24,8 @@ function toggleFavorite(event: MouseEvent) {
 </script>
 
 <template>
-  <c-tooltip :tooltip="isFavorite ? $t('favoriteButton.remove') : $t('favoriteButton.add') ">
+  <span></span>
+  <!-- <c-tooltip :tooltip="isFavorite ? $t('favoriteButton.remove') : $t('favoriteButton.add') ">
     <c-button
       variant="text"
       circle
@@ -34,5 +35,5 @@ function toggleFavorite(event: MouseEvent) {
     >
       <icon-mdi-heart />
     </c-button>
-  </c-tooltip>
+  </c-tooltip> -->
 </template>

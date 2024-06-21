@@ -1,0 +1,40 @@
+/**
+ * CyberChef styles
+ *
+ * @author n1474335 [n1474335@gmail.com]
+ * @copyright Crown Copyright 2017
+ * @license Apache-2.0
+ */
+
+/* Themes */
+@import "./themes/_classic.css";
+@import "./themes/_dark.css";
+@import "./themes/_geocities.css";
+@import "./themes/_solarizedDark.css";
+@import "./themes/_solarizedLight.css";
+
+/* Utilities */
+@import "./utils/_overrides.css";
+@import "./utils/_general.css";
+
+/* Preloader styles */
+@import "./preloader.css";
+
+/* Components */
+@import "./components/_button.css";
+@import "./components/_list.css";
+@import "./components/_operation.css";
+@import "./components/_pane.css";
+
+/* Layout */
+@import "./layout/_banner.css";
+@import "./layout/_controls.css";
+@import "./layout/_io.css";
+@import "./layout/_modals.css";
+@import "./layout/_operations.css";
+@import "./layout/_recipe.css";
+@import "./layout/_structure.css";
+
+/* Operations */
+@import "./operations/diff.css";
+@import "./operations/json.css";

@@ -42,7 +42,9 @@ export default () => {
             let existOrNot = false;
             if (x.keywords) {
                 x.keywords.forEach(y => {
-                    if (y.includes(lowerIpt)) {
+                    if (y.includes(lowerIpt)
+                     || py.convertToPinyin(y).includes(lowerIpt)
+                    ) {
                         existOrNot = true
                     }
                 })

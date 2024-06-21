@@ -180,20 +180,20 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
         ]
     },
     // TODO: 后面记得显示出来
-    // {
-    //     id: 'collections',
-    //     icon: IconBookmarks,
-    //     defaultHref: '/collections/index',
-    //     label: '收藏夹',
-    //     children: [
-    //         {
-    //             name: '首页',
-    //             id: 'index',
-    //             disableFooter: true,
-    //             bodyFn: () => import('./loadable/NotOK/index.tsx')
-    //         },
-    //     ]
-    // },
+    {
+        id: 'collections',
+        icon: IconBookmarks,
+        defaultHref: '/collections/index',
+        label: '收藏夹',
+        children: [
+            {
+                name: '云收藏夹',
+                id: 'index',
+                disableFooter: true,
+                bodyFn: () => import('./loadable/CloudFavourite/index.tsx')
+            },
+        ]
+    },
     {
         id: 'marketplace',
         defaultHref: '/marketplace/index',

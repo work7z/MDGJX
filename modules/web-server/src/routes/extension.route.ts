@@ -11,6 +11,8 @@ import fs from 'fs';
 import { logger } from '@/utils/logger';
 import dayjs from 'dayjs';
 import { MiaodaBasicConfig } from '../m-types-copy/base/m-types-main';
+import { asyncHandler } from '@/app';
+import { ChildProcess } from 'child_process';
 
 const pinyin = require('tiny-pinyin');
 const currentProjectRoot = getLafToolsExtDir();
@@ -42,13 +44,13 @@ export const getExtMode = (): ExtModeSt => {
   };
 };
 
-export const getAllExtMetaInfo = (
-  req: ExtMetaSearchReq,
-  filterWhileSearchingInExtDir?: (extDir: string) => boolean
-): ExtMetaInfo => {
+export const getAllExtMetaInfo = (req: ExtMetaSearchReq, filterWhileSearchingInExtDir?: (extDir: string) => boolean): ExtMetaInfo => {
   const projectRoots = shelljs.ls(currentProjectRoot);
   let results: MiaodaConfig[] = [];
   for (let eachFile of projectRoots) {
+    if (filterWhileSearchingInExtDir && !filterWhileSearchingInExtDir(eachFile)) {
+      continue;
+    }
     logger.info('loading ext: ' + eachFile);
     const miaodaJSON = path.join(currentProjectRoot, eachFile, 'miaoda-dist.json');
     if (fs.existsSync(miaodaJSON)) {
@@ -105,6 +107,32 @@ export const checkIfCurrentEnvPermitHarmfulAPI = () => {
     throw new Error('not allowed');
   }
 };
+import os from 'os';
+export type ClosableFn = () => void;
+type ProcessStatus = 'running' | 'stopped' | 'error' | 'ready';
+export type MiaodaRunStatus = {
+  setupStatus: ProcessStatus;
+  serviceStatus: ProcessStatus;
+  killSetupProcess?: ClosableFn;
+  killServiceProcess?: ClosableFn;
+};
+
+const MiaodaEntireRunStatus: {
+  // id and run status
+  [key: string]: MiaodaRunStatus | null;
+} = {};
+
+export let kill_process = (child: ChildProcess) => {
+  var spawn = require('child_process').spawn;
+  // check if it's windows
+  const isWin = process.platform === 'win32';
+  if (!isWin) {
+    child.kill();
+    return;
+  } else {
+    spawn('taskkill', ['/pid', child.pid, '/f', '/t']);
+  }
+};
 
 export class ExtensionRoute implements Routes {
   public router = Router();
@@ -114,58 +142,156 @@ export class ExtensionRoute implements Routes {
   }
 
   private initializeRoutes() {
-    this.router.get('/ext/check-ext-mode', (req, res) => {
-      sendRes(res, {
-        data: getExtMode(),
-      });
-    });
-    this.router.get('/ext/get-ext-list', (req, res) => {
-      const allMetaInfo = getAllExtMetaInfo(req.query as ExtMetaSearchReq);
+    this.router.get(
+      '/ext/check-ext-mode',
+      asyncHandler((req, res) => {
+        sendRes(res, {
+          data: getExtMode(),
+        });
+      }),
+    );
+    this.router.get(
+      '/ext/get-ext-list',
+      asyncHandler((req, res) => {
+        const allMetaInfo = getAllExtMetaInfo(req.query as ExtMetaSearchReq, x => true);
 
-      sendRes(res, {
-        data: allMetaInfo,
-      });
-    });
+        sendRes(res, {
+          data: allMetaInfo,
+        });
+      }),
+    );
     // these are kind of harmful things, which should not be running in portal mode
     type HarmfulExtPostQuery = {
       id: string;
       type: 'get-all' | 'setup' | 'start-service' | 'stop-service';
     };
-    this.router.get('/ext/harmful/get-status', (req, res) => {
-      checkIfCurrentEnvPermitHarmfulAPI();
-      const query = req.query as HarmfulExtPostQuery;
-      const id = query.id;
-      const type = query.type; // init-log, service-log, config
-      if(!id || !type) {
-        throw new Error('missing id or type');
-      }
-      switch (type) {
-        case 'get-all':
-          sendRes(res, {
-            data: 1,
-          });
-        default:
-          throw new Error('not supported');
-      }
-    });
-    this.router.get('/ext/harmful/do-job', (req, res) => {
-      checkIfCurrentEnvPermitHarmfulAPI();
-      const query = req.query as HarmfulExtPostQuery;
-      const id = query.id;
-      const type = query.type; // init-log, service-log, config
-      if(!id || !type) {
-        throw new Error('missing id or type');
-      }
-      switch (type) {
-        case 'setup':
-        case 'start-service':
-        case 'stop-service':
-          sendRes(res, {
-            data: 1,
-          });
-        default:
-          throw new Error('not supported');
-      }
-    });
+    const fn_getInit = (): MiaodaRunStatus => {
+      return {
+        setupStatus: 'ready',
+        serviceStatus: 'ready',
+      };
+    };
+    this.router.get(
+      '/ext/harmful/get-status',
+      asyncHandler((req, res) => {
+        checkIfCurrentEnvPermitHarmfulAPI();
+        const query = req.query as HarmfulExtPostQuery;
+        const id = query.id;
+        const type = query.type; // init-log, service-log, config
+        if (!id || !type) {
+          throw new Error('missing id or type');
+        }
+        const allMetaInfo = getAllExtMetaInfo(req.query as ExtMetaSearchReq, x => {
+          return x == id;
+        });
+        const findItem = allMetaInfo.allMetaInfo.find(x => x.id == id);
+        if (!findItem) {
+          throw new Error('not found');
+        }
+        // default
+        MiaodaEntireRunStatus[findItem.id] = MiaodaEntireRunStatus[findItem.id] || fn_getInit();
+        switch (type) {
+          case 'get-all':
+            sendRes(res, {
+              data: {
+                config: findItem,
+                status: _.pickBy(MiaodaEntireRunStatus[findItem.id], x => !_.isFunction(x)),
+              },
+            });
+            break;
+          default:
+            throw new Error('not supported');
+        }
+      }),
+    );
+    this.router.get(
+      '/ext/harmful/do-job',
+      asyncHandler((req, res) => {
+        checkIfCurrentEnvPermitHarmfulAPI();
+        const query = req.query as HarmfulExtPostQuery;
+        const id = query.id;
+        const type = query.type; // init-log, service-log, config
+        if (!id || !type) {
+          throw new Error('missing id or type');
+        }
+        const allMetaInfo = getAllExtMetaInfo(req.query as ExtMetaSearchReq, x => {
+          return x == id;
+        });
+        const findItem = allMetaInfo.allMetaInfo.find(x => x.id == id);
+        if (!findItem) {
+          throw new Error('not found');
+        }
+        MiaodaEntireRunStatus[findItem.id] = MiaodaEntireRunStatus[findItem.id] || fn_getInit();
+        const tItem = MiaodaEntireRunStatus[findItem.id];
+        const cwd = findItem.cwd || path.join(currentProjectRoot, findItem.id);
+        const setup_logs = path.join(__dirname, findItem.id + '-setup.log');
+        const run_logs = path.join(__dirname, findItem.id + '-run.log');
+        if(!fs.existsSync(setup_logs)){
+          fs.writeFileSync(setup_logs, '');
+        }
+        if(!fs.existsSync(run_logs)){
+          fs.writeFileSync(run_logs, '');
+        }
+        logger.info('cwd: ' + cwd);
+        logger.info('setup_logs: ' + setup_logs);
+        logger.info('run_logs: ' + run_logs);
+        switch (type) {
+          case 'setup':
+            if (tItem.killSetupProcess) {
+              tItem.killSetupProcess();
+            }
+            const setup_devcmd = findItem.development.setup.dev;
+            const e = shelljs.exec(setup_devcmd, {
+              cwd: cwd,
+              async: true,
+          silent:true,              
+            });
+            // pipe to setup_logs
+            e.stdout.pipe(fs.createWriteStream(setup_logs));
+            e.stderr.pipe(fs.createWriteStream(setup_logs));
+            tItem.killSetupProcess = () => {
+              kill_process(e);
+            };
+
+            sendRes(res, {
+              data: 1,
+            });
+            break;
+          case 'start-service':
+            if (tItem.killServiceProcess) {
+              tItem.killServiceProcess();
+            }
+            const run_devcmd = findItem.development.run.dev;
+            const e2 = shelljs.exec(run_devcmd, {
+              cwd: cwd,
+              async: true,
+              silent: true,
+            });
+            e2.stdout.pipe(fs.createWriteStream(run_logs));
+            e2.stderr.pipe(fs.createWriteStream(run_logs));
+            e2.on('message', msg => {
+              fs.appendFileSync(run_logs, msg.toString() + '\n');
+            });
+            tItem.killServiceProcess = () => {
+              kill_process(e2);
+            };
+
+            sendRes(res, {
+              data: 1,
+            });
+            break;
+          case 'stop-service':
+            if (tItem.killServiceProcess) {
+              tItem.killServiceProcess();
+            }
+            sendRes(res, {
+              data: 1,
+            });
+            break;
+          default:
+            throw new Error('not supported');
+        }
+      }),
+    );
   }
 }
