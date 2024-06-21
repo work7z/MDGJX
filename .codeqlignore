@@ -7,8 +7,7 @@ addons/**/*
 addons/it-tools/\*\*/\*/_.vue
 addons/it-tools/src/App.vue
 addons/it-tools/src/*.vue
-modules/web-server/html
-modules/web-server/html/\*\*/\*/*.html
+modules/web-server/html/*.html
 modules/node/src/lib/prettier/**
 modules/node/src/lib/prettier/\*
 modules/web/src/lib/core
