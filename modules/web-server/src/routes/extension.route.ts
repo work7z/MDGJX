@@ -240,7 +240,7 @@ export class ExtensionRoute implements Routes {
             if (tItem.killSetupProcess) {
               tItem.killSetupProcess();
             }
-            const setup_devcmd = findItem.development.setup.dev;
+            const setup_devcmd = 'npm run md-dev-setup';
             const e = shelljs.exec(setup_devcmd, {
               cwd: cwd,
               async: true,
@@ -261,7 +261,7 @@ export class ExtensionRoute implements Routes {
             if (tItem.killServiceProcess) {
               tItem.killServiceProcess();
             }
-            const run_devcmd = findItem.development.run.dev;
+            const run_devcmd = 'npm run md-dev-run';
             const e2 = shelljs.exec(run_devcmd, {
               cwd: cwd,
               async: true,

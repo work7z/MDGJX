@@ -20,14 +20,6 @@ export type MiaodaBasicConfig = {
   description: string;
   development: {
     entryLink: string;
-    setup: {
-      dev: string;
-      prod: string;
-    };
-    run: {
-      dev: string;
-      prod: string;
-    };
   };
   keywords?: string[];
   include: string[];
