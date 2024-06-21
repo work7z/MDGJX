@@ -1,4 +1,13 @@
 
+export type MiaodaDyanmicMenuItem = {
+  id: string;
+  icon?: any;
+  name: string;
+  disableFooter?: boolean;
+  children?: MiaodaDyanmicMenuItem[];
+};
+
+
 export type MiaodaBasicConfig = {
   mode: string;
   disabled?: boolean;
@@ -20,10 +29,12 @@ export type MiaodaBasicConfig = {
       prod: string;
     };
   };
-  menus: string;
   keywords?: string[];
   include: string[];
+  menus: []
 };
+
+
 export const REGISTER_CONFIG_OBJ:MiaodaBasicConfig[] = []
 
 export const fn_miaoda_registerConfig = (config: MiaodaBasicConfig) => {
