@@ -244,7 +244,7 @@ export class ExtensionRoute implements Routes {
             const e = shelljs.exec(setup_devcmd, {
               cwd: cwd,
               async: true,
-          silent:true,              
+              silent:true,              
             });
             // pipe to setup_logs
             e.stdout.pipe(fs.createWriteStream(setup_logs));
