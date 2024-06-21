@@ -244,10 +244,11 @@ export class ExtensionRoute implements Routes {
             const e = shelljs.exec(setup_devcmd, {
               cwd: cwd,
               async: true,
+          silent:true,              
             });
-            e.on('message', msg => {
-              fs.appendFileSync(setup_logs, msg.toString() + '\n');
-            });
+            // pipe to setup_logs
+            e.stdout.pipe(fs.createWriteStream(setup_logs));
+            e.stderr.pipe(fs.createWriteStream(setup_logs));
             tItem.killSetupProcess = () => {
               kill_process(e);
             };
@@ -264,7 +265,10 @@ export class ExtensionRoute implements Routes {
             const e2 = shelljs.exec(run_devcmd, {
               cwd: cwd,
               async: true,
+              silent: true,
             });
+            e2.stdout.pipe(fs.createWriteStream(run_logs));
+            e2.stderr.pipe(fs.createWriteStream(run_logs));
             e2.on('message', msg => {
               fs.appendFileSync(run_logs, msg.toString() + '\n');
             });
