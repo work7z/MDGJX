@@ -212,10 +212,22 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
                 id: 'dev-centre',
                 children: [
                     {
-                        name: '插件预览',
+                        name: '本地插件预览',
                         id: 'installed-plugins',
                         disableFooter: true,
                         bodyFn: () => import('./loadable/MpPreviewExt/index.tsx')
+                    },
+                    {
+                        name: '在线插件预览',
+                        id: 'cloud-installed-plugins',
+                        disableFooter: true,
+                        bodyFn: () => import('./loadable/MpCloudExt/index.tsx')
+                    },
+                    {
+                        name: '开发设置',
+                        id: 'install-settings',
+                        disableFooter: true,
+                        bodyFn: () => import('./loadable/MpSettings/index.tsx')
                     },
                 ]
             },

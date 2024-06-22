@@ -25,6 +25,8 @@ const env = NODE_ENV || 'development';
 
 const port = process.env.PORT || (env == 'development' ? 3050 : 39899);
 let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
+let EXTSTATIC_SERVER = process.env.EXTSTATIC_SERVER || 'https://extstatic.mdgjx.com';
+
 import httpProxy from 'http-proxy';
 var proxyWS = httpProxy
   .createProxyServer({
@@ -38,9 +40,8 @@ var proxyWS = httpProxy
   });
 const launchTime = new Date();
 
-console.log('DIRECT_PROXY_SERVER: ' + DIRECT_PROXY_SERVER);
 
-const isDesktopMode = port + '' > '40000';
+export const isDesktopMode = port + '' > '40000';
 
 export class App {
   public app: express.Application;
@@ -72,6 +73,7 @@ export class App {
     logger.info(`=================================`);
     logger.info(`======= ENV: ${this.env} =======`);
     logger.info(`======= HOST: ${this.host} =======`);
+    logger.info(`======= EXTSTATIC_SERVER: ${EXTSTATIC_SERVER} =======`);
     logger.info(`======= DIRECT_PROXY_SERVER: ${DIRECT_PROXY_SERVER} =======`);
     logger.info(`🚀 App listening on the port http://localhost:${this.port}`);
     logger.info(`=================================`);
@@ -126,6 +128,25 @@ export class App {
       );
     }
 
+    // setup extstatic /ext-root
+    const extStaticArr = ['/ext-root'];
+    for (let i = 0; i < extStaticArr.length; i++) {
+      const prefix = extStaticArr[i];
+      app.use(
+        prefix,
+        proxy(EXTSTATIC_SERVER, {
+          proxyReqPathResolver: function (req) {
+            var parts = req.url.split('?');
+            var queryString = parts[1];
+            var updatedPath = parts[0];
+            return prefix + updatedPath + (queryString ? '?' + queryString : '');
+          },
+        }),
+      );
+    }
+
+
+
     // setup xtools
     let xToolsDir = path.join(__dirname, 'xtools');
     if (existsSync(xToolsDir)) {
@@ -175,6 +196,7 @@ export class App {
     routes.forEach(route => {
       this.app.use('/local', route.router);
     });
+
     this.app.use('/', (req, res) => {
       if (req.url == '/') {
         res.send({
