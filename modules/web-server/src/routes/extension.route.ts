@@ -16,6 +16,8 @@ import { ChildProcess } from 'child_process';
 import axios from 'axios';
 import { isBetaTestServerMode } from '@/env';
 import { CacheUtils } from '@/utils/CacheUtils';
+import { computeHash } from '@/utils/hash';
+import compressUtils from '@/utils/compressUtils';
 
 const pinyin = require('tiny-pinyin');
 const val_devonly_LafToolsExtDir = devonly_getLafToolsExtDir();
@@ -324,14 +326,14 @@ export class ExtensionRoute implements Routes {
               const outputTarGzFile = path.join(val_getLocalInstalledExtDir, fullId + '.tar.gz');
               // axios fs write
               refObj.message = '正在下载中.....  目标链接: ' + outputTarGzFile;
-              logfn()
+              logfn();
               if (alreadyExitNow()) {
                 return;
               }
               const raw_sha256val = await getExtStaticDataRemotely('/pkg-info/' + fullId + '.sha256');
-              const sha256val = _.chain(raw_sha256val).trim().split(' ').first().trim().value()
+              const sha256val = _.chain(raw_sha256val).trim().split(' ').first().trim().value();
               logger.info('sha256val: ' + sha256val);
-              refObj.message = '读取到SHA256摘要值: ' + sha256val
+              refObj.message = '读取到SHA256摘要值: ' + sha256val;
               logfn();
               await axios({
                 method: 'get',
@@ -345,15 +347,39 @@ export class ExtensionRoute implements Routes {
                   return;
                 }
                 response.data.pipe(fs.createWriteStream(outputTarGzFile));
-                response.data.on('end', () => {
-                  refObj.status = 'success';
-                  refObj.message = `写入本地文件完成，正在校验SHA256中...`;
-                  logfn()
-                  if (alreadyExitNow()) {
-                    return;
+                response.data.on('end', async () => {
+                  try {
+                    refObj.status = 'success';
+                    refObj.message = `写入本地文件完成，正在校验SHA256中...`;
+                    logfn();
+                    if (alreadyExitNow()) {
+                      return;
+                    }
+
+                    const actual_shasum = await computeHash(outputTarGzFile);
+                    if (!actual_shasum) {
+                      throw new Error('failed to compute hash');
+                    }
+                    if (_.trim(_.toLower(actual_shasum)) !== _.trim(_.toLower(sha256val))) {
+                      throw new Error('sha256 not matched');
+                    }
+                    // 开始解压
+                    const finalDir = path.join(val_getLocalInstalledExtDir, fullId);
+                    await compressUtils.decompress(outputTarGzFile, finalDir);
+                    // 解压成功，
+                    const finalDirmiaodDistFile = path.join(finalDir, filename_miaoda_dist_file);
+                    if (!fs.existsSync(finalDirmiaodDistFile)) {
+                      throw new Error('failed to find miaoda-dist.json');
+                    } else {
+                      // 成功
+                      refObj.status = 'done';
+                      refObj.message = '安装成功';
+                    }
+                  } catch (e) {
+                    refObj.status = 'error';
+                    refObj.message = '产生二级错误: ' + JSON.stringify(e);
+                    logfn();
                   }
-                  
-                  // start decompressing
                 });
               });
             } catch (e) {
