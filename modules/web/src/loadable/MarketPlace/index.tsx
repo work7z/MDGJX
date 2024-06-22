@@ -116,7 +116,7 @@ export default function () {
                                                     更新
                                                 </Button>:''}
                                                 <Button color="red" variant="light" size="compact-sm" radius="md">
-                                                    移除
+                                                    卸载
                                                 </Button>
                                             </> : <Button color="blue" size="compact-sm" radius="md">
                                                 安装

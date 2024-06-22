@@ -89,7 +89,10 @@ export const getAllExtMetaInfo = (req: ExtMetaSearchReq, filterWhileSearchingInE
   }
   // installed flag
   results = results.map(x => {
-    const fullId = x.post_fullId
+    const fullId = x.id+"@"+x.version
+    const specifialFolder = path.join(val_getLocalInstalledExtDir, fullId);
+    const miaodaDist = path.join(specifialFolder, 'miaoda-dist.json');
+    x.installed = fs.existsSync(miaodaDist);
     return x;
   });
   return {
