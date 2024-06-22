@@ -15,6 +15,7 @@ import { asyncHandler, getExtStaticServer } from '@/app';
 import { ChildProcess } from 'child_process';
 import axios from 'axios';
 import { isBetaTestServerMode } from '@/env';
+import { CacheUtils } from '@/utils/CacheUtils';
 
 const pinyin = require('tiny-pinyin');
 const val_devonly_LafToolsExtDir = devonly_getLafToolsExtDir();
@@ -56,19 +57,28 @@ const getExtStaticURL = (subPath: string): string => {
   return fullURL;
 };
 
+CacheUtils.enableInterval();
+const TIMEOUT_FOR_EXT_STATIC_RES = isDevEnv() ? 3000 : 1000 * 10; // 10 seconds
+
 export const getExtStaticDataRemotely = async (subPath: string): Promise<any> => {
   const fullURL = getExtStaticURL(subPath);
   try {
+    const prev = CacheUtils.get(fullURL);
+    if (prev) {
+      return prev;
+    }
+    logger.info('getting ' + fullURL);
     const r = await axios(fullURL);
     if (r.status !== 200) {
+      logger.error('failed to get ' + fullURL);
       throw new Error(`failed to get ${fullURL}`);
     }
-    if (!_.isString(r.data)) {
-      return r.data;
-    } else {
-      return _.trim(r.data);
-    }
+    logger.debug('got ' + fullURL + ', data: ' + r.data);
+    let finalData = _.isString(r.data) ? _.trim(r.data) : r.data;
+    CacheUtils.put(fullURL, finalData, TIMEOUT_FOR_EXT_STATIC_RES);
+    return finalData;
   } catch (e) {
+    logger.error('failed to get ' + fullURL + ', error: ' + e);
     throw new Error(`failed to get ${fullURL}, error: ${fullURL}`);
   }
 };
@@ -121,6 +131,7 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
   }
   tmp_results = [];
 
+  const allExtDir = shelljs.ls(val_getLocalInstalledExtDir);
   // filter now
   req.searchText = _.trim(req.searchText);
   if (req.searchText) {
@@ -135,6 +146,21 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
     const specifialFolder = path.join(val_getLocalInstalledExtDir, fullId);
     const miaodaDist = path.join(specifialFolder, filename_miaoda_dist_file);
     x.installed = fs.existsSync(miaodaDist);
+    // check if having exist extensions
+    if (!x.installed) {
+      if (allExtDir.length > 0) {
+        for (let eachExtDir of allExtDir) {
+          // is it folder
+          if (!fs.lstatSync(path.join(val_getLocalInstalledExtDir, eachExtDir)).isDirectory()) {
+            if (eachExtDir !== fullId && eachExtDir.indexOf(x.id) >= 0) {
+              x.hasNewVersion = true;
+              break;
+            }
+          }
+        }
+      }
+    }
+
     return x;
   });
   return {
@@ -160,17 +186,17 @@ export const preventEnvPortalModeRunCheck = () => {
   }
 };
 export type ClosableFn = () => void;
-type ProcessStatus = 'running' | 'stopped' | 'error' | 'ready';
-export type MiaodaRunStatus = {
-  setupStatus: ProcessStatus;
-  serviceStatus: ProcessStatus;
+type DevProcessStatus = 'running' | 'stopped' | 'error' | 'ready';
+export type DevRunStatus = {
+  setupStatus: DevProcessStatus;
+  serviceStatus: DevProcessStatus;
   killSetupProcess?: ClosableFn;
   killServiceProcess?: ClosableFn;
 };
 
 const MiaodaEntireRunStatus: {
   // id and run status
-  [key: string]: MiaodaRunStatus | null;
+  [key: string]: DevRunStatus | null;
 } = {};
 
 export let kill_process = (child: ChildProcess) => {
@@ -185,14 +211,14 @@ export let kill_process = (child: ChildProcess) => {
   }
 };
 
-type ProgressStatus = 'success' | 'running' | 'done' | 'error';
-type MiaodaProgressStatus = {
+type InstallProgressStatus = 'success' | 'running' | 'done' | 'error';
+type InstallProgressStatusObj = {
   runTS: string;
-  status: ProgressStatus;
+  status: InstallProgressStatus;
   message: string;
 };
 let MiaodaInstallAppProgressObj: {
-  [id: string]: MiaodaProgressStatus;
+  [id: string]: InstallProgressStatusObj;
 } = {
   //
 };
@@ -228,7 +254,7 @@ export class ExtensionRoute implements Routes {
       id: string;
       type: 'get-all' | 'setup' | 'start-service' | 'stop-service';
     };
-    const fn_getInit = (): MiaodaRunStatus => {
+    const fn_getInit = (): DevRunStatus => {
       return {
         setupStatus: 'ready',
         serviceStatus: 'ready',
@@ -239,7 +265,19 @@ export class ExtensionRoute implements Routes {
       '/ext/harmful/clean-ext',
       asyncHandler(async (req, res) => {
         preventEnvPortalModeRunCheck();
-        MiaodaInstallAppProgressObj = {};
+        // delete all keys in MiaodaInstallAppProgressObj
+        for (let eachKey in MiaodaInstallAppProgressObj) {
+          delete MiaodaInstallAppProgressObj[eachKey];
+        }
+        sendRes(res, { data: 1 });
+      }),
+    );
+
+    this.router.get(
+      '/ext/harmful/uninstall-ext',
+      asyncHandler(async (req, res) => {
+        preventEnvPortalModeRunCheck();
+        // TODO: uninstall-ext
         sendRes(res, { data: 1 });
       }),
     );
@@ -252,53 +290,64 @@ export class ExtensionRoute implements Routes {
         const reqQuery = req.query as {
           fullId: string;
         };
-        if (!reqQuery.fullId) {
+        const fullId = reqQuery.fullId;
+        if (!fullId) {
           throw new Error('missing extId');
         }
         (async () => {
-          if (MiaodaInstallAppProgressObj[reqQuery.fullId] ?? MiaodaInstallAppProgressObj[reqQuery.fullId].status == 'running') {
-            logger.info('already running for ' + reqQuery.fullId + ', therefore skip');
-            return;
-          }
-          const refObj: MiaodaProgressStatus = {
-            runTS: dayjs().format('YYYY-MM-DD HH:mm:ss'),
-            status: 'running',
-            message: '开始准备下载链接...',
-          };
-          let alreadyExitNow = (): boolean => {
-            if (MiaodaInstallAppProgressObj[reqQuery.fullId] == refObj) {
-              // still the same
-              return false;
-            } else {
-              return true;
-            }
-          };
-          MiaodaInstallAppProgressObj[reqQuery.fullId] = refObj;
           try {
-            if (alreadyExitNow()) {
+            if (MiaodaInstallAppProgressObj[fullId] || MiaodaInstallAppProgressObj[fullId].status == 'running') {
+              logger.info('already running for ' + fullId + ', therefore skip');
               return;
             }
-            const outputTarGzFile = path.join(val_getLocalInstalledExtDir, reqQuery.fullId + '.tar.gz');
-            // axios fs write
-            refObj.message = '正在下载中.....  目标链接: ' + outputTarGzFile;
-            if (alreadyExitNow()) {
-              return;
-            }
-            await axios({
-              method: 'get',
-              url: getExtStaticURL(`/pkg-repo/${reqQuery.fullId}.tar.gz`),
-              responseType: 'stream',
-            }).then(function (response) {
-              refObj.status = 'success'
-              refObj.message = `下载已完成，正在写入本地文件...`;
+            const refObj: InstallProgressStatusObj = {
+              runTS: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+              status: 'running',
+              message: '开始准备下载链接...',
+            };
+            MiaodaInstallAppProgressObj[fullId] = refObj;
+            let alreadyExitNow = (): boolean => {
+              if (MiaodaInstallAppProgressObj[fullId] == refObj) {
+                // still the same
+                return false;
+              } else {
+                return true;
+              }
+            };
+            try {
               if (alreadyExitNow()) {
                 return;
               }
-              response.data.pipe(fs.createWriteStream(outputTarGzFile));
-            });
+              const outputTarGzFile = path.join(val_getLocalInstalledExtDir, fullId + '.tar.gz');
+              // axios fs write
+              refObj.message = '正在下载中.....  目标链接: ' + outputTarGzFile;
+              if (alreadyExitNow()) {
+                return;
+              }
+              const md5val = await getExtStaticDataRemotely('/pkg-info/' + fullId + '.md5');
+              logger.info('md5val: ' + md5val);
+              await axios({
+                method: 'get',
+                url: getExtStaticURL(`/pkg-repo/${fullId}.tar.gz`),
+                responseType: 'stream',
+              }).then(function (response) {
+                refObj.status = 'running';
+                refObj.message = `下载已完成，正在写入本地文件...`;
+                if (alreadyExitNow()) {
+                  return;
+                }
+                response.data.pipe(fs.createWriteStream(outputTarGzFile));
+                response.data.on('end', () => {
+                  refObj.status = 'success';
+                  refObj.message = `写入本地文件完成，正在解压中...`;
+                });
+              });
+            } catch (e) {
+              refObj.status = 'error';
+              refObj.message = '产生错误: ' + JSON.stringify(e);
+            }
           } catch (e) {
-            refObj.status = 'error';
-            refObj.message = '产生错误: ' + JSON.stringify(e);
+            logger.error('error when installing: ' + e);
           }
         })();
         sendRes(res, {

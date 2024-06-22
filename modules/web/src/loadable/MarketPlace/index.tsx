@@ -14,11 +14,14 @@ import {
     LoadingOverlay,
     Button,
     ActionIcon,
+    Tooltip,
 } from '@mantine/core';
-import { IconGauge, IconUser, IconCookie, IconSearch, IconSquareDotFilled, IconTruckLoading, IconLoader, IconReload } from '@tabler/icons-react';
+import { IconGauge, IconUser, IconCookie, IconSearch, IconSquareDotFilled, IconTruckLoading, IconLoader, IconReload, IconZoomReset, IconClearAll, IconHelp } from '@tabler/icons-react';
 import classes from './FeaturesCards.module.css';
 import { Search } from "@blueprintjs/icons";
 import exportUtils from "@/utils/ExportUtils";
+import _ from "lodash";
+import { isPortalMode } from "@/utils/PortalUtils";
 
 
 export default function () {
@@ -41,18 +44,37 @@ export default function () {
         pollingInterval: 1000 * 60 * 10,
     })
 
+    const progressAllDataRes = localApiSlice.useExtHarmfulProgressAllDataQuery({}, {
+        pollingInterval: 2000,
+        skip: isPortalMode()
+    })
+    const [lazy_InstallExt, installExtRes] = localApiSlice.useLazyExtHarmfulInstallExtQuery()
+    const [lazy_cleanExt, cleanExtRes] = localApiSlice.useLazyExtHarmfulCleanExtQuery({})
+
     if (!rh) {
         return ''
     }
 
+    let hasAnyInstalling = false;
+
     const fData = extListRes?.data?.data
+    const statusData = progressAllDataRes.data?.data
+
+
+    _.every(fData?.allMetaInfo, (x) => {
+        if (statusData?.[x.post_fullId as string]?.status == 'running') {
+            hasAnyInstalling = true;
+            return false;
+        }
+        return true;
+    })
 
     return (
         <div className="bg-zinc-50 dark:bg-zinc-700 m-[-10px]  p-[10px]">
             <Container size="lg" py="xl" className="">
                 <Group justify="center">
                     <Badge variant="filled" size="lg">
-                        “超级插件市场”
+                        好用，就是这么简单！
                     </Badge>
                 </Group>
 
@@ -84,6 +106,12 @@ export default function () {
                     }}>
                         <IconReload stroke={1.5} />
                     </ActionIcon>
+                    {
+                        hasAnyInstalling ? <Button color='red' size='compact-sm' variant="light">
+                            取消安装
+                        </Button>
+                            : ''
+                    }
                     <div>
                         更新于: {fData?.lastUpdated}
                     </div>
@@ -96,6 +124,24 @@ export default function () {
                 <div className="  p-2 pt-1 mt-0">
                     {
                         fData?.allMetaInfo?.map(x => {
+                            const isItInstalling = cleanExtRes.isFetching || installExtRes.isFetching || statusData?.[x.post_fullId as string]?.status == 'running';
+                            const runMsg = statusData?.[x.post_fullId as string]?.message 
+                            
+                            ?
+                            statusData?.[x.post_fullId as string]?.message + ' ' + statusData?.[x.post_fullId as string]?.runTS:'点击以执行';
+                            let fn_installExt = () => {
+                                lazy_InstallExt({
+                                    fullId: x.post_fullId as string
+                                }).then(r => {
+                                    progressAllDataRes.refetch()
+                                })
+                            }
+                            let fn_upgradeExt = () => {
+                                //
+                            }
+                            let fn_uninstallExt = ()=>{
+                                //
+                            }
                             return <Card shadow="xs" withBorder className="w-[100%] sm:w-[29%] 2xl:w-[24%]    box-border mb-2 mr-2 inline-block  " >
                                 <div className="flex items-center mb-2  space-x-2">
                                     {/* {x.icon && x.icon.name && iconMapping[x.icon.name] && iconMapping[x.icon.name]() || <IconExchange />} */}
@@ -111,18 +157,30 @@ export default function () {
                                         <Badge color="yellow" variant="light" size='md'>{x.version}</Badge>
                                     </div>
                                     <div className="flex space-x-2">
-                                        {
-                                            x.installed ? <>
-                                                {x.hasNewVersion ? <Button color="green" size="compact-sm" radius="md">
-                                                    更新
-                                                </Button> : ''}
-                                                <Button color="red" variant="light" size="compact-sm" radius="md">
-                                                    卸载
+                                        <Tooltip  label={runMsg || ''} position="top">
+                                            {
+                                                x.installed ? <>
+                                                    {x.hasNewVersion ? <Button
+                                                        onClick={() => {
+                                                            fn_upgradeExt()
+                                                        }}
+                                                        loading={isItInstalling} color="green" size="compact-sm" radius="md">
+                                                        更新
+                                                    </Button> : ''}
+                                                    <Button onClick={() => {
+                                                        fn_uninstallExt()
+                                                    }} color="red" variant="light" size="compact-sm" radius="md">
+                                                        卸载
+                                                    </Button>
+                                                </> : <Button color="blue"
+                                                    onClick={() => {
+                                                        fn_installExt()
+                                                    }}
+                                                    loading={isItInstalling} size="compact-sm" radius="md">
+                                                    安装
                                                 </Button>
-                                            </> : <Button color="blue" size="compact-sm" radius="md">
-                                                安装
-                                            </Button>
-                                        }
+                                            }
+                                        </Tooltip>
                                     </div>
                                 </div>
                             </Card>

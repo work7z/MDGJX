@@ -26,8 +26,13 @@ export type ExtModeSt = {
   repoPath: string;
 }
 
+type InstallProgressStatus = 'success' | 'running' | 'done' | 'error';
+type InstallProgressStatusObj = {
+  runTS: string;
+  status: InstallProgressStatus;
+  message: string;
+};
 export type MiaodaExtraDevConfig = {
-  // post-process
   fuzzySearchStr?: string;
   installed?: boolean;
   hasNewVersion?: boolean;
@@ -48,10 +53,10 @@ type HarmfulExtPostQuery = {
   type: 'get-all' | 'setup' | 'start-service' | 'stop-service';
 };
 export type ClosableFn = () => void;
-type ProcessStatus = 'running' | 'stopped' | 'error' | 'ready';
-export type MiaodaRunStatus = {
-  setupStatus: ProcessStatus;
-  serviceStatus: ProcessStatus;
+type DevProcessStatus = 'running' | 'stopped' | 'error' | 'ready';
+export type MiaodaDevRunStatus = {
+  setupStatus: DevProcessStatus;
+  serviceStatus: DevProcessStatus;
   setupProcess?: ClosableFn;
   serviceProcess?: ClosableFn;
 };
@@ -125,10 +130,60 @@ export const localApiSlice = createApi({
         };
       },
     }),
+
+    extHarmfulInstallExt: build.query<
+      AsyncCreateResponse<{
+      }>,
+      {
+        fullId: string
+      }
+    >({
+      query: (b) => {
+        return {
+          params: b,
+          url: "/ext/harmful/install-ext",
+          method: "GET",
+        };
+      },
+    }),
+
+    extHarmfulProgressAllData: build.query<
+      AsyncCreateResponse<{
+        [id: string]: InstallProgressStatusObj;
+      }>,
+      {
+      }
+    >({
+      query: (b) => {
+        return {
+          params: b,
+          url: "/ext/harmful/get-ext-progress-all-data",
+          method: "GET",
+        };
+      },
+    }),
+
+    extHarmfulCleanExt: build.query<
+      AsyncCreateResponse<{
+      }>,
+      {
+        fullId: string
+      }
+    >({
+      query: (b) => {
+        return {
+          params: b,
+          url: "/ext/harmful/clean-ext",
+          method: "GET",
+        };
+      },
+    }),
+
+
     extHarmfulGetStatus: build.query<
       AsyncCreateResponse<{
         config: MiaodaBasicConfig,
-        status: MiaodaRunStatus
+        status: MiaodaDevRunStatus
       }>,
       HarmfulExtPostQuery
     >({
