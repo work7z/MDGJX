@@ -9,6 +9,10 @@
     "build": "swc src -d dist --source-maps --copy-files"
   },
   "dependencies": {
+        "decompress": "^4.2.1",
+    "decompress-targz": "^4.1.1",
+    "sha256-file": "^1.0.0",
+
     "axios": "^1.7.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",

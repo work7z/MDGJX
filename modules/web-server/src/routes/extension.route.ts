@@ -296,7 +296,7 @@ export class ExtensionRoute implements Routes {
         }
         (async () => {
           try {
-            if (MiaodaInstallAppProgressObj[fullId] || MiaodaInstallAppProgressObj[fullId].status == 'running') {
+            if (MiaodaInstallAppProgressObj[fullId] && MiaodaInstallAppProgressObj[fullId].status == 'running') {
               logger.info('already running for ' + fullId + ', therefore skip');
               return;
             }
@@ -314,6 +314,9 @@ export class ExtensionRoute implements Routes {
                 return true;
               }
             };
+            let logfn = () => {
+              logger.info('current progress: ' + JSON.stringify(refObj));
+            };
             try {
               if (alreadyExitNow()) {
                 return;
@@ -321,11 +324,15 @@ export class ExtensionRoute implements Routes {
               const outputTarGzFile = path.join(val_getLocalInstalledExtDir, fullId + '.tar.gz');
               // axios fs write
               refObj.message = '正在下载中.....  目标链接: ' + outputTarGzFile;
+              logfn()
               if (alreadyExitNow()) {
                 return;
               }
-              const md5val = await getExtStaticDataRemotely('/pkg-info/' + fullId + '.md5');
-              logger.info('md5val: ' + md5val);
+              const raw_sha256val = await getExtStaticDataRemotely('/pkg-info/' + fullId + '.sha256');
+              const sha256val = _.chain(raw_sha256val).trim().split(' ').first().trim().value()
+              logger.info('sha256val: ' + sha256val);
+              refObj.message = '读取到SHA256摘要值: ' + sha256val
+              logfn();
               await axios({
                 method: 'get',
                 url: getExtStaticURL(`/pkg-repo/${fullId}.tar.gz`),
@@ -333,18 +340,26 @@ export class ExtensionRoute implements Routes {
               }).then(function (response) {
                 refObj.status = 'running';
                 refObj.message = `下载已完成，正在写入本地文件...`;
+                logfn();
                 if (alreadyExitNow()) {
                   return;
                 }
                 response.data.pipe(fs.createWriteStream(outputTarGzFile));
                 response.data.on('end', () => {
                   refObj.status = 'success';
-                  refObj.message = `写入本地文件完成，正在解压中...`;
+                  refObj.message = `写入本地文件完成，正在校验SHA256中...`;
+                  logfn()
+                  if (alreadyExitNow()) {
+                    return;
+                  }
+                  
+                  // start decompressing
                 });
               });
             } catch (e) {
               refObj.status = 'error';
               refObj.message = '产生错误: ' + JSON.stringify(e);
+              logfn();
             }
           } catch (e) {
             logger.error('error when installing: ' + e);
