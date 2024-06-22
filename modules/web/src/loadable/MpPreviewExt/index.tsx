@@ -13,13 +13,13 @@ export default () => {
     const rh = exportUtils.register('mppreviewext', {
         getNotPersistedStateFn() {
             return {
-                searchText: ''
+                searchText: '',
+                pluginId: ''
             }
         },
         getPersistedStateFn() {
             return {
                 tabId: 'main',
-                pluginId: ''
             }
         }
     })
@@ -33,29 +33,29 @@ export default () => {
     })
     const [lazyExtHarmfulDoJob] = localApiSlice.useLazyExtHarmfulDoJobQuery({})
     const extGetStatusQueryRes = localApiSlice.useExtHarmfulGetStatusQuery({
-        id: rh?.pState?.pluginId || '',
+        id: rh?.npState?.pluginId || '',
         type: 'get-all',
     }, {
         refetchOnMountOrArgChange: true,
         pollingInterval: 1000 * 20,
-        skip: !rh?.pState?.pluginId
+        skip: !rh?.npState?.pluginId
     })
 
     const iconStyle = { width: rem(12), height: rem(12) };
 
     const fData = extListRes?.data?.data
-    const configItem = fData?.allMetaInfo?.find(x => x.id == rh?.pState?.pluginId)
+    const configItem = fData?.allMetaInfo?.find(x => x.id == rh?.npState?.pluginId)
 
     useEffect(()=>{
-        const pid = rh?.pState?.pluginId
+        const pid = rh?.npState?.pluginId
         if(!pid){
             if(fData && rh){
-                rh.updatePState({
+                rh.updateNonPState({
                     pluginId: fData?.allMetaInfo[0]?.id
                 })
             }
         }
-    }, [rh?.pState?.pluginId, fData])
+    }, [rh?.npState?.pluginId, fData])
 
     const md = useMDParams()
     const [refreshCtn, setRefreshCtn] = useState(0)
@@ -93,12 +93,12 @@ export default () => {
                         return;
                     }
                     // AlertUtils.alertInfo('操作中')
-                    // if (!rh?.pState?.pluginId) {
+                    // if (!rh?.npState?.pluginId) {
                     //     AlertUtils.alertErr('请先选择插件')
                     //     return
                     // }
                     // await lazyExtHarmfulDoJob({
-                    //     id: rh?.pState?.pluginId,
+                    //     id: rh?.npState?.pluginId,
                     //     type: 'setup'
                     // })
                     // await refreshFn()
@@ -109,12 +109,12 @@ export default () => {
                 label: '启动服务',
                 onclick: async () => {
                     AlertUtils.alertInfo('执行中')
-                    if (!rh?.pState?.pluginId) {
+                    if (!rh?.npState?.pluginId) {
                         AlertUtils.alertErr('请先选择插件')
                         return
                     }
                     await lazyExtHarmfulDoJob({
-                        id: rh?.pState?.pluginId,
+                        id: rh?.npState?.pluginId,
                         type: 'start-service'
                     })
                     await refreshFn()
@@ -126,12 +126,12 @@ export default () => {
                 color: 'pink',
                 onclick: async () => {
                     AlertUtils.alertInfo('关闭中')
-                    if (!rh?.pState?.pluginId) {
+                    if (!rh?.npState?.pluginId) {
                         AlertUtils.alertErr('请先选择插件')
                         return
                     }
                     await lazyExtHarmfulDoJob({
-                        id: rh?.pState?.pluginId,
+                        id: rh?.npState?.pluginId,
                         type: 'stop-service'
                     })
                     await refreshFn()
@@ -187,7 +187,7 @@ export default () => {
                 <div className="space-y-2">
                     <NativeSelect {
                         ...rh?.bindOnChange({
-                            pStateKey: 'pluginId'
+                            npStateKey: 'pluginId'
                         })
                     } label="目标插件" description="选择需要预览的插件名" data={fData?.allMetaInfo?.map(x => ({ label: x.name, value: x.id }))} />
                     {/* <NativeSelect label="插件 - 预览模块" description="选择需要预览的目标模块" data={['React', 'Angular', 'Vue']} /> */}
@@ -206,7 +206,7 @@ export default () => {
                     </b>
                     <div className="text-xs">
                         <ul>
-                            <li>插件名：{rh?.pState?.pluginId}</li>
+                            <li>插件名：{rh?.npState?.pluginId}</li>
                             <li>刷新时间: {dayjs(extGetStatusQueryRes?.fulfilledTimeStamp).format("YYYY-MM-DD HH:mm:ss")}</li>
                         </ul>
                     </div>

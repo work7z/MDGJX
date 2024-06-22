@@ -41,10 +41,6 @@ export default function () {
         pollingInterval: 1000 * 60 * 10,
     })
 
-    const remoteExtRes = localApiSlice.useGetFileFromRemoteExtRootQuery({
-        subPath: '/pkg-info/ref.txt'
-    })
-
     if (!rh) {
         return ''
     }
