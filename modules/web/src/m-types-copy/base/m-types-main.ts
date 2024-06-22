@@ -9,6 +9,7 @@ export type MiaodaDyanmicMenuItem = {
 export type MiaodaBasicConfig = {
   disabled?: boolean;
   cwd?: string; // by default, it's $MDGJX_EXT_PATH/$id unless you have a dedicated path
+  post_fullId?:string;
   id: string;
   version: string;
   logo: string;

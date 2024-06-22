@@ -5,7 +5,7 @@ import { sendRes } from '@/commonSimpleRoutes';
 import { isDevEnv } from '@/web2share-copy/env';
 import _ from 'lodash';
 import shelljs from 'shelljs';
-import { getLafToolsDataDir, getLafToolsExtDir } from '@/web2share-copy/homedir';
+import { getLafToolsDataDir, devonly_getLafToolsExtDir, getLocalInstalledExtDir } from '@/web2share-copy/homedir';
 import path from 'path';
 import fs from 'fs';
 import { logger } from '@/utils/logger';
@@ -15,7 +15,8 @@ import { asyncHandler } from '@/app';
 import { ChildProcess } from 'child_process';
 
 const pinyin = require('tiny-pinyin');
-const currentProjectRoot = getLafToolsExtDir();
+const val_devonly_LafToolsExtDir = devonly_getLafToolsExtDir();
+const val_getLocalInstalledExtDir = getLocalInstalledExtDir()
 
 export type ExtModeSt = {
   isDev: boolean;
@@ -40,19 +41,19 @@ export type ExtMetaSearchReq = {
 export const getExtMode = (): ExtModeSt => {
   return {
     isDev: isDevEnv(),
-    repoPath: currentProjectRoot,
+    repoPath: val_devonly_LafToolsExtDir,
   };
 };
 
 export const getAllExtMetaInfo = (req: ExtMetaSearchReq, filterWhileSearchingInExtDir?: (extDir: string) => boolean): ExtMetaInfo => {
-  const projectRoots = shelljs.ls(currentProjectRoot);
+  const projectRoots = shelljs.ls(val_devonly_LafToolsExtDir);
   let results: MiaodaConfig[] = [];
   for (let eachFile of projectRoots) {
     if (filterWhileSearchingInExtDir && !filterWhileSearchingInExtDir(eachFile)) {
       continue;
     }
     logger.info('loading ext: ' + eachFile);
-    const miaodaJSON = path.join(currentProjectRoot, eachFile, 'miaoda-dist.json');
+    const miaodaJSON = path.join(val_devonly_LafToolsExtDir, eachFile, 'miaoda-dist.json');
     if (fs.existsSync(miaodaJSON)) {
       const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
       if (miaoda.disabled) {
@@ -88,9 +89,7 @@ export const getAllExtMetaInfo = (req: ExtMetaSearchReq, filterWhileSearchingInE
   }
   // installed flag
   results = results.map(x => {
-    if (isDevEnv()) {
-      x.installed = true;
-    }
+    const fullId = x.post_fullId
     return x;
   });
   return {
@@ -223,7 +222,7 @@ export class ExtensionRoute implements Routes {
         }
         MiaodaEntireRunStatus[findItem.id] = MiaodaEntireRunStatus[findItem.id] || fn_getInit();
         const tItem = MiaodaEntireRunStatus[findItem.id];
-        const cwd = findItem.cwd || path.join(currentProjectRoot, findItem.id);
+        const cwd = findItem.cwd || path.join(val_devonly_LafToolsExtDir, findItem.id);
         const setup_logs = path.join(__dirname, findItem.id + '-setup.log');
         const run_logs = path.join(__dirname, findItem.id + '-run.log');
         if(!fs.existsSync(setup_logs)){
