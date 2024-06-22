@@ -18,12 +18,14 @@ export type MiaodaBasicConfig = {
   name: string;
   shortDesc: string;
   description: string;
+  authors?: string[];
+  homepage?: string[];
   development: {
     entryLink: string;
   };
   keywords?: string[];
   include: string[];
-  menus: []
+  menus: [];
 };
 
 
