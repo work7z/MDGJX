@@ -35,15 +35,20 @@ export default function () {
 
     const extListRes = localApiSlice.useGetExtListWithSearchQuery({
         searchText: rh?.npState?.searchText || '',
-    },{
+        searchSource: 'cloud-all-ext'
+    }, {
         refetchOnMountOrArgChange: true,
-        pollingInterval: 1000*60*10,
+        pollingInterval: 1000 * 60 * 10,
+    })
+
+    const remoteExtRes = localApiSlice.useGetFileFromRemoteExtRootQuery({
+        subPath: '/pkg-info/ref.txt'
     })
 
     if (!rh) {
         return ''
     }
-    
+
     const fData = extListRes?.data?.data
 
     return (
@@ -56,7 +61,7 @@ export default function () {
                 </Group>
 
                 <Title order={2} className={classes.title} ta="center" mt="sm">
-                    专业至上，为您量身打造的云插件市场！ 
+                    专业至上，为您量身打造的云插件市场！
                 </Title>
 
                 <Text c="dimmed" className={classes.description} ta="center" mt="md">
@@ -69,7 +74,7 @@ export default function () {
                             npStateKey: 'searchText'
                         })}
                         rightSection={
-                            extListRes.isFetching?<IconLoader size={20}/>: <IconSearch size={20} />
+                            extListRes.isFetching ? <IconLoader size={20} /> : <IconSearch size={20} />
                         } size="lg" placeholder="键入以搜索插件名，支持大小写拼音" />
                 </div>
             </Container>
@@ -78,11 +83,11 @@ export default function () {
                 <div>总计{fData?.totals}个插件</div>
                 <div className='flex flex-row space-x-2 items-center'>
 
-    <ActionIcon variant='default' size='sm'  aria-label="Theme" onClick={() => {
-        extListRes.refetch()
-    }}>
-        <IconReload stroke={1.5} />
-    </ActionIcon>
+                    <ActionIcon variant='default' size='sm' aria-label="Theme" onClick={() => {
+                        extListRes.refetch()
+                    }}>
+                        <IconReload stroke={1.5} />
+                    </ActionIcon>
                     <div>
                         更新于: {fData?.lastUpdated}
                     </div>
@@ -104,9 +109,9 @@ export default function () {
                                 </div>
                                 <Text title={x.shortDesc} truncate className="text-slate-600 dark:text-slate-400" size={"sm"}>{x.shortDesc}</Text>
 
-                               <div className="flex justify-between space-x-2 mt-4 items-center ">
+                                <div className="flex justify-between space-x-2 mt-4 items-center ">
                                     <div className="flex space-x-1">
-                                        <Badge color="green" variant="light"  size='md'>官方插件</Badge>
+                                        <Badge color="green" variant="light" size='md'>官方插件</Badge>
                                         <Badge color="yellow" variant="light" size='md'>{x.version}</Badge>
                                     </div>
                                     <div className="flex space-x-2">
@@ -114,7 +119,7 @@ export default function () {
                                             x.installed ? <>
                                                 {x.hasNewVersion ? <Button color="green" size="compact-sm" radius="md">
                                                     更新
-                                                </Button>:''}
+                                                </Button> : ''}
                                                 <Button color="red" variant="light" size="compact-sm" radius="md">
                                                     卸载
                                                 </Button>
@@ -123,7 +128,7 @@ export default function () {
                                             </Button>
                                         }
                                     </div>
-                               </div>
+                                </div>
                             </Card>
                         })
                     }

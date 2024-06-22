@@ -19,6 +19,7 @@ import { PAGE_SESSION_ID } from "@/utils/PageUtils";
 import { AsyncCreateResponse, msg_showNetworkWithDebounce } from "./apiSlice";
 
 import { MiaodaBasicConfig } from '@/m-types-copy/base/m-types-main'
+import { getReleaseOrTestBaseOnCurrentURL } from "@/utils/ReleaseOrTestUtils";
 
 export type ExtModeSt = {
   isDev: boolean;
@@ -29,7 +30,7 @@ export type MiaodaExtraDevConfig = {
   // post-process
   fuzzySearchStr?: string;
   installed?: boolean;
-  hasNewVersion?:boolean;
+  hasNewVersion?: boolean;
 };
 export type MiaodaConfig = MiaodaExtraDevConfig & MiaodaBasicConfig;
 export type ExtMetaInfo = {
@@ -39,6 +40,7 @@ export type ExtMetaInfo = {
 };
 export type ExtMetaSearchReq = {
   searchText: string
+  searchSource: 'cloud-all-ext' | 'local-dev-ext'
 }
 // these are kind of harmful things, which should not be running in portal mode
 type HarmfulExtPostQuery = {
@@ -102,7 +104,7 @@ export const localApiSlice = createApi({
     },
   }),
   endpoints: (build) => ({
-    checkExtMode: build.query < AsyncCreateResponse<ExtModeSt>,{}>({
+    checkExtMode: build.query<AsyncCreateResponse<ExtModeSt>, {}>({
       query: () => {
         return {
           url: "/ext/check-ext-mode",
@@ -110,13 +112,13 @@ export const localApiSlice = createApi({
         };
       },
     }),
-    getExtListWithSearch: build.query<  
+    getExtListWithSearch: build.query<
       AsyncCreateResponse<ExtMetaInfo>,
       ExtMetaSearchReq
     >({
       query: (b) => {
         return {
-          params:b,
+          params: b,
           data: b,
           url: "/ext/get-ext-list",
           method: "GET",

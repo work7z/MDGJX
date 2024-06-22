@@ -11,12 +11,12 @@ import fs from 'fs';
 import { logger } from '@/utils/logger';
 import dayjs from 'dayjs';
 import { MiaodaBasicConfig } from '../m-types-copy/base/m-types-main';
-import { asyncHandler } from '@/app';
+import { asyncHandler, getExtStaticServer } from '@/app';
 import { ChildProcess } from 'child_process';
 
 const pinyin = require('tiny-pinyin');
 const val_devonly_LafToolsExtDir = devonly_getLafToolsExtDir();
-const val_getLocalInstalledExtDir = getLocalInstalledExtDir()
+const val_getLocalInstalledExtDir = getLocalInstalledExtDir();
 
 export type ExtModeSt = {
   isDev: boolean;
@@ -36,7 +36,11 @@ export type ExtMetaInfo = {
 };
 export type ExtMetaSearchReq = {
   searchText: string;
+  searchSource: 'cloud-all-ext' | 'local-dev-ext';
 };
+
+const filename_miaoda_dist_file = 'miaoda-dist.json';
+
 
 export const getExtMode = (): ExtModeSt => {
   return {
@@ -45,38 +49,49 @@ export const getExtMode = (): ExtModeSt => {
   };
 };
 
-export const getAllExtMetaInfo = (req: ExtMetaSearchReq, filterWhileSearchingInExtDir?: (extDir: string) => boolean): ExtMetaInfo => {
-  const projectRoots = shelljs.ls(val_devonly_LafToolsExtDir);
+export const getDataRemotely = async (subPath:string):Promise<any>=>{
+  const srv=  getExtStaticServer()
+  axios
+}
+
+export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearchingInExtDir?: (extDir: string) => boolean): Promise<ExtMetaInfo> => {
   let results: MiaodaConfig[] = [];
-  for (let eachFile of projectRoots) {
-    if (filterWhileSearchingInExtDir && !filterWhileSearchingInExtDir(eachFile)) {
-      continue;
-    }
-    logger.info('loading ext: ' + eachFile);
-    const miaodaJSON = path.join(val_devonly_LafToolsExtDir, eachFile, 'miaoda-dist.json');
-    if (fs.existsSync(miaodaJSON)) {
-      const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
-      if (miaoda.disabled) {
+  if (req.searchSource == 'cloud-all-ext') {
+    
+    // get all extensions from cloud
+  } else if (req.searchSource == 'local-dev-ext') {
+    // get all extensions from local development mode
+    const projectRoots = shelljs.ls(val_devonly_LafToolsExtDir);
+    for (let eachFile of projectRoots) {
+      if (filterWhileSearchingInExtDir && !filterWhileSearchingInExtDir(eachFile)) {
         continue;
       }
-      const keywords = miaoda.keywords;
-      const fuzzySearchStrArr = [];
-      const addToFuzzy = (arr: string[]) => {
-        for (let eachKeyword of arr) {
-          if (!eachKeyword) {
-            continue;
-          }
-          const pinyinStr = pinyin.convertToPinyin(eachKeyword);
-          if (eachKeyword !== pinyinStr) {
-            fuzzySearchStrArr.push(pinyinStr);
-          }
-          fuzzySearchStrArr.push(eachKeyword);
+      logger.info('loading ext: ' + eachFile);
+      const miaodaJSON = path.join(val_devonly_LafToolsExtDir, eachFile, filename_miaoda_dist_file);
+      if (fs.existsSync(miaodaJSON)) {
+        const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
+        if (miaoda.disabled) {
+          continue;
         }
-      };
-      addToFuzzy(keywords);
-      addToFuzzy([miaoda.name, miaoda.shortDesc]);
-      miaoda.fuzzySearchStr = _.toLower(fuzzySearchStrArr.join(' '));
-      results.push(miaoda);
+        const keywords = miaoda.keywords;
+        const fuzzySearchStrArr = [];
+        const addToFuzzy = (arr: string[]) => {
+          for (let eachKeyword of arr) {
+            if (!eachKeyword) {
+              continue;
+            }
+            const pinyinStr = pinyin.convertToPinyin(eachKeyword);
+            if (eachKeyword !== pinyinStr) {
+              fuzzySearchStrArr.push(pinyinStr);
+            }
+            fuzzySearchStrArr.push(eachKeyword);
+          }
+        };
+        addToFuzzy(keywords);
+        addToFuzzy([miaoda.name, miaoda.shortDesc]);
+        miaoda.fuzzySearchStr = _.toLower(fuzzySearchStrArr.join(' '));
+        results.push(miaoda);
+      }
     }
   }
   // filter now
@@ -89,9 +104,9 @@ export const getAllExtMetaInfo = (req: ExtMetaSearchReq, filterWhileSearchingInE
   }
   // installed flag
   results = results.map(x => {
-    const fullId = x.id+"@"+x.version
+    const fullId = x.id + '@' + x.version;
     const specifialFolder = path.join(val_getLocalInstalledExtDir, fullId);
-    const miaodaDist = path.join(specifialFolder, 'miaoda-dist.json');
+    const miaodaDist = path.join(specifialFolder, filename_miaoda_dist_file);
     x.installed = fs.existsSync(miaodaDist);
     return x;
   });
@@ -109,7 +124,14 @@ export const checkIfCurrentEnvPermitHarmfulAPI = () => {
     throw new Error('not allowed');
   }
 };
-import os from 'os';
+export let IsCurrentPortalServerMode = () => {
+  return process.env.ONLINEMODE == 'true';
+};
+export const checkIfCurrentEnvPortalMode = () => {
+  if (IsCurrentPortalServerMode()) {
+    throw new Error('抱歉，此操作仅允许本地部署模式执行，云端服务器无法处理此请求。 ');
+  }
+};
 export type ClosableFn = () => void;
 type ProcessStatus = 'running' | 'stopped' | 'error' | 'ready';
 export type MiaodaRunStatus = {
@@ -173,9 +195,25 @@ export class ExtensionRoute implements Routes {
         serviceStatus: 'ready',
       };
     };
+
+    this.router.get(
+      '/ext/harmful/install-ext',
+      asyncHandler(async (req, res) => {
+        checkIfCurrentEnvPortalMode();
+        const reqQuery = req.query as {
+          fullId: string;
+        };
+        if(!reqQuery.fullId){
+          throw new Error('missing extId');
+        }        
+        // install the extensions locally
+        // 1. firstly, check if miaoda-dist.json exist
+      }),
+    );
+
     this.router.get(
       '/ext/harmful/get-status',
-      asyncHandler((req, res) => {
+      asyncHandler(async (req, res) => {
         checkIfCurrentEnvPermitHarmfulAPI();
         const query = req.query as HarmfulExtPostQuery;
         const id = query.id;
@@ -183,7 +221,10 @@ export class ExtensionRoute implements Routes {
         if (!id || !type) {
           throw new Error('missing id or type');
         }
-        const allMetaInfo = getAllExtMetaInfo(req.query as ExtMetaSearchReq, x => {
+        const allMetaInfo = await getAllExtMetaInfo({
+          searchSource: 'local-dev-ext',
+          searchText: undefined
+        } as ExtMetaSearchReq, x => {
           return x == id;
         });
         const findItem = allMetaInfo.allMetaInfo.find(x => x.id == id);
@@ -208,7 +249,7 @@ export class ExtensionRoute implements Routes {
     );
     this.router.get(
       '/ext/harmful/do-job',
-      asyncHandler((req, res) => {
+      asyncHandler(async (req, res) => {
         checkIfCurrentEnvPermitHarmfulAPI();
         const query = req.query as HarmfulExtPostQuery;
         const id = query.id;
@@ -216,7 +257,10 @@ export class ExtensionRoute implements Routes {
         if (!id || !type) {
           throw new Error('missing id or type');
         }
-        const allMetaInfo = getAllExtMetaInfo(req.query as ExtMetaSearchReq, x => {
+        const allMetaInfo = await getAllExtMetaInfo({
+          searchSource: 'local-dev-ext',
+          searchText: undefined
+        } as ExtMetaSearchReq, x => {
           return x == id;
         });
         const findItem = allMetaInfo.allMetaInfo.find(x => x.id == id);
@@ -228,10 +272,10 @@ export class ExtensionRoute implements Routes {
         const cwd = findItem.cwd || path.join(val_devonly_LafToolsExtDir, findItem.id);
         const setup_logs = path.join(__dirname, findItem.id + '-setup.log');
         const run_logs = path.join(__dirname, findItem.id + '-run.log');
-        if(!fs.existsSync(setup_logs)){
+        if (!fs.existsSync(setup_logs)) {
           fs.writeFileSync(setup_logs, '');
         }
-        if(!fs.existsSync(run_logs)){
+        if (!fs.existsSync(run_logs)) {
           fs.writeFileSync(run_logs, '');
         }
         logger.info('cwd: ' + cwd);
@@ -246,7 +290,7 @@ export class ExtensionRoute implements Routes {
             const e = shelljs.exec(setup_devcmd, {
               cwd: cwd,
               async: true,
-              silent:true,              
+              silent: true,
             });
             // pipe to setup_logs
             e.stdout.pipe(fs.createWriteStream(setup_logs));

@@ -26,6 +26,7 @@ export default () => {
 
     const extListRes = localApiSlice.useGetExtListWithSearchQuery({
         searchText: rh?.npState?.searchText || '',
+        searchSource: 'local-dev-ext'
     }, {
         refetchOnMountOrArgChange: true,
         pollingInterval: 1000 * 60 * 10,
@@ -91,17 +92,17 @@ export default () => {
                     if(true){
                         return;
                     }
-                    AlertUtils.alertInfo('操作中')
-                    if (!rh?.pState?.pluginId) {
-                        AlertUtils.alertErr('请先选择插件')
-                        return
-                    }
-                    await lazyExtHarmfulDoJob({
-                        id: rh?.pState?.pluginId,
-                        type: 'setup'
-                    })
-                    await refreshFn()
-                    AlertUtils.alertSuccess('初始化成功')
+                    // AlertUtils.alertInfo('操作中')
+                    // if (!rh?.pState?.pluginId) {
+                    //     AlertUtils.alertErr('请先选择插件')
+                    //     return
+                    // }
+                    // await lazyExtHarmfulDoJob({
+                    //     id: rh?.pState?.pluginId,
+                    //     type: 'setup'
+                    // })
+                    // await refreshFn()
+                    // AlertUtils.alertSuccess('初始化成功')
                 }
             },
             {

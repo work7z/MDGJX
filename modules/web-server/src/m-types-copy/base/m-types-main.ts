@@ -30,6 +30,7 @@ export type MiaodaBasicConfig = {
     embedded?: {
       // 对于embedded应用来说，baseURL 将会是 id + @version， 如果https://mdgjx.com/extview/xxx@1.0/index.html
       staticDirs: string[];
+      baseUrl?:string
     };
   };
   keywords?: string[];

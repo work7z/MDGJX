@@ -9,6 +9,7 @@
     "build": "swc src -d dist --source-maps --copy-files"
   },
   "dependencies": {
+    "axios": "^1.7.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@swc/cli": "^0.1.65",
     "@swc/core": "^1.4.13",
+    "@types/axios": "^0.14.0",
     "@types/bcrypt": "^5.0.0",
     "@types/compression": "^1.7.2",
     "@types/cookie-parser": "^1.4.3",

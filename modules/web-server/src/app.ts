@@ -24,8 +24,13 @@ export const asyncHandler = (fn: (req: Request, res: Response, next) => void) =>
 const env = NODE_ENV || 'development';
 
 const port = process.env.PORT || (env == 'development' ? 3050 : 39899);
+export const getExtStaticServer = ()=>{
+return process.env.EXTSTATIC_SERVER || 'https://extstatic.mdgjx.com'
+}
+
 let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
-let EXTSTATIC_SERVER = process.env.EXTSTATIC_SERVER || 'https://extstatic.mdgjx.com';
+let EXTSTATIC_SERVER = getExtStaticServer();
+
 
 import httpProxy from 'http-proxy';
 var proxyWS = httpProxy
