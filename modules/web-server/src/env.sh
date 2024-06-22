@@ -1,0 +1,1 @@
+export const isTestServerMode = process.env.pContainerName === 'web-beta-inst';
