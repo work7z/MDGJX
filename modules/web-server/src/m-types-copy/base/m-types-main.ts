@@ -24,9 +24,11 @@ export type MiaodaBasicConfig = {
     type: "web-static-embedded" | "web-static-standalone";
     standalone?: {
       ports: number[]; // attempt to host the static files on these ports
+      onlineURL: string; // where the static files are hosted online
     };
     embedded?: {
-      folder: string[];
+      // 对于embedded应用来说，baseURL 将会是 id + @version， 如果https://mdgjx.com/extview/xxx@1.0/index.html
+      staticDirs: string[];
     };
   };
   keywords?: string[];
