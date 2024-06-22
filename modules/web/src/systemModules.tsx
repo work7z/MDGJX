@@ -223,12 +223,12 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
                         disableFooter: true,
                         bodyFn: () => import('./loadable/MpCloudExt/index.tsx')
                     },
-                    {
-                        name: '开发设置',
-                        id: 'install-settings',
-                        disableFooter: true,
-                        bodyFn: () => import('./loadable/MpSettings/index.tsx')
-                    },
+                    // {
+                    //     name: '开发设置',
+                    //     id: 'install-settings',
+                    //     disableFooter: true,
+                    //     bodyFn: () => import('./loadable/MpSettings/index.tsx')
+                    // },
                 ]
             },
             // {
