@@ -185,7 +185,7 @@ export let kill_process = (child: ChildProcess) => {
   }
 };
 
-type ProgressStatus = 'running' | 'done' | 'error';
+type ProgressStatus = 'success' | 'running' | 'done' | 'error';
 type MiaodaProgressStatus = {
   runTS: string;
   status: ProgressStatus;
@@ -281,11 +281,19 @@ export class ExtensionRoute implements Routes {
             const outputTarGzFile = path.join(val_getLocalInstalledExtDir, reqQuery.fullId + '.tar.gz');
             // axios fs write
             refObj.message = '正在下载中.....  目标链接: ' + outputTarGzFile;
+            if (alreadyExitNow()) {
+              return;
+            }
             await axios({
               method: 'get',
               url: getExtStaticURL(`/pkg-repo/${reqQuery.fullId}.tar.gz`),
               responseType: 'stream',
             }).then(function (response) {
+              refObj.status = 'success'
+              refObj.message = `下载已完成，正在写入本地文件...`;
+              if (alreadyExitNow()) {
+                return;
+              }
               response.data.pipe(fs.createWriteStream(outputTarGzFile));
             });
           } catch (e) {
