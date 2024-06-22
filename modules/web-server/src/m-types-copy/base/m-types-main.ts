@@ -1,4 +1,3 @@
-
 export type MiaodaDyanmicMenuItem = {
   id: string;
   icon?: any;
@@ -7,9 +6,7 @@ export type MiaodaDyanmicMenuItem = {
   children?: MiaodaDyanmicMenuItem[];
 };
 
-
 export type MiaodaBasicConfig = {
-  mode: string;
   disabled?: boolean;
   cwd?: string; // by default, it's $MDGJX_EXT_PATH/$id unless you have a dedicated path
   id: string;
@@ -23,15 +20,23 @@ export type MiaodaBasicConfig = {
   development: {
     entryLink: string;
   };
+  runtime: {
+    type: "web-static-embedded" | "web-static-standalone";
+    standalone?: {
+      ports: number[]; // attempt to host the static files on these ports
+    };
+    embedded?: {
+      folder: string[];
+    };
+  };
   keywords?: string[];
   include: string[];
-  menus: [];
+  menus: MiaodaDyanmicMenuItem[];
 };
 
-
-export const REGISTER_CONFIG_OBJ:MiaodaBasicConfig[] = []
+export const REGISTER_CONFIG_OBJ: MiaodaBasicConfig[] = [];
 
 export const fn_miaoda_registerConfig = (config: MiaodaBasicConfig) => {
-  REGISTER_CONFIG_OBJ.push(config)
+  REGISTER_CONFIG_OBJ.push(config);
   return config;
 };
