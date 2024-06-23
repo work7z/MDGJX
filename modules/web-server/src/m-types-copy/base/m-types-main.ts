@@ -4,8 +4,8 @@ export type MiaodaDyanmicMenuItem = {
   name: string;
   disableFooter?: boolean;
   children?: MiaodaDyanmicMenuItem[];
-  belongTo?: "tools" | "docs" | "resources" // children will be effetive also if its parent has set this field
-};
+  belongTo?: "tools" | "docs" | "resources"; // children will be effetive also if its parent has set this field
+} & SystemSubModuleItem;
 
 
 export type SubToolItem = {

@@ -16,6 +16,7 @@ import {
     ActionIcon,
     Tooltip,
     HoverCard,
+    Alert,
 } from '@mantine/core';
 import { IconGauge, IconUser, IconCookie, IconSearch, IconSquareDotFilled, IconTruckLoading, IconLoader, IconReload, IconZoomReset, IconClearAll, IconHelp } from '@tabler/icons-react';
 import classes from './FeaturesCards.module.css';
@@ -184,7 +185,21 @@ export default function () {
                                     installExtsRes.refetch()
                                 })
                             }
-                            const isItInstalled = installExtsRes?.data?.data?.includes(x.post_fullId as string)
+                            let isItInstalled = false;
+                            let hasNewVersion = false
+                            let currentInstalledVer=x.version
+                            _.forEach(installExtsRes?.data?.data, (myinstallLocalExtName, d, n) => {
+                                if (myinstallLocalExtName.startsWith(x.id)) {
+                                    currentInstalledVer = myinstallLocalExtName.split('@')[1]
+                                    isItInstalled = true;
+                                } 
+                                if (
+                                    myinstallLocalExtName.startsWith(x.id) &&
+                                    myinstallLocalExtName < x.post_fullId + ''
+                                ) {
+                                    hasNewVersion = true;
+                                }
+                            })
                             const jsxcard = <Card shadow="xs" withBorder className="w-[100%] sm:w-[29%] 2xl:w-[24%]    box-border mb-2 mr-2 inline-block  " >
                                 <div className="flex items-center mb-2  space-x-2">
                                     {/* {x.icon && x.icon.name && iconMapping[x.icon.name] && iconMapping[x.icon.name]() || <IconExchange />} */}
@@ -193,16 +208,19 @@ export default function () {
                                     </Title>
                                 </div>
                                 <Text title={x.shortDesc} truncate className="text-slate-600 dark:text-slate-400" size={"sm"}>{x.shortDesc}</Text>
-
                                 <div className="flex justify-between space-x-2 mt-4 items-center ">
                                     <div className="flex space-x-1">
-                                        <Badge color="green" variant="light" size='md'>官方插件</Badge>
-                                        <Badge color="yellow" variant="light" size='md'>{x.version}</Badge>
+                                        <Badge color="green" variant="light" size='md'>
+                                            官方插件
+                                        </Badge>
+                                        <Badge color={
+                                            hasNewVersion ? "yellow": 'teal'
+                                        } variant="light" size='md'>{currentInstalledVer}</Badge>
                                     </div>
                                     <div className="flex space-x-2">
                                         {
                                             isItInstalled ? <>
-                                                {x.hasNewVersion ? <Button
+                                                {hasNewVersion ? <Button
                                                     onClick={() => {
                                                         fn_upgradeExt()
                                                     }}
@@ -230,6 +248,17 @@ export default function () {
                                     {jsxcard}
                                 </HoverCard.Target>
                                 <HoverCard.Dropdown className=" right-0 top-0">
+                                    {
+                                        hasNewVersion?<div className="py-2">
+                                            <Badge
+                                                color="blue"
+                                                variant="filled"
+                                                size="sm"
+                                            >
+                                                可升级到{x.version}
+                                            </Badge>
+                                        </div>:''
+                                    }
                                     <Text size="sm">
                                         {runMsg}
                                     </Text>
