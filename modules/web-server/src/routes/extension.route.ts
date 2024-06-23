@@ -162,7 +162,7 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
   return {
     allMetaInfo: results,
     totals: results.length,
-    lastUpdated: lastUpdatedVal || dayjs().format('YYYY-MM-DD'),
+    lastUpdated: lastUpdatedVal || 'ext-v2020.01.15',
   };
 };
 

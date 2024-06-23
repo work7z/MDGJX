@@ -26,6 +26,7 @@ import _ from "lodash";
 import { isPortalMode } from "@/utils/PortalUtils";
 import { DynamicIcon } from "@/containers/DynamicIcon";
 import { useEffect, useMemo } from "react";
+import { isDevEnv } from "@/env";
 
 
 export default function () {
@@ -36,13 +37,15 @@ export default function () {
             }
         },
         getPersistedStateFn() {
-            return {}
+            return {
+                usingDevExtMode: false
+            }
         }
     })
 
     const extListRes = localApiSlice.useGetExtListWithSearchQuery({
         searchText: rh?.npState?.searchText || '',
-        searchSource: 'cloud-all-ext'
+        searchSource: rh?.pState?.usingDevExtMode ? 'local-dev-ext' : 'cloud-all-ext'
     }, {
         refetchOnMountOrArgChange: true,
         pollingInterval: 1000 * 60 * 10,
@@ -126,33 +129,49 @@ export default function () {
                         </>
                     }
                 </div>
-                <Tooltip label="云端版本库(版本号与实际日期无关)">
-                    <div className='flex flex-row space-x-2 items-center'>
-                        <ActionIcon variant='default' size='sm' aria-label="Theme" onClick={() => {
-                            extListRes.refetch()
-                        }}>
-                            <IconReload stroke={1.5} />
-                        </ActionIcon>
-                        {
-                            hasAnyInstalling ? <Button
-                                onClick={() => {
-                                    lazy_cleanExt({
-                                        fullId: 'noneed'
-                                    })
-                                }}
-                                loading={cleanExtRes.isFetching}
-                                color='red' size='compact-sm' variant="light">
-                                取消安装
-                            </Button>
-                                : ''
-                        }
+                <div className='flex flex-row space-x-2 items-center'>
+                    {
+                        isDevEnv() ? <Button 
+                        onClick={()=>{
+                            rh?.updatePState({
+                                usingDevExtMode: !rh?.pState?.usingDevExtMode
+                            })
+                        }}
+                        size='compact-xs' variant={
+                            rh?.pState?.usingDevExtMode ? 'light' : "default"
+                        } >
+                            {
+                                !rh?.pState?.usingDevExtMode ? '使用本地库' : '切回云端库'
+                            }
+                        </Button> : ''
+                    }
+                    <ActionIcon variant='default' size='sm' aria-label="Theme" onClick={() => {
+                        extListRes.refetch()
+                    }}>
+                        <IconReload stroke={1.5} />
+                    </ActionIcon>
+                    {
+                        hasAnyInstalling ? <Button
+                            onClick={() => {
+                                lazy_cleanExt({
+                                    fullId: 'noneed'
+                                })
+                            }}
+                            loading={cleanExtRes.isFetching}
+                            color='red' size='compact-sm' variant="light">
+                            取消安装
+                        </Button>
+                            : ''
+                    }
+                    <Tooltip label="云端版本库(版本号与实际日期无关)">
+
                         <div>
                             <span>
                                 版本库: {fData?.lastUpdated}
                             </span>
                         </div>
-                    </div>
-                </Tooltip>
+                    </Tooltip>
+                </div>
             </div>
             <Card withBorder className="h-[100vh]">
                 <LoadingOverlay visible={extListRes.isFetching} zIndex={1000} overlayProps={{ radius: "sm", blur: 2 }} />
@@ -187,12 +206,12 @@ export default function () {
                             }
                             let isItInstalled = false;
                             let hasNewVersion = false
-                            let currentInstalledVer=x.version
+                            let currentInstalledVer = x.version
                             _.forEach(installExtsRes?.data?.data, (myinstallLocalExtName, d, n) => {
                                 if (myinstallLocalExtName.startsWith(x.id)) {
                                     currentInstalledVer = myinstallLocalExtName.split('@')[1]
                                     isItInstalled = true;
-                                } 
+                                }
                                 if (
                                     myinstallLocalExtName.startsWith(x.id) &&
                                     myinstallLocalExtName < x.post_fullId + ''
@@ -203,6 +222,7 @@ export default function () {
                             const jsxcard = <Card shadow="xs" withBorder className="w-[100%] sm:w-[29%] 2xl:w-[24%]    box-border mb-2 mr-2 inline-block  " >
                                 <div className="flex items-center mb-2  space-x-2">
                                     {/* {x.icon && x.icon.name && iconMapping[x.icon.name] && iconMapping[x.icon.name]() || <IconExchange />} */}
+                                    <DynamicIcon icon={x.iconInStr || "AppWindow"} />
                                     <Title order={4} className="font-normal">
                                         <Text truncate>{x.name}</Text>
                                     </Title>
@@ -214,7 +234,7 @@ export default function () {
                                             官方插件
                                         </Badge>
                                         <Badge color={
-                                            hasNewVersion ? "yellow": 'teal'
+                                            hasNewVersion ? "yellow" : 'teal'
                                         } variant="light" size='md'>{currentInstalledVer}</Badge>
                                     </div>
                                     <div className="flex space-x-2">
@@ -249,7 +269,7 @@ export default function () {
                                 </HoverCard.Target>
                                 <HoverCard.Dropdown className=" right-0 top-0">
                                     {
-                                        hasNewVersion?<div className="py-2">
+                                        hasNewVersion ? <div className="py-2">
                                             <Badge
                                                 color="blue"
                                                 variant="filled"
@@ -257,7 +277,7 @@ export default function () {
                                             >
                                                 可升级到{x.version}
                                             </Badge>
-                                        </div>:''
+                                        </div> : ''
                                     }
                                     <Text size="sm">
                                         {runMsg}

@@ -74,6 +74,7 @@ export type MiaodaBasicConfig = {
   id: string;
   version: string;
   logo: string;
+  iconInStr?:string;
   name: string;
   shortDesc: string;
   description: string;
