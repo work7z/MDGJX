@@ -90,8 +90,10 @@ export const getExtStaticDataRemotely = async (subPath: string): Promise<any> =>
 export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearchingInExtDir?: (extDir: string) => boolean): Promise<ExtMetaInfo> => {
   let results: MiaodaConfig[] = [];
   let tmp_results: MiaodaConfig[] = [];
+  let lastUpdatedVal: string | null = null;
   if (req.searchSource == 'cloud-all-ext') {
     const refTxt = await getExtStaticDataRemotely('/' + pkgInfoFlag + '/ref.txt');
+    lastUpdatedVal = refTxt;
     const miaodaDistAll = await getExtStaticDataRemotely(`/${pkgInfoFlag}/miaoda-dist-all-${refTxt.trim()}.json`);
     tmp_results = miaodaDistAll as MiaodaConfig[];
     // get all extensions from cloud
@@ -154,27 +156,13 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
     const fullId = x.id + '@' + x.version;
     const specifialFolder = path.join(val_pkgExtract_dir, fullId);
     const miaodaDist = path.join(specifialFolder, filename_ack_file);
-    // x.installed = fs.existsSync(miaodaDist);
-    // // check if having exist extensions
-    // if (!x.installed) {
-    //   if (allExtDir.length > 0) {
-    //     for (let eachExtDir of allExtDir) {
-    //       // is it folder
-    //       if (eachExtDir !== fullId && eachExtDir.indexOf(x.id) >= 0) {
-    //         x.hasNewVersion = true;
-    //         break;
-    //       }
-    //     }
-    //   }
-    // }
     // TODO: hasNewVersion放前端去做
-
     return x;
   });
   return {
     allMetaInfo: results,
     totals: results.length,
-    lastUpdated: dayjs().format('YYYY-MM-DD'),
+    lastUpdated: lastUpdatedVal || 'ext-v2020.01.15',
   };
 };
 
@@ -188,6 +176,45 @@ export const checkIfCurrentEnvPermitHarmfulAPI = () => {
 export let IsCurrentPortalServerMode = () => {
   return process.env.ONLINEMODE == 'true';
 };
+
+export type IdVerMatch = {
+  id: string;
+  version: string;
+  ackTS: string;
+};
+export type InstalledLatestExts = {
+  exts: {
+    [key: string]: IdVerMatch[];
+  };
+};
+
+export const getAllInstalledLatestExts = (): InstalledLatestExts => {
+  let latestExts: InstalledLatestExts = {
+    exts: {},
+  };
+  const allList = shelljs.ls(val_pkgExtract_dir);
+  const installedExts = allList.filter(x => {
+    return fs.existsSync(path.join(val_pkgExtract_dir, x, filename_ack_file));
+  });
+  for (let eachExt of installedExts) {
+    const ackFile = path.join(val_pkgExtract_dir, eachExt, filename_ack_file);
+    const miaodaJSON = path.join(val_pkgExtract_dir, eachExt, filename_miaoda_dist_file);
+    if (fs.existsSync(ackFile) && fs.existsSync(miaodaJSON)) {
+      const ackTS = fs.readFileSync(ackFile).toString();
+      const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
+      if (!latestExts.exts[miaoda.id]) {
+        latestExts.exts[miaoda.id] = [];
+      }
+      latestExts.exts[miaoda.id].push({
+        id: miaoda.id,
+        version: miaoda.version,
+        ackTS,
+      });
+    }
+  }
+  return latestExts;
+};
+
 export const preventEnvPortalModeRunCheck = () => {
   if (IsCurrentPortalServerMode()) {
     throw new Error('抱歉，此操作仅允许本地部署模式执行，云端服务器无法处理此请求。 ');
@@ -272,12 +299,14 @@ export class ExtensionRoute implements Routes {
     this.router.get(
       '/ext/get-all-installed-exts',
       asyncHandler(async (req, res) => {
-        // delete all keys in MiaodaInstallAppProgressObj
-        const allList = shelljs.ls(val_pkgExtract_dir);
+        const installedExts: string[] = [];
+        const all = getAllInstalledLatestExts();
+        _.forEach(all.exts, (x, d, n) => {
+          const maxItem = _.maxBy(x, xx => xx.ackTS);
+          installedExts.push(maxItem.id + '@' + maxItem.version);
+        });
         sendRes(res, {
-          data: allList.filter(x => {
-            return fs.existsSync(path.join(val_pkgExtract_dir, x, filename_ack_file));
-          }),
+          data: installedExts,
         });
       }),
     );
@@ -305,9 +334,15 @@ export class ExtensionRoute implements Routes {
         if (!fullId) {
           throw new Error('missing extId');
         }
-        const outputDecompressExtract = path.join(val_pkgExtract_dir, fullId);
-        if (fs.existsSync(outputDecompressExtract)) {
-          shelljs.rm('-rf', outputDecompressExtract);
+        const allDirs = shelljs.ls(val_pkgExtract_dir);
+        for (let eachDir of allDirs) {
+          const same = fullId.split('@')[0] == eachDir.split('@')[0];
+          if (same) {
+            const outputDecompressExtract = path.join(val_pkgExtract_dir, eachDir);
+            if (fs.existsSync(outputDecompressExtract)) {
+              shelljs.rm('-rf', outputDecompressExtract);
+            }
+          }
         }
         sendRes(res, { data: 1 });
       }),

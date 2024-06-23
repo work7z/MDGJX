@@ -1,4 +1,6 @@
-import { toolsNavInfo } from '../toolsNavInfo.tsx';
+// import { toolsNavInfo } from '../toolsNavInfo.tsx';
+// TODO: fix toolsNavInfo that
+const toolsNavInfo = []
 
 export type SeoDetail = {
   path: string[];
@@ -108,15 +110,16 @@ export type SeoDetail = {
    }
  ];
 
-toolsNavInfo.map((item) => {
-  item.subTools?.map(xx=>{
-    SeoDetailItemForMDGJX.push({
-      path: [`/${item.id}/${xx.id}`],
-      title:`${xx.name} | ${item.name}`,
-      description: xx.description,
-      keywords: xx.keywords.join(",")
-    })
-  })
-})
+// TODO: resume that parts
+// toolsNavInfo.map((item) => {
+//   item.subTools?.map(xx=>{
+//     SeoDetailItemForMDGJX.push({
+//       path: [`/${item.id}/${xx.id}`],
+//       title:`${xx.name} | ${item.name}`,
+//       description: xx.description,
+//       keywords: xx.keywords.join(",")
+//     })
+//   })
+// })
 
 export default SeoDetailItemForMDGJX

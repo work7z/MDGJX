@@ -1,5 +1,5 @@
 import { useHistory } from "react-router"
-import { ROUTE_CPT_MAPPING, SystemModuleItem, SystemSubModuleItem, systemModulesList } from "./systemModules"
+import {  SystemModuleItem, SystemSubModuleItem, useSystemModulesList,  } from "./systemModules"
 import { useMemo } from "react"
 import queryString from "query-string"
 
@@ -27,6 +27,7 @@ export const useMDQuery = function <T>():{
 }
 export const useMDParams = (): TypeMDParams => {
     const hist = useHistory()
+    const { list: systemModulesList ,ROUTE_CPT_MAPPING} = useSystemModulesList({})
     return useMemo(() => {
         const splitArr = hist.location.pathname.split('/')
         let url_firstPart: string | undefined = splitArr && splitArr[1]

@@ -16,6 +16,7 @@ import {
     ActionIcon,
     Tooltip,
     HoverCard,
+    Alert,
 } from '@mantine/core';
 import { IconGauge, IconUser, IconCookie, IconSearch, IconSquareDotFilled, IconTruckLoading, IconLoader, IconReload, IconZoomReset, IconClearAll, IconHelp } from '@tabler/icons-react';
 import classes from './FeaturesCards.module.css';
@@ -25,6 +26,7 @@ import _ from "lodash";
 import { isPortalMode } from "@/utils/PortalUtils";
 import { DynamicIcon } from "@/containers/DynamicIcon";
 import { useEffect, useMemo } from "react";
+import { isDevEnv } from "@/env";
 
 
 export default function () {
@@ -35,13 +37,15 @@ export default function () {
             }
         },
         getPersistedStateFn() {
-            return {}
+            return {
+                usingDevExtMode: false
+            }
         }
     })
 
     const extListRes = localApiSlice.useGetExtListWithSearchQuery({
         searchText: rh?.npState?.searchText || '',
-        searchSource: 'cloud-all-ext'
+        searchSource: rh?.pState?.usingDevExtMode ? 'local-dev-ext' : 'cloud-all-ext'
     }, {
         refetchOnMountOrArgChange: true,
         pollingInterval: 1000 * 60 * 10,
@@ -126,7 +130,21 @@ export default function () {
                     }
                 </div>
                 <div className='flex flex-row space-x-2 items-center'>
-
+                    {
+                        isDevEnv() ? <Button 
+                        onClick={()=>{
+                            rh?.updatePState({
+                                usingDevExtMode: !rh?.pState?.usingDevExtMode
+                            })
+                        }}
+                        size='compact-xs' variant={
+                            rh?.pState?.usingDevExtMode ? 'light' : "default"
+                        } >
+                            {
+                                !rh?.pState?.usingDevExtMode ? '使用本地库' : '切回云端库'
+                            }
+                        </Button> : ''
+                    }
                     <ActionIcon variant='default' size='sm' aria-label="Theme" onClick={() => {
                         extListRes.refetch()
                     }}>
@@ -145,11 +163,14 @@ export default function () {
                         </Button>
                             : ''
                     }
-                    <div>
-                        更新于: {fData?.lastUpdated}
-                    </div>
+                    <Tooltip label="云端版本库(版本号与实际日期无关)">
 
-
+                        <div>
+                            <span>
+                                版本库: {fData?.lastUpdated}
+                            </span>
+                        </div>
+                    </Tooltip>
                 </div>
             </div>
             <Card withBorder className="h-[100vh]">
@@ -183,25 +204,43 @@ export default function () {
                                     installExtsRes.refetch()
                                 })
                             }
-                            const isItInstalled = installExtsRes?.data?.data?.includes(x.post_fullId as string)
+                            let isItInstalled = false;
+                            let hasNewVersion = false
+                            let currentInstalledVer = x.version
+                            _.forEach(installExtsRes?.data?.data, (myinstallLocalExtName, d, n) => {
+                                if (myinstallLocalExtName.startsWith(x.id)) {
+                                    currentInstalledVer = myinstallLocalExtName.split('@')[1]
+                                    isItInstalled = true;
+                                }
+                                if (
+                                    myinstallLocalExtName.startsWith(x.id) &&
+                                    myinstallLocalExtName < x.post_fullId + ''
+                                ) {
+                                    hasNewVersion = true;
+                                }
+                            })
                             const jsxcard = <Card shadow="xs" withBorder className="w-[100%] sm:w-[29%] 2xl:w-[24%]    box-border mb-2 mr-2 inline-block  " >
                                 <div className="flex items-center mb-2  space-x-2">
                                     {/* {x.icon && x.icon.name && iconMapping[x.icon.name] && iconMapping[x.icon.name]() || <IconExchange />} */}
+                                    <DynamicIcon icon={x.iconInStr || "AppWindow"} />
                                     <Title order={4} className="font-normal">
                                         <Text truncate>{x.name}</Text>
                                     </Title>
                                 </div>
                                 <Text title={x.shortDesc} truncate className="text-slate-600 dark:text-slate-400" size={"sm"}>{x.shortDesc}</Text>
-
                                 <div className="flex justify-between space-x-2 mt-4 items-center ">
                                     <div className="flex space-x-1">
-                                        <Badge color="green" variant="light" size='md'>官方插件</Badge>
-                                        <Badge color="yellow" variant="light" size='md'>{x.version}</Badge>
+                                        <Badge color="green" variant="light" size='md'>
+                                            官方插件
+                                        </Badge>
+                                        <Badge color={
+                                            hasNewVersion ? "yellow" : 'teal'
+                                        } variant="light" size='md'>{currentInstalledVer}</Badge>
                                     </div>
                                     <div className="flex space-x-2">
                                         {
                                             isItInstalled ? <>
-                                                {x.hasNewVersion ? <Button
+                                                {hasNewVersion ? <Button
                                                     onClick={() => {
                                                         fn_upgradeExt()
                                                     }}
@@ -229,6 +268,17 @@ export default function () {
                                     {jsxcard}
                                 </HoverCard.Target>
                                 <HoverCard.Dropdown className=" right-0 top-0">
+                                    {
+                                        hasNewVersion ? <div className="py-2">
+                                            <Badge
+                                                color="blue"
+                                                variant="filled"
+                                                size="sm"
+                                            >
+                                                可升级到{x.version}
+                                            </Badge>
+                                        </div> : ''
+                                    }
                                     <Text size="sm">
                                         {runMsg}
                                     </Text>

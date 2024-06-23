@@ -31,7 +31,8 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name my-miaoda-v ~/.miaoda-docker:
 **NOTE**:
 
 1. 默认端口设置为39899，您可以根据需要进行调整。
-2. 当有新版本更新时，请手动拉取最新Docker镜像。为避免插件缓存数据丢失，建议保留mountpoint的设置。
+2. 当有新版本更新时，请手动拉取最新Docker镜像。
+3. 默认会将~/.miaoda挂载到~/.miaoda-docker，为避免应用数据丢失，建议保留此映射设置。
 
 
 **Docker Images:**

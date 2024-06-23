@@ -1,7 +1,7 @@
 import { HomePage } from './pages/Home.page';
 import { Redirect, Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { NotFoundPage } from './pages/NotFound.page';
-import { ROUTE_CPT_MAPPING, redirectLinks, systemModulesList } from './systemModules';
+import {  redirectLinks, useSystemModulesList,  } from './systemModules';
 import { useEffect } from 'react';
 import _ from 'lodash';
 import { FN_GetDispatch } from './store/nocycle';
@@ -43,6 +43,7 @@ export default () => {
     }
   }, [signInOrNot])
   const routerArr: JSX.Element[] = []
+  const { list: systemModulesList, ROUTE_CPT_MAPPING } = useSystemModulesList({})
   for (let eachRoute of ROUTE_CPT_MAPPING) {
     const pathName = eachRoute.href
     routerArr.push(<Route key={pathName} exact path={pathName} component={HomePage} />)
@@ -50,7 +51,7 @@ export default () => {
   }
   return <Router basename={basename} >
     <Switch>
-      <Route exact path={"/not-found"} component={NotFoundPage} />
+      {/* <Route exact path={"/not-found"} component={NotFoundPage} /> */}
       <Route exact path={"/"} component={HomePage} />
       <Route exact path={"/setup"} component={SetupPage} />
       {routerArr}
@@ -61,7 +62,8 @@ export default () => {
           )
         })
       }
-      <Redirect to="/not-found" />
+      {/* <Redirect to="/not-found" /> */}
+      <Route path={'*'} component={NotFoundPage} />
     </Switch>
     <SystemAlertOrPrompt />
   </Router>
