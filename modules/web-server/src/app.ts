@@ -17,22 +17,32 @@ import { API_SERVER_URL } from './web2share-copy/api_constants';
 import { HttpException } from './exceptions/httpException';
 import proxy from 'express-http-proxy';
 import { existsSync } from 'fs';
-
+import http from 'http';
 export const asyncHandler = (fn: (req: Request, res: Response, next) => void) => (req: Request, res: Response, next) => {
   return Promise.resolve(fn(req, res, next)).catch(next);
 };
 const env = NODE_ENV || 'development';
 
-const port = process.env.PORT || (env == 'development' ? 3050 : 39899);
-export const getExtStaticServer = ()=>{
-return process.env.EXTSTATIC_SERVER || 'https://extstatic.mdgjx.com'
-}
+export const fn_getPort = () => {
+  return process.env.PORT || ((env == 'development' ? 3050 : 39899) as number);
+};
+export const fn_getExtViewPort = (): number => {
+  return parseInt(fn_getPort() + '') + 16;
+};
+export const fn_getExtViewPath = (): string => {
+  return '/ext-view'; // for extensions page view, will redirect to internal ext view servers
+};
+const port = fn_getPort();
+export const getExtStaticServer = () => {
+  return process.env.EXTSTATIC_SERVER || 'https://extstatic.mdgjx.com';
+};
 
 let DIRECT_PROXY_SERVER = process.env.DIRECT_PROXY_SERVER || API_SERVER_URL;
 let EXTSTATIC_SERVER = getExtStaticServer();
-
+const INTERNAL_EXT_VIEW_SERVER = `http://127.0.0.1:${fn_getExtViewPort()}`;
 
 import httpProxy from 'http-proxy';
+import { fn_runOrRestartExtViewAppServer } from './ext-view-app';
 var proxyWS = httpProxy
   .createProxyServer({
     target: DIRECT_PROXY_SERVER,
@@ -44,7 +54,6 @@ var proxyWS = httpProxy
     logger.error('proxyWS error' + e);
   });
 const launchTime = new Date();
-
 
 export const isDesktopMode = port + '' > '40000';
 
@@ -62,12 +71,14 @@ export class App {
     this.connectToDatabase();
     this.initializeMiddlewares();
     this.initializeRoutes(routes);
-    this.initializeSwagger();
     this.initializeErrorHandling();
+
+    // when the app is started, the ext-view server should be started as well
+    fn_runOrRestartExtViewAppServer()
   }
 
   public listen() {
-    var server = require('http').createServer(this.app);
+    var server = http.createServer(this.app);
 
     // Proxy websockets
     server.on('upgrade', function (req, socket, head) {
@@ -150,8 +161,6 @@ export class App {
       );
     }
 
-
-
     // setup xtools
     let xToolsDir = path.join(__dirname, 'xtools');
     if (existsSync(xToolsDir)) {
@@ -161,7 +170,6 @@ export class App {
       });
     }
 
-  
     // setup spa
     let distDir = path.join(__dirname, 'spa');
     if (existsSync(distDir)) {
@@ -186,15 +194,6 @@ export class App {
     };
 
     this.app.use(ErrorMiddleware);
-
-    // // error handler
-    // this.app.use(function (err, req, res, next) {
-    //   if (err.name === 'UnauthorizedError') {
-    //     res.status(401).send('invalid token...');
-    //   } else {
-    //     next();
-    //   }
-    // });
   }
 
   private initializeRoutes(routes: Routes[]) {
@@ -212,10 +211,6 @@ export class App {
         req.next();
       }
     });
-  }
-
-  private initializeSwagger() {
-    //
   }
 
   private initializeErrorHandling() {

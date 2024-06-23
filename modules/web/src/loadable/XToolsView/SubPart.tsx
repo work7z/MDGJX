@@ -85,7 +85,7 @@ export default () => {
                 </Tabs.List>
             </Tabs>
             <div className="p-2 mt-1">
-                <TextInput placeholder="键入以快速检索所需功能，支持拼音"
+                <TextInput placeholder="键入以快速检索所需功能，支持大小写拼音"
                     leftSection={<IconSearch />}
                     value={searchIpt}
                     name='quickseachmain'
