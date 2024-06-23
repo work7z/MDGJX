@@ -1,6 +1,6 @@
 import { GeneralLayout as GeneralLayout } from '@/containers/Layout/Layout';
 import { AppShell, Burger } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { useDisclosure, useDocumentTitle } from '@mantine/hooks';
 import { Title, Text, Button, Container, Group } from '@mantine/core';
 import classes from './NotFoundTitle.module.css';
 import { Link, useHistory } from 'react-router-dom';
@@ -25,7 +25,7 @@ export function NotFoundTitle() {
     );
 }
 export function NotFoundPage() {
-
+    useDocumentTitle('404 Not Found')
     return (
         <NotFoundTitle />
     );

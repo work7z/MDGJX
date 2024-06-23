@@ -6,5 +6,5 @@ export const DynamicIcon = ({ icon }: { icon?: string }) => {
 
     const f = () => import(`@tabler/icons-react/dist/esm/icons/${icon}.mjs`)
 
-    return <LoadableWrapper id={'dyicon' + icon} fn={f}  />
+    return <LoadableWrapper disableLoadingText id={'dyicon' + icon} fn={f}  />
 };

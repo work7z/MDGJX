@@ -13,6 +13,7 @@ import {
 import _ from "lodash"
 import { Link } from "react-router-dom"
 import py from 'tiny-pinyin'
+import { useSystemModulesList } from "@/systemModules"
 
 const iconMapping = {
     EyeOff: () => <IconEyeOff />,
@@ -23,6 +24,7 @@ const iconMapping = {
 }
 export default () => {
     const [idx, setIdx] = React.useState('all')
+    const sml = useSystemModulesList({})
     const currentToolItem = toolsNavInfo.find(x => x.id === idx) || toolsNavInfo[0]
     let finalSubToolsArr: SubToolItem[] = []
     const allSubToolsArr = useMemo(() => {
@@ -43,7 +45,7 @@ export default () => {
             if (x.keywords) {
                 x.keywords.forEach(y => {
                     if (y.includes(lowerIpt)
-                     || py.convertToPinyin(y).includes(lowerIpt)
+                        || py.convertToPinyin(y).includes(lowerIpt)
                     ) {
                         existOrNot = true
                     }
@@ -52,7 +54,7 @@ export default () => {
             if (existOrNot) {
                 return true
             }
-            return (_.toLower(x.name) + _.toLower(py.convertToPinyin(x.name))).indexOf(lowerIpt) !== -1 ||('' + (
+            return (_.toLower(x.name) + _.toLower(py.convertToPinyin(x.name))).indexOf(lowerIpt) !== -1 || ('' + (
                 _.toLower(x.description) + _.toLower(py.convertToPinyin(x.description))
             )).indexOf(lowerIpt) !== -1
         })

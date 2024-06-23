@@ -18,7 +18,7 @@ import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './DoubleNavbar.module.css';
 import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
-import { ROUTE_CPT_MAPPING, SystemModuleItem, SystemSubModuleItem, systemModulesList } from '@/systemModules';
+import {  SystemModuleItem, SystemSubModuleItem, useSystemModulesList,  } from '@/systemModules';
 import { Link, useHistory } from 'react-router-dom';
 import AuthUtils from '@/utils/AuthUtils';
 import {
@@ -74,10 +74,10 @@ export function DoubleNavbar(props: {
         </Tooltip>
     )
 
+    const { list: systemModulesList, ROUTE_CPT_MAPPING } = useSystemModulesList({})
+
+
     const { firstLevel_links, firstLevel_links_btm } = useMemo(() => {
-        // firstLevel_links: systemModulesList.filter(x => !x.fixedAtBottom).map(fn_mainLinks),
-        //     firstLevel_links_btm: systemModulesList.filter(x => x.fixedAtBottom).map(fn_mainLinks)
-        // rewrite with more efficient way
         let firstLevel_links: JSX.Element[] = []
         let firstLevel_links_btm: JSX.Element[] = []
         systemModulesList.forEach(x => {

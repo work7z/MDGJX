@@ -90,8 +90,10 @@ export const getExtStaticDataRemotely = async (subPath: string): Promise<any> =>
 export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearchingInExtDir?: (extDir: string) => boolean): Promise<ExtMetaInfo> => {
   let results: MiaodaConfig[] = [];
   let tmp_results: MiaodaConfig[] = [];
+  let lastUpdatedVal: string | null = null;
   if (req.searchSource == 'cloud-all-ext') {
     const refTxt = await getExtStaticDataRemotely('/' + pkgInfoFlag + '/ref.txt');
+    lastUpdatedVal = refTxt;
     const miaodaDistAll = await getExtStaticDataRemotely(`/${pkgInfoFlag}/miaoda-dist-all-${refTxt.trim()}.json`);
     tmp_results = miaodaDistAll as MiaodaConfig[];
     // get all extensions from cloud
@@ -174,7 +176,7 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
   return {
     allMetaInfo: results,
     totals: results.length,
-    lastUpdated: dayjs().format('YYYY-MM-DD'),
+    lastUpdated: lastUpdatedVal || dayjs().format('YYYY-MM-DD'),
   };
 };
 

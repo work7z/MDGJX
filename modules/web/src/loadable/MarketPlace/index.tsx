@@ -125,32 +125,33 @@ export default function () {
                         </>
                     }
                 </div>
-                <div className='flex flex-row space-x-2 items-center'>
-
-                    <ActionIcon variant='default' size='sm' aria-label="Theme" onClick={() => {
-                        extListRes.refetch()
-                    }}>
-                        <IconReload stroke={1.5} />
-                    </ActionIcon>
-                    {
-                        hasAnyInstalling ? <Button
-                            onClick={() => {
-                                lazy_cleanExt({
-                                    fullId: 'noneed'
-                                })
-                            }}
-                            loading={cleanExtRes.isFetching}
-                            color='red' size='compact-sm' variant="light">
-                            取消安装
-                        </Button>
-                            : ''
-                    }
-                    <div>
-                        更新于: {fData?.lastUpdated}
+                <Tooltip label="云端版本库(版本号与实际日期无关)">
+                    <div className='flex flex-row space-x-2 items-center'>
+                        <ActionIcon variant='default' size='sm' aria-label="Theme" onClick={() => {
+                            extListRes.refetch()
+                        }}>
+                            <IconReload stroke={1.5} />
+                        </ActionIcon>
+                        {
+                            hasAnyInstalling ? <Button
+                                onClick={() => {
+                                    lazy_cleanExt({
+                                        fullId: 'noneed'
+                                    })
+                                }}
+                                loading={cleanExtRes.isFetching}
+                                color='red' size='compact-sm' variant="light">
+                                取消安装
+                            </Button>
+                                : ''
+                        }
+                        <div>
+                            <span>
+                                版本库: {fData?.lastUpdated}
+                            </span>
+                        </div>
                     </div>
-
-
-                </div>
+                </Tooltip>
             </div>
             <Card withBorder className="h-[100vh]">
                 <LoadingOverlay visible={extListRes.isFetching} zIndex={1000} overlayProps={{ radius: "sm", blur: 2 }} />

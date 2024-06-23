@@ -4,12 +4,13 @@ export type MiaodaDyanmicMenuItem = {
   name: string;
   disableFooter?: boolean;
   children?: MiaodaDyanmicMenuItem[];
+  belongTo?: "tools" | "docs" | "resources" // children will be effetive also if its parent has set this field
 };
 
 export type MiaodaBasicConfig = {
   disabled?: boolean;
   cwd?: string; // by default, it's $MDGJX_EXT_PATH/$id unless you have a dedicated path
-  post_fullId?:string;
+  post_fullId?: string;
   id: string;
   version: string;
   logo: string;
@@ -30,7 +31,7 @@ export type MiaodaBasicConfig = {
     embedded?: {
       // 对于embedded应用来说，baseURL 将会是 id + @version， 如果https://mdgjx.com/extview/xxx@1.0/index.html
       staticDirs: string[];
-      baseUrl?:string
+      baseUrl?: string
     };
   };
   keywords?: string[];
