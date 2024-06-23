@@ -145,7 +145,7 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
       return each.fuzzySearchStr.indexOf(lowTxt) >= 0;
     });
   }
-  // installed flag
+  // check and upgrade installed flag
   results = results.map(x => {
     const fullId = x.id + '@' + x.version;
     const specifialFolder = path.join(val_pkgExtract_dir, fullId);
@@ -156,11 +156,9 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
       if (allExtDir.length > 0) {
         for (let eachExtDir of allExtDir) {
           // is it folder
-          if (!fs.lstatSync(path.join(val_pkgExtract_dir, eachExtDir)).isDirectory()) {
-            if (eachExtDir !== fullId && eachExtDir.indexOf(x.id) >= 0) {
-              x.hasNewVersion = true;
-              break;
-            }
+          if (eachExtDir !== fullId && eachExtDir.indexOf(x.id) >= 0) {
+            x.hasNewVersion = true;
+            break;
           }
         }
       }
@@ -282,7 +280,17 @@ export class ExtensionRoute implements Routes {
       '/ext/harmful/uninstall-ext',
       asyncHandler(async (req, res) => {
         preventEnvPortalModeRunCheck();
-        // TODO: uninstall-ext
+        const reqQuery = req.query as {
+          fullId: string;
+        };
+        const fullId = reqQuery.fullId;
+        if (!fullId) {
+          throw new Error('missing extId');
+        }
+        const outputDecompressExtract = path.join(val_pkgExtract_dir, fullId);
+        if (fs.existsSync(outputDecompressExtract)) {
+          shelljs.rm('-rf', outputDecompressExtract);
+        }
         sendRes(res, { data: 1 });
       }),
     );
@@ -327,8 +335,7 @@ export class ExtensionRoute implements Routes {
                 return;
               }
               const outputDownloadTarGzFile = path.join(val_pkgRepo_dir, fullId + '.tar.gz');
-              const 
-              outputDecompressExtract = path.join(val_pkgExtract_dir, fullId);
+              const outputDecompressExtract = path.join(val_pkgExtract_dir, fullId);
               // axios fs write
               refObj.message = '正在下载中.....  目标链接: ' + outputDownloadTarGzFile;
               logfn();
@@ -436,12 +443,18 @@ export class ExtensionRoute implements Routes {
         if (!findItem) {
           throw new Error('not found');
         }
+        const run_logs = path.join(__dirname, findItem.id + '-run.log');
+        let text_run_logs = 'no logs found'
+        if (fs.existsSync(run_logs)) {
+          text_run_logs = fs.readFileSync(run_logs).toString();
+        }
         // default
         MiaodaEntireRunStatus[findItem.id] = MiaodaEntireRunStatus[findItem.id] || fn_getInit();
         switch (type) {
           case 'get-all':
             sendRes(res, {
               data: {
+                logs: text_run_logs,
                 config: findItem,
                 status: _.pickBy(MiaodaEntireRunStatus[findItem.id], x => !_.isFunction(x)),
               },
@@ -461,6 +474,12 @@ export class ExtensionRoute implements Routes {
         const type = query.type; // init-log, service-log, config
         if (!id || !type) {
           throw new Error('missing id or type');
+        }
+        sendRes(res,{
+          data: 1
+        })
+        if(true){
+          return;
         }
         const allMetaInfo = await getAllExtMetaInfo(
           {

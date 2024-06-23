@@ -79,11 +79,11 @@ export default function () {
                 </Group>
 
                 <Title order={2} className={classes.title} ta="center" mt="sm">
-                    专业至上，为您量身打造的云插件市场！
+                    专业至上，为您量身打造的云插件市场
                 </Title>
 
                 <Text c="dimmed" className={classes.description} ta="center" mt="md">
-                    从开发工具到待办笔记，从生活助手到学习资源，不分领域，应有尽有！
+                    从开发工具到待办笔记，从生活助手到学习资源，不分领域，应有尽有
                 </Text>
 
                 <div className="mt-6">
@@ -98,7 +98,13 @@ export default function () {
             </Container>
 
             <div className="flex flex-row mt-16  mb-2 px-2  justify-between">
-                <div>总计{fData?.totals}个插件</div>
+                <div>
+                    {
+                        extListRes.isFetching ? 'loading...':<>
+                            总计{fData?.totals}个插件
+                            </>
+                    }
+                </div>
                 <div className='flex flex-row space-x-2 items-center'>
 
                     <ActionIcon variant='default' size='sm' aria-label="Theme" onClick={() => {
