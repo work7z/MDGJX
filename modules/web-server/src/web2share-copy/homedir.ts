@@ -17,18 +17,30 @@ export let getUserHomeDir: () => string = () => {
 };
 
 export let getLafToolsDataDir = (): string => {
-  let n = path.join(userHome, isTestEnv() ? '.test-mdgjx' : isDevEnv() ? '.dev-miaoda' : ".miaoda");
+  let n = path.join(userHome, isTestEnv() ? '.test-miaoda' : isDevEnv() ? '.dev-miaoda' : ".miaoda");
   return fsutils.mkdir(n);
 };
 
 
 
-export let getLafToolsExtDir = (): string => {
+export let devonly_getLafToolsExtDir = (): string => {
   if (isDevEnv()) {
     if (process.env.MDGJX_EXT_ROOT) {
       return path.join(process.env.MDGJX_EXT_ROOT,'extensions');
     }
   }
-  let n = path.join(userHome, isTestEnv() ? '.test-mdgjx-extensions' : isDevEnv() ? '.dev-miaoda-extensions' : '.mdgjx-extensions');
+  throw new Error('not in dev env');
+};
+
+// 下载好，解压之后会放在这里，目前后续使用都是在这里使用的
+export let getLocalPkgExtract = (): string => {
+  let n = path.join(getLafToolsDataDir(), 'pkg-extract');
   return fsutils.mkdir(n);
 };
+
+// 下载好的包，会放在这里，等待解压
+export let getLocalPkgRepo = (): string => {
+  let n = path.join(getLafToolsDataDir(), 'pkg-repo');
+  return fsutils.mkdir(n);
+};
+

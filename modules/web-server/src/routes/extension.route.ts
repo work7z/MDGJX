@@ -5,17 +5,24 @@ import { sendRes } from '@/commonSimpleRoutes';
 import { isDevEnv } from '@/web2share-copy/env';
 import _ from 'lodash';
 import shelljs from 'shelljs';
-import { getLafToolsDataDir, getLafToolsExtDir } from '@/web2share-copy/homedir';
+import { getLafToolsDataDir, devonly_getLafToolsExtDir, getLocalPkgExtract, getLocalPkgRepo } from '@/web2share-copy/homedir';
 import path from 'path';
 import fs from 'fs';
 import { logger } from '@/utils/logger';
 import dayjs from 'dayjs';
 import { MiaodaBasicConfig } from '../m-types-copy/base/m-types-main';
-import { asyncHandler } from '@/app';
+import { asyncHandler, getExtStaticServer } from '@/app';
 import { ChildProcess } from 'child_process';
+import axios from 'axios';
+import { isBetaTestServerMode } from '@/env';
+import { CacheUtils } from '@/utils/CacheUtils';
+import { computeHash } from '@/utils/hash';
+import compressUtils from '@/utils/compressUtils';
 
 const pinyin = require('tiny-pinyin');
-const currentProjectRoot = getLafToolsExtDir();
+const val_devonly_LafToolsExtDir = devonly_getLafToolsExtDir();
+const val_pkgExtract_dir = getLocalPkgExtract();
+const val_pkgRepo_dir = getLocalPkgRepo();
 
 export type ExtModeSt = {
   isDev: boolean;
@@ -35,49 +42,101 @@ export type ExtMetaInfo = {
 };
 export type ExtMetaSearchReq = {
   searchText: string;
+  searchSource: 'cloud-all-ext' | 'local-dev-ext';
 };
+
+const filename_miaoda_dist_file = 'miaoda-dist.json';
 
 export const getExtMode = (): ExtModeSt => {
   return {
     isDev: isDevEnv(),
-    repoPath: currentProjectRoot,
+    repoPath: val_devonly_LafToolsExtDir,
   };
 };
+const extFileFlag = isBetaTestServerMode || isDevEnv() ? 'test' : 'release';
+const pkgInfoFlag = 'pkg-info-' + extFileFlag;
 
-export const getAllExtMetaInfo = (req: ExtMetaSearchReq, filterWhileSearchingInExtDir?: (extDir: string) => boolean): ExtMetaInfo => {
-  const projectRoots = shelljs.ls(currentProjectRoot);
-  let results: MiaodaConfig[] = [];
-  for (let eachFile of projectRoots) {
-    if (filterWhileSearchingInExtDir && !filterWhileSearchingInExtDir(eachFile)) {
-      continue;
+const getExtStaticURL = (subPath: string): string => {
+  const srv = getExtStaticServer();
+  const fullURL = srv + `/ext-root/${subPath}`;
+  return fullURL;
+};
+
+CacheUtils.enableInterval();
+const TIMEOUT_FOR_EXT_STATIC_RES = isDevEnv() ? 3000 : 1000 * 10; // 10 seconds
+
+export const getExtStaticDataRemotely = async (subPath: string): Promise<any> => {
+  const fullURL = getExtStaticURL(subPath);
+  try {
+    const prev = CacheUtils.get(fullURL);
+    if (prev) {
+      return prev;
     }
-    logger.info('loading ext: ' + eachFile);
-    const miaodaJSON = path.join(currentProjectRoot, eachFile, 'miaoda-dist.json');
-    if (fs.existsSync(miaodaJSON)) {
-      const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
-      if (miaoda.disabled) {
+    logger.info('getting ' + fullURL);
+    const r = await axios(fullURL);
+    if (r.status !== 200) {
+      logger.error('failed to get ' + fullURL);
+      throw new Error(`failed to get ${fullURL}`);
+    }
+    logger.debug('got ' + fullURL + ', data: ' + r.data);
+    let finalData = _.isString(r.data) ? _.trim(r.data) : r.data;
+    CacheUtils.put(fullURL, finalData, TIMEOUT_FOR_EXT_STATIC_RES);
+    return finalData;
+  } catch (e) {
+    logger.error('failed to get ' + fullURL + ', error: ' + e);
+    throw new Error(`failed to get ${fullURL}, error: ${fullURL}`);
+  }
+};
+
+export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearchingInExtDir?: (extDir: string) => boolean): Promise<ExtMetaInfo> => {
+  let results: MiaodaConfig[] = [];
+  let tmp_results: MiaodaConfig[] = [];
+  if (req.searchSource == 'cloud-all-ext') {
+    const refTxt = await getExtStaticDataRemotely('/' + pkgInfoFlag + '/ref.txt');
+    const miaodaDistAll = await getExtStaticDataRemotely(`/${pkgInfoFlag}/miaoda-dist-all-${refTxt.trim()}.json`);
+    tmp_results = miaodaDistAll as MiaodaConfig[];
+    // get all extensions from cloud
+  } else if (req.searchSource == 'local-dev-ext') {
+    // get all extensions from local development mode
+    const projectRoots = shelljs.ls(val_devonly_LafToolsExtDir);
+    for (let eachFile of projectRoots) {
+      if (filterWhileSearchingInExtDir && !filterWhileSearchingInExtDir(eachFile)) {
         continue;
       }
-      const keywords = miaoda.keywords;
-      const fuzzySearchStrArr = [];
-      const addToFuzzy = (arr: string[]) => {
-        for (let eachKeyword of arr) {
-          if (!eachKeyword) {
-            continue;
-          }
-          const pinyinStr = pinyin.convertToPinyin(eachKeyword);
-          if (eachKeyword !== pinyinStr) {
-            fuzzySearchStrArr.push(pinyinStr);
-          }
-          fuzzySearchStrArr.push(eachKeyword);
-        }
-      };
-      addToFuzzy(keywords);
-      addToFuzzy([miaoda.name, miaoda.shortDesc]);
-      miaoda.fuzzySearchStr = _.toLower(fuzzySearchStrArr.join(' '));
-      results.push(miaoda);
+      logger.info('loading ext: ' + eachFile);
+      const miaodaJSON = path.join(val_devonly_LafToolsExtDir, eachFile, filename_miaoda_dist_file);
+      if (fs.existsSync(miaodaJSON)) {
+        const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
+        tmp_results.push(miaoda);
+      }
     }
   }
+  for (let miaoda of tmp_results) {
+    if (miaoda.disabled) {
+      continue;
+    }
+    const keywords = miaoda.keywords;
+    const fuzzySearchStrArr = [];
+    const addToFuzzy = (arr: string[]) => {
+      for (let eachKeyword of arr) {
+        if (!eachKeyword) {
+          continue;
+        }
+        const pinyinStr = pinyin.convertToPinyin(eachKeyword);
+        if (eachKeyword !== pinyinStr) {
+          fuzzySearchStrArr.push(pinyinStr);
+        }
+        fuzzySearchStrArr.push(eachKeyword);
+      }
+    };
+    addToFuzzy(keywords);
+    addToFuzzy([miaoda.name, miaoda.shortDesc]);
+    miaoda.fuzzySearchStr = _.toLower(fuzzySearchStrArr.join(' '));
+    results.push(miaoda);
+  }
+  tmp_results = [];
+
+  const allExtDir = shelljs.ls(val_pkgExtract_dir);
   // filter now
   req.searchText = _.trim(req.searchText);
   if (req.searchText) {
@@ -86,11 +145,25 @@ export const getAllExtMetaInfo = (req: ExtMetaSearchReq, filterWhileSearchingInE
       return each.fuzzySearchStr.indexOf(lowTxt) >= 0;
     });
   }
-  // installed flag
+  // check and upgrade installed flag
   results = results.map(x => {
-    if (isDevEnv()) {
-      x.installed = true;
+    const fullId = x.id + '@' + x.version;
+    const specifialFolder = path.join(val_pkgExtract_dir, fullId);
+    const miaodaDist = path.join(specifialFolder, filename_miaoda_dist_file);
+    x.installed = fs.existsSync(miaodaDist);
+    // check if having exist extensions
+    if (!x.installed) {
+      if (allExtDir.length > 0) {
+        for (let eachExtDir of allExtDir) {
+          // is it folder
+          if (eachExtDir !== fullId && eachExtDir.indexOf(x.id) >= 0) {
+            x.hasNewVersion = true;
+            break;
+          }
+        }
+      }
     }
+
     return x;
   });
   return {
@@ -107,19 +180,26 @@ export const checkIfCurrentEnvPermitHarmfulAPI = () => {
     throw new Error('not allowed');
   }
 };
-import os from 'os';
+export let IsCurrentPortalServerMode = () => {
+  return process.env.ONLINEMODE == 'true';
+};
+export const preventEnvPortalModeRunCheck = () => {
+  if (IsCurrentPortalServerMode()) {
+    throw new Error('抱歉，此操作仅允许本地部署模式执行，云端服务器无法处理此请求。 ');
+  }
+};
 export type ClosableFn = () => void;
-type ProcessStatus = 'running' | 'stopped' | 'error' | 'ready';
-export type MiaodaRunStatus = {
-  setupStatus: ProcessStatus;
-  serviceStatus: ProcessStatus;
+type DevProcessStatus = 'running' | 'stopped' | 'error' | 'ready';
+export type DevRunStatus = {
+  setupStatus: DevProcessStatus;
+  serviceStatus: DevProcessStatus;
   killSetupProcess?: ClosableFn;
   killServiceProcess?: ClosableFn;
 };
 
 const MiaodaEntireRunStatus: {
   // id and run status
-  [key: string]: MiaodaRunStatus | null;
+  [key: string]: DevRunStatus | null;
 } = {};
 
 export let kill_process = (child: ChildProcess) => {
@@ -134,6 +214,18 @@ export let kill_process = (child: ChildProcess) => {
   }
 };
 
+type InstallProgressStatus = 'success' | 'running' | 'done' | 'error';
+type InstallProgressStatusObj = {
+  runTS: string;
+  status: InstallProgressStatus;
+  message: string;
+};
+let MiaodaInstallAppProgressObj: {
+  [id: string]: InstallProgressStatusObj;
+} = {
+  //
+};
+
 export class ExtensionRoute implements Routes {
   public router = Router();
 
@@ -144,7 +236,7 @@ export class ExtensionRoute implements Routes {
   private initializeRoutes() {
     this.router.get(
       '/ext/check-ext-mode',
-      asyncHandler((req, res) => {
+      asyncHandler(async (req, res) => {
         sendRes(res, {
           data: getExtMode(),
         });
@@ -152,8 +244,8 @@ export class ExtensionRoute implements Routes {
     );
     this.router.get(
       '/ext/get-ext-list',
-      asyncHandler((req, res) => {
-        const allMetaInfo = getAllExtMetaInfo(req.query as ExtMetaSearchReq, x => true);
+      asyncHandler(async (req, res) => {
+        const allMetaInfo = await getAllExtMetaInfo(req.query as ExtMetaSearchReq, x => true);
 
         sendRes(res, {
           data: allMetaInfo,
@@ -165,15 +257,172 @@ export class ExtensionRoute implements Routes {
       id: string;
       type: 'get-all' | 'setup' | 'start-service' | 'stop-service';
     };
-    const fn_getInit = (): MiaodaRunStatus => {
+    const fn_getInit = (): DevRunStatus => {
       return {
         setupStatus: 'ready',
         serviceStatus: 'ready',
       };
     };
+
+    this.router.get(
+      '/ext/harmful/clean-ext',
+      asyncHandler(async (req, res) => {
+        preventEnvPortalModeRunCheck();
+        // delete all keys in MiaodaInstallAppProgressObj
+        for (let eachKey in MiaodaInstallAppProgressObj) {
+          delete MiaodaInstallAppProgressObj[eachKey];
+        }
+        sendRes(res, { data: 1 });
+      }),
+    );
+
+    this.router.get(
+      '/ext/harmful/uninstall-ext',
+      asyncHandler(async (req, res) => {
+        preventEnvPortalModeRunCheck();
+        const reqQuery = req.query as {
+          fullId: string;
+        };
+        const fullId = reqQuery.fullId;
+        if (!fullId) {
+          throw new Error('missing extId');
+        }
+        const outputDecompressExtract = path.join(val_pkgExtract_dir, fullId);
+        if (fs.existsSync(outputDecompressExtract)) {
+          shelljs.rm('-rf', outputDecompressExtract);
+        }
+        sendRes(res, { data: 1 });
+      }),
+    );
+
+    // install extensions
+    this.router.get(
+      '/ext/harmful/install-ext',
+      asyncHandler(async (req, res) => {
+        preventEnvPortalModeRunCheck();
+        const reqQuery = req.query as {
+          fullId: string;
+        };
+        const fullId = reqQuery.fullId;
+        if (!fullId) {
+          throw new Error('missing extId');
+        }
+        (async () => {
+          try {
+            if (MiaodaInstallAppProgressObj[fullId] && MiaodaInstallAppProgressObj[fullId].status == 'running') {
+              logger.info('already running for ' + fullId + ', therefore skip');
+              return;
+            }
+            const refObj: InstallProgressStatusObj = {
+              runTS: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+              status: 'running',
+              message: '开始准备下载链接...',
+            };
+            MiaodaInstallAppProgressObj[fullId] = refObj;
+            let alreadyExitNow = (): boolean => {
+              if (MiaodaInstallAppProgressObj[fullId] == refObj) {
+                // still the same
+                return false;
+              } else {
+                return true;
+              }
+            };
+            let logfn = () => {
+              logger.info('current progress: ' + JSON.stringify(refObj));
+            };
+            try {
+              if (alreadyExitNow()) {
+                return;
+              }
+              const outputDownloadTarGzFile = path.join(val_pkgRepo_dir, fullId + '.tar.gz');
+              const outputDecompressExtract = path.join(val_pkgExtract_dir, fullId);
+              // axios fs write
+              refObj.message = '正在下载中.....  目标链接: ' + outputDownloadTarGzFile;
+              logfn();
+              if (alreadyExitNow()) {
+                return;
+              }
+              const raw_sha256val = await getExtStaticDataRemotely('/' + pkgInfoFlag + '/' + fullId + '.sha256');
+              const sha256val = _.chain(raw_sha256val).trim().split(' ').first().trim().value();
+              logger.info('sha256val: ' + sha256val);
+              refObj.message = '读取到SHA256摘要值: ' + sha256val;
+              logfn();
+              await axios({
+                method: 'get',
+                url: getExtStaticURL(`/pkg-repo/${fullId}.tar.gz`),
+                responseType: 'stream',
+              }).then(function (response) {
+                refObj.status = 'running';
+                refObj.message = `下载已完成，正在写入本地文件...`;
+                logfn();
+                if (alreadyExitNow()) {
+                  return;
+                }
+                response.data.pipe(fs.createWriteStream(outputDownloadTarGzFile));
+                response.data.on('end', async () => {
+                  try {
+                    refObj.status = 'success';
+                    refObj.message = `写入本地文件完成，正在校验SHA256中...`;
+                    logfn();
+                    if (alreadyExitNow()) {
+                      return;
+                    }
+
+                    const actual_shasum = await computeHash(outputDownloadTarGzFile);
+                    if (!actual_shasum) {
+                      throw new Error('failed to compute hash');
+                    }
+                    if (_.trim(_.toLower(actual_shasum)) !== _.trim(_.toLower(sha256val))) {
+                      throw new Error('sha256 not matched');
+                    }
+                    // 开始解压
+                    const finalDir = outputDecompressExtract;
+                    await compressUtils.decompress(outputDownloadTarGzFile, finalDir);
+                    // 解压成功，
+                    const finalDirmiaodDistFile = path.join(finalDir, filename_miaoda_dist_file);
+                    // ;
+                    if (!fs.existsSync(finalDirmiaodDistFile)) {
+                      throw new Error('failed to find miaoda-dist.json');
+                    } else {
+                      // 成功
+                      refObj.status = 'done';
+                      refObj.message = '安装成功';
+                    }
+                  } catch (e) {
+                    refObj.status = 'error';
+                    refObj.message = '产生二级错误: ' + JSON.stringify(e);
+                    logfn();
+                  }
+                });
+              });
+            } catch (e) {
+              refObj.status = 'error';
+              refObj.message = '产生错误: ' + JSON.stringify(e);
+              logfn();
+            }
+          } catch (e) {
+            logger.error('error when installing: ' + e);
+          }
+        })();
+        sendRes(res, {
+          data: 1,
+        });
+      }),
+    );
+
+    this.router.get(
+      '/ext/harmful/get-ext-progress-all-data',
+      asyncHandler(async (req, res) => {
+        preventEnvPortalModeRunCheck();
+        sendRes(res, {
+          data: MiaodaInstallAppProgressObj,
+        });
+      }),
+    );
+
     this.router.get(
       '/ext/harmful/get-status',
-      asyncHandler((req, res) => {
+      asyncHandler(async (req, res) => {
         checkIfCurrentEnvPermitHarmfulAPI();
         const query = req.query as HarmfulExtPostQuery;
         const id = query.id;
@@ -181,12 +430,23 @@ export class ExtensionRoute implements Routes {
         if (!id || !type) {
           throw new Error('missing id or type');
         }
-        const allMetaInfo = getAllExtMetaInfo(req.query as ExtMetaSearchReq, x => {
-          return x == id;
-        });
+        const allMetaInfo = await getAllExtMetaInfo(
+          {
+            searchSource: 'local-dev-ext',
+            searchText: undefined,
+          } as ExtMetaSearchReq,
+          x => {
+            return x == id;
+          },
+        );
         const findItem = allMetaInfo.allMetaInfo.find(x => x.id == id);
         if (!findItem) {
           throw new Error('not found');
+        }
+        const run_logs = path.join(__dirname, findItem.id + '-run.log');
+        let text_run_logs = 'no logs found'
+        if (fs.existsSync(run_logs)) {
+          text_run_logs = fs.readFileSync(run_logs).toString();
         }
         // default
         MiaodaEntireRunStatus[findItem.id] = MiaodaEntireRunStatus[findItem.id] || fn_getInit();
@@ -194,6 +454,7 @@ export class ExtensionRoute implements Routes {
           case 'get-all':
             sendRes(res, {
               data: {
+                logs: text_run_logs,
                 config: findItem,
                 status: _.pickBy(MiaodaEntireRunStatus[findItem.id], x => !_.isFunction(x)),
               },
@@ -206,7 +467,7 @@ export class ExtensionRoute implements Routes {
     );
     this.router.get(
       '/ext/harmful/do-job',
-      asyncHandler((req, res) => {
+      asyncHandler(async (req, res) => {
         checkIfCurrentEnvPermitHarmfulAPI();
         const query = req.query as HarmfulExtPostQuery;
         const id = query.id;
@@ -214,22 +475,34 @@ export class ExtensionRoute implements Routes {
         if (!id || !type) {
           throw new Error('missing id or type');
         }
-        const allMetaInfo = getAllExtMetaInfo(req.query as ExtMetaSearchReq, x => {
-          return x == id;
-        });
+        sendRes(res,{
+          data: 1
+        })
+        if(true){
+          return;
+        }
+        const allMetaInfo = await getAllExtMetaInfo(
+          {
+            searchSource: 'local-dev-ext',
+            searchText: undefined,
+          } as ExtMetaSearchReq,
+          x => {
+            return x == id;
+          },
+        );
         const findItem = allMetaInfo.allMetaInfo.find(x => x.id == id);
         if (!findItem) {
           throw new Error('not found');
         }
         MiaodaEntireRunStatus[findItem.id] = MiaodaEntireRunStatus[findItem.id] || fn_getInit();
         const tItem = MiaodaEntireRunStatus[findItem.id];
-        const cwd = findItem.cwd || path.join(currentProjectRoot, findItem.id);
+        const cwd = findItem.cwd || path.join(val_devonly_LafToolsExtDir, findItem.id);
         const setup_logs = path.join(__dirname, findItem.id + '-setup.log');
         const run_logs = path.join(__dirname, findItem.id + '-run.log');
-        if(!fs.existsSync(setup_logs)){
+        if (!fs.existsSync(setup_logs)) {
           fs.writeFileSync(setup_logs, '');
         }
-        if(!fs.existsSync(run_logs)){
+        if (!fs.existsSync(run_logs)) {
           fs.writeFileSync(run_logs, '');
         }
         logger.info('cwd: ' + cwd);
@@ -244,7 +517,7 @@ export class ExtensionRoute implements Routes {
             const e = shelljs.exec(setup_devcmd, {
               cwd: cwd,
               async: true,
-              silent:true,              
+              silent: true,
             });
             // pipe to setup_logs
             e.stdout.pipe(fs.createWriteStream(setup_logs));
