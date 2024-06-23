@@ -197,6 +197,9 @@ export const getAllInstalledLatestExts = (): InstalledLatestExts => {
     return fs.existsSync(path.join(val_pkgExtract_dir, x, filename_ack_file));
   });
   for (let eachExt of installedExts) {
+    if(eachExt.indexOf("@") === -1){
+      continue
+    }
     const ackFile = path.join(val_pkgExtract_dir, eachExt, filename_ack_file);
     const miaodaJSON = path.join(val_pkgExtract_dir, eachExt, filename_miaoda_dist_file);
     if (fs.existsSync(ackFile) && fs.existsSync(miaodaJSON)) {
