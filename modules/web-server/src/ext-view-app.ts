@@ -7,16 +7,11 @@ import express, { NextFunction, Request, Response } from 'express';
 import helmet from 'helmet';
 import hpp from 'hpp';
 import morgan from 'morgan';
-import { NODE_ENV, PORT, LOG_FORMAT, ORIGIN, CREDENTIALS } from '@config';
+import {LOG_FORMAT, ORIGIN, CREDENTIALS } from '@config';
 import { Routes } from '@interfaces/routes.interface';
 import { ErrorMiddleware } from '@middlewares/error.middleware';
 import { logger, stream } from '@utils/logger';
-import path from 'path';
-import { isDevEnv, isProductionEnv } from './web2share-copy/env';
-import { API_SERVER_URL } from './web2share-copy/api_constants';
 import { HttpException } from './exceptions/httpException';
-import proxy from 'express-http-proxy';
-import { existsSync } from 'fs';
 import http from 'http';
 
 const REF_HOLDER: {
@@ -124,5 +119,6 @@ export class ExtViewApp {
 
 export const fn_runOrRestartExtViewAppServer = () => {
   // it will be running once you call it
-  return new ExtViewApp();
+ const eva =new ExtViewApp();
+ eva.listen()
 };

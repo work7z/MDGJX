@@ -27,7 +27,7 @@ export const fn_getPort = () => {
   return process.env.PORT || ((env == 'development' ? 3050 : 39899) as number);
 };
 export const fn_getExtViewPort = (): number => {
-  return parseInt(fn_getPort() + '') + 16;
+  return parseInt(fn_getPort() + '') + 10;
 };
 export const fn_getExtViewPath = (): string => {
   return '/ext-view'; // for extensions page view, will redirect to internal ext view servers
@@ -72,9 +72,6 @@ export class App {
     this.initializeMiddlewares();
     this.initializeRoutes(routes);
     this.initializeErrorHandling();
-
-    // when the app is started, the ext-view server should be started as well
-    fn_runOrRestartExtViewAppServer()
   }
 
   public listen() {
@@ -143,6 +140,19 @@ export class App {
         }),
       );
     }
+
+    // setup ext-view app
+    app.use(
+      fn_getExtViewPath(),
+      proxy(INTERNAL_EXT_VIEW_SERVER, {
+        proxyReqPathResolver: function (req) {
+          var parts = req.url.split('?');
+          var queryString = parts[1];
+          var updatedPath = parts[0];
+          return fn_getExtViewPath() + updatedPath + (queryString ? '?' + queryString : '');
+        },
+      }),
+    );
 
     // setup extstatic /ext-root
     const extStaticArr = ['/ext-root'];
