@@ -103,7 +103,7 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
         continue;
       }
       logger.info('loading ext: ' + eachFile);
-      const ackFile = path.join(val_devonly_LafToolsExtDir, eachFile, filename_ack_file);
+      const ackFile = path.join(val_devonly_LafToolsExtDir, eachFile, isDevEnv ? filename_miaoda_dist_file : filename_ack_file);
       if (!fs.existsSync(ackFile)) {
         logger.info('skipping ' + eachFile + ' due to missing ack file');
         continue;

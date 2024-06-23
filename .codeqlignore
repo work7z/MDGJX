@@ -1,7 +1,6 @@
 addons
 addons/**
 addons/**/*
-*.vue
 modules/web-server/html/*.html
 modules/node/src/lib/prettier/**
 modules/node/src/lib/prettier/\*
