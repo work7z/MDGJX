@@ -18,47 +18,21 @@ import {
     Icon,
     IconTools,
     IconNavigation,
+    IconInbox,
 
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './DoubleNavbar.module.css';
 import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
-import { toolsNavInfo } from './toolsNavInfo.tsx';
 import AppConstants from './AppConstants.tsx';
 import { isDevEnv } from './env.ts';
+import {
+    SystemModuleItem,
+    SystemSubModuleItem,
+} from './m-types-copy/base/m-types-main'
 
-export type LoadModuleType = () => any
-export type SystemSubModuleItem = {
-    id: string,
-    icon?: any,
-    href?: string,
-    firstRouteId?: string,
-    rootMainModuleId?: string,
-    name: string,
-    seoName?: string,
-    disableFooter?: boolean,
-    defaultSubToolId?: string,
-    children?: SystemSubModuleItem[],
-    bodyFn?: LoadModuleType
-}
-export type SystemModuleItem = {
-    ignoreInNav?: boolean,
-    id: string,
-    icon?: React.FC<any>;
-    label: string,
-    defaultHref: string
-    hide?: boolean;
-    fixedAtBottom?: boolean;
-    children?: SystemSubModuleItem[]
-}
-export type RedirectLinkItem = {
-    path: string
-    url: string
-}
-export const redirectLinks: RedirectLinkItem[] = [
-
-]
+export * from './m-types-copy/base/m-types-main'
 
 export const Fn_MyAccount = () => import('./loadable/MyAccount/index.tsx')
 
@@ -94,13 +68,14 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
             return mainModule
         })
     }
-    const jsonSuperTool = {
+    const jsonSuperTool: SystemSubModuleItem = {
         name: 'JSON超级工具',
+        iconInStr: 'Json',
         id: 'json',
         defaultSubToolId: 'convert',
         bodyFn: () => import('./loadable/JSONSuperTools/index.tsx'),
     }
-    const myfavour = {
+    const myfavour: SystemSubModuleItem = {
         name: '云收藏夹',
         id: 'index',
         disableFooter: true,
@@ -112,11 +87,11 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
             defaultHref: '/tools/index',
             icon: IconHome2,
             label: '主页',
-            ignoreInNav: true,
             children: [
                 {
                     id: 'tools',
                     icon: IconHome2,
+                    ignoreInNav: true,
                     name: '秒达工具箱',
                     children: [
                         {
@@ -138,7 +113,7 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                 {
                     id: 'formats',
                     icon: IconTools,
-                    name: '通用格式',
+                    name: '超级格式',
                     children: [
                         {
                             ...jsonSuperTool,
@@ -154,26 +129,32 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                         {
                             name: '文本翻译',
                             id: 'text',
+                            iconInStr: 'Script',
                             bodyFn: () => import('./loadable/TLNText/index.tsx')
                         },
                         {
                             name: 'JSON 格式翻译',
                             id: 'json',
+                            iconInStr: 'Json',
                             bodyFn: () => import('./loadable/TLNJSON/index.tsx')
                         },
                         {
                             name: 'JSON 中英文对照',
                             id: 'json-cn-en',
+                            iconInStr: 'Json',
+                            // iconInStr: 'Language',
                             bodyFn: () => import('./loadable/TLNJSONComparison/index.tsx')
                         },
                         {
                             name: 'Markdown 文档翻译',
                             id: 'md',
+                            iconInStr: 'Markdown',
                             bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
                         },
                         {
                             name: '简繁中文对照翻译',
                             id: 'ftzt',
+                            iconInStr: 'Language',
                             bodyFn: () => import('./loadable/TLNZTFT/index.tsx')
                         },
                     ]
@@ -202,6 +183,8 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                 //                 id: eachSubTool.id + '',
                 //                 disableFooter: true,
                 //                 name: eachSubTool.name,
+                //                      keywords: eachSubTool.keywords,
+                //                  description: eachSubTool.description,
                 //                 bodyFn: () => import('./loadable/XToolsDetail/index.tsx')
                 //             }
                 //         }),
