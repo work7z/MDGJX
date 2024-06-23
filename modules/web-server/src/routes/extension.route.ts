@@ -52,10 +52,12 @@ export const getExtMode = (): ExtModeSt => {
     repoPath: val_devonly_LafToolsExtDir,
   };
 };
+const extFileFlag = isBetaTestServerMode || isDevEnv() ? 'test' : 'release';
+const pkgInfoFlag = 'pkg-info-' + extFileFlag;
 
 const getExtStaticURL = (subPath: string): string => {
   const srv = getExtStaticServer();
-  const fullURL = srv + `/ext-root/${isBetaTestServerMode || isDevEnv() ? 'test' : 'release'}${subPath}`;
+  const fullURL = srv + `/ext-root/${subPath}`;
   return fullURL;
 };
 
@@ -89,8 +91,8 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
   let results: MiaodaConfig[] = [];
   let tmp_results: MiaodaConfig[] = [];
   if (req.searchSource == 'cloud-all-ext') {
-    const refTxt = await getExtStaticDataRemotely('/pkg-info/ref.txt');
-    const miaodaDistAll = await getExtStaticDataRemotely(`/pkg-info/miaoda-dist-all-${refTxt.trim()}.json`);
+    const refTxt = await getExtStaticDataRemotely('/' + pkgInfoFlag + '/ref.txt');
+    const miaodaDistAll = await getExtStaticDataRemotely(`/${pkgInfoFlag}/miaoda-dist-all-${refTxt.trim()}.json`);
     tmp_results = miaodaDistAll as MiaodaConfig[];
     // get all extensions from cloud
   } else if (req.searchSource == 'local-dev-ext') {
@@ -330,7 +332,7 @@ export class ExtensionRoute implements Routes {
               if (alreadyExitNow()) {
                 return;
               }
-              const raw_sha256val = await getExtStaticDataRemotely('/pkg-info/' + fullId + '.sha256');
+              const raw_sha256val = await getExtStaticDataRemotely('/' + pkgInfoFlag + '/' + fullId + '.sha256');
               const sha256val = _.chain(raw_sha256val).trim().split(' ').first().trim().value();
               logger.info('sha256val: ' + sha256val);
               refObj.message = '读取到SHA256摘要值: ' + sha256val;

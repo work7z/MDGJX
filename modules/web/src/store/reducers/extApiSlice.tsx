@@ -43,12 +43,6 @@ type HarmfulExtPostQuery = {
     type: 'get-all' | 'setup' | 'start-service' | 'stop-service';
 };
 export type ClosableFn = () => void;
-export type MiaodaRunStatus = {
-    setupStatus: ProcessStatus;
-    serviceStatus: ProcessStatus;
-    setupProcess?: ClosableFn;
-    serviceProcess?: ClosableFn;
-};
 export const extApiSlice = createApi({
     reducerPath: "extApi",
     baseQuery: fetchBaseQuery({
@@ -92,7 +86,6 @@ export const extApiSlice = createApi({
         }>({
             query: (p) => {
                 return {
-                    // https://extstatic.mdgjx.com/ext-root/test-ext-pkg-info/ref.txt
                     url: `/${getReleaseOrTestBaseOnCurrentURL()}` + p.subPath,
                     method: "GET",
                 };
