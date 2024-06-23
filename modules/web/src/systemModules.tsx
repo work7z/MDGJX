@@ -212,7 +212,7 @@ export const systemModulesList: SystemModuleItem[] = formatModuleItem([
                 id: 'dev-centre',
                 children: [
                     {
-                        name: '本地插件预览',
+                        name: '开发插件预览',
                         id: 'installed-plugins',
                         disableFooter: true,
                         bodyFn: () => import('./loadable/MpPreviewExt/index.tsx')

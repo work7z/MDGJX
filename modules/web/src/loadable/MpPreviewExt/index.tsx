@@ -20,6 +20,7 @@ import {
   IconBrandBlogger,
   IconInfoCircle,
   IconMacro,
+  IconMenu,
   IconMessage,
   IconMessageCircle,
   IconPhoto,
@@ -182,6 +183,9 @@ export default () => {
                 <Tabs.Tab value="main" leftSection={<IconAppWindow style={iconStyle} />}>
                   主界面
                 </Tabs.Tab>
+                <Tabs.Tab value="menu" leftSection={<IconMenu style={iconStyle} />}>
+                  模拟菜单
+                </Tabs.Tab>
                 <Tabs.Tab value="config" leftSection={<IconInfoCircle style={iconStyle} />}>
                   插件配置
                 </Tabs.Tab>
@@ -192,6 +196,15 @@ export default () => {
                                 服务日志
                             </Tabs.Tab> */}
               </Tabs.List>
+
+              <Tabs.Panel value="menu">
+                <p className='p-2'>
+                  <Alert title="什么是模拟菜单？" color="teal">
+一个插件可以生成多个菜单栏，本标签页旨在提供插件配置中的菜单选项的选择。也就是说，当您需要切换到指定页面时，可以先点击目标菜单，再返回到主页面进行查看。
+                  </Alert>
+
+                </p>
+</Tabs.Panel>
 
               <Tabs.Panel value="main">
                 <iframe
