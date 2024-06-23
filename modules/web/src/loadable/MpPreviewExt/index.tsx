@@ -206,11 +206,13 @@ export default () => {
               </Tabs.Panel>
 
               <Tabs.Panel value="config">
-                <GenCodeMirror
-                  directValue={JSON.stringify(configItem, null, 2)}
-                  language="json"
-                  bigTextId={''}
-                />
+                <div className='overflow-y h-[500px]'>
+                  <GenCodeMirror
+                    directValue={JSON.stringify(configItem, null, 2)}
+                    language="json"
+                    bigTextId={''}
+                  />
+                </div>
               </Tabs.Panel>
             </Tabs>
           </div>
@@ -277,8 +279,7 @@ export default () => {
           <div className="mt-4">
             <Alert title={`如何进行插件开发？`} color="indigo">
               <ul className="list-decimal  pl-5">
-                <li>这里假设插件名为my-extensions，并且你已定义好插件配置。</li>
-                <li>每次 进入extensions-meta修改配置后，要执行update-miaoda-config.sh</li>
+                <li>每次修改插件配置后，需执行update-miaoda-config.sh</li>
                 <li>插件根目录下运行npm run md-dev-setup以初始化</li>
                 <li>插件根目录下运行npm run md-dev-run以运行服务</li>
               </ul>
