@@ -5,7 +5,7 @@ import { sendRes } from '@/commonSimpleRoutes';
 import { isDevEnv } from '@/web2share-copy/env';
 import _ from 'lodash';
 import shelljs from 'shelljs';
-import { getLafToolsDataDir, devonly_getLafToolsExtDir, getLocalInstalledExtDir } from '@/web2share-copy/homedir';
+import { getLafToolsDataDir, devonly_getLafToolsExtDir, getLocalPkgExtract, getLocalPkgRepo } from '@/web2share-copy/homedir';
 import path from 'path';
 import fs from 'fs';
 import { logger } from '@/utils/logger';
@@ -21,7 +21,8 @@ import compressUtils from '@/utils/compressUtils';
 
 const pinyin = require('tiny-pinyin');
 const val_devonly_LafToolsExtDir = devonly_getLafToolsExtDir();
-const val_getLocalInstalledExtDir = getLocalInstalledExtDir();
+const val_pkgExtract_dir = getLocalPkgExtract();
+const val_pkgRepo_dir = getLocalPkgRepo();
 
 export type ExtModeSt = {
   isDev: boolean;
@@ -135,7 +136,7 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
   }
   tmp_results = [];
 
-  const allExtDir = shelljs.ls(val_getLocalInstalledExtDir);
+  const allExtDir = shelljs.ls(val_pkgExtract_dir);
   // filter now
   req.searchText = _.trim(req.searchText);
   if (req.searchText) {
@@ -147,7 +148,7 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
   // installed flag
   results = results.map(x => {
     const fullId = x.id + '@' + x.version;
-    const specifialFolder = path.join(val_getLocalInstalledExtDir, fullId);
+    const specifialFolder = path.join(val_pkgExtract_dir, fullId);
     const miaodaDist = path.join(specifialFolder, filename_miaoda_dist_file);
     x.installed = fs.existsSync(miaodaDist);
     // check if having exist extensions
@@ -155,7 +156,7 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
       if (allExtDir.length > 0) {
         for (let eachExtDir of allExtDir) {
           // is it folder
-          if (!fs.lstatSync(path.join(val_getLocalInstalledExtDir, eachExtDir)).isDirectory()) {
+          if (!fs.lstatSync(path.join(val_pkgExtract_dir, eachExtDir)).isDirectory()) {
             if (eachExtDir !== fullId && eachExtDir.indexOf(x.id) >= 0) {
               x.hasNewVersion = true;
               break;
@@ -325,9 +326,11 @@ export class ExtensionRoute implements Routes {
               if (alreadyExitNow()) {
                 return;
               }
-              const outputTarGzFile = path.join(val_getLocalInstalledExtDir, fullId + '.tar.gz');
+              const outputDownloadTarGzFile = path.join(val_pkgRepo_dir, fullId + '.tar.gz');
+              const 
+              outputDecompressExtract = path.join(val_pkgExtract_dir, fullId);
               // axios fs write
-              refObj.message = '正在下载中.....  目标链接: ' + outputTarGzFile;
+              refObj.message = '正在下载中.....  目标链接: ' + outputDownloadTarGzFile;
               logfn();
               if (alreadyExitNow()) {
                 return;
@@ -348,7 +351,7 @@ export class ExtensionRoute implements Routes {
                 if (alreadyExitNow()) {
                   return;
                 }
-                response.data.pipe(fs.createWriteStream(outputTarGzFile));
+                response.data.pipe(fs.createWriteStream(outputDownloadTarGzFile));
                 response.data.on('end', async () => {
                   try {
                     refObj.status = 'success';
@@ -358,7 +361,7 @@ export class ExtensionRoute implements Routes {
                       return;
                     }
 
-                    const actual_shasum = await computeHash(outputTarGzFile);
+                    const actual_shasum = await computeHash(outputDownloadTarGzFile);
                     if (!actual_shasum) {
                       throw new Error('failed to compute hash');
                     }
@@ -366,10 +369,11 @@ export class ExtensionRoute implements Routes {
                       throw new Error('sha256 not matched');
                     }
                     // 开始解压
-                    const finalDir = path.join(val_getLocalInstalledExtDir, fullId);
-                    await compressUtils.decompress(outputTarGzFile, finalDir);
+                    const finalDir = outputDecompressExtract;
+                    await compressUtils.decompress(outputDownloadTarGzFile, finalDir);
                     // 解压成功，
                     const finalDirmiaodDistFile = path.join(finalDir, filename_miaoda_dist_file);
+                    // ;
                     if (!fs.existsSync(finalDirmiaodDistFile)) {
                       throw new Error('failed to find miaoda-dist.json');
                     } else {
