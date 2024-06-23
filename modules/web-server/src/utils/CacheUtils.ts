@@ -7,7 +7,7 @@ type CacheObj = {
 const tmp_cache: {
   [key: string]: CacheObj;
 } = {};
-
+let enabled=false;
 export const CacheUtils = {
   // put data into cache
   put: (key: string, data: any, timeout: number) => {
@@ -31,6 +31,11 @@ export const CacheUtils = {
     return null;
   },
   enableInterval: () => {
+    if(!enabled){
+      enabled=true;
+    }else{
+      return;
+    }
     // interval clean it
     setInterval(() => {
       const now = Date.now();

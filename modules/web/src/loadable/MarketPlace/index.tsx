@@ -15,6 +15,7 @@ import {
     Button,
     ActionIcon,
     Tooltip,
+    HoverCard,
 } from '@mantine/core';
 import { IconGauge, IconUser, IconCookie, IconSearch, IconSquareDotFilled, IconTruckLoading, IconLoader, IconReload, IconZoomReset, IconClearAll, IconHelp } from '@tabler/icons-react';
 import classes from './FeaturesCards.module.css';
@@ -22,6 +23,8 @@ import { Search } from "@blueprintjs/icons";
 import exportUtils from "@/utils/ExportUtils";
 import _ from "lodash";
 import { isPortalMode } from "@/utils/PortalUtils";
+import { DynamicIcon } from "@/containers/DynamicIcon";
+import { useEffect, useMemo } from "react";
 
 
 export default function () {
@@ -45,22 +48,30 @@ export default function () {
     })
 
     const progressAllDataRes = localApiSlice.useExtHarmfulProgressAllDataQuery({}, {
-        pollingInterval: 2000,
+        pollingInterval: 3000,
         skip: isPortalMode()
     })
+
+    const installExtsRes = localApiSlice.useExtGetAllInstalledExtsQuery({}, {
+        pollingInterval: 10000
+    })
+
     const [lazy_InstallExt, installExtRes] = localApiSlice.useLazyExtHarmfulInstallExtQuery()
+    const [lazy_UnInstallExt, uninstallExtRes] = localApiSlice.useLazyExtHarmfulUnInstallExtQuery()
     const [lazy_cleanExt, cleanExtRes] = localApiSlice.useLazyExtHarmfulCleanExtQuery({})
 
-    if (!rh) {
-        return ''
-    }
-
-    let hasAnyInstalling = false;
 
     const fData = extListRes?.data?.data
     const statusData = progressAllDataRes.data?.data
-
-
+    // const installExts = useMemo(() => {
+    //     const done: string[] = []
+    //     _.every(fData?.allMetaInfo, (x) => {
+    //         done.push(x.post_fullId + '' + statusData?.[x.post_fullId as string]?.status)
+    //         return true;
+    //     })
+    //     return done.join('-') + _.size(statusData);
+    // }, [statusData, fData?.allMetaInfo])
+    let hasAnyInstalling = false;
     _.every(fData?.allMetaInfo, (x) => {
         if (statusData?.[x.post_fullId as string]?.status == 'running') {
             hasAnyInstalling = true;
@@ -68,6 +79,15 @@ export default function () {
         }
         return true;
     })
+    useEffect(() => {
+        installExtsRes.refetch()
+        progressAllDataRes.refetch()
+    }, [hasAnyInstalling])
+
+    if (!rh) {
+        return ''
+    }
+
 
     return (
         <div className="bg-zinc-50 dark:bg-zinc-700 m-[-10px]  p-[10px]">
@@ -100,9 +120,9 @@ export default function () {
             <div className="flex flex-row mt-16  mb-2 px-2  justify-between">
                 <div>
                     {
-                        extListRes.isFetching ? 'loading...':<>
-                            总计{fData?.totals}个插件
-                            </>
+                        extListRes.isFetching ? 'loading...' : <>
+                            {fData?.totals}个插件
+                        </>
                     }
                 </div>
                 <div className='flex flex-row space-x-2 items-center'>
@@ -113,7 +133,14 @@ export default function () {
                         <IconReload stroke={1.5} />
                     </ActionIcon>
                     {
-                        hasAnyInstalling ? <Button color='red' size='compact-sm' variant="light">
+                        hasAnyInstalling ? <Button
+                            onClick={() => {
+                                lazy_cleanExt({
+                                    fullId: 'noneed'
+                                })
+                            }}
+                            loading={cleanExtRes.isFetching}
+                            color='red' size='compact-sm' variant="light">
                             取消安装
                         </Button>
                             : ''
@@ -131,10 +158,9 @@ export default function () {
                     {
                         fData?.allMetaInfo?.map(x => {
                             const isItInstalling = cleanExtRes.isFetching || installExtRes.isFetching || statusData?.[x.post_fullId as string]?.status == 'running';
-                            const runMsg = statusData?.[x.post_fullId as string]?.message 
-                            
-                            ?
-                            statusData?.[x.post_fullId as string]?.message + ' ' + statusData?.[x.post_fullId as string]?.runTS:'点击以执行';
+                            const runMsg = statusData?.[x.post_fullId as string]?.message
+                                ?
+                                statusData?.[x.post_fullId as string]?.message + ' ' + statusData?.[x.post_fullId as string]?.runTS : '' + x.shortDesc;
                             let fn_installExt = () => {
                                 lazy_InstallExt({
                                     fullId: x.post_fullId as string
@@ -143,12 +169,22 @@ export default function () {
                                 })
                             }
                             let fn_upgradeExt = () => {
-                                //
+                                lazy_InstallExt({
+                                    fullId: x.post_fullId as string
+                                }).then(r => {
+                                    progressAllDataRes.refetch()
+                                })
                             }
-                            let fn_uninstallExt = ()=>{
-                                //
+                            let fn_uninstallExt = () => {
+                                lazy_UnInstallExt({
+                                    fullId: x.post_fullId as string
+                                }).then(r => {
+                                    progressAllDataRes.refetch()
+                                    installExtsRes.refetch()
+                                })
                             }
-                            return <Card shadow="xs" withBorder className="w-[100%] sm:w-[29%] 2xl:w-[24%]    box-border mb-2 mr-2 inline-block  " >
+                            const isItInstalled = installExtsRes?.data?.data?.includes(x.post_fullId as string)
+                            const jsxcard = <Card shadow="xs" withBorder className="w-[100%] sm:w-[29%] 2xl:w-[24%]    box-border mb-2 mr-2 inline-block  " >
                                 <div className="flex items-center mb-2  space-x-2">
                                     {/* {x.icon && x.icon.name && iconMapping[x.icon.name] && iconMapping[x.icon.name]() || <IconExchange />} */}
                                     <Title order={4} className="font-normal">
@@ -163,33 +199,41 @@ export default function () {
                                         <Badge color="yellow" variant="light" size='md'>{x.version}</Badge>
                                     </div>
                                     <div className="flex space-x-2">
-                                        <Tooltip  label={runMsg || ''} position="top">
-                                            {
-                                                x.installed ? <>
-                                                    {x.hasNewVersion ? <Button
-                                                        onClick={() => {
-                                                            fn_upgradeExt()
-                                                        }}
-                                                        loading={isItInstalling} color="green" size="compact-sm" radius="md">
-                                                        更新
-                                                    </Button> : ''}
-                                                    <Button onClick={() => {
-                                                        fn_uninstallExt()
-                                                    }} color="red" variant="light" size="compact-sm" radius="md">
-                                                        卸载
-                                                    </Button>
-                                                </> : <Button color="blue"
+                                        {
+                                            isItInstalled ? <>
+                                                {x.hasNewVersion ? <Button
                                                     onClick={() => {
-                                                        fn_installExt()
+                                                        fn_upgradeExt()
                                                     }}
-                                                    loading={isItInstalling} size="compact-sm" radius="md">
-                                                    安装
+                                                    loading={isItInstalling} color="green" size="compact-sm" radius="md">
+                                                    更新
+                                                </Button> : ''}
+                                                <Button onClick={() => {
+                                                    fn_uninstallExt()
+                                                }} color="red" loading={cleanExtRes.isFetching} variant="light" size="compact-sm" radius="md">
+                                                    卸载
                                                 </Button>
-                                            }
-                                        </Tooltip>
+                                            </> : <Button color="blue"
+                                                onClick={() => {
+                                                    fn_installExt()
+                                                }}
+                                                loading={isItInstalling} size="compact-sm" radius="md">
+                                                安装
+                                            </Button>
+                                        }
                                     </div>
                                 </div>
                             </Card>
+                            return <HoverCard width={280} closeDelay={0} openDelay={300} shadow="md">
+                                <HoverCard.Target>
+                                    {jsxcard}
+                                </HoverCard.Target>
+                                <HoverCard.Dropdown className=" right-0 top-0">
+                                    <Text size="sm">
+                                        {runMsg}
+                                    </Text>
+                                </HoverCard.Dropdown>
+                            </HoverCard>
                         })
                     }
                 </div>

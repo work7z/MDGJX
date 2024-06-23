@@ -31,7 +31,6 @@ export type ExtModeSt = {
 export type MiaodaExtraDevConfig = {
   // post-process
   fuzzySearchStr?: string;
-  installed?: boolean;
   hasNewVersion?: boolean;
 };
 export type MiaodaConfig = MiaodaExtraDevConfig & MiaodaBasicConfig;
@@ -46,6 +45,7 @@ export type ExtMetaSearchReq = {
 };
 
 const filename_miaoda_dist_file = 'miaoda-dist.json';
+const filename_ack_file = 'miaoda-installed-ack.flag';
 
 export const getExtMode = (): ExtModeSt => {
   return {
@@ -63,7 +63,7 @@ const getExtStaticURL = (subPath: string): string => {
 };
 
 CacheUtils.enableInterval();
-const TIMEOUT_FOR_EXT_STATIC_RES = isDevEnv() ? 3000 : 1000 * 10; // 10 seconds
+const TIMEOUT_FOR_EXT_STATIC_RES = isBetaTestServerMode ? 100 : isDevEnv() ? 1000 : 1000 * 60; // 20 or 60 seconds
 
 export const getExtStaticDataRemotely = async (subPath: string): Promise<any> => {
   const fullURL = getExtStaticURL(subPath);
@@ -73,12 +73,11 @@ export const getExtStaticDataRemotely = async (subPath: string): Promise<any> =>
       return prev;
     }
     logger.info('getting ' + fullURL);
-    const r = await axios(fullURL);
+    const r = await axios.get(fullURL);
     if (r.status !== 200) {
       logger.error('failed to get ' + fullURL);
       throw new Error(`failed to get ${fullURL}`);
     }
-    logger.debug('got ' + fullURL + ', data: ' + r.data);
     let finalData = _.isString(r.data) ? _.trim(r.data) : r.data;
     CacheUtils.put(fullURL, finalData, TIMEOUT_FOR_EXT_STATIC_RES);
     return finalData;
@@ -104,6 +103,11 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
         continue;
       }
       logger.info('loading ext: ' + eachFile);
+      const ackFile = path.join(val_devonly_LafToolsExtDir, eachFile, filename_ack_file);
+      if (!fs.existsSync(ackFile)) {
+        logger.info('skipping ' + eachFile + ' due to missing ack file');
+        continue;
+      }
       const miaodaJSON = path.join(val_devonly_LafToolsExtDir, eachFile, filename_miaoda_dist_file);
       if (fs.existsSync(miaodaJSON)) {
         const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
@@ -149,20 +153,21 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
   results = results.map(x => {
     const fullId = x.id + '@' + x.version;
     const specifialFolder = path.join(val_pkgExtract_dir, fullId);
-    const miaodaDist = path.join(specifialFolder, filename_miaoda_dist_file);
-    x.installed = fs.existsSync(miaodaDist);
-    // check if having exist extensions
-    if (!x.installed) {
-      if (allExtDir.length > 0) {
-        for (let eachExtDir of allExtDir) {
-          // is it folder
-          if (eachExtDir !== fullId && eachExtDir.indexOf(x.id) >= 0) {
-            x.hasNewVersion = true;
-            break;
-          }
-        }
-      }
-    }
+    const miaodaDist = path.join(specifialFolder, filename_ack_file);
+    // x.installed = fs.existsSync(miaodaDist);
+    // // check if having exist extensions
+    // if (!x.installed) {
+    //   if (allExtDir.length > 0) {
+    //     for (let eachExtDir of allExtDir) {
+    //       // is it folder
+    //       if (eachExtDir !== fullId && eachExtDir.indexOf(x.id) >= 0) {
+    //         x.hasNewVersion = true;
+    //         break;
+    //       }
+    //     }
+    //   }
+    // }
+    // TODO: hasNewVersion放前端去做
 
     return x;
   });
@@ -265,6 +270,19 @@ export class ExtensionRoute implements Routes {
     };
 
     this.router.get(
+      '/ext/get-all-installed-exts',
+      asyncHandler(async (req, res) => {
+        // delete all keys in MiaodaInstallAppProgressObj
+        const allList = shelljs.ls(val_pkgExtract_dir);
+        sendRes(res, {
+          data: allList.filter(x => {
+            return fs.existsSync(path.join(val_pkgExtract_dir, x, filename_ack_file));
+          }),
+        });
+      }),
+    );
+
+    this.router.get(
       '/ext/harmful/clean-ext',
       asyncHandler(async (req, res) => {
         preventEnvPortalModeRunCheck();
@@ -335,9 +353,8 @@ export class ExtensionRoute implements Routes {
                 return;
               }
               const outputDownloadTarGzFile = path.join(val_pkgRepo_dir, fullId + '.tar.gz');
-              const outputDecompressExtract = path.join(val_pkgExtract_dir, fullId);
               // axios fs write
-              refObj.message = '正在下载中.....  目标链接: ' + outputDownloadTarGzFile;
+              refObj.message = '正在下载中.....  目标文件: ' + outputDownloadTarGzFile;
               logfn();
               if (alreadyExitNow()) {
                 return;
@@ -358,10 +375,14 @@ export class ExtensionRoute implements Routes {
                 if (alreadyExitNow()) {
                   return;
                 }
+                const outputDecompressExtract = path.join(val_pkgExtract_dir, fullId);
+                if (fs.existsSync(outputDownloadTarGzFile)) {
+                  shelljs.rm('-rf', outputDownloadTarGzFile);
+                }
                 response.data.pipe(fs.createWriteStream(outputDownloadTarGzFile));
                 response.data.on('end', async () => {
                   try {
-                    refObj.status = 'success';
+                    refObj.status = 'running';
                     refObj.message = `写入本地文件完成，正在校验SHA256中...`;
                     logfn();
                     if (alreadyExitNow()) {
@@ -370,34 +391,45 @@ export class ExtensionRoute implements Routes {
 
                     const actual_shasum = await computeHash(outputDownloadTarGzFile);
                     if (!actual_shasum) {
-                      throw new Error('failed to compute hash');
+                      throw new Error('文件下载不完整，请重新下载');
                     }
                     if (_.trim(_.toLower(actual_shasum)) !== _.trim(_.toLower(sha256val))) {
-                      throw new Error('sha256 not matched');
+                      throw new Error('文件校验不通过，请重新下载');
                     }
                     // 开始解压
-                    const finalDir = outputDecompressExtract;
-                    await compressUtils.decompress(outputDownloadTarGzFile, finalDir);
+                    const finalDecompressFolder = outputDecompressExtract;
+                    if (fs.existsSync(finalDecompressFolder)) {
+                      shelljs.rm('-rf', finalDecompressFolder);
+                    }
+                    const tmpID = Date.now() + parseInt(Math.random() * 1000 + '') + '';
+                    const tmpDecompressFolder = path.join(val_pkgExtract_dir, tmpID);
+                    await compressUtils.decompress(outputDownloadTarGzFile, tmpDecompressFolder);
+                    await shelljs.mv(path.join(tmpDecompressFolder, fullId), finalDecompressFolder);
+                    await shelljs.rm('-rf', tmpDecompressFolder);
                     // 解压成功，
-                    const finalDirmiaodDistFile = path.join(finalDir, filename_miaoda_dist_file);
-                    // ;
+                    const finalDirmiaodDistFile = path.join(finalDecompressFolder, filename_miaoda_dist_file);
                     if (!fs.existsSync(finalDirmiaodDistFile)) {
                       throw new Error('failed to find miaoda-dist.json');
                     } else {
+                      const finalDirmiaoAckFile = path.join(finalDecompressFolder, filename_ack_file);
+                      fs.writeFileSync(finalDirmiaoAckFile, Date.now() + '');
                       // 成功
                       refObj.status = 'done';
                       refObj.message = '安装成功';
+                      setTimeout(() => {
+                        delete MiaodaInstallAppProgressObj[fullId];
+                      }, 3000);
                     }
                   } catch (e) {
                     refObj.status = 'error';
-                    refObj.message = '产生二级错误: ' + JSON.stringify(e);
+                    refObj.message = '产生二级错误: ' + e + JSON.stringify(e);
                     logfn();
                   }
                 });
               });
             } catch (e) {
               refObj.status = 'error';
-              refObj.message = '产生错误: ' + JSON.stringify(e);
+              refObj.message = '产生错误: ' + e + JSON.stringify(e);
               logfn();
             }
           } catch (e) {
@@ -444,7 +476,7 @@ export class ExtensionRoute implements Routes {
           throw new Error('not found');
         }
         const run_logs = path.join(__dirname, findItem.id + '-run.log');
-        let text_run_logs = 'no logs found'
+        let text_run_logs = 'no logs found';
         if (fs.existsSync(run_logs)) {
           text_run_logs = fs.readFileSync(run_logs).toString();
         }
@@ -475,95 +507,95 @@ export class ExtensionRoute implements Routes {
         if (!id || !type) {
           throw new Error('missing id or type');
         }
-        sendRes(res,{
-          data: 1
-        })
-        if(true){
+        sendRes(res, {
+          data: 1,
+        });
+        if (true) {
           return;
         }
-        const allMetaInfo = await getAllExtMetaInfo(
-          {
-            searchSource: 'local-dev-ext',
-            searchText: undefined,
-          } as ExtMetaSearchReq,
-          x => {
-            return x == id;
-          },
-        );
-        const findItem = allMetaInfo.allMetaInfo.find(x => x.id == id);
-        if (!findItem) {
-          throw new Error('not found');
-        }
-        MiaodaEntireRunStatus[findItem.id] = MiaodaEntireRunStatus[findItem.id] || fn_getInit();
-        const tItem = MiaodaEntireRunStatus[findItem.id];
-        const cwd = findItem.cwd || path.join(val_devonly_LafToolsExtDir, findItem.id);
-        const setup_logs = path.join(__dirname, findItem.id + '-setup.log');
-        const run_logs = path.join(__dirname, findItem.id + '-run.log');
-        if (!fs.existsSync(setup_logs)) {
-          fs.writeFileSync(setup_logs, '');
-        }
-        if (!fs.existsSync(run_logs)) {
-          fs.writeFileSync(run_logs, '');
-        }
-        logger.info('cwd: ' + cwd);
-        logger.info('setup_logs: ' + setup_logs);
-        logger.info('run_logs: ' + run_logs);
-        switch (type) {
-          case 'setup':
-            if (tItem.killSetupProcess) {
-              tItem.killSetupProcess();
-            }
-            const setup_devcmd = 'npm run md-dev-setup';
-            const e = shelljs.exec(setup_devcmd, {
-              cwd: cwd,
-              async: true,
-              silent: true,
-            });
-            // pipe to setup_logs
-            e.stdout.pipe(fs.createWriteStream(setup_logs));
-            e.stderr.pipe(fs.createWriteStream(setup_logs));
-            tItem.killSetupProcess = () => {
-              kill_process(e);
-            };
+        // const allMetaInfo = await getAllExtMetaInfo(
+        //   {
+        //     searchSource: 'local-dev-ext',
+        //     searchText: undefined,
+        //   } as ExtMetaSearchReq,
+        //   x => {
+        //     return x == id;
+        //   },
+        // );
+        // const findItem = allMetaInfo.allMetaInfo.find(x => x.id == id);
+        // if (!findItem) {
+        //   throw new Error('not found');
+        // }
+        // MiaodaEntireRunStatus[findItem.id] = MiaodaEntireRunStatus[findItem.id] || fn_getInit();
+        // const tItem = MiaodaEntireRunStatus[findItem.id];
+        // const cwd = findItem.cwd || path.join(val_devonly_LafToolsExtDir, findItem.id);
+        // const setup_logs = path.join(__dirname, findItem.id + '-setup.log');
+        // const run_logs = path.join(__dirname, findItem.id + '-run.log');
+        // if (!fs.existsSync(setup_logs)) {
+        //   fs.writeFileSync(setup_logs, '');
+        // }
+        // if (!fs.existsSync(run_logs)) {
+        //   fs.writeFileSync(run_logs, '');
+        // }
+        // logger.info('cwd: ' + cwd);
+        // logger.info('setup_logs: ' + setup_logs);
+        // logger.info('run_logs: ' + run_logs);
+        // switch (type) {
+        //   case 'setup':
+        //     if (tItem.killSetupProcess) {
+        //       tItem.killSetupProcess();
+        //     }
+        //     const setup_devcmd = 'npm run md-dev-setup';
+        //     const e = shelljs.exec(setup_devcmd, {
+        //       cwd: cwd,
+        //       async: true,
+        //       silent: true,
+        //     });
+        //     // pipe to setup_logs
+        //     e.stdout.pipe(fs.createWriteStream(setup_logs));
+        //     e.stderr.pipe(fs.createWriteStream(setup_logs));
+        //     tItem.killSetupProcess = () => {
+        //       kill_process(e);
+        //     };
 
-            sendRes(res, {
-              data: 1,
-            });
-            break;
-          case 'start-service':
-            if (tItem.killServiceProcess) {
-              tItem.killServiceProcess();
-            }
-            const run_devcmd = 'npm run md-dev-run';
-            const e2 = shelljs.exec(run_devcmd, {
-              cwd: cwd,
-              async: true,
-              silent: true,
-            });
-            e2.stdout.pipe(fs.createWriteStream(run_logs));
-            e2.stderr.pipe(fs.createWriteStream(run_logs));
-            e2.on('message', msg => {
-              fs.appendFileSync(run_logs, msg.toString() + '\n');
-            });
-            tItem.killServiceProcess = () => {
-              kill_process(e2);
-            };
+        //     sendRes(res, {
+        //       data: 1,
+        //     });
+        //     break;
+        //   case 'start-service':
+        //     if (tItem.killServiceProcess) {
+        //       tItem.killServiceProcess();
+        //     }
+        //     const run_devcmd = 'npm run md-dev-run';
+        //     const e2 = shelljs.exec(run_devcmd, {
+        //       cwd: cwd,
+        //       async: true,
+        //       silent: true,
+        //     });
+        //     e2.stdout.pipe(fs.createWriteStream(run_logs));
+        //     e2.stderr.pipe(fs.createWriteStream(run_logs));
+        //     e2.on('message', msg => {
+        //       fs.appendFileSync(run_logs, msg.toString() + '\n');
+        //     });
+        //     tItem.killServiceProcess = () => {
+        //       kill_process(e2);
+        //     };
 
-            sendRes(res, {
-              data: 1,
-            });
-            break;
-          case 'stop-service':
-            if (tItem.killServiceProcess) {
-              tItem.killServiceProcess();
-            }
-            sendRes(res, {
-              data: 1,
-            });
-            break;
-          default:
-            throw new Error('not supported');
-        }
+        //     sendRes(res, {
+        //       data: 1,
+        //     });
+        //     break;
+        //   case 'stop-service':
+        //     if (tItem.killServiceProcess) {
+        //       tItem.killServiceProcess();
+        //     }
+        //     sendRes(res, {
+        //       data: 1,
+        //     });
+        //     break;
+        //   default:
+        //     throw new Error('not supported');
+        // }
       }),
     );
   }

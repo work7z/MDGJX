@@ -131,6 +131,23 @@ export const localApiSlice = createApi({
       },
     }),
 
+
+    extHarmfulUnInstallExt: build.query<
+      AsyncCreateResponse<{
+      }>,
+      {
+        fullId: string
+      }
+    >({
+      query: (b) => {
+        return {
+          params: b,
+          url: "/ext/harmful/uninstall-ext",
+          method: "GET",
+        };
+      },
+    }),
+
     extHarmfulInstallExt: build.query<
       AsyncCreateResponse<{
       }>,
@@ -162,6 +179,22 @@ export const localApiSlice = createApi({
         };
       },
     }),
+    extGetAllInstalledExts: build.query<
+      AsyncCreateResponse<string[]>,
+      {
+      }
+    >({
+      query: (b) => {
+        return {
+          params: b,
+          url: (
+            "/ext/get-all-installed-exts"
+          ),
+          method: "GET",
+        };
+      },
+    }),
+
 
     extHarmfulCleanExt: build.query<
       AsyncCreateResponse<{

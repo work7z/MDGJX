@@ -55,7 +55,6 @@
           "web2", 
           "web2-server",
           "d2-pages-local",
-          "it-tools dev server",
       ],
       "stopAll": true
     }
