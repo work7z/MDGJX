@@ -41,15 +41,6 @@ export default (props: {
     const userObj = exportUtils.useSelector(v => {
         return v.users
     })
-    const rh = exportUtils.register('header', {
-        getNotPersistedStateFn() {
-            return {}
-        },
-        getPersistedStateFn() {
-            return {
-            }
-        }
-    })
     const devConfig_usingLocalExtViewConfig = exportUtils.useSelector(v => v.settings.devConfig_usingLocalExtViewConfig)
     const updateUsingLocalExtViewOrNot = (type: boolean) => {
         FN_GetDispatch()(
@@ -60,9 +51,6 @@ export default (props: {
     }
     // TODO: 在header处发送获取所有菜单栏导航栏的信息，并且一次性patch到store里
     // 这里所有菜单栏的信息，是通过各个插件下的miaoda-dist.json去获取的
-    if (!rh) {
-        return 'loading...'
-    }
     const userAcctJSX = <Link to={'/settings/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
         <IconUserCircle stroke={1.5} />
     }</ActionIcon></Link>
@@ -90,7 +78,9 @@ export default (props: {
                     userObj.hasSignIn ? [
                         userAcctJSX,
                         isDevEnv() ? <Tooltip label={
-                            devConfig_usingLocalExtViewConfig ? '当前使用云端配置，点击后切换到本地菜单' : '当前使用本地配置，点击后切换到云端菜单'
+                          "开发配置: "+ (
+                                devConfig_usingLocalExtViewConfig ? '当前使用云端配置，点击后切换到本地菜单' : '当前使用本地配置，点击后切换到云端菜单'
+                          )
                         }>
                             <Button variant={
                                ! devConfig_usingLocalExtViewConfig ? "light" : "default"
