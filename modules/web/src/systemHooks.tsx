@@ -25,6 +25,8 @@ export const useMDQuery = function <T>():{
     
     }
 }
+
+
 export const useMDParams = (): TypeMDParams => {
     const hist = useHistory()
     const { list: systemModulesList ,ROUTE_CPT_MAPPING} = useSystemModulesList({})

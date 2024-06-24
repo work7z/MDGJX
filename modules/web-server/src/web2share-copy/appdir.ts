@@ -5,17 +5,17 @@
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
 import path from "path";
-import { getLafToolsDataDir } from "./homedir";
+import { getRootDataDir } from "./homedir";
 import { isDevEnv } from "./env";
 import fsutils from "./FileUtils";
 import { join } from "path";
 
 export let getAppDataInternalDir = (): string => {
-  return fsutils.mkdir(path.join(getLafToolsDataDir(), "data"));
+  return fsutils.mkdir(path.join(getRootDataDir(), "data"));
 };
 
 export let getAppBootstrapInternalDir = (): string => {
-  return fsutils.mkdir(path.join(getLafToolsDataDir(), "bootstrap"));
+  return fsutils.mkdir(path.join(getRootDataDir(), "bootstrap"));
 };
 
 export let getAppBootstrapImplDir = (): string => {
@@ -34,7 +34,7 @@ export let getAppBootstrapImplDesktop2Dir = (): string => {
 };
 
 export let getAppLogInternalDir = (): string => {
-  return fsutils.mkdir(path.join(getLafToolsDataDir(), "logs"));
+  return fsutils.mkdir(path.join(getRootDataDir(), "logs"));
 };
 
 export let getAppDatabaseMainFile = () => {

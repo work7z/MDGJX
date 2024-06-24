@@ -1,10 +1,4 @@
 export type MiaodaDyanmicMenuItem = {
-  id: string;
-  icon?: any;
-  name: string;
-  disableFooter?: boolean;
-  children?: MiaodaDyanmicMenuItem[];
-  belongTo?: "tools" | "docs" | "resources"; // children will be effetive also if its parent has set this field
 } & SystemSubModuleItem;
 
 
@@ -35,6 +29,7 @@ export type ToolNavInfoType = {
 
 export type LoadModuleType = () => any;
 export type SystemSubModuleItem = {
+  belongTo?: "tools" | "docs" | "resources"; // children will be effetive also if its parent has set this field
   id: string;
   icon?: any;
   href?: string;

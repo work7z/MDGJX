@@ -37,7 +37,7 @@ import StateSlice from "./reducers/stateSlice";
 import ChatSlice from "./reducers/chatSlice";
 import localApiSlice from "./reducers/localApiSlice";
 import collectionSlice from "./reducers/collectionSlice";
-import extApiSlice from './reducers/extApiSlice'
+import extViewSlice from './reducers/extViewApiSlice'
 
 export type StReducer = ReturnType<typeof StateSlice.reducer>;
 const rootReducer = combineReducers({
@@ -50,7 +50,7 @@ const rootReducer = combineReducers({
     }, StateSlice.reducer),
     // other are regular reducers
     chat: ChatSlice.reducer,
-    extApi: extApiSlice.reducer,
+    extView: extViewSlice.reducer,
     api: apiSlice.reducer,
     localApi: localApiSlice.reducer,
     settings: settingsSlice.reducer,
@@ -78,7 +78,7 @@ export const store = configureStore(({
         })
             .concat(listenerMiddleware.middleware)
             .concat(apiSlice.middleware)
-            .concat(extApiSlice.middleware)
+            .concat(extViewSlice.middleware)
             .concat(localApiSlice.middleware) as any
     },
     enhancers: [],

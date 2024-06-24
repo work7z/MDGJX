@@ -17,6 +17,7 @@ const initialState = {
   entryHottestCountMap: {
     'Home': 0,
   },
+  devConfig_usingLocalExtViewConfig: false,
 };
 
 type SettingsState = typeof initialState;

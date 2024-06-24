@@ -16,6 +16,7 @@ import { isPortalMode } from './utils/PortalUtils';
 import AlertUtils from './utils/AlertUtils';
 import { useHasUserSignIn } from './utils/AuthUtils';
 import { init_when_signIn_mode as init_when_signIn_mode } from './AppInitFn';
+import { useSystemInitFunc } from './initHooks';
 
 
 export default () => {
@@ -26,6 +27,9 @@ export default () => {
     refetchOnMountOrArgChange: true,
     pollingInterval: 5000
   })
+
+  useSystemInitFunc()
+
   useEffect(() => {
     const userInfoData = userInfoMeta.data?.data
     if (userInfoData) {

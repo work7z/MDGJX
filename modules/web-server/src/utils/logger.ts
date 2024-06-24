@@ -4,7 +4,7 @@ import winston from 'winston';
 import winstonDaily from 'winston-daily-rotate-file';
 import { LOG_DIR as tmp } from '@config';
 import { Console } from 'winston/lib/winston/transports';
-import { getLafToolsDataDir } from '@/web2share-copy/homedir';
+import { getRootDataDir } from '@/web2share-copy/homedir';
 import { getAppLogInternalDir } from '@/web2share-copy/appdir';
 let LOG_DIR = path.join(getAppLogInternalDir(), 'web2-server');
 
