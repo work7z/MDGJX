@@ -16,7 +16,7 @@ import { FN_GetDispatch, FN_GetState } from "../nocycle";
 import UsersSlice, { DisplayUserInfo } from "./userSlice";
 import AuthUtils from "@/utils/AuthUtils";
 import { PAGE_SESSION_ID } from "@/utils/PageUtils";
-import { AsyncCreateResponse, msg_showNetworkWithDebounce } from "./apiSlice";
+import { AsyncCreateResponse, SystemRefresh, msg_showNetworkWithDebounce } from "./apiSlice";
 
 import { MiaodaBasicConfig } from '@/m-types-copy/base/m-types-main'
 import { getReleaseOrTestBaseOnCurrentURL } from "@/utils/ReleaseOrTestUtils";
@@ -109,6 +109,19 @@ export const localApiSlice = createApi({
     },
   }),
   endpoints: (build) => ({
+    getFullInfo: build.query<AsyncCreateResponse<{
+      miaodaConfigs: MiaodaConfig[]
+    } & SystemRefresh>, {
+      env: 'cloud-config' | 'local-config'
+    }>({
+      query: (p) => {
+        return {
+          params: p,
+          url: `/ext/get-full-info`,
+          method: "GET",
+        };
+      },
+    }),
     checkExtMode: build.query<AsyncCreateResponse<ExtModeSt>, {}>({
       query: () => {
         return {
