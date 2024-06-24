@@ -97,7 +97,7 @@ export default () => {
                     (calcFinalSubToolsArr).map(x => {
                         return (
                             <Link to={x.href + ''}>
-                                <Tooltip label={x.description} position="top" openDelay={50} style={{
+                                <Tooltip label={x.description} position="bottom" openDelay={50} style={{
                                 }}>
                                 <Card 
                                 shadow="xs" withBorder className="w-[100%] sm:w-[29%] 2xl:w-[24%]  hover:border-blue-300   box-border mb-2 mr-2 inline-block  " >

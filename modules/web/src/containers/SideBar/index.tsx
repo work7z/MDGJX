@@ -145,7 +145,6 @@ export let SecondMenu = (props: {
     const { mainModuleItem } = props
     const [searchCtn, setSearchCtn] = useState('')
     const [actualOpenId, setActualOpenId] = useState(props.mdParams.firstRouteId)
-    // const [ scrollPos, setScrollPos ] = useState(0)
     const scrollPos = exportUtils.useSelector(v => v.memory.scrollPos)
     const setScrollPos = (v: number) => {
         FN_GetDispatch()(MemorySlice.actions.updateOneOfParamState({
@@ -196,7 +195,14 @@ export let SecondMenu = (props: {
                 )
             })
         )
-    }, [actualOpenId, props.mdParams.firstRouteId, props.mdParams.secondRouteId, mainModuleItem.children, searchCtn]);
+    }, [
+        actualOpenId, 
+        props.mdParams.firstRouteId, 
+        props.mdParams.secondRouteId, 
+        mainModuleItem.children, 
+        searchCtn
+        // 
+    ]);
     const ref = React.useRef<{
         ele: HTMLDivElement | null
         eleipt: HTMLDivElement | null

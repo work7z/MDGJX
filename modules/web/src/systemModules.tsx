@@ -31,6 +31,8 @@ import {
     SystemModuleItem,
     SystemSubModuleItem,
 } from './m-types-copy/base/m-types-main'
+import localApiSlice from './store/reducers/localApiSlice.tsx';
+import exportUtils from './utils/ExportUtils.tsx';
 
 export * from './m-types-copy/base/m-types-main'
 
@@ -45,22 +47,36 @@ export type SystemModuleRes = {
 }
 
 export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
+
+    const devConfig_usingLocalExtViewConfig = exportUtils.useSelector(v => v.settings.devConfig_usingLocalExtViewConfig)
+    const fullInfoQuery = localApiSlice.useGetFullInfoQuery({
+        env: devConfig_usingLocalExtViewConfig ? 'local-config' : 'cloud-config'
+    }, {
+        refetchOnMountOrArgChange: true
+    })
+    const miaoConfigsArr = (fullInfoQuery?.data?.data?.miaodaConfigs || [])
     const ROUTE_CPT_MAPPING: SystemSubModuleItem[] = []
 
     const formatModuleItem = (obj: SystemModuleItem[]): SystemModuleItem[] => {
         return _.map(obj, mainModule => {
-            mainModule.children = mainModule.children?.map((subModule_1: SystemSubModuleItem) => {
-                const checkEachMainSubModule = (pid: string, sub: SystemSubModuleItem) => {
-                    sub.href = `/${pid}/${sub.id}`
-                    sub.firstRouteId = pid
-                    sub.rootMainModuleId = mainModule.id
-                    ROUTE_CPT_MAPPING.push(sub)
+            mainModule.children = mainModule.children?.map((raw_subModule_1: SystemSubModuleItem) => {
+                let subModule_1: SystemSubModuleItem = { ...raw_subModule_1 }
+                const checkEachMainSubModule = (pid: string, rawSubItem: SystemSubModuleItem) => {
+                    const subItem: SystemSubModuleItem = {
+                        ...rawSubItem
+                    }
+                    subItem.href = `/${pid}/${subItem.id}`
+                    subItem.firstRouteId = pid
+                    subItem.rootMainModuleId = mainModule.id
+                    ROUTE_CPT_MAPPING.push(subItem)
+                    return subItem
+
                 }
                 if (subModule_1.bodyFn) {
-                    checkEachMainSubModule(mainModule.id, subModule_1)
+                    subModule_1 = checkEachMainSubModule(mainModule.id, subModule_1)
                 } else {
-                    _.forEach(subModule_1.children, (subModule_2) => {
-                        checkEachMainSubModule(subModule_1.id, subModule_2)
+                    subModule_1.children = _.map(subModule_1.children, (subModule_2) => {
+                        return checkEachMainSubModule(subModule_1.id, subModule_2)
                     })
                 }
                 return subModule_1
@@ -82,6 +98,14 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
         disableFooter: true,
         bodyFn: () => import('./loadable/CloudFavourite/index.tsx')
     }
+    const dynamicMenus: SystemSubModuleItem[] = []
+    _.forEach(miaoConfigsArr, (eachConfig) => {
+        if (!_.isEmpty(eachConfig.menus)) {
+            _.forEach(eachConfig.menus, (subMenu) => {
+                dynamicMenus.push(subMenu)
+            })
+        }
+    })
     const systemModulesList: SystemModuleItem[] = formatModuleItem([
         {
             id: 'main',
@@ -104,11 +128,6 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                             ...myfavour,
                             id: 'myfavour'
                         },
-                        // {
-                        //     name: "安装新插件",
-                        //     id: 'new-ext',
-                        //     bodyFn: () => import('./loadable/XToolsView/index.tsx')
-                        // },
                     ]
                 },
                 {
@@ -165,19 +184,7 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                         },
                     ]
                 },
-                // {
-                //     id: 'network',
-                //     icon: IconNetwork,
-                //     name: '网络运维',
-                //     children: [
-                //         {
-                //             name: 'IP/域名质量监测',
-                //             id: 'ipstats',
-                //             disableFooter: true,
-                //             bodyFn: () => import('./loadable/IPDomainQualityStat/index.tsx')
-                //         },
-                //     ]
-                // },
+                ...(dynamicMenus),
             ]
         },
         {
@@ -216,65 +223,10 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                             name: '开发配置',
                             id: 'installed-config',
                             disableFooter: true,
-                            bodyFn: ()=>import('./loadable/MpConfig/index.tsx')
+                            bodyFn: () => import('./loadable/MpConfig/index.tsx')
                         },
-                        // {
-                        //     name: '在线插件预览',
-                        //     id: 'cloud-installed-plugins',
-                        //     disableFooter: true,
-                        //     bodyFn: () => import('./loadable/MpCloudExt/index.tsx')
-                        // },
-                        // {
-                        //     name: '开发设置',
-                        //     id: 'install-settings',
-                        //     disableFooter: true,
-                        //     bodyFn: () => import('./loadable/MpSettings/index.tsx')
-                        // },
                     ]
                 },
-                // {
-                //     name: '已安装插件',
-                //     id: 'installed-plugins',
-                //     // disableFooter: true,
-                //     bodyFn: () => import('./loadable/NotOK/index.tsx')
-                // },
-                // {
-                //     name: '自启动管理',
-                //     id: 'self-startup',
-                //     // disableFooter: true,
-                //     bodyFn: () => import('./loadable/NotOK/index.tsx')
-                // },  
-                // {
-                //     name: '卸载插件',
-                //     id: 'uninstall',
-                //     // disableFooter: true,
-                //     bodyFn: () => import('./loadable/NotOK/index.tsx')
-                // },
-                // {
-                //     name: '二级分类',
-                //     id: 'sub',
-                //     disableFooter: true,
-                //     children: [
-                //         {
-                //             name: '工具助手类',
-                //             id: 'index',
-                //             disableFooter: true,
-                //             bodyFn: () => import('./loadable/MarketPlace/index.tsx')
-                //         },
-                //         {
-                //             name: '文档笔记类',
-                //             id: 'index',
-                //             disableFooter: true,
-                //             bodyFn: () => import('./loadable/MarketPlace/index.tsx')
-                //         },
-                //         {
-                //             name: '资源软件类',
-                //             id: 'index',
-                //             disableFooter: true,
-                //             bodyFn: () => import('./loadable/MarketPlace/index.tsx')
-                //         }
-                //     ]
-                // },
             ]
         },
         {
@@ -317,7 +269,6 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                     name: '建议与反馈',
                     bodyFn: () => import('./loadable/Feedback/index.tsx'),
                     id: 'feedback'
-                    // we can put ticket button in this page -> href: GetAppInfo().githubRepo + '/issues/new'
                 },
                 {
                     name: '关于软件',
@@ -335,3 +286,75 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
 }
 
 
+
+// {
+//     id: 'network',
+//     icon: IconNetwork,
+//     name: '网络运维',
+//     children: [
+//         {
+//             name: 'IP/域名质量监测',
+//             id: 'ipstats',
+//             disableFooter: true,
+//             bodyFn: () => import('./loadable/IPDomainQualityStat/index.tsx')
+//         },
+//     ]
+// },
+
+// {
+//     name: '已安装插件',
+//     id: 'installed-plugins',
+//     // disableFooter: true,
+//     bodyFn: () => import('./loadable/NotOK/index.tsx')
+// },
+// {
+//     name: '自启动管理',
+//     id: 'self-startup',
+//     // disableFooter: true,
+//     bodyFn: () => import('./loadable/NotOK/index.tsx')
+// },
+// {
+//     name: '卸载插件',
+//     id: 'uninstall',
+//     // disableFooter: true,
+//     bodyFn: () => import('./loadable/NotOK/index.tsx')
+// },
+// {
+//     name: '二级分类',
+//     id: 'sub',
+//     disableFooter: true,
+//     children: [
+//         {
+//             name: '工具助手类',
+//             id: 'index',
+//             disableFooter: true,
+//             bodyFn: () => import('./loadable/MarketPlace/index.tsx')
+//         },
+//         {
+//             name: '文档笔记类',
+//             id: 'index',
+//             disableFooter: true,
+//             bodyFn: () => import('./loadable/MarketPlace/index.tsx')
+//         },
+//         {
+//             name: '资源软件类',
+//             id: 'index',
+//             disableFooter: true,
+//             bodyFn: () => import('./loadable/MarketPlace/index.tsx')
+//         }
+//     ]
+// },
+
+
+// {
+//     name: '在线插件预览',
+//     id: 'cloud-installed-plugins',
+//     disableFooter: true,
+//     bodyFn: () => import('./loadable/MpCloudExt/index.tsx')
+// },
+// {
+//     name: '开发设置',
+//     id: 'install-settings',
+//     disableFooter: true,
+//     bodyFn: () => import('./loadable/MpSettings/index.tsx')
+// },

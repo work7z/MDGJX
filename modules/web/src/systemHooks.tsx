@@ -1,5 +1,5 @@
 import { useHistory } from "react-router"
-import {  SystemModuleItem, SystemSubModuleItem, useSystemModulesList,  } from "./systemModules"
+import { SystemModuleItem, SystemSubModuleItem, useSystemModulesList, } from "./systemModules"
 import { useMemo } from "react"
 import queryString from "query-string"
 
@@ -10,7 +10,7 @@ export type TypeMDParams = {
     secondRouteId: string
     thirdRouteId: string
 }
-export const useMDQuery = function <T>():{
+export const useMDQuery = function <T>(): {
     result: T,
     pushNewQuery: (newQuery: T) => void
 } {
@@ -22,14 +22,14 @@ export const useMDQuery = function <T>():{
             const newSearch = queryString.stringify(newQuery as any)
             hist.push(hist.location.pathname + '?' + newSearch)
         }
-    
+
     }
 }
 
 
 export const useMDParams = (): TypeMDParams => {
     const hist = useHistory()
-    const { list: systemModulesList ,ROUTE_CPT_MAPPING} = useSystemModulesList({})
+    const { list: systemModulesList, ROUTE_CPT_MAPPING } = useSystemModulesList({})
     return useMemo(() => {
         const splitArr = hist.location.pathname.split('/')
         let url_firstPart: string | undefined = splitArr && splitArr[1]
@@ -49,11 +49,11 @@ export const useMDParams = (): TypeMDParams => {
             }
         }
         let finalSubModuleItem = (mainSubModuleItem || dft_mainSubModuleItem)
-        if(!finalSubModuleItem){
+        if (!finalSubModuleItem) {
             finalSubModuleItem = firstMappingItem
         }
         const foundSystemModuleItem = systemModulesList.find(x => x.id == finalSubModuleItem.rootMainModuleId)
-        url_firstPart = finalSubModuleItem.firstRouteId+''
+        url_firstPart = finalSubModuleItem.firstRouteId + ''
         url_secondPart = finalSubModuleItem.id
         const r = {
             rootModuleItem: foundSystemModuleItem as SystemModuleItem,
@@ -62,7 +62,7 @@ export const useMDParams = (): TypeMDParams => {
             secondRouteId: url_secondPart,
             thirdRouteId: url_thirdPart
         } satisfies TypeMDParams
-        console.log('mdparams',r)
+        console.log('mdparams', r)
         return r
-    }, [hist.location.pathname])
+    }, [hist.location.pathname, systemModulesList])
 }
