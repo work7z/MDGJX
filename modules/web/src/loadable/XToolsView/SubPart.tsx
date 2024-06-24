@@ -1,6 +1,6 @@
 import XToolsViewer from "@/containers/XToolsViewer"
 import { HeroText } from "./HeroText"
-import { Button, Card, HoverCard, Tabs, Text, TextInput, Title } from "@mantine/core"
+import { Button, Card, HoverCard, Tabs, Text, TextInput, Title, Tooltip } from "@mantine/core"
 import React, { useMemo } from "react"
 import {
     IconAperture,
@@ -97,7 +97,10 @@ export default () => {
                     (calcFinalSubToolsArr).map(x => {
                         return (
                             <Link to={x.href + ''}>
-                                <Card shadow="xs" withBorder className="w-[100%] sm:w-[29%] 2xl:w-[24%]  hover:border-blue-300   box-border mb-2 mr-2 inline-block  " >
+                                <Tooltip label={x.description} position="top" openDelay={500} style={{
+                                }}>
+                                <Card 
+                                shadow="xs" withBorder className="w-[100%] sm:w-[29%] 2xl:w-[24%]  hover:border-blue-300   box-border mb-2 mr-2 inline-block  " >
                                     <div className="flex items-center mb-2  space-x-2">
                                         {
                                             x.iconInStr ? <DynamicIcon icon={x.iconInStr} /> :
@@ -106,8 +109,10 @@ export default () => {
                                             <Text truncate>{x.name}</Text>
                                         </Title>
                                     </div>
-                                    <Text title={x.description} truncate className="text-slate-600 dark:text-slate-400" size={"sm"}>{x.description}</Text>
+                                    <Text  truncate className="text-slate-600 dark:text-slate-400" size={"sm"}>{x.description}</Text>
                                 </Card>
+                                </Tooltip>
+
                             </Link>
                         )
                     })
