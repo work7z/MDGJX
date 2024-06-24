@@ -115,6 +115,7 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                                 ...subItem,
                                 bodyFn: () => import('./loadable/ExtViewFrame/index.tsx'),
                                 bodyFnProps: {
+                                    fn_subItem: ()=>subItem,
                                     fn_eachConfig: () => eachConfig
                                 }
                             } satisfies SystemSubModuleItem

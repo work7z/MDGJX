@@ -172,13 +172,13 @@ export class App {
     }
 
     // setup xtools
-    let xToolsDir = path.join(__dirname, 'xtools');
-    if (existsSync(xToolsDir)) {
-      this.app.use('/xtools', express.static(xToolsDir));
-      this.app.get('/xtools/*', (req, res) => {
-        res.sendFile(path.resolve(xToolsDir, 'index.html'));
-      });
-    }
+    // let xToolsDir = path.join(__dirname, 'xtools');
+    // if (existsSync(xToolsDir)) {
+    //   this.app.use('/xtools', express.static(xToolsDir));
+    //   this.app.get('/xtools/*', (req, res) => {
+    //     res.sendFile(path.resolve(xToolsDir, 'index.html'));
+    //   });
+    // }
 
     // setup spa
     let distDir = path.join(__dirname, 'spa');
