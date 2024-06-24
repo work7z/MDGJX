@@ -66,7 +66,8 @@ export const persistedReducer = persistReducer<RootState>({
     key: 'root',
     storage,
     stateReconciler: autoMergeLevel2,
-    whitelist: ['settings', 'users','collection','ext']
+    whitelist: ['settings', 'users', 'collection', 'ext']
+    // , 'localApi' 考虑是否需要缓存localApi
 }, rootReducer)
 
 

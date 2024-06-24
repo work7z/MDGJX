@@ -158,7 +158,9 @@ export let SecondMenu = (props: {
             if (hasNoSearch) {
                 return true;
             }
-            return (_.toLower(x.name) + _.toLower(py.convertToPinyin(x.name))).indexOf(l2) !== -1
+            return (_.toLower(x.name) + _.toLower(py.convertToPinyin(x.name))).indexOf(l2) !== -1 ||
+                (x.description && (_.toLower(x.description) + _.toLower(py.convertToPinyin(x.description))).indexOf(l2) !== -1) ||
+                (!_.isEmpty(x.keywords) && (_.toLower(x.keywords?.join('')) + _.toLower(py.convertToPinyin(x.keywords?.join('')))).indexOf(l2) !== -1) 
         }
         return (
             (mainModuleItem?.children || []).filter(x => {

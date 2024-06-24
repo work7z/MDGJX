@@ -45,6 +45,7 @@ export type SystemSubModuleItem = {
   description?: string;
   ignoreInNav?: boolean;
   bodyFn?: LoadModuleType;
+  bodyFnProps?: any
 };
 export type SystemModuleItem = {
   id: string;
