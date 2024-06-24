@@ -4,6 +4,7 @@ import { Icon, IconCalendarStats, IconChevronRight } from '@tabler/icons-react';
 import classes from './NavbarLinksGroup.module.css';
 import { SystemModuleItem, SystemSubModuleItem } from '@/systemModules';
 import { Link } from 'react-router-dom';
+import { DynamicIcon } from '../DynamicIcon';
 
 type LinksGroupProps = {
     forceOpen: boolean,
@@ -15,7 +16,7 @@ type LinksGroupProps = {
 } & SystemSubModuleItem
 
 export function LinksGroup(props: LinksGroupProps) {
-    const { id, href, icon: Icon, children, name, } = props;
+    const { id, href,iconInStr, icon: Icon, children, name, } = props;
     const initiallyOpened = props.actualOpenId == props.id
     const hasLinks = Array.isArray(children) && children.length > 0;
     const opened = initiallyOpened || props.forceOpen;
@@ -39,14 +40,20 @@ export function LinksGroup(props: LinksGroupProps) {
     });
 
     const active = props.isItActive(props)
+    let finalIcon = Icon ? <Icon style={{ width: rem(18), height: rem(18) }} />:undefined;
+    if(!finalIcon){
+        if(iconInStr){
+            finalIcon = <DynamicIcon icon={iconInStr}/>
+        }
+    }
     const jsx = <UnstyledButton onClick={() => setOpened(!initiallyOpened)} className={classes.control + (
         active ? " " + classes.controlactive : ''
     )}>
         <Group justify="space-between" gap={0}>
             <Box style={{ display: 'flex', alignItems: 'center' }}>
                 {
-                    Icon ? <ThemeIcon variant="light" size={30}>
-                        <Icon style={{ width: rem(18), height: rem(18) }} />
+                    finalIcon ? <ThemeIcon variant="light" size={30}>
+                        {finalIcon}
                     </ThemeIcon> : ''
                 }
                 <Box ml="md" className='font-normal'>{name}</Box>

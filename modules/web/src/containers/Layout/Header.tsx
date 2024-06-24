@@ -79,15 +79,15 @@ export default (props: {
                         userAcctJSX,
                         isDevEnv() ? <Tooltip label={
                           "开发配置: "+ (
-                                devConfig_usingLocalExtViewConfig ? '当前使用云端配置，点击后切换到本地菜单' : '当前使用本地配置，点击后切换到云端菜单'
+                                !devConfig_usingLocalExtViewConfig ? '当前使用云端配置，点击后切换到本地菜单' : '当前使用本地配置，点击后切换到云端菜单'
                           )
                         }>
                             <Button variant={
-                               ! devConfig_usingLocalExtViewConfig ? "light" : "default"
+                               devConfig_usingLocalExtViewConfig ? "light" : "default"
                             } color='orange' onClick={() => {
                                 updateUsingLocalExtViewOrNot(!devConfig_usingLocalExtViewConfig)
                             }} className=' hidden sm:block ' > {
-                                    devConfig_usingLocalExtViewConfig ? "云端" : '本地'
+                                    !devConfig_usingLocalExtViewConfig ? "云端" : '本地'
                                 }</Button>
                         </Tooltip> : '',
                         <Button variant="default" onClick={() => {

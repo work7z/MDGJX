@@ -1,5 +1,5 @@
 import { getKVSaveDir, getRootDataDir } from '@/web2share-copy/homedir';
-import { readFileSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 
 const kvSaveDir = getKVSaveDir();
@@ -10,13 +10,13 @@ export const KVUtils = {
   },
   get(key: string): string | null {
     const file = path.join(kvSaveDir, key);
-    if (!file) return null;
-    return readFileSync(file).toString();
+    if (!existsSync(file)) return null;
+    return readFileSync(file,{encoding:'utf-8'});
   },
   defaultIfNotExists(key: string, defaultValue: string) {
-    const v = this.get(key);
+    const v = KVUtils.get(key);
     if (v) return v;
-    this.set(key, defaultValue);
+    KVUtils.set(key, defaultValue);
     return defaultValue;
   }
 };

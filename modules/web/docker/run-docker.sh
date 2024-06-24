@@ -42,7 +42,7 @@ runCP $containerName $port
 tryCount=0
 while true; do
     tryCount=$((tryCount+1))
-    if [ $tryCount -gt 20 ]; then
+    if [ $tryCount -gt 100 ]; then
         echo "Failed to start container $containerName"
         exit 1
     fi

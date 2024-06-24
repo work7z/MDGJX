@@ -4,6 +4,9 @@ import { useDisclosure, useDocumentTitle } from '@mantine/hooks';
 import { Title, Text, Button, Container, Group } from '@mantine/core';
 import classes from './NotFoundTitle.module.css';
 import { Link, useHistory } from 'react-router-dom';
+import { useSystemModulesList } from '@/systemModules';
+import LoadingView from '@/components/LoadingView';
+import { LoadingTmpView } from '@/components/LoadableWrapper';
 
 export function NotFoundTitle() {
     const hist = useHistory()
@@ -25,7 +28,12 @@ export function NotFoundTitle() {
     );
 }
 export function NotFoundPage() {
-    useDocumentTitle('404 Not Found')
+    const res = useSystemModulesList({})
+    const stillInitializing = res.stillInitializing
+    useDocumentTitle(stillInitializing ? 'loading...' : '404 Not Found')
+    if (stillInitializing) {
+        return <GeneralLayout></GeneralLayout>
+    }
     return (
         <NotFoundTitle />
     );

@@ -145,7 +145,6 @@ export let SecondMenu = (props: {
     const { mainModuleItem } = props
     const [searchCtn, setSearchCtn] = useState('')
     const [actualOpenId, setActualOpenId] = useState(props.mdParams.firstRouteId)
-    // const [ scrollPos, setScrollPos ] = useState(0)
     const scrollPos = exportUtils.useSelector(v => v.memory.scrollPos)
     const setScrollPos = (v: number) => {
         FN_GetDispatch()(MemorySlice.actions.updateOneOfParamState({
@@ -159,7 +158,9 @@ export let SecondMenu = (props: {
             if (hasNoSearch) {
                 return true;
             }
-            return (_.toLower(x.name) + _.toLower(py.convertToPinyin(x.name))).indexOf(l2) !== -1
+            return (_.toLower(x.name) + _.toLower(py.convertToPinyin(x.name))).indexOf(l2) !== -1 ||
+                (x.description && (_.toLower(x.description) + _.toLower(py.convertToPinyin(x.description))).indexOf(l2) !== -1) ||
+                (!_.isEmpty(x.keywords) && (_.toLower(x.keywords?.join('')) + _.toLower(py.convertToPinyin(x.keywords?.join('')))).indexOf(l2) !== -1) 
         }
         return (
             (mainModuleItem?.children || []).filter(x => {
@@ -196,7 +197,14 @@ export let SecondMenu = (props: {
                 )
             })
         )
-    }, [actualOpenId, props.mdParams.firstRouteId, props.mdParams.secondRouteId, mainModuleItem.children, searchCtn]);
+    }, [
+        actualOpenId, 
+        props.mdParams.firstRouteId, 
+        props.mdParams.secondRouteId, 
+        mainModuleItem.children, 
+        searchCtn
+        // 
+    ]);
     const ref = React.useRef<{
         ele: HTMLDivElement | null
         eleipt: HTMLDivElement | null

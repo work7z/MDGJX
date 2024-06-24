@@ -21,7 +21,7 @@ import compressUtils from '@/utils/compressUtils';
 import { fn_runOrRestartExtViewAppServer } from '@/ext-view-app';
 
 const pinyin = require('tiny-pinyin');
-const val_devonly_LafToolsExtDir = devonly_getExtDir();
+const val_devOnly_pkgExtract_dir = devonly_getExtDir();
 const val_pkgExtract_dir = getLocalPkgExtract();
 const val_pkgRepo_dir = getLocalPkgRepo();
 
@@ -51,7 +51,7 @@ export const filename_ack_file = 'miaoda-installed-ack.flag';
 export const getExtMode = (): ExtModeSt => {
   return {
     isDev: isDevEnv(),
-    repoPath: val_devonly_LafToolsExtDir,
+    repoPath: val_devOnly_pkgExtract_dir,
   };
 };
 const extFileFlag = isBetaTestServerMode || isDevEnv() ? 'test' : 'release';
@@ -100,18 +100,18 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
     // get all extensions from cloud
   } else if (req.searchSource == 'local-dev-ext') {
     // get all extensions from local development mode
-    const projectRoots = shelljs.ls(val_devonly_LafToolsExtDir);
+    const projectRoots = shelljs.ls(val_devOnly_pkgExtract_dir);
     for (let eachFile of projectRoots) {
       if (filterWhileSearchingInExtDir && !filterWhileSearchingInExtDir(eachFile)) {
         continue;
       }
       logger.info('loading ext: ' + eachFile);
-      const ackFile = path.join(val_devonly_LafToolsExtDir, eachFile, isDevEnv ? filename_miaoda_dist_file : filename_ack_file);
+      const ackFile = path.join(val_devOnly_pkgExtract_dir, eachFile, isDevEnv ? filename_miaoda_dist_file : filename_ack_file);
       if (!fs.existsSync(ackFile)) {
         logger.info('skipping ' + eachFile + ' due to missing ack file');
         continue;
       }
-      const miaodaJSON = path.join(val_devonly_LafToolsExtDir, eachFile, filename_miaoda_dist_file);
+      const miaodaJSON = path.join(val_devOnly_pkgExtract_dir, eachFile, filename_miaoda_dist_file);
       if (fs.existsSync(miaodaJSON)) {
         const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
         tmp_results.push(miaoda);
@@ -182,6 +182,7 @@ export type IdVerMatch = {
   id: string;
   version: string;
   ackTS: string;
+  config?: MiaodaConfig;
 };
 export type InstalledLatestExts = {
   exts: {
@@ -190,47 +191,79 @@ export type InstalledLatestExts = {
 };
 
 export let run_when_install_uninstall_ext = async () => {
-  // just do it
   fn_runOrRestartExtViewAppServer();
 };
 
-export const getCompleteExtInstalledListWithOldAndNew = (): InstalledLatestExts => {
+export const getCompleteExtInstalledListWithOldAndNew = (req?: GetInstalledExtReq): InstalledLatestExts => {
   let latestExts: InstalledLatestExts = {
     exts: {},
   };
-  const allList = shelljs.ls(val_pkgExtract_dir);
+  const isLocalDevConfigMode = req && req.env == 'local-config';
+  const targetExtraDir = isLocalDevConfigMode ? val_devOnly_pkgExtract_dir : val_pkgExtract_dir;
+  const allList = shelljs.ls(targetExtraDir);
   const installedExts = allList.filter(x => {
-    return fs.existsSync(path.join(val_pkgExtract_dir, x, filename_ack_file));
+    return fs.existsSync(path.join(targetExtraDir, x, isLocalDevConfigMode ? filename_miaoda_dist_file : filename_ack_file));
   });
   for (let eachExt of installedExts) {
-    if (eachExt.indexOf('@') === -1) {
-      continue;
-    }
-    const ackFile = path.join(val_pkgExtract_dir, eachExt, filename_ack_file);
-    const miaodaJSON = path.join(val_pkgExtract_dir, eachExt, filename_miaoda_dist_file);
-    if (fs.existsSync(ackFile) && fs.existsSync(miaodaJSON)) {
-      const ackTS = fs.readFileSync(ackFile).toString();
+    const ackFile = path.join(targetExtraDir, eachExt, filename_ack_file);
+    const miaodaJSON = path.join(targetExtraDir, eachExt, filename_miaoda_dist_file);
+    if (isLocalDevConfigMode) {
+      // for DEV
       const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
-      if (!latestExts.exts[miaoda.id]) {
-        latestExts.exts[miaoda.id] = [];
+      if (!miaoda.disabled) {
+        if (!latestExts.exts[miaoda.id]) {
+          latestExts.exts[miaoda.id] = [];
+        }
+        latestExts.exts[miaoda.id].push({
+          id: miaoda.id,
+          version: miaoda.version,
+          ackTS: Date.now() + '',
+          config: miaoda,
+        });
+        continue;
       }
-      latestExts.exts[miaoda.id].push({
-        id: miaoda.id,
-        version: miaoda.version,
-        ackTS,
-      });
+    } else {
+      // for PROD
+      if (eachExt.indexOf('@') === -1) {
+        continue;
+      }
+      if (fs.existsSync(ackFile) && fs.existsSync(miaodaJSON)) {
+        const ackTS = fs.readFileSync(ackFile).toString();
+        const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
+        if (!miaoda.disabled) {
+          if (!latestExts.exts[miaoda.id]) {
+            latestExts.exts[miaoda.id] = [];
+          }
+          latestExts.exts[miaoda.id].push({
+            id: miaoda.id,
+            version: miaoda.version,
+            ackTS,
+            config: miaoda,
+          });
+        }
+      }
     }
   }
   return latestExts;
 };
 
-export let getInstalledExtsFlatMode = () => {
-  const installedExts: string[] = [];
-  const all = getCompleteExtInstalledListWithOldAndNew();
+export type GetInstalledExtReq = {
+  env: 'cloud-config' | 'local-config';
+};
+
+export let getInstalledExtsFlatModeWithDetail = (req?: GetInstalledExtReq) => {
+  const installedExts: IdVerMatch[] = [];
+  const all = getCompleteExtInstalledListWithOldAndNew(req);
   _.forEach(all.exts, (x, d, n) => {
     const maxItem = _.maxBy(x, xx => xx.ackTS);
-    installedExts.push(maxItem.id + '@' + maxItem.version);
+    installedExts.push(maxItem);
   });
+  return installedExts;
+};
+
+export let getInstalledExtsFlatMode = () => {
+  const fullDetail = getInstalledExtsFlatModeWithDetail();
+  const installedExts: string[] = _.map(fullDetail, x => `${x.id}@${x.version}`);
   return installedExts;
 };
 
@@ -296,12 +329,12 @@ export class ExtensionRoute implements Routes {
     this.router.get(
       '/ext/get-full-info',
       asyncHandler(async (req, res) => {
-        const query = req.query as {
-          env: 'cloud-config' | 'local-config';
-        }; 
+        const query = req.query as GetInstalledExtReq;
+        const fullDetail = getInstalledExtsFlatModeWithDetail(query);
+        const miaodaConfigs = fullDetail.filter(x => x.config).map(x => x.config);
         sendRes(res, {
           data: {
-            miaodaConfigs: [],
+            miaodaConfigs: miaodaConfigs,
           } satisfies {
             miaodaConfigs: MiaodaConfig[];
           },

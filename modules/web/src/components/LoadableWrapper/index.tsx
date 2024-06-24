@@ -28,15 +28,25 @@ export default (props: {disableLoadingText?:boolean, id: string, fn: any }) => {
             runIt()
         }
     }, [props.id])
-    const [waitTooLong, setWaitTooLong] = React.useState(false)
+
+    if ( !existCpt) {
+        return props.disableLoadingText ? '': 
+           <LoadingTmpView/>
+    } else {
+        const ExistCpt = existCpt
+        return <ExistCpt />
+    }
+
+}
+export const LoadingTmpView = ()=>{
+        const [waitTooLong, setWaitTooLong] = React.useState(false)
     useEffect(() => {
         setTimeout(() => {
             setWaitTooLong(true)
         }, 5000)
     }, [])
-    if ( !existCpt) {
-        return props.disableLoadingText ? '': 
-            <>
+    return (
+         <>
             <div className="mb-2 text-sm">
                 正在加载数据中，请稍候<Blink max={8} min={2} />
                 {
@@ -49,10 +59,5 @@ export default (props: {disableLoadingText?:boolean, id: string, fn: any }) => {
                 <Skeleton height={8} mt={6} radius="xl" />
                 <Skeleton height={8} mt={6} width="70%" radius="xl" />
                 </>
-        // 'loading...'
-    } else {
-        const ExistCpt = existCpt
-        return <ExistCpt />
-    }
-
+    )
 }
