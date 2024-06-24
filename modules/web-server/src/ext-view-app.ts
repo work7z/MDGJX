@@ -7,12 +7,22 @@ import express, { NextFunction, Request, Response } from 'express';
 import helmet from 'helmet';
 import hpp from 'hpp';
 import morgan from 'morgan';
-import {LOG_FORMAT, ORIGIN, CREDENTIALS } from '@config';
+import { LOG_FORMAT, ORIGIN, CREDENTIALS } from '@config';
 import { Routes } from '@interfaces/routes.interface';
 import { ErrorMiddleware } from '@middlewares/error.middleware';
 import { logger, stream } from '@utils/logger';
 import { HttpException } from './exceptions/httpException';
 import http from 'http';
+import { getLocalPkgExtract } from './web2share-copy/homedir';
+import _ from 'lodash';
+import {
+  MiaodaConfig,
+  filename_miaoda_dist_file,
+  getCompleteExtInstalledListWithOldAndNew,
+  getInstalledExtsFlatMode,
+} from './routes/extension.route';
+import fs from 'fs';
+import path from 'path';
 
 const REF_HOLDER: {
   lastApp: ExtViewApp | null;
@@ -29,7 +39,6 @@ export class ExtViewApp {
   public host: string = process.env.HOSTNAME || '0.0.0.0';
 
   constructor() {
-    const routes: Routes[] = [];
     if (REF_HOLDER.lastApp) {
       REF_HOLDER.lastApp?.close();
     }
@@ -38,13 +47,13 @@ export class ExtViewApp {
 
     this.connectToDatabase();
     this.initializeMiddlewares();
-    this.initializeRoutes(routes);
+    this.initializeRoutes();
     this.initializeErrorHandling();
   }
 
   close() {
-    if(this.server){
-      this.server.close()
+    if (this.server) {
+      this.server.close();
     }
   }
 
@@ -61,8 +70,7 @@ export class ExtViewApp {
     return this.app;
   }
 
-  private async connectToDatabase() {
-  }
+  private async connectToDatabase() {}
 
   private initializeMiddlewares() {
     this.app.use(morgan(LOG_FORMAT, { stream }));
@@ -77,7 +85,6 @@ export class ExtViewApp {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
-
 
     const ErrorMiddleware = (error: HttpException, req: Request, res: Response, next: NextFunction) => {
       try {
@@ -94,17 +101,53 @@ export class ExtViewApp {
     this.app.use(ErrorMiddleware);
   }
 
-  private initializeRoutes(routes: Routes[]) {
+  private initializeRoutes() {
     this.app.use(fn_getExtViewPath(), (req, res) => {
       res.send({
-        text: 'hello ext view app',
+        text: 'hello, you are in the ext view app',
       });
     });
+
+    const pkgExtractDir = getLocalPkgExtract();
+    const installedExts_flat_arr = getInstalledExtsFlatMode();
+    for (let ext of installedExts_flat_arr) {
+      if (!ext) {
+        continue;
+      }
+      const currentExtRoot = path.join(pkgExtractDir, ext);
+      logger.info('registering ext view path for ext: ' + ext + ', currentExtRoot: ' + currentExtRoot);
+      const miaodaDistFileForThatExt = path.join(currentExtRoot, filename_miaoda_dist_file);
+      // check exsit
+      if (fs.existsSync(miaodaDistFileForThatExt)) {
+        const miaodaConfig = JSON.parse(fs.readFileSync(miaodaDistFileForThatExt, 'utf8')) as MiaodaConfig;
+        if (miaodaConfig.runtime) {
+          switch (miaodaConfig.runtime.type) {
+            case 'web-static-embedded':
+              const embeddedConfig = miaodaConfig.runtime.embedded;
+              // TODO: actually, currently we only support first static folder, for others havent supported it yet
+              const selectedStaticDir = _.first(embeddedConfig.staticDirs);
+              const serveStaticFolder = path.join(currentExtRoot, selectedStaticDir);
+              const baseUrl = embeddedConfig.baseUrl;
+              this.app.use(baseUrl, express.static(serveStaticFolder,{
+                lastModified: true,
+                etag: true,                
+              }));
+              break;
+            case 'web-static-standalone':
+              throw new Error('web-static-standalone is not supported yet');
+          }
+        } else {
+          logger.error('miaoda config file does not have runtime field, skip ' + ext);
+          continue;
+        }
+      }
+    }
+    //
 
     this.app.use('/', (req, res) => {
       if (req.url == '/') {
         res.send({
-          text: 'hello ext view app',
+          text: 'hello ext view app, it is a root path',
         });
       } else {
         req.next();
@@ -119,6 +162,6 @@ export class ExtViewApp {
 
 export const fn_runOrRestartExtViewAppServer = () => {
   // it will be running once you call it
- const eva =new ExtViewApp();
- eva.listen()
+  const eva = new ExtViewApp();
+  eva.listen();
 };

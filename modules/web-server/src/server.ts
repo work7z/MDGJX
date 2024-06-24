@@ -5,7 +5,7 @@ import { logger } from './utils/logger';
 import { fn_runOrRestartExtViewAppServer } from './ext-view-app';
 
 try {
-  console.log('run server.js');
+  console.log('run server.js'); 
 
   const app = new App([new MainRoute(), new ExtensionRoute()]);
 

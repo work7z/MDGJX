@@ -66,6 +66,7 @@ export type RedirectLinkItem = {
 };
 export const redirectLinks: RedirectLinkItem[] = [];
 
+export const EXT_VIEW_PREFIX='/ext-view'
 
 export type MiaodaBasicConfig = {
   disabled?: boolean;
@@ -74,7 +75,7 @@ export type MiaodaBasicConfig = {
   id: string;
   version: string;
   logo: string;
-  iconInStr?:string;
+  iconInStr?: string;
   name: string;
   shortDesc: string;
   description: string;
@@ -90,9 +91,8 @@ export type MiaodaBasicConfig = {
       onlineURL: string; // where the static files are hosted online
     };
     embedded?: {
-      // 对于embedded应用来说，baseURL 将会是 id + @version， 如果https://mdgjx.com/extview/xxx@1.0/index.html
       staticDirs: string[];
-      baseUrl?: string
+      baseUrl: string; // 用户需要自己定义，要求baseUrl是以EXT_VIEW_PREFIX开头
     };
   };
   keywords?: string[];
