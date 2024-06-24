@@ -18,6 +18,7 @@ import { isBetaTestServerMode } from '@/env';
 import { CacheUtils } from '@/utils/CacheUtils';
 import { computeHash } from '@/utils/hash';
 import compressUtils from '@/utils/compressUtils';
+import { fn_runOrRestartExtViewAppServer } from '@/ext-view-app';
 
 const pinyin = require('tiny-pinyin');
 const val_devonly_LafToolsExtDir = devonly_getLafToolsExtDir();
@@ -44,8 +45,8 @@ export type ExtMetaSearchReq = {
   searchSource: 'cloud-all-ext' | 'local-dev-ext';
 };
 
-const filename_miaoda_dist_file = 'miaoda-dist.json';
-const filename_ack_file = 'miaoda-installed-ack.flag';
+export const filename_miaoda_dist_file = 'miaoda-dist.json';
+export const filename_ack_file = 'miaoda-installed-ack.flag';
 
 export const getExtMode = (): ExtModeSt => {
   return {
@@ -188,7 +189,12 @@ export type InstalledLatestExts = {
   };
 };
 
-export const getAllInstalledLatestExts = (): InstalledLatestExts => {
+export let run_when_install_uninstall_ext = async () => {
+  // just do it
+  fn_runOrRestartExtViewAppServer();
+};
+
+export const getCompleteExtInstalledListWithOldAndNew = (): InstalledLatestExts => {
   let latestExts: InstalledLatestExts = {
     exts: {},
   };
@@ -197,6 +203,9 @@ export const getAllInstalledLatestExts = (): InstalledLatestExts => {
     return fs.existsSync(path.join(val_pkgExtract_dir, x, filename_ack_file));
   });
   for (let eachExt of installedExts) {
+    if (eachExt.indexOf('@') === -1) {
+      continue;
+    }
     const ackFile = path.join(val_pkgExtract_dir, eachExt, filename_ack_file);
     const miaodaJSON = path.join(val_pkgExtract_dir, eachExt, filename_miaoda_dist_file);
     if (fs.existsSync(ackFile) && fs.existsSync(miaodaJSON)) {
@@ -213,6 +222,16 @@ export const getAllInstalledLatestExts = (): InstalledLatestExts => {
     }
   }
   return latestExts;
+};
+
+export let getInstalledExtsFlatMode = () => {
+  const installedExts: string[] = [];
+  const all = getCompleteExtInstalledListWithOldAndNew();
+  _.forEach(all.exts, (x, d, n) => {
+    const maxItem = _.maxBy(x, xx => xx.ackTS);
+    installedExts.push(maxItem.id + '@' + maxItem.version);
+  });
+  return installedExts;
 };
 
 export const preventEnvPortalModeRunCheck = () => {
@@ -299,12 +318,7 @@ export class ExtensionRoute implements Routes {
     this.router.get(
       '/ext/get-all-installed-exts',
       asyncHandler(async (req, res) => {
-        const installedExts: string[] = [];
-        const all = getAllInstalledLatestExts();
-        _.forEach(all.exts, (x, d, n) => {
-          const maxItem = _.maxBy(x, xx => xx.ackTS);
-          installedExts.push(maxItem.id + '@' + maxItem.version);
-        });
+        const installedExts = getInstalledExtsFlatMode();
         sendRes(res, {
           data: installedExts,
         });
@@ -344,6 +358,7 @@ export class ExtensionRoute implements Routes {
             }
           }
         }
+        run_when_install_uninstall_ext();
         sendRes(res, { data: 1 });
       }),
     );
@@ -451,6 +466,7 @@ export class ExtensionRoute implements Routes {
                       // 成功
                       refObj.status = 'done';
                       refObj.message = '安装成功';
+                      run_when_install_uninstall_ext();
                       setTimeout(() => {
                         delete MiaodaInstallAppProgressObj[fullId];
                       }, 3000);

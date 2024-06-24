@@ -48,7 +48,7 @@ export default () => {
     return <div>
         <Card withBorder shadow="xs" padding="md">
             <Tabs value={dftId} variant="pills" orientation="vertical">
-                <Tabs.List>
+                {/* <Tabs.List>
                     {
                         folderRes.data?.data?.map((v, i) => {
                             return (
@@ -58,7 +58,7 @@ export default () => {
                             )
                         })
                     }
-                </Tabs.List>
+                </Tabs.List> */}
 
                 <Tabs.Panel value={dftId}>
                     <div className="px-2 py-0">

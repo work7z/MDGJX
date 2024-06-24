@@ -73,6 +73,7 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
         iconInStr: 'Json',
         id: 'json',
         defaultSubToolId: 'convert',
+        description: "JSON 转换、格式化、压缩、解析、校验、比较、合并、转义、加密、解密等一站式超级工具。",
         bodyFn: () => import('./loadable/JSONSuperTools/index.tsx'),
     }
     const myfavour: SystemSubModuleItem = {
@@ -129,12 +130,14 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                         {
                             name: '文本翻译',
                             id: 'text',
+                            description: '支持多种语言的文本翻译，包括中文、英文、日文、韩文、法文、德文、俄文等语言的互转。',
                             iconInStr: 'Script',
                             bodyFn: () => import('./loadable/TLNText/index.tsx')
                         },
                         {
                             name: 'JSON 格式翻译',
                             id: 'json',
+                            description: `实现软件国际化的好助手，支持JSON格式的深层次翻译，让您的应用能快速支持多语言。`,
                             iconInStr: 'Json',
                             bodyFn: () => import('./loadable/TLNJSON/index.tsx')
                         },
@@ -142,6 +145,7 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                             name: 'JSON 中英文对照',
                             id: 'json-cn-en',
                             iconInStr: 'Json',
+                            description: `对晦涩难懂的JSON字段，再也不用一个个查字典了，此工具可以支持JSON格式的中英文对照翻译。`,
                             // iconInStr: 'Language',
                             bodyFn: () => import('./loadable/TLNJSONComparison/index.tsx')
                         },
@@ -149,12 +153,14 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                             name: 'Markdown 文档翻译',
                             id: 'md',
                             iconInStr: 'Markdown',
+                            description: `支持Markdown格式的文档翻译，完美识别MD格式，包括中文、英文、日文、韩文、法文、德文、俄文等语言的互转。`,
                             bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
                         },
                         {
                             name: '简繁中文对照翻译',
                             id: 'ftzt',
                             iconInStr: 'Language',
+                            description: "两岸三地的中文翻译，内置最新的简繁字体术语表，让您的文档更加通用。",
                             bodyFn: () => import('./loadable/TLNZTFT/index.tsx')
                         },
                     ]
