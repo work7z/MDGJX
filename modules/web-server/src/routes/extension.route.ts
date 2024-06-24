@@ -5,7 +5,7 @@ import { sendRes } from '@/commonSimpleRoutes';
 import { isDevEnv } from '@/web2share-copy/env';
 import _ from 'lodash';
 import shelljs from 'shelljs';
-import { getLafToolsDataDir, devonly_getLafToolsExtDir, getLocalPkgExtract, getLocalPkgRepo } from '@/web2share-copy/homedir';
+import { getRootDataDir, devonly_getExtDir, getLocalPkgExtract, getLocalPkgRepo } from '@/web2share-copy/homedir';
 import path from 'path';
 import fs from 'fs';
 import { logger } from '@/utils/logger';
@@ -21,7 +21,7 @@ import compressUtils from '@/utils/compressUtils';
 import { fn_runOrRestartExtViewAppServer } from '@/ext-view-app';
 
 const pinyin = require('tiny-pinyin');
-const val_devonly_LafToolsExtDir = devonly_getLafToolsExtDir();
+const val_devonly_LafToolsExtDir = devonly_getExtDir();
 const val_pkgExtract_dir = getLocalPkgExtract();
 const val_pkgRepo_dir = getLocalPkgRepo();
 

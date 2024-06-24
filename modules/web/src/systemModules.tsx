@@ -145,7 +145,7 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                             name: 'JSON 中英文对照',
                             id: 'json-cn-en',
                             iconInStr: 'Json',
-                            description: `对晦涩难懂的JSON字段，再也不用一个个查字典了，此工具可以支持JSON格式的中英文对照翻译。`,
+                            description: `对晦涩难懂的JSON字段名，再也不用一个个查字典了，可以使用此工具进行JSON格式的中英文对照翻译。`,
                             // iconInStr: 'Language',
                             bodyFn: () => import('./loadable/TLNJSONComparison/index.tsx')
                         },
@@ -153,14 +153,14 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                             name: 'Markdown 文档翻译',
                             id: 'md',
                             iconInStr: 'Markdown',
-                            description: `支持Markdown格式的文档翻译，完美识别MD格式，包括中文、英文、日文、韩文、法文、德文、俄文等语言的互转。`,
+                            description: `基于AI分析，提供Markdown格式的文档翻译，包括中文、英文、日文、韩文、法文、德文、俄文等语言的互转。`,
                             bodyFn: () => import('./loadable/TLNMarkdown/index.tsx')
                         },
                         {
                             name: '简繁中文对照翻译',
                             id: 'ftzt',
                             iconInStr: 'Language',
-                            description: "两岸三地的中文翻译，内置最新的简繁字体术语表，让您的文档更加通用。",
+                            description: "内地港澳台的中文简繁互转，内置最新的简繁字体术语表，让您的文档更加通用。",
                             bodyFn: () => import('./loadable/TLNZTFT/index.tsx')
                         },
                     ]
@@ -178,24 +178,6 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                 //         },
                 //     ]
                 // },
-                // TODO: 将toolsNavInfo放到本地
-                // ...toolsNavInfo.map(eachToolNavInfo => {
-                //     return {
-                //         id: eachToolNavInfo.id,
-                //         icon: eachToolNavInfo.icon || IconNetwork,
-                //         name: eachToolNavInfo.name,
-                //         children: (eachToolNavInfo.subTools || []).map(eachSubTool => {
-                //             return {
-                //                 id: eachSubTool.id + '',
-                //                 disableFooter: true,
-                //                 name: eachSubTool.name,
-                //                      keywords: eachSubTool.keywords,
-                //                  description: eachSubTool.description,
-                //                 bodyFn: () => import('./loadable/XToolsDetail/index.tsx')
-                //             }
-                //         }),
-                //     } satisfies SystemSubModuleItem
-                // })
             ]
         },
         {
@@ -229,6 +211,12 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                             id: 'installed-plugins',
                             disableFooter: true,
                             bodyFn: () => import('./loadable/MpPreviewExt/index.tsx')
+                        },
+                        {
+                            name: '开发配置',
+                            id: 'installed-config',
+                            disableFooter: true,
+                            bodyFn: ()=>import('./loadable/MpConfig/index.tsx')
                         },
                         // {
                         //     name: '在线插件预览',
