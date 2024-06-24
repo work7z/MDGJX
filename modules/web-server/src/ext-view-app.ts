@@ -128,6 +128,7 @@ export class ExtViewApp {
               const selectedStaticDir = _.first(embeddedConfig.staticDirs);
               const serveStaticFolder = path.join(currentExtRoot, selectedStaticDir);
               const baseUrl = embeddedConfig.baseUrl;
+              logger.info('serving static folder: ' + serveStaticFolder + ' at baseUrl: ' + baseUrl);
               this.app.use(baseUrl, express.static(serveStaticFolder,{
                 lastModified: true,
                 etag: true,                
