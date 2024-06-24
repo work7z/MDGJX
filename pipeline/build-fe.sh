@@ -20,11 +20,11 @@ cd $MDGJX_ROOT/devtools/release
 [ -d node_modules ] && rm -rf node_modules
 npm i -S -D --verbose --force
 
-echo "[I] building addons"
-cd $MDGJX_ROOT/addons/it-tools
-[ -d node_modules ] && rm -rf node_modules
-npm i -S -D --verbose --force
-npm run build
+# echo "[I] building addons"
+# cd $MDGJX_ROOT/addons/it-tools
+# [ -d node_modules ] && rm -rf node_modules
+# npm i -S -D --verbose --force
+# npm run build
 
 echo "[I] building web-server"
 cd $MDGJX_ROOT/modules/web-server
@@ -51,7 +51,7 @@ echo "[I] building web-server"
 
 npm run build
 cp -a $MDGJX_ROOT/modules/web/dist ./dist/spa
-cp -a $MDGJX_ROOT/addons/it-tools/dist ./dist/xtools
+# cp -a $MDGJX_ROOT/addons/it-tools/dist ./dist/xtools
 [ -d $MDGJX_ROOT/dist/web ] && rm -rf $MDGJX_ROOT/dist/web
 mkdir -p $MDGJX_ROOT/dist/web
 cp -a dist $MDGJX_ROOT/dist/web
