@@ -42,6 +42,7 @@ export class ExtViewApp {
     if (REF_HOLDER.lastApp) {
       REF_HOLDER.lastApp?.close();
     }
+    REF_HOLDER.lastApp = this;
     this.app = express();
     this.port = extViewPort;
 
@@ -70,7 +71,7 @@ export class ExtViewApp {
     return this.app;
   }
 
-  private async connectToDatabase() {}
+  private async connectToDatabase() { }
 
   private initializeMiddlewares() {
     this.app.use(morgan(LOG_FORMAT, { stream }));
@@ -102,11 +103,7 @@ export class ExtViewApp {
   }
 
   private initializeRoutes() {
-    this.app.use(fn_getExtViewPath(), (req, res) => {
-      res.send({
-        text: 'hello, you are in the ext view app',
-      });
-    });
+
 
     const pkgExtractDir = getLocalPkgExtract();
     const installedExts_flat_arr = getInstalledExtsFlatMode();
@@ -129,10 +126,13 @@ export class ExtViewApp {
               const serveStaticFolder = path.join(currentExtRoot, selectedStaticDir);
               const baseUrl = embeddedConfig.baseUrl;
               logger.info('serving static folder: ' + serveStaticFolder + ' at baseUrl: ' + baseUrl);
-              this.app.use(baseUrl, express.static(serveStaticFolder,{
+              this.app.use(baseUrl, express.static(serveStaticFolder, {
                 lastModified: true,
-                etag: true,                
+                etag: true,
               }));
+              this.app.get(baseUrl+'/*', (req, res) => {
+                res.sendFile(path.resolve(serveStaticFolder, 'index.html'));
+              });
               break;
             case 'web-static-standalone':
               throw new Error('web-static-standalone is not supported yet');

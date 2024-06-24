@@ -19,10 +19,13 @@ runCP(){
     pListenPort=$2
     # 2016 is release, 2017 is beta
     THAT_SVR='http://172.17.0.1:2016'
+    extractDIR=pkg-extract-release
     if [ "$pContainerName" == "web-beta-inst" ]; then
         THAT_SVR='http://172.17.0.1:2017'
+        extractDIR=pkg-extract-test
     fi
     docker run -e pContainerName=$pContainerName -e EXTSTATIC_SERVER=http://172.17.0.1:19980 -e DIRECT_PROXY_SERVER=$THAT_SVR -e ONLINEMODE=true -e LAFREGION=CN -e APPLANG=zh_CN --name $pContainerName -d \
+    -v /home/appuser/extstatic/ext-root/$extractDIR:/root/.miaoda/pkg-extract:rw
     -p 0.0.0.0:62003:62003 \
     -p 0.0.0.0:62004:62004 \ 
     -p 0.0.0.0:62005:62005 \

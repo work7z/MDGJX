@@ -63,6 +63,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path,
       },
+      '/ext-view':{
+        target: 'http://127.0.0.1:3050',
+        changeOrigin: true,
+        rewrite: (path) => path,
+      },
       '/local': {
         target: 'http://127.0.0.1:3050',
         changeOrigin: true,
