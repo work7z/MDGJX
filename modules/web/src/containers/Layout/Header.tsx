@@ -2,7 +2,8 @@ import {
     ActionIcon,
     Text, Affix, Anchor, AppShell, Box, Burger, Button, Center, Divider, Group, HoverCard, SimpleGrid, Transition, rem, useMantineTheme,
     UnstyledButton,
-    ThemeIcon
+    ThemeIcon,
+    Tooltip
 } from '@mantine/core';
 import { useDisclosure, useWindowScroll } from '@mantine/hooks';
 import imgFile from '/src/favicon.png'
@@ -25,6 +26,9 @@ import classes from './Header.module.css'
 import { Link, useHistory } from 'react-router-dom';
 import exportUtils from '@/utils/ExportUtils';
 import AuthUtils from '@/utils/AuthUtils';
+import { isDevEnv } from '@/env';
+import settingsSlice from '@/store/reducers/settingsSlice';
+import { FN_GetDispatch } from '@/store/nocycle';
 
 export default (props: {
     opened: boolean,
@@ -37,6 +41,28 @@ export default (props: {
     const userObj = exportUtils.useSelector(v => {
         return v.users
     })
+    const rh = exportUtils.register('header', {
+        getNotPersistedStateFn() {
+            return {}
+        },
+        getPersistedStateFn() {
+            return {
+            }
+        }
+    })
+    const devConfig_usingLocalExtViewConfig = exportUtils.useSelector(v => v.settings.devConfig_usingLocalExtViewConfig)
+    const updateUsingLocalExtViewOrNot = (type: boolean) => {
+        FN_GetDispatch()(
+            settingsSlice.actions.updateOneOfParamState({
+                devConfig_usingLocalExtViewConfig: type
+            })
+        )
+    }
+    // TODO: 在header处发送获取所有菜单栏导航栏的信息，并且一次性patch到store里
+    // 这里所有菜单栏的信息，是通过各个插件下的miaoda-dist.json去获取的
+    if (!rh) {
+        return 'loading...'
+    }
     const userAcctJSX = <Link to={'/settings/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
         <IconUserCircle stroke={1.5} />
     }</ActionIcon></Link>
@@ -63,11 +89,23 @@ export default (props: {
                 {
                     userObj.hasSignIn ? [
                         userAcctJSX,
+                        isDevEnv() ? <Tooltip label={
+                            devConfig_usingLocalExtViewConfig ? '当前使用云端配置，点击后切换到本地菜单' : '当前使用本地配置，点击后切换到云端菜单'
+                        }>
+                            <Button variant={
+                               ! devConfig_usingLocalExtViewConfig ? "light" : "default"
+                            } color='orange' onClick={() => {
+                                updateUsingLocalExtViewOrNot(!devConfig_usingLocalExtViewConfig)
+                            }} className=' hidden sm:block ' > {
+                                    devConfig_usingLocalExtViewConfig ? "云端" : '本地'
+                                }</Button>
+                        </Tooltip> : '',
                         <Button variant="default" onClick={() => {
                             AuthUtils.signOut()
                         }} className=' hidden sm:block ' > {
                                 "登出"
                             }</Button>
+
                         // <Link to={'/settings/my-account?type=signin'}>   <Button variant="default" className=' hidden sm:block '>登出</Button></Link>,
                     ] : [
                         <Link className=' block sm:hidden ' to={'/settings/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
