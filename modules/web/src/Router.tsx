@@ -25,7 +25,6 @@ export default () => {
     initCount: exportUtils.useSelector(v => v.settings.initCount)
   }, {
     refetchOnMountOrArgChange: true,
-    pollingInterval: 5000
   })
 
   useSystemInitFunc()
