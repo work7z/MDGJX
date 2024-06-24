@@ -55,18 +55,6 @@ export const extViewSlice = createApi({
         },
     }),
     endpoints: (build) => ({
-        getFullInfo: build.query<AsyncCreateResponse<{
-            miaodaConfigs: MiaodaConfig[]
-        } & SystemRefresh>, {
-            env: 'cloud-config' | 'local-config'
-        }>({
-            query: (p) => {
-                return {
-                    url: `/getFullInfo`,
-                    method: "GET",
-                };
-            },
-        }),
     })
 });
 

@@ -294,6 +294,21 @@ export class ExtensionRoute implements Routes {
       }),
     );
     this.router.get(
+      '/ext/get-full-info',
+      asyncHandler(async (req, res) => {
+        const query = req.query as {
+          env: 'cloud-config' | 'local-config';
+        }; 
+        sendRes(res, {
+          data: {
+            miaodaConfigs: [],
+          } satisfies {
+            miaodaConfigs: MiaodaConfig[];
+          },
+        });
+      }),
+    );
+    this.router.get(
       '/ext/get-ext-list',
       asyncHandler(async (req, res) => {
         const allMetaInfo = await getAllExtMetaInfo(req.query as ExtMetaSearchReq, x => true);
