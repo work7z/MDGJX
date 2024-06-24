@@ -6,7 +6,7 @@ import Blink from "../Blink";
 // const LoadRes: { key: any, value: any }[] = [];
 const LoadResObj = {}
 
-export default (props: {disableLoadingText?:boolean, id: string, fn: any }) => {
+export default (props: { bodyFnProps?:any,disableLoadingText?:boolean, id: string, fn: any }) => {
     // TODO: do GC later
     const [loadCtn, setLoadCtn] = React.useState<number>(0);
     const existCpt = LoadResObj[props.id];
@@ -34,7 +34,7 @@ export default (props: {disableLoadingText?:boolean, id: string, fn: any }) => {
            <LoadingTmpView/>
     } else {
         const ExistCpt = existCpt
-        return <ExistCpt />
+        return <ExistCpt {...props.bodyFnProps||{}} />
     }
 
 }

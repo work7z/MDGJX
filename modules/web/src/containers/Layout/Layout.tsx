@@ -55,7 +55,7 @@ export function GeneralLayout(props) {
         if (bodyFn) {
             const loadFn = mainSubModuleItem.bodyFn
             return (
-                <LoadableWrapper id={`${mdParams.firstRouteId}-${mainSubModuleItem.id}`} fn={loadFn} />
+                <LoadableWrapper bodyFnProps={mainSubModuleItem.bodyFnProps} id={`${mdParams.firstRouteId}-${mainSubModuleItem.id}`} fn={loadFn} />
             )
         } else {
             return <div>当前页面正在重构中，敬请期待 </div>
