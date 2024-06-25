@@ -40,7 +40,7 @@ export type SystemSubModuleItem = {
   seoName?: string;
   disableFooter?: boolean;
   moduleItemtURL?:string;
-  moduleItemQuery: any;
+  moduleItemQuery?: any;
   defaultSubToolId?: string;
   children?: SystemSubModuleItem[];
   keywords?: string[];
