@@ -25,7 +25,7 @@
 
 
 ```
-docker run -e LAFREGION=CN -e APPLANG=zh_CN --name my-miaoda-v ~/.miaoda-docker:/root/.miaoda -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+docker run -e LAFREGION=CN -e APPLANG=zh_CN --name my-miaoda -v ~/.miaoda-docker:/root/.miaoda -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
 ```
 
 **NOTE**:
