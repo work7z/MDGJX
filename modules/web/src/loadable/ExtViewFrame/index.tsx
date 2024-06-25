@@ -20,7 +20,7 @@ export default (props: {
         baseurl
     )     + '?' + queryString.stringify({
         sysdarkmode: isDark,
-        theme: isDark? '':'dark'
+        // theme: isDark? '':'dark'
     })
     // theme
 
