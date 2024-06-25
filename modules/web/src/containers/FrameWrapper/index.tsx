@@ -26,7 +26,7 @@ export const FrameWrapper = ({ src }) => {
             }}
             id='iframe'
             src={src}
-            height={height}
+            height={'100%'}
             scrolling='no'
             frameBorder='0'
         ></iframe>

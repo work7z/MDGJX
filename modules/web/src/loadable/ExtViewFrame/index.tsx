@@ -15,7 +15,10 @@ export default (props: {
     const config = fn_eachConfig()
     const subItem = fn_subItem()
     const isDark = useDarkModeOrNot()
-    const itToolsFullURL = `/ext-view/xtools/${subItem.id}` + '?' + queryString.stringify({
+    const baseurl = subItem.moduleItemtURL
+    const itToolsFullURL = (
+        baseurl
+    )     + '?' + queryString.stringify({
         sysdarkmode: isDark
     })
 
