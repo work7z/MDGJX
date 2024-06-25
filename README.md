@@ -18,7 +18,8 @@
 - 完全类似 GPT 的支持
 - 与高效的 UI 高度集成
 - 可用的 Docker 映像和便携式版本
-- 桌面版支持(Planning)
+- 桌面版支持
+- 开源插件库
 - ...
 
 # 🚀 在 Docker 上运行
@@ -45,6 +46,11 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name my-miaoda -v ~/.miaoda-docker
 为了快速使用这些功能，我们部署了稳定的在线网站供您使用。除了一些依赖特定操作系统功能的工具外，大多数工具都可以在我们的在线网站上找到。
 
 - 🇨🇳 国内版: [mdgjx.com](https://mdgjx.com)
+
+
+# 🚄 开源插件库
+
+本工具箱采用插件机制，具体插件源码在另一个仓库，可查看 https://github.com/work7z/MDGJX-extensions
 
 # 🌠 项目规划
 
