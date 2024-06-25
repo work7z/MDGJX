@@ -142,6 +142,7 @@ cd pipeline
 2. [CyberChef](https://github.com/gchq/CyberChef/tree/master) - a web app for encryption, encoding, compression and data analysis.
 3. [Lodash](https://github.com/lodash/lodash) - a modern JavaScript utility library delivering modularity, performance, & extras.
 4. [one-api](https://github.com/songquanpeng/one-api) - an OpenAI key management & redistribution system.
+5. [it-tools] a collection of handy tools for developers
 
 当然，还有其他开源项目受益并促进了这个项目，我无法在这一部分中详细介绍；如果没有这些项目和这些人才开发人员的努力，秒达工具箱就不可能实现。
 
