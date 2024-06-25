@@ -116,6 +116,15 @@ export class App {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
 
+  }
+
+  private initializeRoutes(routes: Routes[]) {
+    routes.forEach(route => {
+      logger.info('route: ' + route.path);
+      this.app.use('/local', route.router);
+    });
+
+    
     this.app.get('/killnow', (req, res) => {
       if (isDesktopMode) {
         process.exit(0);
@@ -123,6 +132,7 @@ export class App {
         res.send('not allowed');
       }
     });
+    const app = this.app;
 
     const proxyPrefixArr = ['/v3', '/ws'];
     for (let i = 0; i < proxyPrefixArr.length; i++) {
@@ -171,15 +181,6 @@ export class App {
       );
     }
 
-    // setup xtools
-    // let xToolsDir = path.join(__dirname, 'xtools');
-    // if (existsSync(xToolsDir)) {
-    //   this.app.use('/xtools', express.static(xToolsDir));
-    //   this.app.get('/xtools/*', (req, res) => {
-    //     res.sendFile(path.resolve(xToolsDir, 'index.html'));
-    //   });
-    // }
-
     // setup spa
     let distDir = path.join(__dirname, 'spa');
     if (existsSync(distDir)) {
@@ -204,23 +205,6 @@ export class App {
     };
 
     this.app.use(ErrorMiddleware);
-  }
-
-  private initializeRoutes(routes: Routes[]) {
-    routes.forEach(route => {
-      this.app.use('/local', route.router);
-    });
-
-    this.app.use('/', (req, res) => {
-      if (req.url == '/') {
-        res.send({
-          version: process.env.APP_VERSION || 'UnknownVersion',
-          launchAt: launchTime,
-        });
-      } else {
-        req.next();
-      }
-    });
   }
 
   private initializeErrorHandling() {
