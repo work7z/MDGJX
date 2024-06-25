@@ -9,6 +9,7 @@ import path from 'path';
 import os from 'os';
 import fsutils from './FileUtils';
 import { isDevEnv, isTestEnv } from './env';
+import { logger } from '@/utils/logger';
 
 let userHome = os.homedir();
 
@@ -33,7 +34,7 @@ export let devonly_getExtDir = (): string => {
       return path.join(process.env.MDGJX_EXT_ROOT, 'extensions');
     }
   }
-  throw new Error('not in dev env');
+  logger.warn('devonly_getExtDir: not in dev env');
 };
 
 // 下载好，解压之后会放在这里，目前后续使用都是在这里使用的
