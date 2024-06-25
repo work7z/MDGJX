@@ -18,7 +18,7 @@ export default (props: {
     const baseurl = subItem.moduleItemtURL
     const itToolsFullURL = (
         baseurl
-    ) + '?' + queryString.stringify({
+    )     + '?' + queryString.stringify({
         sysdarkmode: isDark
     })
 
