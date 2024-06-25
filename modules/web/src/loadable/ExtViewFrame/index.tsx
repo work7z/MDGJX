@@ -19,8 +19,10 @@ export default (props: {
     const itToolsFullURL = (
         baseurl
     )     + '?' + queryString.stringify({
-        sysdarkmode: isDark
+        sysdarkmode: isDark,
+        theme: isDark? '':'dark'
     })
+    // theme
 
     const jsx = <div className="flex-1">
         <Card className=" flex flex-col " withBorder style={{
