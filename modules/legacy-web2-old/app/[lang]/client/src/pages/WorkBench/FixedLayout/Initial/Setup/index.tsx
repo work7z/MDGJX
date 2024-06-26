@@ -340,7 +340,6 @@ export default () => {
                   intent={Intent.SUCCESS}
                   onClick={() => {
                     // refresh workspace list
-                    // workspaceListRes.refetch();
                     AlertUtils.popRefresh();
                   }}
                 />
