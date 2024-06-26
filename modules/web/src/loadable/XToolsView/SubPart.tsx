@@ -34,8 +34,7 @@ export default () => {
         mainSubModulesItems.forEach(x => {
             allSubModulesItem.push(...(x.children || []))
         })
-        return allSubModulesItem // .sort((a, b) => a.name.localeCompare(b.name))
-        // return _.flatten(toolsNavInfo.map(x => x.subTools || [])).sort((a, b) => a.name.localeCompare(b.name))
+        return allSubModulesItem 
     }, [mainSubModulesItems])
     const [searchIpt, setSearchIpt] = React.useState('')
     if (idx === 'all') {

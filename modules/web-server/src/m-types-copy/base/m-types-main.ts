@@ -68,6 +68,7 @@ export const redirectLinks: RedirectLinkItem[] = [];
 export const EXT_VIEW_PREFIX='/ext-view'
 
 export type MiaodaBasicConfig = {
+  sortOrder?: number;
   disabled?: boolean;
   cwd?: string; // by default, it's $MDGJX_EXT_PATH/$id unless you have a dedicated path
   post_fullId?: string;
