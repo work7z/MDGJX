@@ -25,6 +25,8 @@ export default (props: {
             subItem.moduleItemHashVal ? '#' + subItem.moduleItemHashVal : ''
     )
 
+
+
     const jsx = <div className="flex-1">
         <Card className=" flex flex-col " withBorder style={{
             padding: 0,
@@ -39,6 +41,7 @@ export default (props: {
     return <div key={subItem.id} className="flex flex-col" style={{
         height: `calc(${AppConstants.calcMainBodyHeight})`,
     }}>
-        {jsx}
+        {/* {jsx} */}
+        {itToolsFullURL}
     </div>
 }

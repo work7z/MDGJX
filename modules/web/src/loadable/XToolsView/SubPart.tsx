@@ -1,7 +1,7 @@
 import XToolsViewer from "@/containers/XToolsViewer"
 import { HeroText } from "./HeroText"
 import { Button, Card, HoverCard, Tabs, Text, TextInput, Title, Tooltip } from "@mantine/core"
-import React, { useMemo } from "react"
+import React, { useMemo, useState } from "react"
 import {
     IconAperture,
     IconArrowsShuffle, IconLockSquare, IconFingerprint, IconSortDescendingNumbers, IconLock, IconCertificate, IconCalendar, IconArrowsLeftRight, IconLetterX, IconPalette, IconLetterCaseToggle, IconSpeakerphone, IconTextWrap, IconLink, IconUnlink, IconDeviceDesktop, IconTags, IconDeviceMobile, IconWorld, IconKey, IconKeyboard, IconEdit, IconBrowser, IconMailbox, IconBrandGit, IconServer, IconAlarm, IconList, IconDatabase, IconFileInvoice, IconBrandDocker, IconCode, IconBinary, IconBuildingFactory, IconMath, IconHourglass, IconPercentage, IconTemperature, IconPhone, IconAlignJustified, IconFileText, IconMoodSmile, IconEyeOff, IconFileDiff, IconArtboard, IconCamera,
@@ -34,9 +34,17 @@ export default () => {
         mainSubModulesItems.forEach(x => {
             allSubModulesItem.push(...(x.children || []))
         })
-        return allSubModulesItem 
+        return allSubModulesItem
     }, [mainSubModulesItems])
-    const [searchIpt, setSearchIpt] = React.useState('')
+    const [tmpDebounce, _setTmpDebounce] = React.useState(0)
+    let setTmpDebounce = useMemo(()=>{
+        return _.debounce(_setTmpDebounce, 300)
+    },[]) 
+    const [searchIpt, _setSearchIpt] = React.useState('')
+    const setSearchIpt = (val)=>{
+        _setSearchIpt(val)
+        setTmpDebounce(Date.now())
+    }
     if (idx === 'all') {
         finalSubToolsArr = allSubToolsArr
     } else {
@@ -61,10 +69,14 @@ export default () => {
                 return true
             }
             return (_.toLower(x.name) + _.toLower(py.convertToPinyin(x.name))).indexOf(lowerIpt) !== -1 || ('' + (
+                x?.keywords?.join("") + _.toLower(py.convertToPinyin(x?.keywords?.join("") + '') ) || 
                 _.toLower(x.description) + _.toLower(py.convertToPinyin(x.description || ''))
+
             )).indexOf(lowerIpt) !== -1
         })
-    }, [searchIpt, idx])
+    }, [tmpDebounce, idx])
+    const previewCtn = 160
+    const [forceViewAll, onForceViewAll] = useState(false)
     return (
         <div>
             <Tabs value={idx} onChange={e => {
@@ -93,23 +105,25 @@ export default () => {
             </div>
             <div className="  p-2 pt-1 mt-0">
                 {
-                    (calcFinalSubToolsArr).map(x => {
+                    (
+                        forceViewAll ? calcFinalSubToolsArr : _.take(calcFinalSubToolsArr, previewCtn)
+                    ).map(x => {
                         return (
                             <Link to={x.href + ''}>
                                 <Tooltip label={x.description} position="bottom" openDelay={50} style={{
                                 }}>
-                                <Card 
-                                shadow="xs" withBorder className="w-[100%] sm:w-[29%] 2xl:w-[24%]  hover:border-blue-300   box-border mb-2 mr-2 inline-block  " >
-                                    <div className="flex items-center mb-2  space-x-2">
-                                        {
-                                            x.iconInStr ? <DynamicIcon icon={x.iconInStr} /> :
-                                                x.icon && x.icon.name && <DynamicIcon icon={x.icon.name} /> || <IconExchange />}
-                                        <Title order={4} className="font-normal">
-                                            <Text truncate>{x.name}</Text>
-                                        </Title>
-                                    </div>
-                                    <Text  truncate className="text-slate-600 dark:text-slate-400" size={"sm"}>{x.description}</Text>
-                                </Card>
+                                    <Card
+                                        shadow="xs" withBorder className="w-[100%] sm:w-[29%] 2xl:w-[24%]  hover:border-blue-300   box-border mb-2 mr-2 inline-block  " >
+                                        <div className="flex items-center mb-2  space-x-2">
+                                            {
+                                                x.iconInStr ? <DynamicIcon icon={x.iconInStr} /> :
+                                                    x.icon && x.icon.name && <DynamicIcon icon={x.icon.name} /> || <IconExchange />}
+                                            <Title order={4} className="font-normal">
+                                                <Text truncate>{x.name}</Text>
+                                            </Title>
+                                        </div>
+                                        <Text truncate className="text-slate-600 dark:text-slate-400" size={"sm"}>{x.description}</Text>
+                                    </Card>
                                 </Tooltip>
 
                             </Link>
@@ -117,6 +131,14 @@ export default () => {
                     })
                 }
             </div>
+            {
+                _.size(calcFinalSubToolsArr) > previewCtn && !forceViewAll && (
+                    <div className="flex justify-center ">
+                        <Button variant="default" size='lg' onClick={() => {
+                            onForceViewAll(true)
+                        }}>查看全部</Button>
+                    </div>)
+            }
         </div>
     )
 }
