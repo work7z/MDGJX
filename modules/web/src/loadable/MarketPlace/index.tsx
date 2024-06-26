@@ -84,8 +84,8 @@ export default function () {
         return true;
     })
     useEffect(() => {
-       !installExtsRes.isUninitialized && installExtsRes.refetch()
-        !installExtsRes.isUninitialized &&   progressAllDataRes.refetch()
+    //    !installExtsRes.isUninitialized && installExtsRes.refetch()
+    //     !installExtsRes.isUninitialized &&   progressAllDataRes.refetch()
     }, [hasAnyInstalling])
 
     if (!rh) {
