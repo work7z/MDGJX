@@ -18,11 +18,12 @@ export default (props: {
     const baseurl = subItem.moduleItemtURL
     const itToolsFullURL = (
         baseurl
-    )     + '?' + queryString.stringify({
+    ) + '?' + queryString.stringify({
         sysdarkmode: isDark,
-        // theme: isDark? '':'dark'
-    })
-    // theme
+        ...(subItem.moduleItemQuery || {})
+    }) + (
+            subItem.moduleItemHashVal ? '#' + subItem.moduleItemHashVal : ''
+    )
 
     const jsx = <div className="flex-1">
         <Card className=" flex flex-col " withBorder style={{

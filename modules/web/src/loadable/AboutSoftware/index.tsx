@@ -76,9 +76,9 @@ export default function GetInTouchSimple() {
                         <li>
                             所有源代码: {appInfo.githubRepo}
                         </li>
-                        <li>
+                        {/* <li>
                             开发者Ryan的微信：lafting755
-                        </li>
+                        </li> */}
                         <li>
                             哔哩哔哩账号：<a href='https://space.bilibili.com/1343908691?spm_id_from=333.1007.0.0'>CodeGen工具箱(未来可能更名)</a>
                         </li>

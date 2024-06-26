@@ -41,6 +41,7 @@ export type SystemSubModuleItem = {
   disableFooter?: boolean;
   moduleItemtURL?:string;
   moduleItemQuery?: any;
+  moduleItemHashVal?:string;
   defaultSubToolId?: string;
   children?: SystemSubModuleItem[];
   keywords?: string[];
