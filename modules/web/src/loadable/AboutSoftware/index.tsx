@@ -54,11 +54,29 @@ export default function GetInTouchSimple() {
                 <div className='mt-10' >
                     <Title order={5}>软件迭代历程</Title>
                     <ul className='list-disc'>
-                        <li>Work7zCentre - 2019年11月</li>
+                        <li>work7z - 2019年8月</li>
                         <li>GUtils - 2020年1月</li>
-                        <li>CodeGen工具箱 - 2022年3月</li>
-                        <li>LafTools工具箱 - 2023年10月</li>
-                        <li>秒达工具箱 - 2024年4月</li>
+                        <li>
+                            <Anchor>
+                                <a href='https://codegen.cc' target="_blank">
+                                    CodeGen工具箱 - 2022年3月
+                                </a>
+                            </Anchor>
+                        </li>
+                        <li>
+                            <Anchor>
+                                <a href='https://github.com/work7z/LafTools' target="_blank">
+                                    LafTools工具箱 - 2023年10月</a>
+                            </Anchor>
+                        </li>
+                        <li>
+                            <Anchor >
+                                <a href='https://mdgjx.com' target="_blank">
+                                    秒达工具箱 - 2024年4月
+
+</a>
+                            </Anchor>
+                        </li>
                         <li>...</li>
                     </ul>
                 </div>
