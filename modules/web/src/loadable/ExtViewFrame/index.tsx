@@ -22,8 +22,9 @@ export default (props: {
         sysdarkmode: isDark,
         ...(subItem.moduleItemQuery || {})
     }) + (
-            subItem.moduleItemHashVal ? '#' + subItem.moduleItemHashVal : ''
-    )
+            subItem.moduleItemHashVal ? '#' + (subItem.moduleItemHashVal) : ''
+        ) 
+
 
 
 
@@ -34,14 +35,19 @@ export default (props: {
             height: AppConstants.smallDevice ? '150vh' : '100%'
         }}>
             <FrameWrapper src={
-                itToolsFullURL
+                // `http://127.0.0.1:5173/ext-view/srk/#recipe=Base64%E7%BC%96%E7%A0%81('A-Za-z0-9%2B/%3D')` ||
+                // /ext-view/srk/?sysdarkmode=false#recipe=Base64%E7%BC%96%E7%A0%81('A-Za-z0-9+/=')
+                // // http://127.0.0.1:5173/ext-view/srk/#recipe=Base64编码('A-Za-z0-9+/=')
+                // Base64%E7%BC%96%E7%A0%81('A-Za-z0-9%2B%3D')
+
+                (itToolsFullURL)
             } />
         </Card >
     </div>
     return <div key={subItem.id} className="flex flex-col" style={{
         height: `calc(${AppConstants.calcMainBodyHeight})`,
     }}>
-        {/* {jsx} */}
-        {itToolsFullURL}
+        {jsx}
+        {/* <a href={itToolsFullURL} target="_blank">{itToolsFullURL}</a> */}
     </div>
 }

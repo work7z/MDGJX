@@ -75,7 +75,7 @@ export default () => {
             )).indexOf(lowerIpt) !== -1
         })
     }, [tmpDebounce, idx])
-    const previewCtn = 160
+    const previewCtn = 80
     const [forceViewAll, onForceViewAll] = useState(false)
     return (
         <div>
