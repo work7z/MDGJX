@@ -219,7 +219,6 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                 defaultHref: '/marketplace/index',
                 icon: IconBuildingStore,
                 label: '插件市场',
-                hide: !isDevEnv(),
                 children: [
                     {
                         name: '云插件',
