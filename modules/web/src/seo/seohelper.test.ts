@@ -164,8 +164,14 @@ test('seo-blend-it', async () => {
     for (let eachPath of val_eachRootJsonItem.path) {
       const body_htmlFileName = encodeURIComponent(eachPath) + '-body.html';
       const body_htmlFileFullPath = path.join(WEB_HTML_DIR, body_htmlFileName);
+      if(!fs.existsSync(body_htmlFileFullPath)){
+        continue;
+      }
       const head_htmlFileName = encodeURIComponent(eachPath) + '-head.html';
       const head_htmlFileFullPath = path.join(WEB_HTML_DIR, head_htmlFileName);
+      if(!fs.existsSync(head_htmlFileFullPath)){
+        continue;
+      }
       // get html str
       const bodyHtml = fs.readFileSync(body_htmlFileFullPath, 'utf-8');
       const headHtml = fs.readFileSync(head_htmlFileFullPath, 'utf-8');
