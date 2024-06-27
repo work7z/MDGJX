@@ -174,19 +174,19 @@ export default (props: {
                 </HoverCard> */}
 
                     <a href="#" className={classes.link}>
-                        笔记
+                        随记
                     </a>
-
                     <a href="#" className={classes.link}>
                         图床
                     </a>
+                    
 
-                    <a href="#" className={classes.link}>
+                    {/* <a href="#" className={classes.link}>
                         云空间
-                    </a>
+                    </a> */}
 
                     <a href="#" className={classes.link}>
-                        白噪音
+                        轻听自然
                     </a>
 
                     <a href="#" className={classes.link + ' active '}>

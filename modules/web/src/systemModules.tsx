@@ -94,6 +94,7 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
             name: 'JSON超级工具',
             iconInStr: 'Json',
             id: 'json',
+            disableFooter:true,
             defaultSubToolId: 'convert',
             description: "JSON 转换、格式化、压缩、解析、校验、比较、合并、转义、加密、解密等一站式超级工具。",
             bodyFn: () => import('./loadable/JSONSuperTools/index.tsx'),

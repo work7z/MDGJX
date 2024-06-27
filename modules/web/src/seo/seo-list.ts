@@ -19,7 +19,7 @@ export const fn_getAllSeoDetail = async () => {
       keywords: '在线工具,文档笔记,编程资源,MDGJX秒达工具箱,MDGJX,秒达工具箱,开源工具箱',
     },
     {
-      path: ['/tools/json', '/tools/json/convert'],
+      path: ['/formats/jsonhelper', '/formats/jsonhelper/convert'],
       title: 'JSON压缩编码 | JSON在线校验格式化 | JSON在线编辑 | JSON浏览器',
       description:
         'MDGJX秒达工具箱快速提供JSON压缩编码、JSON在线校验格式化、JSON在线编辑、JSON浏览器等功能，让您的JSON数据处理更加便捷。',

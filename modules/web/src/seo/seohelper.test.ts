@@ -42,10 +42,10 @@ test(
           eachMenu.children?.forEach(xx=>{
             xx.id;
             SeoDetailItemForMDGJX.push({
-              path: [xx.href + ''],
+              path: [`/${eachMenu.id}/${xx.id}`],
               title: `${xx.name} | ${eachMenu.name}`,
               description: xx.description + '',
-              keywords: (xx.keywords ||[]).join(','),
+              keywords: (xx.keywords || []).join(','),
             });
 
           })
@@ -105,7 +105,6 @@ test(
           }
         </div>
         `.trim();
-        console.log('spaHtml: ' + spaHtml);
         await browser.close();
 
         const f = (str: string) => {
