@@ -334,7 +334,7 @@ export class ExtensionRoute implements Routes {
         const miaodaConfigs = fullDetail
           .filter(x => x.config)
           .map(x => x.config)
-          .sort(x => (_.isNil(x.sortOrder) ? 0 : x.sortOrder) * -1);
+          .sort(x => (_.isNil(x.sortOrder) ? 0 : x.sortOrder) * 1);
         sendRes(res, {
           data: {
             miaodaConfigs: miaodaConfigs,
