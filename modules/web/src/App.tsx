@@ -11,6 +11,7 @@ import GetAppInfo from './AppInfo';
 
 
 export default function App() {
+
   return (
     <Provider store={store}>
       <MantineProvider theme={theme}>
@@ -18,4 +19,6 @@ export default function App() {
       </MantineProvider>
     </Provider>
   );
+
+
 }
