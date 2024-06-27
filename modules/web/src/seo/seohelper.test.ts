@@ -64,6 +64,9 @@ test(
         const htmlFileName = encodeURIComponent(eachPath) + '-head.html';
         console.log(eachPath);
         console.log('htmlFileName: ' + htmlFileName);
+        if(fs.existsSync(path.join(htmlDir, htmlFileName))){
+          continue;
+        }
 
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
