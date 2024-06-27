@@ -115,7 +115,7 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                                 ...subItem,
                                 bodyFn: () => import('./loadable/ExtViewFrame/index.tsx'),
                                 bodyFnProps: {
-                                    fn_subItem: ()=>subItem,
+                                    fn_subItem: () => subItem,
                                     fn_eachConfig: () => eachConfig
                                 }
                             } satisfies SystemSubModuleItem
@@ -301,11 +301,14 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
             ROUTE_CPT_MAPPING,
             stillInitializing: fullInfoQuery.isLoading // first time load
         }
-    }, [devConfig_usingLocalExtViewConfig, miaoConfigsArr, _.size(miaoConfigsArr), fullInfoQuery?.status])
+    }, [devConfig_usingLocalExtViewConfig, miaoConfigsArr, _.size(miaoConfigsArr), fullInfoQuery?.isSuccess, fullInfoQuery.fulfilledTimeStamp])
+
+    // IMPORTATNT: DO NOT REMOVE THIS LINE
+    window['val_systemMRes'] = systemMRes
 
     return systemMRes
 }
-
+window['val_testNum'] = 12345
 
 
 // {
