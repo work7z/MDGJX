@@ -331,10 +331,9 @@ export class ExtensionRoute implements Routes {
       asyncHandler(async (req, res) => {
         const query = req.query as GetInstalledExtReq;
         const fullDetail = getInstalledExtsFlatModeWithDetail(query);
-        const miaodaConfigs = fullDetail
-          .filter(x => x.config)
-          .map(x => x.config)
-          .sort(x => (_.isNil(x.sortOrder) ? 0 : x.sortOrder) * 1);
+        const miaodaConfigs = _.sortBy(fullDetail.filter(x => x.config).map(x => x.config),[
+          'sortOrder'
+        ]);
         sendRes(res, {
           data: {
             miaodaConfigs: miaodaConfigs,

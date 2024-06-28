@@ -10,6 +10,10 @@ import $ from 'cheerio';
 import { sleep } from '@/utils/CommonUtils';
 import { MiaodaBasicConfig } from '@/systemModules';
 
+const isFileEmptyOrNonExist = (file: string) => {
+  return !fs.existsSync(file) || fs.statSync(file).size === 0;
+}
+
 test(
   'seo-prerender',
   async () => {
@@ -23,7 +27,7 @@ test(
       waitUntil: 'networkidle0',
     });
     await page.waitForSelector('.mantine-AppShell-header', {
-      timeout: 10000,
+      timeout: 20000,
     });
 
     shelljs.mkdir('-p', htmlDir);
@@ -42,10 +46,10 @@ test(
           eachMenu.children?.forEach(xx=>{
             xx.id;
             SeoDetailItemForMDGJX.push({
-              path: [xx.href + ''],
+              path: [`/${eachMenu.id}/${xx.id}`],
               title: `${xx.name} | ${eachMenu.name}`,
               description: xx.description + '',
-              keywords: (xx.keywords ||[]).join(','),
+              keywords: (xx.keywords || []).join(','),
             });
 
           })
@@ -64,6 +68,14 @@ test(
         const htmlFileName = encodeURIComponent(eachPath) + '-head.html';
         console.log(eachPath);
         console.log('htmlFileName: ' + htmlFileName);
+        console.log('eachPath: '+eachPath)
+        // if(fs.existsSync(path.join(htmlDir, htmlFileName))){
+        //   continue;
+        // }
+        if(!isFileEmptyOrNonExist(path.join(htmlDir, htmlFileName))){
+          console.log('htmlFileName is empty or not exist: ' + htmlFileName);
+          continue;
+        }
 
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
@@ -105,7 +117,6 @@ test(
           }
         </div>
         `.trim();
-        console.log('spaHtml: ' + spaHtml);
         await browser.close();
 
         const f = (str: string) => {
@@ -162,8 +173,14 @@ test('seo-blend-it', async () => {
     for (let eachPath of val_eachRootJsonItem.path) {
       const body_htmlFileName = encodeURIComponent(eachPath) + '-body.html';
       const body_htmlFileFullPath = path.join(WEB_HTML_DIR, body_htmlFileName);
+      // if(!fs.existsSync(body_htmlFileFullPath)){
+      //   continue;
+      // }
       const head_htmlFileName = encodeURIComponent(eachPath) + '-head.html';
       const head_htmlFileFullPath = path.join(WEB_HTML_DIR, head_htmlFileName);
+      // if(!fs.existsSync(head_htmlFileFullPath)){
+      //   continue;
+      // }
       // get html str
       const bodyHtml = fs.readFileSync(body_htmlFileFullPath, 'utf-8');
       const headHtml = fs.readFileSync(head_htmlFileFullPath, 'utf-8');
