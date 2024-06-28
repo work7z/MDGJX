@@ -23,7 +23,7 @@ test(
       waitUntil: 'networkidle0',
     });
     await page.waitForSelector('.mantine-AppShell-header', {
-      timeout: 10000,
+      timeout: 20000,
     });
 
     shelljs.mkdir('-p', htmlDir);
@@ -64,9 +64,10 @@ test(
         const htmlFileName = encodeURIComponent(eachPath) + '-head.html';
         console.log(eachPath);
         console.log('htmlFileName: ' + htmlFileName);
-        if(fs.existsSync(path.join(htmlDir, htmlFileName))){
-          continue;
-        }
+        console.log('eachPath: '+eachPath)
+        // if(fs.existsSync(path.join(htmlDir, htmlFileName))){
+        //   continue;
+        // }
 
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
@@ -164,14 +165,14 @@ test('seo-blend-it', async () => {
     for (let eachPath of val_eachRootJsonItem.path) {
       const body_htmlFileName = encodeURIComponent(eachPath) + '-body.html';
       const body_htmlFileFullPath = path.join(WEB_HTML_DIR, body_htmlFileName);
-      if(!fs.existsSync(body_htmlFileFullPath)){
-        continue;
-      }
+      // if(!fs.existsSync(body_htmlFileFullPath)){
+      //   continue;
+      // }
       const head_htmlFileName = encodeURIComponent(eachPath) + '-head.html';
       const head_htmlFileFullPath = path.join(WEB_HTML_DIR, head_htmlFileName);
-      if(!fs.existsSync(head_htmlFileFullPath)){
-        continue;
-      }
+      // if(!fs.existsSync(head_htmlFileFullPath)){
+      //   continue;
+      // }
       // get html str
       const bodyHtml = fs.readFileSync(body_htmlFileFullPath, 'utf-8');
       const headHtml = fs.readFileSync(head_htmlFileFullPath, 'utf-8');
