@@ -75,7 +75,7 @@ export default () => {
             )).indexOf(lowerIpt) !== -1
         })
     }, [tmpDebounce, idx, sml.stillInitializing])
-    const previewCtn = 80
+    const previewCtn = 60 - 4
     const [forceViewAll, onForceViewAll] = useState(false)
     return (
         <div>

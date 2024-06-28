@@ -26,7 +26,7 @@ export default () => {
             type == 'docker' ? <p className='p-2 mt-2'>
                 <div>🚀 Docker部署命令行:</div>
                 <Alert>
-                    docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+                    docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mymiaoda -v ~/.miaoda-docker:/root/.miaoda -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
                 </Alert>
                 <div className='mt-2'>
                     <a rel='nofollow' href={'https://hub.docker.com/r/codegentoolbox/laftools-linux-x64'} target='_blank' className='text-blue-500'>🔗 Docker Hub - laftools-linux-x64</a>
