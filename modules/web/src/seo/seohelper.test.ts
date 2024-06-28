@@ -10,6 +10,10 @@ import $ from 'cheerio';
 import { sleep } from '@/utils/CommonUtils';
 import { MiaodaBasicConfig } from '@/systemModules';
 
+const isFileEmptyOrNonExist = (file: string) => {
+  return !fs.existsSync(file) || fs.statSync(file).size === 0;
+}
+
 test(
   'seo-prerender',
   async () => {
@@ -68,6 +72,10 @@ test(
         // if(fs.existsSync(path.join(htmlDir, htmlFileName))){
         //   continue;
         // }
+        if(!isFileEmptyOrNonExist(path.join(htmlDir, htmlFileName))){
+          console.log('htmlFileName is empty or not exist: ' + htmlFileName);
+          continue;
+        }
 
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
