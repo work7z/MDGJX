@@ -35,7 +35,7 @@ export default () => {
             allSubModulesItem.push(...(x.children || []))
         })
         return allSubModulesItem
-    }, [mainSubModulesItems])
+    }, [mainSubModulesItems, sml.stillInitializing])
     const [tmpDebounce, _setTmpDebounce] = React.useState(0)
     let setTmpDebounce = useMemo(()=>{
         return _.debounce(_setTmpDebounce, 300)
@@ -74,7 +74,7 @@ export default () => {
 
             )).indexOf(lowerIpt) !== -1
         })
-    }, [tmpDebounce, idx])
+    }, [tmpDebounce, idx, sml.stillInitializing])
     const previewCtn = 80
     const [forceViewAll, onForceViewAll] = useState(false)
     return (
