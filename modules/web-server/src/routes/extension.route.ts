@@ -87,6 +87,9 @@ export const getExtStaticDataRemotely = async (subPath: string): Promise<any> =>
     throw new Error(`failed to get ${fullURL}, error: ${fullURL}`);
   }
 };
+const lastUpdatedObj = {
+  ver: null
+}
 
 export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearchingInExtDir?: (extDir: string) => boolean): Promise<ExtMetaInfo> => {
   let results: MiaodaConfig[] = [];
@@ -143,7 +146,6 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
   }
   tmp_results = [];
 
-  const allExtDir = shelljs.ls(val_pkgExtract_dir);
   // filter now
   req.searchText = _.trim(req.searchText);
   if (req.searchText) {
@@ -152,18 +154,17 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
       return each.fuzzySearchStr.indexOf(lowTxt) >= 0;
     });
   }
-  // check and upgrade installed flag
-  results = results.map(x => {
-    const fullId = x.id + '@' + x.version;
-    const specifialFolder = path.join(val_pkgExtract_dir, fullId);
-    const miaodaDist = path.join(specifialFolder, filename_ack_file);
-    // TODO: hasNewVersion放前端去做
-    return x;
-  });
+  let finalLastUpdatedValue = lastUpdatedVal || 'ext-v2020.01.15';
+  if(finalLastUpdatedValue!==lastUpdatedObj.ver && lastUpdatedObj.ver){
+    if(IsCurrentPortalServerMode()){
+      logger.info('ext meta info updated, therefore restart ext-view-app');
+      fn_runOrRestartExtViewAppServer();
+    }
+  }
   return {
     allMetaInfo: results,
     totals: results.length,
-    lastUpdated: lastUpdatedVal || 'ext-v2020.01.15',
+    lastUpdated: finalLastUpdatedValue,
   };
 };
 
