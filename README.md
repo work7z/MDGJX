@@ -54,15 +54,7 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name my-miaoda -v ~/.miaoda-docker
 
 # 🌠 项目规划
 
-[x] 桌面端应用       
-[x] Docker版本  
-[x] 移动端兼容    
-[x] it-tools集成+汉化    
-[x] 多类型翻译  
-[] 插件化设计    
-[] Spotlight   
-....
-
+关于我们目前正在做的新feature，请查看issues区，那里有更多详细信息。
 
 ![](./docs/imgs/portal.png)
 
