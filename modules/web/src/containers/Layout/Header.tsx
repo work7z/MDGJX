@@ -177,7 +177,7 @@ export default (props: {
                         随记
                     </a>
                     <a href="#" className={classes.link}>
-                        图床
+                        翻译
                     </a>
                     
 

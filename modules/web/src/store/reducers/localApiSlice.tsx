@@ -195,6 +195,7 @@ export const localApiSlice = createApi({
     extGetAllInstalledExts: build.query<
       AsyncCreateResponse<string[]>,
       {
+        updateCtn: number
       }
     >({
       query: (b) => {

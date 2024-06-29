@@ -25,7 +25,7 @@ import exportUtils from "@/utils/ExportUtils";
 import _ from "lodash";
 import { isPortalMode } from "@/utils/PortalUtils";
 import { DynamicIcon } from "@/containers/DynamicIcon";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { isDevEnv } from "@/env";
 
 
@@ -52,12 +52,17 @@ export default function () {
     })
 
     const progressAllDataRes = localApiSlice.useExtHarmfulProgressAllDataQuery({}, {
-        pollingInterval: 3000,
+        pollingInterval: isPortalMode() ? 10000 : 2000,
         skip: isPortalMode()
     })
 
-    const installExtsRes = localApiSlice.useExtGetAllInstalledExtsQuery({}, {
-        pollingInterval: 10000
+    const [updateCtn, onUpdateCtn] = useState(0)
+
+    const installExtsRes = localApiSlice.useExtGetAllInstalledExtsQuery({
+        updateCtn,
+    }, {
+        pollingInterval: 10000,
+        refetchOnMountOrArgChange:true,
     })
 
     const [lazy_InstallExt, installExtRes] = localApiSlice.useLazyExtHarmfulInstallExtQuery()
@@ -67,26 +72,21 @@ export default function () {
 
     const fData = extListRes?.data?.data
     const statusData = progressAllDataRes.data?.data
-    // const installExts = useMemo(() => {
-    //     const done: string[] = []
-    //     _.every(fData?.allMetaInfo, (x) => {
-    //         done.push(x.post_fullId + '' + statusData?.[x.post_fullId as string]?.status)
-    //         return true;
-    //     })
-    //     return done.join('-') + _.size(statusData);
-    // }, [statusData, fData?.allMetaInfo])
     let hasAnyInstalling = false;
-    _.every(fData?.allMetaInfo, (x) => {
-        if (statusData?.[x.post_fullId as string]?.status == 'running') {
+    const statusList: string[] = []
+    _.forEach(fData?.allMetaInfo, (x) => {
+        const stVal = statusData?.[x.post_fullId as string]?.status
+        statusList.push(stVal + '')
+        if (stVal == 'running') {
             hasAnyInstalling = true;
             return false;
         }
         return true;
     })
+
     useEffect(() => {
-    //    !installExtsRes.isUninitialized && installExtsRes.refetch()
-    //     !installExtsRes.isUninitialized &&   progressAllDataRes.refetch()
-    }, [hasAnyInstalling])
+        onUpdateCtn(Date.now())
+    }, [statusList.join('-')])
 
     if (!rh) {
         return ''
@@ -131,15 +131,15 @@ export default function () {
                 </div>
                 <div className='flex flex-row space-x-2 items-center'>
                     {
-                        isDevEnv() ? <Button 
-                        onClick={()=>{
-                            rh?.updatePState({
-                                usingDevExtMode: !rh?.pState?.usingDevExtMode
-                            })
-                        }}
-                        size='compact-xs' variant={
-                            rh?.pState?.usingDevExtMode ? 'light' : "default"
-                        } >
+                        isDevEnv() ? <Button
+                            onClick={() => {
+                                rh?.updatePState({
+                                    usingDevExtMode: !rh?.pState?.usingDevExtMode
+                                })
+                            }}
+                            size='compact-xs' variant={
+                                rh?.pState?.usingDevExtMode ? 'light' : "default"
+                            } >
                             {
                                 !rh?.pState?.usingDevExtMode ? '使用本地库' : '切回云端库'
                             }
