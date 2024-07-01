@@ -34,6 +34,7 @@ import {
 import localApiSlice from './store/reducers/localApiSlice.tsx';
 import exportUtils from './utils/ExportUtils.tsx';
 import ExtViewFrame from './loadable/ExtViewFrame/index.tsx';
+import { isPortalMode } from './utils/PortalUtils.tsx';
 
 export * from './m-types-copy/base/m-types-main'
 
@@ -230,6 +231,7 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                     {
                         name: '开发者中心',
                         id: 'dev-centre',
+                        ignoreInNav: isPortalMode(),
                         children: [
                             {
                                 name: '开发插件预览',
