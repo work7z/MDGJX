@@ -85,13 +85,14 @@ export default ()=>{
                     onChange={e => {
                         setSearchCtn(e.currentTarget.value)
                     }}
+                    autoComplete='off'
                     leftSection={<IconSearch style={{ width: rem(24), height: rem(24) }} stroke={1.5} />}
                     styles={{ section: { pointerEvents: 'none' } }}
                 />
                 <div className='flex-1 bg-red-100 ' style={{
                     height: 'calc(100% - 60px)'
                 }}>
-                    <div>bg</div>
+                    <div>抱歉，此功能还在内测中，欢迎关注</div>
                 </div>
             </div>
         </Modal>
