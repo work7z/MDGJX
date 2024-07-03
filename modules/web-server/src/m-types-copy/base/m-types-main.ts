@@ -3,29 +3,34 @@ export type MiaodaDyanmicMenuItem = {
 
 
 export type SubToolItem = {
-    name: string,
-    searchKW?: string,
-    isNew: boolean,
-    path: string,
-    id?: string,
-    description: string,
-    keywords: string[],
-    icon?: {
-        name?: string
-    },
-    redirectFrom?: string[],
-    createdAt?: string
+  name: string,
+  searchKW?: string,
+  isNew: boolean,
+  path: string,
+  id?: string,
+  description: string,
+  keywords: string[],
+  icon?: {
+    name?: string
+  },
+  redirectFrom?: string[],
+  createdAt?: string
 }
 export type ToolNavInfoType = {
-    name: string,
-    icon?: any,
-    id: string,
-    iconInStr: string,
-    defaultSubToolId?: string,
-    bodyFnIfHave?: LoadModuleType,
-    subTools?: SubToolItem[]
+  name: string,
+  icon?: any,
+  id: string,
+  iconInStr: string,
+  defaultSubToolId?: string,
+  bodyFnIfHave?: LoadModuleType,
+  subTools?: SubToolItem[]
 }
-
+export type EntryCommand = string | { type: string; label: string };
+export type EntryItems = {
+  code: string,
+  explain: string,
+  cmds: EntryCommand[]
+}
 
 export type LoadModuleType = () => any;
 export type SystemSubModuleItem = {
@@ -39,9 +44,9 @@ export type SystemSubModuleItem = {
   name: string;
   seoName?: string;
   disableFooter?: boolean;
-  moduleItemtURL?:string;
+  moduleItemtURL?: string;
   moduleItemQuery?: any;
-  moduleItemHashVal?:string;
+  moduleItemHashVal?: string;
   defaultSubToolId?: string;
   children?: SystemSubModuleItem[];
   keywords?: string[];
@@ -65,7 +70,7 @@ export type RedirectLinkItem = {
 };
 export const redirectLinks: RedirectLinkItem[] = [];
 
-export const EXT_VIEW_PREFIX='/ext-view'
+export const EXT_VIEW_PREFIX = '/ext-view'
 
 export type MiaodaBasicConfig = {
   sortOrder?: number;
@@ -74,7 +79,7 @@ export type MiaodaBasicConfig = {
   post_fullId?: string;
   id: string;
   version: string;
-  logo: string;
+  logo?: string;
   iconInStr?: string;
   name: string;
   shortDesc: string;
@@ -95,6 +100,11 @@ export type MiaodaBasicConfig = {
       baseUrl: string; // 用户需要自己定义，要求baseUrl是以EXT_VIEW_PREFIX开头
     };
   };
+  electron?: {
+    mainHtmlFile: string;
+    preloadFile: string;
+    entryItems?: EntryItems[]; // simliar with features
+  };
   keywords?: string[];
   include: string[];
   menus: MiaodaDyanmicMenuItem[];
@@ -106,3 +116,8 @@ export const fn_miaoda_registerConfig = (config: MiaodaBasicConfig) => {
   REGISTER_CONFIG_OBJ.push(config);
   return config;
 };
+
+export const fn_convert_utools = (config: MiaodaBasicConfig) => {
+
+  return config
+}
