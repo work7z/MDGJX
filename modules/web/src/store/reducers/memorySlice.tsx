@@ -12,11 +12,13 @@ export type MemoryState = {
   scrollPos: number,
   showLoginModal: boolean,
   showChangeLogModal: boolean
+  clickQuickSearchInput: boolean
 };
 const initialState: MemoryState = {
   scrollPos: 0,
   showLoginModal: false,
-  showChangeLogModal: false
+  showChangeLogModal: false,
+  clickQuickSearchInput: false,
 };
 
 

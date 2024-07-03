@@ -4,9 +4,11 @@ import {
     UnstyledButton,
     ThemeIcon,
     Tooltip,
-    Autocomplete
+    Autocomplete,
+    Code,
+    TextInput
 } from '@mantine/core';
-import { useDisclosure, useWindowScroll } from '@mantine/hooks';
+import { useDisclosure, useHotkeys, useWindowScroll } from '@mantine/hooks';
 import imgFile from '/src/favicon.png'
 import { ColorSchemeToggle } from '../../components/ColorSchemeToggle/ColorSchemeToggle';
 import {
@@ -31,6 +33,7 @@ import AuthUtils from '@/utils/AuthUtils';
 import { isDevEnv } from '@/env';
 import settingsSlice from '@/store/reducers/settingsSlice';
 import { FN_GetDispatch } from '@/store/nocycle';
+import MemorySlice from '@/store/reducers/memorySlice';
 
 const mockdata = [
     {
@@ -101,6 +104,19 @@ export default (props: {
             </Group>
         </UnstyledButton>
     ));
+    const fn_show_global_modal = ()=>{
+        FN_GetDispatch()(
+            MemorySlice.actions.updateOneOfParamState({
+                clickQuickSearchInput: true,
+            })
+        )
+    }
+    useHotkeys([
+        ['ctrl+K', () => {
+            console.log('Trigger search')
+            fn_show_global_modal()
+        }],
+    ]);
     // TODO: 在header处发送获取所有菜单栏导航栏的信息，并且一次性patch到store里
     // 这里所有菜单栏的信息，是通过各个插件下的miaoda-dist.json去获取的
     const userAcctJSX = <Link to={'/settings/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
@@ -198,17 +214,22 @@ export default (props: {
 
             <Group gap={6}>
 
-                {
-                    isDevEnv() ? <Autocomplete
-                        className={classes.search}
-                        placeholder="快速搜索"
+                <TextInput
+                    className={classes.search}
+                    placeholder={"快速搜索"}
+                    leftSection={<IconSearch style={{ width: rem(16), height: rem(16) }} stroke={1.5} />}
+                    visibleFrom="xs"
+                    onClick={()=>{
+                        fn_show_global_modal()
+                    }}
+                    rightSectionWidth={70}
+                    rightSection={<Code className={classes.searchCode}>Ctrl + K</Code>}
 
-                        rightSection={<IconSearch style={{ width: rem(16), height: rem(16) }} stroke={1.5} />}
-                        data={['React', 'Angular', 'Vue', 'Next.js', 'Riot.js', 'Svelte', 'Blitz.js']}
-                        visibleFrom="xs"
-                    />
-                        : ''
-                }
+                    // onBlur={()=>{
+
+                    // }}
+                    // data={['React', 'Angular', 'Vue', 'Next.js', 'Riot.js', 'Svelte', 'Blitz.js']}
+                />
                 <ColorSchemeToggle />
                 <SourceCodeLink />
                 {
@@ -246,7 +267,7 @@ export default (props: {
                 }
             </Group>
         </Group >
-    </AppShell.Header >
+    </AppShell.Header>
 }
 
 
