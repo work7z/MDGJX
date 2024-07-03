@@ -27,7 +27,9 @@ const iconMapping = {
     LockSquare: () => <IconLockSquare />,
     Fingerprint: () => <IconFingerprint />, SortDescendingNumbers: () => <IconSortDescendingNumbers />, Lock: () => <IconLock />, AlignJustified: () => <IconAlignJustified />, ShortTextRound: () => <IconTools />, Certificate: () => <IconCertificate />, Calendar: () => <IconCalendar />, ArrowsLeftRight: () => <IconArrowsLeftRight />, LetterX: () => <IconLetterX />, FileDigit: () => <IconTools />, FileDigit2: () => <IconTools />, Palette: () => <IconPalette />, LetterCaseToggle: () => <IconLetterCaseToggle />, Speakerphone: () => <IconSpeakerphone />, Binary: () => <IconBinary />, TextWrap: () => <IconTextWrap />, AlignJustified2: () => <IconAlignJustified />, AlignJustified123: () => <IconAlignJustified />, Braces: () => <IconTools />, Braces2: () => <IconTools />, List: () => <IconList />, Link: () => <IconLink />, Code: () => <IconCode />, Unlink: () => <IconUnlink />, DeviceDesktop: () => <IconDeviceDesktop />, PasswordRound: () => <IconTools />, Tags: () => <IconTags />, DeviceMobile: () => <IconDeviceMobile />, World: () => <IconWorld />, Key: () => <IconKey />, Keyboard: () => <IconKeyboard />, AbcRound: () => <IconTools />, Edit: () => <IconEdit />, Browser: () => <IconBrowser />, HttpRound: () => <IconTools />, CompareArrowsRound: () => <IconTools />, Mailbox: () => <IconMailbox />, BrandGit: () => <IconBrandGit />, Server: () => <IconServer />, Alarm: () => <IconAlarm />, Braces3: () => <IconTools />, Braces21: () => <IconTools />, List3: () => <IconList />, Database: () => <IconDatabase />, FileInvoice: () => <IconFileInvoice />, BrandDocker: () => <IconBrandDocker />, Code2: () => <IconCode />, AlignJustified3: () => <IconAlignJustified />, RouterOutlined: () => <IconTools />, Binary3: () => <IconBinary />, UnfoldMoreOutlined: () => <IconTools />, Devices: () => <IconTools />, Devices2: () => <IconTools />, BuildingFactory: () => <IconBuildingFactory />, Math: () => <IconMath />, Hourglass: () => <IconHourglass />, Percentage: () => <IconPercentage />, TimerOutlined: () => <IconTools />, Temperature: () => <IconTemperature />, SpeedFilled: () => <IconTools />, Phone: () => <IconPhone />, AlignJustified33: () => <IconAlignJustified />, FileText: () => <IconFileText />, MoodSmile: () => <IconMoodSmile />, EyeOff123: () => <IconEyeOff />, FileDiff: () => <IconFileDiff />, Artboard: () => <IconArtboard />, Qrcode: () => <IconTools />, Qrcode322: () => <IconTools />, ImageOutlined: () => <IconTools />, Camera: () => <IconCamera />
 }
-export default () => {
+export default (props: {
+    filterUnFavourite?: boolean
+}) => {
     const [idx, setIdx] = React.useState('all')
     const sml = useSystemModulesList({})
     const mainSubModulesItems = sml.list[0].children?.filter(x => !x.ignoreInNav) || []
@@ -102,14 +104,18 @@ export default () => {
         Extra_SystemSubModuleItem[]
     ) = useMemo(() => {
         const notE = !_.isEmpty(folderItemsRes.data?.data)
-        return raw_calcFinalSubToolsArr.map(x => {
+        let val = raw_calcFinalSubToolsArr.map(x => {
             return {
                 ...x,
-                inFolder: notE&& folderItemsRes.data?.data?.findIndex(v => v.url === x.href) !== -1
+                inFolder: notE && folderItemsRes.data?.data?.findIndex(v => v.url === x.href) !== -1
             } satisfies Extra_SystemSubModuleItem
-        }).sort(x=>{
-            return x.inFolder?-1:1
+        }).sort(x => {
+            return x.inFolder ? -1 : 1
         }) || []
+        if (props.filterUnFavourite) {
+            val = val.filter(x => x.inFolder)
+        }
+        return val;
     }, [raw_calcFinalSubToolsArr, folderItemsRes.data?.data]) || []
     const rh = exportUtils.register('subpart', {
         getNotPersistedStateFn() {
@@ -129,12 +135,19 @@ export default () => {
                 setIdx(e + "")
             }}>
                 <Tabs.List>
-                    <Tabs.Tab value={'all'} >全部({allSubToolsArr.length})</Tabs.Tab>
+                    <Tabs.Tab value={'all'} >全部{
+                        props.filterUnFavourite ? <></>:<>
+                            ({allSubToolsArr.length})
+                        </>}</Tabs.Tab>
                     {
                         mainSubModulesItems.map(x => {
                             return (
                                 <Tabs.Tab value={x.id} >
-                                    {x.name}({x.children?.length || 0})
+                                    {x.name}{
+                                        props.filterUnFavourite?<></>
+                                        :<>
+                                                ({x.children?.length || 0})</>
+                                    }
                                 </Tabs.Tab>
                             )
                         })
@@ -154,7 +167,7 @@ export default () => {
                     (
                         forceViewAll ? calcFinalSubToolsArr : _.take(calcFinalSubToolsArr, previewCtn)
                     ).map(x => {
-                        const currentURL =x.href;
+                        const currentURL = x.href;
                         const isCurrentURLInFolder = x.inFolder
                         const showFavButton = isCurrentURLInFolder || (
                             hoverId == x.href && hoverId !== ''
@@ -182,13 +195,13 @@ export default () => {
                                         <Text truncate className="text-slate-600 dark:text-slate-400" size={"sm"}>
                                             {x.description}</Text>
                                         {
-                                           showFavButton ? <Tooltip
+                                            showFavButton ? <Tooltip
                                                 label={signIn ? isCurrentURLInFolder ? '取消收藏夹' : "加入收藏夹" : '请先登录'}>
                                                 <ActionIcon
                                                     color='green'
                                                     size='md'
                                                     variant={isCurrentURLInFolder ? 'filled' : "light"}
-                                                    style={{ display: showFavButton ? 'block':'none', width: rem(16), height: rem(16) }}
+                                                    style={{ display: showFavButton ? 'block' : 'none', width: rem(16), height: rem(16) }}
                                                     onClick={async (e) => {
                                                         e.preventDefault()
                                                         onLoading(true)
@@ -226,7 +239,7 @@ export default () => {
                                                     }}
                                                     loading={loading || favFoldersItemDeleteRes.isFetching || addFolderItemRes.isFetching || folderRes.isLoading || folderItemsRes.isLoading}
                                                     className="absolute right-1 top-1"
-                                                
+
                                                 >
                                                     <IconBookmark style={{ width: rem(16), height: rem(16) }} />
                                                 </ActionIcon>

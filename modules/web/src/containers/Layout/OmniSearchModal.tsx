@@ -69,7 +69,7 @@ export default ()=>{
                 <TextInput
                     name='quicksearch'
                     placeholder={
-                        whenHello +`，请输入关键词以搜索您所需的功能，支持拼音大小写`
+                        whenHello +`，请输入关键词以检索您所需的功能，支持拼音大小写`
                     }
                     ref={e => {
                         if (e) {
