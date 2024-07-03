@@ -30,7 +30,7 @@ import { useMDParams } from '@/systemHooks';
 import { FN_GetDispatch } from '@/store/nocycle';
 import MemorySlice from '@/store/reducers/memorySlice';
 
-export default ()=>{
+export default () => {
     const clickQuickSearchInput = exportUtils.useSelector(v => {
         return v.memory.clickQuickSearchInput
     })
@@ -40,43 +40,55 @@ export default ()=>{
     }>({
         eleipt: null
     })
-    const whenHello :"早上好"|"中午好"| "下午好" | "晚上好" = (()=>{
+    const whenHello: "深夜了，早点休息" | "早上好" | "中午好" | "下午好" | "晚上好" = (() => {
         const now = new Date()
         const hours = now.getHours()
-        if(hours>=0&&hours<12){
+        if (
+            (hours >= 0 && hours < 6)
+            ||
+            (hours >= 21 && hours <= 24)
+        ) {
+            return "深夜了，早点休息"
+        } else if (hours >= 0 && hours < 12) {
             return "早上好"
-        }else if(hours>=12&&hours<14){
+        } else if (hours >= 12 && hours < 14) {
             return "中午好"
-        }else if(hours>=14&&hours<18){
+        } else if (hours >= 14 && hours < 18) {
             return "下午好"
-        }else if(hours>=18&&hours<=23){
+        } else if (hours >= 18 && hours <= 23) {
             return "晚上好"
         }
         return "早上好"
     })()
     return (
-        <Modal 
-        fullScreen opened={clickQuickSearchInput} onClose={() => {
+        <Modal
+            // style={{
+            //     minHeight:'auto',
+            //     height:'auto'
+            // }}
+            fullScreen opened={clickQuickSearchInput} onClose={() => {
+
+
                 FN_GetDispatch()(
                     MemorySlice.actions.updateOneOfParamState({
                         clickQuickSearchInput: false
                     })
                 )
-        }} title={
-            `秒达工具箱 - 快速搜索面板`
-        }>
-            <div className='flex flex-col w-[100%]'>
+            }} title={
+                `秒达工具箱 - 快速搜索面板`
+            }>
+            <div className='flex flex-col h-auto w-[100%]'>
                 <TextInput
                     name='quicksearch'
                     placeholder={
-                        whenHello +`，请输入关键词以检索您所需的功能，支持拼音大小写`
+                        whenHello + `，请输入关键词以检索您所需的功能，支持拼音大小写`
                     }
                     ref={e => {
                         if (e) {
                             ref.current.eleipt = e
-                            setTimeout(()=>{
+                            setTimeout(() => {
                                 e.focus()
-                            },300)
+                            }, 300)
                         }
                     }}
                     autoFocus

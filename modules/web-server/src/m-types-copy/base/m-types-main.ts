@@ -1,31 +1,34 @@
-export type MiaodaDyanmicMenuItem = {
-} & SystemSubModuleItem;
-
+export type MiaodaDyanmicMenuItem = {} & SystemSubModuleItem;
 
 export type SubToolItem = {
-    name: string,
-    searchKW?: string,
-    isNew: boolean,
-    path: string,
-    id?: string,
-    description: string,
-    keywords: string[],
-    icon?: {
-        name?: string
-    },
-    redirectFrom?: string[],
-    createdAt?: string
-}
+  name: string;
+  searchKW?: string;
+  isNew: boolean;
+  path: string;
+  id?: string;
+  description: string;
+  keywords: string[];
+  icon?: {
+    name?: string;
+  };
+  redirectFrom?: string[];
+  createdAt?: string;
+};
 export type ToolNavInfoType = {
-    name: string,
-    icon?: any,
-    id: string,
-    iconInStr: string,
-    defaultSubToolId?: string,
-    bodyFnIfHave?: LoadModuleType,
-    subTools?: SubToolItem[]
-}
-
+  name: string;
+  icon?: any;
+  id: string;
+  iconInStr: string;
+  defaultSubToolId?: string;
+  bodyFnIfHave?: LoadModuleType;
+  subTools?: SubToolItem[];
+};
+export type EntryCommand = string | { type: string; label: string };
+export type EntryItems = {
+  code: string;
+  explain: string;
+  cmds: EntryCommand[];
+};
 
 export type LoadModuleType = () => any;
 export type SystemSubModuleItem = {
@@ -39,16 +42,16 @@ export type SystemSubModuleItem = {
   name: string;
   seoName?: string;
   disableFooter?: boolean;
-  moduleItemtURL?:string;
+  moduleItemtURL?: string;
   moduleItemQuery?: any;
-  moduleItemHashVal?:string;
+  moduleItemHashVal?: string;
   defaultSubToolId?: string;
   children?: SystemSubModuleItem[];
   keywords?: string[];
   description?: string;
   ignoreInNav?: boolean;
   bodyFn?: LoadModuleType;
-  bodyFnProps?: any
+  bodyFnProps?: any;
 };
 export type SystemModuleItem = {
   id: string;
@@ -65,8 +68,23 @@ export type RedirectLinkItem = {
 };
 export const redirectLinks: RedirectLinkItem[] = [];
 
-export const EXT_VIEW_PREFIX='/ext-view'
+export const EXT_VIEW_PREFIX = "/ext-view";
 
+type Feature = {
+  code: string;
+  explain: string;
+  cmds: string[];
+};
+export type ExternalConfigA = {
+  pluginName: string;
+  description: string;
+  author: string;
+  version: string;
+  preload: string;
+  logo: string;
+  features: Feature[];
+  name: string;
+};
 export type MiaodaBasicConfig = {
   sortOrder?: number;
   disabled?: boolean;
@@ -74,7 +92,7 @@ export type MiaodaBasicConfig = {
   post_fullId?: string;
   id: string;
   version: string;
-  logo: string;
+  logo?: string;
   iconInStr?: string;
   name: string;
   shortDesc: string;
@@ -85,7 +103,7 @@ export type MiaodaBasicConfig = {
     entryLink: string;
   };
   runtime: {
-    type: "web-static-embedded" | "web-static-standalone";
+    type: "web-static-embedded" | "web-static-standalone" | "external-config-a";
     standalone?: {
       ports: number[]; // attempt to host the static files on these ports
       onlineURL: string; // where the static files are hosted online
@@ -94,6 +112,8 @@ export type MiaodaBasicConfig = {
       staticDirs: string[];
       baseUrl: string; // 用户需要自己定义，要求baseUrl是以EXT_VIEW_PREFIX开头
     };
+    // Cfg A
+    external_CFG_A?: ExternalConfigA;
   };
   keywords?: string[];
   include: string[];
@@ -104,5 +124,9 @@ export const REGISTER_CONFIG_OBJ: MiaodaBasicConfig[] = [];
 
 export const fn_miaoda_registerConfig = (config: MiaodaBasicConfig) => {
   REGISTER_CONFIG_OBJ.push(config);
+  return config;
+};
+
+export const fn_convert_utools = (config: MiaodaBasicConfig) => {
   return config;
 };

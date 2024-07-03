@@ -232,17 +232,19 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                         name: '开发者中心',
                         id: 'dev-centre',
                         ignoreInNav: isPortalMode(),
-                        children: [
+                        children: isPortalMode()?[]:[
                             {
                                 name: '开发插件预览',
                                 id: 'installed-plugins',
                                 disableFooter: true,
+                                ignoreInNav: isPortalMode(),
                                 bodyFn: () => import('./loadable/MpPreviewExt/index.tsx')
                             },
                             {
                                 name: '开发配置',
                                 id: 'installed-config',
                                 disableFooter: true,
+                                ignoreInNav: isPortalMode(),
                                 bodyFn: () => import('./loadable/MpConfig/index.tsx')
                             },
                         ]
