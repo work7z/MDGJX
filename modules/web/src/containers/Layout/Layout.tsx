@@ -1,4 +1,4 @@
-import { ActionIcon, Affix, AppShell, Box, Burger, Button, Group, HoverCard, LoadingOverlay, Transition, rem } from '@mantine/core';
+import { ActionIcon, Affix, AppShell, Box, Burger, Button, Group, HoverCard, LoadingOverlay, Modal, Transition, rem } from '@mantine/core';
 import { useDisclosure, useDocumentTitle, useWindowScroll } from '@mantine/hooks';
 import imgFile from '/src/favicon.png'
 import { ColorSchemeToggle, useDarkModeOrNot } from '../../components/ColorSchemeToggle/ColorSchemeToggle';
@@ -27,6 +27,7 @@ import LoadableWrapper from '../../components/LoadableWrapper';
 import { getBridgeRef, isDesktopMode } from '@/utils/DesktopUtils';
 import exportUtils from '@/utils/ExportUtils';
 import { useMDParams } from '@/systemHooks';
+import OmniSearchModal from './OmniSearchModal';
 
 const beianUpdateTitleFn = ()=>{
     useDocumentTitle(      GetAppInfo().isInMdgjxCOM ? '秒达工具箱' : location.href.indexOf('laftools.cn') != -1 ? 'LafTools在线工具箱' : 'LafTools程序员工具箱')
@@ -104,6 +105,8 @@ export function GeneralLayout(props) {
             {
                 mainSubModuleItem.disableFooter ? '' : <FooterCentered />
             }
+
+           <OmniSearchModal/>
         </AppShell>
     );
 }

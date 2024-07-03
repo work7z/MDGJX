@@ -240,6 +240,7 @@ export let SecondMenu = (props: {
             ref.current.eleipt?.focus()
         }],
     ]);
+
     const isItMain = props.mainModuleItem?.id == 'main' 
     return (
         <div onScroll={(e) => {
