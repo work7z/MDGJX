@@ -6,10 +6,10 @@ import exportUtils from "@/utils/ExportUtils";
 import { ActionIcon, Affix, Button, Tooltip, Transition, rem } from "@mantine/core"
 import { useWindowScroll } from "@mantine/hooks";
 import { IconArrowUp, IconBookmark, IconPlaylist, IconPlaylistAdd } from "@tabler/icons-react"
+import _ from "lodash";
 import { useState } from "react";
 
 export default () => {
-
     const signIn = useHasUserSignIn()
     const rh = exportUtils.register('favbtn', {
         getNotPersistedStateFn() {
@@ -19,7 +19,6 @@ export default () => {
             return {}
         }
     })
-
     const folderRes = apiSlice.useFavFoldersGetQuery({}, {
         skip: !signIn,
         pollingInterval: 1000 * 60 * 5,
@@ -31,11 +30,23 @@ export default () => {
     const [t_addFolderItem, addFolderItemRes] = apiSlice.useLazyFavFoldersItemAddQuery({})
     const [loading, onLoading] = useState(false)
     const [t_favFoldersItemDelete, favFoldersItemDeleteRes] = apiSlice.useLazyFavFoldersItemDeleteQuery({})
-    const currentURL = location.pathname + '?' + location.search
+    const currentURL = location.pathname + (
+        _.isEmpty(location.search) ? '' : '?' 
+    ) + location.search
     const currentTitle = document.title
     const isCurrentURLInFolder = folderItemsRes.data?.data?.some(v => v.url === currentURL)
 
     if (!rh) return ''
+
+    if (location.href.indexOf('/tools/index') !== -1
+        ||
+        location.href.indexOf('/tools/myfavour') !== -1
+        ||
+        location.href.indexOf('/collections/index') !== -1
+    ) {
+        return ''
+    }
+
 
     return <Affix position={{ bottom: 5, right: 5 }}>
         <Tooltip label={signIn ? isCurrentURLInFolder ? '取消收藏夹' : "加入收藏夹" : '请先登录'}>
