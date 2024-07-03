@@ -216,7 +216,7 @@ export default (props: {
 
                 <TextInput
                     className={classes.search}
-                    placeholder={"快速搜索"}
+                    placeholder={"一键秒达"}
                     leftSection={<IconSearch style={{ width: rem(16), height: rem(16) }} stroke={1.5} />}
                     visibleFrom="xs"
                     onClick={()=>{
@@ -224,9 +224,7 @@ export default (props: {
                     }}
                     rightSectionWidth={70}
                     rightSection={<Code className={classes.searchCode}>Ctrl + K</Code>}
-
                     // onBlur={()=>{
-
                     // }}
                     // data={['React', 'Angular', 'Vue', 'Next.js', 'Riot.js', 'Svelte', 'Blitz.js']}
                 />
