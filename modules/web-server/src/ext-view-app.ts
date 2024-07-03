@@ -143,8 +143,6 @@ export class ExtViewApp {
         }
       }
     }
-    //
-
     this.app.use('/', (req, res) => {
       if (req.url == '/') {
         res.send({
