@@ -6,6 +6,7 @@ import GetAppInfo from '@/AppInfo';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import { isDesktopMode } from '@/utils/DesktopUtils';
+import { isPortalMode } from '@/utils/PortalUtils';
 
 export function HeroText() {
     const history = useHistory()
@@ -35,26 +36,33 @@ export function HeroText() {
                 </Container>
 
                {
-                    isDesktopMode() ? '' : <div className={classes.controls}>
-                       {/* <a className='inline-block mr-2' href={GetAppInfo().githubRepo} target='_blank' > */}
-                            <Button  onClick={() => {
+                  isPortalMode()? <>
+                        <div className={classes.controls}>
+                            <Button onClick={() => {
                                 window.open(GetAppInfo().githubRepo)
-                                // history.push(`/settings/install?type=docker`)
                             }} className={classes.control} size="lg" variant="default" color="gray">
-                                {/* 应用自部署(Docker) */}
                                 项目源代码(GitHub)
                             </Button>
-                       {/* </a> */}
+                            <Button
+                                onClick={() => {
+                                    history.push(`/settings/install?type=desktop2`)
+                                }}
+                                className={classes.control} size="lg">
+                                下载桌面版(Desktop)
+                            </Button>
+                        </div>
+                  </> : <div className={classes.controls}>
+                        <Button  onClick={() => {
+                            window.open(GetAppInfo().githubRepo)
+                        }} className={classes.control} size="lg" variant="default" color="gray">
+                            项目源代码(GitHub)
+                        </Button>
                         <Button
                             onClick={() => {
-                                // AlertUtils.alertInfo("抱歉，专业版暂未开放，敬请期待！感兴趣可加QQ群" + GetAppInfo().qqGroup)
-                                // history.push("/settings/faq")
-                                // AlertUtils.alertInfo("抱歉，更多功能页暂不可用，暂时为您跳转到常见问题页")
-                                // AlertUtils.alertInfo("抱歉，桌面端暂未开放下载，敬请期待！感兴趣可加QQ群" + GetAppInfo().qqGroup)
-                                history.push(`/settings/install?type=desktop2`)
+                                    history.push(`/marketplace/index`)
                             }}
                             className={classes.control} size="lg">
-                            下载桌面版(Desktop)
+                            安装新插件(Plugins)
                         </Button>
                     </div>
                }
