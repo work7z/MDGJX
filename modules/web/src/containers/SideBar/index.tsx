@@ -18,7 +18,7 @@ import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './DoubleNavbar.module.css';
 import _ from 'lodash';
 import GetAppInfo from '@/AppInfo';
-import {  SystemModuleItem, SystemSubModuleItem, useSystemModulesList,  } from '@/systemModules';
+import { SystemModuleItem, SystemSubModuleItem, useSystemModulesList, } from '@/systemModules';
 import { Link, useHistory } from 'react-router-dom';
 import AuthUtils from '@/utils/AuthUtils';
 import {
@@ -81,7 +81,7 @@ export function DoubleNavbar(props: {
         let firstLevel_links: JSX.Element[] = []
         let firstLevel_links_btm: JSX.Element[] = []
         systemModulesList.forEach(x => {
-            if(x.hide){
+            if (x.hide) {
                 return;
             }
             if (x.fixedAtBottom) {
@@ -152,7 +152,7 @@ export let SecondMenu = (props: {
         }))
     }
     const jsx_linksgroup = useMemo(() => {
-        const l2 = _.toLower(searchCtn).replaceAll(' ','')
+        const l2 = _.toLower(searchCtn).replaceAll(' ', '')
         const hasNoSearch = _.isEmpty(searchCtn)
         const fn_filter_txt = (x: SystemSubModuleItem) => {
             if (hasNoSearch) {
@@ -160,7 +160,7 @@ export let SecondMenu = (props: {
             }
             return (_.toLower(x.name) + _.toLower(py.convertToPinyin(x.name))).indexOf(l2) !== -1 ||
                 (x.description && (_.toLower(x.description) + _.toLower(py.convertToPinyin(x.description))).indexOf(l2) !== -1) ||
-                (!_.isEmpty(x.keywords) && (_.toLower(x.keywords?.join('')) + _.toLower(py.convertToPinyin(x.keywords?.join('') || ''))).indexOf(l2) !== -1) 
+                (!_.isEmpty(x.keywords) && (_.toLower(x.keywords?.join('')) + _.toLower(py.convertToPinyin(x.keywords?.join('') || ''))).indexOf(l2) !== -1)
         }
         return (
             (mainModuleItem?.children || []).filter(x => {
@@ -179,9 +179,9 @@ export let SecondMenu = (props: {
                     })
                 }
                 return item
-            }).filter(x=>{
-                return !_.isEmpty(x.children)
-            }).map(item=>{
+            }).filter(x => {
+                return !_.isNil(x.children) && !_.isEmpty(x.children)
+            }).map(item => {
                 return (
                     <LinksGroup key={item.id}
                         {...item}
@@ -202,10 +202,10 @@ export let SecondMenu = (props: {
             })
         )
     }, [
-        actualOpenId, 
-        props.mdParams.firstRouteId, 
-        props.mdParams.secondRouteId, 
-        mainModuleItem.children, 
+        actualOpenId,
+        props.mdParams.firstRouteId,
+        props.mdParams.secondRouteId,
+        mainModuleItem.children,
         searchCtn
         // 
     ]);
@@ -245,13 +245,13 @@ export let SecondMenu = (props: {
         }],
     ]);
 
-    const isItMain = props.mainModuleItem?.id == 'main' 
+    const isItMain = props.mainModuleItem?.id == 'main'
     return (
         <div onScroll={(e) => {
             setScrollPos(e.currentTarget.scrollTop)
         }} className={classes.main + ' overflow-auto h-[calc(100vh-61px)] scrollbar-hide'} ref={e => {
             if (e) {
-                ref.current.ele = e 
+                ref.current.ele = e
             }
         }} onClick={e => {
 
@@ -260,7 +260,7 @@ export let SecondMenu = (props: {
                 {mainModuleItem?.label}
             </Title>
             {
-                isItMain? <>
+                isItMain ? <>
                     <div className='mx-2 my-2'>
                         <SegmentedControl fullWidth
                             onChange={e => {
@@ -269,17 +269,17 @@ export let SecondMenu = (props: {
                             value={controlId} data={cfgControls.map(x => x.label)} />
 
                     </div>
-                </>:''
+                </> : ''
             }
             <div>
                 <div className='px-2'>
                     <TextInput
                         name='quicksearch'
                         placeholder={
-                            `快速搜索` + (isItMain ? controlId:'')
+                            `快速搜索` + (isItMain ? controlId : '')
                         }
-                        ref={e=>{
-                            if(e){
+                        ref={e => {
+                            if (e) {
                                 ref.current.eleipt = e
                             }
                         }}
@@ -295,7 +295,7 @@ export let SecondMenu = (props: {
                         mb="sm"
                     />
                 </div>
-                {controlId == '工具'?                jsx_linksgroup : <div className='text-center text-gray-400'>依旧内测中，敬请期待</div>}
+                {controlId == '工具' ? jsx_linksgroup : <div className='text-center text-gray-400'>依旧内测中，敬请期待</div>}
             </div>
         </div>
     )
