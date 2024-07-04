@@ -21,7 +21,7 @@ import compressUtils from '@/utils/compressUtils';
 import { fn_runOrRestartExtViewAppServer } from '@/ext-view-app';
 
 const pinyin = require('tiny-pinyin');
-const val_devOnly_pkgExtract_dir = devonly_getExtDir();
+const val_devOnly_pkgExtract_dirs = devonly_getExtDir();
 const val_pkgExtract_dir = getLocalPkgExtract();
 const val_pkgRepo_dir = getLocalPkgRepo();
 
@@ -48,12 +48,6 @@ export type ExtMetaSearchReq = {
 export const filename_miaoda_dist_file = 'miaoda-dist.json';
 export const filename_ack_file = 'miaoda-installed-ack.flag';
 
-export const getExtMode = (): ExtModeSt => {
-  return {
-    isDev: isDevEnv(),
-    repoPath: val_devOnly_pkgExtract_dir,
-  };
-};
 const extFileFlag = isBetaTestServerMode || isDevEnv() ? 'test' : 'release';
 const pkgInfoFlag = 'pkg-info-' + extFileFlag;
 
@@ -88,13 +82,14 @@ export const getExtStaticDataRemotely = async (subPath: string): Promise<any> =>
   }
 };
 const lastUpdatedObj = {
-  ver: null
-}
+  ver: null,
+};
 
 export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearchingInExtDir?: (extDir: string) => boolean): Promise<ExtMetaInfo> => {
   let results: MiaodaConfig[] = [];
   let tmp_results: MiaodaConfig[] = [];
   let lastUpdatedVal: string | null = null;
+  // cloud all ext
   if (req.searchSource == 'cloud-all-ext') {
     const refTxt = await getExtStaticDataRemotely('/' + pkgInfoFlag + '/ref.txt');
     lastUpdatedVal = refTxt;
@@ -102,24 +97,27 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
     tmp_results = miaodaDistAll as MiaodaConfig[];
     // get all extensions from cloud
   } else if (req.searchSource == 'local-dev-ext') {
+    // local dev ext
     // get all extensions from local development mode
-    const projectRoots = shelljs.ls(val_devOnly_pkgExtract_dir);
-    for (let eachFile of projectRoots) {
-      if (filterWhileSearchingInExtDir && !filterWhileSearchingInExtDir(eachFile)) {
-        continue;
+    val_devOnly_pkgExtract_dirs.forEach(val_devOnly_pkgExtract_dir => {
+      const projectRoots = shelljs.ls(val_devOnly_pkgExtract_dir);
+      for (let eachFile of projectRoots) {
+        if (filterWhileSearchingInExtDir && !filterWhileSearchingInExtDir(eachFile)) {
+          continue;
+        }
+        logger.info('loading ext: ' + eachFile);
+        const ackFile = path.join(val_devOnly_pkgExtract_dir, eachFile, isDevEnv ? filename_miaoda_dist_file : filename_ack_file);
+        if (!fs.existsSync(ackFile)) {
+          logger.info('skipping ' + eachFile + ' due to missing ack file');
+          continue;
+        }
+        const miaodaJSON = path.join(val_devOnly_pkgExtract_dir, eachFile, filename_miaoda_dist_file);
+        if (fs.existsSync(miaodaJSON)) {
+          const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
+          tmp_results.push(miaoda);
+        }
       }
-      logger.info('loading ext: ' + eachFile);
-      const ackFile = path.join(val_devOnly_pkgExtract_dir, eachFile, isDevEnv ? filename_miaoda_dist_file : filename_ack_file);
-      if (!fs.existsSync(ackFile)) {
-        logger.info('skipping ' + eachFile + ' due to missing ack file');
-        continue;
-      }
-      const miaodaJSON = path.join(val_devOnly_pkgExtract_dir, eachFile, filename_miaoda_dist_file);
-      if (fs.existsSync(miaodaJSON)) {
-        const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
-        tmp_results.push(miaoda);
-      }
-    }
+    });
   }
   for (let miaoda of tmp_results) {
     if (miaoda.disabled) {
@@ -155,8 +153,8 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
     });
   }
   let finalLastUpdatedValue = lastUpdatedVal || 'ext-v2020.01.15';
-  if(finalLastUpdatedValue!==lastUpdatedObj.ver && lastUpdatedObj.ver){
-    if(IsCurrentPortalServerMode()){
+  if (finalLastUpdatedValue !== lastUpdatedObj.ver && lastUpdatedObj.ver) {
+    if (IsCurrentPortalServerMode()) {
       logger.info('ext meta info updated, therefore restart ext-view-app');
       fn_runOrRestartExtViewAppServer();
     }
@@ -200,36 +198,19 @@ export const getCompleteExtInstalledListWithOldAndNew = (req?: GetInstalledExtRe
     exts: {},
   };
   const isLocalDevConfigMode = req && req.env == 'local-config';
-  const targetExtraDir = isLocalDevConfigMode ? val_devOnly_pkgExtract_dir : val_pkgExtract_dir;
-  const allList = shelljs.ls(targetExtraDir);
-  const installedExts = allList.filter(x => {
-    return fs.existsSync(path.join(targetExtraDir, x, isLocalDevConfigMode ? filename_miaoda_dist_file : filename_ack_file));
-  });
-  for (let eachExt of installedExts) {
-    const ackFile = path.join(targetExtraDir, eachExt, filename_ack_file);
-    const miaodaJSON = path.join(targetExtraDir, eachExt, filename_miaoda_dist_file);
-    if (isLocalDevConfigMode) {
-      // for DEV
-      const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
-      if (!miaoda.disabled) {
-        if (!latestExts.exts[miaoda.id]) {
-          latestExts.exts[miaoda.id] = [];
-        }
-        latestExts.exts[miaoda.id].push({
-          id: miaoda.id,
-          version: miaoda.version,
-          ackTS: Date.now() + '',
-          config: miaoda,
-        });
-        continue;
-      }
-    } else {
-      // for PROD
-      if (eachExt.indexOf('@') === -1) {
-        continue;
-      }
-      if (fs.existsSync(ackFile) && fs.existsSync(miaodaJSON)) {
-        const ackTS = fs.readFileSync(ackFile).toString();
+  const targetExtraDirs = isLocalDevConfigMode ? val_devOnly_pkgExtract_dirs : [val_pkgExtract_dir];
+  // forEach
+  targetExtraDirs.forEach(targetExtraDir => {
+    // iterate all
+    const allList = shelljs.ls(targetExtraDir);
+    const installedExts = allList.filter(x => {
+      return fs.existsSync(path.join(targetExtraDir, x, isLocalDevConfigMode ? filename_miaoda_dist_file : filename_ack_file));
+    });
+    for (let eachExt of installedExts) {
+      const ackFile = path.join(targetExtraDir, eachExt, filename_ack_file);
+      const miaodaJSON = path.join(targetExtraDir, eachExt, filename_miaoda_dist_file);
+      if (isLocalDevConfigMode) {
+        // for DEV
         const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
         if (!miaoda.disabled) {
           if (!latestExts.exts[miaoda.id]) {
@@ -238,13 +219,34 @@ export const getCompleteExtInstalledListWithOldAndNew = (req?: GetInstalledExtRe
           latestExts.exts[miaoda.id].push({
             id: miaoda.id,
             version: miaoda.version,
-            ackTS,
+            ackTS: Date.now() + '',
             config: miaoda,
           });
+          continue;
+        }
+      } else {
+        // for PROD
+        if (eachExt.indexOf('@') === -1) {
+          continue;
+        }
+        if (fs.existsSync(ackFile) && fs.existsSync(miaodaJSON)) {
+          const ackTS = fs.readFileSync(ackFile).toString();
+          const miaoda = JSON.parse(fs.readFileSync(miaodaJSON).toString()) as MiaodaConfig;
+          if (!miaoda.disabled) {
+            if (!latestExts.exts[miaoda.id]) {
+              latestExts.exts[miaoda.id] = [];
+            }
+            latestExts.exts[miaoda.id].push({
+              id: miaoda.id,
+              version: miaoda.version,
+              ackTS,
+              config: miaoda,
+            });
+          }
         }
       }
     }
-  }
+  });
   return latestExts;
 };
 
@@ -320,21 +322,14 @@ export class ExtensionRoute implements Routes {
 
   private initializeRoutes() {
     this.router.get(
-      '/ext/check-ext-mode',
-      asyncHandler(async (req, res) => {
-        sendRes(res, {
-          data: getExtMode(),
-        });
-      }),
-    );
-    this.router.get(
       '/ext/get-full-info',
       asyncHandler(async (req, res) => {
         const query = req.query as GetInstalledExtReq;
         const fullDetail = getInstalledExtsFlatModeWithDetail(query);
-        const miaodaConfigs = _.sortBy(fullDetail.filter(x => x.config).map(x => x.config),[
-          'sortOrder'
-        ]);
+        const miaodaConfigs = _.sortBy(
+          fullDetail.filter(x => x.config).map(x => x.config),
+          ['sortOrder'],
+        );
         sendRes(res, {
           data: {
             miaodaConfigs: miaodaConfigs,

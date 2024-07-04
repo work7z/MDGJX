@@ -122,14 +122,6 @@ export const localApiSlice = createApi({
         };
       },
     }),
-    checkExtMode: build.query<AsyncCreateResponse<ExtModeSt>, {}>({
-      query: () => {
-        return {
-          url: "/ext/check-ext-mode",
-          method: "GET",
-        };
-      },
-    }),
     getExtListWithSearch: build.query<
       AsyncCreateResponse<ExtMetaInfo>,
       ExtMetaSearchReq
