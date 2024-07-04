@@ -40,7 +40,7 @@ export default () => {
     }>({
         eleipt: null
     })
-    const whenHello: "深夜了，早点休息" | "早上好" | "中午好" | "下午好" | "晚上好" = (() => {
+    const whenHello: "夜深了，早点休息" | "早上好" | "中午好" | "下午好" | "晚上好" = (() => {
         const now = new Date()
         const hours = now.getHours()
         if (
@@ -48,7 +48,7 @@ export default () => {
             ||
             (hours >= 21 && hours <= 24)
         ) {
-            return "深夜了，早点休息"
+            return "夜深了，早点休息"
         } else if (hours >= 0 && hours < 12) {
             return "早上好"
         } else if (hours >= 12 && hours < 14) {
