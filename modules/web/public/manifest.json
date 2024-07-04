@@ -1,0 +1,16 @@
+{
+    "short_name": "秒达工具箱",
+    "name": "秒达工具箱 - 开源、好用、安全",
+    "icons": [
+        {
+            "src": "/mdstatic/favicon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#FFFFFF",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#000000"
+}
