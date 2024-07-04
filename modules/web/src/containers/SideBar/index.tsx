@@ -180,7 +180,10 @@ export let SecondMenu = (props: {
                 }
                 return item
             }).filter(x => {
-                return !_.isNil(x.children) && !_.isEmpty(x.children)
+                if (!_.isNil(x.bodyFn)) {
+                    return true;
+                }
+                return !_.isEmpty(x.children)
             }).map(item => {
                 return (
                     <LinksGroup key={item.id}
