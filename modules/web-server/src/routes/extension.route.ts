@@ -126,6 +126,7 @@ export const getAllExtMetaInfo = async (req: ExtMetaSearchReq, filterWhileSearch
     const keywords = miaoda.keywords;
     const fuzzySearchStrArr = [];
     const addToFuzzy = (arr: string[]) => {
+      if(!arr)arr=[]
       for (let eachKeyword of arr) {
         if (!eachKeyword) {
           continue;
