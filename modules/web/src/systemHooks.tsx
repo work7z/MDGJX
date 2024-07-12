@@ -39,7 +39,29 @@ export const useMDParams = (): TypeMDParams => {
         let dft_mainSubModuleItem: SystemSubModuleItem | undefined = undefined;
         const firstMappingItem = ROUTE_CPT_MAPPING[0]
         for (let eachItem of ROUTE_CPT_MAPPING) {
+            const ph = eachItem.possibleHrefs ? eachItem.possibleHrefs :
+                eachItem.href ? [eachItem.href] :
+                    []
+            let ackOrNot = false;
+            if (ph) {
+                for (let eachPh of ph) {
+                    if (
+                        (`/${url_firstPart}`.startsWith((
+                            eachPh
+                        ))) || (
+                            `/${url_firstPart}/${url_secondPart}`.startsWith((
+                                eachPh
+                            ))
+                        )
+                    ) {
+                        ackOrNot = true;
+                    }
+                }
+            }
             if (eachItem.firstRouteId == url_firstPart) {
+                ackOrNot = true;
+            }
+            if (ackOrNot) {
                 if (!dft_mainSubModuleItem) {
                     dft_mainSubModuleItem = eachItem
                 }

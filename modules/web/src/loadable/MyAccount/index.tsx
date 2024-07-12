@@ -97,13 +97,13 @@ export const RightUserInfo = (props: {
             </Paper>
             <Paper withBorder shadow="md" p={10} mt={10} radius="md">
                 <Group flex='flex-col space-y-3'>
-                    <Link className='w-full' to='/settings/my-privilege'>
+                    <Link className='w-full' to='/user/my-privilege'>
                         <Button className='w-full' color='cyan' onClick={() => {
                         }}>
                             订阅专业版
                         </Button>
                     </Link>
-                    <Link className='w-full' to='/settings/my-account?type=find-pw'>
+                    <Link className='w-full' to='/user/my-account?type=find-pw'>
                         <Button fullWidth variant='outline' color='cyan'   onClick={() => {
                         }}>
                             修改密码
@@ -258,7 +258,7 @@ function AuthenticationTitle() {
                                         })
                                         if (r.data?.data?.verified) {
                                             AlertUtils.alertSuccess('重置成功，将跳转到登录界面')
-                                            history.push('/settings/my-account?type=signin')
+                                            history.push('/user/my-account?type=signin')
                                             fn_reload()
                                         } else {
                                             throw new Error('验证码错误，请重新输入')
@@ -285,7 +285,7 @@ function AuthenticationTitle() {
                         </Text>
                         <Text c="dimmed" size="sm" ta="center" mt={5}>
                             想起密码了？{' '}
-                            <Link to="/settings/my-account?type=signin">
+                            <Link to="/user/my-account?type=signin">
                                 <Anchor type='button' size="sm" component="button">
                                     返回登录
                                 </Anchor>
@@ -358,7 +358,7 @@ function AuthenticationTitle() {
                         </Title>
                         <Text c="dimmed" size="sm" ta="center" mt={5}>
                             已经有账户了？{' '}
-                            <Link to='/settings/my-account?type=signin'>
+                            <Link to='/user/my-account?type=signin'>
                                 <Anchor type='button' size="sm" component="button">
                                     立即登录
                                 </Anchor>
@@ -453,7 +453,7 @@ function AuthenticationTitle() {
                         </Title>
                         <Text c="dimmed" size="sm" ta="center" mt={5}>
                             提示密码不正确？{' '}
-                            <Link to={'/settings/my-account?type=find-pw'}>
+                            <Link to={'/user/my-account?type=find-pw'}>
                                 <Anchor type='button' component="button" size="sm">
                                     找回密码
                                 </Anchor>
@@ -485,7 +485,7 @@ function AuthenticationTitle() {
                                     }}
 
                                     name='rememberMe' defaultChecked label="记住这台设备" />
-                                <Link to='/settings/my-account?type=signup' >
+                                <Link to='/user/my-account?type=signup' >
                                     <Anchor type='button' size="sm" component="button" >
                                         免费注册
                                     </Anchor>

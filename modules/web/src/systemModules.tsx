@@ -19,6 +19,7 @@ import {
     IconTools,
     IconNavigation,
     IconInbox,
+    IconUserCircle,
 
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
@@ -167,6 +168,15 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                         name: '翻译助手',
                         children: [
                             {
+                                name: '英汉词典',
+                                id: 'dict',
+                                description: '快速查询生词的英汉释义',
+                                iconInStr: 'Vocabulary',
+                                href: '/dict',
+                                bodyFn: () => import('./loadable/Dictionary/index.tsx'),
+                                disableFooter: true,
+                            },
+                            {
                                 name: '文本翻译',
                                 id: 'text',
                                 description: '支持多种语言的文本翻译，包括中文、英文、日文、韩文、法文、德文、俄文等语言的互转。',
@@ -252,11 +262,17 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                 ]
             },
             {
-                id: 'settings',
-                defaultHref: '/settings/my-account',
+                id: 'user',
+                defaultHref: '/user/my-account',
                 fixedAtBottom: true,
-                icon: IconSettings, label: '系统设置',
+                icon: IconUserCircle,
+                label: '用户中心',
                 children: [
+                    // {
+                    //     name: '权益中心',
+                    //     id: 'my-privilege',
+                    //     bodyFn: () => import('./loadable/MyPrivilege/index.tsx')
+                    // },
                     {
                         name: '我的账号',
                         id: 'my-account',
@@ -267,6 +283,20 @@ export const useSystemModulesList = (req: SystemModuleReq): SystemModuleRes => {
                         id: 'my-privilege',
                         bodyFn: () => import('./loadable/MyPrivilege/index.tsx')
                     },
+                ]
+            },
+            {
+                id: 'settings',
+                defaultHref: '/settings/faq',
+                fixedAtBottom: true,
+                icon: IconSettings, label: '系统设置',
+                children: [
+
+                    // {
+                    //     name: '我的账号',
+                    //     id: 'my-account',
+                    //     bodyFn: Fn_MyAccount
+                    // },
                     {
                         name: '常见问题',
                         id: 'faq',

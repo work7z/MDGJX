@@ -28,10 +28,13 @@ export let getKVSaveDir = (): string => {
   return fsutils.mkdir(kvStorage);
 };
 
-export let devonly_getExtDir = (): string => {
+export let devonly_getExtDir = (): string[] => {
   if (isDevEnv()) {
     if (process.env.MDGJX_EXT_ROOT) {
-      return path.join(process.env.MDGJX_EXT_ROOT, 'extensions');
+      return [
+        path.join(process.env.MDGJX_EXT_ROOT, 'extensions'),
+        path.join(process.env.MDGJX_EXT_ROOT, 'e2e','upx-temp'),
+      ];
     }
   }
   logger.warn('devonly_getExtDir: not in dev env');
