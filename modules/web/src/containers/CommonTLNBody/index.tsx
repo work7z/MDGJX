@@ -305,6 +305,7 @@ export default (props: {
     const jsx_inputTextarea = <Group wrap='nowrap'>
         <Textarea
             spellCheck={false}
+            autoFocus
             w={'100%'}
             placeholder={"请将需要翻译的" + props.label + "粘贴到这里"}
             label={props.label + "输入"}

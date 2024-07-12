@@ -14,6 +14,7 @@ const initialState = {
   darkMode: false,
   hideLeftMenu: false,
   currentNavTabId: "Home",
+  dictSearchText: 'voyage',
   entryHottestCountMap: {
     'Home': 0,
   },

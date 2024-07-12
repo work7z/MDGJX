@@ -205,7 +205,7 @@ export default function () {
                 <Stepper.Completed>
                     <div className='w-full items-center p-2'>
                         <div className='mx-auto flex justify-center items-center flex-col '>
-                            <Title>感谢您的支持！</Title>
+                            <Title>感谢您的支持！您需手动激活本卡</Title>
                             <p className='text-center'>
                                 默认情况下，我们不会直接应用您的权益，您的权益礼品卡已发放到您的账户中，您可以在个人中心查看您的权益礼品卡列表。
                                 <br />
@@ -258,7 +258,7 @@ export default function () {
                 </Button>
                         <Button color='cyan' onClick={async () => {
                             AlertUtils.alertSuccess(`为您跳转至礼品卡列表`)
-                            hist.push(`/settings/my-privilege?type=redemption`)
+                            hist.push(`/user/my-privilege?type=redemption`)
                             // setTimeout(()=>{
                                 // location.reload()
                             // },300)

@@ -16,7 +16,13 @@ import { FN_GetDispatch, FN_GetState } from "../nocycle";
 import UsersSlice, { DisplayUserInfo } from "./userSlice";
 import AuthUtils from "@/utils/AuthUtils";
 import { PAGE_SESSION_ID } from "@/utils/PageUtils";
-
+import {
+  NewStarDict,
+  TopicNodes,
+  TopicDetail,
+  FoundWithRes,
+  Topic
+} from './types'
 
 export type FindPwReq = {
   email: string;
@@ -490,7 +496,18 @@ export const apiSlice = createApi({
       },
     }),
 
-
+    // dictionary
+    dictSearch: build.query<AsyncCreateResponse<NewStarDict[]>, {
+      input: string
+    }>({
+      query: (params) => {
+        return {
+          params,
+          url: `/dict/search`,
+          method: "GET",
+        };
+      },
+    }),
   }),
 });
 

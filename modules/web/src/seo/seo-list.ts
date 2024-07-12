@@ -60,13 +60,13 @@ export const fn_getAllSeoDetail = async () => {
       keywords: '云插件,插件市场,插件工具,插件工具箱',
     },
     {
-      path: ['/settings/my-account'],
+      path: ['/user/my-account'],
       title: `我的账户 - 设置`,
       description: 'MDGJX秒达工具箱快速提供我的账户、设置等功能，让您的账户管理更加便捷。',
       keywords: '我的账户,设置,账户管理,账户工具,账户工具箱',
     },
     {
-      path: ['/settings/my-privilege'],
+      path: ['/user/my-privilege'],
       title: `权益中心 - 设置`,
       description: 'MDGJX秒达工具箱快速提供权益中心、设置等功能。',
       keywords: '权益中心,设置,权益管理,权益工具,权益工具箱',

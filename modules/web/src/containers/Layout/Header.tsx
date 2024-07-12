@@ -20,7 +20,9 @@ import {
     IconArrowUp, IconBrandGithub, IconBrandGithubFilled, IconChevronDown, IconCode, IconSourceCode,
     IconUser,
     IconUserCircle,
-    IconSearch
+    IconSearch,
+    IconListSearch,
+    IconLanguage
 } from '@tabler/icons-react';
 import SourceCodeLink from '../../components/SourceCodeLink';
 import { DoubleNavbar as SideBar } from '@/containers/SideBar';
@@ -34,6 +36,8 @@ import { isDevEnv } from '@/env';
 import settingsSlice from '@/store/reducers/settingsSlice';
 import { FN_GetDispatch } from '@/store/nocycle';
 import MemorySlice from '@/store/reducers/memorySlice';
+import Dictionary from '@/loadable/Dictionary';
+import TLNText from '@/loadable/TLNText';
 
 const mockdata = [
     {
@@ -104,7 +108,7 @@ export default (props: {
             </Group>
         </UnstyledButton>
     ));
-    const fn_show_global_modal = ()=>{
+    const fn_show_global_modal = () => {
         FN_GetDispatch()(
             MemorySlice.actions.updateOneOfParamState({
                 clickQuickSearchInput: true,
@@ -119,7 +123,7 @@ export default (props: {
     ]);
     // TODO: 在header处发送获取所有菜单栏导航栏的信息，并且一次性patch到store里
     // 这里所有菜单栏的信息，是通过各个插件下的miaoda-dist.json去获取的
-    const userAcctJSX = <Link to={'/settings/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
+    const userAcctJSX = <Link to={'/user/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
         <IconUserCircle stroke={1.5} />
     }</ActionIcon></Link>
     return <AppShell.Header className='flex flex-row justify-between px-2 sm:px-5 ' >
@@ -139,11 +143,11 @@ export default (props: {
             </Group>
 
             {
-                isDevEnv() ? <Group h="100%" gap={0} 
-                // className=' absolute left-[50%]  ' style={{
-                //     transform: 'translateX(-50%)'
-                // }}
-                 visibleFrom="sm">
+                false && isDevEnv() ? <Group h="100%" gap={0}
+                    // className=' absolute left-[50%]  ' style={{
+                    //     transform: 'translateX(-50%)'
+                    // }}
+                    visibleFrom="sm">
                     {/* <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
                     <HoverCard.Target>
                         <a href="#" className={classes.link}>
@@ -195,7 +199,7 @@ export default (props: {
                     <a href="#" className={classes.link}>
                         翻译
                     </a>
-                    
+
 
                     {/* <a href="#" className={classes.link}>
                         云空间
@@ -224,15 +228,44 @@ export default (props: {
                     }}
                     rightSectionWidth={70}
                     rightSection={<Code className={classes.searchCode}>Ctrl + K</Code>}
-                // onBlur={()=>{
-                // }}
-                // data={['React', 'Angular', 'Vue', 'Next.js', 'Riot.js', 'Svelte', 'Blitz.js']}
                 />
                 <ColorSchemeToggle />
+                <div className='hidden sm:block'>
+                    <HoverCard width={'50vw'} shadow="md" position='top-end'>
+                        <HoverCard.Target>
+                            <ActionIcon variant='default' size='lg' aria-label="Theme" onClick={() => {
+                                // setColorScheme(colorScheme === 'dark' ? 'light' : 'dark')
+                            }}>
+                                <IconListSearch stroke={1.5} />
+                            </ActionIcon>
+                        </HoverCard.Target>
+                        <HoverCard.Dropdown className='w-[50vw]'>
+                            <div >
+                                <Dictionary />
+                            </div>
+                        </HoverCard.Dropdown>
+                    </HoverCard>
+                </div>
+                <div className='hidden sm:block'>
+                    <HoverCard width={'50vw'} shadow="md" position='top-end'>
+                        <HoverCard.Target>
+                            <ActionIcon variant='default' size='lg' aria-label="Theme" onClick={() => {
+                                // setColorScheme(colorScheme === 'dark' ? 'light' : 'dark')
+                            }}>
+                                <IconLanguage stroke={1.5} />
+                            </ActionIcon>
+                        </HoverCard.Target>
+                        <HoverCard.Dropdown className='w-[40vw]'>
+                            <div >
+                                <TLNText />
+                            </div>
+                        </HoverCard.Dropdown>
+                    </HoverCard>
+                </div>
                 <SourceCodeLink />
                 {
                     userObj.hasSignIn ? [
-                        userAcctJSX,
+                        // userAcctJSX,
                         isDevEnv() ? <Tooltip label={
                             "开发配置: " + (
                                 !devConfig_usingLocalExtViewConfig ? '当前使用云端配置，点击后切换到本地菜单' : '当前使用本地配置，点击后切换到云端菜单'
@@ -252,13 +285,13 @@ export default (props: {
                                 "登出"
                             }</Button>
 
-                        // <Link to={'/settings/my-account?type=signin'}>   <Button variant="default" className=' hidden sm:block '>登出</Button></Link>,
+                        // <Link to={'/user/my-account?type=signin'}>   <Button variant="default" className=' hidden sm:block '>登出</Button></Link>,
                     ] : [
-                        <Link className=' block sm:hidden ' to={'/settings/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
+                        <Link className=' block sm:hidden ' to={'/user/my-account?type=usercenter'}>   <ActionIcon size='lg' variant="default" className=' '>{
                             <IconUserCircle stroke={1.5} />
                         }</ActionIcon></Link>,
-                        < Link to={'/settings/my-account?type=signin'} > <Button variant="default" className=' hidden sm:block '>登录账号</Button></Link>,
-                        <Link to={'/settings/my-account?type=signup'}>
+                        < Link to={'/user/my-account?type=signin'} > <Button variant="default" className=' hidden sm:block '>登录账号</Button></Link>,
+                        <Link to={'/user/my-account?type=signup'}>
                             <Button className=' hidden sm:block '>免费注册</Button>
                         </Link>
                     ]
