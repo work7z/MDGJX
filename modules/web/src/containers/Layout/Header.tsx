@@ -22,7 +22,10 @@ import {
     IconUserCircle,
     IconSearch,
     IconListSearch,
-    IconLanguage
+    IconLanguage,
+    IconLighter,
+    IconNavigationExclamation,
+    IconNavigationBolt
 } from '@tabler/icons-react';
 import SourceCodeLink from '../../components/SourceCodeLink';
 import { DoubleNavbar as SideBar } from '@/containers/SideBar';
@@ -38,6 +41,7 @@ import { FN_GetDispatch } from '@/store/nocycle';
 import MemorySlice from '@/store/reducers/memorySlice';
 import Dictionary from '@/loadable/Dictionary';
 import TLNText from '@/loadable/TLNText';
+import OmniSearchModal, { InnerOmniSearchModel } from './OmniSearchModal';
 
 const mockdata = [
     {
@@ -218,7 +222,7 @@ export default (props: {
 
             <Group gap={6}>
 
-                <TextInput
+                {/* <TextInput
                     className={classes.search}
                     placeholder={"一键秒达 (内测中)"}
                     leftSection={<IconSearch style={{ width: rem(16), height: rem(16) }} stroke={1.5} />}
@@ -228,8 +232,22 @@ export default (props: {
                     }}
                     rightSectionWidth={70}
                     rightSection={<Code className={classes.searchCode}>Ctrl + K</Code>}
-                />
+                /> */}
                 <ColorSchemeToggle />
+                <div className='hidden sm:block'>
+                    <HoverCard width={'50vw'} shadow="md" position='top-end'>
+                        <HoverCard.Target>
+                            <ActionIcon variant='default' size='lg' aria-label="Theme" onClick={() => {
+                                // setColorScheme(colorScheme === 'dark' ? 'light' : 'dark')
+                            }}>
+                                <IconNavigationBolt stroke={1.5} />
+                            </ActionIcon>
+                        </HoverCard.Target>
+                        <HoverCard.Dropdown className='w-[50vw] h-[50vh]'>
+                            <InnerOmniSearchModel />
+                        </HoverCard.Dropdown>
+                    </HoverCard>
+                </div>
                 <div className='hidden sm:block'>
                     <HoverCard width={'50vw'} shadow="md" position='top-end'>
                         <HoverCard.Target>

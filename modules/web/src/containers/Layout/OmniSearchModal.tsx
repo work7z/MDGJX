@@ -1,4 +1,4 @@
-import { ActionIcon, Affix, AppShell, Box, Burger, Button, Group, HoverCard, LoadingOverlay, Modal, TextInput, Transition, rem } from '@mantine/core';
+import { ActionIcon, Affix, AppShell, Box, Burger, Button, Code, Group, HoverCard, LoadingOverlay, Modal, TextInput, Transition, rem } from '@mantine/core';
 import { useDisclosure, useDocumentTitle, useWindowScroll } from '@mantine/hooks';
 import imgFile from '/src/favicon.png'
 import { ColorSchemeToggle, useDarkModeOrNot } from '../../components/ColorSchemeToggle/ColorSchemeToggle';
@@ -34,6 +34,28 @@ export default () => {
     const clickQuickSearchInput = exportUtils.useSelector(v => {
         return v.memory.clickQuickSearchInput
     })
+
+    return (
+        <Modal
+            // style={{
+            //     minHeight:'auto',
+            //     height:'auto'
+            // }}
+            fullScreen opened={clickQuickSearchInput} onClose={() => {
+                FN_GetDispatch()(
+                    MemorySlice.actions.updateOneOfParamState({
+                        clickQuickSearchInput: false
+                    })
+                )
+            }} title={
+                `秒达工具箱 - 快速搜索面板`
+            }>
+          <InnerOmniSearchModel/>
+        </Modal>
+    )
+}
+
+export const InnerOmniSearchModel = () => {
     const [searchCtn, setSearchCtn] = React.useState('')
     const ref = React.useRef<{
         eleipt: any
@@ -61,52 +83,37 @@ export default () => {
         return "早上好"
     })()
     return (
-        <Modal
-            // style={{
-            //     minHeight:'auto',
-            //     height:'auto'
-            // }}
-            fullScreen opened={clickQuickSearchInput} onClose={() => {
-
-
-                FN_GetDispatch()(
-                    MemorySlice.actions.updateOneOfParamState({
-                        clickQuickSearchInput: false
-                    })
-                )
-            }} title={
-                `秒达工具箱 - 快速搜索面板`
-            }>
-            <div className='flex flex-col h-auto w-[100%]'>
-                <TextInput
-                    name='quicksearch'
-                    placeholder={
-                        whenHello + `，请输入关键词以检索您所需的功能，支持拼音大小写`
+        <div className='flex flex-col h-auto w-[100%]'>
+            <TextInput
+                name='quicksearch'
+                placeholder={
+                    whenHello + `，请输入关键词以检索您所需的功能，支持拼音大小写`
+                }
+                ref={e => {
+                    if (e) {
+                        ref.current.eleipt = e
+                        setTimeout(() => {
+                            e.focus()
+                        }, 300)
                     }
-                    ref={e => {
-                        if (e) {
-                            ref.current.eleipt = e
-                            setTimeout(() => {
-                                e.focus()
-                            }, 300)
-                        }
-                    }}
-                    autoFocus
-                    size="xl"
-                    value={searchCtn}
-                    onChange={e => {
-                        setSearchCtn(e.currentTarget.value)
-                    }}
-                    autoComplete='off'
-                    leftSection={<IconSearch style={{ width: rem(24), height: rem(24) }} stroke={1.5} />}
-                    styles={{ section: { pointerEvents: 'none' } }}
-                />
-                <div className='flex-1 bg-red-100 ' style={{
-                    height: 'calc(100% - 60px)'
-                }}>
-                    <div>抱歉，此功能还在内测中，欢迎关注</div>
-                </div>
+                }}
+                autoFocus
+                size="md"
+                rightSectionWidth={70}
+                rightSection={<Code className={''}>Ctrl + K</Code>}
+                value={searchCtn}
+                onChange={e => {
+                    setSearchCtn(e.currentTarget.value)
+                }}
+                autoComplete='off'
+                leftSection={<IconSearch style={{ width: rem(24), height: rem(24) }} stroke={1.5} />}
+                styles={{ section: { pointerEvents: 'none' } }}
+            />
+            <div className='flex-1 bg-red-100 ' style={{
+                height: 'calc(100% - 60px)'
+            }}>
+                <div>抱歉，此功能还在内测中，欢迎关注</div>
             </div>
-        </Modal>
+        </div>
     )
 }
