@@ -92,7 +92,7 @@ npm i -g pnpm ts-node typescript
 
 # 安装项目依赖
 cd $MDGJX_ROOT && npm install -S -D --force
-cd $MDGJX_ROOT/modules/web2 && npm install -S -D --force
+cd $MDGJX_ROOT/modules/web && npm install -S -D --force
 cd $MDGJX_ROOT/devtools/scripts/scan && npm install -S -D --force
 
 # 运行核心服务
