@@ -63,6 +63,14 @@ export default () => {
                         AlertUtils.alertErr('输入内容为空，请先提供JSON数据')
                         return;
                     }
+                    /**
+                    {"Key":"1111111111","EndDate":"2024/07/30"}
+                    {"Key":"2222222222","EndDate":"2024/07/30"}
+                    {"Key":"3333333333","EndDate":"2024/07/30"}
+                    {"Key":"4444444444","EndDate":"2024/07/30"}
+                    {"Key":"5555555555","EndDate":"2024/07/30"}
+                     */
+                    debugger;
                     const newval = jsonmetautils.beautify(rawVal)
                     rh.updateNonPState({
                         inputJSON: newval

@@ -19,7 +19,7 @@ const jsonmetautils = {
 
         // const [indentStr, sortBool] = args;
         const indentStr = '\t'
-        const sortBool = true
+        const sortBool = false
         let json = null;
 
         try {
