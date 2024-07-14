@@ -135,6 +135,7 @@ export class ExtViewApp {
               });
               break;
             case 'web-static-standalone':
+              // TODO: run standalone server
               throw new Error('web-static-standalone is not supported yet');
           }
         } else {

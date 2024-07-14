@@ -43,6 +43,7 @@ const INTERNAL_EXT_VIEW_SERVER = `http://127.0.0.1:${fn_getExtViewPort()}`;
 
 import httpProxy from 'http-proxy';
 import { fn_runOrRestartExtViewAppServer } from './ext-view-app';
+import { EXT_VIEW_PREFIX } from './m-types-copy/base/m-types-main';
 var proxyWS = httpProxy
   .createProxyServer({
     target: DIRECT_PROXY_SERVER,
@@ -124,7 +125,6 @@ export class App {
       this.app.use('/local', route.router);
     });
 
-    
     this.app.get('/killnow', (req, res) => {
       if (isDesktopMode) {
         process.exit(0);
@@ -180,6 +180,22 @@ export class App {
         }),
       );
     }
+
+    // embedded service
+    app.use(
+      EXT_VIEW_PREFIX,
+      proxy(EXTSTATIC_SERVER, {
+        proxyReqPathResolver: function (req) {
+          var parts = req.url.split('?');
+          var queryString = parts[1];
+          var updatedPath = parts[0];
+          // return prefix + updatedPath + (queryString ? '?' + queryString : '');
+          return EXT_VIEW_PREFIX+ updatedPath + (queryString ? '?' + queryString : '');
+        },
+      }),
+    );
+
+
 
     // setup spa
     let distDir = path.join(__dirname, 'spa');
