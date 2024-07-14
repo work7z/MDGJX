@@ -32,13 +32,12 @@ export type EntryItems = {
 
 export type LoadModuleType = () => any;
 export type SystemSubModuleItem = {
-  belongTo?: 'tools' | 'docs' | 'resources'; // children will be effetive also if its parent has set this field
+  belongTo?: "tools" | "docs" | "resources"; // children will be effetive also if its parent has set this field
   id: string;
   icon?: any;
   href?: string;
   firstRouteId?: string;
   iconInStr?: string;
-  possibleHrefs?: string[];
   rootMainModuleId?: string;
   name: string;
   seoName?: string;
