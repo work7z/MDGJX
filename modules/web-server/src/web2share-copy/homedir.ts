@@ -33,7 +33,7 @@ export let devonly_getExtDir = (): string[] => {
     if (process.env.MDGJX_EXT_ROOT) {
       return [
         path.join(process.env.MDGJX_EXT_ROOT, 'extensions'),
-        path.join(process.env.MDGJX_EXT_ROOT, 'e2e','upx-temp'),
+        path.join(process.env.MDGJX_EXT_ROOT, 'external-repo','upx-temp'),
       ];
     }
   }

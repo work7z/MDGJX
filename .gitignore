@@ -1,4 +1,5 @@
 var/log/
+external/reference
 screenshots/*.png
 screenshots/**/*.png
 screenshots
