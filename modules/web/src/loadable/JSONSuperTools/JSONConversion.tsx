@@ -23,6 +23,35 @@ export type JSONConversionNPState = {
     historicalRecords: HistoryRecord[]
 }
 
+const tryParseJSON = (text: string) => {
+    try {
+        const json = JSON.parse(text)
+        return json
+    } catch (e) {
+        return null
+    }
+}
+
+const tryToFixJSON = (text: string) => {
+    // 修复格式处理方法，按需添加
+    const fixHandler = [
+        (text: string) => `{${text}`,
+        (text: string) => `${text}}`,
+        (text: string) => `[${text}]`,
+        (text: string) => `[${text.split('\n').filter(t => t && t.trim() !== '').join(',')}]`,
+    ]
+
+    let result = null
+    for (let i = 0; i < fixHandler.length; i++) {
+        result = tryParseJSON(fixHandler[i](text))
+        if (result) {
+            break
+        }
+    }
+
+    return result
+}
+
 export default () => {
     const hist = useHistory()
     const rh = exportUtils.register('jsonsuper', {
@@ -42,7 +71,7 @@ export default () => {
             } satisfies JSONConversionState
         }
     })
-    
+
     const clipboard = useClipboard({ timeout: 500 });
 
     if (!rh) {
@@ -61,17 +90,30 @@ export default () => {
                     const rawVal = jState.inputJSON
                     if (_.isEmpty(rawVal)) {
                         AlertUtils.alertErr('输入内容为空，请先提供JSON数据')
-                        return;
+                        return
                     }
-                    /**
-                    {"Key":"1111111111","EndDate":"2024/07/30"}
-                    {"Key":"2222222222","EndDate":"2024/07/30"}
-                    {"Key":"3333333333","EndDate":"2024/07/30"}
-                    {"Key":"4444444444","EndDate":"2024/07/30"}
-                    {"Key":"5555555555","EndDate":"2024/07/30"}
-                     */
-                    debugger;
-                    const newval = jsonmetautils.beautify(rawVal)
+
+                    let parsedJSON = tryParseJSON(rawVal)
+                    let fixed = false
+
+                    // 如果解析失败，尝试修复
+                    if (!parsedJSON) {
+                        fixed = true
+                        parsedJSON = tryToFixJSON(rawVal)
+                    }
+
+                    // 依然失败则报错
+                    if (!parsedJSON) {
+                        AlertUtils.alertErr('请检查 JSON 格式是否正确')
+                        return
+                    }
+
+                    // 修复后成功则提示警告
+                    if (fixed) {
+                        AlertUtils.alertWarn('已自动修复格式问题')
+                    }
+
+                    const newval = jsonmetautils.beautify(`${parsedJSON}`)
                     rh.updateNonPState({
                         inputJSON: newval
                     })
