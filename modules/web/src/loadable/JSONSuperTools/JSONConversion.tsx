@@ -25,7 +25,7 @@ export type JSONConversionNPState = {
 
 const tryParseJSON = (text: string) => {
     try {
-        const json = JSON.parse(text)
+        const json = JSON5.parse(text)
         return json
     } catch (e) {
         return null
@@ -93,8 +93,8 @@ export default () => {
                         return
                     }
 
-                    let parsedJSON = tryParseJSON(rawVal)
                     let fixed = false
+                    let parsedJSON = tryParseJSON(rawVal)
 
                     // 如果解析失败，尝试修复
                     if (!parsedJSON) {
@@ -113,7 +113,7 @@ export default () => {
                         AlertUtils.alertWarn('已自动修复格式问题')
                     }
 
-                    const newval = jsonmetautils.beautify(`${parsedJSON}`)
+                    const newval = jsonmetautils.beautify(`${JSON.stringify(parsedJSON)}`)
                     rh.updateNonPState({
                         inputJSON: newval
                     })
