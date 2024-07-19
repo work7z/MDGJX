@@ -24,7 +24,7 @@ export type TranslateArg = {
 export type TypeJSONTranslateMethods = {
     label: string;
     value: string;
-    func: (text: string, fn_translate,fn_updateRes) => Promise<string>
+    func: (text: string, fn_translate,fn_updateRes?:any) => Promise<string>
 };
 
 const fn_translate_for_only_value = async (text: string, fn_translate, fn_updateRes): Promise<string> => {
