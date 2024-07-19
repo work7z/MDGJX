@@ -39,8 +39,7 @@ export const useMDParams = (): TypeMDParams => {
         let dft_mainSubModuleItem: SystemSubModuleItem | undefined = undefined;
         const firstMappingItem = ROUTE_CPT_MAPPING[0]
         for (let eachItem of ROUTE_CPT_MAPPING) {
-            const ph = eachItem.possibleHrefs ? eachItem.possibleHrefs :
-                eachItem.href ? [eachItem.href] :
+            const ph =   eachItem.href ? [eachItem.href] :
                     []
             let ackOrNot = false;
             if (ph) {
