@@ -50,7 +50,7 @@ export default (props: {
     defaultTLNPState?: TLNPState,
     extraOptionsJSX?: JSX.Element,
     translateActionItems?: ActionItem[],
-    handleTranslate: (val: TLNState, fn_translate) => Promise<string>
+    handleTranslate: (val: TLNState, fn_translate, fn_updateRes?:any) => Promise<string>
 }) => {
 
 
@@ -141,6 +141,9 @@ export default (props: {
                 })
                 let lastErrMsg: string = ''
                 const fn_fanyi = async (value) => {
+                    if(_.trim(value) == ''){
+                        return '';
+                    }
                     const crtTS = Date.now()
                     const crtReqID = cptID + crtTS + Date.now() + Math.random().toString(36).substring(7)
                     const prev_listen = new Promise((r, e) => {
@@ -220,7 +223,9 @@ export default (props: {
                             const crtResult = await props.handleTranslate({
                                 ...tState,
                                 inputJSON: processFielStr
-                            }, fn_fanyi)
+                            }, fn_fanyi,()=>{
+
+                            })
                             tState2 = rh.getActualValueInState()
                             rh.updateNonPState({
                                 fileProcessLabel: `完成翻译处理: ${idx}/${files.length}`,
@@ -262,7 +267,11 @@ export default (props: {
                         AlertUtils.alertWarn("输入为空，请输入内容后重试")
                         return;
                     } else {
-                        result = await props.handleTranslate(tState, fn_fanyi)
+                        result = await props.handleTranslate(tState, fn_fanyi,(newval)=>{
+                            rh.updateNonPState({
+                                outputJSON: newval
+                            })
+                        })
                         rh.updateNonPState({
                             outputJSON: result
                         })
