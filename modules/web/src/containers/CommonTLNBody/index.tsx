@@ -27,6 +27,7 @@ export type TLNPState = {
     targetLang: string;
     translateMethod?: string;
     reservedWords?: string;
+    onlyTranslateFields?:string
     extraRequests?: string;
 }
 export type TLNNPState = {
@@ -50,12 +51,13 @@ export default (props: {
     defaultTLNPState?: TLNPState,
     extraOptionsJSX?: JSX.Element,
     translateActionItems?: ActionItem[],
-    handleTranslate: (val: TLNState, fn_translate, fn_updateRes?:any) => Promise<string>
+    handleTranslate: (val: TLNState, fn_translate, fn_updateRes?: any) => Promise<string>
 }) => {
 
 
     const isZTFT = props.id == 'tlnztft'
     const isJSONType = props.id == 'json' || props.id == 'json-comparison'
+    const isPureJSONType = props.id == 'json'
     const fanyiCountRef = useRef<{ interval: any }>({
         interval: null
     })
@@ -68,6 +70,7 @@ export default (props: {
                 targetLang: 'en',
                 translateMethod: JSONTranslateMethods[0].value,
                 reservedWords: '',
+                onlyTranslateFields:'',
                 extraRequests: '',
                 fillFileMode: false
             } satisfies TLNPState
@@ -564,6 +567,16 @@ export default (props: {
                                         pStateKey: 'translateMethod'
                                     })}
                                 />
+                                <Textarea
+                                    label="仅翻译字段列表(可选)"
+                                    className="w-full"
+                                    rows={5}
+                                    placeholder="如果希望仅翻译某些字段，可以在这里填写，以逗号分隔。默认全部字段翻译"
+                                    {...rh.bindOnChange({
+                                        pStateKey: 'onlyTranslateFields'
+                                    })}
+                                />
+
                             </>
                                 : ''
                         }

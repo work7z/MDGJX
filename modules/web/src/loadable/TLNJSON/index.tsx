@@ -24,11 +24,12 @@ export type TranslateArg = {
 export type TypeJSONTranslateMethods = {
     label: string;
     value: string;
-    func: (text: string, fn_translate,fn_updateRes?:any) => Promise<string>
+    func: (text: string, fn_translate, fn_updateRes?: any, state?: TLNState) => Promise<string>
 };
 
-const fn_translate_for_only_value = async (text: string, fn_translate, fn_updateRes): Promise<string> => {
-    const waitArr: Promise<any>[] = []
+type WPromise = () => Promise<any>
+const fn_translate_for_only_value = async (text: string, fn_translate, fn_updateRes, state?: TLNState): Promise<string> => {
+    const waitArr: WPromise[] = []
     // modify source
     function beforeTranslate(value) {
         return value;
@@ -39,6 +40,11 @@ const fn_translate_for_only_value = async (text: string, fn_translate, fn_update
         return value;
     }
 
+    let onlyKeys: string[] = []
+    if (state && state.onlyTranslateFields) {
+        onlyKeys = state.onlyTranslateFields.split(',').map(x => x.trim())
+    }
+
     // the entire translate logic created for the JSON that you passed
     function translateEntireLogic(passedJSON, fn_translate) {
         // iterating the variable of which the type is array or object
@@ -47,16 +53,27 @@ const fn_translate_for_only_value = async (text: string, fn_translate, fn_update
                 _.forEach(value, fn_tran)
                 return;
             }
-            waitArr.push((async () => {
-                // fn_translate, that function is used as sending requests to CodeGen server
-                let result = await fn_translate(
-                    beforeTranslate(value)
-                )
-                obj[key] = afterTranslate(result);
+            waitArr.push(() => {
+                return (async () => {
+                    let result = value;
+                    let needConver=true;
+                    if (!_.isEmpty(onlyKeys)) {
+                        if (!onlyKeys.includes(key)) {
+                            needConver = false;
+                        }
+                    }
+                    if(needConver){
+                        // fn_translate, that function is used as sending requests to CodeGen server
+                        result = await fn_translate(
+                            beforeTranslate(value)
+                        )
+                    }
+                    obj[key] = afterTranslate(result);
 
-                if (_.isObjectLike(obj[key]) || _.isArray(obj[key])) {
-                }
-            })())
+                    if (_.isObjectLike(obj[key]) || _.isArray(obj[key])) {
+                    }
+                })()
+            })
 
         }
         _.forEach(passedJSON, fn_tran)
@@ -77,20 +94,20 @@ const fn_translate_for_only_value = async (text: string, fn_translate, fn_update
     }
     translateEntireLogic(currentJSONVal, fn_translate)
 
-    let str = ()=>{
+    let str = () => {
         return JSON.stringify(currentJSONVal, null, 4)
     }
     for (let i = 0; i < waitArr.length; i++) {
-        fn_updateRes &&fn_updateRes(str())
-        await waitArr[i]
+        fn_updateRes && fn_updateRes(str())
+        await waitArr[i]()
     }
     return str()
 }
 
-const fn_translate_for_only_key = async (text: string, fn_translate, fn_updateRes): Promise<string> => {
+const fn_translate_for_only_key = async (text: string, fn_translate, fn_updateRes, state?: TLNState): Promise<string> => {
     let afterAllGoodsArr: any[] = []
 
-    const waitArr: Promise<any>[] = []
+    const waitArr: WPromise[] = []
     // modify source
     function beforeTranslate(value) {
         return value;
@@ -106,24 +123,28 @@ const fn_translate_for_only_key = async (text: string, fn_translate, fn_updateRe
         // iterating the variable of which the type is array or object
         let fn_tran = (value, key, obj) => {
 
-            waitArr.push((async () => {
-                let prevKey = key;
-                // fn_translate, that function is used as sending requests to CodeGen server
-                let formattedKey = _.kebabCase(key).replace(/_/g, ' ').trim()
-                let result = await fn_translate(
-                    beforeTranslate(formattedKey)
-                )
-                obj[result + ` | ${prevKey}`] = value
-                afterAllGoodsArr.push(() => {
-                    delete obj[prevKey]
-                })
+            waitArr.push(() => {
+                return (
+                    (async () => {
+                        let prevKey = key;
+                        // fn_translate, that function is used as sending requests to CodeGen server
+                        let formattedKey = _.kebabCase(key).replace(/_/g, ' ').trim()
+                        let result = await fn_translate(
+                            beforeTranslate(formattedKey)
+                        )
+                        obj[result + ` | ${prevKey}`] = value
+                        afterAllGoodsArr.push(() => {
+                            delete obj[prevKey]
+                        })
 
-                if (_.isArray(value)) {
-                } else if (_.isObject(value)) {
-                    _.forEach(value, fn_tran)
-                    return;
-                }
-            })())
+                        if (_.isArray(value)) {
+                        } else if (_.isObject(value)) {
+                            _.forEach(value, fn_tran)
+                            return;
+                        }
+                    })()
+                )
+            })
 
 
         }
@@ -171,9 +192,9 @@ export const JSONTranslateMethods: TypeJSONTranslateMethods[] = [
     {
         label: "同时转换Key和Value值",
         value: "KeyAndValue",
-        func: async (text: string, fn_translate,fn_updateRes): Promise<string> => {
-            let result = await fn_translate_for_only_value(text, fn_translate, fn_updateRes)
-            result = await fn_translate_for_only_key(result, fn_translate, fn_updateRes)
+        func: async (text: string, fn_translate, fn_updateRes, state?: TLNState): Promise<string> => {
+            let result = await fn_translate_for_only_value(text, fn_translate, fn_updateRes, state)
+            result = await fn_translate_for_only_key(result, fn_translate, fn_updateRes, state)
             return result
         }
     },
@@ -206,7 +227,7 @@ export default () => {
                 if (!fn_translate_impl) {
                     fn_translate_impl = JSONTranslateMethods[0].func
                 }
-                const result = await fn_translate_impl(state.inputJSON, fn_translate, fn_updateRes)
+                const result = await fn_translate_impl(state.inputJSON, fn_translate, fn_updateRes, state)
                 return result;
             }}
             id='json'
