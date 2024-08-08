@@ -1,5 +1,6 @@
 {
   "name": "mdgjx-web",
+  "type": "module",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
@@ -7,8 +8,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "npm run lint:eslint && npm run lint:stylelint",
-    "lint:eslint": "eslint . --ext .ts,.tsx --cache",
-    "lint:stylelint": "stylelint '**/*.css' --cache",
+    "lint:eslint": "eslint . --ext .ts,.tsx --cache --fix",
+    "lint:stylelint": "stylelint '**/*.css' --cache --fix",
     "prettier": "prettier --check \"**/*.{ts,tsx}\"",
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
     "vitest": "vitest run",

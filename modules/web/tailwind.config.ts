@@ -36,8 +36,9 @@ const patterns = [
     styles: {
       opacity: 'var(--pattern-opacity, 0.4)',
       backgroundColor: 'var(--pattern-bg-color, transparent)',
-      backgroundImage: `linear-gradient(0deg, var(--pattern-bg-color, transparent) 50%, var(--pattern-color) 50%)`,
-      backgroundSize: `var(--pattern-size, 40px) var(--pattern-size, 40px)`,
+      backgroundImage:
+        'linear-gradient(0deg, var(--pattern-bg-color, transparent) 50%, var(--pattern-color) 50%)',
+      backgroundSize: 'var(--pattern-size, 40px) var(--pattern-size, 40px)',
     },
   },
   {
@@ -45,8 +46,9 @@ const patterns = [
     styles: {
       opacity: 'var(--pattern-opacity, 0.4)',
       backgroundColor: 'var(--pattern-bg-color, transparent)',
-      backgroundImage: `linear-gradient(to right, var(--pattern-color), var(--pattern-color) var(--pattern-size-half, 20px), var(--pattern-bg-color, transparent) var(--pattern-size-half, 20px), var(--pattern-bg-color, transparent))`,
-      backgroundSize: `var(--pattern-size, 40px) var(--pattern-size, 40px)`,
+      backgroundImage:
+        'linear-gradient(to right, var(--pattern-color), var(--pattern-color) var(--pattern-size-half, 20px), var(--pattern-bg-color, transparent) var(--pattern-size-half, 20px), var(--pattern-bg-color, transparent))',
+      backgroundSize: 'var(--pattern-size, 40px) var(--pattern-size, 40px)',
     },
   },
   {
@@ -54,7 +56,8 @@ const patterns = [
     styles: {
       opacity: 'var(--pattern-opacity, 0.4)',
       backgroundColor: 'var(--pattern-bg-color, transparent)',
-      backgroundImage: `radial-gradient(var(--pattern-color) calc(var(--pattern-size, 40px) * 0.1), var(--pattern-bg-color) calc(var(--pattern-size, 40px) * 0.1))`,
+      backgroundImage:
+        'radial-gradient(var(--pattern-color) calc(var(--pattern-size, 40px) * 0.1), var(--pattern-bg-color) calc(var(--pattern-size, 40px) * 0.1))',
       backgroundSize: 'var(--pattern-size, 40px) var(--pattern-size, 40px)',
     },
   },
@@ -63,7 +66,8 @@ const patterns = [
     styles: {
       opacity: 'var(--pattern-opacity, 0.4)',
       backgroundColor: 'var(--pattern-bg-color, transparent)',
-      backgroundImage: `linear-gradient(135deg, var(--pattern-color) 25%, transparent 25%), linear-gradient(225deg, var(--pattern-color) 25%, transparent 25%), linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%), linear-gradient(315deg, var(--pattern-color) 25%, var(--pattern-bg-color) 25%)`,
+      backgroundImage:
+        'linear-gradient(135deg, var(--pattern-color) 25%, transparent 25%), linear-gradient(225deg, var(--pattern-color) 25%, transparent 25%), linear-gradient(45deg, var(--pattern-color) 25%, transparent 25%), linear-gradient(315deg, var(--pattern-color) 25%, var(--pattern-bg-color) 25%)',
       backgroundPosition: 'var(--pattern-size, 40px) 0, var(--pattern-size, 40px) 0, 0 0, 0 0',
       backgroundSize: 'var(--pattern-size, 40px) var(--pattern-size, 40px)',
       backgroundRepeat: 'repeat',
@@ -74,8 +78,10 @@ const patterns = [
     styles: {
       opacity: 'var(--pattern-opacity, 0.4)',
       backgroundColor: 'var(--pattern-bg-color, transparent)',
-      background: `radial-gradient(circle, transparent 20%, var(--pattern-bg-color) 20%, var(--pattern-bg-color) 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, var(--pattern-bg-color) 20%, var(--pattern-bg-color) 80%, transparent 80%, transparent) var(--pattern-size-half, 20px) var(--pattern-size-half, 20px), linear-gradient(var(--pattern-color) calc(var(--pattern-size, 40px) * 0.04), transparent calc(var(--pattern-size, 40px) * 0.04)) 0 calc(var(--pattern-size, 40px) * -0.02), linear-gradient(90deg, var(--pattern-color) calc(var(--pattern-size, 40px) * 0.04), var(--pattern-bg-color) calc(var(--pattern-size, 100px) * 0.04)) calc(var(--pattern-size, 40px) * -0.02) 0`,
-      backgroundSize: `var(--pattern-size, 40px) var(--pattern-size, 20px), var(--pattern-size, 40px) var(--pattern-size, 20px), var(--pattern-size-half, 20px) var(--pattern-size-half, 20px), var(--pattern-size-half, 20px) var(--pattern-size-half, 20px)`,
+      background:
+        'radial-gradient(circle, transparent 20%, var(--pattern-bg-color) 20%, var(--pattern-bg-color) 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, var(--pattern-bg-color) 20%, var(--pattern-bg-color) 80%, transparent 80%, transparent) var(--pattern-size-half, 20px) var(--pattern-size-half, 20px), linear-gradient(var(--pattern-color) calc(var(--pattern-size, 40px) * 0.04), transparent calc(var(--pattern-size, 40px) * 0.04)) 0 calc(var(--pattern-size, 40px) * -0.02), linear-gradient(90deg, var(--pattern-color) calc(var(--pattern-size, 40px) * 0.04), var(--pattern-bg-color) calc(var(--pattern-size, 100px) * 0.04)) calc(var(--pattern-size, 40px) * -0.02) 0',
+      backgroundSize:
+        'var(--pattern-size, 40px) var(--pattern-size, 20px), var(--pattern-size, 40px) var(--pattern-size, 20px), var(--pattern-size-half, 20px) var(--pattern-size-half, 20px), var(--pattern-size-half, 20px) var(--pattern-size-half, 20px)',
     },
   },
   {
@@ -312,16 +318,16 @@ const config: Config = {
       const opacities = theme('patterns.opacity', defaultOpacities);
       const sizes = theme('patterns.size', defaultSizes);
 
-      let utilities = {};
-      let components = {};
+      const utilities = {};
+      const components = {};
 
       allColors.forEach(({ name, values }) => {
         if (typeof values === 'object') {
           Object.keys(values).forEach((value) => {
             utilities[`.pattern-${name}-${value}`] = {
               '--pattern-color': values[value],
-              '--pattern-color-55': values[value] + '55',
-              '--pattern-color-77': values[value] + '77',
+              '--pattern-color-55': `${values[value]}55`,
+              '--pattern-color-77': `${values[value]}77`,
             };
             utilities[`.pattern-bg-${name}-${value}`] = {
               '--pattern-bg-color': values[value],
@@ -370,7 +376,7 @@ const config: Config = {
         (utilities[`.bg-stripes-${name}`] = { '--stripes-color': color });
 
       const colors = flattenColorPalette(theme('backgroundColor'));
-      for (let name in colors) {
+      for (const name in colors) {
         try {
           const [r, g, b, a]: any = toRgba(colors[name]);
           if (a !== undefined) {

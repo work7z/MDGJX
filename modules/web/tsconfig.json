@@ -36,5 +36,5 @@
       "@test-utils": ["./test-utils"]
     }
   },
-  "include": ["src", "test-utils"]
+  "include": ["src", "test-utils", "./tailwind.config.ts"]
 }
