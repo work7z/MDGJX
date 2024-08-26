@@ -110,34 +110,34 @@ cd pipeline
 # 📑 项目目录结构
 
 ## 1. 前端目录结构
-/modules/web
-├─ dist-example       # 打包dist
-├─ docker             # docker
-├─ public             # 静态资源
-├─ src                # 源码
-│  ├─ actions         # actions
-│  ├─ components      # 公共组件
-│  ├─ containers      # 页面容器
-│  ├─ loadable        # 业务页面
-│  ├─ m-types-copy    # 类型定义
-│  ├─ meta            # 页面元信息
-│  ├─ pages           # 页面
-│  ├─ store           # 全局store管理
-│  ├─ utils           # 全局公共方法
+/modules/web  
+├─ dist-example       # 打包dist  
+├─ docker             # docker  
+├─ public             # 静态资源  
+├─ src                # 源码  
+│  ├─ actions         # actions  
+│  ├─ components      # 公共组件  
+│  ├─ containers      # 页面容器  
+│  ├─ loadable        # 业务页面  
+│  ├─ m-types-copy    # 类型定义  
+│  ├─ meta            # 页面元信息  
+│  ├─ pages           # 页面  
+│  ├─ store           # 全局store管理  
+│  ├─ utils           # 全局公共方法  
 ├─ .eslintignore      # eslint忽略集合      
-├─ .eslintrc.cjs      # eslint
-├─ .gitignore         # git忽略集合
-├─ .nvmrc             # nvm node版本
-├─ .prettierrc.cjs    # prettier
-├─ .stylelintignore   # stylelint忽略集合      
-├─ .stylelintrc.json  # stylelint配置
-├─ index.html         # 入口html 
-├─ postcss.config.cjs # postcss 配置
-├─ README.md    
-├─ tailwind.config.ts # tailwindcss 配置
-├─ tsconfig.json      # ts 编译配置
-├─ vite.config.mjs    # vite 配置
-└─ vitest.setup.mjs   # vitest 配置
+├─ .eslintrc.cjs      # eslint  
+├─ .gitignore         # git忽略集合  
+├─ .nvmrc             # nvm node版本  
+├─ .prettierrc.cjs    # prettier  
+├─ .stylelintignore   # stylelint忽略集合        
+├─ .stylelintrc.json  # stylelint配置  
+├─ index.html         # 入口html   
+├─ postcss.config.cjs # postcss 配置  
+├─ README.md      
+├─ tailwind.config.ts # tailwindcss 配置  
+├─ tsconfig.json      # ts 编译配置  
+├─ vite.config.mjs    # vite 配置  
+└─ vitest.setup.mjs   # vitest 配置  
 
 # 📑 其他材料
 
