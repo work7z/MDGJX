@@ -1,3 +1,28 @@
+大家新年好！
+
+由于考虑到CodeGen工具箱发展现况较为困难，迫于服务器和域名等费用过于昂贵，我们经过深思熟虑之后，还是决定放弃开发和维护。
+
+对于原高级会员(包含付费/非付费)的用户，很感谢有您的支持，我们已经记录好所有的数据库记录，在将来我们新产品上线之后，将会依旧保持您的权益。
+
+原有工具箱应该还能用，源码都已开源：
+
+- https://github.com/work7z/MDGJX
+- https://github.com/work7z/LafTools
+
+与此同时，以下域名将不再可用：
+
+- work7z.com
+- codegen.cc
+- mdgjx.com
+- laftools.cn
+- laf-tools.com
+我们也感叹到DeepSeek对AI领域的革命性突破，特别是token单价实现了不可思议的低成本，我们相信未来时代是属于AI的。
+
+我们团队内部正在开发一款IDE插件(偏AI的)，未来我们新产品的发布，还请关注我们B站唯一账号“CodeGen工具箱”的消息，江湖再见！
+
+最后，祝大家蛇年大吉大利，新春快乐，万事如意！
+
+
 <p align="center">
 <img width="203" src="./modules/web/src/favicon.png" alt="favicon.png">
 <br>
